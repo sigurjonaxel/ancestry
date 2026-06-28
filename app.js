@@ -760,7 +760,7 @@ function selectPerson(personId) {
   if (person.spouses.length > 0) {
     spouseEl.innerHTML = person.spouses.map(spouseId => {
       const spouse = tree.people.get(spouseId);
-      return spouse ? `<span class="clickable" onclick="window.selectPersonFromExternal('${spouseId}')">${spouse.fullName}</span>` : '';
+      return spouse ? `<span class="relation-value clickable" onclick="window.selectPersonFromExternal('${spouseId}')">${spouse.fullName}</span>` : '';
     }).join(', ');
   } else {
     spouseEl.textContent = '-';
