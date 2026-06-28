@@ -1,0 +1,10 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backups
+*.bak
+*.tmp
+
+# Local user files
+*.local

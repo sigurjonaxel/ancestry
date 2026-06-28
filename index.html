@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saga — Ættfræðiaðstoð</title>
+  <link rel="stylesheet" href="index.css">
+  <!-- Tesseract.js for OCR -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-logo">Saga</span>
+        <span class="brand-tagline">Ættfræðiaðstoð fyrir Ancestry</span>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-secondary" id="btn-load-mock">Hlaða inn dæmatrjám</button>
+        <button class="btn btn-primary" id="btn-show-help">Hjálp</button>
+      </div>
+    </header>
+
+    <!-- Workspace -->
+    <div class="workspace-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <!-- Tree Upload / Selector -->
+        <div class="sidebar-section">
+          <div class="sidebar-title">
+            <span>Ættartré</span>
+            <span id="tree-stats" style="font-size: 0.75rem; font-weight: normal; color: var(--text-secondary);">0 færslur</span>
+          </div>
+          
+          <label class="file-upload-zone" id="upload-zone">
+            <i data-lucide="upload-cloud"></i>
+            <p style="margin-top: 0.5rem; font-weight: 500;">Hlaða inn .ged skrá</p>
+            <p style="font-size: 0.7rem; margin-top: 0.25rem;">Halaðu niður úr Ancestry og dragðu hingað</p>
+            <input type="file" id="gedcom-file-input" accept=".ged">
+          </label>
+
+          <select class="btn btn-secondary" id="tree-select" style="width: 100%; margin-top: 1rem; text-align: left; display: none;">
+            <!-- Populate dynamically -->
+          </select>
+        </div>
+
+        <!-- Search & Filter -->
+        <div class="sidebar-section" style="flex: 1; display: flex; flex-direction: column; overflow: hidden;">
+          <div class="sidebar-title">Leita í tré</div>
+          <div class="search-box">
+            <i data-lucide="search"></i>
+            <input type="text" id="search-input" placeholder="Leita að nafni eða ártali...">
+          </div>
+          
+          <!-- People List -->
+          <div class="people-list" id="people-list-container">
+            <div style="text-align: center; padding: 2rem 0; color: var(--text-muted); font-size: 0.9rem;">
+              Hlaða þarf inn GEDCOM skrá eða smella á „Hlaða inn dæmatrjám“ til að sjá lista.
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Panel -->
+      <main class="main-workspace" id="main-workspace-area">
+        <!-- Empty State (Shown when no person is selected) -->
+        <div class="empty-state" id="empty-state-view">
+          <i data-lucide="users"></i>
+          <h2 style="margin-top: 1rem;">Veldu persónu til að hefjast handa</h2>
+          <p style="max-width: 500px; margin-top: 0.5rem; color: var(--text-secondary);">
+            Hladdu inn .ged skrá af tölvunni þinni eða notaðu dæmatrén. Veldu síðan persónu úr listanum vinstra megin til að leita að minningargreinum, gera OCR og útbúa texta fyrir Ancestry.
+          </p>
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+            <button class="btn btn-primary" id="btn-load-mock-2">Prófa dæmatré (Lóa & Sigurjón)</button>
+          </div>
+        </div>
+
+        <!-- Selected Person Workspace (Hidden by default) -->
+        <div class="workspace-grid" id="person-workspace-view" style="display: none;">
+          <!-- Column 1: Person Details -->
+          <div class="card" id="person-details-card">
+            <div class="profile-header">
+              <div class="profile-avatar">
+                <i data-lucide="user" style="width: 40px; height: 40px;"></i>
+              </div>
+              <h2 class="profile-name" id="p-full-name">Jón Jónsson</h2>
+              <div class="profile-dates" id="p-life-dates">1920 – 1995</div>
+            </div>
+
+            <div class="profile-relations">
+              <div class="relation-group">
+                <span class="relation-label">Fæðing</span>
+                <span class="relation-value" id="p-birth-info">-</span>
+              </div>
+              <div class="relation-group">
+                <span class="relation-label">Andlát</span>
+                <span class="relation-value" id="p-death-info">-</span>
+              </div>
+              <div class="relation-group">
+                <span class="relation-label">Faðir</span>
+                <span class="relation-value clickable" id="p-father-info" data-id="">-</span>
+              </div>
+              <div class="relation-group">
+                <span class="relation-label">Móðir</span>
+                <span class="relation-value clickable" id="p-mother-info" data-id="">-</span>
+              </div>
+              <div class="relation-group">
+                <span class="relation-label">Maki</span>
+                <span class="relation-value" id="p-spouse-info">-</span>
+              </div>
+              <div class="relation-group">
+                <span class="relation-label">Börn</span>
+                <div id="p-children-list" style="display: flex; flex-direction: column; gap: 0.25rem;">
+                  <!-- Populate dynamically -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Search section -->
+            <div style="margin-top: 2rem;">
+              <h3 style="font-size: 1rem; border-bottom: 1px solid rgba(184,134,11,0.1); padding-bottom: 0.5rem; color: var(--accent-gold);">
+                <i data-lucide="search" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 0.25rem;"></i>
+                Leita á netinu
+              </h3>
+              <div class="search-links-grid">
+                <a href="#" target="_blank" class="search-button" id="link-timarit">
+                  <span>Tímarit.is (Greinar & dánartilkynningar)</span>
+                  <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+                </a>
+                <a href="#" target="_blank" class="search-button" id="link-mbl">
+                  <span>Mbl.is Minningar (Morgunblaðið)</span>
+                  <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+                </a>
+                <a href="#" target="_blank" class="search-button" id="link-legstadir">
+                  <span>Legstaðaleit (Legsteinar)</span>
+                  <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+                </a>
+                <a href="#" target="_blank" class="search-button" id="link-islendingabok">
+                  <span>Íslendingabók</span>
+                  <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Working Workspace (OCR, Bio, Notes) -->
+          <div class="card" style="padding: 1.5rem; height: 100%; display: flex; flex-direction: column;">
+            <div class="tab-bar">
+              <div class="tab active" data-tab="tab-ocr">
+                <i data-lucide="scan-text" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 0.25rem;"></i>
+                1. Minningargrein (OCR)
+              </div>
+              <div class="tab" data-tab="tab-bio">
+                <i data-lucide="file-text" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 0.25rem;"></i>
+                2. Ævisaga & Sniðmát
+              </div>
+              <div class="tab" data-tab="tab-saved">
+                <i data-lucide="archive" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 0.25rem;"></i>
+                3. Vistuð gögn (<span id="saved-notes-count">0</span>)
+              </div>
+            </div>
+
+            <!-- Tab 1: OCR -->
+            <div class="tab-content" id="tab-ocr">
+              <div class="editor-grid">
+                <!-- Image upload and preview -->
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                  <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                    Taktu skjáskot af minningargrein (t.d. af Tímarit.is eða Mbl.is), dragðu hana hingað eða límdu (Ctrl+V) til að lesa textann með íslenskum stafariti.
+                  </div>
+                  
+                  <label class="ocr-dropzone" id="ocr-dropzone">
+                    <i data-lucide="image"></i>
+                    <p style="font-weight: 600;">Dragðu mynd hingað eða smelltu</p>
+                    <p style="font-size: 0.75rem; color: var(--text-muted);">Einnig hægt að líma mynd með Ctrl+V</p>
+                    <input type="file" id="ocr-file-input" accept="image/*">
+                  </label>
+
+                  <div class="ocr-preview-container" id="ocr-preview-container" style="display: none;">
+                    <span class="relation-label">Mynd í vinnslu</span>
+                    <img src="" alt="Obituary Scan" class="ocr-image-preview" id="ocr-image-preview">
+                    <button class="btn btn-secondary" id="btn-clear-image" style="align-self: flex-start;">
+                      <i data-lucide="trash-2" style="width: 14px; height: 14px;"></i> Fjarlægja mynd
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Extracted Text Area -->
+                <div class="textarea-container">
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <label for="ocr-raw-text">Texti úr mynd (Hrálesið)</label>
+                    <div id="ocr-status" style="font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                      <!-- Status or Progress -->
+                    </div>
+                  </div>
+                  <textarea id="ocr-raw-text" placeholder="Hér birtist textinn úr myndinni eftir lestur... eða þú getur límt inn texta beint af Tímarit.is."></textarea>
+                  <div class="btn-group">
+                    <button class="btn btn-primary" id="btn-run-ocr" disabled>
+                      <i data-lucide="play" style="width: 14px; height: 14px;"></i> Keyra textalestur (OCR)
+                    </button>
+                    <button class="btn btn-secondary" id="btn-format-to-bio">
+                      Senda í sniðmát <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab 2: Biography & Format -->
+            <div class="tab-content" id="tab-bio" style="display: none;">
+              <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                Hér geturðu skipulagt textann fyrir Ancestry. Veldu sniðmát til að búa til fallega uppsetta ævisögu og tímatal.
+              </div>
+              
+              <div style="display: flex; gap: 1rem; margin-bottom: 1rem; align-items: center; flex-wrap: wrap;">
+                <span class="relation-label">Sniðmát:</span>
+                <button class="btn btn-secondary" id="template-bio-btn" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">
+                  Ævisaga + Tímatal
+                </button>
+                <button class="btn btn-secondary" id="template-timeline-btn" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">
+                  Aðeins Tímatal
+                </button>
+                <button class="btn btn-secondary" id="template-simple-btn" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">
+                  Einföld minning
+                </button>
+              </div>
+
+              <div class="editor-grid" style="flex: 1;">
+                <!-- Final Markdown/Text Area -->
+                <div class="textarea-container">
+                  <label for="formatted-bio-text">Lokaútgáfa (fyrir Ancestry)</label>
+                  <textarea id="formatted-bio-text" placeholder="Veldu sniðmát eða skrifaðu textann hér. Hann er tilbúinn til að vera afritaður yfir á Ancestry."></textarea>
+                  <div class="btn-group">
+                    <button class="btn btn-primary" id="btn-copy-bio">
+                      <i data-lucide="copy" style="width: 14px; height: 14px;"></i> Afrita texta
+                    </button>
+                    <button class="btn btn-secondary" id="btn-save-note">
+                      <i data-lucide="save" style="width: 14px; height: 14px;"></i> Vista staðbundið í Saga
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Structured Preview (Timeline and parsed data) -->
+                <div style="display: flex; flex-direction: column; gap: 1rem; background: rgba(13,15,18,0.4); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-color); overflow-y: auto; max-height: 400px;">
+                  <span class="relation-label" style="border-bottom: 1px solid rgba(184,134,11,0.1); padding-bottom: 0.25rem;">
+                    Upplýsingar úr texta (Greint af kerfi)
+                  </span>
+                  
+                  <div id="parsed-fields-container" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+                      <span style="color: var(--text-muted);">Tímatal viðburða:</span>
+                      <button id="btn-extract-events" class="btn btn-secondary" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">
+                        Greina atburði úr texta
+                      </button>
+                    </div>
+                    
+                    <!-- Dynamic Timeline generated from text -->
+                    <div class="timeline-list" id="dynamic-timeline">
+                      <!-- Render events here -->
+                      <div style="font-size: 0.8rem; color: var(--text-muted); font-style: italic;">
+                        Smelltu á „Greina atburði úr texta“ til að finna sjálfkrafa ártöl og viðburði í textanum.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab 3: Saved Notes -->
+            <div class="tab-content" id="tab-saved" style="display: none;">
+              <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                Hér eru vistuð gögn og minningargreinar sem þú hefur unnið í Saga fyrir þessa persónu. Þau eru geymd í vafra tölvunnar þinnar.
+              </div>
+              <div id="saved-notes-list" style="display: flex; flex-direction: column; gap: 1rem;">
+                <!-- Render saved items -->
+                <div style="text-align: center; padding: 3rem; color: var(--text-muted);">
+                  Engin gögn vistuð fyrir þessa persónu ennþá.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i data-lucide="check-circle" style="color: var(--accent-gold);"></i>
+    <span id="toast-message">Texti afritaður!</span>
+  </div>
+
+  <!-- Help Modal -->
+  <div id="help-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.8); z-index: 2000; align-items: center; justify-content: center;">
+    <div class="card" style="max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; margin: auto;">
+      <h2 class="card-title">Hjálp og leiðbeiningar</h2>
+      <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.95rem;">
+        <p><strong>Saga</strong> er tól til að aðstoða við gagnaöflun og textagerð fyrir ættartré á Ancestry.com.</p>
+        
+        <h3>1. Flytja inn ættartré (GEDCOM)</h3>
+        <p>Til að leita auðveldlega að fólki geturðu hlaðið inn <code>.ged</code> skrá sem þú flytur út úr Ancestry:</p>
+        <ol style="margin-left: 1.5rem;">
+          <li>Opnaðu ættartréð þitt á Ancestry.com.</li>
+          <li>Farðu í <strong>Tree Settings</strong>.</li>
+          <li>Smelltu á <strong>Export Tree</strong> og sæktu <code>.ged</code> skrána.</li>
+          <li>Dragðu skrána inn á vinstri hliðina í Saga.</li>
+        </ol>
+
+        <h3>2. Finna minningargreinar og myndir</h3>
+        <p>Þegar þú velur persónu birtast sjálfvirkar leitarhnappar hægra megin á spjaldinu. Þeir opna leit á <strong>Tímarit.is</strong> eða <strong>Mbl.is</strong> með réttu nafni og fæðingar-/dánarárum.</p>
+
+        <h3>3. Textalestur (OCR) úr skjáskotum</h3>
+        <p>Þegar þú finnur grein á netinu geturðu:</p>
+        <ul style="margin-left: 1.5rem;">
+          <li>Tekið skjáskot (screenshot) af henni.</li>
+          <li>Límt myndina beint inn í Saga (Ctrl+V) í flipa 1.</li>
+          <li>Kerfið keyrir OCR á íslensku og breytir myndinni í texta.</li>
+        </ul>
+
+        <h3>4. Samsetning og afritun</h3>
+        <p>Í flipa 2 geturðu valið sniðmát. Kerfið finnur sjálfkrafa ártöl í textanum til að búa til tímatal viðburða. Smelltu á <strong>Afrita texta</strong> til að afrita þetta yfir á Ancestry.com undir <strong>Gallery -> Add Story</strong> eða <strong>Notes</strong>.</p>
+      </div>
+      <div style="margin-top: 1.5rem; text-align: right;">
+        <button class="btn btn-primary" id="btn-close-help">Loka</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Logic script -->
+  <script src="app.js"></script>
+</body>
+</html>
