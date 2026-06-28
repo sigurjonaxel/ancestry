@@ -5738,16 +5738,6 @@
 2 DATE 21 May 1822
 2 PLAC Olafsvellir,Arnessysla,Iceland
 1 _FSID M37K-6RJ
-0 @I272771959265@ INDI
-1 NAME Jón /Jónsson/
-2 GIVN Jón
-2 SURN Jónsson
-1 SEX M
-1 FAMS @F111@
-1 BIRT
-2 DATE abt 1831
-2 PLAC Kirkjubæjarklaustur, Vestur-Skaftafellssýsla, Southern, Iceland
-1 _FSID GPPC-K67
 0 @I272771959267@ INDI
 1 NAME Ingibjörg /Gísladóttir/
 2 GIVN Ingibjörg
@@ -6703,7 +6693,7 @@
 1 HUSB @I272771959276@
 1 WIFE @I272771959159@
 0 @F111@ FAM
-1 HUSB @I272771959265@
+1 HUSB @I272771958992@
 1 WIFE @I272771959152@
 1 MARR
 2 DATE 6 Nov 1856
