@@ -450,6 +450,10 @@ function initUIEvents() {
       tab.classList.add('active');
       const contentId = tab.getAttribute('data-tab');
       document.getElementById(contentId).style.display = 'block';
+      
+      if (contentId === 'tab-sources') {
+        loadSourcesMarkdown();
+      }
     });
   });
 
@@ -1271,4 +1275,39 @@ function loadSavedNotes() {
 
     container.appendChild(item);
   });
+}
+
+async function loadSourcesMarkdown() {
+  const container = document.getElementById('sources-markdown-view');
+  if (!container) return;
+  
+  container.innerHTML = '<div style="color: var(--text-muted);">Sæki heimildir...</div>';
+  
+  try {
+    const res = await fetch('/heimildir/minningargreinar.md');
+    if (!res.ok) throw new Error();
+    let text = await res.text();
+    
+    // Clean and convert markdown structure to styled HTML
+    let html = text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/^# (.*$)/gim, '<h1 style="color:var(--accent-gold); border-bottom:1px solid rgba(184,134,11,0.2); padding-bottom:0.5rem; margin: 1.5rem 0 1rem 0; font-size:1.4rem;">$1</h1>')
+      .replace(/^## (.*$)/gim, '<h2 style="color:var(--accent-gold); margin:1.2rem 0 0.8rem 0; font-size:1.15rem;">$1</h2>')
+      .replace(/^### (.*$)/gim, '<h3 style="color:#fff; margin:1rem 0 0.5rem 0; font-size:1rem;">$1</h3>')
+      .replace(/^\> (.*$)/gim, '<blockquote style="border-left: 3px solid var(--accent-gold); padding-left: 1rem; margin: 1rem 0; color: var(--text-secondary); font-style: italic;">$1</blockquote>')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color: var(--accent-gold); text-decoration: underline;">$1</a>')
+      .replace(/^- (.*$)/gim, '<li style="margin-left: 1.5rem; list-style-type: disc; margin-bottom: 0.25rem;">$1</li>')
+      .replace(/\n\n/g, '<p style="margin-bottom: 1rem;"></p>');
+      
+    // Replace markdown image tags with responsive HTML images
+    html = html.replace(/!\[(.*?)\]\((.*?)\)/g, '<div style="margin:1.5rem 0; text-align:center;"><img src="$2" alt="$1" style="max-width:100%; border:1px solid var(--border-color); border-radius:6px; max-height:400px; display:block; margin:0 auto 0.5rem auto; box-shadow: 0 4px 10px rgba(0,0,0,0.3);"><span style="font-size:0.8rem; color:var(--text-muted);">$1</span></div>');
+
+    container.innerHTML = html;
+  } catch (err) {
+    container.innerHTML = '<div style="color: var(--status-warning); padding: 1rem;">Gat ekki hlaðið inn heimildaskrá. Gakktu úr skugga um að skráin <code>heimildir/minningargreinar.md</code> sé til staðar og að vefþjónninn sé í gangi.</div>';
+  }
 }

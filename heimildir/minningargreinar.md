@@ -43,3 +43,13 @@ Hér eru upplýsingarnar og myndirnar sem við sóttum af Tímarit.is og Morgunb
 ## 3. Svana Sigtryggsdóttir (Móðir Lóu)
 * **Heimild:** Morgunblaðið / Andlátstilkynning, júní 2020.
 * **Lykilupplýsingar:** Svana fæddist á Innri-Kleif í Breiðdal 28. maí 1953 og lést 18. júní 2020. Foreldrar hennar voru Sigtryggur Runólfsson (f. 1921, d. 2005) og Guðbjörg Sigurpálsdóttir (f. 1926, d. 2017). Svana átti 10 systkini: Jón Guðlaug, Fríðu Hrönn (látin), Rósu Pálínu, Magnús Arnar (látinn), Sigrúnu, Vilberg Smára, Hreinn Ómar, Runólf, Svölu og eitt sveinbarn sem lést á fyrsta ári.
+
+## Sigurjón Einarsson (1895–1983) & Þorbjörg Benediktsdóttir (1898–1992)
+> **Búseta:** Árbær á Mýrum, Austur-Skaftafellssýsla
+
+### Dánartilkynning Sigurjóns (Morgunblaðið, 5. mars 1983)
+* Sigurjón Einarsson frá Árbæ lést 28. febrúar 1983. Hann var jarðsunginn frá Brunnhólskirkju mánudaginn 7. mars 1983.
+* Eftirlifandi maki: Þorbjörg Benediktsdóttir, og börn þeirra.
+
+### Dánartilkynning Þorbjargar (Morgunblaðið, 29. febrúar 1992)
+* Þorbjörg Benediktsdóttir frá Árbæ lést 27. febrúar 1992 á hjúkrunarheimilinu Skjólgarði á Höfn.

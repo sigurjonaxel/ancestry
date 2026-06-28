@@ -30,9 +30,12 @@
 2 DATE 10 Jan 1974
 1 _FSID PHMS-V5X
 1 NOTE [Lokið] Rannsóknarferill:
-2 CONT * Skoðað í Íslendingabók (persónuvernd hindrar beinan aðgang).
-2 CONT * Upplýsingar sóttar úr minningargreinum afa og ömmu á Tímarit.is.
-2 CONT * Skráð 3 systkini (Unnsteinn Fannar, Jón Loftur, Guðbjörg Lilja).
+2 CONT ● Aðferð: Innskráð leit (Íslendingabók)
+2 CONT    - Aðgerð: Reynt að rekja beina framætt Lóu.
+2 CONT    - Niðurstaða: Leit óvirk vegna persónuverndarreglna á Íslendingabók.
+2 CONT ● Aðferð: Vefleit (Tímarit.is & Morgunblaðið)
+2 CONT    - Aðgerð: Leit í dánartilkynningum og minningargreinum afa og ömmu.
+2 CONT    - Niðurstaða: Fundust 3 alsystkini Lóu (Unnsteinn Fannar, Jón Loftur, Guðbjörg Lilja) sem vantaði, og þau skráð í loa.ged.
 0 @I272771958734@ INDI
 1 NAME Gislunn /Arnadottir/
 2 GIVN Gislunn
@@ -169,8 +172,9 @@
 2 PLAC Reykjavík
 1 _FSID PHMS-GFS
 1 NOTE [Lokið] Rannsóknarferill:
-2 CONT * Sóttar upplýsingar úr dánartilkynningum og minningargreinum (júní 2020).
-2 CONT * Skráð 10 systkini Svönu (móðursystkin Lóu).
+2 CONT ● Aðferð: Vefleit (Morgunblaðið Greinasafn)
+2 CONT    - Aðgerð: Leitað að minningargrein um Svönu Sigtryggsdóttur (d. 2020).
+2 CONT    - Niðurstaða: Minningargrein frá júní 2020 fannst. Hún staðfesti 10 systkini Svönu (móðursystkin Lóu), sem voru öll skráð í loa.ged.
 0 @I272771958747@ INDI
 1 NAME Gudrun /Gisladottir/
 2 GIVN Gudrun
@@ -276,9 +280,9 @@
 1 _FSID P423-JSC
 1 _FSID PHMS-53L
 1 NOTE [Lokið] Rannsóknarferill:
-2 CONT * Leit gerð í minningargreinum í Morgunblaðinu (2002, 2006, 2011).
-2 CONT * Staðfestur líffræðilegur faðir (Sveinn Unnsteinn Jónsson) og fósturfaðir (Loftur Jóhannsson).
-2 CONT * Bætt við 4 föðursystkinum Lóu (börnum Lilju).
+2 CONT ● Aðferð: Vefleit (Morgunblaðið Greinasafn)
+2 CONT    - Aðgerð: Leitað að minningargreinum um Ingólf Árna Sveinsson (d. 2006).
+2 CONT    - Niðurstaða: Fundust 2 minningargreinar (2002 & 2011). Staðfestur líffræðilegur faðir (Sveinn Unnsteinn Jónsson) og fósturfaðir (Loftur Jóhannsson). Bætt við 4 hálfsystkinum föðurættar (Liljubörn).
 0 @I272771958755@ INDI
 1 NAME Vernhard /Jonsson/
 2 GIVN Vernhard
