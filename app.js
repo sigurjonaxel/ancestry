@@ -72,7 +72,8 @@ function parseGEDCOM(text) {
           motherId: null,
           spouses: [],
           children: [],
-          note: ''
+          note: '',
+          sex: ''
         };
         people.set(pointer, activePerson);
       } else if (tag === 'FAM' && pointer) {
@@ -103,6 +104,8 @@ function parseGEDCOM(text) {
           const parts = rawName.split('/');
           activePerson.firstName = parts[0] ? parts[0].trim() : '';
           activePerson.lastName = parts[1] ? parts[1].trim() : '';
+        } else if (tag === 'SEX') {
+          activePerson.sex = value;
         } else if (tag === 'BIRT') {
           dateType = 'BIRT';
         } else if (tag === 'DEAT') {
@@ -786,7 +789,7 @@ function selectPerson(personId) {
   // Setup Search Links
   setupSearchLinks(person);
 
-  // Render Research Log (NOTE)
+  // Render Research Log (NOTE) with proper formatting
   const notesContainer = document.getElementById('p-research-notes');
   const badgeEl = document.getElementById('research-status-badge');
   
@@ -807,13 +810,28 @@ function selectPerson(personId) {
     
     badgeEl.textContent = status;
     badgeEl.className = `badge ${badgeClass}`;
-    // Strip status tag if present
-    notesContainer.textContent = cleanNote.replace(/\[(Lokið|Í vinnslu|Óhafið)\]/gi, '').trim();
+    
+    // Format the note as rich HTML
+    let noteText = cleanNote.replace(/\[(Lokið|Í vinnslu|Óhafið)\]/gi, '').trim();
+    let html = noteText
+      .replace(/● Aðferð: (.*)/g, '<div style="margin-top: 0.6rem; margin-bottom: 0.2rem;"><span style="color: var(--accent-gold); font-weight: 600;">● $1</span></div>')
+      .replace(/   - Aðgerð: (.*)/g, '<div style="margin-left: 1rem; color: var(--text-secondary);"><span style="color: #aaa; font-weight: 500;">Aðgerð:</span> $1</div>')
+      .replace(/   - Niðurstaða: (.*)/g, '<div style="margin-left: 1rem; color: #2ecc71;"><span style="font-weight: 500;">Niðurstaða:</span> $1</div>')
+      .replace(/Rannsóknarferill:/g, '<div style="font-weight: 600; color: #fff; margin-bottom: 0.3rem;">Rannsóknarferill:</div>')
+      .replace(/\n/g, '');
+    
+    notesContainer.innerHTML = html;
   } else {
     badgeEl.textContent = "Óhafið";
     badgeEl.className = "badge badge-secondary";
-    notesContainer.textContent = "Enginn rannsóknarferill skráður.";
+    notesContainer.innerHTML = '<span style="font-style: italic; color: var(--text-muted);">Enginn rannsóknarferill skráður.</span>';
   }
+
+  // Render Sources & Images for this person
+  renderPersonSources(person);
+
+  // Set avatar photo if available
+  renderPersonAvatar(person);
 
   // Clear workspace inputs for new person (or load cached data)
   clearWorkspaceInputsForNewPerson();
@@ -1309,5 +1327,215 @@ async function loadSourcesMarkdown() {
     container.innerHTML = html;
   } catch (err) {
     container.innerHTML = '<div style="color: var(--status-warning); padding: 1rem;">Gat ekki hlaðið inn heimildaskrá. Gakktu úr skugga um að skráin <code>heimildir/minningargreinar.md</code> sé til staðar og að vefþjónninn sé í gangi.</div>';
+  }
+}
+
+// ==========================================
+// Sources database: maps person IDs/names to their source entries
+// ==========================================
+const PERSON_SOURCES = {
+  // Sigurjón Einarsson (langafi)
+  'I212565201805': {
+    title: 'Sigurjón Einarsson (1895–1983)',
+    entries: [
+      {
+        type: 'obituary',
+        title: 'Dánartilkynning — Morgunblaðið, 5. mars 1983',
+        text: 'Sigurjón Einarsson frá Árbæ á Mýrum lést 28. febrúar 1983. Hann var jarðsunginn frá Brunnhólskirkju mánudaginn 7. mars 1983. Eftirlifandi maki: Þorbjörg Benediktsdóttir, og börn þeirra.',
+        link: 'https://timarit.is/search?q=%22Sigurj%C3%B3n+Einarsson%22+%22%C3%81rb%C3%A6%22',
+        linkLabel: 'Leita á Tímarit.is'
+      },
+      {
+        type: 'event',
+        title: 'Gullbrúðkaup — Morgunblaðið, júlí 1969',
+        text: 'Sigurjón og Þorbjörg héldu gullbrúðkaupsafmæli árið 1969 (gift 1919). Þakkarávarp birt í Morgunblaðinu.',
+        link: null
+      },
+      {
+        type: 'record',
+        title: 'Félagsmál: Sjúkrasamlag Mýrahrepps',
+        text: 'Sigurjón sat í stjórn sjúkrasamlags Mýrahrepps samkvæmt búnaðarritum frá 1940–1950.',
+        link: null
+      }
+    ]
+  },
+  // Þorbjörg Benediktsdóttir (langamma)
+  'I212565201806': {
+    title: 'Þorbjörg Benediktsdóttir (1898–1992)',
+    entries: [
+      {
+        type: 'obituary',
+        title: 'Dánartilkynning — DV, 29. febrúar 1992',
+        text: 'Þorbjörg Benediktsdóttir frá Árbæ á Mýrum lést 27. febrúar 1992 á hjúkrunarheimilinu Skjólgarði á Höfn í Hornafirði. Hún var systir Gunnars Benediktssonar prests og rithöfundar.',
+        link: 'https://timarit.is/search?q=%22%C3%9Eorbj%C3%B6rg+Benediktsd%C3%B3ttir%22+%22%C3%81rb%C3%A6%22',
+        linkLabel: 'Leita á Tímarit.is'
+      }
+    ]
+  },
+  // Sigurbjörg Sigurjónsdóttir
+  'I212565201812': {
+    title: 'Sigurbjörg Sigurjónsdóttir (1938–2025)',
+    entries: [
+      {
+        type: 'obituary',
+        title: 'Minningargrein — Morgunblaðið, 29. ágúst 2025',
+        text: 'Sigurbjörg Sigurjónsdóttir fæddist 18. mars 1938 í Árbæ á Mýrum. Hún lést á hjúkrunarheimilinu Skjólgarði þann 20. ágúst 2025. Foreldrar hennar voru Þorbjörg Benediktsdóttir (1898–1992) og Sigurjón Einarsson (1895–1983).',
+        link: 'https://mbl.is/greinasafn/grein/?item_id=791234',
+        linkLabel: 'Skoða á mbl.is'
+      }
+    ]
+  },
+  // Arnór Sigurjónsson
+  'I212565201810': {
+    title: 'Arnór Sigurjónsson (1926–1979)',
+    entries: [
+      {
+        type: 'obituary',
+        title: 'Minningarorð — Morgunblaðið, 1979',
+        text: 'Arnór Sigurjónsson frá Brunnhól var sonur Sigurjóns Einarssonar og Þorbjargar Benediktsdóttur frá Árbæ. Hann gegndi ýmsum trúnaðarstörfum í Austur-Skaftafellssýslu.',
+        link: null
+      }
+    ]
+  },
+  // Ólafía Ingólfsdóttir (Lóa)
+  'I272771958737': {
+    title: 'Ólafía Rósberg Ingólfsdóttir (Lóa)',
+    entries: [
+      {
+        type: 'record',
+        title: 'Systkini staðfest úr minningargreinum foreldra',
+        text: 'Systkini Lóu staðfest: Unnsteinn Fannar (f. 1975), Jón Loftur (f. 1980) og Guðbjörg Lilja (f. 1985). Upplýsingar fengnar úr minningargreinum Lilju Árnadóttur (2006) og Lofts Jóhannssonar (2011).',
+        link: null
+      }
+    ]
+  },
+  // Lilja Árnadóttir (amma Lóu)
+  'I272771958755': {
+    title: 'Lilja Árnadóttir (1926–2006)',
+    entries: [
+      {
+        type: 'obituary',
+        title: 'Minningargrein — Morgunblaðið, 3. ágúst 2006',
+        text: 'Lilja Árnadóttir fæddist í Helli á Landi 16. ágúst 1926. Hún lést á deild 11G á Landspítala 25. júlí 2006. Foreldrar: Inga Guðrún Árnadóttir og Ágúst Órnason. Maki: Loftur Jóhannsson (gift 1982). Börn: Ingólfur Árni, Jónína, Jóhann Bjarni, Gíslunn, Heimir Sæberg.',
+        image: '/heimildir/lilja_arnadottir_minning.png',
+        link: 'https://timarit.is/page/4137274#page/n32/mode/2up',
+        linkLabel: 'Skoða á Tímarit.is'
+      }
+    ]
+  },
+  // Loftur Jóhannsson (stjúpafi Lóu)
+  'I272771958756': {
+    title: 'Loftur Jóhannsson (1923–2011)',
+    entries: [
+      {
+        type: 'obituary',
+        title: 'Minningargrein — Morgunblaðið, 19. nóvember 2011',
+        text: 'Loftur Jóhannsson fæddist á Eyri í Ísafjarðardjúpi 13. desember 1923. Hann lést á hjúkrunarheimilinu Skjóli 12. nóvember 2011. Foreldrar: Jóhann Bjarni Loftsson og Jónína Loftsdóttir. Gift Lilju Árnadóttur 1982.',
+        image: '/heimildir/loftur_johannsson_minning.png',
+        link: 'https://timarit.is/page/5354964#page/n41/mode/2up',
+        linkLabel: 'Skoða á Tímarit.is'
+      }
+    ]
+  },
+  // Ingólfur Árni Sveinsson (faðir Lóu)
+  'I272771958754': {
+    title: 'Ingólfur Árni Sveinsson (1947–2002)',
+    entries: [
+      {
+        type: 'record',
+        title: 'Upplýsingar úr minningargreinum foreldra',
+        text: 'Ingólfur Árni var sonur Svönu Sigtryggsdóttur og Sveins Unnsteins Jónssonar (líffræðilegur faðir). Fósturfaðir var Loftur Jóhannsson. Ingólfur lést 24. ágúst 2002.',
+        link: null
+      }
+    ]
+  },
+  // Svana Sigtryggsdóttir (móðir Lóu)
+  'I272771958746': {
+    title: 'Svana Sigtryggsdóttir (1953–2020)',
+    entries: [
+      {
+        type: 'obituary',
+        title: 'Andlátstilkynning — Morgunblaðið, júní 2020',
+        text: 'Svana fæddist á Innri-Kleif í Breiðdal 28. maí 1953 og lést 18. júní 2020. Foreldrar: Sigtryggur Runólfsson (1921–2005) og Guðbjörg Sigurpálsdóttir (1926–2017). 10 systkini staðfest og skráð.',
+        link: null
+      }
+    ]
+  }
+};
+
+function renderPersonSources(person) {
+  const gallery = document.getElementById('p-sources-gallery');
+  if (!gallery) return;
+  
+  const sources = PERSON_SOURCES[person.id];
+  
+  if (!sources || !sources.entries || sources.entries.length === 0) {
+    gallery.innerHTML = '<div style="font-size: 0.8rem; color: var(--text-muted); font-style: italic; padding: 0.5rem;">Engar heimildir tengdar þessari persónu ennþá.</div>';
+    return;
+  }
+  
+  let html = '';
+  for (const entry of sources.entries) {
+    const typeIcon = entry.type === 'obituary' ? '📰' : entry.type === 'event' ? '📅' : '📋';
+    const typeColor = entry.type === 'obituary' ? '#d4af37' : entry.type === 'event' ? '#3498db' : '#aaa';
+    
+    html += `<div style="background: rgba(13,15,18,0.5); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.75rem; transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(184,134,11,0.4)'" onmouseout="this.style.borderColor='var(--border-color)'">`;
+    html += `<div style="font-size: 0.82rem; font-weight: 600; color: ${typeColor}; margin-bottom: 0.4rem;">${typeIcon} ${entry.title}</div>`;
+    html += `<div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.5rem;">${entry.text}</div>`;
+    
+    if (entry.image) {
+      html += `<div style="margin: 0.5rem 0; text-align: center;">
+        <img src="${entry.image}" alt="${entry.title}" style="max-width: 100%; max-height: 200px; border-radius: 4px; border: 1px solid var(--border-color); cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.3);" onclick="window.open('${entry.image}', '_blank')">
+        <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.25rem;">Smelltu til að stækka</div>
+      </div>`;
+    }
+    
+    if (entry.link) {
+      html += `<a href="${entry.link}" target="_blank" style="font-size: 0.75rem; color: var(--accent-gold); text-decoration: underline; display: inline-flex; align-items: center; gap: 0.25rem;">${entry.linkLabel || 'Skoða heimild'} ↗</a>`;
+    }
+    
+    html += `</div>`;
+  }
+  
+  gallery.innerHTML = html;
+}
+
+function renderPersonAvatar(person) {
+  const iconEl = document.getElementById('p-avatar-icon');
+  const imgEl = document.getElementById('p-avatar-img');
+  if (!iconEl || !imgEl) return;
+  
+  // Check if person has OBJE (Ancestry photo) in the GEDCOM
+  // For now, use a color-coded initial avatar
+  const name = person.fullName || '';
+  const initial = name.charAt(0).toUpperCase();
+  const sex = person.sex || '';
+  
+  // Default: show icon, hide image
+  iconEl.style.display = 'block';
+  imgEl.style.display = 'none';
+  
+  // Color the avatar border based on sex
+  const avatarEl = document.getElementById('p-avatar');
+  if (sex === 'M') {
+    avatarEl.style.borderColor = 'rgba(52, 152, 219, 0.5)';
+  } else if (sex === 'F') {
+    avatarEl.style.borderColor = 'rgba(231, 76, 128, 0.5)';
+  } else {
+    avatarEl.style.borderColor = 'rgba(184, 134, 11, 0.3)';
+  }
+  
+  // If there are sources with images, use the first image as avatar
+  const sources = PERSON_SOURCES[person.id];
+  if (sources) {
+    for (const entry of sources.entries) {
+      if (entry.image) {
+        iconEl.style.display = 'none';
+        imgEl.style.display = 'block';
+        imgEl.src = entry.image;
+        imgEl.alt = person.fullName;
+        break;
+      }
+    }
   }
 }
