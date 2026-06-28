@@ -20,6 +20,7 @@
         <span class="brand-tagline">Ættfræðiaðstoð fyrir Ancestry</span>
       </div>
       <div class="header-actions">
+        <button class="btn btn-secondary" id="btn-load-local" style="background: var(--accent-gold); color: black;">Hlaða inn þínum ættartrjám</button>
         <button class="btn btn-secondary" id="btn-load-mock">Hlaða inn dæmatrjám</button>
         <button class="btn btn-primary" id="btn-show-help">Hjálp</button>
       </div>
@@ -72,10 +73,11 @@
           <i data-lucide="users"></i>
           <h2 style="margin-top: 1rem;">Veldu persónu til að hefjast handa</h2>
           <p style="max-width: 500px; margin-top: 0.5rem; color: var(--text-secondary);">
-            Hladdu inn .ged skrá af tölvunni þinni eða notaðu dæmatrén. Veldu síðan persónu úr listanum vinstra megin til að leita að minningargreinum, gera OCR og útbúa texta fyrir Ancestry.
+            Sæktu .ged skrárnar úr Ancestry og vistaðu þær í verkefnamöppunni sem <strong>loa.ged</strong> og <strong>sigurjon.ged</strong>, smelltu svo á gullna hnappinn. Einnig er hægt að draga inn aðrar GEDCOM skrár eða nota dæmatrén.
           </p>
-          <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-            <button class="btn btn-primary" id="btn-load-mock-2">Prófa dæmatré (Lóa & Sigurjón)</button>
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+            <button class="btn btn-primary" id="btn-load-local-2" style="background: var(--accent-gold); color: black; border-color: var(--accent-gold);">Hlaða inn þínum ættartrjám</button>
+            <button class="btn btn-secondary" id="btn-load-mock-2">Prófa dæmatré</button>
           </div>
         </div>
 

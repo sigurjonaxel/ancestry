@@ -354,6 +354,44 @@ function loadMockTrees() {
   showToast('Dæmatré hlaðin inn!');
 }
 
+async function loadLocalTrees() {
+  showToast('Sæki ættartré af vefþjóni...');
+  try {
+    const [loaRes, sigurjonRes] = await Promise.all([
+      fetch('/loa.ged').catch(() => null),
+      fetch('/sigurjon.ged').catch(() => null)
+    ]);
+    
+    let loadedAny = false;
+    
+    if (loaRes && loaRes.ok) {
+      const loaText = await loaRes.text();
+      state.trees['Lóa — Innflutt ættartré'] = parseGEDCOM(loaText);
+      loadedAny = true;
+    }
+    if (sigurjonRes && sigurjonRes.ok) {
+      const sigurjonText = await sigurjonRes.text();
+      state.trees['Sigurjón Axel — Innflutt ættartré'] = parseGEDCOM(sigurjonText);
+      loadedAny = true;
+    }
+    
+    if (loadedAny) {
+      updateTreeSelector();
+      if (state.trees['Sigurjón Axel — Innflutt ættartré']) {
+        selectTree('Sigurjón Axel — Innflutt ættartré');
+      } else if (state.trees['Lóa — Innflutt ættartré']) {
+        selectTree('Lóa — Innflutt ættartré');
+      }
+      showToast('Þín ættartré hlaðin inn!');
+    } else {
+      showToast('Fann ekki loa.ged eða sigurjon.ged í verkefnamöppunni.');
+    }
+  } catch (err) {
+    console.error(err);
+    showToast('Villa við að sækja ættartré.');
+  }
+}
+
 // ==========================================
 // 3. UI Interactions & Event Handlers
 // ==========================================
@@ -362,6 +400,8 @@ function initUIEvents() {
   // Tree Loading
   document.getElementById('btn-load-mock').addEventListener('click', loadMockTrees);
   document.getElementById('btn-load-mock-2').addEventListener('click', loadMockTrees);
+  document.getElementById('btn-load-local').addEventListener('click', loadLocalTrees);
+  document.getElementById('btn-load-local-2').addEventListener('click', loadLocalTrees);
   
   const fileInput = document.getElementById('gedcom-file-input');
   fileInput.addEventListener('change', handleGedcomUpload);
