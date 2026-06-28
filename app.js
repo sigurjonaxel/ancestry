@@ -1449,15 +1449,35 @@ const PERSON_SOURCES = {
       }
     ]
   },
+  // Sigtryggur Runólfsson (afi Lóu)
+  'I272771958762': {
+    title: 'Sigtryggur Runólfsson (1921–1988)',
+    entries: [
+      {
+        type: 'obituary',
+        title: 'Eldsvoði í Reykjavík — Morgunblaðið, janúar 1958',
+        text: 'Eldur kom upp á heimili Sigtryggs og fjölskyldu hans þann 28. janúar 1958. Eldurinn lokaði útidyrunum svo fjölskyldan varð að bjarga sér út um glugga. Guðbjörg (eiginkonan) lýsti því að það hefði verið þeim til lífs að tveggja ára sonur þeirra vaknaði og vakti foreldrana. Sigtryggur hljóp inn í reykinn til að bjarga sex ára barni þeirra.',
+        link: 'https://timarit.is/search?q=%22Sigtryggur+Run%C3%B3lfsson%22+%22kvikna%C3%B0i%22',
+        linkLabel: 'Skoða á Tímarit.is'
+      },
+      {
+        type: 'record',
+        title: 'Starfsferill og ævi',
+        text: 'Sigtryggur fæddist 11. júlí 1921 að Hvammi í Fáskrúðsfirði. Hann bjó áður sem bóndi að Innri-Kleif í Breiðdal (þar sem Svana fæddist). Hann flutti til Reykjavíkur 1954, var húsasmiður að mennt og vann lengi hjá Sambandi íslenskra samvinnufélaga (SÍS). Hann þótti hógvær, heimakær og vel hagorður. Hann lést 7. september 1988.',
+        link: null
+      }
+    ]
+  },
   // Svana Sigtryggsdóttir (móðir Lóu)
   'I272771958746': {
     title: 'Svana Sigtryggsdóttir (1953–2020)',
     entries: [
       {
         type: 'obituary',
-        title: 'Andlátstilkynning — Morgunblaðið, júní 2020',
-        text: 'Svana fæddist á Innri-Kleif í Breiðdal 28. maí 1953 og lést 18. júní 2020. Foreldrar: Sigtryggur Runólfsson (1921–2005) og Guðbjörg Sigurpálsdóttir (1926–2017). 10 systkini staðfest og skráð.',
-        link: null
+        title: 'Minningargrein — Morgunblaðið, 2020',
+        text: 'Svana fæddist á Innri-Kleif í Breiðdal 28. maí 1953. Hún lést á Landspítalanum í Fossvogi 19. apríl 2020. Eiginmaður Svönu var Ingólfur Árni Sveinsson (1947–2002) og eignuðust þau börnin Ólafíu Rósbjörgu (Lóu), Unnstein Fannar og Jón Loft. Foreldrar hennar voru Sigtryggur Runólfsson (1921–1988) og Guðbjörg Sigurpálsdóttir (1926–2014).',
+        link: 'https://mbl.is/greinasafn/',
+        linkLabel: 'Skoða á mbl.is'
       }
     ]
   }
