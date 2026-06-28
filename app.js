@@ -1467,7 +1467,8 @@ function renderPersonSources(person) {
   const gallery = document.getElementById('p-sources-gallery');
   if (!gallery) return;
   
-  const sources = PERSON_SOURCES[person.id];
+  const cleanId = person.id.replace(/@/g, '');
+  const sources = PERSON_SOURCES[cleanId];
   
   if (!sources || !sources.entries || sources.entries.length === 0) {
     gallery.innerHTML = '<div style="font-size: 0.8rem; color: var(--text-muted); font-style: italic; padding: 0.5rem;">Engar heimildir tengdar þessari persónu ennþá.</div>';
@@ -1526,7 +1527,8 @@ function renderPersonAvatar(person) {
   }
   
   // If there are sources with images, use the first image as avatar
-  const sources = PERSON_SOURCES[person.id];
+  const cleanId = person.id.replace(/@/g, '');
+  const sources = PERSON_SOURCES[cleanId];
   if (sources) {
     for (const entry of sources.entries) {
       if (entry.image) {
