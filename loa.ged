@@ -21,8 +21,8 @@
 0 @SUBM1@ SUBM
 1 NAME Ancestry.com Member Trees Submitter
 0 @I272771958737@ INDI
-1 NAME Ólafía /Ingólfsdóttir/
-2 GIVN Ólafía
+1 NAME Ólafía Rósbjörg /Ingólfsdóttir/
+2 GIVN Ólafía Rósbjörg
 2 SURN Ingólfsdóttir
 1 SEX F
 1 FAMC @F133@
@@ -397,6 +397,10 @@
 2 PLAC Reykjavík
 1 _FSID PHMS-2D2
 1 OBJE @O1@
+1 NOTE Rannsóknarferill:
+2 CONT ● Aðferð: Vefleit (Tímarit.is & Morgunblaðið)
+2 CONT - Aðgerð: Leitað að minningargreinum til að finna atvik úr lífi hans.
+2 CONT - Niðurstaða: Fannst grein um eldsvoða á heimili hans í Rvík (jan 1958). Staðfest að hann bjó áður á Innri-Kleif sem bóndi. Heimildir færðar í gagnagrunn.
 0 @I272771958763@ INDI
 1 NAME Bjarni /Magnusson/
 2 GIVN Bjarni
