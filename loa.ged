@@ -1,0 +1,6957 @@
+0 HEAD
+1 SUBM @SUBM1@
+1 SOUR Ancestry.com Family Trees
+2 NAME Ancestry.com Member Trees
+2 VERS 2025.08
+2 _TREE Lóa
+3 RIN 210738953
+3 _ENV prd
+2 CORP Ancestry.com
+3 PHON 801-705-7000
+3 WWW www.ancestry.com
+3 ADDR 1300 West Traverse Parkway
+4 CONT Lehi, UT  84043
+4 CONT USA
+1 DATE 28 Jun 2026
+2 TIME 12:09:27
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+0 @SUBM1@ SUBM
+1 NAME Ancestry.com Member Trees Submitter
+0 @I272771958737@ INDI
+1 NAME Ólafía /Ingólfsdóttir/
+2 GIVN Ólafía
+2 SURN Ingólfsdóttir
+1 SEX F
+1 FAMC @F133@
+1 BIRT
+2 DATE 10 Jan 1974
+1 _FSID PHMS-V5X
+0 @I272771958734@ INDI
+1 NAME Gislunn /Arnadottir/
+2 GIVN Gislunn
+2 SURN Arnadottir
+1 SEX F
+1 FAMC @F135@
+1 FAMS @F124@
+1 BIRT
+2 DATE 22 Aug 1866
+1 CHR
+2 DATE 22 Aug 1866
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3XS-LXQ
+0 @I272771958735@ INDI
+1 NAME Loftur /Jóhannsson/
+2 GIVN Loftur
+2 SURN Jóhannsson
+1 SEX M
+1 FAMC @F146@
+1 FAMS @F31@
+1 BIRT
+2 DATE 13 Dec 1923
+1 DEAT
+2 DATE 12 Nov 2011
+1 _FSID P42S-KG9
+0 @I272771958736@ INDI
+1 NAME Jóhanna Ásta /Hannesdóttir/
+2 GIVN Jóhanna Ásta
+2 SURN Hannesdóttir
+1 SEX F
+1 FAMC @F35@
+1 FAMS @F26@
+1 FAMS @F67@
+1 BIRT
+2 DATE 7 Jun 1898
+2 PLAC Storu Sandvik, Kaldadarnes, Arness, Iceland
+1 DEAT
+2 DATE 4 Jul 1966
+1 _FSID MMT4-K37
+0 @I272771958739@ INDI
+1 NAME Thuridur /Jonsdóttir/
+2 GIVN Thuridur
+2 SURN Jonsdóttir
+1 SEX F
+1 FAMC @F128@
+1 FAMS @F72@
+1 BIRT
+2 DATE 31 Aug 1863
+2 PLAC Dyrhólar, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 2 Sep 1863
+2 PLAC Dyrholar,Vestur-Skaftafellssysla,Iceland
+1 _FSID M3JK-4GP
+0 @I272771958740@ INDI
+1 NAME Gestur /Johannsson/
+2 GIVN Gestur
+2 SURN Johannsson
+1 SEX M
+1 FAMC @F146@
+1 BIRT
+2 DATE 21 Jun 1929
+2 PLAC Solkutoft, Eyrarbakki, Arness, Iceland
+1 DEAT
+2 DATE 14 Jan 1974
+1 _FSID MMT4-2CB
+0 @I272771958741@ INDI
+1 NAME Steindor /Hannesson/
+2 GIVN Steindor
+2 SURN Hannesson
+1 SEX M
+1 FAMC @F35@
+1 FAMS @F18@
+1 BIRT
+2 DATE 9 Sep 1888
+2 PLAC Midhus, Kaldadarnes, Arness, Iceland
+1 CHR
+2 DATE 9 Sep 1888
+2 PLAC KALDADARNES, ARNESSYSLA, ICELAND
+1 DEAT
+2 DATE 20 Dec 1966
+1 _FSID MMT4-KGK
+0 @I272771958742@ INDI
+1 NAME Jonina /Loftsdottir/
+2 GIVN Jonina
+2 SURN Loftsdottir
+1 SEX F
+1 FAMC @F36@
+1 FAMS @F127@
+1 BIRT
+2 DATE 11 Nov 1900
+2 PLAC Kaldaðarnes, Árnessýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 7 May 1977
+1 _FSID M8GD-5PC
+0 @I272771958743@ INDI
+1 NAME Jon /Einarsson/
+2 GIVN Jon
+2 SURN Einarsson
+1 SEX M
+1 FAMC @F37@
+1 FAMS @F124@
+1 BIRT
+2 DATE 15 Jun 1860
+1 CHR
+2 DATE 15 Jun 1860
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID M3XF-KT4
+0 @I272771958745@ INDI
+1 NAME Helga /Gísladóttir/
+2 GIVN Helga
+2 SURN Gísladóttir
+1 SEX F
+1 FAMC @F70@
+1 FAMS @F135@
+1 FAMS @F63@
+1 BIRT
+2 DATE 20 Jun 1830
+2 PLAC Iceland
+1 DEAT
+2 DATE 10 Feb 1919
+1 _FSID K485-S1Z
+0 @I272771958746@ INDI
+1 NAME Svana /Sigtryggsdóttir/
+2 GIVN Svana
+2 SURN Sigtryggsdóttir
+1 SEX F
+1 FAMC @F143@
+1 FAMS @F133@
+1 BIRT
+2 DATE 1953
+2 PLAC Innri-Kleif, Suður-Múlasýsla, Eastern, Iceland
+1 DEAT
+2 DATE 2020
+2 PLAC Reykjavík
+1 _FSID PHMS-GFS
+0 @I272771958747@ INDI
+1 NAME Gudrun /Gisladottir/
+2 GIVN Gudrun
+2 SURN Gisladottir
+1 SEX F
+1 FAMC @F81@
+1 FAMS @F134@
+1 BIRT
+2 DATE 19 Aug 1830
+1 CHR
+2 DATE 19 Aug 1830
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 DEAT
+2 DATE 5 Oct 1905
+1 _FSID M3XD-TJM
+0 @I272771958748@ INDI
+1 NAME Ágúst /Árnason/
+2 GIVN Ágúst
+2 SURN Árnason
+1 SEX M
+1 FAMC @F139@
+1 BIRT
+2 DATE 13 Aug 1927
+1 DEAT
+2 DATE 28 Sep 1930
+1 _FSID P93V-Y36
+0 @I272771958749@ INDI
+1 NAME Ingiridur /Guðmundsdóttir/
+2 GIVN Ingiridur
+2 SURN Guðmundsdóttir
+1 SEX F
+1 FAMC @F21@
+1 FAMS @F132@
+1 BIRT
+2 DATE 24 Oct 1827
+1 CHR
+2 DATE 25 Oct 1827
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 29 Dec 1917
+1 _FSID K4JB-6G1
+0 @I272771958750@ INDI
+1 NAME Sigríður /Bjarnadóttir/
+2 GIVN Sigríður
+2 SURN Bjarnadóttir
+1 SEX F
+1 FAMC @F144@
+1 FAMS @F128@
+1 BIRT
+2 DATE abt 1830
+2 PLAC Þykkvabæjarklaustur, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 _FSID GFCM-WZM
+0 @I272771958751@ INDI
+1 NAME Einar Sigursteinn /Bergthorsson/
+2 GIVN Einar Sigursteinn
+2 SURN Bergthorsson
+1 SEX M
+1 FAMS @F129@
+1 BIRT
+2 DATE 4 Mar 1920
+2 PLAC Reykjavik, Reykjavik, Gullbringu, Iceland
+1 DEAT
+2 DATE 2 Nov 1988
+1 _FSID MR3F-XXW
+0 @I272771958752@ INDI
+1 NAME Ingiridur /Oddsdottir/
+2 GIVN Ingiridur
+2 SURN Oddsdottir
+1 SEX F
+1 FAMC @F29@
+1 FAMS @F139@
+1 BIRT
+2 DATE 14 Mar 1887
+2 PLAC Lúnansholt, Rangárvallasýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 24 Feb 1937
+1 _FSID G86V-1GW
+0 @I272771958753@ INDI
+1 NAME Haflidi /Haflidason/
+2 GIVN Haflidi
+2 SURN Haflidason
+1 SEX M
+1 FAMS @F127@
+1 BIRT
+2 DATE 12 Nov 1902
+2 PLAC Iceland
+1 DEAT
+2 DATE 8 Jun 1976
+1 _FSID M8GD-5LJ
+0 @I272771958754@ INDI
+1 NAME Ingólfur Árni /Sveinsson/
+2 GIVN Ingólfur Árni
+2 SURN Sveinsson
+1 SEX M
+1 FAMC @F31@
+1 FAMS @F133@
+1 BIRT
+2 DATE 1947
+2 PLAC Reykjavík
+1 DEAT
+2 DATE 2002
+2 PLAC Reykjavík
+1 _FSID P423-JSC
+1 _FSID PHMS-53L
+0 @I272771958755@ INDI
+1 NAME Vernhard /Jonsson/
+2 GIVN Vernhard
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F77@
+1 FAMS @F134@
+1 BIRT
+2 DATE 5 Jul 1832
+2 PLAC Svinhaga, Rngrvl., Icln.
+1 CHR
+2 DATE 15 Jul 1832
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 4 Feb 1892
+2 PLAC Stokkseyrarhreppi, Iceland
+1 _FSID K4P8-G8Q
+0 @I272771958756@ INDI
+1 NAME Inga Gudrun /Arnadottir/
+2 GIVN Inga Gudrun
+2 SURN Arnadottir
+1 SEX F
+1 FAMC @F139@
+1 FAMS @F129@
+1 BIRT
+2 DATE 3 Sep 1923
+2 PLAC Holtmula i landsveit, Rang, saumakona
+1 _FSID G845-S5M
+0 @I272771958757@ INDI
+1 NAME Markus /Björnsson/
+2 GIVN Markus
+2 SURN Björnsson
+1 SEX M
+1 FAMC @F1@
+1 FAMS @F34@
+1 BIRT
+2 DATE 10 May 1831
+2 PLAC Pétursey, Vestur-Skaftafellssýsla, Southern, Iceland
+1 CHR
+2 DATE 1831
+2 PLAC Solheimar Sokn,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 30 Nov 1909
+1 _FSID LH7M-CPD
+0 @I272771958758@ INDI
+1 NAME Jon /Loptsson/
+2 GIVN Jon
+2 SURN Loptsson
+1 SEX M
+1 FAMC @F51@
+1 FAMS @F128@
+1 BIRT
+2 DATE 24 Sep 1832
+2 PLAC Höfðabrekka, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 25 Sep 1832
+2 PLAC Höfðabrekka, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 _FSID K81W-YJF
+0 @I272771958759@ INDI
+1 NAME Þorgerður /Vilhjálmsdóttir/
+2 GIVN Þorgerður
+2 SURN Vilhjálmsdóttir
+1 SEX F
+1 FAMS @F136@
+1 BIRT
+2 DATE 27 Feb 1918
+2 PLAC Gaulverjabær, Árnessýsla, Southern, Iceland
+1 DEAT
+2 DATE 4 Oct 1996
+1 _FSID GPJN-1S5
+0 @I272771958760@ INDI
+1 NAME Johann Bjarni /Loftsson/
+2 GIVN Johann Bjarni
+2 SURN Loftsson
+1 SEX M
+1 FAMC @F36@
+1 FAMS @F146@
+1 BIRT
+2 DATE 24 Jan 1892
+2 PLAC Sandprydi, Eyrarbakki, Arness, Iceland
+1 DEAT
+2 DATE 26 Oct 1977
+2 PLAC of Selfoss, Laugardaelir, Arness, Iceland
+1 _FSID LCQ7-HSL
+0 @I272771958761@ INDI
+1 NAME Gisli /Gudmundsson/
+2 GIVN Gisli
+2 SURN Gudmundsson
+1 SEX M
+1 FAMS @F41@
+1 BIRT
+2 DATE 29 May 1874
+2 PLAC Lambastadir, Hraungerdi, Arness, Iceland
+1 CHR
+2 DATE 29 May 1874
+2 PLAC Hraungerdi,Arnessysla,Iceland
+1 DEAT
+2 DATE 7 Mar 1958
+2 PLAC Reykjavik, Reykjavik, Gullbringu, Iceland
+1 _FSID KFLM-XBC
+0 @I272771958762@ INDI
+1 NAME Sigtryggur /Runólfsson/
+2 GIVN Sigtryggur
+2 SURN Runólfsson
+1 SEX M
+1 FAMC @F39@
+1 FAMS @F143@
+1 BIRT
+2 DATE 1921
+1 DEAT
+2 DATE 1988
+2 PLAC Reykjavík
+1 _FSID PHMS-2D2
+1 OBJE @O1@
+0 @I272771958763@ INDI
+1 NAME Bjarni /Magnusson/
+2 GIVN Bjarni
+2 SURN Magnusson
+1 SEX M
+1 FAMS @F144@
+1 BIRT
+2 DATE 1802
+2 PLAC Herjólfsstaðir, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 13 Feb 1876
+2 PLAC Þykkvabæjarklaustur, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 _FSID KZMQ-VS6
+0 @I272771958765@ INDI
+1 NAME Arni /Johannsson/
+2 GIVN Arni
+2 SURN Johannsson
+1 SEX M
+1 FAMC @F146@
+1 BIRT
+2 DATE 21 Feb 1926
+2 PLAC Solkutoft, Eyrarbakki, Arness, Iceland
+1 DEAT
+2 DATE 21 Jun 1984
+1 _FSID MMT4-2CZ
+0 @I272771958766@ INDI
+1 NAME Isleifur /Hannesson/
+2 GIVN Isleifur
+2 SURN Hannesson
+1 SEX M
+1 FAMC @F35@
+1 FAMS @F8@
+1 BIRT
+2 DATE 15 Nov 1896
+2 PLAC Storu Sandvik, Kaldadarnes, Arness, Iceland
+1 DEAT
+2 DATE 17 Jul 1983
+1 _FSID MMT4-K2X
+0 @I272771958767@ INDI
+1 NAME Arnthrudur /Hannesdottir/
+2 GIVN Arnthrudur
+2 SURN Hannesdottir
+1 SEX F
+1 FAMC @F35@
+1 FAMS @F32@
+1 BIRT
+2 DATE 11 Sep 1885
+2 PLAC Midhus, Kaldadarnes, Arness, Iceland
+1 CHR
+2 DATE 20 Sep 1885
+2 PLAC Stokkseyri, Árnessýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 5 Jan 1968
+1 _FSID KCMM-XJ4
+0 @I272771958768@ INDI
+1 NAME Kjartan Hreinn /Palsson/
+2 GIVN Kjartan Hreinn
+2 SURN Palsson
+1 SEX M
+1 FAMS @F148@
+1 BIRT
+2 DATE 24 Feb 1938
+2 PLAC Bolstadir, Hofdabrekka, Vestur Skaftafell, Iceland
+1 DEAT
+2 DATE 2 Apr 1977
+1 _FSID K8J5-8KV
+0 @I272771958769@ INDI
+1 NAME Jonina /Hannesdottir/
+2 GIVN Jonina
+2 SURN Hannesdottir
+1 SEX F
+1 FAMC @F35@
+1 FAMS @F146@
+1 BIRT
+2 DATE 8 Aug 1895
+2 PLAC Storu Sandvik, Kaldadarnes, Arness, Iceland
+1 DEAT
+2 DATE 19 Jun 1942
+1 _FSID MMT4-262
+0 @I272771958770@ INDI
+1 NAME Bjarni /Jonsson/
+2 GIVN Bjarni
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F128@
+1 BIRT
+2 DATE Nov 1855
+1 CHR
+2 DATE 3 Nov 1855
+2 PLAC Thykkvabaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID M3JR-G8M
+0 @I272771958771@ INDI
+1 NAME Guðbjörg /Sigurpálsdóttir/
+2 GIVN Guðbjörg
+2 SURN Sigurpálsdóttir
+1 SEX F
+1 FAMC @F33@
+1 FAMS @F143@
+1 BIRT
+2 DATE 1926
+1 DEAT
+2 DATE 2014
+2 PLAC Reykjavík
+1 _FSID PHMS-GFJ
+0 @I272771958772@ INDI
+1 NAME Gudrun /Hjortsdottir/
+2 GIVN Gudrun
+2 SURN Hjortsdottir
+1 SEX F
+1 FAMS @F144@
+1 BIRT
+2 DATE 5 Aug 1808
+2 PLAC Dyrholar,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 9 Sep 1879
+1 _FSID K2MK-JCS
+0 @I272771958773@ INDI
+1 NAME Jona Arny /Johannsdottir/
+2 GIVN Jona Arny
+2 SURN Johannsdottir
+1 SEX F
+1 FAMC @F146@
+1 BIRT
+2 DATE 8 Apr 1938
+2 PLAC Solkutoft, Eyrarbakki, Arness, Iceland
+1 DEAT
+2 DATE 16 Jan 1983
+1 _FSID MMT4-2ZN
+0 @I272771958774@ INDI
+1 NAME Gudbjorg /Jonsdottir/
+2 GIVN Gudbjorg
+2 SURN Jonsdottir
+1 SEX F
+1 FAMC @F19@
+1 FAMS @F37@
+1 BIRT
+2 DATE 15 Jun 1832
+1 CHR
+2 DATE 17 Jun 1832
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID KH29-H3K
+0 @I272771958775@ INDI
+1 NAME Árni /Jónsson/
+2 GIVN Árni
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F49@
+1 FAMS @F135@
+1 BIRT
+2 DATE 28 Sep 1830
+1 CHR
+2 DATE 4 Oct 1830
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 5 Dec 1890
+2 PLAC Skarð Á Landi, Rangárvallasýsla, Suðurland, Iceland
+1 BURI
+2 DATE 19 Dec 1890
+2 PLAC Skarð Á Landi, Rangárvallasýsla, Suðurland, Iceland
+1 _FSID M36X-224
+0 @I272771958776@ INDI
+1 NAME Jon E. /Oddsson/
+2 GIVN Jon E.
+2 SURN Oddsson
+1 SEX M
+1 FAMC @F29@
+1 BIRT
+2 DATE 16 Jul 1888
+2 PLAC Skarð, Rangárvallasýsla, Suðurland, Iceland
+1 _FSID G86V-RYT
+0 @I272771958777@ INDI
+1 NAME Arni /Jonsson/
+2 GIVN Arni
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F124@
+1 FAMS @F139@
+1 FAMS @F136@
+1 BIRT
+2 DATE 17 Jun 1896
+2 PLAC Landmannahreppur, Rangárvallasýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 16 Sep 1995
+1 _FSID G865-5PW
+0 @I272771958778@ INDI
+1 NAME Thordis /Jónsdóttir/
+2 GIVN Thordis
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F128@
+1 BIRT
+2 DATE 20 Oct 1856
+2 PLAC Þykkvabæjarklaustur, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 20 Oct 1856
+2 PLAC Thykkvabaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID M3J2-7RG
+0 @I272771958779@ INDI
+1 NAME Runólfur //
+2 GIVN Runólfur
+1 SEX M
+1 FAMS @F39@
+1 _FSID PHMS-LXL
+0 @I272771958780@ INDI
+1 NAME Hanes /Steindorsson/
+2 GIVN Hanes
+2 SURN Steindorsson
+1 SEX M
+1 FAMC @F43@
+1 BIRT
+2 DATE 30 Sep 1848
+2 PLAC Stora Sandvik, Kaldadarnes, Arness, Iceland
+1 CHR
+2 DATE 1 Oct 1848
+2 PLAC Kaldadharnas Sokn,Arnessysla,Iceland
+1 DEAT
+2 DATE 7 Oct 1848
+2 PLAC Stora Sandvik, Kaldadarnes, Arness, Iceland
+1 _FSID LZGZ-K7B
+0 @I272771958781@ INDI
+1 NAME Halldora Valgerdur /Johannsdottir/
+2 GIVN Halldora Valgerdur
+2 SURN Johannsdottir
+1 SEX F
+1 FAMC @F146@
+1 FAMS @F148@
+1 BIRT
+2 DATE 8 Apr 1938
+2 PLAC Solkutoft, Eyrarbakki, Arness, Iceland
+1 DEAT
+2 DATE 4 Feb 1985
+1 _FSID MMT4-284
+0 @I272771958782@ INDI
+1 NAME Arni /Arnason/
+2 GIVN Arni
+2 SURN Arnason
+1 SEX M
+1 FAMC @F74@
+1 FAMS @F132@
+1 BIRT
+2 DATE 26 Jul 1823
+2 PLAC Vestri-Tunga, Sigluvik, Rngrvl., Icln
+1 CHR
+2 DATE 26 Jul 1823
+2 PLAC Sigluvik,Rangarvallasysla,Iceland
+1 _FSID KCVK-CKY
+0 @I272771958783@ INDI
+1 NAME Steindor /Hannesson/
+2 GIVN Steindor
+2 SURN Hannesson
+1 SEX M
+1 FAMC @F5@
+1 FAMS @F43@
+1 BIRT
+2 DATE 1818
+2 PLAC Floagafli,Kaldadarnes,Arnessysla,Iceland
+1 DEAT
+2 DATE 12 Jan 1875
+2 PLAC Stora Sandvik, Kaldadarnes, Arness, Iceland
+1 BURI
+2 DATE 23 Jan 1875
+2 PLAC , Kaldadarnes, Arness, Iceland
+1 _FSID LZGZ-KQP
+0 @I272771958785@ INDI
+1 NAME Halldora /Oddsdottir/
+2 GIVN Halldora
+2 SURN Oddsdottir
+1 SEX F
+1 FAMC @F29@
+1 BIRT
+2 DATE 30 Jan 1891
+2 PLAC Skarð, Rangárvallasýsla, Suðurland, Iceland
+1 _FSID G86K-39N
+0 @I272771958786@ INDI
+1 NAME Oddur /Árnason/
+2 GIVN Oddur
+2 SURN Árnason
+1 SEX M
+1 FAMC @F139@
+1 BIRT
+2 DATE 29 Jun 1921
+1 DEAT
+2 DATE 30 Oct 2013
+1 _FSID P93V-5YN
+0 @I272771958787@ INDI
+1 NAME Gudrun /Jonsdóttir/
+2 GIVN Gudrun
+2 SURN Jonsdóttir
+1 SEX F
+1 FAMC @F128@
+1 BIRT
+2 DATE 4 Apr 1862
+2 PLAC Dyrhólar, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 4 Apr 1862
+2 PLAC Dyrholar,Vestur-Skaftafellssysla,Iceland
+1 _FSID M3JT-392
+0 @I272771958788@ INDI
+1 NAME Lilja /Árnadóttir/
+2 GIVN Lilja
+2 SURN Árnadóttir
+1 SEX F
+1 FAMC @F139@
+1 FAMS @F31@
+1 BIRT
+2 DATE 16 Aug 1926
+1 DEAT
+2 DATE 25 Jul 2006
+1 BURI
+2 DATE 3 Aug 2006
+2 PLAC Selfoss, Sveitarfélagið Árborg, Suðurland, Ísland
+1 _FSID P93V-KDW
+0 @I272771958789@ INDI
+1 NAME Thordur /Magnusson/
+2 GIVN Thordur
+2 SURN Magnusson
+1 SEX M
+1 FAMS @F32@
+1 BIRT
+2 DATE 20 Oct 1870
+2 PLAC Osgerdi, Arnarbaeli, Arness, Iceland
+1 CHR
+2 DATE 20 Oct 1870
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 DEAT
+2 DATE 12 Jun 1945
+1 _FSID K8QC-21L
+0 @I272771958790@ INDI
+1 NAME Ingiridur /Arnadr/
+2 GIVN Ingiridur
+2 SURN Arnadr
+1 SEX F
+1 FAMC @F132@
+1 FAMS @F29@
+1 BIRT
+2 DATE 14 Mar 1857
+1 CHR
+2 DATE 14 Mar 1857
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID M366-NX4
+0 @I272771958791@ INDI
+1 NAME Gudmundur /Hannesson/
+2 GIVN Gudmundur
+2 SURN Hannesson
+1 SEX M
+1 FAMC @F35@
+1 FAMS @F30@
+1 BIRT
+2 DATE 10 Nov 1899
+2 PLAC Storu Sandvik, Kaldadarnes, Arness, Iceland
+1 DEAT
+2 DATE 9 Oct 1948
+1 _FSID MMT4-LDC
+0 @I272771958792@ INDI
+1 NAME Margrét /Jónsdóttir/
+2 GIVN Margrét
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F14@
+1 FAMS @F34@
+1 BIRT
+2 DATE 9 Mar 1833
+1 CHR
+2 DATE 10 Mar 1833
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID KHLK-3WS
+0 @I272771958793@ INDI
+1 NAME Valgerður /Vernharðsdóttir/
+2 GIVN Valgerður
+2 SURN Vernharðsdóttir
+1 SEX F
+1 FAMC @F134@
+1 FAMS @F35@
+1 BIRT
+2 DATE 25 Sep 1864
+1 CHR
+2 DATE 27 Sep 1864
+2 PLAC Stokkseyri, Árnessýsla, Southern, Iceland
+1 DEAT
+2 DATE 23 Oct 1926
+1 _FSID KHPJ-8VV
+0 @I272771958794@ INDI
+1 NAME Guðmunda /Árnadóttir/
+2 GIVN Guðmunda
+2 SURN Árnadóttir
+1 SEX F
+1 FAMC @F139@
+1 BIRT
+2 DATE 29 Aug 1924
+1 DEAT
+2 DATE 13 May 2017
+1 BURI
+2 DATE 24 May 2017
+2 PLAC Reykjavík, Reykjavíkurborg, Höfuðborgarsvæðið, Ísland
+1 _FSID P93V-KYJ
+0 @I272771958795@ INDI
+1 NAME Gudrun /Jónsdóttir/
+2 GIVN Gudrun
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F128@
+1 BIRT
+2 DATE 26 Sep 1859
+2 PLAC Dyrhólar, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 26 Sep 1859
+2 PLAC Dyrholar,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 30 Sep 1859
+1 _FSID M3JT-S19
+0 @I272771958796@ INDI
+1 NAME Sigurpáll //
+2 GIVN Sigurpáll
+1 SEX M
+1 FAMS @F33@
+1 _FSID PHMS-TCJ
+0 @I272771958797@ INDI
+1 NAME Gudlaug /Steindorsdottir/
+2 GIVN Gudlaug
+2 SURN Steindorsdottir
+1 SEX F
+1 FAMC @F43@
+1 BIRT
+2 DATE 30 May 1851
+2 PLAC Stora-Sandvik,Kaldadarnes,Arnessysla,Iceland
+1 DEAT
+2 DATE 23 Jan 1871
+1 _FSID KCYZ-1F8
+0 @I272771958798@ INDI
+1 NAME Oddur /Jonsson/
+2 GIVN Oddur
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F38@
+1 FAMS @F29@
+1 BIRT
+2 DATE 9 Sep 1858
+1 CHR
+2 DATE 9 Sep 1858
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3X6-282
+0 @I272771958799@ INDI
+1 NAME Valdimar /Hannesson/
+2 GIVN Valdimar
+2 SURN Hannesson
+1 SEX M
+1 FAMC @F35@
+1 FAMS @F22@
+1 FAMS @F16@
+1 BIRT
+2 DATE 7 Feb 1891
+2 PLAC Midhus, Kaldadarnes, Arness, Iceland
+1 DEAT
+2 DATE 17 Oct 1965
+1 _FSID MMT4-KRX
+0 @I272771958800@ INDI
+1 NAME Jon /Eiriksson/
+2 GIVN Jon
+2 SURN Eiriksson
+1 SEX M
+1 FAMC @F7@
+1 FAMS @F38@
+1 BIRT
+2 DATE 24 Sep 1821
+2 PLAC Tunga, Keldna, Rngrvl., Icln
+1 CHR
+2 DATE 24 Sep 1821
+2 PLAC Keldna, Rngrvl, Icln
+1 _FSID KZYZ-NK5
+0 @I272771958801@ INDI
+1 NAME Hannes /Steindorsson/
+2 GIVN Hannes
+2 SURN Steindorsson
+1 SEX M
+1 FAMC @F43@
+1 FAMS @F35@
+1 BIRT
+2 DATE 24 Aug 1852
+2 PLAC Midhusum,Kaldadarnes,Arnessysla,Iceland
+1 DEAT
+2 DATE 4 Oct 1905
+1 _FSID K4GJ-S1L
+0 @I272771958802@ INDI
+1 NAME Ingibjörg /Árnadóttir/
+2 GIVN Ingibjörg
+2 SURN Árnadóttir
+1 SEX F
+1 FAMC @F139@
+1 BIRT
+2 DATE 26 Aug 1925
+1 DEAT
+2 DATE 14 May 2015
+1 BURI
+2 DATE 27 May 2015
+2 PLAC Reykjavík, Reykjavíkurborg, Höfuðborgarsvæðið, Ísland
+1 _FSID P93K-SPJ
+0 @I272771958803@ INDI
+1 NAME Gudrun /Jonsdóttir/
+2 GIVN Gudrun
+2 SURN Jonsdóttir
+1 SEX F
+1 FAMC @F128@
+1 BIRT
+2 DATE 19 Nov 1864
+2 PLAC Dyrhólar, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 20 Nov 1864
+2 PLAC Dyrholar,Vestur-Skaftafellssysla,Iceland
+1 _FSID M3JT-37W
+0 @I272771958804@ INDI
+1 NAME Rósa //
+2 GIVN Rósa
+1 SEX F
+1 FAMS @F33@
+1 _FSID PHMS-266
+0 @I272771958805@ INDI
+1 NAME Son /Steindorsson/
+2 GIVN Son
+2 SURN Steindorsson
+1 SEX M
+1 FAMC @F43@
+1 BIRT
+2 DATE 9 Apr 1862
+2 PLAC Kaldadarnes,Arnessysla,Iceland
+1 DEAT
+2 DATE 9 Apr 1862
+2 PLAC Stora Sandvik, Kaldadarnes, Arness, Iceland
+1 _FSID KCNK-W67
+0 @I272771958806@ INDI
+1 NAME Loptur /Jonsson/
+2 GIVN Loptur
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F128@
+1 FAMS @F36@
+1 BIRT
+2 DATE 17 Jan 1861
+1 CHR
+2 DATE 17 Jan 1861
+2 PLAC Dyrholar, Vestur Skaftafell, Iceland
+1 DEAT
+2 DATE 28 Jan 1933
+1 _FSID LHFH-G2V
+0 @I272771958807@ INDI
+1 NAME Einar /Gislason/
+2 GIVN Einar
+2 SURN Gislason
+1 SEX M
+1 FAMC @F62@
+1 FAMS @F37@
+1 BIRT
+2 DATE 26 Sep 1832
+1 CHR
+2 DATE 30 Sep 1832
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID L79L-R9J
+0 @I272771958808@ INDI
+1 NAME Ásdís /Halldórsdóttir/
+2 GIVN Ásdís
+2 SURN Halldórsdóttir
+1 SEX F
+1 FAMC @F23@
+1 FAMS @F38@
+1 BIRT
+2 DATE 17 May 1831
+2 PLAC Skarð, Rangárvallasýsla, Suðurland, Iceland
+1 CHR
+2 DATE 18 May 1831
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 5 Sep 1897
+1 _FSID K4N8-GC2
+0 @I272771958809@ INDI
+1 NAME Sigridur /Loftsdottir/
+2 GIVN Sigridur
+2 SURN Loftsdottir
+1 SEX F
+1 FAMC @F36@
+1 FAMS @F41@
+1 BIRT
+2 DATE 17 Jul 1890
+2 PLAC Sandprydi, Eyrarbakki, Arness, Iceland
+1 DEAT
+2 DATE 28 Jul 1950
+2 PLAC Reykjavik, Reykjavik, Gullbringu, Iceland
+1 _FSID LCQ7-HSH
+0 @I272771958810@ INDI
+1 NAME Jóna Gíslunn /Árnadóttir/
+2 GIVN Jóna Gíslunn
+2 SURN Árnadóttir
+1 SEX F
+1 FAMC @F139@
+1 BIRT
+2 DATE 2 Aug 1922
+1 DEAT
+2 DATE 4 Oct 2013
+1 BURI
+2 DATE 11 Oct 2013
+2 PLAC Reykjavík, Reykjavíkurborg, Höfuðborgarsvæðið, Ísland
+1 _FSID P93K-9Q9
+0 @I272771958811@ INDI
+1 NAME Gudrun /Jónsdóttir/
+2 GIVN Gudrun
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F128@
+1 BIRT
+2 DATE 15 Aug 1858
+2 PLAC Dyrhólar, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 15 Aug 1858
+2 PLAC Dyrholar,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 9 Sep 1858
+1 _FSID M3JT-SYK
+0 @I272771958812@ INDI
+1 NAME Þórunn //
+2 GIVN Þórunn
+1 SEX F
+1 FAMS @F39@
+1 _FSID PHMS-2B2
+0 @I272771958813@ INDI
+1 NAME Vigdis /Steindorsdottir/
+2 GIVN Vigdis
+2 SURN Steindorsdottir
+1 SEX F
+1 FAMC @F43@
+1 FAMS @F40@
+1 BIRT
+2 DATE 31 Jul 1866
+2 PLAC Stora Sandvik, Kaldadarnes, Arness, Iceland
+1 CHR
+2 DATE 31 Jul 1866
+2 PLAC Kaldadharnas Sokn,Arnessysla,Iceland
+1 DEAT
+2 DATE 10 Oct 1944
+1 _FSID KZR8-H32
+0 @I272771958814@ INDI
+1 NAME Jorunn /Markusdottir/
+2 GIVN Jorunn
+2 SURN Markusdottir
+1 SEX F
+1 FAMC @F34@
+1 FAMS @F36@
+1 BIRT
+2 DATE 3 Feb 1863
+1 CHR
+2 DATE 5 Feb 1863
+2 PLAC Gaulverjabaer,Arnessysla,Iceland
+1 DEAT
+2 DATE 24 Mar 1940
+1 _FSID 9JPL-SCK
+0 @I272771958815@ INDI
+1 NAME Asmundur /Hannesson/
+2 GIVN Asmundur
+2 SURN Hannesson
+1 SEX M
+1 FAMC @F35@
+1 FAMS @F20@
+1 BIRT
+2 DATE 2 Dec 1902
+2 PLAC Storu Sandvik, Kaldadarnes, Arness, Iceland
+1 DEAT
+2 DATE 8 Sep 1981
+1 _FSID MMT4-KDF
+0 @I272771958816@ INDI
+1 NAME Arnthrudur /Sæmundsdottir/
+2 GIVN Arnthrudur
+2 SURN Sæmundsdottir
+1 SEX F
+1 FAMC @F4@
+1 FAMS @F43@
+1 BIRT
+2 DATE 11 Feb 1825
+2 PLAC Auðsholt, Árnessýsla, Southern, Iceland
+1 CHR
+2 DATE 12 Feb 1825
+2 PLAC Arnarbæli, Árnessýsla, Southern, Iceland
+1 DEAT
+2 DATE 6 Jul 1897
+2 PLAC Egilstaðir, Árnessýsla, Southern, Iceland
+1 BURI
+2 DATE 12 Jul 1897
+2 PLAC Arnarbæli, Árnessýsla, Southern, Iceland
+1 _FSID L716-DQG
+0 @I272771958818@ INDI
+1 NAME Guðny /Arnadóttir/
+2 GIVN Guðny
+2 SURN Arnadóttir
+1 SEX F
+1 FAMC @F135@
+1 BIRT
+2 DATE 25 Aug 1860
+1 CHR
+2 DATE 26 Aug 1860
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36K-PDB
+0 @I272771958819@ INDI
+1 NAME Guðríður /Arnadóttir/
+2 GIVN Guðríður
+2 SURN Arnadóttir
+1 SEX F
+1 FAMC @F135@
+1 BIRT
+2 DATE 9 Oct 1856
+1 CHR
+2 DATE 10 Oct 1856
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36N-ZGF
+0 @I272771958820@ INDI
+1 NAME Jon /Arnason/
+2 GIVN Jon
+2 SURN Arnason
+1 SEX M
+1 FAMC @F135@
+1 BIRT
+2 DATE 4 Feb 1858
+1 CHR
+2 DATE 4 Feb 1858
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3X4-4GZ
+0 @I272771958821@ INDI
+1 NAME Olafur /Arnason/
+2 GIVN Olafur
+2 SURN Arnason
+1 SEX M
+1 FAMC @F135@
+1 BIRT
+2 DATE 14 Oct 1862
+1 CHR
+2 DATE 14 Oct 1862
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36J-WJT
+0 @I272771958822@ INDI
+1 NAME Gísli /Arnason/
+2 GIVN Gísli
+2 SURN Arnason
+1 SEX M
+1 FAMC @F135@
+1 FAMS @F42@
+1 BIRT
+2 DATE 24 Nov 1854
+1 CHR
+2 DATE 24 Nov 1854
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 5 Feb 1939
+1 _FSID M36L-4W8
+0 @I272771958823@ INDI
+1 NAME Jon /Markusson/
+2 GIVN Jon
+2 SURN Markusson
+1 SEX M
+1 FAMC @F34@
+1 BIRT
+2 DATE 7 Aug 1861
+1 CHR
+2 DATE 7 Aug 1861
+2 PLAC Gaulverjabaer,Arnessysla,Iceland
+1 _FSID M37F-SF8
+0 @I272771958824@ INDI
+1 NAME Jón /Arnason/
+2 GIVN Jón
+2 SURN Arnason
+1 SEX M
+1 FAMS @F49@
+1 BIRT
+2 DATE 10 Jan 1791
+2 PLAC Iceland
+1 CHR
+2 DATE 10 Jan 1791
+2 PLAC Gunnarshollt,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 16 Jul 1846
+2 PLAC Keldur, Rangárvallasýsla, Suðurland, Iceland
+1 BURI
+2 DATE 25 Jul 1846
+2 PLAC Keldur, Rangárvallasýsla, Suðurland, Iceland
+1 _FSID KZLW-45Z
+0 @I272771958825@ INDI
+1 NAME Jon /Markusson/
+2 GIVN Jon
+2 SURN Markusson
+1 SEX M
+1 FAMC @F34@
+1 BIRT
+2 DATE 18 Jul 1871
+1 CHR
+2 DATE 19 Jul 1871
+2 PLAC Gaulverjabaer,Arnessysla,Iceland
+1 _FSID M37F-SNR
+0 @I272771958827@ INDI
+1 NAME Steindor /Steindorsson/
+2 GIVN Steindor
+2 SURN Steindorsson
+1 SEX M
+1 FAMC @F43@
+1 FAMS @F48@
+1 FAMS @F47@
+1 BIRT
+2 DATE 10 Oct 1853
+2 PLAC Stora Sandvik, Kaldadarnes, Arness, Iceland
+1 DEAT
+2 DATE 18 Feb 1953
+1 _FSID K4KB-2J4
+0 @I272771958828@ INDI
+1 NAME Jón /Árnason/
+2 GIVN Jón
+2 SURN Árnason
+1 SEX M
+1 FAMC @F135@
+1 FAMS @F45@
+1 BIRT
+2 DATE 26 Oct 1853
+1 CHR
+2 DATE 26 Oct 1853
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 27 Aug 1938
+1 _FSID M37T-FKW
+0 @I272771958829@ INDI
+1 NAME Guðríður /Árnadóttir/
+2 GIVN Guðríður
+2 SURN Árnadóttir
+1 SEX F
+1 FAMC @F135@
+1 FAMS @F46@
+1 BIRT
+2 DATE 22 Apr 1865
+1 CHR
+2 DATE 24 Apr 1865
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36N-ZR3
+0 @I272771958830@ INDI
+1 NAME Gudjon /Markusson/
+2 GIVN Gudjon
+2 SURN Markusson
+1 SEX M
+1 FAMC @F34@
+1 BIRT
+2 DATE 1 Sep 1864
+1 CHR
+2 DATE 1 Sep 1864
+2 PLAC Gaulverjabaer,Arnessysla,Iceland
+1 _FSID M378-WCZ
+0 @I272771958831@ INDI
+1 NAME Ingibjörg /Jónsdóttir/
+2 GIVN Ingibjörg
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F38@
+1 FAMS @F44@
+1 BIRT
+2 DATE 28 Apr 1860
+1 CHR
+2 DATE 28 Apr 1860
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3X9-32R
+0 @I272771958832@ INDI
+1 NAME Guðríður /Jónsdóttir/
+2 GIVN Guðríður
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMS @F49@
+1 BIRT
+2 DATE 2 Aug 1789
+2 PLAC Rangárvallasýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 6 Feb 1861
+2 PLAC Rangárvallasýsla, Suðurland, Iceland
+1 _FSID L6KC-NP3
+0 @I272771958833@ INDI
+1 NAME Gudrun /Jonsdr/
+2 GIVN Gudrun
+2 SURN Jonsdr
+1 SEX F
+1 FAMC @F38@
+1 BIRT
+2 DATE 19 May 1861
+1 CHR
+2 DATE 19 May 1861
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3XC-R4P
+0 @I272771958834@ INDI
+1 NAME Ingibjorg /Thorvaldsdottir/
+2 GIVN Ingibjorg
+2 SURN Thorvaldsdottir
+1 SEX F
+1 FAMS @F23@
+1 BIRT
+2 DATE 29 Aug 1790
+2 PLAC Stori Klofi, Klofa, Rangarvalla, Iceland
+1 CHR
+2 DATE 29 Aug 1790
+2 PLAC Skard, Rngrvl, Icln
+1 DEAT
+2 DATE 4 Aug 1843
+2 PLAC Landaholt, Skard A Landi, Rangarvalla, Iceland
+1 BURI
+2 DATE 10 Aug 1843
+2 PLAC , Skard A Landi, Rangarvalla, Iceland
+1 _FSID KF45-HYZ
+0 @I272771958835@ INDI
+1 NAME Markus /Markusson/
+2 GIVN Markus
+2 SURN Markusson
+1 SEX M
+1 FAMC @F34@
+1 BIRT
+2 DATE 22 Nov 1865
+1 CHR
+2 DATE 23 Nov 1865
+2 PLAC Gaulverjabaer,Arnessysla,Iceland
+1 _FSID M378-KXL
+0 @I272771958836@ INDI
+1 NAME Björn /Markusson/
+2 GIVN Björn
+2 SURN Markusson
+1 SEX M
+1 FAMC @F34@
+1 FAMS @F50@
+1 BIRT
+2 DATE 15 Nov 1876
+2 PLAC Gaulverjabær, Árnessýsla, Southern, Iceland
+1 _FSID GG29-ZN7
+0 @I272771958837@ INDI
+1 NAME Jon /Markusson/
+2 GIVN Jon
+2 SURN Markusson
+1 SEX M
+1 FAMC @F34@
+1 BIRT
+2 DATE 29 Mar 1857
+1 CHR
+2 DATE 29 Mar 1857
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3X7-K8R
+0 @I272771958838@ INDI
+1 NAME Arni /Arnason/
+2 GIVN Arni
+2 SURN Arnason
+1 SEX M
+1 FAMC @F132@
+1 BIRT
+2 DATE 8 Aug 1862
+1 CHR
+2 DATE 8 Aug 1862
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36X-5MS
+0 @I272771958839@ INDI
+1 NAME Gudrun /Jonsdr/
+2 GIVN Gudrun
+2 SURN Jonsdr
+1 SEX F
+1 FAMC @F38@
+1 BIRT
+2 DATE 19 Jun 1857
+1 CHR
+2 DATE 21 Jun 1857
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3XC-5KJ
+0 @I272771958840@ INDI
+1 NAME Ingiridur /Arnadr/
+2 GIVN Ingiridur
+2 SURN Arnadr
+1 SEX F
+1 FAMC @F132@
+1 BIRT
+2 DATE 9 Jul 1851
+1 CHR
+2 DATE 13 Jul 1851
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID M366-ND1
+0 @I272771958841@ INDI
+1 NAME Vigdís /Steindórsdóttir/
+2 GIVN Vigdís
+2 SURN Steindórsdóttir
+1 SEX F
+1 FAMS @F5@
+1 BIRT
+2 DATE 1789
+2 PLAC Audsholti,Arnarbaeli,Arnessysla,Iceland
+1 DEAT
+2 DATE 5 Sep 1869
+2 PLAC Kotferja, Kaldadarnes, Arness, Iceland
+1 BURI
+2 DATE 15 Sep 1869
+2 PLAC , Kaldadarnes, Arness, Iceland
+1 _FSID KFR7-9BN
+0 @I272771958842@ INDI
+1 NAME Loptur /Gudmundsson/
+2 GIVN Loptur
+2 SURN Gudmundsson
+1 SEX M
+1 FAMS @F51@
+1 FAMS @F54@
+1 BIRT
+2 DATE 22 Feb 1791
+2 PLAC Keldudalur, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 23 Feb 1791
+2 PLAC Keldudal,Solheimar,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 19 Apr 1856
+1 _FSID KZWP-CRD
+0 @I272771958843@ INDI
+1 NAME Arni /Arnason/
+2 GIVN Arni
+2 SURN Arnason
+1 SEX M
+1 FAMC @F132@
+1 FAMS @F56@
+1 FAMS @F55@
+1 BIRT
+2 DATE 9 Aug 1864
+1 CHR
+2 DATE 10 Aug 1864
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36X-59L
+0 @I272771958844@ INDI
+1 NAME Sæmundur /Steindorsson/
+2 GIVN Sæmundur
+2 SURN Steindorsson
+1 SEX M
+1 FAMC @F43@
+1 FAMS @F53@
+1 FAMS @F52@
+1 BIRT
+2 DATE 22 Oct 1847
+2 PLAC Stora Sandvik, Kaldadarnes, Arness, Iceland
+1 CHR
+2 DATE 24 Oct 1847
+2 PLAC Kaldadharnas Sokn,Arnessysla,Iceland
+1 DEAT
+2 DATE 23 Feb 1919
+2 PLAC Iceland
+1 BURI
+2 PLAC Vestmannaeyjar, , Suðurland, Iceland
+1 _FSID MMT4-PDW
+0 @I272771958845@ INDI
+1 NAME Helga /Arnadr/
+2 GIVN Helga
+2 SURN Arnadr
+1 SEX F
+1 FAMC @F132@
+1 BIRT
+2 DATE 5 Jan 1866
+1 CHR
+2 DATE 6 Jan 1866
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M366-Y92
+0 @I272771958846@ INDI
+1 NAME Þordís /Markúsdóttir/
+2 GIVN Þordís
+2 SURN Markúsdóttir
+1 SEX F
+1 FAMS @F51@
+1 BIRT
+2 DATE 1799
+2 PLAC Bolstadur,Hofdabrekka,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 3 Sep 1859
+1 _FSID K8PF-BVM
+0 @I272771958847@ INDI
+1 NAME Eiríkur /Jónsson/
+2 GIVN Eiríkur
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F7@
+1 BIRT
+2 DATE 23 Dec 1791
+2 PLAC Raudnefsstadir, Keldna, Rangarvalla, Ice.
+1 CHR
+2 DATE 25 Dec 1791
+2 PLAC Keldur, Rngrvl., Icln
+1 DEAT
+2 DATE 14 Oct 1838
+2 PLAC Tunga, Keldur, Rangarvalla, Iceland
+1 BURI
+2 DATE 23 Oct 1838
+2 PLAC Keldna, Rngrvl, Icln
+1 _FSID LCZM-L8G
+0 @I272771958848@ INDI
+1 NAME Margret /Einarsdóttir/
+2 GIVN Margret
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMC @F37@
+1 BIRT
+2 DATE 18 Apr 1874
+1 CHR
+2 DATE 18 Apr 1874
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID MMMK-VXF
+0 @I272771958849@ INDI
+1 NAME Hannes /Guðmundsson/
+2 GIVN Hannes
+2 SURN Guðmundsson
+1 SEX M
+1 FAMS @F5@
+1 FAMS @F6@
+1 BIRT
+2 DATE 25 Jun 1787
+2 PLAC Þórunúpur, Rangárvallasýsla, Suðurland, Iceland
+1 CHR
+2 DATE 25 Jun 1787
+2 PLAC Breiðabólsstaður, Rangárvallasýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 20 Sep 1841
+2 PLAC Storu Sandvik, Kaldadarnes, Arness, Iceland
+1 BURI
+2 PLAC Kaldaðarnes, Árnessýsla, Suðurland, Iceland
+1 _FSID 2737-BTZ
+0 @I272771958850@ INDI
+1 NAME Thorgils /Jonsson/
+2 GIVN Thorgils
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F38@
+1 BIRT
+2 DATE 27 Nov 1866
+1 CHR
+2 DATE 28 Nov 1866
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36R-J3Z
+0 @I272771958851@ INDI
+1 NAME Guðrún /Einarsdóttir/
+2 GIVN Guðrún
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMC @F37@
+1 BIRT
+2 DATE 7 Dec 1864
+1 CHR
+2 DATE 8 Dec 1864
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID M3JR-BZT
+0 @I272771958852@ INDI
+1 NAME Sæmundur /Steindórsson/
+2 GIVN Sæmundur
+2 SURN Steindórsson
+1 SEX M
+1 FAMS @F4@
+1 BIRT
+2 DATE 1782
+2 PLAC Audsholt, Arnarbaeli, Arness, Iceland
+1 DEAT
+2 DATE 2 Sep 1844
+1 _FSID KNZ6-N14
+0 @I272771958853@ INDI
+1 NAME Margret /Arnadr/
+2 GIVN Margret
+2 SURN Arnadr
+1 SEX F
+1 FAMC @F132@
+1 BIRT
+2 DATE 3 Jun 1853
+1 CHR
+2 DATE 5 Jun 1853
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID M36P-ZMG
+0 @I272771958854@ INDI
+1 NAME Eirikur /Jonsson/
+2 GIVN Eirikur
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F38@
+1 BIRT
+2 DATE 16 Sep 1863
+1 CHR
+2 DATE 17 Sep 1863
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M362-5RF
+0 @I272771958855@ INDI
+1 NAME Auðbjörg /Markúsdóttir/
+2 GIVN Auðbjörg
+2 SURN Markúsdóttir
+1 SEX F
+1 FAMS @F1@
+1 FAMS @F2@
+1 FAMS @F3@
+1 BIRT
+2 DATE 1794
+2 PLAC Bolstadur,Hofdabrekka,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 28 Aug 1871
+2 PLAC Eystri-Hellur, Gaulverjabaer, Arness, Iceland
+1 _FSID LH7M-Z7N
+0 @I272771958856@ INDI
+1 NAME Auðbjörg /Markúsdóttir/
+2 GIVN Auðbjörg
+2 SURN Markúsdóttir
+1 SEX F
+1 FAMC @F34@
+1 BIRT
+2 DATE 1 Jan 1870
+2 PLAC Gaulverjabær, Árnessýsla, Southern, Iceland
+1 CHR
+2 DATE 1 Jan 1870
+2 PLAC Gaulverjabaer,Arnessysla,Iceland
+1 _FSID M3Q1-KDB
+0 @I272771958857@ INDI
+1 NAME Guðrún /Markúsdóttir/
+2 GIVN Guðrún
+2 SURN Markúsdóttir
+1 SEX F
+1 FAMC @F34@
+1 FAMS @F10@
+1 FAMS @F9@
+1 BIRT
+2 DATE 20 Feb 1868
+2 PLAC Gaulverjabær, Árnessýsla, Suðurland, Iceland
+1 CHR
+2 DATE 20 Feb 1868
+2 PLAC Gaulverjabær, Árnessýsla, Southern, Iceland
+1 DEAT
+2 DATE 27 Apr 1954
+1 BURI
+2 PLAC Mýrdalur, Southern, Iceland
+1 _FSID M3JY-P23
+0 @I272771958858@ INDI
+1 NAME Haldora Steinunn /Einarsdóttir/
+2 GIVN Haldora Steinunn
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMC @F37@
+1 BIRT
+2 DATE 18 Aug 1863
+1 CHR
+2 DATE 19 Aug 1863
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID MMM2-26G
+0 @I272771958859@ INDI
+1 NAME Arni /Arnason/
+2 GIVN Arni
+2 SURN Arnason
+1 SEX M
+1 FAMC @F132@
+1 BIRT
+2 DATE 3 Mar 1869
+1 CHR
+2 DATE 5 Mar 1869
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36X-53W
+0 @I272771958860@ INDI
+1 NAME Gudrun /Oddsdottir/
+2 GIVN Gudrun
+2 SURN Oddsdottir
+1 SEX F
+1 FAMS @F7@
+1 BIRT
+2 DATE 26 Jun 1793
+2 PLAC Foss, Keldur, Rngrvl, Icln.
+1 CHR
+2 DATE 27 Jun 1793
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 13 Jun 1839
+2 PLAC Tunga, Rangárvallasýsla, Southern, Iceland
+1 BURI
+2 DATE 19 Jun 1839
+2 PLAC Keldna, Rngrvl, Icln
+1 _FSID K8VD-8NW
+0 @I272771958861@ INDI
+1 NAME Karitas /Jonasdottir/
+2 GIVN Karitas
+2 SURN Jonasdottir
+1 SEX F
+1 FAMS @F8@
+1 BIRT
+2 DATE 27 Sep 1888
+2 PLAC Skardsthing, Dalasýsla, Western, Iceland
+1 CHR
+2 DATE 4 Oct 1885
+2 PLAC Skardsthing, Dalasýsla, Western, Iceland
+1 DEAT
+2 DATE 6 Mar 1945
+1 _FSID MMT4-KL1
+0 @I272771958863@ INDI
+1 NAME Asdys /Jonsdr/
+2 GIVN Asdys
+2 SURN Jonsdr
+1 SEX F
+1 FAMC @F38@
+1 BIRT
+2 DATE 3 May 1862
+1 CHR
+2 DATE 3 May 1862
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3XQ-QQP
+0 @I272771958864@ INDI
+1 NAME Björn /Markússon/
+2 GIVN Björn
+2 SURN Markússon
+1 SEX M
+1 FAMC @F34@
+1 FAMS @F13@
+1 BIRT
+2 DATE 10 May 1858
+2 PLAC Hjallanes, Stórvallasókn, Árnessýsla, Suðurland, Iceland
+1 CHR
+2 DATE 10 May 1858
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 9 Nov 1925
+2 PLAC Reykjavík, Iceland
+1 _FSID LR48-PT7
+0 @I272771958865@ INDI
+1 NAME Hildur /Jónsdóttir/
+2 GIVN Hildur
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F38@
+1 BIRT
+2 DATE 27 Nov 1866
+1 CHR
+2 DATE 28 Nov 1866
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36X-1WS
+0 @I272771958866@ INDI
+1 NAME Gudbjorg /Einarsdóttir/
+2 GIVN Gudbjorg
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMC @F37@
+1 BIRT
+2 DATE 8 Jan 1866
+1 CHR
+2 DATE 8 Jan 1866
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 26 Jan 1866
+1 _FSID M3J2-32Q
+0 @I272771958867@ INDI
+1 NAME Ólöf /Árnadóttir/
+2 GIVN Ólöf
+2 SURN Árnadóttir
+1 SEX F
+1 FAMC @F132@
+1 BIRT
+2 DATE 12 Sep 1867
+1 CHR
+2 DATE 15 Sep 1867
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 26 Mar 1934
+1 _FSID M36X-4VJ
+0 @I272771958868@ INDI
+1 NAME Olof /Arnadr/
+2 GIVN Olof
+2 SURN Arnadr
+1 SEX F
+1 FAMC @F132@
+1 BIRT
+2 DATE 10 Mar 1856
+1 CHR
+2 DATE 11 Mar 1856
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID M36X-46J
+0 @I272771958869@ INDI
+1 NAME Björn /Runólfsson/
+2 GIVN Björn
+2 SURN Runólfsson
+1 SEX M
+1 FAMS @F1@
+1 FAMS @F11@
+1 FAMS @F12@
+1 BIRT
+2 DATE 1792
+2 PLAC Petursey, Vestur-Skaftfellingar, Iceland
+1 CHR
+2 DATE 1 Mar 1792
+2 PLAC Petursey,Solheimar,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 20 Apr 1841
+2 PLAC Petursey, Solheimar, Vesturskaftafell, Iceland
+1 _FSID LH7M-CZY
+0 @I272771958870@ INDI
+1 NAME Jon /Jonsson/
+2 GIVN Jon
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F38@
+1 BIRT
+2 DATE 3 May 1862
+1 CHR
+2 DATE 3 May 1862
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3XW-RY3
+0 @I272771958871@ INDI
+1 NAME Helga /Markusson/
+2 GIVN Helga
+2 SURN Markusson
+1 SEX F
+1 FAMC @F34@
+1 BIRT
+2 DATE 17 Dec 1873
+1 CHR
+2 DATE 22 Dec 1873
+2 PLAC Gaulverjabaer,Arnessysla,Iceland
+1 _FSID M3QL-D5Q
+0 @I272771958872@ INDI
+1 NAME Guðrún Yngri /Halldórsdóttir/
+2 GIVN Guðrún Yngri
+2 SURN Halldórsdóttir
+1 SEX F
+1 FAMS @F14@
+1 BIRT
+2 DATE 29 Oct 1799
+2 PLAC Klofasókn Rangárssýslu S-Iceland
+1 CHR
+2 DATE 29 Oct 1799
+2 PLAC Klofa,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 18 Jul 1863
+2 PLAC Stóruvallasókn Iceland
+1 _FSID K84B-ZMZ
+0 @I272771958873@ INDI
+1 NAME Páll /Árnason/
+2 GIVN Páll
+2 SURN Árnason
+1 SEX M
+1 FAMC @F132@
+1 FAMS @F17@
+1 BIRT
+2 DATE 25 Dec 1871
+1 CHR
+2 DATE 29 Dec 1871
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 24 Apr 1930
+2 PLAC Reykjavík, Iceland
+1 _FSID M365-TN6
+0 @I272771958874@ INDI
+1 NAME Brinjolfur /Arnason/
+2 GIVN Brinjolfur
+2 SURN Arnason
+1 SEX M
+1 FAMC @F132@
+1 BIRT
+2 DATE 13 Apr 1873
+1 CHR
+2 DATE 15 Apr 1873
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36B-XMR
+0 @I272771958875@ INDI
+1 NAME Kristin /Arnadr/
+2 GIVN Kristin
+2 SURN Arnadr
+1 SEX F
+1 FAMC @F132@
+1 CHR
+2 DATE 25 Feb 1855
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID M3X7-3XN
+0 @I272771958876@ INDI
+1 NAME Anna /Gudnadottir/
+2 GIVN Anna
+2 SURN Gudnadottir
+1 SEX F
+1 FAMS @F16@
+1 BIRT
+2 DATE 11 Apr 1904
+2 PLAC Hvammur, Holt undir Eyjafjollum, Rangarvalla, Iceland
+1 DEAT
+2 DATE 4 May 1987
+2 PLAC of Stokkseyri, Arness, Iceland
+1 _FSID MMT4-KBH
+0 @I272771958877@ INDI
+1 NAME Thorvaldur /Jonsson/
+2 GIVN Thorvaldur
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F38@
+1 BIRT
+2 DATE 21 Sep 1864
+1 CHR
+2 DATE 22 Sep 1864
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3XQ-6MW
+0 @I272771958878@ INDI
+1 NAME Haldor /Jonsson/
+2 GIVN Haldor
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F38@
+1 BIRT
+2 DATE 24 Jun 1856
+1 CHR
+2 DATE 24 Jun 1856
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3X9-5SL
+0 @I272771958879@ INDI
+1 NAME Jón /Jónsson/
+2 GIVN Jón
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F14@
+1 FAMS @F15@
+1 BIRT
+2 DATE 3 Mar 1799
+2 PLAC Klofa, Rangárvallasýsla, Southern, Iceland
+1 CHR
+2 DATE 4 Mar 1799
+2 PLAC Klofa,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 14 Jul 1852
+2 PLAC Rangárvallasýsla, Suðurland, Iceland
+1 _FSID KCK8-SMW
+0 @I272771958880@ INDI
+1 NAME Gudbjorg /Einarsdóttir/
+2 GIVN Gudbjorg
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMC @F37@
+1 BIRT
+2 DATE 22 May 1869
+1 CHR
+2 DATE 23 May 1869
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 4 Aug 1869
+1 _FSID MMMK-4PD
+0 @I272771958881@ INDI
+1 NAME Gudlaug /Magnusdottir/
+2 GIVN Gudlaug
+2 SURN Magnusdottir
+1 SEX F
+1 FAMS @F4@
+1 BIRT
+2 DATE 1790
+2 PLAC Nupar,Reykir,Arnessysla,Iceland
+1 CHR
+2 PLAC (11-1801)
+1 DEAT
+2 DATE 25 Oct 1848
+2 PLAC Audsholt, Arnarbaeli, Arness, Iceland
+1 BURI
+2 DATE 1 Nov 1848
+2 PLAC , Arnarbaeli, Arness, Iceland
+1 _FSID LHR4-P7Z
+0 @I272771958882@ INDI
+1 NAME Gudmundur /Arnason/
+2 GIVN Gudmundur
+2 SURN Arnason
+1 SEX M
+1 FAMC @F132@
+1 BIRT
+2 DATE 6 Sep 1858
+1 CHR
+2 DATE 6 Sep 1858
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID M36Y-Z9Z
+0 @I272771958883@ INDI
+1 NAME Jon /Jonsson/
+2 GIVN Jon
+2 SURN Jonsson
+1 SEX M
+1 FAMS @F19@
+1 BIRT
+2 DATE 1799
+2 PLAC Kirkjubæjarklaustur, Iceland
+1 DEAT
+2 DATE 11 Nov 1870
+2 PLAC Iceland
+1 _FSID LZ2D-S79
+0 @I272771958885@ INDI
+1 NAME Olof /Jonsdr/
+2 GIVN Olof
+2 SURN Jonsdr
+1 SEX F
+1 FAMC @F38@
+1 BIRT
+2 DATE 29 Sep 1865
+1 CHR
+2 DATE 29 Sep 1865
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36X-WPV
+0 @I272771958886@ INDI
+1 NAME Gudbjorg /Gunnarsdottir/
+2 GIVN Gudbjorg
+2 SURN Gunnarsdottir
+1 SEX F
+1 FAMS @F18@
+1 BIRT
+2 DATE 29 Oct 1894
+2 PLAC Langstadir, Hraungerdi, Arness, Iceland
+1 DEAT
+2 DATE 14 Oct 1979
+2 PLAC Reykjavík, Iceland
+1 _FSID 946F-WVG
+0 @I272771958887@ INDI
+1 NAME Gisli /Einarsson/
+2 GIVN Gisli
+2 SURN Einarsson
+1 SEX M
+1 FAMC @F37@
+1 BIRT
+2 DATE 27 Sep 1867
+1 CHR
+2 DATE 28 Sep 1867
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID M3J2-YTP
+0 @I272771958888@ INDI
+1 NAME Lydur /Arnasson/
+2 GIVN Lydur
+2 SURN Arnasson
+1 SEX M
+1 FAMC @F132@
+1 FAMS @F25@
+1 BIRT
+2 DATE 3 Aug 1850
+1 CHR
+2 DATE 4 Aug 1850
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 14 Aug 1943
+1 _FSID M36K-YT4
+0 @I272771958889@ INDI
+1 NAME Olof /Arnadr/
+2 GIVN Olof
+2 SURN Arnadr
+1 SEX F
+1 FAMC @F132@
+1 CHR
+2 DATE 1 May 1858
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID M36X-4FC
+0 @I272771958890@ INDI
+1 NAME Gudrun /Sigurdardottir/
+2 GIVN Gudrun
+2 SURN Sigurdardottir
+1 SEX F
+1 FAMS @F22@
+1 BIRT
+2 DATE 18 Jan 1891
+2 PLAC Brattholtshjaleiga, Stokkseyri, Arness, Iceland
+1 CHR
+2 DATE 19 Jan 1881
+2 PLAC Stokkseyri, Árnessýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 6 Oct 1944
+2 PLAC Hafnarfirdi,, Gullbringu, Iceland
+1 _FSID G8ZW-FHD
+0 @I272771958891@ INDI
+1 NAME Haldor /Halldorsson/
+2 GIVN Haldor
+2 SURN Halldorsson
+1 SEX M
+1 FAMS @F23@
+1 FAMS @F24@
+1 BIRT
+2 DATE 13 Nov 1793
+1 CHR
+2 DATE 13 Nov 1793
+2 PLAC Klofa, Rangárvallasýsla, Southern, Iceland
+1 DEAT
+2 DATE 22 May 1866
+1 BURI
+2 DATE 1 Jun 1866
+2 PLAC Skarð, Rangárvallasýsla, Southern, Iceland
+1 _FSID M3X9-TSX
+0 @I272771958892@ INDI
+1 NAME Johanna Gudbjorg /Einarsdóttir/
+2 GIVN Johanna Gudbjorg
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMC @F37@
+1 BIRT
+2 DATE 8 Feb 1871
+1 CHR
+2 DATE 9 Feb 1871
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 15 Dec 1871
+1 _FSID MMM2-3HN
+0 @I272771958893@ INDI
+1 NAME Ingiríður /Árnadóttir/
+2 GIVN Ingiríður
+2 SURN Árnadóttir
+1 SEX F
+1 FAMS @F21@
+1 BIRT
+2 DATE 2 Apr 1795
+2 PLAC Gunnarsholti, Rangarvallasysla, Iceland
+1 CHR
+2 DATE 2 Apr 1795
+2 PLAC Gunnarshollt,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 20 Nov 1829
+1 _FSID L6Q1-9VQ
+0 @I272771958894@ INDI
+1 NAME Margret /Arnadr/
+2 GIVN Margret
+2 SURN Arnadr
+1 SEX F
+1 FAMC @F132@
+1 BIRT
+2 DATE 16 Feb 1861
+1 CHR
+2 DATE 16 Feb 1861
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID M36P-Z4L
+0 @I272771958895@ INDI
+1 NAME Elin /Jonsdottir/
+2 GIVN Elin
+2 SURN Jonsdottir
+1 SEX F
+1 FAMS @F20@
+1 BIRT
+2 DATE 26 Apr 1904
+2 PLAC Vestra Iragerdi, Stokkseyri, Arness, Iceland
+1 DEAT
+2 DATE 12 Apr 1982
+2 PLAC , Stokkseyri, Arness, Iceland
+1 _FSID MMT4-K6G
+0 @I272771958896@ INDI
+1 NAME Steinun /Einarsdóttir/
+2 GIVN Steinun
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMC @F37@
+1 FAMS @F28@
+1 BIRT
+2 DATE 7 Apr 1857
+1 CHR
+2 DATE 12 Apr 1857
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 22 Jul 1952
+1 _FSID M3X6-D7Q
+0 @I272771958898@ INDI
+1 NAME /Einarsson/
+2 SURN Einarsson
+1 SEX M
+1 FAMC @F37@
+1 BIRT
+2 DATE 21 Apr 1858
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 21 Apr 1858
+1 _FSID MMMV-YNC
+0 @I272771958900@ INDI
+1 NAME Steinunn /Oddsdóttir/
+2 GIVN Steinunn
+2 SURN Oddsdóttir
+1 SEX F
+1 FAMS @F19@
+1 FAMS @F27@
+1 BIRT
+2 DATE 8 May 1793
+2 PLAC Seglbudir, Kirkjubaerklaustir, Vest.-Skaft., Ice.
+1 CHR
+2 DATE 9 May 1793
+2 PLAC Seglbudir, Kirkjubaejarklaustur, Vestur-Skaftafells, Iceland
+1 DEAT
+2 DATE 29 Jan 1860
+1 _FSID L7FX-XLG
+0 @I272771958901@ INDI
+1 NAME Gudbjorg /Einarsdóttir/
+2 GIVN Gudbjorg
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMC @F37@
+1 BIRT
+2 DATE 31 Mar 1872
+1 CHR
+2 DATE 2 Apr 1872
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID MMMK-45B
+0 @I272771958902@ INDI
+1 NAME Gudmundur /Gudmundsson/
+2 GIVN Gudmundur
+2 SURN Gudmundsson
+1 SEX M
+1 FAMS @F26@
+1 BIRT
+2 DATE 14 Jan 1889
+2 PLAC Nyibaer, Arnarbaeli, Arness, Iceland
+1 DEAT
+2 DATE 26 May 1920
+2 PLAC Nyibaer, Arnarbaeli, Arness, Iceland
+1 _FSID 9V4Z-261
+0 @I272771958912@ INDI
+1 NAME Hjörtur /Sigurðsson/
+2 GIVN Hjörtur
+2 SURN Sigurðsson
+1 SEX M
+1 FAMS @F67@
+1 BIRT
+2 DATE 4 Jan 1898
+2 PLAC Holt, Arnarbaeli, Arness, Iceland
+1 CHR
+2 DATE 9 Jan 1898
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 DEAT
+2 DATE 19 Jun 1981
+1 _FSID K8DH-LH7
+0 @I272771958914@ INDI
+1 NAME Anna Kristin /Valdimarsdottir/
+2 GIVN Anna Kristin
+2 SURN Valdimarsdottir
+1 SEX F
+1 FAMS @F30@
+1 BIRT
+2 DATE 11 Apr 1917
+2 PLAC Iceland
+1 _FSID GDXS-27M
+0 @I272771958916@ INDI
+1 NAME Guðmundur /Brynjólfsson/
+2 GIVN Guðmundur
+2 SURN Brynjólfsson
+1 SEX M
+1 FAMS @F21@
+1 FAMS @F64@
+1 FAMS @F65@
+1 FAMS @F66@
+1 CHR
+2 DATE 24 Nov 1794
+2 PLAC Keldur, Rangárvallasýsla, Southern, Iceland
+1 DEAT
+2 DATE 12 Apr 1883
+1 _FSID KZ8X-3Q9
+0 @I272771958918@ INDI
+1 NAME Halldora /Oddsdottir/
+2 GIVN Halldora
+2 SURN Oddsdottir
+1 SEX F
+1 FAMS @F62@
+1 BIRT
+2 DATE 19 Apr 1790
+2 PLAC Seglabudum, Kirkjubaejarklaustur, Vestur Skaftafell, Iceland
+1 CHR
+2 DATE 10 Mar 1790
+2 PLAC Seglbudum,Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 6 Aug 1843
+1 _FSID LH71-1MF
+0 @I272771958919@ INDI
+1 NAME Jón /Jónsson/
+2 GIVN Jón
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F63@
+1 BIRT
+2 DATE 14 Feb 1824
+2 PLAC Iceland
+1 CHR
+2 DATE 15 Feb 1824
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 16 Mar 1852
+2 PLAC Iceland
+1 _FSID KZ5Q-2F2
+0 @I272771958920@ INDI
+1 NAME Ingibjörg /Ólafsdóttir/
+2 GIVN Ingibjörg
+2 SURN Ólafsdóttir
+1 SEX F
+1 FAMS @F70@
+1 BIRT
+2 DATE 15 Aug 1790
+2 PLAC Holt, Rangárvallasýsla, Suðurland, Iceland
+1 CHR
+2 DATE 15 Aug 1790
+2 PLAC Holt Undir Eyjafjollum, Rangárvallasýsla, Suðurland, Iceland
+1 _FSID G4FF-ZDR
+0 @I272771958921@ INDI
+1 NAME Gísli /Gíslason/
+2 GIVN Gísli
+2 SURN Gíslason
+1 SEX M
+1 FAMS @F62@
+1 FAMS @F73@
+1 BIRT
+2 DATE 8 Jan 1793
+2 PLAC Geirland, Kirkjub, VS, Iceland
+1 CHR
+2 DATE 1793
+2 PLAC , Kirkjubaejarkl, Vesturskaftafell, Iceland
+1 DEAT
+2 DATE 16 Feb 1862
+1 _FSID LCXW-MJN
+0 @I272771958922@ INDI
+1 NAME Gísli /Brynjólfsson/
+2 GIVN Gísli
+2 SURN Brynjólfsson
+1 SEX M
+1 FAMS @F70@
+1 FAMS @F71@
+1 BIRT
+2 DATE 27 Oct 1792
+1 CHR
+2 DATE 27 Oct 1792
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 6 Dec 1865
+2 PLAC Stóruvellir, Rangárvallasýsla, Suðurland, Iceland
+1 BURI
+2 DATE 15 Dec 1865
+2 PLAC Storuvellir Sokn, Rangárvallasýsla, Suðurland, Iceland
+1 _FSID M3XD-19S
+0 @I272771958923@ INDI
+1 NAME Gísli /Þórarinsson/
+2 GIVN Gísli
+2 SURN Þórarinsson
+1 SEX M
+1 FAMS @F72@
+1 BIRT
+2 DATE 15 Oct 1865
+2 PLAC Prestbakki, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 _FSID GFCX-ZNV
+0 @I272771958924@ INDI
+1 NAME Una /Vernhardsson/
+2 GIVN Una
+2 SURN Vernhardsson
+1 SEX F
+1 FAMC @F134@
+1 BIRT
+2 DATE 3 May 1859
+1 CHR
+2 DATE 3 May 1859
+2 PLAC Gaulverjabaer,Arnessysla,Iceland
+1 _FSID M37H-B6W
+0 @I272771958925@ INDI
+1 NAME Gudrun /Vernhardsson/
+2 GIVN Gudrun
+2 SURN Vernhardsson
+1 SEX F
+1 FAMC @F134@
+1 BIRT
+2 DATE 19 Sep 1866
+1 CHR
+2 DATE 20 Sep 1866
+2 PLAC Stokkseyri,Arnessysla,Iceland
+1 _FSID M37L-QF3
+0 @I272771958926@ INDI
+1 NAME John /Vernhardson/
+2 GIVN John
+2 SURN Vernhardson
+1 SEX M
+1 FAMC @F134@
+1 FAMS @F68@
+1 BIRT
+2 DATE 27 Feb 1868
+2 PLAC Iceland
+1 CHR
+2 DATE 27 Feb 1868
+2 PLAC Stokkseyri,Arnessysla,Iceland
+1 DEAT
+2 DATE Nov 1934
+2 PLAC Pierce, Washington, United States
+1 BURI
+2 PLAC Gig Harbor, Pierce, Washington, United States
+1 _FSID LCVC-FDB
+0 @I272771958927@ INDI
+1 NAME Gisli Vernhardur /Leifur/
+2 GIVN Gisli Vernhardur
+2 SURN Leifur
+1 SEX M
+1 FAMC @F134@
+1 FAMS @F69@
+1 BIRT
+2 DATE 24 Jul 1871
+2 PLAC Iceland
+1 CHR
+2 DATE 27 Jul 1871
+2 PLAC Stokkseyri,Arnessysla,Iceland
+1 DEAT
+2 DATE 25 Apr 1933
+2 PLAC Ramsey, Minnesota, United States
+1 _FSID GFP9-YC7
+0 @I272771958928@ INDI
+1 NAME Ingiríður /Jónsdóttir/
+2 GIVN Ingiríður
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F49@
+1 BIRT
+2 DATE 25 Nov 1825
+1 CHR
+2 DATE 25 Nov 1825
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 7 Apr 1890
+2 PLAC Keldur, Rangárvallasýsla, Suðurland, Iceland
+1 _FSID M366-NCK
+0 @I272771958930@ INDI
+1 NAME Jónína Íngibjörg /Guðmundsdóttir/
+2 GIVN Jónína Íngibjörg
+2 SURN Guðmundsdóttir
+1 SEX F
+1 FAMS @F47@
+1 BIRT
+2 DATE 23 Apr 1874
+2 PLAC Kaldaðarnes, Árnessýsla, Southern, Iceland
+1 CHR
+2 DATE 26 Apr 1874
+2 PLAC Kaldadarnes,Arnessysla,Iceland
+1 _FSID KCMZ-XC7
+0 @I272771958931@ INDI
+1 NAME Margrét /Jónsdóttir/
+2 GIVN Margrét
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMS @F74@
+1 BIRT
+2 DATE 27 Apr 1797
+2 PLAC Stora-Reydarvatn, Keldna, Rangarvalla, Iceland
+1 CHR
+2 DATE 27 Apr 1797
+2 PLAC Keldur, Rngrvl., Icln
+1 DEAT
+2 DATE 24 Mar 1860
+2 PLAC Galtalækur, Rangárvallasýsla, Suðurland, Iceland
+1 BURI
+2 DATE 4 Apr 1860
+2 PLAC Galtalækur, Rangárvallasýsla, Suðurland, Iceland
+1 _FSID LW1R-Z1T
+0 @I272771958932@ INDI
+1 NAME Valgerður /Bjarnadóttir/
+2 GIVN Valgerður
+2 SURN Bjarnadóttir
+1 SEX F
+1 FAMS @F42@
+1 BIRT
+2 DATE 29 May 1859
+2 PLAC Hraunastaðir, Austur-Barðastrandarsýsla, Westfjords, Iceland
+1 CHR
+2 DATE 29 May 1859
+2 PLAC Hruni,Arnessysla,Iceland
+1 DEAT
+2 DATE 26 Jul 1939
+1 _FSID PHS9-3RJ
+0 @I272771958933@ INDI
+1 NAME Jón /Jónsson/
+2 GIVN Jón
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F49@
+1 FAMS @F76@
+1 BIRT
+2 DATE 30 Aug 1827
+1 CHR
+2 DATE 30 Aug 1827
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 30 Jul 1866
+2 PLAC Keldur, Rangárvallasýsla, Suðurland, Iceland
+1 BURI
+2 DATE 6 Aug 1866
+2 PLAC Keldur, Rangárvallasýsla, Suðurland, Iceland
+1 _FSID M3XW-VC8
+0 @I272771958934@ INDI
+1 NAME Árni /Finnbogasson/
+2 GIVN Árni
+2 SURN Finnbogasson
+1 SEX M
+1 FAMS @F74@
+1 BIRT
+2 DATE 18 Feb 1790
+2 PLAC Reynifell, Keldna, Rngrvl., Icln
+1 CHR
+2 DATE 18 Feb 1790
+2 PLAC Reynifell, Keldna, Rangarvalla, Iceland
+1 DEAT
+2 DATE 2 Mar 1849
+2 PLAC Rangárvallasýsla, Suðurland, Iceland
+1 BURI
+2 DATE 8 Mar 1849
+2 PLAC Skarð, Rangárvallasýsla, Suðurland, Iceland
+1 _FSID LW1R-ZBC
+0 @I272771958935@ INDI
+1 NAME Thorsteinn /Bjarnason/
+2 GIVN Thorsteinn
+2 SURN Bjarnason
+1 SEX M
+1 FAMC @F144@
+1 FAMS @F75@
+1 BIRT
+2 DATE 25 Aug 1847
+2 PLAC Þykkvabæjarklaustur, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 1849
+2 PLAC Thykkvabaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID GFHB-J2S
+0 @I272771958937@ INDI
+1 NAME Soffía Sigríður /Einarsdóttir/
+2 GIVN Soffía Sigríður
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMS @F52@
+1 BIRT
+2 DATE 24 Jun 1848
+2 PLAC Bollagardur, Seltjarnarnes, Gullbringu, Iceland
+1 CHR
+2 DATE 1848
+1 DEAT
+2 DATE 4 Apr 1937
+1 _FSID M3CS-GH7
+0 @I272771958938@ INDI
+1 NAME Erlindur /Bjarnason/
+2 GIVN Erlindur
+2 SURN Bjarnason
+1 SEX M
+1 FAMC @F144@
+1 BIRT
+2 DATE abt 1834
+2 PLAC Þykkvabæjarklaustur, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 _FSID GFCM-D4D
+0 @I272771958939@ INDI
+1 NAME John Vernhardsson /Leifur/
+2 GIVN John Vernhardsson
+2 SURN Leifur
+1 SEX M
+1 FAMC @F134@
+1 FAMS @F78@
+1 BIRT
+2 DATE 28 Nov 1860
+2 PLAC Efra, Seli, Iceland
+1 CHR
+2 DATE 29 Nov 1860
+2 PLAC Gaulverjabaer,Arnessysla,Iceland
+1 DEAT
+2 DATE 10 Sep 1942
+2 PLAC Minneapolis, Hennepin, Minnesota, United States
+1 _FSID MJPD-CZX
+0 @I272771958940@ INDI
+1 NAME Sigríður /Þorvarðardóttir/
+2 GIVN Sigríður
+2 SURN Þorvarðardóttir
+1 SEX F
+1 FAMS @F48@
+1 BIRT
+2 DATE 12 Jul 1867
+2 PLAC Litlu Sandvik, Kaldadarnes, Arness, Iceland
+1 CHR
+2 DATE 13 Jul 1867
+2 PLAC Kaldadarnes,Arnessysla,Iceland
+1 DEAT
+2 DATE 27 Feb 1895
+1 _FSID KZTY-8V4
+0 @I272771958941@ INDI
+1 NAME Árni /Bjarnason/
+2 GIVN Árni
+2 SURN Bjarnason
+1 SEX M
+1 FAMC @F144@
+1 BIRT
+2 DATE abt 1833
+2 PLAC Þykkvabæjarklaustur, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 _FSID GFCM-MZB
+0 @I272771958942@ INDI
+1 NAME Jón /Þórðarson/
+2 GIVN Jón
+2 SURN Þórðarson
+1 SEX M
+1 FAMS @F77@
+1 BIRT
+2 DATE 18 Nov 1797
+1 CHR
+2 PLAC Island
+1 DEAT
+2 DATE 14 Feb 1872
+1 _FSID KDBS-2D2
+0 @I272771958943@ INDI
+1 NAME Snjafrid /Einarsson/
+2 GIVN Snjafrid
+2 SURN Einarsson
+1 SEX F
+1 FAMS @F6@
+1 BIRT
+2 DATE 1777
+2 PLAC Floagafli,Kaldadarnes,Arnessysla,Iceland
+1 CHR
+2 PLAC (24-1801)
+1 _FSID 2737-YW5
+0 @I272771958944@ INDI
+1 NAME Ingigerdur /Hannesdóttir/
+2 GIVN Ingigerdur
+2 SURN Hannesdóttir
+1 SEX F
+1 FAMC @F5@
+1 FAMS @F82@
+1 BIRT
+2 DATE 1826
+2 PLAC Stora Sandvik, Kaldadarnes, Arness, Iceland
+1 DEAT
+2 DATE 1 Aug 1888
+2 PLAC Kross, Arnarbaeli, Arness, Iceland
+1 BURI
+2 DATE 13 Aug 1888
+2 PLAC , Arnarbaeli, Arness, Iceland
+1 _FSID KNZC-WTX
+0 @I272771958945@ INDI
+1 NAME Isleifur /Vernhardsson/
+2 GIVN Isleifur
+2 SURN Vernhardsson
+1 SEX M
+1 FAMC @F134@
+1 FAMS @F83@
+1 BIRT
+2 DATE 6 Jul 1857
+2 PLAC Keldur, Rangárvallasýsla, Suðurland, Iceland
+1 CHR
+2 DATE 6 Jul 1857
+2 PLAC Keldur, Rangárvallasýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 2 Oct 1923
+2 PLAC Mountain, Pembina, North Dakota, United States
+1 BURI
+2 DATE 1923
+2 PLAC Mountain, Pembina, North Dakota, United States of America
+1 _FSID KCKD-TYD
+0 @I272771958946@ INDI
+1 NAME Gisli /Hinriksson/
+2 GIVN Gisli
+2 SURN Hinriksson
+1 SEX M
+1 FAMS @F81@
+1 BIRT
+2 DATE 1801
+2 PLAC Hvoll, Árnessýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 11 Jul 1863
+2 PLAC Árnessýsla, Suðurland, Iceland
+1 _FSID KZ96-M8S
+0 @I272771958947@ INDI
+1 NAME Guðrún /Markúsdóttir/
+2 GIVN Guðrún
+2 SURN Markúsdóttir
+1 SEX F
+1 FAMS @F13@
+1 BIRT
+2 DATE 2 Apr 1867
+2 PLAC Hjörleifshöfði, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 5 Apr 1867
+2 PLAC Hofdabrekka,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 5 Nov 1930
+2 PLAC Reykjavík, Iceland
+1 _FSID LR48-56Q
+0 @I272771958948@ INDI
+1 NAME Hjörtur /Bjarnason/
+2 GIVN Hjörtur
+2 SURN Bjarnason
+1 SEX M
+1 FAMC @F144@
+1 FAMS @F80@
+1 BIRT
+2 DATE 1830
+2 PLAC Þykkvabæjarklaustur, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 _FSID K468-1DT
+0 @I272771958949@ INDI
+1 NAME Steinun /Loptsdottir/
+2 GIVN Steinun
+2 SURN Loptsdottir
+1 SEX F
+1 FAMC @F51@
+1 BIRT
+2 DATE 17 Dec 1833
+1 CHR
+2 DATE 21 Dec 1833
+2 PLAC Hofdabrekka,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 23 Jun 1835
+1 _FSID M3J5-DVK
+0 @I272771958950@ INDI
+1 NAME Magnus /Magnusson/
+2 GIVN Magnus
+2 SURN Magnusson
+1 SEX M
+1 FAMS @F40@
+1 BIRT
+2 DATE 11 Sep 1873
+2 PLAC Skumsstadir, Stokkseyri, Arness, Iceland
+1 CHR
+2 DATE 17 Sep 1873
+2 PLAC Stokkseyri,Arnessysla,Iceland
+1 DEAT
+2 DATE 5 Mar 1970
+1 _FSID MMT4-2JC
+0 @I272771958951@ INDI
+1 NAME Gisli /Hannesson/
+2 GIVN Gisli
+2 SURN Hannesson
+1 SEX M
+1 FAMC @F5@
+1 FAMS @F79@
+1 BIRT
+2 DATE 1819
+2 PLAC Hallskoti,Kaldadarnes,Arnessysla,Iceland
+1 DEAT
+2 DATE 16 Mar 1887
+2 PLAC , Kaldadarnes, Arness, Iceland
+1 BURI
+2 DATE 26 Mar 1887
+2 PLAC , Kaldadarnes, Arness, Iceland
+1 _FSID LCCC-P2K
+0 @I272771958952@ INDI
+1 NAME Gudbjorg /Loptsdottir/
+2 GIVN Gudbjorg
+2 SURN Loptsdottir
+1 SEX F
+1 FAMC @F51@
+1 BIRT
+2 DATE 24 Mar 1836
+1 CHR
+2 DATE 25 Mar 1836
+2 PLAC Hofdabrekka,Vestur-Skaftafellssysla,Iceland
+1 _FSID M3J2-QRR
+0 @I272771958953@ INDI
+1 NAME Guðrún /Jónsdóttir/
+2 GIVN Guðrún
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMS @F81@
+1 BIRT
+2 DATE 24 Sep 1795
+2 PLAC Árnessýsla, Suðurland, Iceland
+1 CHR
+2 DATE 24 Sep 1795
+2 PLAC Gaulverjabaer,Arnessysla,Iceland
+1 DEAT
+2 DATE 31 Aug 1860
+1 _FSID M372-7XW
+0 @I272771958954@ INDI
+1 NAME Snjófríður /Hannesdóttir/
+2 GIVN Snjófríður
+2 SURN Hannesdóttir
+1 SEX F
+1 FAMC @F5@
+1 FAMS @F86@
+1 FAMS @F88@
+1 FAMS @F87@
+1 FAMS @F89@
+1 BIRT
+2 DATE 28 Aug 1822
+2 PLAC Kaldaðarnes, Árnessýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 24 Jun 1868
+2 PLAC Árnessýsla, Suðurland, Iceland
+1 BURI
+2 DATE 3 Jul 1868
+2 PLAC Hruni, Arness, Iceland
+1 _FSID LHTY-DG9
+0 @I272771958955@ INDI
+1 NAME Kristin /Hannesdóttir/
+2 GIVN Kristin
+2 SURN Hannesdóttir
+1 SEX F
+1 FAMC @F5@
+1 FAMS @F90@
+1 BIRT
+2 DATE 1828
+2 PLAC Stora Sandvik, Kaldadarnes, Arness, Iceland
+1 DEAT
+2 DATE 16 Jan 1908
+2 PLAC Stora-Sandvik, Kaldadarnes, Arness, Iceland
+1 _FSID LZGZ-K5F
+0 @I272771958956@ INDI
+1 NAME Markús /Loptsson/
+2 GIVN Markús
+2 SURN Loptsson
+1 SEX M
+1 FAMC @F51@
+1 FAMS @F84@
+1 FAMS @F85@
+1 BIRT
+2 DATE 28 May 1828
+1 CHR
+2 DATE 28 May 1828
+2 PLAC Solheimar Sokn,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 20 Nov 1906
+2 PLAC Iceland
+1 _FSID KZH1-XW6
+0 @I272771958957@ INDI
+1 NAME /Jonsson/
+2 SURN Jonsson
+1 SEX F
+1 FAMC @F14@
+1 BIRT
+2 DATE 23 Oct 1829
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 23 Oct 1829
+1 _FSID M366-SW1
+0 @I272771958958@ INDI
+1 NAME Valgerður /Brynjólfsdóttir/
+2 GIVN Valgerður
+2 SURN Brynjólfsdóttir
+1 SEX F
+1 FAMS @F77@
+1 BIRT
+2 DATE 25 Apr 1797
+2 PLAC Vestri-Kirkjubær, Keldnasókn, Rangárvallahreppur, Rangárvallasýsla
+1 CHR
+2 DATE 25 Apr 1797
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 19 Oct 1878
+1 _FSID LHRY-P21
+0 @I272771958959@ INDI
+1 NAME Steinun /Loptsdottir/
+2 GIVN Steinun
+2 SURN Loptsdottir
+1 SEX F
+1 FAMC @F51@
+1 BIRT
+2 DATE 1835
+1 CHR
+2 DATE 1835
+2 PLAC Hofdabrekka,Vestur-Skaftafellssysla,Iceland
+1 _FSID M3J5-D23
+0 @I272771958960@ INDI
+1 NAME Fridgjarn /Jonsson/
+2 GIVN Fridgjarn
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F14@
+1 BIRT
+2 DATE 22 Nov 1845
+1 CHR
+2 DATE 30 Nov 1845
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M361-K3D
+0 @I272771958961@ INDI
+1 NAME Jón /Jónsson/
+2 GIVN Jón
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F9@
+1 BIRT
+2 DATE 24 Dec 1867
+1 CHR
+2 DATE 24 Dec 1867
+2 PLAC Hofdabrekka,Vestur-Skaftafellssysla,Iceland
+1 _FSID M3JR-HKV
+0 @I272771958962@ INDI
+1 NAME Guðmundur /Hannesson/
+2 GIVN Guðmundur
+2 SURN Hannesson
+1 SEX M
+1 FAMC @F5@
+1 FAMS @F92@
+1 BIRT
+2 DATE 1823
+2 PLAC Litla Sandvik, Kaldadarnes, Arness, Iceland
+1 DEAT
+2 DATE 13 Dec 1893
+2 PLAC Jorvik, Laugardaelir, Arness, Iceland
+1 BURI
+2 DATE 21 Dec 1893
+2 PLAC , Laugardaelir, Arness, Iceland
+1 _FSID LHR4-GLS
+0 @I272771958963@ INDI
+1 NAME Hannes /Jonsson/
+2 GIVN Hannes
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F14@
+1 BIRT
+2 DATE 22 Sep 1823
+1 CHR
+2 DATE 22 Sep 1823
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36R-MXR
+0 @I272771958964@ INDI
+1 NAME Einar /Jónsson/
+2 GIVN Einar
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F14@
+1 FAMS @F91@
+1 BIRT
+2 DATE 20 Feb 1842
+2 PLAC Klofasókn. Rangárvallas. S. Iceland
+1 CHR
+2 DATE 21 Feb 1842
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 19 Mar 1897
+1 _FSID LT26-L1C
+0 @I272771958965@ INDI
+1 NAME Gudmundur /Loptsson/
+2 GIVN Gudmundur
+2 SURN Loptsson
+1 SEX M
+1 FAMC @F51@
+1 BIRT
+2 DATE 27 Mar 1826
+1 CHR
+2 DATE 27 Mar 1826
+2 PLAC Solheimar Sokn,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 3 Apr 1826
+1 _FSID M3JG-KDM
+0 @I272771958967@ INDI
+1 NAME Elin /Loptsdottir/
+2 GIVN Elin
+2 SURN Loptsdottir
+1 SEX F
+1 FAMC @F51@
+1 BIRT
+2 DATE 11 May 1827
+1 CHR
+2 DATE 12 May 1827
+2 PLAC Solheimar Sokn,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 5 Sep 1827
+1 _FSID M3JK-LWF
+0 @I272771958968@ INDI
+1 NAME Ingvoldr /Jonsdr/
+2 GIVN Ingvoldr
+2 SURN Jonsdr
+1 SEX F
+1 FAMC @F14@
+1 BIRT
+2 DATE 28 Feb 1825
+1 CHR
+2 DATE 2 Mar 1825
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36B-KVR
+0 @I272771958969@ INDI
+1 NAME Bjarghildi /Oddsdottir/
+2 GIVN Bjarghildi
+2 SURN Oddsdottir
+1 SEX F
+1 FAMS @F54@
+1 BIRT
+2 DATE 1800
+2 PLAC Reynir, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 10 Jul 1856
+1 _FSID LKKS-GPW
+0 @I272771958971@ INDI
+1 NAME Gudrun /Jonsdr/
+2 GIVN Gudrun
+2 SURN Jonsdr
+1 SEX F
+1 FAMC @F14@
+1 BIRT
+2 DATE 6 Feb 1826
+1 CHR
+2 DATE 8 Feb 1826
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3XC-LHY
+0 @I272771958972@ INDI
+1 NAME Jon /Jonsson/
+2 GIVN Jon
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F14@
+1 BIRT
+2 DATE 12 Jun 1827
+1 CHR
+2 DATE 12 Jun 1827
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3XW-VWD
+0 @I272771958974@ INDI
+1 NAME Eyjolfur /Loptsson/
+2 GIVN Eyjolfur
+2 SURN Loptsson
+1 SEX M
+1 FAMC @F51@
+1 BIRT
+2 DATE Jun 1829
+1 CHR
+2 DATE Jun 1829
+2 PLAC Solheimar Sokn,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 1829
+1 _FSID M3JL-Z42
+0 @I272771958975@ INDI
+1 NAME Guðmundur /Hannesson/
+2 GIVN Guðmundur
+2 SURN Hannesson
+1 SEX M
+1 FAMC @F5@
+1 FAMS @F93@
+1 BIRT
+2 DATE 1817
+2 PLAC Floagafli,Kaldadarnes,Arnessysla,Iceland
+1 CHR
+2 PLAC (33-1855)
+1 DEAT
+2 DATE 9 Aug 1896
+2 PLAC Langholt, Laugardaelir, Arness, Iceland
+1 BURI
+2 DATE 17 Aug 1896
+2 PLAC , Laugardaelir, Arness, Iceland
+1 _FSID LHR4-GRX
+0 @I272771958976@ INDI
+1 NAME Gudmundur /Loptsson/
+2 GIVN Gudmundur
+2 SURN Loptsson
+1 SEX M
+1 FAMC @F51@
+1 BIRT
+2 DATE Jun 1830
+1 CHR
+2 DATE 25 Jun 1830
+2 PLAC Solheimar Sokn,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 8 Oct 1830
+1 _FSID M3JG-K6X
+0 @I272771958977@ INDI
+1 NAME Jon /Jonsson/
+2 GIVN Jon
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F14@
+1 BIRT
+2 DATE 21 Feb 1826
+1 CHR
+2 DATE 22 Feb 1826
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3XW-JLC
+0 @I272771958978@ INDI
+1 NAME Arnthrudur /Hannesdóttir/
+2 GIVN Arnthrudur
+2 SURN Hannesdóttir
+1 SEX F
+1 FAMC @F5@
+1 FAMS @F58@
+1 BIRT
+2 DATE 1825
+2 PLAC Stora Sandvik, Kaldadarnes, Arness, Iceland
+1 DEAT
+2 DATE 15 Jan 1887
+2 PLAC Nupur, Arnarbaeli, Arness, Iceland
+1 BURI
+2 DATE 25 Jan 1887
+2 PLAC , Arnarbaeli, Arness, Iceland
+1 _FSID KNZC-YXD
+0 @I272771958979@ INDI
+1 NAME Gysle /Loptsson/
+2 GIVN Gysle
+2 SURN Loptsson
+1 SEX M
+1 FAMC @F51@
+1 BIRT
+2 DATE 25 Jun 1831
+1 CHR
+2 DATE 26 Jun 1831
+2 PLAC Hofdabrekka,Vestur-Skaftafellssysla,Iceland
+1 _FSID M3JP-TKV
+0 @I272771958980@ INDI
+1 NAME Sigurdur /Loptsson/
+2 GIVN Sigurdur
+2 SURN Loptsson
+1 SEX M
+1 FAMC @F51@
+1 BIRT
+2 DATE 20 Feb 1840
+1 CHR
+2 DATE 22 Feb 1840
+2 PLAC Hofdabrekka,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 4 Oct 1840
+1 _FSID M3JL-H3D
+0 @I272771958981@ INDI
+1 NAME Grimur /Einarsson/
+2 GIVN Grimur
+2 SURN Einarsson
+1 SEX M
+1 FAMS @F10@
+1 BIRT
+2 DATE 14 Nov 1858
+1 CHR
+2 DATE 15 Nov 1858
+2 PLAC Reynir,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 15 Aug 1897
+2 PLAC Iceland
+1 _FSID M3JG-WDR
+0 @I272771958982@ INDI
+1 NAME Solveig /Magnúsdóttir/
+2 GIVN Solveig
+2 SURN Magnúsdóttir
+1 SEX F
+1 FAMS @F45@
+1 BIRT
+2 DATE 11 Jun 1849
+1 CHR
+2 DATE 17 Jun 1849
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 23 Jun 1927
+2 PLAC Iceland
+1 _FSID M3XQ-N9H
+0 @I272771958983@ INDI
+1 NAME Sesselja /Hannesdóttir/
+2 GIVN Sesselja
+2 SURN Hannesdóttir
+1 SEX F
+1 FAMC @F5@
+1 FAMS @F57@
+1 BIRT
+2 DATE 4 Sep 1830
+2 PLAC Storu-Sandvik,Kaldadarnes,Arnessysla,Iceland
+1 DEAT
+2 DATE 17 Mar 1924
+2 PLAC Selfoss, Laugardaelir, Arness, Iceland
+1 BURI
+2 PLAC , Laugardaelir, Arness, Iceland
+1 _FSID KNZ4-Y4Y
+0 @I272771958984@ INDI
+1 NAME Gudmundur /Loptsson/
+2 GIVN Gudmundur
+2 SURN Loptsson
+1 SEX M
+1 FAMC @F51@
+1 BIRT
+2 DATE 22 Jun 1837
+1 CHR
+2 DATE 24 Jun 1837
+2 PLAC Hofdabrekka,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 3 Jul 1837
+1 _FSID M3JG-KX1
+0 @I272771958985@ INDI
+1 NAME Johan /Jonsson/
+2 GIVN Johan
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F14@
+1 BIRT
+2 DATE 17 Oct 1838
+1 CHR
+2 DATE 18 Oct 1838
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3XW-L7H
+0 @I272771958986@ INDI
+1 NAME Halla /Bjarnadóttir/
+2 GIVN Halla
+2 SURN Bjarnadóttir
+1 SEX F
+1 FAMS @F53@
+1 BIRT
+2 DATE 12 Aug 1837
+2 PLAC Valdastadir, Kaldadarnes, Arness, Iceland
+1 CHR
+2 DATE 12 Aug 1837
+2 PLAC Kaldadarnes,Arnessysla,Iceland
+1 DEAT
+2 DATE 8 Feb 1905
+1 _FSID K4R2-JJD
+0 @I272771958987@ INDI
+1 NAME Margret /Haldorsdr/
+2 GIVN Margret
+2 SURN Haldorsdr
+1 SEX F
+1 FAMC @F23@
+1 BIRT
+2 DATE 4 Feb 1826
+1 CHR
+2 DATE 6 Feb 1826
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 17 Sep 1826
+2 PLAC Leirubakki, Klofa, Rangarvalla, Iceland
+1 _FSID LCFW-TSD
+0 @I272771958988@ INDI
+1 NAME Haldor /Jonsson/
+2 GIVN Haldor
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F14@
+1 BIRT
+2 DATE 19 Oct 1836
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3X9-PR4
+0 @I272771958989@ INDI
+1 NAME Thorbiorg /Loptsdottir/
+2 GIVN Thorbiorg
+2 SURN Loptsdottir
+1 SEX F
+1 FAMC @F51@
+1 BIRT
+2 DATE 23 Sep 1841
+1 CHR
+2 DATE 26 Sep 1841
+2 PLAC Hofdabrekka,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 25 Oct 1841
+1 _FSID M3J2-D5Q
+0 @I272771958990@ INDI
+1 NAME Thorvald /Halldorsson/
+2 GIVN Thorvald
+2 SURN Halldorsson
+1 SEX M
+1 FAMC @F23@
+1 BIRT
+2 DATE 18 Jan 1830
+2 PLAC Leirubakki, Klofa, Rangarvalla, Iceland
+1 CHR
+2 DATE 18 Jan 1830
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID LCFW-TS1
+0 @I272771958991@ INDI
+1 NAME Sigurður /Loptsson/
+2 GIVN Sigurður
+2 SURN Loptsson
+1 SEX M
+1 FAMC @F51@
+1 FAMS @F59@
+1 BIRT
+2 DATE 28 May 1838
+1 CHR
+2 DATE 28 May 1838
+2 PLAC Hofdabrekka,Vestur-Skaftafellssysla,Iceland
+1 _FSID M3JY-9PC
+0 @I272771958992@ INDI
+1 NAME Jón /Jónsson/
+2 GIVN Jón
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F14@
+1 FAMS @F61@
+1 BIRT
+2 DATE 12 Apr 1831
+1 CHR
+2 DATE 12 Apr 1831
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 30 May 1871
+2 PLAC Iceland
+1 _FSID KHQN-1VW
+0 @I272771958993@ INDI
+1 NAME Eggert /Gíslason/
+2 GIVN Eggert
+2 SURN Gíslason
+1 SEX M
+1 FAMS @F46@
+1 BIRT
+2 DATE 13 May 1859
+2 PLAC Oddi, Rangárvallasýsla, Suðurland, Iceland
+1 CHR
+2 DATE 15 May 1859
+2 PLAC Oddi, Rangarvalla, Iceland
+1 _FSID M3C1-HRZ
+0 @I272771958994@ INDI
+1 NAME Margrét /Jóhannsdóttir/
+2 GIVN Margrét
+2 SURN Jóhannsdóttir
+1 SEX F
+1 FAMS @F50@
+1 BIRT
+2 DATE 24 Aug 1874
+1 CHR
+2 DATE 24 Aug 1874
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 31 Mar 1943
+1 _FSID M36P-WVY
+0 @I272771958995@ INDI
+1 NAME Ingibiorg /Haldorsdr/
+2 GIVN Ingibiorg
+2 SURN Haldorsdr
+1 SEX F
+1 FAMC @F23@
+1 BIRT
+2 DATE 21 Jul 1832
+2 PLAC Leirubakka, Rngrvl, Icln
+1 CHR
+2 DATE 22 Jul 1832
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID LCFW-T3D
+0 @I272771958996@ INDI
+1 NAME Wilhelm Friman /Jonsson/
+2 GIVN Wilhelm Friman
+2 SURN Jonsson
+1 SEX M
+1 FAMS @F44@
+1 BIRT
+2 DATE 8 Jun 1863
+2 PLAC Stóruvellir, Rangárvallasýsla, Southern, Iceland
+1 CHR
+2 DATE 8 Jun 1863
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3X8-VDB
+0 @I272771958997@ INDI
+1 NAME Halldor /Halldorsson/
+2 GIVN Halldor
+2 SURN Halldorsson
+1 SEX M
+1 FAMC @F23@
+1 BIRT
+2 DATE 25 Jul 1823
+2 PLAC Leirubakki, Klofa, Rangarvalla, Iceland
+1 CHR
+2 DATE 27 Jul 1823
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID KH75-PG9
+0 @I272771958998@ INDI
+1 NAME Gudmundur /Loftsson/
+2 GIVN Gudmundur
+2 SURN Loftsson
+1 SEX M
+1 FAMC @F51@
+1 FAMS @F60@
+1 BIRT
+2 DATE 12 Feb 1843
+2 PLAC Hjörleifshöfði, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 13 Feb 1843
+2 PLAC Höfðabrekka, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 _FSID KHLW-MW6
+0 @I272771958999@ INDI
+1 NAME Margret /Eiriksdr/
+2 GIVN Margret
+2 SURN Eiriksdr
+1 SEX F
+1 FAMC @F7@
+1 BIRT
+2 DATE 3 Sep 1819
+1 CHR
+2 DATE 4 Sep 1819
+2 PLAC Storidalur Undir Eyjafjollum,Rangarvallasysla,Iceland
+1 _FSID M36P-NQD
+0 @I272771959068@ INDI
+1 NAME Audbjörg /Björnsdóttir/
+2 GIVN Audbjörg
+2 SURN Björnsdóttir
+1 SEX F
+1 FAMC @F1@
+1 FAMS @F117@
+1 BIRT
+2 DATE 16 Aug 1834
+2 PLAC Pétursey, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 16 Aug 1834
+2 PLAC Solheimar Sokn,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 17 Jan 1882
+1 _FSID M3Q1-KH3
+0 @I272771959069@ INDI
+1 NAME Thorgils /Eiriksson/
+2 GIVN Thorgils
+2 SURN Eiriksson
+1 SEX M
+1 FAMC @F7@
+1 BIRT
+2 DATE 30 May 1828
+1 CHR
+2 DATE 30 May 1828
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID KC45-FNH
+0 @I272771959070@ INDI
+1 NAME Jóhann /Jónsson/
+2 GIVN Jóhann
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F14@
+1 FAMS @F116@
+1 FAMS @F115@
+1 BIRT
+2 DATE 8 Jul 1840
+2 PLAC Rangárvallasýsla, Suðurland, Iceland
+1 CHR
+2 DATE 10 Jul 1840
+2 PLAC Skard a Landi, Rangárvallasýsla, Suðurland, Iceland
+1 _FSID KHFL-TW8
+0 @I272771959071@ INDI
+1 NAME Ingiríður /Guðmundsdóttir/
+2 GIVN Ingiríður
+2 SURN Guðmundsdóttir
+1 SEX F
+1 FAMC @F21@
+1 BIRT
+2 DATE 21 Jul 1821
+1 CHR
+2 DATE 22 Jul 1821
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 29 Jul 1821
+2 PLAC Rangarvallasysla, Iceland
+1 _FSID M366-N39
+0 @I272771959072@ INDI
+1 NAME /Saemundsson/
+2 SURN Saemundsson
+1 SEX M
+1 FAMC @F4@
+1 BIRT
+2 DATE 15 Nov 1810
+2 PLAC Auðsholt, Árnessýsla, Southern, Iceland
+1 DEAT
+2 DATE 15 Nov 1810
+2 PLAC Auðsholt, Árnessýsla, Southern, Iceland
+1 _FSID M3QL-MYH
+0 @I272771959073@ INDI
+1 NAME Einar /Gudmundsson/
+2 GIVN Einar
+2 SURN Gudmundsson
+1 SEX M
+1 FAMS @F2@
+1 _FSID M3JY-CP2
+0 @I272771959074@ INDI
+1 NAME Emeretiana /Gislasson/
+2 GIVN Emeretiana
+2 SURN Gislasson
+1 SEX F
+1 FAMC @F62@
+1 BIRT
+2 DATE 7 Jul 1828
+1 CHR
+2 DATE 13 Jul 1828
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 1 Sep 1828
+1 _FSID MMMK-3D7
+0 @I272771959075@ INDI
+1 NAME Guðrún /Pálsdóttir/
+2 GIVN Guðrún
+2 SURN Pálsdóttir
+1 SEX F
+1 FAMS @F64@
+1 BIRT
+2 DATE 3 Jul 1793
+2 PLAC Stóri-Dalur, Rangárvallasýsla, Suðurland, Iceland
+1 CHR
+2 DATE 3 Jul 1793
+2 PLAC Backahjaleiga, Kross, Rngrvl., Icln
+1 _FSID M3XX-SDN
+0 @I272771959076@ INDI
+1 NAME Sveinn /Ingimundarson/
+2 GIVN Sveinn
+2 SURN Ingimundarson
+1 SEX M
+1 FAMS @F3@
+1 BIRT
+2 DATE 1788
+2 PLAC Reynir, Reynir, Vestur-Skaftafells, Iceland
+1 DEAT
+2 DATE 30 Jul 1859
+1 _FSID KDQQ-X49
+0 @I272771959077@ INDI
+1 NAME Olaf /Eiriksson/
+2 GIVN Olaf
+2 SURN Eiriksson
+1 SEX M
+1 FAMC @F7@
+1 BIRT
+2 DATE 16 Oct 1829
+2 PLAC Tunga, Keldna, Rngrvl., Icln
+1 CHR
+2 DATE 17 Oct 1829
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID KC6L-51G
+0 @I272771959079@ INDI
+1 NAME Odd /Eiriksson/
+2 GIVN Odd
+2 SURN Eiriksson
+1 SEX M
+1 FAMC @F7@
+1 BIRT
+2 DATE 23 Aug 1820
+2 PLAC Tunga, Keldna, Rngrvl., Icln
+1 CHR
+2 DATE 26 Aug 1820
+2 PLAC Tunga, Keldna, Rngrvl., Icln
+1 _FSID KH1B-H1K
+0 @I272771959080@ INDI
+1 NAME Helga /Gudmundsdr/
+2 GIVN Helga
+2 SURN Gudmundsdr
+1 SEX F
+1 FAMC @F21@
+1 BIRT
+2 DATE 11 Jul 1825
+1 CHR
+2 DATE 17 Jul 1825
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID M366-L9Q
+0 @I272771959081@ INDI
+1 NAME Gudrun /Saemundsdottir/
+2 GIVN Gudrun
+2 SURN Saemundsdottir
+1 SEX F
+1 FAMC @F4@
+1 BIRT
+2 DATE 21 Jan 1827
+2 PLAC Auðsholt, Árnessýsla, Southern, Iceland
+1 CHR
+2 DATE 21 Jan 1827
+2 PLAC Arnarbæli, Árnessýsla, Southern, Iceland
+1 DEAT
+2 DATE 2 Feb 1827
+2 PLAC Auðsholt, Árnessýsla, Southern, Iceland
+1 _FSID K8DZ-DB9
+0 @I272771959082@ INDI
+1 NAME Árni /Guðmundsson/
+2 GIVN Árni
+2 SURN Guðmundsson
+1 SEX M
+1 FAMC @F21@
+1 FAMS @F118@
+1 BIRT
+2 DATE 30 Apr 1824
+1 CHR
+2 DATE 1 May 1824
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 25 Jul 1891
+1 _FSID M36X-J6R
+0 @I272771959084@ INDI
+1 NAME Haldor /Gislasson/
+2 GIVN Haldor
+2 SURN Gislasson
+1 SEX M
+1 FAMC @F62@
+1 BIRT
+2 DATE 30 Jul 1829
+1 CHR
+2 DATE 3 Aug 1829
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 20 Oct 1829
+1 _FSID MMM2-Q74
+0 @I272771959085@ INDI
+1 NAME Þuríður /Jónsdóttir/
+2 GIVN Þuríður
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMS @F65@
+1 BIRT
+2 DATE 13 Dec 1825
+2 PLAC of Skarðshlíð, Skógasókn, Rangárvallasýsla, Iceland
+1 _FSID KHV7-L59
+0 @I272771959087@ INDI
+1 NAME Jórunn /Pétursdóttir/
+2 GIVN Jórunn
+2 SURN Pétursdóttir
+1 SEX F
+1 FAMS @F11@
+1 BIRT
+2 DATE 10 Jun 1794
+2 PLAC Petursey, Solheimar, Vesturskaftafell, Iceland
+1 CHR
+2 DATE 11 Jun 1794
+2 PLAC Petursey,Solheimar,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 20 Feb 1876
+2 PLAC Brekkur, Solheimar, Vesturskaftafell, Iceland
+1 _FSID KG13-L7F
+0 @I272771959088@ INDI
+1 NAME Guðrún /Halldórsdóttir/
+2 GIVN Guðrún
+2 SURN Halldórsdóttir
+1 SEX F
+1 FAMC @F23@
+1 FAMS @F121@
+1 BIRT
+2 DATE 24 May 1824
+2 PLAC Leirubakka, Rngrvl, Icln
+1 CHR
+2 DATE 24 May 1824
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID K8B5-BVW
+0 @I272771959090@ INDI
+1 NAME Jon /Eyriksson/
+2 GIVN Jon
+2 SURN Eyriksson
+1 SEX M
+1 FAMC @F7@
+1 BIRT
+2 DATE 24 Sep 1820
+1 CHR
+2 DATE 24 Sep 1820
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID M3X4-P1X
+0 @I272771959091@ INDI
+1 NAME Gudridur /Gudmundsdr/
+2 GIVN Gudridur
+2 SURN Gudmundsdr
+1 SEX F
+1 FAMC @F21@
+1 BIRT
+2 DATE 31 Jul 1826
+1 CHR
+2 DATE 31 Jul 1826
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 31 Aug 1826
+2 PLAC Rangárvallasýsla, Iceland
+1 _FSID M36N-771
+0 @I272771959093@ INDI
+1 NAME Magnus /Saemundsson/
+2 GIVN Magnus
+2 SURN Saemundsson
+1 SEX M
+1 FAMC @F4@
+1 FAMS @F119@
+1 FAMS @F120@
+1 BIRT
+2 DATE 4 Feb 1815
+2 PLAC Auðsholt, Árnessýsla, Southern, Iceland
+1 DEAT
+2 DATE 1 Apr 1894
+1 _FSID K8QC-8TQ
+0 @I272771959094@ INDI
+1 NAME Elin /Bjornsdottir/
+2 GIVN Elin
+2 SURN Bjornsdottir
+1 SEX F
+1 FAMC @F1@
+1 BIRT
+2 DATE 3 May 1833
+2 PLAC Petursey, Solheimar, Vesturskaftafell, Iceland
+1 CHR
+2 DATE 3 May 1833
+2 PLAC Solheimar Sokn,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 27 Aug 1833
+2 PLAC Petursey, Solheimar, Vesturskaftafell, Iceland
+1 _FSID K858-CY1
+0 @I272771959096@ INDI
+1 NAME Gudni /Gisladr/
+2 GIVN Gudni
+2 SURN Gisladr
+1 SEX F
+1 FAMC @F70@
+1 BIRT
+2 DATE 7 Jul 1826
+1 CHR
+2 DATE 7 Jul 1826
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36K-KQ4
+0 @I272771959097@ INDI
+1 NAME Ingibjörg /Gísladóttir/
+2 GIVN Ingibjörg
+2 SURN Gísladóttir
+1 SEX F
+1 FAMC @F62@
+1 FAMS @F122@
+1 BIRT
+2 DATE 20 Mar 1815
+2 PLAC Hraun, Kirkjubaejarklaustur, V-Skft., Icln
+1 CHR
+2 DATE 25 Mar 1815
+2 PLAC Hrauni,Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 4 Aug 1892
+2 PLAC Hnappavellir, Hof, Austurskaftafell, Iceland
+1 _FSID LHR6-LRK
+0 @I272771959098@ INDI
+1 NAME Jorun /Einarsdr/
+2 GIVN Jorun
+2 SURN Einarsdr
+1 SEX F
+1 FAMS @F12@
+1 BIRT
+2 DATE 1768
+2 PLAC Reynir, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 1816
+1 DEAT
+2 DATE 22 Dec 1812
+2 PLAC Pétursey, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 _FSID LCMD-64T
+0 @I272771959100@ INDI
+1 NAME Thorgils /Eiriksson/
+2 GIVN Thorgils
+2 SURN Eiriksson
+1 SEX M
+1 FAMC @F7@
+1 BIRT
+2 DATE 16 Sep 1831
+2 PLAC Tunga, Keldna, Rngrvl., Icln
+1 CHR
+2 DATE 20 Aug 1831
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID KHXC-NFQ
+0 @I272771959102@ INDI
+1 NAME Jon /Eiriksson/
+2 GIVN Jon
+2 SURN Eiriksson
+1 SEX M
+1 FAMC @F7@
+1 BIRT
+2 DATE 3 Nov 1823
+2 PLAC Tunga, Keldna, Rngrvl., Icln
+1 CHR
+2 DATE 3 Nov 1823
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID KCRK-V7R
+0 @I272771959104@ INDI
+1 NAME Guðríður /Sæmundsdóttir/
+2 GIVN Guðríður
+2 SURN Sæmundsdóttir
+1 SEX F
+1 FAMC @F4@
+1 FAMS @F92@
+1 BIRT
+2 DATE 12 Nov 1834
+2 PLAC Audsholt, Arnarbaeli, Arness, Iceland
+1 CHR
+2 DATE 12 Nov 1834
+2 PLAC , Arnarbaeli, Arness, Iceland
+1 DEAT
+2 DATE 30 Oct 1912
+1 _FSID KNZC-DDQ
+0 @I272771959105@ INDI
+1 NAME Sæmundur /Sæmundsson/
+2 GIVN Sæmundur
+2 SURN Sæmundsson
+1 SEX M
+1 FAMC @F4@
+1 FAMS @F95@
+1 FAMS @F94@
+1 BIRT
+2 DATE 6 Oct 1823
+2 PLAC Audsholt, Arnarbaeli, Arness, Iceland
+1 CHR
+2 DATE 6 Nov 1823
+2 PLAC Arnarbæli, Árnessýsla, Southern, Iceland
+1 _FSID KHXQ-7DL
+0 @I272771959107@ INDI
+1 NAME Runolfur /Bjornsson/
+2 GIVN Runolfur
+2 SURN Bjornsson
+1 SEX M
+1 FAMC @F1@
+1 BIRT
+2 DATE 13 Jul 1836
+2 PLAC Petursey, Solheimar, Vesturskaftafell, Iceland
+1 CHR
+2 DATE Jul 1836
+2 PLAC Solheimar Sokn,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 13 Nov 1855
+1 _FSID LH7M-CR9
+0 @I272771959108@ INDI
+1 NAME Haldora /Gislasson/
+2 GIVN Haldora
+2 SURN Gislasson
+1 SEX F
+1 FAMC @F62@
+1 BIRT
+2 DATE 26 Nov 1830
+1 CHR
+2 DATE 28 Nov 1830
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID MMM2-KLF
+0 @I272771959110@ INDI
+1 NAME Gudfinna /Einarsdottir/
+2 GIVN Gudfinna
+2 SURN Einarsdottir
+1 SEX F
+1 FAMS @F73@
+1 BIRT
+2 DATE 10 Nov 1819
+2 PLAC Hatum, Kirkjubaejarklaustur,Vestur-Skaftafell, Iceland
+1 CHR
+2 DATE 14 Nov 1819
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 18 Sep 1865
+1 _FSID KC2K-1QL
+0 @I272771959111@ INDI
+1 NAME Jon /Eiriksson/
+2 GIVN Jon
+2 SURN Eiriksson
+1 SEX M
+1 FAMS @F27@
+1 BIRT
+2 DATE 1764
+2 PLAC Foss,Kirkjubaejarklaustur,V-Skft,Icln
+1 DEAT
+2 DATE 15 Oct 1825
+2 PLAC Hörgsdalur, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 _FSID L7FX-JR2
+0 @I272771959112@ INDI
+1 NAME Guðmundur /Eiriksson/
+2 GIVN Guðmundur
+2 SURN Eiriksson
+1 SEX M
+1 FAMC @F7@
+1 FAMS @F97@
+1 BIRT
+2 DATE 20 Jul 1834
+2 PLAC Tunga, Keldna, Rngrvl., Icln
+1 CHR
+2 DATE 20 Jul 1834
+2 PLAC Tunga, Keldna, Rngrvl., Icln
+1 _FSID KH1Z-MNT
+0 @I272771959113@ INDI
+1 NAME Guðrún /Jónsdóttir/
+2 GIVN Guðrún
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F14@
+1 FAMS @F98@
+1 BIRT
+2 DATE 5 Oct 1828
+2 PLAC Klofa, Rangárvallasýsla, Suðurland, Iceland
+1 CHR
+2 DATE 6 Oct 1828
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 1914
+2 PLAC North Dakota, United States
+1 _FSID G8Y2-DP2
+0 @I272771959114@ INDI
+1 NAME Sigridur /Sigurdsdottir/
+2 GIVN Sigridur
+2 SURN Sigurdsdottir
+1 SEX F
+1 FAMS @F25@
+1 BIRT
+2 DATE 16 Mar 1862
+2 PLAC Hagi, Rangárvallasýsla, Suðurland, Iceland
+1 CHR
+2 DATE 21 Mar 1862
+2 PLAC Hagi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 22 Nov 1945
+1 _FSID M9ZL-DM9
+0 @I272771959115@ INDI
+1 NAME Steinun /Saemundsdottir/
+2 GIVN Steinun
+2 SURN Saemundsdottir
+1 SEX F
+1 FAMC @F4@
+1 FAMS @F93@
+1 BIRT
+2 DATE 1 Mar 1819
+2 PLAC Arnarboli Sokn, Árnessýsla, Southern, Iceland
+1 CHR
+2 DATE 1 Mar 1819
+2 PLAC Arnarbæli, Árnessýsla, Southern, Iceland
+1 DEAT
+2 DATE 9 Jul 1864
+2 PLAC Kaldaðarnes, Árnessýsla, Southern, Iceland
+1 BURI
+2 DATE 18 Jul 1864
+2 PLAC Kaldaðarnes, Árnessýsla, Southern, Iceland
+1 _FSID LHR4-GRS
+0 @I272771959116@ INDI
+1 NAME Kristín /Árnadóttir/
+2 GIVN Kristín
+2 SURN Árnadóttir
+1 SEX F
+1 FAMS @F17@
+1 BIRT
+2 DATE 12 Jul 1877
+2 PLAC Hraungerði, Árnessýsla, Suðurland, Iceland
+1 CHR
+2 DATE 12 Jul 1877
+2 PLAC Hraungerði, Árnessýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 8 Jun 1958
+2 PLAC Iceland
+1 _FSID G4NT-GY3
+0 @I272771959117@ INDI
+1 NAME Jon /Gislason/
+2 GIVN Jon
+2 SURN Gislason
+1 SEX M
+1 FAMC @F70@
+1 BIRT
+2 DATE 19 May 1829
+1 CHR
+2 DATE 19 May 1829
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M3X7-L2K
+0 @I272771959118@ INDI
+1 NAME Helga /Arnasdatter/
+2 GIVN Helga
+2 SURN Arnasdatter
+1 SEX F
+1 FAMC @F74@
+1 FAMS @F96@
+1 BIRT
+2 DATE 22 Sep 1824
+2 PLAC Vestri-Tunga, Sigluvik, Rngrvl., Icln
+1 CHR
+2 DATE 22 Sep 1823
+2 PLAC Vestri-Tunga, Sigluvik, Rngrvl., Icln
+1 DEAT
+2 DATE 15 May 1907
+1 _FSID LW1R-89L
+0 @I272771959119@ INDI
+1 NAME Halla /Jonsdr/
+2 GIVN Halla
+2 SURN Jonsdr
+1 SEX F
+1 FAMS @F66@
+1 BIRT
+2 DATE 2 Oct 1801
+1 CHR
+2 DATE 2 Oct 1801
+2 PLAC Klofa,Rangarvallasysla,Iceland
+1 _FSID M36J-K3T
+0 @I272771959120@ INDI
+1 NAME Gudrun /Eiriksdottir/
+2 GIVN Gudrun
+2 SURN Eiriksdottir
+1 SEX F
+1 FAMC @F7@
+1 BIRT
+2 DATE 10 Dec 1832
+2 PLAC Tunga, Keldna, Rngrvl., Icln
+1 CHR
+2 DATE 10 Dec 1832
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID KCRS-M2R
+0 @I272771959121@ INDI
+1 NAME D /Eiriksdottir/
+2 GIVN D
+2 SURN Eiriksdottir
+1 SEX F
+1 FAMC @F7@
+1 BIRT
+2 DATE 20 Dec 1825
+2 PLAC Tunga, Rangárvallasýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 20 Dec 1825
+2 PLAC Tunga, Keldur, Rangarvalla, Iceland
+1 _FSID MZM5-C56
+0 @I272771959122@ INDI
+1 NAME Gudrun /Magnusdottir/
+2 GIVN Gudrun
+2 SURN Magnusdottir
+1 SEX F
+1 FAMS @F55@
+1 BIRT
+2 DATE 27 Oct 1862
+2 PLAC Guttormshagi, Rangárvallasýsla, Suðurland, Iceland
+1 _FSID M3XD-WRV
+0 @I272771959123@ INDI
+1 NAME Gisli /Sæmundsson/
+2 GIVN Gisli
+2 SURN Sæmundsson
+1 SEX M
+1 FAMC @F4@
+1 FAMS @F99@
+1 BIRT
+2 DATE 3 Jul 1820
+2 PLAC Arnarboli Sokn, Árnessýsla, Southern, Iceland
+1 CHR
+2 DATE 4 Jul 1820
+2 PLAC Arnarbæli, Árnessýsla, Southern, Iceland
+1 DEAT
+2 DATE 22 Jun 1873
+2 PLAC Núpar, Árnessýsla, Southern, Iceland
+1 BURI
+2 DATE 30 Jun 1873
+2 PLAC Reykir i Olfusi, Árnessýsla, Southern, Iceland
+1 _FSID L716-DPY
+0 @I272771959124@ INDI
+1 NAME Jorunn /Bjornsdottir/
+2 GIVN Jorunn
+2 SURN Bjornsdottir
+1 SEX F
+1 FAMC @F1@
+1 BIRT
+2 DATE 28 Jul 1829
+2 PLAC Petursey, Solheimar, Vesturskaftafell, Iceland
+1 CHR
+2 DATE 28 Jul 1829
+2 PLAC Solheimar Sokn,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 19 Dec 1859
+1 _FSID LH7M-CGR
+0 @I272771959125@ INDI
+1 NAME Brinjulfr /Gislason/
+2 GIVN Brinjulfr
+2 SURN Gislason
+1 SEX M
+1 FAMC @F70@
+1 BIRT
+2 DATE 9 Jul 1826
+1 CHR
+2 DATE 9 Jul 1826
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36R-5NG
+0 @I272771959126@ INDI
+1 NAME Jon /Arnason/
+2 GIVN Jon
+2 SURN Arnason
+1 SEX M
+1 FAMC @F74@
+1 BIRT
+2 DATE 26 Nov 1825
+1 CHR
+2 DATE 28 Nov 1825
+2 PLAC Sigluvik,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 3 Nov 1827
+1 _FSID KCCX-W75
+0 @I272771959128@ INDI
+1 NAME Thorsteinn /Gislasson/
+2 GIVN Thorsteinn
+2 SURN Gislasson
+1 SEX M
+1 FAMC @F62@
+1 BIRT
+2 DATE 28 Feb 1825
+1 CHR
+2 DATE 6 Mar 1825
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 10 Jul 1825
+1 _FSID MMM2-SSB
+0 @I272771959129@ INDI
+1 NAME Eirik /Eiriksson/
+2 GIVN Eirik
+2 SURN Eiriksson
+1 SEX M
+1 FAMC @F7@
+1 FAMS @F104@
+1 BIRT
+2 DATE 19 Sep 1822
+2 PLAC Tunga, Keldur, Rangarvalla, Iceland
+1 CHR
+2 DATE 20 Sep 1822
+2 PLAC Tunga, Keldna, Rngrvl., Icln
+1 DEAT
+2 DATE 1 Feb 1860
+1 _FSID K8HX-T1H
+0 @I272771959130@ INDI
+1 NAME Thorgils /Eiriksson/ elder
+2 GIVN Thorgils
+2 SURN Eiriksson
+2 NSFX elder
+1 SEX M
+1 FAMC @F7@
+1 BIRT
+2 DATE 29 Oct 1824
+1 CHR
+2 DATE 29 Oct 1824
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 6 Mar 1831
+1 _FSID K4LB-MS7
+0 @I272771959131@ INDI
+1 NAME Thorunn /Magnusdottir/
+2 GIVN Thorunn
+2 SURN Magnusdottir
+1 SEX F
+1 FAMS @F56@
+1 BIRT
+2 DATE 1873
+2 PLAC Hagi, Rangárvallasýsla, Suðurland, Iceland
+1 _FSID M3XD-W5V
+0 @I272771959132@ INDI
+1 NAME Steindor /Sæmundsson/
+2 GIVN Steindor
+2 SURN Sæmundsson
+1 SEX M
+1 FAMC @F4@
+1 FAMS @F102@
+1 BIRT
+2 DATE 16 Jun 1817
+2 PLAC Auðsholt, Árnessýsla, Southern, Iceland
+1 DEAT
+2 DATE 18 Jan 1853
+1 _FSID M378-89J
+0 @I272771959133@ INDI
+1 NAME Ingiríður /Guðmundsdóttir/
+2 GIVN Ingiríður
+2 SURN Guðmundsdóttir
+1 SEX F
+1 FAMC @F21@
+1 FAMS @F103@
+1 BIRT
+2 DATE 14 Jul 1822
+2 PLAC Arbae, Rangarvalla, Iceland
+1 CHR
+2 DATE 17 Jul 1822
+2 PLAC Keldna, Rangarvalla, Iceland
+1 DEAT
+2 DATE 10 Feb 1864
+2 PLAC Tungu, Rangarvalla, Iceland
+1 BURI
+2 DATE 18 Feb 1864
+2 PLAC Keldna, Rangarvalla, Iceland
+1 _FSID LC36-2CD
+0 @I272771959134@ INDI
+1 NAME Fimbogi /Arnason/
+2 GIVN Fimbogi
+2 SURN Arnason
+1 SEX M
+1 FAMC @F74@
+1 BIRT
+2 DATE 9 Feb 1828
+1 CHR
+2 DATE 1828
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36B-814
+0 @I272771959135@ INDI
+1 NAME Gisli /Gislasson/
+2 GIVN Gisli
+2 SURN Gislasson
+1 SEX M
+1 FAMC @F62@
+1 FAMS @F101@
+1 FAMS @F100@
+1 BIRT
+2 DATE 27 Dec 1821
+2 PLAC Iceland
+1 CHR
+2 DATE 27 Dec 1821
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID MMMK-XKP
+0 @I272771959136@ INDI
+1 NAME Gisli /Gislasson/
+2 GIVN Gisli
+2 SURN Gislasson
+1 SEX M
+1 FAMC @F62@
+1 BIRT
+2 DATE 17 Dec 1823
+1 CHR
+2 DATE 18 Dec 1823
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID MMMK-XLH
+0 @I272771959137@ INDI
+1 NAME Magnus /Saemundsson/
+2 GIVN Magnus
+2 SURN Saemundsson
+1 SEX M
+1 FAMC @F4@
+1 BIRT
+2 DATE 6 Feb 1812
+2 PLAC Arnarboli Sokn, Árnessýsla, Southern, Iceland
+1 _FSID KD33-ZY7
+0 @I272771959138@ INDI
+1 NAME Ástríður /Gunnarsdóttir/
+2 GIVN Ástríður
+2 SURN Gunnarsdóttir
+1 SEX F
+1 FAMS @F15@
+1 BIRT
+2 DATE 15 Nov 1801
+2 PLAC Hrólfstaðahelli á Landi, Iceland
+1 DEAT
+2 DATE 1 Sep 1843
+1 _FSID L85K-11Z
+0 @I272771959139@ INDI
+1 NAME Halldóra /Guðmundsdóttir/
+2 GIVN Halldóra
+2 SURN Guðmundsdóttir
+1 SEX F
+1 FAMC @F21@
+1 BIRT
+2 DATE 7 Jun 1822
+1 CHR
+2 DATE 8 Jun 1822
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 24 Jul 1889
+2 PLAC Útskálar, Gullbringusýsla, Southern Peninsula, Iceland
+1 BURI
+2 DATE 2 Aug 1889
+2 PLAC Útskálar, Gullbringusýsla, Southern Peninsula, Iceland
+1 _FSID M3XF-XWY
+0 @I272771959140@ INDI
+1 NAME Jon /Saemundsson/
+2 GIVN Jon
+2 SURN Saemundsson
+1 SEX M
+1 FAMC @F4@
+1 FAMS @F106@
+1 BIRT
+2 DATE 6 Feb 1831
+2 PLAC Auðsholt, Árnessýsla, Southern, Iceland
+1 CHR
+2 DATE 6 Feb 1831
+2 PLAC Arnarboli Sokn, Árnessýsla, Southern, Iceland
+1 DEAT
+2 DATE 29 Mar 1883
+1 _FSID M37J-HT6
+0 @I272771959141@ INDI
+1 NAME Jon /Jonsson/
+2 GIVN Jon
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F19@
+1 BIRT
+2 DATE 30 Jul 1830
+1 CHR
+2 DATE 31 Jul 1830
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID MMM2-8Z3
+0 @I272771959142@ INDI
+1 NAME Jonina /Sigurdardottir/
+2 GIVN Jonina
+2 SURN Sigurdardottir
+1 SEX F
+1 FAMS @F68@
+1 BIRT
+2 DATE 16 Jun 1863
+1 CHR
+2 DATE 17 Jun 1863
+2 PLAC Mosfell i Grimsnesi, Árnessýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 1947
+2 PLAC Gig Harbor, Pierce, Washington, United States
+1 BURI
+2 PLAC Gig Harbor, Pierce, Washington, United States
+1 _FSID LCVC-X5Y
+0 @I272771959143@ INDI
+1 NAME Olafur /Gislason/
+2 GIVN Olafur
+2 SURN Gislason
+1 SEX M
+1 FAMC @F70@
+1 FAMS @F105@
+1 BIRT
+2 DATE 12 Feb 1828
+1 CHR
+2 DATE 15 Feb 1828
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36N-BTP
+0 @I272771959144@ INDI
+1 NAME Jón /Jónsson/
+2 GIVN Jón
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F19@
+1 FAMS @F109@
+1 FAMS @F108@
+1 BIRT
+2 DATE 26 Sep 1827
+1 CHR
+2 DATE 26 Sep 1827
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 6 Dec 1891
+2 PLAC Iceland
+1 _FSID MMM2-8QG
+0 @I272771959145@ INDI
+1 NAME Þóra /Gísladóttir/
+2 GIVN Þóra
+2 SURN Gísladóttir
+1 SEX F
+1 FAMS @F24@
+1 BIRT
+2 DATE 1795
+2 PLAC Steinar, Rangárvallasýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 15 Feb 1856
+1 _FSID GFM2-3Q1
+0 @I272771959146@ INDI
+1 NAME Margret /Eyriksdr/
+2 GIVN Margret
+2 SURN Eyriksdr
+1 SEX F
+1 FAMC @F7@
+1 BIRT
+2 DATE 26 Mar 1827
+1 CHR
+2 DATE 26 Mar 1827
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID M36P-N7T
+0 @I272771959147@ INDI
+1 NAME Páll /Jónsson/
+2 GIVN Páll
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F28@
+1 BIRT
+2 DATE 20 Mar 1864
+1 CHR
+2 DATE 21 Mar 1864
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 14 Jan 1955
+1 _FSID M3X6-D32
+0 @I272771959148@ INDI
+1 NAME Einar /Saemundsson/
+2 GIVN Einar
+2 SURN Saemundsson
+1 SEX M
+1 FAMC @F4@
+1 FAMS @F107@
+1 BIRT
+2 DATE 10 Feb 1829
+2 PLAC Auðsholt, Árnessýsla, Southern, Iceland
+1 CHR
+2 DATE 10 Feb 1829
+2 PLAC Arnarboli Sokn, Árnessýsla, Southern, Iceland
+1 DEAT
+2 DATE 19 Feb 1881
+1 _FSID KHLK-SP3
+0 @I272771959149@ INDI
+1 NAME Jon /Jonsson/
+2 GIVN Jon
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F19@
+1 BIRT
+2 DATE 26 Sep 1828
+1 CHR
+2 DATE 28 Sep 1828
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID MMM2-847
+0 @I272771959150@ INDI
+1 NAME Helga /Árnadóttir/
+2 GIVN Helga
+2 SURN Árnadóttir
+1 SEX F
+1 FAMC @F74@
+1 FAMS @F105@
+1 BIRT
+2 DATE 1829
+2 PLAC Skarðssókn, Rangárvallasýsla, Southern, Iceland
+1 CHR
+2 DATE 30 May 1829
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID GTYR-7YB
+0 @I272771959151@ INDI
+1 NAME Haldora /Gislasson/
+2 GIVN Haldora
+2 SURN Gislasson
+1 SEX F
+1 FAMC @F62@
+1 BIRT
+2 DATE 27 Jan 1827
+1 CHR
+2 DATE 29 Jan 1827
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 26 Aug 1828
+1 _FSID MMM2-K2S
+0 @I272771959152@ INDI
+1 NAME Ólöf /Gísladóttir/
+2 GIVN Ólöf
+2 SURN Gísladóttir
+1 SEX F
+1 FAMC @F62@
+1 FAMS @F112@
+1 FAMS @F111@
+1 BIRT
+2 DATE 8 Nov 1816
+1 CHR
+2 DATE 15 Nov 1816
+2 PLAC Arnardrange,Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 _FSID M3JT-Z39
+0 @I272771959153@ INDI
+1 NAME Gudrun /Saemundsdottir/
+2 GIVN Gudrun
+2 SURN Saemundsdottir
+1 SEX F
+1 FAMC @F4@
+1 BIRT
+2 DATE 3 Jul 1813
+2 PLAC Arnarboli Sokn, Árnessýsla, Southern, Iceland
+1 _FSID KZKK-ZV7
+0 @I272771959154@ INDI
+1 NAME Vilhjalm /Eiriksson/
+2 GIVN Vilhjalm
+2 SURN Eiriksson
+1 SEX M
+1 FAMC @F7@
+1 BIRT
+2 DATE 20 Dec 1825
+2 PLAC Tunga, Keldna, Rngrvl., Icln
+1 CHR
+2 DATE 21 Dec 1825
+2 PLAC Keldur, Rangárvallasýsla, Suðurland, Iceland
+1 _FSID KZTM-YNG
+0 @I272771959155@ INDI
+1 NAME Runolfur /Bjornsson/
+2 GIVN Runolfur
+2 SURN Bjornsson
+1 SEX M
+1 FAMC @F1@
+1 BIRT
+2 DATE 21 Aug 1828
+2 PLAC Petursey, Solheimar, Vesturskaftafell, Iceland
+1 CHR
+2 DATE 21 Aug 1828
+2 PLAC Solheimar Sokn,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 25 May 1836
+2 PLAC Petursey, Solheimar, Vesturskaftafell, Iceland
+1 _FSID K8MZ-H61
+0 @I272771959156@ INDI
+1 NAME Helga /Guðmundsdóttir/
+2 GIVN Helga
+2 SURN Guðmundsdóttir
+1 SEX F
+1 FAMC @F21@
+1 BIRT
+2 DATE 21 Jul 1821
+1 CHR
+2 DATE 22 Jul 1821
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 27 Jul 1821
+1 _FSID M366-211
+0 @I272771959157@ INDI
+1 NAME Jon /Jonsson/
+2 GIVN Jon
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F19@
+1 BIRT
+2 DATE 10 Jul 1834
+1 CHR
+2 DATE 13 Jul 1834
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 1 May 1836
+1 _FSID MMM2-8GC
+0 @I272771959158@ INDI
+1 NAME Helga /Arnadr/
+2 GIVN Helga
+2 SURN Arnadr
+1 SEX F
+1 FAMC @F74@
+1 BIRT
+2 DATE 28 May 1832
+1 CHR
+2 DATE 29 May 1832
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M366-TPQ
+0 @I272771959159@ INDI
+1 NAME Anna /Gisladottir/
+2 GIVN Anna
+2 SURN Gisladottir
+1 SEX F
+1 FAMC @F62@
+1 FAMS @F110@
+1 BIRT
+2 DATE 1 Jan 1819
+2 PLAC Eystra Hraun, Kirkjubaejarklaustur, Vestur Skaftafell, Iceland
+1 CHR
+2 DATE 3 Jan 1819
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 27 Jul 1896
+1 _FSID M2SS-SDT
+0 @I272771959162@ INDI
+1 NAME Finnbogi /Arnason/
+2 GIVN Finnbogi
+2 SURN Arnason
+1 SEX M
+1 FAMC @F74@
+1 BIRT
+2 DATE 23 Feb 1834
+1 CHR
+2 DATE 24 Feb 1834
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 15 Sep 1834
+1 _FSID KCTL-DXL
+0 @I272771959163@ INDI
+1 NAME Emma Ingibjorg /Einarsdotter/
+2 GIVN Emma Ingibjorg
+2 SURN Einarsdotter
+1 SEX F
+1 FAMS @F69@
+1 BIRT
+2 DATE 1878
+2 PLAC Iceland
+1 _FSID GFP9-5JK
+0 @I272771959164@ INDI
+1 NAME Gunnar /Arnason/
+2 GIVN Gunnar
+2 SURN Arnason
+1 SEX M
+1 FAMC @F74@
+1 FAMS @F113@
+1 BIRT
+2 DATE 31 Jul 1830
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 CHR
+2 DATE 1 Aug 1830
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 31 Dec 1896
+1 _FSID LW1R-8SB
+0 @I272771959165@ INDI
+1 NAME Valgerður /Árnadóttir/
+2 GIVN Valgerður
+2 SURN Árnadóttir
+1 SEX F
+1 FAMC @F74@
+1 FAMS @F114@
+1 BIRT
+2 DATE abt 1821
+2 PLAC Vestri-Tunga, Sigluvik, Rngrvl., Icln
+1 DEAT
+2 DATE 11 Sep 1893
+1 _FSID KFYL-WBM
+0 @I272771959166@ INDI
+1 NAME Finnur /Arnason/
+2 GIVN Finnur
+2 SURN Arnason
+1 SEX M
+1 FAMC @F74@
+1 BIRT
+2 DATE 8 Feb 1837
+1 CHR
+2 DATE 9 Feb 1837
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 20 Mar 1839
+1 _FSID KDS6-5BC
+0 @I272771959167@ INDI
+1 NAME Einar /Jonsson/
+2 GIVN Einar
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F77@
+1 BIRT
+2 DATE 22 Oct 1827
+2 PLAC Svinhaga, Rngrvl., Icln.
+1 CHR
+2 DATE 24 Oct 1827
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 31 Oct 1827
+1 _FSID LHGR-Q9Q
+0 @I272771959168@ INDI
+1 NAME Finnbogi /Arnason/
+2 GIVN Finnbogi
+2 SURN Arnason
+1 SEX M
+1 FAMC @F74@
+1 FAMS @F137@
+1 BIRT
+2 DATE 8 Aug 1822
+2 PLAC Vestri-Tunga, Sigluvik, Rngrvl., Icln
+1 CHR
+2 DATE 8 Aug 1822
+2 PLAC Sigluvik,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 12 May 1877
+1 _FSID KZ3Y-QWL
+0 @I272771959169@ INDI
+1 NAME Finnur /Arnason/
+2 GIVN Finnur
+2 SURN Arnason
+1 SEX M
+1 FAMC @F74@
+1 BIRT
+2 DATE 16 Aug 1835
+1 CHR
+2 DATE 17 Aug 1835
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M361-ZX3
+0 @I272771959170@ INDI
+1 NAME Rannveig /Jonsdr/
+2 GIVN Rannveig
+2 SURN Jonsdr
+1 SEX F
+1 FAMC @F77@
+1 BIRT
+2 DATE 13 Aug 1826
+1 CHR
+2 DATE 13 Aug 1826
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 27 Oct 1826
+1 _FSID LHGR-31G
+0 @I272771959171@ INDI
+1 NAME Finnbogi "yngri" /Árnason/
+2 GIVN Finnbogi "yngri"
+2 SURN Árnason
+1 SEX M
+1 FAMC @F74@
+1 FAMS @F123@
+1 BIRT
+2 DATE 8 Feb 1837
+2 PLAC Galtalaek, Skard, Rngrvl., Icln
+1 CHR
+2 DATE 10 Feb 1837
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 8 Sep 1903
+1 _FSID KZDS-TFW
+0 @I272771959172@ INDI
+1 NAME Helga /Jonsdr/
+2 GIVN Helga
+2 SURN Jonsdr
+1 SEX F
+1 FAMC @F77@
+1 BIRT
+2 DATE 6 Jul 1841
+1 CHR
+2 DATE 11 Jul 1841
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID M366-577
+0 @I272771959173@ INDI
+1 NAME Sigríður /Árnadóttir/
+2 GIVN Sigríður
+2 SURN Árnadóttir
+1 SEX F
+1 FAMS @F71@
+1 BIRT
+2 DATE 6 Sep 1809
+2 PLAC Iceland
+1 CHR
+2 DATE 6 Sep 1809
+2 PLAC Hrepphólar, Árnessýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 30 Sep 1887
+2 PLAC Iceland
+1 _FSID L8S3-Z2D
+0 @I272771959174@ INDI
+1 NAME Thora /Jonsdr/
+2 GIVN Thora
+2 SURN Jonsdr
+1 SEX F
+1 FAMC @F77@
+1 BIRT
+2 DATE 15 Sep 1825
+2 PLAC Svinhaga, Rngrvl., Icln.
+1 CHR
+2 DATE 15 Sep 1825
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID LHGR-3Y6
+0 @I272771959175@ INDI
+1 NAME Jón /Árnasson/
+2 GIVN Jón
+2 SURN Árnasson
+1 SEX M
+1 FAMC @F74@
+1 FAMS @F138@
+1 BIRT
+2 DATE 27 Feb 1828
+2 PLAC Vestri-Tunga, Sigluvik, Rngrvl., Icln
+1 CHR
+2 DATE 27 Feb 1828
+2 PLAC Sigluvik,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 26 Apr 1908
+1 _FSID LW1R-8SQ
+0 @I272771959176@ INDI
+1 NAME Einar /Gislasson/
+2 GIVN Einar
+2 SURN Gislasson
+1 SEX M
+1 FAMC @F81@
+1 FAMS @F145@
+1 BIRT
+2 DATE 28 Aug 1838
+1 CHR
+2 DATE 28 Aug 1838
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 _FSID M37W-GTZ
+0 @I272771959177@ INDI
+1 NAME Magnus /Gislasson/
+2 GIVN Magnus
+2 SURN Gislasson
+1 SEX M
+1 FAMC @F81@
+1 BIRT
+2 DATE 5 Oct 1826
+1 CHR
+2 DATE 5 Oct 1826
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 _FSID M37Q-PFG
+0 @I272771959178@ INDI
+1 NAME Gudfinn /Arnasson/
+2 GIVN Gudfinn
+2 SURN Arnasson
+1 SEX M
+1 FAMC @F74@
+1 BIRT
+2 DATE 28 Apr 1839
+1 CHR
+2 DATE 28 Apr 1839
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 29 Apr 1839
+2 PLAC Galtalaekur, Skard, Rangarvalla, Iceland
+1 _FSID LW1R-8W3
+0 @I272771959179@ INDI
+1 NAME Kristín /Þorsteinsdóttir/
+2 GIVN Kristín
+2 SURN Þorsteinsdóttir
+1 SEX F
+1 FAMS @F75@
+1 BIRT
+2 DATE 24 Mar 1849
+2 PLAC Dyrhólar, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 24 Mar 1849
+2 PLAC Dyrholar,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 28 Feb 1931
+1 _FSID M3J5-T45
+0 @I272771959180@ INDI
+1 NAME Þorsteinn /Loptsson/
+2 GIVN Þorsteinn
+2 SURN Loptsson
+1 SEX M
+1 FAMS @F82@
+1 BIRT
+2 DATE 6 Oct 1827
+2 PLAC Thjotandi, Olafsvellir, Arness, Iceland
+1 CHR
+2 DATE 6 Oct 1827
+2 PLAC , Olafsvellir, Arness, Iceland
+1 DEAT
+2 DATE 23 May 1891
+2 PLAC Kross, Reykir I Olfusi, Arness, Iceland
+1 BURI
+2 DATE 30 May 1891
+2 PLAC , Reykir I Olfusi, Arness, Iceland
+1 _FSID LZGZ-KL3
+0 @I272771959181@ INDI
+1 NAME Guðbrandur /Árnason/
+2 GIVN Guðbrandur
+2 SURN Árnason
+1 SEX M
+1 FAMC @F74@
+1 FAMS @F147@
+1 BIRT
+2 DATE 22 Dec 1831
+2 PLAC Skarð, Rangárvallasýsla, Suðurland, Iceland
+1 CHR
+2 DATE 22 Dec 1831
+2 PLAC Skarð, Rangárvallasýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 11 Dec 1891
+1 _FSID LW1R-87S
+0 @I272771959182@ INDI
+1 NAME Helga /Gísladóttir/
+2 GIVN Helga
+2 SURN Gísladóttir
+1 SEX F
+1 FAMC @F81@
+1 BIRT
+2 DATE 9 Nov 1841
+1 CHR
+2 DATE 9 Nov 1841
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 _FSID M3QL-6QS
+0 @I272771959183@ INDI
+1 NAME Arni /Jonsson/
+2 GIVN Arni
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F77@
+1 BIRT
+2 DATE 9 Dec 1839
+2 PLAC Svinhaga, Rngrvl., Icln.
+1 CHR
+2 DATE 9 Dec 1839
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID KHKQ-1ST
+0 @I272771959184@ INDI
+1 NAME Gudfinnur /Arnason/
+2 GIVN Gudfinnur
+2 SURN Arnason
+1 SEX M
+1 FAMC @F74@
+1 BIRT
+2 DATE 29 Apr 1838
+1 CHR
+2 DATE 30 Apr 1838
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID M36R-B8Z
+0 @I272771959185@ INDI
+1 NAME Brinjolfr /Jonsson/
+2 GIVN Brinjolfr
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F77@
+1 BIRT
+2 DATE 2 Dec 1828
+2 PLAC Svinhaga, Rngrvl., Icln.
+1 CHR
+2 DATE 3 Dec 1828
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID K82G-CPS
+0 @I272771959186@ INDI
+1 NAME Magnús /Bjarnason/
+2 GIVN Magnús
+2 SURN Bjarnason
+1 SEX M
+1 FAMS @F90@
+1 BIRT
+2 DATE 8 Mar 1836
+2 PLAC Valdastadir, Kaldadarnes, Arness, Iceland
+1 CHR
+2 DATE 12 Mar 1836
+2 PLAC Kaldadarnes,Arnessysla,Iceland
+1 DEAT
+2 DATE 4 Sep 1903
+2 PLAC Storu-Sandvik
+1 _FSID LZGZ-KR6
+0 @I272771959187@ INDI
+1 NAME Elin /Jonsdottir/
+2 GIVN Elin
+2 SURN Jonsdottir
+1 SEX F
+1 FAMS @F80@
+1 BIRT
+2 DATE 9 Feb 1843
+2 PLAC Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 21 Jul 1924
+2 PLAC Skagnes, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 _FSID GHL4-G5L
+0 @I272771959188@ INDI
+1 NAME Anna /Gislasson/
+2 GIVN Anna
+2 SURN Gislasson
+1 SEX F
+1 FAMC @F81@
+1 BIRT
+2 DATE 31 Mar 1821
+1 CHR
+2 DATE 31 Mar 1821
+2 PLAC Reykir I Olfusi,Arnessysla,Iceland
+1 _FSID M3QP-DG9
+0 @I272771959189@ INDI
+1 NAME Finnbjörg /Finnsdottir/
+2 GIVN Finnbjörg
+2 SURN Finnsdottir
+1 SEX F
+1 FAMS @F78@
+1 BIRT
+2 DATE 15 Jun 1865
+2 PLAC Hvammi, Iceland
+1 CHR
+2 DATE 16 Jun 1865
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 17 Jun 1941
+2 PLAC Minneapolis, Hennepin, Minnesota, United States
+1 _FSID L6SC-CX5
+0 @I272771959190@ INDI
+1 NAME Gudfinn /Arnasson/
+2 GIVN Gudfinn
+2 SURN Arnasson
+1 SEX M
+1 FAMC @F74@
+1 BIRT
+2 DATE 28 Feb 1841
+1 CHR
+2 DATE 2 Mar 1841
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID LW1R-843
+0 @I272771959192@ INDI
+1 NAME Jon /Jonsson/
+2 GIVN Jon
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F77@
+1 BIRT
+2 DATE Jan 1831
+1 CHR
+2 DATE 10 Jan 1831
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID KCYZ-8Z8
+0 @I272771959193@ INDI
+1 NAME Guðrún /Einarsdóttir/
+2 GIVN Guðrún
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMS @F76@
+1 BIRT
+2 DATE 16 Jan 1823
+1 CHR
+2 DATE 16 Jan 1823
+2 PLAC Storolfshvoll,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 11 May 1899
+2 PLAC Iceland
+1 _FSID M3XX-Q35
+0 @I272771959194@ INDI
+1 NAME Steinunn /Guðlaugsdóttir/
+2 GIVN Steinunn
+2 SURN Guðlaugsdóttir
+1 SEX F
+1 FAMS @F59@
+1 BIRT
+2 DATE 14 Aug 1838
+2 PLAC Dyrhólar, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 15 Aug 1838
+2 PLAC Dyrhólar, Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 14 Nov 1912
+1 _FSID M3J2-KW9
+0 @I272771959195@ INDI
+1 NAME Sigridur /Einarsdottir/
+2 GIVN Sigridur
+2 SURN Einarsdottir
+1 SEX F
+1 FAMS @F83@
+1 BIRT
+2 DATE 3 Jun 1857
+2 PLAC Stokkseyri, Árnessýsla, Suðurland, Iceland
+1 CHR
+2 DATE 6 Jun 1857
+2 PLAC Stokkseyri, Árnessýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 10 Nov 1937
+2 PLAC Mountain, Pembina, North Dakota, United States
+1 BURI
+2 PLAC Mountain, Pembina, North Dakota, United States of America
+1 _FSID KDS4-H55
+0 @I272771959196@ INDI
+1 NAME Gudmundur /Gislasson/
+2 GIVN Gudmundur
+2 SURN Gislasson
+1 SEX M
+1 FAMC @F81@
+1 BIRT
+2 DATE 23 Jul 1825
+1 CHR
+2 DATE 24 Jul 1825
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 _FSID M377-JYQ
+0 @I272771959197@ INDI
+1 NAME Valgerdur /Gislasson/
+2 GIVN Valgerdur
+2 SURN Gislasson
+1 SEX F
+1 FAMC @F81@
+1 BIRT
+2 DATE 2 Mar 1844
+1 CHR
+2 DATE 3 Mar 1844
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 _FSID M37D-X5N
+0 @I272771959198@ INDI
+1 NAME Lidur /Arnason/
+2 GIVN Lidur
+2 SURN Arnason
+1 SEX M
+1 FAMC @F74@
+1 BIRT
+2 DATE 7 Oct 1843
+1 CHR
+2 DATE 10 Oct 1843
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 16 Jul 1850
+1 _FSID LW1R-84N
+0 @I272771959199@ INDI
+1 NAME Nicolaus /Jonsson/
+2 GIVN Nicolaus
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F77@
+1 BIRT
+2 DATE 17 Feb 1834
+2 PLAC Svinhaga, Rngrvl., Icln.
+1 CHR
+2 DATE 21 Feb 1834
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 26 Feb 1834
+1 _FSID LHGR-QST
+0 @I272771959200@ INDI
+1 NAME Steinunn /Gisladottir/
+2 GIVN Steinunn
+2 SURN Gisladottir
+1 SEX F
+1 FAMS @F119@
+1 BIRT
+2 DATE 15 Nov 1809
+2 PLAC Villingavatn,Ulfljotsvatn,Arnessysla,Iceland
+1 CHR
+2 DATE 15 Nov 1809
+2 PLAC Ulfljotsvatn,Arnessysla,Iceland
+1 DEAT
+2 DATE 1 Jul 1863
+2 PLAC Audsholt, Arnarbaeli, Arness, Iceland
+1 BURI
+2 DATE 9 Jul 1863
+2 PLAC , Arnarbaeli, Arness, Iceland
+1 _FSID KHN7-5NF
+0 @I272771959201@ INDI
+1 NAME Anna /Johannsdottir/
+2 GIVN Anna
+2 SURN Johannsdottir
+1 SEX F
+1 FAMS @F79@
+1 BIRT
+2 DATE 1822
+2 PLAC Kotferja, Kaldadarnes, Arness, Iceland
+1 CHR
+2 PLAC (24-1845)
+1 DEAT
+2 DATE 17 Jan 1899
+1 _FSID LCCC-5PL
+0 @I272771959202@ INDI
+1 NAME Gudrun /Gunnarsdottir/
+2 GIVN Gudrun
+2 SURN Gunnarsdottir
+1 SEX F
+1 FAMS @F84@
+1 _FSID KCSJ-GJX
+0 @I272771959203@ INDI
+1 NAME Helga /Jonsdr/
+2 GIVN Helga
+2 SURN Jonsdr
+1 SEX F
+1 FAMC @F77@
+1 BIRT
+2 DATE 18 Feb 1822
+2 PLAC Svinhaga, Rngrvl., Icln.
+1 CHR
+2 DATE 19 Feb 1822
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID KHTN-TB8
+0 @I272771959204@ INDI
+1 NAME Magnus /Gislasson/
+2 GIVN Magnus
+2 SURN Gislasson
+1 SEX M
+1 FAMC @F81@
+1 BIRT
+2 DATE 20 Aug 1831
+1 CHR
+2 DATE 20 Aug 1831
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 _FSID M37Q-PJ9
+0 @I272771959206@ INDI
+1 NAME Vigfús /Jónsson/
+2 GIVN Vigfús
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F77@
+1 FAMS @F142@
+1 FAMS @F141@
+1 BIRT
+2 DATE 23 Mar 1837
+1 CHR
+2 DATE 23 Mar 1837
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID M3XS-WSJ
+0 @I272771959207@ INDI
+1 NAME Bjarni /Jonsson/
+2 GIVN Bjarni
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F77@
+1 BIRT
+2 DATE 5 Jan 1835
+1 CHR
+2 DATE 5 Jan 1835
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 12 Jan 1835
+1 _FSID LHGR-QQH
+0 @I272771959208@ INDI
+1 NAME Jon /Arnasson/
+2 GIVN Jon
+2 SURN Arnasson
+1 SEX M
+1 FAMC @F74@
+1 FAMS @F140@
+1 BIRT
+2 DATE 12 Sep 1818
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 CHR
+2 DATE 12 Sep 1818
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 1889
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID K8KS-GSR
+0 @I272771959209@ INDI
+1 NAME Gudrun /Gisladottir/ ;[elder]
+2 GIVN Gudrun
+2 SURN Gisladottir
+2 NSFX ;[elder]
+1 SEX F
+1 FAMS @F120@
+1 BIRT
+2 DATE 20 Oct 1819
+2 PLAC Kroggulfstadir, Reykir I Olfusi, Arness, Iceland
+1 CHR
+2 DATE 20 Oct 1819
+2 PLAC Reykir I Olfusi,Arnessysla,Iceland
+1 DEAT
+2 DATE 26 Mar 1894
+1 _FSID LCM4-SWL
+0 @I272771959211@ INDI
+1 NAME Gunnar /Einarsson/
+2 GIVN Gunnar
+2 SURN Einarsson
+1 SEX M
+1 FAMS @F57@
+1 BIRT
+2 DATE 18 Nov 1838
+2 PLAC Selfoss, Laugardaelir, Arness, Iceland
+1 CHR
+2 DATE 18 Nov 1838
+2 PLAC , Laugardaelir, Arness, Iceland
+1 DEAT
+2 DATE 20 Aug 1918
+2 PLAC Selfoss, Laugardaelir, Arness, Iceland
+1 BURI
+2 PLAC , Laugardaelir, Arness, Iceland
+1 _FSID LC36-MFF
+0 @I272771959212@ INDI
+1 NAME Málfríður /Andrésdóttir/
+2 GIVN Málfríður
+2 SURN Andrésdóttir
+1 SEX F
+1 FAMS @F85@
+1 BIRT
+2 DATE 10 Feb 1836
+1 CHR
+2 DATE 10 Feb 1836
+2 PLAC Reynir,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 18 Jan 1883
+1 _FSID KC95-XHD
+0 @I272771959214@ INDI
+1 NAME Brinjolfur /Jonsson/
+2 GIVN Brinjolfur
+2 SURN Jonsson
+1 SEX M
+1 FAMC @F77@
+1 BIRT
+2 DATE 2 Jul 1823
+2 PLAC Svinhaga, Rngrvl., Icln.
+1 CHR
+2 DATE 2 Jul 1823
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 3 Oct 1827
+1 _FSID LHGR-3NL
+0 @I272771959215@ INDI
+1 NAME Kristin /Gísladóttir/
+2 GIVN Kristin
+2 SURN Gísladóttir
+1 SEX F
+1 FAMC @F81@
+1 BIRT
+2 DATE 2 Sep 1829
+1 CHR
+2 DATE 4 Sep 1829
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 _FSID M37X-311
+0 @I272771959217@ INDI
+1 NAME Guðmundur /Gislason/
+2 GIVN Guðmundur
+2 SURN Gislason
+1 SEX M
+1 FAMC @F81@
+1 FAMS @F131@
+1 FAMS @F130@
+1 BIRT
+2 DATE 4 Sep 1836
+1 CHR
+2 DATE 5 Sep 1836
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 DEAT
+2 DATE 31 Oct 1909
+1 _FSID M377-JBV
+0 @I272771959218@ INDI
+1 NAME Thora /Jonsdr/
+2 GIVN Thora
+2 SURN Jonsdr
+1 SEX F
+1 FAMC @F77@
+1 BIRT
+2 DATE 21 Sep 1838
+1 CHR
+2 DATE 22 Sep 1838
+2 PLAC Svinhaga, Rngrvl., Icln.
+1 DEAT
+2 DATE 28 Sep 1838
+1 _FSID LHGR-QHV
+0 @I272771959220@ INDI
+1 NAME Atli /Jónsson/
+2 GIVN Atli
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F121@
+1 BIRT
+2 DATE 17 Sep 1813
+2 PLAC Ey, Breidabolstad, Rangarvalla, Iceland
+1 CHR
+2 DATE 17 Sep 1813
+2 PLAC Ey, Rangárvallasýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 20 May 1890
+2 PLAC Iceland
+1 _FSID LHG5-5NY
+0 @I272771959221@ INDI
+1 NAME Símon /Jónsson/
+2 GIVN Símon
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F58@
+1 BIRT
+2 DATE 1802
+2 PLAC Bjarnastadir,Hjalli,Arnessysla,Iceland
+1 CHR
+2 PLAC (33-1835)
+1 DEAT
+2 DATE 3 Jul 1879
+2 PLAC Bjarnastadir, Hjalli I Olfusi, Arness, Iceland
+1 BURI
+2 DATE 14 Jul 1879
+2 PLAC , Hjalli I Olfusi, Arness, Iceland
+1 _FSID M3QY-TYB
+0 @I272771959223@ INDI
+1 NAME Guðný /Jónsdóttir/
+2 GIVN Guðný
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMS @F91@
+1 BIRT
+2 DATE 1832
+2 PLAC Latalaeti, Skard A Landi, Rangarvalla, Iceland
+1 CHR
+2 DATE 24 Oct 1832
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 5 Jul 1875
+1 _FSID K8XS-7G6
+0 @I272771959225@ INDI
+1 NAME Valgerdur /Gísladóttir/
+2 GIVN Valgerdur
+2 SURN Gísladóttir
+1 SEX F
+1 FAMC @F81@
+1 BIRT
+2 DATE 14 Nov 1827
+1 CHR
+2 DATE 14 Nov 1827
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 _FSID M37D-X2L
+0 @I272771959226@ INDI
+1 NAME Þórður /Jónsson/
+2 GIVN Þórður
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F77@
+1 FAMS @F114@
+1 BIRT
+2 DATE 24 Jul 1824
+2 PLAC Svinhaga, Keldna, Rangarvalla, Iceland
+1 CHR
+2 DATE 24 Jul 1824
+2 PLAC Svinhaga, Keldna, Rangarvalla, Iceland
+1 DEAT
+2 DATE 14 Feb 1872
+1 _FSID M25L-Q7M
+0 @I272771959228@ INDI
+1 NAME Gudrun /Jonsdr/
+2 GIVN Gudrun
+2 SURN Jonsdr
+1 SEX F
+1 FAMC @F77@
+1 BIRT
+2 DATE 19 Dec 1835
+2 PLAC Svinhaga, Rngrvl., Icln.
+1 CHR
+2 DATE 29 Dec 1835
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 _FSID LHGR-QWX
+0 @I272771959229@ INDI
+1 NAME Ingveldur /Gísladóttir/
+2 GIVN Ingveldur
+2 SURN Gísladóttir
+1 SEX F
+1 FAMS @F94@
+1 BIRT
+2 DATE abt 1802
+2 PLAC Úlfljótsvatn, Árnessýsla, Southern, Iceland
+1 _FSID GY82-4QP
+0 @I272771959231@ INDI
+1 NAME Bjarni /Símonarson/
+2 GIVN Bjarni
+2 SURN Símonarson
+1 SEX M
+1 FAMS @F86@
+1 BIRT
+2 DATE 6 Mar 1787
+2 PLAC Laugardael, Arness, Iceland
+1 CHR
+2 DATE 6 Mar 1787
+2 PLAC Hraungerdi, Arness, Iceland
+1 DEAT
+2 DATE 19 Apr 1863
+1 BURI
+2 DATE 2 May 1863
+2 PLAC , Laugardaelir, Arness, Iceland
+1 _FSID LHK1-N6D
+0 @I272771959232@ INDI
+1 NAME Margrét /Jónsdóttir/
+2 GIVN Margrét
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMS @F115@
+1 BIRT
+2 DATE 8 Jul 1843
+2 PLAC , Solheimar, Vesturskaftafell, Iceland
+1 CHR
+2 DATE 11 Jul 1843
+2 PLAC Solheimar Sokn,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 3 Dec 1919
+1 _FSID LT5F-RPZ
+0 @I272771959234@ INDI
+1 NAME Eynar /Gislasson/
+2 GIVN Eynar
+2 SURN Gislasson
+1 SEX M
+1 FAMC @F81@
+1 BIRT
+2 DATE 30 Jun 1834
+1 CHR
+2 DATE 30 Jun 1834
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 _FSID M37W-GP8
+0 @I272771959235@ INDI
+1 NAME Helga /Jónsdóttir/
+2 GIVN Helga
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F77@
+1 FAMS @F123@
+1 BIRT
+2 DATE 6 Jul 1841
+2 PLAC Island
+1 DEAT
+2 DATE 1 Aug 1908
+2 PLAC Winnipeg, Manitoba, Canada
+1 BURI
+2 PLAC Winnipeg, Greater Winnipeg, Manitoba, Canada
+1 _FSID GHGL-TP4
+0 @I272771959237@ INDI
+1 NAME Margrét /Þórðardóttir/
+2 GIVN Margrét
+2 SURN Þórðardóttir
+1 SEX F
+1 FAMS @F104@
+1 BIRT
+2 DATE 30 Jul 1822
+2 PLAC , Breidabolstadir i Fljotshlid, Rangarvalla, Iceland
+1 CHR
+2 DATE 30 Jul 1822
+2 PLAC Breidabolsstadur I Fljotshlid,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 6 Aug 1879
+1 _FSID 9VQM-C4T
+0 @I272771959238@ INDI
+1 NAME Eiríkur /Jónsson/
+2 GIVN Eiríkur
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F87@
+1 BIRT
+2 DATE 8 Jul 1836
+2 PLAC Solheimur, Hruni, Arness, Iceland
+1 CHR
+2 DATE 8 Jul 1836
+2 PLAC , Hruni, Arness, Iceland
+1 DEAT
+2 DATE 23 May 1898
+2 PLAC Solheimur, Hruni, Arness, Iceland
+1 BURI
+2 DATE 4 Jun 1898
+2 PLAC , Hruni, Arness, Iceland
+1 _FSID KZCS-S42
+0 @I272771959239@ INDI
+1 NAME Guðlaug /Jónsdóttir/
+2 GIVN Guðlaug
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMS @F61@
+1 BIRT
+2 DATE 8 Jul 1828
+1 CHR
+2 DATE 15 Jul 1828
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 _FSID LZPF-117
+0 @I272771959240@ INDI
+1 NAME /Gislasson/
+2 SURN Gislasson
+1 SEX F
+1 FAMC @F81@
+1 BIRT
+2 DATE 26 Jun 1837
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 DEAT
+2 DATE 26 Jun 1837
+1 _FSID M3Q2-ZGD
+0 @I272771959241@ INDI
+1 NAME Páll /Jónsson/
+2 GIVN Páll
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F77@
+1 FAMS @F126@
+1 BIRT
+2 DATE 5 Dec 1842
+2 PLAC Svinhaga, Rngrvl., Icln.
+1 CHR
+2 DATE 11 Dec 1842
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 13 May 1920
+2 PLAC Iceland
+1 _FSID KH4V-ZD1
+0 @I272771959242@ INDI
+1 NAME Gudrun /Gisladottir/ ;[younger]
+2 GIVN Gudrun
+2 SURN Gisladottir
+2 NSFX ;[younger]
+1 SEX F
+1 FAMS @F95@
+1 BIRT
+2 DATE 29 Apr 1823
+2 PLAC Kroggolfsstodum, Reykja, Arness, Icln
+1 CHR
+2 DATE 4 May 1823
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 DEAT
+2 DATE 26 Mar 1894
+1 _FSID LCM4-S4T
+0 @I272771959243@ INDI
+1 NAME Amundi /Gudmundsson/
+2 GIVN Amundi
+2 SURN Gudmundsson
+1 SEX M
+1 FAMS @F88@
+1 BIRT
+2 DATE 8 Aug 1807
+2 PLAC Sydra Langholt, Hreppholar, Arness, Iceland
+1 CHR
+2 DATE 8 Aug 1807
+2 PLAC , Hreppholar, Arness, Iceland
+1 DEAT
+2 DATE 1 Oct 1864
+2 PLAC Sandlaekur, Hreppholar, Arness, Iceland
+1 BURI
+2 DATE 12 Oct 1864
+2 PLAC , Hreppholar, Arness, Iceland
+1 _FSID LWVM-3G5
+0 @I272771959244@ INDI
+1 NAME Guðbjörg /Sveinsdóttir/
+2 GIVN Guðbjörg
+2 SURN Sveinsdóttir
+1 SEX F
+1 FAMS @F116@
+1 BIRT
+2 DATE 21 Oct 1842
+2 PLAC Iceland
+1 CHR
+2 DATE 27 Oct 1842
+2 PLAC Teigur I Fljotshlid,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 28 Oct 1876
+1 _FSID KZ1M-LLM
+0 @I272771959245@ INDI
+1 NAME Hinrik /Gislason/
+2 GIVN Hinrik
+2 SURN Gislason
+1 SEX M
+1 FAMC @F81@
+1 FAMS @F125@
+1 BIRT
+2 DATE 28 Nov 1832
+2 PLAC Iceland
+1 CHR
+2 DATE 30 Nov 1832
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 DEAT
+2 DATE 11 Dec 1929
+2 PLAC Churchbridge No. 211, Saskatchewan, Canada
+1 BURI
+2 DATE 1929
+2 PLAC Churchbridge, Melville Census Division, Saskatchewan, Canada
+1 _FSID KZQY-VL7
+0 @I272771959246@ INDI
+1 NAME Gudny /Hannesdóttir/
+2 GIVN Gudny
+2 SURN Hannesdóttir
+1 SEX F
+1 FAMS @F99@
+1 BIRT
+2 DATE 28 Sep 1821
+2 PLAC Hvoll, Arnarbaeli, Arness, Iceland
+1 CHR
+2 DATE 29 Sep 1821
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+1 DEAT
+2 DATE 23 Oct 1890
+2 PLAC Audsholtshjaleig, Arnarbaeli, Arness, Iceland
+1 BURI
+2 DATE 3 Nov 1890
+2 PLAC , Arnarbaeli, Arness, Iceland
+1 _FSID KZ74-CKW
+0 @I272771959247@ INDI
+1 NAME Guðmundur /Þormóðsson/
+2 GIVN Guðmundur
+2 SURN Þormóðsson
+1 SEX M
+1 FAMS @F89@
+1 BIRT
+2 DATE 23 Apr 1823
+2 PLAC Holar, Arness, Iceland
+1 CHR
+2 DATE 24 Apr 1823
+2 PLAC Holum, Gaulverjabaer, Arness, Ice.
+1 DEAT
+2 DATE 21 Nov 1904
+2 PLAC Austurhlid, Arness, Iceland
+1 BURI
+2 DATE 30 Nov 1904
+2 PLAC Storinupur, Arness, Iceland
+1 _FSID LHTY-6VG
+0 @I272771959248@ INDI
+1 NAME Guðrún /Magnúsdóttir/
+2 GIVN Guðrún
+2 SURN Magnúsdóttir
+1 SEX F
+1 FAMS @F60@
+1 BIRT
+2 DATE 30 Jan 1841
+2 PLAC Stórólfshvoll, Rangárvallasýsla, Suðurland, Iceland
+1 CHR
+2 DATE 1 Feb 1841
+2 PLAC Stórólfshvoll, Rangárvallasýsla, Suðurland, Iceland
+1 DEAT
+2 DATE 1937
+1 _FSID KDM7-MT1
+0 @I272771959249@ INDI
+1 NAME Ingibjorg /Bodvarsdottir/
+2 GIVN Ingibjorg
+2 SURN Bodvarsdottir
+1 SEX F
+1 FAMS @F106@
+1 BIRT
+2 DATE 3 Aug 1847
+2 PLAC Auðsholt, Árnessýsla, Southern, Iceland
+1 CHR
+2 DATE 3 Aug 1847
+2 PLAC Keldur, Rangárvallasýsla, Southern, Iceland
+1 DEAT
+2 DATE 2 Aug 1920
+1 _FSID K24P-8QV
+0 @I272771959250@ INDI
+1 NAME Björn /Jónsson/
+2 GIVN Björn
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F98@
+1 BIRT
+2 DATE 1820
+2 PLAC ,, Rangarvallasysla, Iceland
+1 DEAT
+2 DATE 7 Jun 1876
+1 _FSID KLQ8-S6M
+0 @I272771959251@ INDI
+1 NAME Þorbjörg /Vigfúsdóttir/
+2 GIVN Þorbjörg
+2 SURN Vigfúsdóttir
+1 SEX F
+1 FAMS @F107@
+1 BIRT
+2 DATE 26 May 1838
+1 CHR
+2 DATE 27 May 1838
+2 PLAC Thingvellir,Arnessysla,Iceland
+1 _FSID M37R-77T
+0 @I272771959252@ INDI
+1 NAME Raðhildur /Jonsdottir/
+2 GIVN Raðhildur
+2 SURN Jonsdottir
+1 SEX F
+1 FAMS @F97@
+1 BIRT
+2 DATE 4 Sep 1820
+1 CHR
+2 DATE 5 Sep 1820
+2 PLAC Middalur I Laugardal,Arnessysla,Iceland
+1 _FSID M37D-WVB
+0 @I272771959253@ INDI
+1 NAME Sesselja /Einarsdóttir/
+2 GIVN Sesselja
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMS @F102@
+1 BIRT
+2 DATE 6 Sep 1817
+2 PLAC Hruni, Árnessýsla, Southern, Iceland
+1 CHR
+2 DATE 7 Sep 1817
+2 PLAC Hruni, Árnessýsla, Southern, Iceland
+1 DEAT
+2 DATE 8 Nov 1890
+1 _FSID KNQ6-QLM
+0 @I272771959254@ INDI
+1 NAME Guðrún /Guðmundsdóttir/
+2 GIVN Guðrún
+2 SURN Guðmundsdóttir
+1 SEX F
+1 FAMS @F118@
+1 BIRT
+2 DATE 15 Nov 1830
+1 CHR
+2 DATE 16 Nov 1830
+2 PLAC Keldur,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 10 Oct 1905
+1 _FSID M3XC-H4F
+0 @I272771959255@ INDI
+1 NAME Gunnar /Guðmundsson/
+2 GIVN Gunnar
+2 SURN Guðmundsson
+1 SEX M
+1 FAMS @F103@
+1 BIRT
+2 DATE 1 Jul 1818
+2 PLAC Skarfanesi, Rangarvalla, Iceland
+1 CHR
+2 DATE 2 Jul 1818
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 30 Jul 1863
+2 PLAC Tungu, Rangarvalla, Iceland
+1 BURI
+2 DATE 5 Aug 1863
+2 PLAC Keldna, Rangarvalla, Iceland
+1 _FSID LC36-24D
+0 @I272771959256@ INDI
+1 NAME Olaf /Gislasson/
+2 GIVN Olaf
+2 SURN Gislasson
+1 SEX M
+1 FAMS @F96@
+1 BIRT
+2 DATE 1825
+1 _FSID K8K1-7G7
+0 @I272771959257@ INDI
+1 NAME Þuríður /Jónsdóttir/
+2 GIVN Þuríður
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMS @F108@
+1 BIRT
+2 DATE 1850
+2 PLAC Einholt Sokn, Austur-Skaftafellssýsla, Eastern Region, Iceland
+1 _FSID G3FK-76W
+0 @I272771959258@ INDI
+1 NAME Gudrun /Gislasdr/
+2 GIVN Gudrun
+2 SURN Gislasdr
+1 SEX F
+1 FAMS @F113@
+1 BIRT
+2 DATE 1834
+1 _FSID KZ1R-T5R
+0 @I272771959259@ INDI
+1 NAME Guðlaug /Jónsdóttir/
+2 GIVN Guðlaug
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMS @F109@
+1 BIRT
+2 DATE 28 Aug 1832
+2 PLAC Jarklaustur,Vestur-Skaftafellssýsla, Suðurland, Iceland
+1 CHR
+2 DATE 2 Sep 1832
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 19 May 1877
+2 PLAC i Svinafelli, Iceland
+1 _FSID MMMK-QK1
+0 @I272771959260@ INDI
+1 NAME Kristin Margret /Magnusdottir/
+2 GIVN Kristin Margret
+2 SURN Magnusdottir
+1 SEX F
+1 FAMS @F131@
+1 BIRT
+2 DATE 13 Dec 1830
+1 CHR
+2 DATE 13 Dec 1830
+2 PLAC Reykjavik,Gullbringusysla,Iceland
+1 _FSID M3C2-6VV
+0 @I272771959261@ INDI
+1 NAME Guðmundur /Jónsson/
+2 GIVN Guðmundur
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F122@
+1 BIRT
+2 DATE 16 May 1808
+2 PLAC Efri Steinsmyri, Medallandsthing, Vesturskaftafell, Iceland
+1 CHR
+2 DATE 16 May 1808
+2 PLAC Efri Steinsmyri, Medallandsthing, Vesturskaftafell, Iceland
+1 DEAT
+2 DATE 16 Aug 1867
+2 PLAC Efri Steinsmyri, Medallandsthing, Vesturskaftafell, Iceland
+1 _FSID KFRT-329
+0 @I272771959262@ INDI
+1 NAME Vigfus /Hannesson/
+2 GIVN Vigfus
+2 SURN Hannesson
+1 SEX M
+1 FAMS @F117@
+1 BIRT
+2 DATE 2 Jul 1836
+1 CHR
+2 DATE 2 Jul 1836
+2 PLAC Middalathing,Dalasysla,Iceland
+1 _FSID M34G-TCS
+0 @I272771959263@ INDI
+1 NAME Margrét /Jónsdóttir/
+2 GIVN Margrét
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMS @F130@
+1 BIRT
+2 DATE 14 Feb 1864
+2 PLAC Ólafsvellir, Árnessýsla, Southern, Iceland
+1 CHR
+2 DATE 17 Feb 1864
+2 PLAC Olafsvellir,Arnessysla,Iceland
+1 DEAT
+2 DATE 16 Aug 1923
+1 _FSID GTPV-YMX
+0 @I272771959264@ INDI
+1 NAME Guðrún /Kolbeinsdóttir/
+2 GIVN Guðrún
+2 SURN Kolbeinsdóttir
+1 SEX F
+1 FAMS @F140@
+1 BIRT
+2 DATE 21 May 1822
+1 CHR
+2 DATE 21 May 1822
+2 PLAC Olafsvellir,Arnessysla,Iceland
+1 _FSID M37K-6RJ
+0 @I272771959265@ INDI
+1 NAME Jón /Jónsson/
+2 GIVN Jón
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F111@
+1 BIRT
+2 DATE abt 1831
+2 PLAC Kirkjubæjarklaustur, Vestur-Skaftafellssýsla, Southern, Iceland
+1 _FSID GPPC-K67
+0 @I272771959267@ INDI
+1 NAME Ingibjörg /Gísladóttir/
+2 GIVN Ingibjörg
+2 SURN Gísladóttir
+1 SEX F
+1 FAMS @F126@
+1 BIRT
+2 DATE 3 May 1845
+1 CHR
+2 DATE 9 May 1845
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 25 Nov 1918
+2 PLAC Iceland
+1 _FSID M3XM-YP6
+0 @I272771959268@ INDI
+1 NAME Margrét /Jónsdóttir/
+2 GIVN Margrét
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMS @F138@
+1 BIRT
+2 DATE 23 May 1830
+2 PLAC Rangárvallasýsla, Suðurland, Iceland
+1 CHR
+2 DATE 23 May 1830
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 25 Jun 1882
+2 PLAC Iceland
+1 _FSID M3XF-NTN
+0 @I272771959269@ INDI
+1 NAME Kristin /Vigfusdottir Olafsdottir/
+2 GIVN Kristin
+2 SURN Vigfusdottir Olafsdottir
+1 SEX F
+1 FAMS @F100@
+1 BIRT
+2 DATE 18 May 1845
+2 PLAC Flaga, Asar, Vestur-Skaftafells, Ice.
+1 CHR
+2 DATE 24 May 1845
+2 PLAC Asar I Skaftartunga,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 15 Feb 1934
+1 _FSID MZMM-189
+0 @I272771959270@ INDI
+1 NAME Jórunn /Magnúsdóttir/
+2 GIVN Jórunn
+2 SURN Magnúsdóttir
+1 SEX F
+1 FAMS @F125@
+1 BIRT
+2 DATE 30 Nov 1833
+2 PLAC Iceland
+1 DEAT
+2 DATE 15 May 1897
+2 PLAC Churchbridge No. 211, Saskatchewan, Canada
+1 BURI
+2 DATE 1897
+2 PLAC Churchbridge, Melville Census Division, Saskatchewan, Canada
+1 _FSID M37L-QTJ
+0 @I272771959271@ INDI
+1 NAME Guðríður /Eyjólfsdóttir/
+2 GIVN Guðríður
+2 SURN Eyjólfsdóttir
+1 SEX F
+1 FAMS @F137@
+1 BIRT
+2 DATE 9 Sep 1829
+1 CHR
+2 DATE 9 Sep 1829
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 17 Apr 1912
+1 _FSID K856-WQJ
+0 @I272771959272@ INDI
+1 NAME Jón /Jónsson/
+2 GIVN Jón
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F112@
+1 BIRT
+2 DATE 18 Nov 1815
+2 PLAC Hellum,Reynir,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 26 Aug 1854
+2 PLAC Reynir, Vestur-Skaftafellssýsla, Southern, Iceland
+1 _FSID KZ4N-PM9
+0 @I272771959273@ INDI
+1 NAME Sigríður /Ófeigsdóttir/
+2 GIVN Sigríður
+2 SURN Ófeigsdóttir
+1 SEX F
+1 FAMS @F147@
+1 BIRT
+2 DATE 1 Jan 1835
+2 PLAC Fjall, Árnessýsla, Suðurland, Iceland
+1 CHR
+2 DATE 1 Jan 1835
+2 PLAC Torfastaðir, Árnessýsla, Southern, Iceland
+1 DEAT
+2 DATE 5 May 1900
+1 _FSID LX33-PSP
+0 @I272771959274@ INDI
+1 NAME Kristin /Vigfusdottir/ elder
+2 GIVN Kristin
+2 SURN Vigfusdottir
+2 NSFX elder
+1 SEX F
+1 FAMS @F101@
+1 BIRT
+2 DATE 28 Apr 1825
+2 PLAC Flaga, Asar, Vestur-Skaftafells, Iceland
+1 CHR
+2 DATE 29 Apr 1825
+2 PLAC Asar I Skaftartunga,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 20 Dec 1890
+1 _FSID KFPN-1R5
+0 @I272771959275@ INDI
+1 NAME Guðfinna /Eiríksdóttir/
+2 GIVN Guðfinna
+2 SURN Eiríksdóttir
+1 SEX F
+1 FAMS @F145@
+1 BIRT
+2 DATE 27 Oct 1837
+2 PLAC Iceland
+1 CHR
+2 DATE 29 Oct 1837
+2 PLAC Storolfshvoll,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 12 May 1909
+2 PLAC Iceland
+1 _FSID M37T-Y23
+0 @I272771959276@ INDI
+1 NAME Sigurður /Árnasson/
+2 GIVN Sigurður
+2 SURN Árnasson
+1 SEX M
+1 FAMS @F110@
+1 BIRT
+2 DATE 12 Jun 1806
+2 PLAC Hvammi,Reynir,Vestur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 21 Sep 1876
+1 _FSID GMKM-H8V
+0 @I272771959277@ INDI
+1 NAME Guðfinna /Vigfúsdóttir/
+2 GIVN Guðfinna
+2 SURN Vigfúsdóttir
+1 SEX F
+1 FAMS @F142@
+1 BIRT
+2 DATE 4 Sep 1831
+1 CHR
+2 DATE 4 Sep 1831
+2 PLAC Oddi,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 27 Jan 1913
+1 _FSID M3XN-SVF
+0 @I272771959278@ INDI
+1 NAME Ragnhildur /Halldórsdóttir/
+2 GIVN Ragnhildur
+2 SURN Halldórsdóttir
+1 SEX F
+1 FAMS @F141@
+1 BIRT
+2 DATE 3 Mar 1834
+2 PLAC Stórólfshvoll, Rangárvallasýsla, Suðurland, Iceland
+1 CHR
+2 DATE 8 Mar 1834
+2 PLAC Sigluvik,Rangarvallasysla,Iceland
+1 DEAT
+2 DATE 20 Mar 1912
+2 PLAC Iceland
+1 _FSID M36J-Y2V
+0 @F1@ FAM
+1 HUSB @I272771958869@
+1 WIFE @I272771958855@
+1 CHIL @I272771959155@
+1 CHIL @I272771959124@
+1 CHIL @I272771958757@
+1 CHIL @I272771959094@
+1 CHIL @I272771959068@
+1 CHIL @I272771959107@
+1 MARR
+2 DATE 30 Nov 1827
+2 PLAC , Solheimar, Vesturskaftafell, Iceland
+0 @F2@ FAM
+1 HUSB @I272771959073@
+1 WIFE @I272771958855@
+0 @F3@ FAM
+1 HUSB @I272771959076@
+1 WIFE @I272771958855@
+0 @F4@ FAM
+1 HUSB @I272771958852@
+1 WIFE @I272771958881@
+1 CHIL @I272771959072@
+1 CHIL @I272771959137@
+1 CHIL @I272771959153@
+1 CHIL @I272771959093@
+1 CHIL @I272771959132@
+1 CHIL @I272771959115@
+1 CHIL @I272771959123@
+1 CHIL @I272771959105@
+1 CHIL @I272771958816@
+1 CHIL @I272771959081@
+1 CHIL @I272771959148@
+1 CHIL @I272771959140@
+1 CHIL @I272771959104@
+1 MARR
+2 DATE 1809
+2 PLAC Arnarbæli, Árnessýsla, Southern, Iceland
+0 @F5@ FAM
+1 HUSB @I272771958849@
+1 WIFE @I272771958841@
+1 CHIL @I272771958975@
+1 CHIL @I272771958783@
+1 CHIL @I272771958951@
+1 CHIL @I272771958954@
+1 CHIL @I272771958962@
+1 CHIL @I272771958978@
+1 CHIL @I272771958944@
+1 CHIL @I272771958955@
+1 CHIL @I272771958983@
+1 MARR
+2 DATE 1816
+2 PLAC Floagafli,Kaldadarnes,Arness,Icln
+0 @F6@ FAM
+1 HUSB @I272771958849@
+1 WIFE @I272771958943@
+0 @F7@ FAM
+1 HUSB @I272771958847@
+1 WIFE @I272771958860@
+1 CHIL @I272771958999@
+1 CHIL @I272771959079@
+1 CHIL @I272771959090@
+1 CHIL @I272771958800@
+1 CHIL @I272771959129@
+1 CHIL @I272771959102@
+1 CHIL @I272771959130@
+1 CHIL @I272771959121@
+1 CHIL @I272771959154@
+1 CHIL @I272771959146@
+1 CHIL @I272771959069@
+1 CHIL @I272771959077@
+1 CHIL @I272771959100@
+1 CHIL @I272771959120@
+1 CHIL @I272771959112@
+1 MARR
+2 DATE 15 Oct 1818
+0 @F8@ FAM
+1 HUSB @I272771958766@
+1 WIFE @I272771958861@
+1 MARR
+2 DATE abt 1927
+2 PLAC of Reykjavik, Gullbringu, Iceland
+0 @F9@ FAM
+1 HUSB @I272771958961@
+1 WIFE @I272771958857@
+1 MARR
+2 DATE 29 May 1901
+2 PLAC Dyrhólar, Vestur-Skaftafellssýsla, Southern, Iceland
+0 @F10@ FAM
+1 HUSB @I272771958981@
+1 WIFE @I272771958857@
+1 MARR
+2 DATE 9 Jul 1892
+0 @F11@ FAM
+1 HUSB @I272771958869@
+1 WIFE @I272771959087@
+0 @F12@ FAM
+1 HUSB @I272771958869@
+1 WIFE @I272771959098@
+0 @F13@ FAM
+1 HUSB @I272771958864@
+1 WIFE @I272771958947@
+0 @F14@ FAM
+1 HUSB @I272771958879@
+1 WIFE @I272771958872@
+1 CHIL @I272771958963@
+1 CHIL @I272771958968@
+1 CHIL @I272771958971@
+1 CHIL @I272771958977@
+1 CHIL @I272771958972@
+1 CHIL @I272771959113@
+1 CHIL @I272771958957@
+1 CHIL @I272771958992@
+1 CHIL @I272771958792@
+1 CHIL @I272771958988@
+1 CHIL @I272771958985@
+1 CHIL @I272771959070@
+1 CHIL @I272771958964@
+1 CHIL @I272771958960@
+1 MARR
+2 DATE 21 Jul 1824
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+0 @F15@ FAM
+1 HUSB @I272771958879@
+1 WIFE @I272771959138@
+0 @F16@ FAM
+1 HUSB @I272771958799@
+1 WIFE @I272771958876@
+1 MARR
+2 DATE abt 1946
+2 PLAC of Stokkseyri, Arness, Iceland
+0 @F17@ FAM
+1 HUSB @I272771958873@
+1 WIFE @I272771959116@
+1 MARR
+2 DATE 16 Jul 1904
+2 PLAC Reykjavík, Iceland
+0 @F18@ FAM
+1 HUSB @I272771958741@
+1 WIFE @I272771958886@
+1 MARR
+2 DATE 1917
+2 PLAC of Hraungerdi, Arness, Iceland
+0 @F19@ FAM
+1 HUSB @I272771958883@
+1 WIFE @I272771958900@
+1 CHIL @I272771959144@
+1 CHIL @I272771959149@
+1 CHIL @I272771959141@
+1 CHIL @I272771958774@
+1 CHIL @I272771959157@
+1 MARR
+2 DATE 21 Jul 1827
+0 @F20@ FAM
+1 HUSB @I272771958815@
+1 WIFE @I272771958895@
+1 MARR
+2 DATE abt 1929
+2 PLAC of, Stokkseyri, Arness, Iceland
+0 @F21@ FAM
+1 HUSB @I272771958916@
+1 WIFE @I272771958893@
+1 CHIL @I272771959071@
+1 CHIL @I272771959156@
+1 CHIL @I272771959139@
+1 CHIL @I272771959133@
+1 CHIL @I272771959082@
+1 CHIL @I272771959080@
+1 CHIL @I272771959091@
+1 CHIL @I272771958749@
+1 MARR
+2 DATE 3 Jun 1819
+2 PLAC Keldur, Rangárvallasýsla, Southern, Iceland
+0 @F22@ FAM
+1 HUSB @I272771958799@
+1 WIFE @I272771958890@
+1 MARR
+2 DATE 13 Jun 1920
+2 PLAC of Stokkseyri, Arness, Iceland
+0 @F23@ FAM
+1 HUSB @I272771958891@
+1 WIFE @I272771958834@
+1 CHIL @I272771958997@
+1 CHIL @I272771959088@
+1 CHIL @I272771958987@
+1 CHIL @I272771958990@
+1 CHIL @I272771958808@
+1 CHIL @I272771958995@
+1 MARR
+2 DATE 24 Jul 1822
+2 PLAC Skard a Landi, Rangárvallasýsla, Southern, Iceland
+0 @F24@ FAM
+1 HUSB @I272771958891@
+1 WIFE @I272771959145@
+0 @F25@ FAM
+1 HUSB @I272771958888@
+1 WIFE @I272771959114@
+1 MARR
+2 DATE abt 1900
+2 PLAC of, Storuvellir, Rangarvalla, Iceland
+0 @F26@ FAM
+1 HUSB @I272771958902@
+1 WIFE @I272771958736@
+1 MARR
+2 DATE abt 1918
+2 PLAC Arnarbæli, Árnessýsla, Southern, Iceland
+0 @F27@ FAM
+1 HUSB @I272771959111@
+1 WIFE @I272771958900@
+0 @F28@ FAM
+1 HUSB @I272771959147@
+1 WIFE @I272771958896@
+1 MARR
+2 DATE 6 Oct 1894
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+0 @F29@ FAM
+1 HUSB @I272771958798@
+1 WIFE @I272771958790@
+1 CHIL @I272771958752@
+1 CHIL @I272771958776@
+1 CHIL @I272771958785@
+1 MARR
+2 DATE 26 Jun 1886
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+0 @F30@ FAM
+1 HUSB @I272771958791@
+1 WIFE @I272771958914@
+0 @F31@ FAM
+1 HUSB @I272771958735@
+1 WIFE @I272771958788@
+1 CHIL @I272771958754@
+0 @F32@ FAM
+1 HUSB @I272771958789@
+1 WIFE @I272771958767@
+1 MARR
+2 DATE 17 Dec 1926
+2 PLAC of, Arnarbaeli, Arness, Iceland
+0 @F33@ FAM
+1 HUSB @I272771958796@
+1 WIFE @I272771958804@
+1 CHIL @I272771958771@
+0 @F34@ FAM
+1 HUSB @I272771958757@
+1 WIFE @I272771958792@
+1 CHIL @I272771958837@
+1 CHIL @I272771958864@
+1 CHIL @I272771958823@
+1 CHIL @I272771958814@
+1 CHIL @I272771958830@
+1 CHIL @I272771958835@
+1 CHIL @I272771958857@
+1 CHIL @I272771958856@
+1 CHIL @I272771958825@
+1 CHIL @I272771958871@
+1 CHIL @I272771958836@
+1 MARR
+2 DATE 22 Oct 1857
+2 PLAC Skard a Landi, Rangárvallasýsla, Southern, Iceland
+0 @F35@ FAM
+1 HUSB @I272771958801@
+1 WIFE @I272771958793@
+1 CHIL @I272771958767@
+1 CHIL @I272771958741@
+1 CHIL @I272771958799@
+1 CHIL @I272771958769@
+1 CHIL @I272771958766@
+1 CHIL @I272771958736@
+1 CHIL @I272771958791@
+1 CHIL @I272771958815@
+1 MARR
+2 DATE 21 Nov 1884
+2 PLAC Reykjavik,Gullbringusysla,Iceland
+0 @F36@ FAM
+1 HUSB @I272771958806@
+1 WIFE @I272771958814@
+1 CHIL @I272771958809@
+1 CHIL @I272771958760@
+1 CHIL @I272771958742@
+1 MARR
+2 DATE 17 Nov 1889
+2 PLAC Stokkseyri,Arnessysla,Iceland
+0 @F37@ FAM
+1 HUSB @I272771958807@
+1 WIFE @I272771958774@
+1 CHIL @I272771958896@
+1 CHIL @I272771958898@
+1 CHIL @I272771958743@
+1 CHIL @I272771958858@
+1 CHIL @I272771958851@
+1 CHIL @I272771958866@
+1 CHIL @I272771958887@
+1 CHIL @I272771958880@
+1 CHIL @I272771958892@
+1 CHIL @I272771958901@
+1 CHIL @I272771958848@
+1 MARR
+2 DATE 21 Jul 1855
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+0 @F38@ FAM
+1 HUSB @I272771958800@
+1 WIFE @I272771958808@
+1 CHIL @I272771958878@
+1 CHIL @I272771958839@
+1 CHIL @I272771958798@
+1 CHIL @I272771958831@
+1 CHIL @I272771958833@
+1 CHIL @I272771958863@
+1 CHIL @I272771958870@
+1 CHIL @I272771958854@
+1 CHIL @I272771958877@
+1 CHIL @I272771958885@
+1 CHIL @I272771958850@
+1 CHIL @I272771958865@
+1 MARR
+2 DATE 17 Jul 1855
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+0 @F39@ FAM
+1 HUSB @I272771958779@
+1 WIFE @I272771958812@
+1 CHIL @I272771958762@
+0 @F40@ FAM
+1 HUSB @I272771958950@
+1 WIFE @I272771958813@
+1 MARR
+2 DATE 24 Nov 1900
+2 PLAC of Stokkseyri, Arness, Iceland
+0 @F41@ FAM
+1 HUSB @I272771958761@
+1 WIFE @I272771958809@
+1 MARR
+2 DATE 3 Dec 1920
+2 PLAC Reykjavík, Capital Region, Iceland
+0 @F42@ FAM
+1 HUSB @I272771958822@
+1 WIFE @I272771958932@
+0 @F43@ FAM
+1 HUSB @I272771958783@
+1 WIFE @I272771958816@
+1 CHIL @I272771958844@
+1 CHIL @I272771958780@
+1 CHIL @I272771958797@
+1 CHIL @I272771958801@
+1 CHIL @I272771958827@
+1 CHIL @I272771958805@
+1 CHIL @I272771958813@
+1 MARR
+2 DATE 15 Oct 1844
+2 PLAC Kaldaðarnes, Árnessýsla, Southern, Iceland
+0 @F44@ FAM
+1 HUSB @I272771958996@
+1 WIFE @I272771958831@
+0 @F45@ FAM
+1 HUSB @I272771958828@
+1 WIFE @I272771958982@
+1 MARR
+2 DATE 2 Nov 1884
+2 PLAC Stokkseyri,Arnessysla,Iceland
+0 @F46@ FAM
+1 HUSB @I272771958993@
+1 WIFE @I272771958829@
+1 MARR
+2 DATE 9 Oct 1891
+2 PLAC Utskalar,Gullbringusysla,Iceland
+0 @F47@ FAM
+1 HUSB @I272771958827@
+1 WIFE @I272771958930@
+1 MARR
+2 DATE abt 1905
+2 PLAC of Stokkseyri, Arness, Iceland
+0 @F48@ FAM
+1 HUSB @I272771958827@
+1 WIFE @I272771958940@
+1 MARR
+2 DATE 26 Jun 1885
+2 PLAC Kaldadarnes, Arness, Iceland
+0 @F49@ FAM
+1 HUSB @I272771958824@
+1 WIFE @I272771958832@
+1 CHIL @I272771958928@
+1 CHIL @I272771958933@
+1 CHIL @I272771958775@
+1 MARR
+2 DATE 7 Oct 1824
+2 PLAC Keldur,Rangarvallasysla,Iceland
+0 @F50@ FAM
+1 HUSB @I272771958836@
+1 WIFE @I272771958994@
+1 MARR
+2 DATE 4 Nov 1906
+2 PLAC Villingaholt, Árnessýsla, Suðurland, Iceland
+0 @F51@ FAM
+1 HUSB @I272771958842@
+1 WIFE @I272771958846@
+1 CHIL @I272771958965@
+1 CHIL @I272771958967@
+1 CHIL @I272771958956@
+1 CHIL @I272771958974@
+1 CHIL @I272771958976@
+1 CHIL @I272771958979@
+1 CHIL @I272771958758@
+1 CHIL @I272771958949@
+1 CHIL @I272771958959@
+1 CHIL @I272771958952@
+1 CHIL @I272771958984@
+1 CHIL @I272771958991@
+1 CHIL @I272771958980@
+1 CHIL @I272771958989@
+1 CHIL @I272771958998@
+1 MARR
+2 DATE 3 Jun 1825
+2 PLAC Solheimar Sokn,Vestur-Skaftafellssysla,Iceland
+0 @F52@ FAM
+1 HUSB @I272771958844@
+1 WIFE @I272771958937@
+1 MARR
+2 DATE 16 Oct 1874
+0 @F53@ FAM
+1 HUSB @I272771958844@
+1 WIFE @I272771958986@
+1 MARR
+2 DATE abt 1869
+2 PLAC of Kaldadarnes, Arness, Iceland
+0 @F54@ FAM
+1 HUSB @I272771958842@
+1 WIFE @I272771958969@
+0 @F55@ FAM
+1 HUSB @I272771958843@
+1 WIFE @I272771959122@
+1 MARR
+2 DATE 5 Jun 1903
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+0 @F56@ FAM
+1 HUSB @I272771958843@
+1 WIFE @I272771959131@
+1 MARR
+2 DATE 2 Jun 1893
+2 PLAC Efri-Holtathing,Rangarvallasysla,Iceland
+0 @F57@ FAM
+1 HUSB @I272771959211@
+1 WIFE @I272771958983@
+1 MARR
+2 DATE 1862
+2 PLAC Hraungerdi,Arnessysla,Iceland
+0 @F58@ FAM
+1 HUSB @I272771959221@
+1 WIFE @I272771958978@
+1 MARR
+2 DATE 1 Jul 1854
+2 PLAC , Arnarbaeli, Arness, Iceland
+0 @F59@ FAM
+1 HUSB @I272771958991@
+1 WIFE @I272771959194@
+1 MARR
+2 DATE 1 Jun 1867
+2 PLAC Reynir,Vestur-Skaftafellssysla,Iceland
+0 @F60@ FAM
+1 HUSB @I272771958998@
+1 WIFE @I272771959248@
+1 MARR
+2 DATE 18 Jul 1872
+2 PLAC Langholt,Vestur-Skaftafellssysla,Iceland
+0 @F61@ FAM
+1 HUSB @I272771958992@
+1 WIFE @I272771959239@
+1 MARR
+2 DATE 30 May 1856
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+0 @F62@ FAM
+1 HUSB @I272771958921@
+1 WIFE @I272771958918@
+1 CHIL @I272771959097@
+1 CHIL @I272771959152@
+1 CHIL @I272771959159@
+1 CHIL @I272771959135@
+1 CHIL @I272771959136@
+1 CHIL @I272771959128@
+1 CHIL @I272771959151@
+1 CHIL @I272771959074@
+1 CHIL @I272771959084@
+1 CHIL @I272771959108@
+1 CHIL @I272771958807@
+1 MARR
+2 DATE 31 Jul 1814
+0 @F63@ FAM
+1 HUSB @I272771958919@
+1 WIFE @I272771958745@
+0 @F64@ FAM
+1 HUSB @I272771958916@
+1 WIFE @I272771959075@
+0 @F65@ FAM
+1 HUSB @I272771958916@
+1 WIFE @I272771959085@
+0 @F66@ FAM
+1 HUSB @I272771958916@
+1 WIFE @I272771959119@
+0 @F67@ FAM
+1 HUSB @I272771958912@
+1 WIFE @I272771958736@
+1 MARR
+2 DATE 9 Dec 1923
+2 PLAC of Arnarbaeli, Arness, Iceland
+0 @F68@ FAM
+1 HUSB @I272771958926@
+1 WIFE @I272771959142@
+0 @F69@ FAM
+1 HUSB @I272771958927@
+1 WIFE @I272771959163@
+0 @F70@ FAM
+1 HUSB @I272771958922@
+1 WIFE @I272771958920@
+1 CHIL @I272771959096@
+1 CHIL @I272771959125@
+1 CHIL @I272771959143@
+1 CHIL @I272771959117@
+1 CHIL @I272771958745@
+1 MARR
+2 DATE 1 Nov 1825
+2 PLAC Keldur,Rangarvallasysla,Iceland
+0 @F71@ FAM
+1 HUSB @I272771958922@
+1 WIFE @I272771959173@
+0 @F72@ FAM
+1 HUSB @I272771958923@
+1 WIFE @I272771958739@
+0 @F73@ FAM
+1 HUSB @I272771958921@
+1 WIFE @I272771959110@
+0 @F74@ FAM
+1 HUSB @I272771958934@
+1 WIFE @I272771958931@
+1 CHIL @I272771959208@
+1 CHIL @I272771959165@
+1 CHIL @I272771959168@
+1 CHIL @I272771958782@
+1 CHIL @I272771959118@
+1 CHIL @I272771959126@
+1 CHIL @I272771959134@
+1 CHIL @I272771959175@
+1 CHIL @I272771959150@
+1 CHIL @I272771959164@
+1 CHIL @I272771959181@
+1 CHIL @I272771959158@
+1 CHIL @I272771959162@
+1 CHIL @I272771959169@
+1 CHIL @I272771959166@
+1 CHIL @I272771959171@
+1 CHIL @I272771959184@
+1 CHIL @I272771959178@
+1 CHIL @I272771959190@
+1 CHIL @I272771959198@
+1 MARR
+2 DATE 25 Oct 1821
+2 PLAC Keldur,Rangarvallasysla,Iceland
+0 @F75@ FAM
+1 HUSB @I272771958935@
+1 WIFE @I272771959179@
+1 MARR
+2 DATE 18 Oct 1879
+2 PLAC Þykkvabæjarklaustur, Vestur-Skaftafellssýsla, Suðurland, Iceland
+0 @F76@ FAM
+1 HUSB @I272771958933@
+1 WIFE @I272771959193@
+1 MARR
+2 DATE 10 Oct 1852
+2 PLAC Keldur,Rangarvallasysla,Iceland
+0 @F77@ FAM
+1 HUSB @I272771958942@
+1 WIFE @I272771958958@
+1 CHIL @I272771959203@
+1 CHIL @I272771959214@
+1 CHIL @I272771959226@
+1 CHIL @I272771959174@
+1 CHIL @I272771959170@
+1 CHIL @I272771959167@
+1 CHIL @I272771959185@
+1 CHIL @I272771959192@
+1 CHIL @I272771958755@
+1 CHIL @I272771959199@
+1 CHIL @I272771959207@
+1 CHIL @I272771959228@
+1 CHIL @I272771959206@
+1 CHIL @I272771959218@
+1 CHIL @I272771959183@
+1 CHIL @I272771959172@
+1 CHIL @I272771959235@
+1 CHIL @I272771959241@
+1 MARR
+2 DATE 17 Oct 1820
+0 @F78@ FAM
+1 HUSB @I272771958939@
+1 WIFE @I272771959189@
+1 MARR
+2 DATE 14 Jun 1890
+0 @F79@ FAM
+1 HUSB @I272771958951@
+1 WIFE @I272771959201@
+1 MARR
+2 DATE 13 Oct 1853
+2 PLAC Laugardolir,Arnessysla,Iceland
+0 @F80@ FAM
+1 HUSB @I272771958948@
+1 WIFE @I272771959187@
+1 MARR
+2 DATE 20 Jun 1861
+2 PLAC Thykkvabaejarklaustur,Vestur-Skaftafellssysla,Iceland
+0 @F81@ FAM
+1 HUSB @I272771958946@
+1 WIFE @I272771958953@
+1 CHIL @I272771959188@
+1 CHIL @I272771959196@
+1 CHIL @I272771959177@
+1 CHIL @I272771959225@
+1 CHIL @I272771959215@
+1 CHIL @I272771958747@
+1 CHIL @I272771959204@
+1 CHIL @I272771959245@
+1 CHIL @I272771959234@
+1 CHIL @I272771959217@
+1 CHIL @I272771959240@
+1 CHIL @I272771959176@
+1 CHIL @I272771959182@
+1 CHIL @I272771959197@
+1 MARR
+2 DATE 13 Oct 1827
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+0 @F82@ FAM
+1 HUSB @I272771959180@
+1 WIFE @I272771958944@
+1 MARR
+2 DATE 6 Oct 1860
+2 PLAC Olafsvellir,Arnessysla,Iceland
+0 @F83@ FAM
+1 HUSB @I272771958945@
+1 WIFE @I272771959195@
+1 MARR
+2 DATE 18 Nov 1880
+2 PLAC Stokkseyri,Arnessysla,Iceland
+0 @F84@ FAM
+1 HUSB @I272771958956@
+1 WIFE @I272771959202@
+1 MARR
+2 DATE 9 Aug 1860
+2 PLAC Hofdhabrekka,Vestur-Skaftafellssysla,Iceland
+0 @F85@ FAM
+1 HUSB @I272771958956@
+1 WIFE @I272771959212@
+1 MARR
+2 DATE 10 Sep 1864
+2 PLAC Reynir,Vestur-Skaftafellssysla,Iceland
+0 @F86@ FAM
+1 HUSB @I272771959231@
+1 WIFE @I272771958954@
+1 MARR
+2 DATE 21 Nov 1856
+2 PLAC Laugardal, Arness, Iceland
+0 @F87@ FAM
+1 HUSB @I272771959238@
+1 WIFE @I272771958954@
+1 MARR
+2 DATE 5 Dec 1865
+0 @F88@ FAM
+1 HUSB @I272771959243@
+1 WIFE @I272771958954@
+1 MARR
+2 DATE 12 Jul 1864
+0 @F89@ FAM
+1 HUSB @I272771959247@
+1 WIFE @I272771958954@
+1 MARR
+2 PLAC Never Married
+0 @F90@ FAM
+1 HUSB @I272771959186@
+1 WIFE @I272771958955@
+1 MARR
+2 DATE 11 Jul 1867
+2 PLAC , Kaldadarnes, Arness, Iceland
+0 @F91@ FAM
+1 HUSB @I272771958964@
+1 WIFE @I272771959223@
+0 @F92@ FAM
+1 HUSB @I272771958962@
+1 WIFE @I272771959104@
+1 MARR
+2 DATE 23 May 1856
+2 PLAC Laugardolir,Arnessysla,Iceland
+0 @F93@ FAM
+1 HUSB @I272771958975@
+1 WIFE @I272771959115@
+1 MARR
+2 DATE 14 Nov 1844
+2 PLAC Arnarboli Sokn, Árnessýsla, Southern, Iceland
+0 @F94@ FAM
+1 HUSB @I272771959105@
+1 WIFE @I272771959229@
+0 @F95@ FAM
+1 HUSB @I272771959105@
+1 WIFE @I272771959242@
+1 MARR
+2 DATE 6 Mar 1875
+2 PLAC Arnarbæli, Árnessýsla, Southern, Iceland
+0 @F96@ FAM
+1 HUSB @I272771959256@
+1 WIFE @I272771959118@
+1 MARR
+2 DATE 23 Jun 1855
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+0 @F97@ FAM
+1 HUSB @I272771959112@
+1 WIFE @I272771959252@
+0 @F98@ FAM
+1 HUSB @I272771959250@
+1 WIFE @I272771959113@
+0 @F99@ FAM
+1 HUSB @I272771959123@
+1 WIFE @I272771959246@
+1 MARR
+2 DATE 4 Jun 1846
+2 PLAC Arnarbæli, Árnessýsla, Southern, Iceland
+0 @F100@ FAM
+1 HUSB @I272771959135@
+1 WIFE @I272771959269@
+1 MARR
+2 DATE 24 Sep 1864
+2 PLAC Asar I Skaftartunga,Vestur-Skaftafellssysla,Iceland
+0 @F101@ FAM
+1 HUSB @I272771959135@
+1 WIFE @I272771959274@
+1 MARR
+2 DATE 1851
+0 @F102@ FAM
+1 HUSB @I272771959132@
+1 WIFE @I272771959253@
+1 MARR
+2 DATE 1 Jun 1841
+2 PLAC , Arnarbaeli, Arness, Iceland
+0 @F103@ FAM
+1 HUSB @I272771959255@
+1 WIFE @I272771959133@
+1 MARR
+2 DATE 17 Jul 1846
+0 @F104@ FAM
+1 HUSB @I272771959129@
+1 WIFE @I272771959237@
+1 MARR
+2 DATE 20 Jul 1848
+2 PLAC Keldur,Rangarvallasysla,Iceland
+0 @F105@ FAM
+1 HUSB @I272771959143@
+1 WIFE @I272771959150@
+0 @F106@ FAM
+1 HUSB @I272771959140@
+1 WIFE @I272771959249@
+1 MARR
+2 DATE 26 May 1868
+2 PLAC Arnarbaeli, Arness, Iceland
+0 @F107@ FAM
+1 HUSB @I272771959148@
+1 WIFE @I272771959251@
+1 MARR
+2 DATE 11 Jun 1863
+2 PLAC Arnarbæli, Árnessýsla, Southern, Iceland
+0 @F108@ FAM
+1 HUSB @I272771959144@
+1 WIFE @I272771959257@
+0 @F109@ FAM
+1 HUSB @I272771959144@
+1 WIFE @I272771959259@
+1 MARR
+2 DATE 21 Jul 1855
+2 PLAC Kirkjubaejarklaustur,Vestur-Skaftafellssysla,Iceland
+0 @F110@ FAM
+1 HUSB @I272771959276@
+1 WIFE @I272771959159@
+0 @F111@ FAM
+1 HUSB @I272771959265@
+1 WIFE @I272771959152@
+1 MARR
+2 DATE 6 Nov 1856
+2 PLAC Reynir, Vestur-Skaftafellssýsla, Southern, Iceland
+0 @F112@ FAM
+1 HUSB @I272771959272@
+1 WIFE @I272771959152@
+1 MARR
+2 DATE 17 Nov 1841
+2 PLAC Reynir,Vestur-Skaftafellssysla,Iceland
+0 @F113@ FAM
+1 HUSB @I272771959164@
+1 WIFE @I272771959258@
+1 MARR
+2 DATE 10 Oct 1867
+0 @F114@ FAM
+1 HUSB @I272771959226@
+1 WIFE @I272771959165@
+1 MARR
+2 DATE 15 Jun 1848
+2 PLAC Skard a Landi, Rangárvallasýsla, Southern, Iceland
+0 @F115@ FAM
+1 HUSB @I272771959070@
+1 WIFE @I272771959232@
+0 @F116@ FAM
+1 HUSB @I272771959070@
+1 WIFE @I272771959244@
+1 MARR
+2 DATE 21 Jun 1873
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+0 @F117@ FAM
+1 HUSB @I272771959262@
+1 WIFE @I272771959068@
+1 MARR
+2 DATE 12 Sep 1866
+2 PLAC Gaulverjabaer,Arnessysla,Iceland
+0 @F118@ FAM
+1 HUSB @I272771959082@
+1 WIFE @I272771959254@
+1 MARR
+2 DATE 15 Jun 1849
+2 PLAC Keldur,Rangarvallasysla,Iceland
+0 @F119@ FAM
+1 HUSB @I272771959093@
+1 WIFE @I272771959200@
+1 MARR
+2 DATE 7 Jun 1838
+2 PLAC Úlfljótsvatn, Árnessýsla, Southern, Iceland
+0 @F120@ FAM
+1 HUSB @I272771959093@
+1 WIFE @I272771959209@
+1 MARR
+2 DATE 9 Jun 1864
+2 PLAC , Arnarbaeli, Arness, Iceland
+0 @F121@ FAM
+1 HUSB @I272771959220@
+1 WIFE @I272771959088@
+1 MARR
+2 DATE 16 Oct 1848
+2 PLAC Breidabolsstadur I Fljotshlid,Rangarvallasysla,Iceland
+0 @F122@ FAM
+1 HUSB @I272771959261@
+1 WIFE @I272771959097@
+1 MARR
+2 DATE 17 Oct 1839
+0 @F123@ FAM
+1 HUSB @I272771959171@
+1 WIFE @I272771959235@
+1 MARR
+2 DATE 25 Jun 1861
+2 PLAC Keldur,Rangarvallasysla,Iceland
+0 @F124@ FAM
+1 HUSB @I272771958743@
+1 WIFE @I272771958734@
+1 CHIL @I272771958777@
+1 MARR
+2 DATE 6 Oct 1894
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+0 @F125@ FAM
+1 HUSB @I272771959245@
+1 WIFE @I272771959270@
+1 MARR
+2 DATE 18 Oct 1859
+2 PLAC Mosfell I Mosfellssveit,Kjosarsysla,Iceland
+0 @F126@ FAM
+1 HUSB @I272771959241@
+1 WIFE @I272771959267@
+1 MARR
+2 DATE 7 Oct 1870
+2 PLAC Keldur,Rangarvallasysla,Iceland
+0 @F127@ FAM
+1 HUSB @I272771958753@
+1 WIFE @I272771958742@
+1 MARR
+2 DATE 1943
+2 PLAC Reykjavik, Iceland
+0 @F128@ FAM
+1 HUSB @I272771958758@
+1 WIFE @I272771958750@
+1 CHIL @I272771958770@
+1 CHIL @I272771958778@
+1 CHIL @I272771958811@
+1 CHIL @I272771958795@
+1 CHIL @I272771958806@
+1 CHIL @I272771958787@
+1 CHIL @I272771958739@
+1 CHIL @I272771958803@
+1 MARR
+2 DATE 30 Sep 1854
+2 PLAC Thykkvabaejarklaustur,Vestur-Skaftafellssysla,Iceland
+0 @F129@ FAM
+1 HUSB @I272771958751@
+1 WIFE @I272771958756@
+0 @F130@ FAM
+1 HUSB @I272771959217@
+1 WIFE @I272771959263@
+0 @F131@ FAM
+1 HUSB @I272771959217@
+1 WIFE @I272771959260@
+1 MARR
+2 DATE 7 Oct 1858
+2 PLAC Arnarbaeli,Arnessysla,Iceland
+0 @F132@ FAM
+1 HUSB @I272771958782@
+1 WIFE @I272771958749@
+1 CHIL @I272771958888@
+1 CHIL @I272771958840@
+1 CHIL @I272771958853@
+1 CHIL @I272771958875@
+1 CHIL @I272771958868@
+1 CHIL @I272771958790@
+1 CHIL @I272771958889@
+1 CHIL @I272771958882@
+1 CHIL @I272771958894@
+1 CHIL @I272771958838@
+1 CHIL @I272771958843@
+1 CHIL @I272771958845@
+1 CHIL @I272771958867@
+1 CHIL @I272771958859@
+1 CHIL @I272771958873@
+1 CHIL @I272771958874@
+1 MARR
+2 DATE 15 Jun 1849
+2 PLAC Keldur,Rangarvallasysla,Iceland
+0 @F133@ FAM
+1 HUSB @I272771958754@
+1 WIFE @I272771958746@
+1 CHIL @I272771958737@
+0 @F134@ FAM
+1 HUSB @I272771958755@
+1 WIFE @I272771958747@
+1 CHIL @I272771958945@
+1 CHIL @I272771958924@
+1 CHIL @I272771958939@
+1 CHIL @I272771958793@
+1 CHIL @I272771958925@
+1 CHIL @I272771958926@
+1 CHIL @I272771958927@
+1 MARR
+2 DATE 8 Jun 1858
+2 PLAC Keldur,Rangarvallasysla,Iceland
+0 @F135@ FAM
+1 HUSB @I272771958775@
+1 WIFE @I272771958745@
+1 CHIL @I272771958828@
+1 CHIL @I272771958822@
+1 CHIL @I272771958819@
+1 CHIL @I272771958820@
+1 CHIL @I272771958818@
+1 CHIL @I272771958821@
+1 CHIL @I272771958829@
+1 CHIL @I272771958734@
+1 MARR
+2 DATE 13 Sep 1852
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+0 @F136@ FAM
+1 HUSB @I272771958777@
+1 WIFE @I272771958759@
+0 @F137@ FAM
+1 HUSB @I272771959168@
+1 WIFE @I272771959271@
+1 MARR
+2 DATE 8 Jun 1854
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+0 @F138@ FAM
+1 HUSB @I272771959175@
+1 WIFE @I272771959268@
+1 MARR
+2 DATE 21 Jun 1855
+2 PLAC Skard A Landi,Rangarvallasysla,Iceland
+0 @F139@ FAM
+1 HUSB @I272771958777@
+1 WIFE @I272771958752@
+1 CHIL @I272771958786@
+1 CHIL @I272771958810@
+1 CHIL @I272771958756@
+1 CHIL @I272771958794@
+1 CHIL @I272771958802@
+1 CHIL @I272771958788@
+1 CHIL @I272771958748@
+1 MARR
+2 DATE 1920
+0 @F140@ FAM
+1 HUSB @I272771959208@
+1 WIFE @I272771959264@
+0 @F141@ FAM
+1 HUSB @I272771959206@
+1 WIFE @I272771959278@
+0 @F142@ FAM
+1 HUSB @I272771959206@
+1 WIFE @I272771959277@
+1 MARR
+2 DATE 11 Nov 1876
+2 PLAC Teigur I Fljotshlid,Rangarvallasysla,Iceland
+0 @F143@ FAM
+1 HUSB @I272771958762@
+1 WIFE @I272771958771@
+1 CHIL @I272771958746@
+0 @F144@ FAM
+1 HUSB @I272771958763@
+1 WIFE @I272771958772@
+1 CHIL @I272771958948@
+1 CHIL @I272771958750@
+1 CHIL @I272771958941@
+1 CHIL @I272771958938@
+1 CHIL @I272771958935@
+1 MARR
+2 DATE 1831
+0 @F145@ FAM
+1 HUSB @I272771959176@
+1 WIFE @I272771959275@
+0 @F146@ FAM
+1 HUSB @I272771958760@
+1 WIFE @I272771958769@
+1 CHIL @I272771958735@
+1 CHIL @I272771958765@
+1 CHIL @I272771958740@
+1 CHIL @I272771958773@
+1 CHIL @I272771958781@
+1 MARR
+2 DATE 20 Apr 1919
+2 PLAC of Eyrarbakki, Arness, Iceland
+0 @F147@ FAM
+1 HUSB @I272771959181@
+1 WIFE @I272771959273@
+1 MARR
+2 DATE 25 Jun 1859
+2 PLAC Skard a Landi, Rangárvallasýsla, Suðurland, Iceland
+0 @F148@ FAM
+1 HUSB @I272771958768@
+1 WIFE @I272771958781@
+1 MARR
+2 DATE 25 Dec 1960
+2 PLAC of Vestmannaeyjar, Iceland
+0 @O1@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE png
+3 _SIZE 5196178
+3 _WDTH 1323
+3 _HGHT 1907
+2 TITL Screenshot from 2026-06-28 11-40-06
+1 _OID 2f695342-320e-416a-9782-fdc6162f1af4
+1 _CREA 2026-06-28 11:42:38.319
+1 _USER YYbAzw+F1X/NulBOeJDxeDv2oM+jjw1qTIqnMBGFbewbjJ3/NReRDeWe2AkMqqiE0jUDuRTaj8kpXPC9BYHn5w==
+2 _ENCR 1
+1 _ORIG acom
+1 _ATL N
+0 TRLR

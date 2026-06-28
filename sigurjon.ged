@@ -1,0 +1,8008 @@
+0 HEAD
+1 SUBM @SUBM1@
+1 SOUR Ancestry.com Family Trees
+2 NAME Ancestry.com Member Trees
+2 VERS 2025.08
+2 _TREE Sigurjón Axel Guðjónsson Family Tree
+3 RIN 160489939
+3 _ENV prd
+2 CORP Ancestry.com
+3 PHON 801-705-7000
+3 WWW www.ancestry.com
+3 ADDR 1300 West Traverse Parkway
+4 CONT Lehi, UT  84043
+4 CONT USA
+1 DATE 28 Jun 2026
+2 TIME 12:10:21
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+0 @SUBM1@ SUBM
+1 NAME Ancestry.com Member Trees Submitter
+0 @I212097023483@ INDI
+1 NAME Sigurjón Axel /Guðjónsson/
+2 GIVN Sigurjón Axel
+2 SURN Guðjónsson
+1 SEX M
+1 FAMC @F17@
+1 FAMS @F18@
+1 BIRT
+2 DATE 4 Feb 1974
+2 PLAC Akureyri, Norðurland Eystra, Iceland
+1 OBJE @O5@
+2 _PRIM Y
+0 @I212097023484@ INDI
+1 NAME Guðjón Ingvar /Sigurgeirsson/
+2 GIVN Guðjón Ingvar
+2 SURN Sigurgeirsson
+1 SEX M
+1 FAMC @F102@
+1 FAMS @F17@
+1 BIRT
+2 DATE 30 JUN 1939
+2 PLAC Akureyri
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124816:1030:88380649
+1 OBJE @O33@
+2 _PRIM Y
+0 @I212565201202@ INDI
+1 NAME Erla Þórhildur /Sigurjónsdóttir/
+2 GIVN Erla Þórhildur
+2 SURN Sigurjónsdóttir
+2 SOUR
+1 SEX F
+2 SOUR
+1 FAMC @F32@
+1 FAMS @F17@
+1 BIRT
+2 DATE 17 JUL 1944
+2 SOUR
+1 SOUR
+2 _APID 392097275647:1030:160490195
+1 OBJE @O8@
+2 _PRIM Y
+0 @I212565201500@ INDI
+1 NAME Sigurgeir /Guðmundsson/
+2 GIVN Sigurgeir
+2 SURN Guðmundsson
+2 SOUR
+2 SOUR @S664739658@
+3 DATA
+4 WWW https://gw.geneanet.org/guojonssons?n=gu+mundsson&oc=&p=sigurgeir
+3 _APID 1,62476::6524291925
+1 SEX M
+2 SOUR
+1 FAMC @F69@
+1 FAMS @F102@
+1 BIRT
+2 DATE 20 JUN 1916
+2 PLAC Brimnesi, Sauðaneshr., N-Þing
+2 SOUR
+2 SOUR @S664739658@
+3 DATA
+4 WWW https://gw.geneanet.org/guojonssons?n=gu+mundsson&oc=&p=sigurgeir
+3 _APID 1,62476::6524291925
+1 DEAT
+2 DATE 03 OCT 1979
+2 SOUR
+2 SOUR @S664739658@
+3 DATA
+4 WWW https://gw.geneanet.org/guojonssons?n=gu+mundsson&oc=&p=sigurgeir
+3 _APID 1,62476::6524291925
+1 SOUR
+2 _APID 48567124833:1030:88380649
+1 SOUR @S664739658@
+2 DATA
+3 WWW https://gw.geneanet.org/guojonssons?n=gu+mundsson&oc=&p=sigurgeir
+2 _APID 1,62476::6524291925
+0 @I212565201521@ INDI
+1 NAME Þóra Ingibjörg /Sigurjónsdóttir/
+2 GIVN Þóra Ingibjörg
+2 SURN Sigurjónsdóttir
+2 SOUR
+2 SOUR @S664739658@
+3 DATA
+4 WWW https://gw.geneanet.org/guojonssons?n=sigurjonsdottir&oc=&p=ora+ingibjorg
+3 _APID 1,62476::6524291926
+1 SEX F
+2 SOUR
+1 FAMC @F101@
+1 FAMS @F102@
+1 BIRT
+2 DATE 07 APR 1916
+2 PLAC Dalvík
+2 SOUR
+2 SOUR @S664739658@
+3 DATA
+4 WWW https://gw.geneanet.org/guojonssons?n=sigurjonsdottir&oc=&p=ora+ingibjorg
+3 _APID 1,62476::6524291926
+1 DEAT
+2 DATE 13 NOV 1966
+2 SOUR
+2 SOUR @S664739658@
+3 DATA
+4 WWW https://gw.geneanet.org/guojonssons?n=sigurjonsdottir&oc=&p=ora+ingibjorg
+3 _APID 1,62476::6524291926
+1 SOUR
+2 _APID 48567124834:1030:88380649
+1 SOUR @S664739658@
+2 DATA
+3 WWW https://gw.geneanet.org/guojonssons?n=sigurjonsdottir&oc=&p=ora+ingibjorg
+2 _APID 1,62476::6524291926
+0 @I212565201524@ INDI
+1 NAME Jónína Stefanía /Ingvarsdóttir/
+2 GIVN Jónína Stefanía
+2 SURN Ingvarsdóttir
+2 SOUR
+1 SEX F
+2 SOUR
+1 FAMS @F101@
+1 BIRT
+2 DATE 27 oct 1883
+2 PLAC Fædd á Tjörn í Svarfaðardal, Eyj. 
+2 SOUR
+1 DEAT
+2 DATE 04 nov 1918
+2 PLAC Látin á Akureyri
+2 SOUR
+1 SOUR
+2 _APID 48567374203:1030:88380649
+0 @I212565201805@ INDI
+1 NAME Sigurjón /Einarsson/
+2 GIVN Sigurjón
+2 SURN Einarsson
+1 SEX M
+1 FAMC @F77@
+1 FAMS @F32@
+1 BIRT
+2 DATE 17 Oct 1895
+1 DEAT
+2 DATE 28 Feb 1983
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097284957:1030:160490195
+1 OBJE @O27@
+2 _PRIM Y
+0 @I212565201806@ INDI
+1 NAME Þorbjörg /Benediktsdóttir/
+2 GIVN Þorbjörg
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMC @F85@
+1 FAMS @F32@
+1 BIRT
+2 DATE 4 Aug 1898
+1 DEAT
+2 DATE 27 Feb 1992
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182597559067:1030:37351456
+2 _APID 392097285137:1030:160490195
+1 OBJE @O18@
+2 _PRIM Y
+0 @I212565201807@ INDI
+1 NAME Einar /Sigurjónsson/
+2 GIVN Einar
+2 SURN Sigurjónsson
+1 SEX M
+1 FAMC @F32@
+1 FAMS @F35@
+1 BIRT
+2 DATE 4 Aug 1920
+1 DEAT
+2 DATE 15 Jul 2004
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097297621:1030:160490195
+0 @I212565201809@ INDI
+1 NAME Benedikt /Sigurjónsson/
+2 GIVN Benedikt
+2 SURN Sigurjónsson
+1 SEX M
+1 FAMC @F32@
+1 FAMS @F117@
+1 BIRT
+2 DATE 12 Apr 1922
+1 DEAT
+2 DATE 21 Sep 2009
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097306511:1030:160490195
+0 @I212565201811@ INDI
+1 NAME Ingunn Sigríður /Sigurjónsdóttir/
+2 GIVN Ingunn Sigríður
+2 SURN Sigurjónsdóttir
+1 SEX F
+1 FAMC @F32@
+1 FAMS @F14@
+1 BIRT
+2 DATE 5 Oct 1924
+1 DEAT
+2 DATE 9 Jun 2000
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097307250:1030:160490195
+0 @I212565201813@ INDI
+1 NAME Arnór /Sigurjónsson/
+2 GIVN Arnór
+2 SURN Sigurjónsson
+1 SEX M
+1 FAMC @F32@
+1 FAMS @F13@
+1 BIRT
+2 DATE 16 Jul 1926
+1 DEAT
+2 DATE 15 Sep 1979
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097308138:1030:160490195
+1 OBJE @O29@
+2 _PRIM Y
+0 @I212565201856@ INDI
+1 NAME Guðmundur Ragnar /Sigurgeirsson/
+2 GIVN Guðmundur Ragnar
+2 SURN Sigurgeirsson
+1 SEX M
+1 FAMC @F102@
+1 FAMS @F122@
+1 BIRT
+2 DATE 27 JUL 1942
+2 PLAC Akureyri
+1 DEAT
+2 DATE 18 FEB 2014
+2 PLAC Reykjavík
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124842:1030:88380649
+0 @I212565202554@ INDI
+1 NAME Axel Bjarkar /Sigurjónsson/
+2 GIVN Axel Bjarkar
+2 SURN Sigurjónsson
+1 SEX M
+1 FAMC @F18@
+1 FAMS @F20@
+1 BIRT
+2 DATE 22 JUN 2003
+2 PLAC Selfoss, Suðurland, Iceland
+1 OBJE @O13@
+2 _PRIM Y
+2 _CROP
+3 _LEFT 2059
+3 _TOP 397
+3 _WDTH 711
+3 _HGHT 711
+3 _TYPE primary
+0 @I212565204661@ INDI
+1 NAME Álfheiður /Sigurðardóttir/
+2 GIVN Álfheiður
+2 SURN Sigurðardóttir
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGR6-7J2
+3 _APID 1,9896::87340
+2 SOUR @S664769351@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGYZ-58K
+3 _APID 1,9897::69679
+1 SEX F
+1 FAMC @F84@
+1 FAMS @F85@
+1 BIRT
+2 DATE 20 Mar 1856
+1 DEAT
+2 DATE 1945
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507595527:1030:37351456
+2 _APID 382428300150:1030:185577060
+2 _APID 392097406353:1030:160490195
+1 SOUR @S664769255@
+2 DATA
+3 WWW http://familysearch.org/pal:/MM9.1.1/FGR6-7J2
+2 _APID 1,9896::87340
+1 SOUR @S664769351@
+2 DATA
+3 WWW http://familysearch.org/pal:/MM9.1.1/FGYZ-58K
+2 _APID 1,9897::69679
+1 OBJE @O30@
+2 _PRIM Y
+0 @I212565204678@ INDI
+1 NAME Sigurður /Einarsson/
+2 GIVN Sigurður
+2 SURN Einarsson
+1 SEX M
+1 FAMC @F106@
+1 FAMS @F84@
+1 BIRT
+2 DATE 1834
+1 DEAT
+2 DATE 21 NOV 1898
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 102548678162:1030:194919450
+2 _APID 182507596746:1030:37351456
+2 _APID 382428300149:1030:185577060
+0 @I212565204685@ INDI
+1 NAME Margrét /Runólfsdóttir/
+2 GIVN Margrét
+2 SURN Runólfsdóttir
+1 SEX F
+1 FAMC @F107@
+1 FAMS @F84@
+1 BIRT
+2 DATE 08 jul 1822
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 26 Jun 1898
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182453021352:1030:37351456
+2 _APID 382428205783:1030:185577060
+0 @I212565204698@ INDI
+1 NAME Benedikt /Kristjánsson/
+2 GIVN Benedikt
+2 SURN Kristjánsson
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGPP-RB5
+3 _APID 1,9896::173028
+2 SOUR @S664769351@
+3 _APID 1,9897::69680
+1 SEX M
+1 FAMC @F139@
+1 FAMC @F140@
+1 FAMS @F85@
+1 BIRT
+2 DATE 26 Apr 1851
+2 PLAC Kálfafell, Borgarhafnarhreppur, Austur–Skaftafellssýsla, Ísland
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGPP-RB5
+3 _APID 1,9896::173028
+1 CHR
+2 DATE 27 Apr 1851
+2 PLAC Kalfafellsstadur,Austur-Skaftafellssysla,Iceland
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGPP-RB5
+3 _APID 1,9896::173028
+1 DEAT
+2 DATE 6 Oct 1935
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507594092:1030:37351456
+2 _APID 382428300151:1030:185577060
+2 _APID 392097406007:1030:160490195
+1 SOUR @S664769255@
+2 DATA
+3 WWW http://familysearch.org/pal:/MM9.1.1/FGPP-RB5
+2 _APID 1,9896::173028
+1 SOUR @S664769351@
+2 _APID 1,9897::69680
+0 @I212565204711@ INDI
+1 NAME Einar Sigjón /Þorvarðarson/
+2 GIVN Einar Sigjón
+2 SURN Þorvarðarson
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGR6-HX8
+3 _APID 1,9896::80216
+1 SEX M
+1 FAMC @F62@
+1 FAMS @F77@
+1 FAMS @F75@
+1 BIRT
+2 DATE 8. Jan 1867
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGR6-HX8
+3 _APID 1,9896::80216
+1 CHR
+2 DATE 08 Jan 1867
+2 PLAC Einholt A Myrum,Austur-Skaftafellssysla,Iceland
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGR6-HX8
+3 _APID 1,9896::80216
+1 DEAT
+2 DATE 17 Dec 1955
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097406484:1030:160490195
+1 SOUR @S664769255@
+2 DATA
+3 WWW http://familysearch.org/pal:/MM9.1.1/FGR6-HX8
+2 _APID 1,9896::80216
+1 OBJE @O21@
+2 _PRIM Y
+0 @I212565204724@ INDI
+1 NAME Guðrún eldri /Pálsdóttir/
+2 GIVN Guðrún eldri
+2 SURN Pálsdóttir
+2 SOUR @S664739658@
+3 DATA
+4 WWW https://gw.geneanet.org/mbraakman?n=palsdottir&oc=7&p=gu+run
+3 _APID 1,62476::4828832331
+1 SEX F
+1 FAMC @F81@
+1 FAMS @F82@
+1 FAMS @F139@
+1 BIRT
+2 DATE 9 Jun 1822
+2 PLAC Borgarhafnarhreppur, Austur–Skaftafellssýsla, Ísland
+2 SOUR @S664739658@
+3 DATA
+4 WWW https://gw.geneanet.org/mbraakman?n=palsdottir&oc=7&p=gu+run
+3 _APID 1,62476::4828832331
+1 DEAT
+2 DATE 3 Sep 1900
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507594216:1030:37351456
+2 _APID 392097821656:1030:160490195
+1 SOUR @S664739658@
+2 DATA
+3 WWW https://gw.geneanet.org/mbraakman?n=palsdottir&oc=7&p=gu+run
+2 _APID 1,62476::4828832331
+0 @I212565204726@ INDI
+1 NAME Auðbjörg / Bergsdottir/
+2 GIVN Auðbjörg
+2 SURN  Bergsdottir
+2 SOUR @S664739658@
+3 _APID 1,62476::4828826488
+1 SEX F
+1 FAMC @F55@
+1 FAMS @F81@
+1 BIRT
+2 DATE 15 jul 1790
+2 PLAC Ytri Borgumarnanes, Bjarnanes í Hornafirði, Austur-Skaftafel, Islande
+2 SOUR @S664739658@
+3 _APID 1,62476::4828826488
+1 MARR
+2 DATE 1813
+2 PLAC Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+2 SOUR @S664739658@
+3 _APID 1,62476::4828826488
+1 DEAT
+2 DATE 1873
+2 PLAC Stóra Bóli, Garðar á Akranesi, Borgarfjarðar, Islande
+2 SOUR @S664739658@
+3 _APID 1,62476::4828826488
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507594292:1030:37351456
+2 _APID 262466630235:1030:181286792
+2 _APID 392097821891:1030:160490195
+1 SOUR @S664739658@
+2 _APID 1,62476::4828826488
+0 @I212565578896@ INDI
+1 NAME Þórhildur Soffía /Sigurjónsdóttir/
+2 GIVN Þórhildur Soffía
+2 SURN Sigurjónsdóttir
+1 SEX F
+1 FAMC @F18@
+1 BIRT
+2 DATE 10 AUG 2010
+2 PLAC Selfoss, Suðurland, Iceland
+1 OBJE @O24@
+2 _PRIM Y
+0 @I212565580184@ INDI
+1 NAME Margrét /Benediktsdóttir/
+2 GIVN Margrét
+2 SURN Benediktsdóttir
+2 SOUR @S664769255@
+3 _APID 1,9896::87342
+1 SEX F
+1 FAMC @F85@
+1 FAMS @F25@
+1 BIRT
+2 DATE 28 Jan 1886
+2 PLAC í Einholti á Mýrum í A-Skaftafellssýla, Ísland
+2 SOUR @S664769255@
+3 _APID 1,9896::87342
+1 CHR
+2 DATE 13 May 1876
+2 PLAC Einholt A Myrum,Austur-Skaftafellssysla,Iceland
+2 SOUR @S664769255@
+3 _APID 1,9896::87342
+1 DEAT
+2 DATE 18 Mar 1949
+2 SOUR @S664769255@
+3 _APID 1,9896::87342
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182597558636:1030:37351456
+2 _APID 392110863021:1030:160490195
+1 SOUR @S664769255@
+2 _APID 1,9896::87342
+0 @I212565580185@ INDI
+1 NAME Sigurður  /Benediktsson/ kennari, póstur og bóndi
+2 GIVN Sigurður 
+2 SURN Benediktsson
+2 NSFX kennari, póstur og bóndi
+1 SEX M
+1 FAMC @F85@
+1 FAMS @F26@
+1 BIRT
+2 DATE 19 Apr 1878
+2 PLAC Viðbarð Einholtssókn
+1 DEAT
+2 DATE 25 Apr 1961
+2 PLAC Ölfus Íceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 142168286848:1030:159672606
+2 _APID 172519020105:1030:175766849
+2 _APID 182507591360:1030:37351456
+2 _APID 272358381410:1030:73794841
+2 _APID 392554077393:1030:160490195
+1 OBJE @O4@
+2 _PRIM Y
+0 @I212565580186@ INDI
+1 NAME Guðjón /Benediktsson/ múrarameistari, kennari
+2 GIVN Guðjón
+2 SURN Benediktsson
+2 NSFX múrarameistari, kennari
+1 SEX M
+1 FAMC @F85@
+1 FAMS @F27@
+1 BIRT
+2 DATE 5 May 1896
+2 PLAC á Viðarborði í Mýrarhreppi, a-Skaftasýslu, Ísland
+1 DEAT
+2 DATE 6 Sep 1977
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507597631:1030:37351456
+2 _APID 392554077395:1030:160490195
+1 OBJE @O6@
+2 _PRIM Y
+1 OBJE @O34@
+0 @I212565580187@ INDI
+1 NAME Gunnar /Benediktsson/ prestur, skáld og kennari
+2 GIVN Gunnar
+2 SURN Benediktsson
+2 NSFX prestur, skáld og kennari
+1 SEX M
+1 FAMC @F85@
+1 BIRT
+2 DATE 9 Oct 1892
+2 PLAC að Viðborði í Einholssókn, A-Skaft., Ísland
+1 DEAT
+2 DATE 26 Aug 1981
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507631574:1030:37351456
+2 _APID 392554077397:1030:160490195
+1 OBJE @O11@
+2 _PRIM Y
+0 @I212565580190@ INDI
+1 NAME Bergur /Benediktsson/
+2 GIVN Bergur
+2 SURN Benediktsson
+2 SOUR @S664771794@
+3 DATA
+4 WWW https://www.findagrave.com/memorial/187678916/bergur-benediktsson
+3 _APID 1,60527::151667835
+2 SOUR @S664770144@
+3 PAGE Series: 13-0889; 2015-03-10 09:55:03; pinegarmm; Saskatchewan Cemetery Transcripts, ca. 1850-1994 - FSI; DGS Roll: 007597143; FHL Roll: 001378991
+3 _APID 1,61500::55875
+1 SEX M
+1 FAMC @F85@
+1 BIRT
+2 DATE 17 Jun 1884
+2 PLAC Viðborði, Austurland, Iceland
+2 SOUR @S664771794@
+3 DATA
+4 WWW https://www.findagrave.com/memorial/187678916/bergur-benediktsson
+3 _APID 1,60527::151667835
+1 DEAT
+2 DATE 15 Sep 1955
+2 PLAC Canada
+2 SOUR @S664771794@
+3 DATA
+4 WWW https://www.findagrave.com/memorial/187678916/bergur-benediktsson
+3 _APID 1,60527::151667835
+2 SOUR @S664770144@
+3 PAGE Series: 13-0889; 2015-03-10 09:55:03; pinegarmm; Saskatchewan Cemetery Transcripts, ca. 1850-1994 - FSI; DGS Roll: 007597143; FHL Roll: 001378991
+3 _APID 1,61500::55875
+1 BURI
+2 DATE 1955
+2 PLAC Kerrobert, Kindersley Census Division, Saskatchewan, Canada
+2 SOUR @S664771794@
+3 DATA
+4 WWW https://www.findagrave.com/memorial/187678916/bergur-benediktsson
+3 _APID 1,60527::151667835
+2 SOUR @S664770144@
+3 PAGE Series: 13-0889; 2015-03-10 09:55:03; pinegarmm; Saskatchewan Cemetery Transcripts, ca. 1850-1994 - FSI; DGS Roll: 007597143; FHL Roll: 001378991
+3 _APID 1,61500::55875
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182597559068:1030:37351456
+2 _APID 392577856998:1030:160490195
+1 SOUR @S664771794@
+2 DATA
+3 WWW https://www.findagrave.com/memorial/187678916/bergur-benediktsson
+2 _APID 1,60527::151667835
+1 SOUR @S664770144@
+2 PAGE Series: 13-0889; 2015-03-10 09:55:03; pinegarmm; Saskatchewan Cemetery Transcripts, ca. 1850-1994 - FSI; DGS Roll: 007597143; FHL Roll: 001378991
+2 _APID 1,61500::55875
+0 @I212565580541@ INDI
+1 NAME Ingunn  /Jónsdóttir/
+2 GIVN Ingunn 
+2 SURN Jónsdóttir
+2 SOUR @S664769255@
+3 _APID 1,9896::71331
+2 SOUR @S664769314@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=3293&year=1870
+3 _APID 1,70783::13058
+2 SOUR @S664769322@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=8295&year=1880
+3 _APID 1,70784::580
+2 SOUR @S664769326@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=3973&year=1890
+3 _APID 1,70785::773
+1 SEX F
+2 SOUR @S664769255@
+3 _APID 1,9896::71331
+1 FAMC @F41@
+1 FAMS @F77@
+1 FAMS @F40@
+1 BIRT
+2 DATE 28 sep 1866
+2 SOUR @S664769255@
+3 _APID 1,9896::71331
+2 SOUR @S664769314@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=3293&year=1870
+3 _APID 1,70783::13058
+2 SOUR @S664769322@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=8295&year=1880
+3 _APID 1,70784::580
+2 SOUR @S664769326@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=3973&year=1890
+3 _APID 1,70785::773
+1 CHR
+2 DATE 29 Sep 1866
+2 PLAC Einholt A Myrum,Austur-Skaftafellssysla,Iceland
+2 SOUR @S664769255@
+3 _APID 1,9896::71331
+1 RESI
+2 DATE 1870
+2 PLAC Einholtssókn, Austur-Skaftafellssýsla, Suðuramt, Ísland
+2 SOUR @S664769314@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=3293&year=1870
+3 _APID 1,70783::13058
+1 RESI
+2 DATE 1880
+2 PLAC Einholtssókn, Austur-Skaptafellssýsla, Suðuramt, Ísland
+2 SOUR @S664769322@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=8295&year=1880
+3 _APID 1,70784::580
+1 RESI
+2 DATE 1890
+2 PLAC Einholtssókn, Austur-Skaptafellssýsla, Suðuramt, Ísland
+2 SOUR @S664769326@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=3973&year=1890
+3 _APID 1,70785::773
+1 DEAT
+2 DATE 18. Nov 1958
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097406557:1030:160490195
+1 SOUR @S664769255@
+2 _APID 1,9896::71331
+1 SOUR @S664769314@
+2 DATA
+3 WWW http://manntal.is/default.aspx?id=3293&year=1870
+2 _APID 1,70783::13058
+1 SOUR @S664769322@
+2 DATA
+3 WWW http://manntal.is/default.aspx?id=8295&year=1880
+2 _APID 1,70784::580
+1 SOUR @S664769326@
+2 DATA
+3 WWW http://manntal.is/default.aspx?id=3973&year=1890
+2 _APID 1,70785::773
+1 OBJE @O35@
+2 _PRIM Y
+0 @I212565581902@ INDI
+1 NAME Sigurjón /Baldvinsson/
+2 GIVN Sigurjón
+2 SURN Baldvinsson
+2 SOUR @S664769322@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=65229&year=1880
+3 _APID 1,70784::64334
+2 SOUR @S664769326@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=8493&year=1890
+3 _APID 1,70785::62359
+1 SEX M
+1 FAMC @F30@
+1 FAMS @F101@
+1 BIRT
+2 DATE 12 oct 1877
+2 PLAC Fæddur á Böggvisstöðum, Eyj.
+2 SOUR @S664769322@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=65229&year=1880
+3 _APID 1,70784::64334
+2 SOUR @S664769326@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=8493&year=1890
+3 _APID 1,70785::62359
+1 RESI
+2 DATE 1880
+2 PLAC Upsasókn, Eyjafjarðarsýsla, Norður- og austuramt, Ísland
+2 SOUR @S664769322@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=65229&year=1880
+3 _APID 1,70784::64334
+2 NOTE Relation to Head of House: Sonur Þeirra
+1 RESI
+2 DATE 1890
+2 PLAC Upsasókn, Eyjafjarðarsýsla, Norður- og austuramt, Ísland
+2 SOUR @S664769326@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=8493&year=1890
+3 _APID 1,70785::62359
+2 NOTE Relation to Head of House: Sonur Þeirra
+1 DEAT
+2 DATE 12 may 1967
+2 PLAC Látinn á Kristneshæli , Eyj
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567373968:1030:88380649
+2 _APID 182497098829:1030:37351456
+2 _APID 382428186009:1030:185577060
+1 SOUR @S664769322@
+2 DATA
+3 WWW http://manntal.is/default.aspx?id=65229&year=1880
+2 _APID 1,70784::64334
+1 SOUR @S664769326@
+2 DATA
+3 WWW http://manntal.is/default.aspx?id=8493&year=1890
+2 _APID 1,70785::62359
+1 OBJE @O31@
+2 _PRIM Y
+0 @I212565582134@ INDI
+1 NAME Þórður Guðmundur /Björnsson/
+2 GIVN Þórður Guðmundur
+2 SURN Björnsson
+1 SEX M
+1 FAMS @F69@
+1 BIRT
+2 DATE 15 jul 1886
+2 PLAC Syðri-Grenivík, Miðgarðasókn í Grímsey, Eyj.
+1 DEAT
+2 DATE 02 feb 1969
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567373048:1030:88380649
+0 @I212565582135@ INDI
+1 NAME Guðbjörg /Sigurgeirsdóttir/
+2 GIVN Guðbjörg
+2 SURN Sigurgeirsdóttir
+1 SEX F
+1 FAMS @F69@
+1 BIRT
+2 DATE 03 jun 1892
+2 PLAC Fædd á Höfða á Langanesi
+1 DEAT
+2 DATE 06 oct 1978
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567373463:1030:88380649
+0 @I212565582260@ INDI
+1 NAME Sigmundur Brynjar /Sigurgeirsson/
+2 GIVN Sigmundur Brynjar
+2 SURN Sigurgeirsson
+1 SEX M
+1 FAMC @F102@
+1 FAMS @F33@
+1 BIRT
+2 DATE 23 MAY 1958
+0 @I212565582748@ INDI
+1 NAME Ingi Gunnar /Benediktsson/
+2 GIVN Ingi Gunnar
+2 SURN Benediktsson
+1 SEX M
+1 FAMC @F117@
+1 BIRT
+2 DATE 30 Jul 1952
+1 DEAT
+2 DATE 16 May 2012
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097306760:1030:160490195
+0 @I212565582845@ INDI
+1 NAME Karl /Björnsson/
+2 GIVN Karl
+2 SURN Björnsson
+1 SEX M
+1 FAMS @F14@
+1 BIRT
+2 DATE 31 Dec 1920
+1 DEAT
+2 DATE 7 Jul 1991
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097307748:1030:160490195
+0 @I212565583132@ INDI
+1 NAME Þorvarður  /Magnússon/
+2 GIVN Þorvarður 
+2 SURN Magnússon
+2 SOUR @S664769255@
+3 _APID 1,9896::80215
+1 SEX M
+1 FAMC @F111@
+1 FAMS @F62@
+1 BIRT
+2 DATE 1835
+1 DEAT
+2 DATE 1870
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392098001851:1030:160490195
+1 SOUR @S664769255@
+2 _APID 1,9896::80215
+0 @I212565583134@ INDI
+1 NAME Snjófríður /Einarsdóttir/
+2 GIVN Snjófríður
+2 SURN Einarsdóttir
+2 SOUR @S664769255@
+3 _APID 1,9896::80128
+1 SEX F
+1 FAMC @F72@
+1 FAMS @F62@
+1 BIRT
+2 DATE 1840
+2 PLAC Austur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 1935
+2 PLAC Austur-Skaftafellssysla,Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392098001860:1030:160490195
+1 SOUR @S664769255@
+2 _APID 1,9896::80128
+0 @I212565583135@ INDI
+1 NAME Jón /Þorðvarðarson/
+2 GIVN Jón
+2 SURN Þorðvarðarson
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGR6-C3T
+3 _APID 1,9896::76812
+1 SEX M
+1 FAMC @F62@
+1 BIRT
+2 DATE 24 Aug 1865
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGR6-C3T
+3 _APID 1,9896::76812
+1 CHR
+2 DATE 24 Aug 1865
+2 PLAC Einholt A Myrum,Austur-Skaftafellssysla,Iceland
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGR6-C3T
+3 _APID 1,9896::76812
+1 DEAT
+2 DATE 20 Feb 1866
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGR6-C3T
+3 _APID 1,9896::76812
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392110835154:1030:160490195
+1 SOUR @S664769255@
+2 DATA
+3 WWW http://familysearch.org/pal:/MM9.1.1/FGR6-C3T
+2 _APID 1,9896::76812
+0 @I212565583136@ INDI
+1 NAME Ingunn  /Jónsdóttir/
+2 GIVN Ingunn 
+2 SURN Jónsdóttir
+2 SOUR @S664769322@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=8295&year=1880
+3 _APID 1,70784::580
+2 SOUR @S664769326@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=3973&year=1890
+3 _APID 1,70785::773
+1 SEX F
+1 FAMC @F36@
+1 FAMS @F75@
+1 FAMS @F121@
+1 BIRT
+2 DATE 28 sep 1866
+2 SOUR @S664769322@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=8295&year=1880
+3 _APID 1,70784::580
+2 SOUR @S664769326@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=3973&year=1890
+3 _APID 1,70785::773
+1 RESI
+2 DATE 1880
+2 PLAC Einholtssókn, Austur-Skaptafellssýsla, Suðuramt, Ísland
+2 SOUR @S664769322@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=8295&year=1880
+3 _APID 1,70784::580
+1 RESI
+2 DATE 1890
+2 PLAC Einholtssókn, Austur-Skaptafellssýsla, Suðuramt, Ísland
+2 SOUR @S664769326@
+3 DATA
+4 WWW http://manntal.is/default.aspx?id=3973&year=1890
+3 _APID 1,70785::773
+1 DEAT
+2 DATE 18. Nov 1958
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097406557:1030:160490195
+1 SOUR @S664769322@
+2 DATA
+3 WWW http://manntal.is/default.aspx?id=8295&year=1880
+2 _APID 1,70784::580
+1 SOUR @S664769326@
+2 DATA
+3 WWW http://manntal.is/default.aspx?id=3973&year=1890
+2 _APID 1,70785::773
+1 OBJE @O35@
+2 _PRIM Y
+0 @I212565583356@ INDI
+1 NAME Ragna /Sigurjónsdóttir/
+2 GIVN Ragna
+2 SURN Sigurjónsdóttir
+1 SEX F
+1 FAMS @F13@
+1 BIRT
+2 DATE 4 Mar 1931
+1 DEAT
+2 DATE 30 Jan 2018
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097308269:1030:160490195
+1 OBJE @O12@
+2 _PRIM Y
+0 @I212565583776@ INDI
+1 NAME Jón /Bjarnason/
+2 GIVN Jón
+2 SURN Bjarnason
+1 SEX M
+1 FAMC @F52@
+1 FAMS @F41@
+1 BIRT
+2 DATE 1835
+1 DEAT
+2 DATE 1915
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097826296:1030:160490195
+0 @I212565583779@ INDI
+1 NAME Guðný /Benediktsdóttir/
+2 GIVN Guðný
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMC @F7@
+1 FAMS @F41@
+1 BIRT
+2 DATE 1840
+1 DEAT
+2 DATE 1935
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182517284710:1030:37351456
+2 _APID 382428217354:1030:185577060
+2 _APID 392097826443:1030:160490195
+0 @I212565583781@ INDI
+1 NAME Steinunn /Jónsdóttir/
+2 GIVN Steinunn
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F41@
+1 BIRT
+2 DATE 1 JAN 1875
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 18 SEP 1904
+2 PLAC Manitoba, Canada
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392110842570:1030:160490195
+0 @I212565583783@ INDI
+1 NAME Einar Sigjón /Þorvarðarson/
+2 GIVN Einar Sigjón
+2 SURN Þorvarðarson
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGR6-HX8
+3 _APID 1,9896::80216
+1 SEX M
+1 FAMC @F61@
+1 FAMS @F40@
+1 FAMS @F130@
+1 BIRT
+2 DATE 8. Jan 1867
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGR6-HX8
+3 _APID 1,9896::80216
+1 CHR
+2 DATE 08 Jan 1867
+2 PLAC Einholt A Myrum,Austur-Skaftafellssysla,Iceland
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGR6-HX8
+3 _APID 1,9896::80216
+1 DEAT
+2 DATE 17 Dec 1955
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097406484:1030:160490195
+1 SOUR @S664769255@
+2 DATA
+3 WWW http://familysearch.org/pal:/MM9.1.1/FGR6-HX8
+2 _APID 1,9896::80216
+1 OBJE @O21@
+2 _PRIM Y
+0 @I212565584123@ INDI
+1 NAME Einar /Sigurdsson/
+2 GIVN Einar
+2 SURN Sigurdsson
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGPP-RY3
+3 _APID 1,9896::344864
+1 SEX M
+1 FAMC @F84@
+1 BIRT
+2 DATE 27 JUL 1857
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGPP-RY3
+3 _APID 1,9896::344864
+1 CHR
+2 DATE 28 Jul 1857
+2 PLAC Kalfafellsstadur,Austur-Skaftafellssysla,Iceland
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGPP-RY3
+3 _APID 1,9896::344864
+1 DEAT
+2 DATE 05 MAR 1930
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 102548677653:1030:194919450
+2 _APID 392110863413:1030:160490195
+1 SOUR @S664769255@
+2 DATA
+3 WWW http://familysearch.org/pal:/MM9.1.1/FGPP-RY3
+2 _APID 1,9896::344864
+0 @I212565584380@ INDI
+1 NAME Kristjan /Jonsson/
+2 GIVN Kristjan
+2 SURN Jonsson
+2 SOUR @S664769255@
+3 _APID 1,9896::173027
+1 SEX M
+1 FAMC @F91@
+1 FAMS @F140@
+1 BIRT
+2 DATE 1824
+1 SOUR @S664769255@
+2 _APID 1,9896::173027
+0 @I212565584567@ INDI
+1 NAME Páll /Jónsson/
+2 GIVN Páll
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F99@
+1 FAMS @F81@
+1 BIRT
+2 DATE ABT 1796
+2 PLAC Holtasel, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507595351:1030:37351456
+2 _APID 392097821821:1030:160490195
+0 @I212565584568@ INDI
+1 NAME Kristín /Pálsdóttir/
+2 GIVN Kristín
+2 SURN Pálsdóttir
+1 SEX F
+1 FAMC @F81@
+1 BIRT
+2 DATE 27 AUG 1823
+2 PLAC Borgarhafnarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507595358:1030:37351456
+0 @I212565584569@ INDI
+1 NAME Jón  /Pálsson/ hreppstjóri
+2 GIVN Jón 
+2 SURN Pálsson
+2 NSFX hreppstjóri
+1 SEX M
+1 FAMC @F81@
+1 BIRT
+2 DATE 21 APR 1828
+2 PLAC Eskey, Borgarhafnarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507595359:1030:37351456
+0 @I212565584571@ INDI
+1 NAME Bergur /Pálsson/
+2 GIVN Bergur
+2 SURN Pálsson
+1 SEX M
+1 FAMC @F81@
+1 BIRT
+2 DATE APR 1829
+2 PLAC Borgarhafnarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+0 @I212565584572@ INDI
+1 NAME Rannveig /Pálsdóttir/
+2 GIVN Rannveig
+2 SURN Pálsdóttir
+1 SEX F
+1 FAMC @F81@
+1 BIRT
+2 DATE SEP 1824
+2 PLAC Borgarhafnarhreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE CHILD
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507595365:1030:37351456
+0 @I212565584573@ INDI
+1 NAME Kristján /Jónsson/
+2 GIVN Kristján
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F82@
+1 BIRT
+2 DATE 25 MAY 1824
+2 PLAC Borgarfjarðarhreppur, Norður–Múlasýsla, Ísland
+1 DEAT
+2 DATE 15 FEB 1872
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507595520:1030:37351456
+2 _APID 392098001246:1030:160490195
+0 @I212565584577@ INDI
+1 NAME Guðný /Kristjánsdóttir/
+2 GIVN Guðný
+2 SURN Kristjánsdóttir
+1 SEX F
+1 FAMC @F82@
+1 BIRT
+2 DATE 21 MAY 1846
+2 PLAC Borgarhafnarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507595522:1030:37351456
+2 _APID 392554077386:1030:160490195
+0 @I212565584581@ INDI
+1 NAME Auðbjörg /Kristjánsdóttir/
+2 GIVN Auðbjörg
+2 SURN Kristjánsdóttir
+1 SEX F
+1 FAMC @F82@
+1 BIRT
+2 DATE SEP 1852
+2 PLAC Borgarfjarðarhreppur, Norður–Múlasýsla, Ísland
+1 DEAT
+2 DATE CHILD
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507595524:1030:37351456
+2 _APID 392554077387:1030:160490195
+0 @I212565585214@ INDI
+1 NAME Ása Björk /Ásgeirsdóttir/
+2 GIVN Ása Björk
+2 SURN Ásgeirsdóttir
+1 SEX F
+1 FAMC @F53@
+1 FAMS @F18@
+1 FAMS @F70@
+1 BIRT
+2 DATE 06 MAR 1976
+1 OBJE @O25@
+2 _PRIM Y
+0 @I212565585722@ INDI
+1 NAME Einar /Sigurðsson/
+2 GIVN Einar
+2 SURN Sigurðsson
+1 SEX M
+1 FAMC @F34@
+1 FAMS @F72@
+1 BIRT
+2 DATE 1813
+1 DEAT
+2 DATE 16 Jun 1866
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392098001924:1030:160490195
+0 @I212565585723@ INDI
+1 NAME Guðríður /Jónsdóttir/
+2 GIVN Guðríður
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F132@
+1 FAMS @F72@
+1 BIRT
+2 DATE 1807
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392098001929:1030:160490195
+0 @I212565585953@ INDI
+1 NAME Magnús /Þorvarðarson/
+2 GIVN Magnús
+2 SURN Þorvarðarson
+1 SEX M
+1 FAMC @F108@
+1 FAMS @F111@
+1 BIRT
+2 DATE 1791
+1 DEAT
+2 DATE 18 Apr 1870
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392098001884:1030:160490195
+0 @I212565585954@ INDI
+1 NAME Valgerður /Þorsteinsdóttir/
+2 GIVN Valgerður
+2 SURN Þorsteinsdóttir
+1 SEX F
+1 FAMC @F149@
+1 FAMS @F111@
+1 BIRT
+2 DATE 1802
+1 DEAT
+2 DATE 20 May 1883
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392098001904:1030:160490195
+0 @I212565586298@ INDI
+1 NAME Bergur /Bendiktsson/
+2 GIVN Bergur
+2 SURN Bendiktsson
+1 SEX M
+1 FAMC @F104@
+1 FAMS @F55@
+1 BIRT
+2 DATE Abt 1768
+2 PLAC Arnanes, Bjarnanes, Austurskaftafell, Iceland
+1 DEAT
+2 DATE 20 Aug 1833
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 262466629806:1030:181286792
+0 @I212565586299@ INDI
+1 NAME Vilborg /Finnbogadóttir/
+2 GIVN Vilborg
+2 SURN Finnbogadóttir
+1 SEX F
+1 FAMS @F55@
+1 BIRT
+2 DATE 1757
+2 PLAC Rauðaberg, Einholt á Mýrum, Austur-Skaftafells, Islande
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 262466630232:1030:181286792
+2 _APID 392097822125:1030:160490195
+0 @I212565586300@ INDI
+1 NAME Þórður /Bergsson/
+2 GIVN Þórður
+2 SURN Bergsson
+1 SEX M
+1 FAMC @F55@
+1 BIRT
+2 DATE JUL 1802
+2 PLAC Árnanes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 262466629732:1030:181286792
+0 @I212565586301@ INDI
+1 NAME Herdís /Bergsdóttir/
+2 GIVN Herdís
+2 SURN Bergsdóttir
+1 SEX F
+1 FAMC @F55@
+1 BIRT
+2 DATE 12 May 1809
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 262466630236:1030:181286792
+0 @I212565586302@ INDI
+1 NAME Sigríur /Bergsdóttir/
+2 GIVN Sigríur
+2 SURN Bergsdóttir
+1 SEX F
+1 FAMC @F55@
+1 BIRT
+2 DATE 16 April 1793
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 262466630237:1030:181286792
+0 @I212565586303@ INDI
+1 NAME Benedikt /Bergsson/
+2 GIVN Benedikt
+2 SURN Bergsson
+1 SEX M
+1 FAMC @F124@
+1 FAMC @F55@
+1 FAMS @F54@
+1 BIRT
+2 DATE 19 October 1794
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 3 Aug 1858
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 112296532500:1030:155502843
+2 _APID 262466630238:1030:181286792
+0 @I212565586304@ INDI
+1 NAME Jón /Bergsson/
+2 GIVN Jón
+2 SURN Bergsson
+1 SEX M
+1 FAMC @F55@
+1 BIRT
+2 DATE 8 May 1792
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 262466630239:1030:181286792
+0 @I212565586306@ INDI
+1 NAME Jón /Bergsson/
+2 GIVN Jón
+2 SURN Bergsson
+1 SEX M
+1 FAMC @F55@
+1 BIRT
+2 DATE 19 December 1795
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 24 November 1852
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 262466630240:1030:181286792
+0 @I212565586307@ INDI
+1 NAME Þórur /Bergsson/
+2 GIVN Þórur
+2 SURN Bergsson
+1 SEX M
+1 FAMC @F55@
+1 BIRT
+2 DATE 28 March 1797
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 4 April 1797
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 262466630241:1030:181286792
+2 _APID 392554098689:1030:160490195
+0 @I212565586308@ INDI
+1 NAME Sonur /Bergsson/
+2 GIVN Sonur
+2 SURN Bergsson
+1 SEX M
+1 FAMC @F55@
+1 BIRT
+2 DATE 12 January 1806
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 12 January 1806
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 262466630242:1030:181286792
+0 @I212565586792@ INDI
+1 NAME Kristín /Guðmundsdóttir/
+2 GIVN Kristín
+2 SURN Guðmundsdóttir
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGPZ-R4V
+3 _APID 1,9896::460129
+1 SEX F
+1 FAMC @F92@
+1 FAMS @F60@
+1 FAMS @F27@
+1 BIRT
+2 DATE 8 Oct 1889
+2 PLAC Gaulverjabær, Iceland
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGPZ-R4V
+3 _APID 1,9896::460129
+1 CHR
+2 DATE 15 Oct 1889
+2 PLAC Gaulverjabaer, Arnessysla, Iceland
+2 SOUR @S664769255@
+3 DATA
+4 WWW http://familysearch.org/pal:/MM9.1.1/FGPZ-R4V
+3 _APID 1,9896::460129
+1 DEAT
+2 DATE 24 Feb 1977
+2 PLAC Reykjavík, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507597746:1030:37351456
+2 _APID 392554098122:1030:160490195
+1 SOUR @S664769255@
+2 DATA
+3 WWW http://familysearch.org/pal:/MM9.1.1/FGPZ-R4V
+2 _APID 1,9896::460129
+0 @I212565586794@ INDI
+1 NAME Guðmundur Kjartan /Guðjónsson/
+2 GIVN Guðmundur Kjartan
+2 SURN Guðjónsson
+1 SEX M
+1 FAMC @F27@
+1 BIRT
+2 DATE 29 Dec 1924
+1 DEAT
+2 DATE 22 Jul 1949
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507598379:1030:37351456
+2 _APID 392554098125:1030:160490195
+0 @I212565586952@ INDI
+1 NAME Gudrun /Jonsdottir/
+2 GIVN Gudrun
+2 SURN Jonsdottir
+1 SEX F
+1 FAMS @F124@
+1 BIRT
+2 DATE Abt 1764
+2 PLAC , Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 112296581495:1030:155502843
+0 @I212565586954@ INDI
+1 NAME Vilborg /Jónsdóttir/
+2 GIVN Vilborg
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMS @F54@
+1 BIRT
+2 DATE 30 SEP 1815
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 112444151080:1030:155502843
+0 @I212565586956@ INDI
+1 NAME Lovisa /Bonidiktsdóttir/
+2 GIVN Lovisa
+2 SURN Bonidiktsdóttir
+1 SEX F
+1 FAMC @F54@
+1 BIRT
+2 DATE 25 Sep 1841
+2 PLAC Iceland
+1 DEAT
+2 DATE 16 Sep 1914
+2 PLAC Winnipeg, Manitoba, Canada
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 112053342389:1030:155502843
+0 @I212565587054@ INDI
+1 NAME Benedikt /Bergsson/
+2 GIVN Benedikt
+2 SURN Bergsson
+1 SEX M
+1 FAMC @F144@
+1 FAMS @F104@
+1 BIRT
+2 DATE 1735
+2 PLAC Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 2 November 1816
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 262466630234:1030:181286792
+2 _APID 382428263441:1030:185577060
+0 @I212565587057@ INDI
+1 NAME Sigríður /Eiríksdóttir/
+2 GIVN Sigríður
+2 SURN Eiríksdóttir
+1 SEX F
+1 FAMC @F73@
+1 FAMS @F104@
+1 BIRT
+2 DATE 1738
+2 PLAC Sandfell í Øraefum, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 1 November 1816
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 262466630233:1030:181286792
+2 _APID 382428263442:1030:185577060
+2 _APID 392554098670:1030:160490195
+0 @I212565587151@ INDI
+1 NAME Benedikt /Bergsson/
+2 GIVN Benedikt
+2 SURN Bergsson
+1 SEX M
+1 FAMC @F55@
+1 BIRT
+2 DATE 19 October 1794
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392554098687:1030:160490195
+0 @I212565587758@ INDI
+1 NAME Bergur /Gudmundsson/
+2 GIVN Bergur
+2 SURN Gudmundsson
+1 SEX M
+1 FAMS @F144@
+1 BIRT
+2 DATE 1702
+2 PLAC Hof, Alptafirdi, Surdur-mula, Islande
+1 DEAT
+2 DATE 17 May 1789
+0 @I212565590088@ INDI
+1 NAME Rannveig Arna /Sigurjónsdóttir/
+2 GIVN Rannveig Arna
+2 SURN Sigurjónsdóttir
+1 SEX F
+1 FAMC @F18@
+1 FAMS @F74@
+1 BIRT
+2 DATE 05 SEP 2005
+1 OBJE @O19@
+2 _PRIM Y
+0 @I212565590302@ INDI
+1 NAME Birkir Evan /Sigurjónsson/
+2 GIVN Birkir Evan
+2 SURN Sigurjónsson
+1 SEX M
+1 FAMC @F18@
+1 BIRT
+2 DATE 06 MAY 2014
+1 OBJE @O22@
+2 _PRIM Y
+0 @I212565590946@ INDI
+1 NAME Stella Bryndís /Helgadóttir/
+2 GIVN Stella Bryndís
+2 SURN Helgadóttir
+1 SEX F
+1 FAMS @F42@
+1 BIRT
+2 DATE 28 OCT 1978
+1 OBJE @O10@
+2 _PRIM Y
+0 @I212565591065@ INDI
+1 NAME Kristófer Breki /Snæbjörnsson/
+2 GIVN Kristófer Breki
+2 SURN Snæbjörnsson
+1 SEX M
+1 FAMC @F42@
+1 BIRT
+2 DATE 28 JUL 2001
+0 @I212565591220@ INDI
+1 NAME Snæbjörn Ómar /Guðjónsson/
+2 GIVN Snæbjörn Ómar
+2 SURN Guðjónsson
+1 SEX M
+1 FAMC @F17@
+1 FAMS @F42@
+1 BIRT
+2 DATE 04 AUG 1978
+1 OBJE @O20@
+2 _PRIM Y
+0 @I212565591452@ INDI
+1 NAME Ingvar Þór /Guðjónsson/
+2 GIVN Ingvar Þór
+2 SURN Guðjónsson
+1 SEX M
+1 FAMC @F17@
+1 FAMS @F21@
+1 FAMS @F22@
+1 BIRT
+2 DATE 01 SEP 1967
+1 OBJE @O23@
+2 _PRIM Y
+0 @I212565591524@ INDI
+1 NAME Sigurgeir /Guðjónsson/
+2 GIVN Sigurgeir
+2 SURN Guðjónsson
+1 SEX M
+1 FAMC @F17@
+1 BIRT
+2 DATE 28 AUG 1965
+0 @I212565592449@ INDI
+1 NAME Jóna Valdís /Ólafsdóttir/
+2 GIVN Jóna Valdís
+2 SURN Ólafsdóttir
+1 SEX F
+1 FAMS @F21@
+1 BIRT
+2 DATE 16 Mar 1974
+1 OBJE @O3@
+2 _PRIM Y
+0 @I212565592615@ INDI
+1 NAME Þorbjörg /Ingvarsdóttir/
+2 GIVN Þorbjörg
+2 SURN Ingvarsdóttir
+1 SEX F
+1 FAMC @F22@
+1 FAMS @F45@
+1 BIRT
+2 DATE 08 APR 2001
+0 @I212565592666@ INDI
+1 NAME Tómas Óli /Ingvarsson/
+2 GIVN Tómas Óli
+2 SURN Ingvarsson
+1 SEX M
+1 FAMC @F21@
+1 FAMS @F100@
+1 BIRT
+2 DATE 05 MAY 2005
+0 @I212565592698@ INDI
+1 NAME Guðjón Elí /Ingvarsson/
+2 GIVN Guðjón Elí
+2 SURN Ingvarsson
+1 SEX M
+1 FAMC @F21@
+1 FAMS @F98@
+1 BIRT
+2 DATE 25 JUL 2007
+0 @I212565592797@ INDI
+1 NAME Álfheiður Anna /Ingvarsdóttir/
+2 GIVN Álfheiður Anna
+2 SURN Ingvarsdóttir
+1 SEX F
+1 FAMC @F21@
+1 BIRT
+2 DATE 21 DEC 2010
+0 @I212565592871@ INDI
+1 NAME Einarína /Einarsdóttir/
+2 GIVN Einarína
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMS @F22@
+1 BIRT
+2 DATE 20 Apr 1967
+0 @I212565592934@ INDI
+1 NAME Alexander Brimar /Snæbjörnsson/
+2 GIVN Alexander Brimar
+2 SURN Snæbjörnsson
+1 SEX M
+1 FAMC @F42@
+1 BIRT
+2 DATE 03 AUG 2004
+0 @I212565592966@ INDI
+1 NAME Melkorka Bríet /Snæbjörnsdóttir/
+2 GIVN Melkorka Bríet
+2 SURN Snæbjörnsdóttir
+1 SEX F
+1 FAMC @F42@
+1 BIRT
+2 DATE 06 MAR 2010
+0 @I212565592981@ INDI
+1 NAME Baltasar Bragi /Snæbjörnsson/
+2 GIVN Baltasar Bragi
+2 SURN Snæbjörnsson
+1 SEX M
+1 FAMC @F42@
+1 BIRT
+2 DATE 18 OCT 2012
+0 @I212565593048@ INDI
+1 NAME Kormákur Brímir /Snæbjörnsson/
+2 GIVN Kormákur Brímir
+2 SURN Snæbjörnsson
+1 SEX M
+1 FAMC @F42@
+1 BIRT
+2 DATE 07 SEP 2014
+0 @I212565594039@ INDI
+1 NAME Jón /Bjarnason/
+2 GIVN Jón
+2 SURN Bjarnason
+1 SEX M
+1 FAMS @F36@
+1 BIRT
+2 DATE 1835
+1 DEAT
+2 DATE 1915
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097826296:1030:160490195
+0 @I212565594040@ INDI
+1 NAME Guðný /Benediktsdóttir/
+2 GIVN Guðný
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMS @F36@
+1 BIRT
+2 DATE 1840
+1 DEAT
+2 DATE 1935
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097826443:1030:160490195
+0 @I212565594041@ INDI
+1 NAME Steinunn /Jónsdóttir/
+2 GIVN Steinunn
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F36@
+1 BIRT
+2 DATE 1 JAN 1875
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 18 SEP 1904
+2 PLAC Manitoba, Canada
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392110842570:1030:160490195
+0 @I212565594042@ INDI
+1 NAME Sigurjón /Einarsson/
+2 GIVN Sigurjón
+2 SURN Einarsson
+1 SEX M
+1 FAMC @F121@
+1 BIRT
+2 DATE 17 Oct 1895
+1 DEAT
+2 DATE 28 Feb 1983
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097284957:1030:160490195
+0 @I212565594390@ INDI
+1 NAME Þorvarður  /Magnússon/
+2 GIVN Þorvarður 
+2 SURN Magnússon
+1 SEX M
+1 FAMS @F61@
+1 BIRT
+2 DATE 1835
+1 DEAT
+2 DATE 1870
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392098001851:1030:160490195
+0 @I212565594391@ INDI
+1 NAME Snjófríður /Einarsdóttir/
+2 GIVN Snjófríður
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMS @F61@
+1 BIRT
+2 DATE 1840
+2 PLAC Austur-Skaftafellssysla,Iceland
+1 DEAT
+2 DATE 1935
+2 PLAC Austur-Skaftafellssysla,Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392098001860:1030:160490195
+0 @I212565594393@ INDI
+1 NAME Jón /Þorðvarðarson/
+2 GIVN Jón
+2 SURN Þorðvarðarson
+1 SEX M
+1 FAMC @F61@
+1 BIRT
+2 DATE 24 Aug 1865
+1 DEAT
+2 DATE 20 Feb 1866
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392110835154:1030:160490195
+0 @I212565594394@ INDI
+1 NAME Sigurjón /Einarsson/
+2 GIVN Sigurjón
+2 SURN Einarsson
+1 SEX M
+1 FAMC @F130@
+1 BIRT
+2 DATE 17 Oct 1895
+1 DEAT
+2 DATE 28 Feb 1983
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097284957:1030:160490195
+0 @I212565594398@ INDI
+1 NAME Drengur /Þorvarðarson/
+2 GIVN Drengur
+2 SURN Þorvarðarson
+1 SEX M
+1 FAMC @F130@
+1 BIRT
+2 DATE 13 Aug 1891
+2 PLAC Odda, Einholtssókn, A-Skaft. Ísland
+1 DEAT
+2 DATE 13 Aug 1891
+2 PLAC odda, einholtssókn, a-skaft., Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392578502129:1030:160490195
+0 @I212565595262@ INDI
+1 NAME Unnur /Kristjánsdóttir/
+2 GIVN Unnur
+2 SURN Kristjánsdóttir
+1 SEX F
+1 FAMS @F35@
+1 BIRT
+2 DATE 8 Feb 1923
+1 DEAT
+2 DATE 12 Dec 2017
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097297756:1030:160490195
+0 @I212565595313@ INDI
+1 NAME Steinþór /Einarsson/
+2 GIVN Steinþór
+2 SURN Einarsson
+1 SEX M
+1 FAMC @F35@
+1 FAMS @F86@
+1 FAMS @F116@
+1 BIRT
+2 DATE 19 Jan 1949
+1 MARR
+2 DATE BEF 1969
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+0 @I212565595360@ INDI
+1 NAME Ragnhildur Guðný /Guðmundsdóttir/
+2 GIVN Ragnhildur Guðný
+2 SURN Guðmundsdóttir
+1 SEX F
+1 FAMS @F86@
+1 BIRT
+2 DATE 30 Oct 1951
+0 @I212565596466@ INDI
+1 NAME Guðný /Einarsdóttir/
+2 GIVN Guðný
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMC @F67@
+1 FAMS @F26@
+1 BIRT
+2 DATE 9 Dec 1889
+2 PLAC Kotströnd Arnarbælissókn, Árnessýsla
+1 DEAT
+2 DATE 3 Aug 1971
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 142168287094:1030:159672606
+2 _APID 172519020106:1030:175766849
+2 _APID 182507588979:1030:37351456
+2 _APID 272358381413:1030:73794841
+0 @I212565596469@ INDI
+1 NAME Björg / Sigurðardóttir/
+2 GIVN Björg
+2 SURN  Sigurðardóttir
+1 SEX F
+1 FAMC @F26@
+1 BIRT
+2 DATE 7 Apr 1911
+2 PLAC Kotströnd Arnarbælissókn, Árnessýsla
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 172519020108:1030:175766849
+2 _APID 182507591707:1030:37351456
+0 @I212565596471@ INDI
+1 NAME Margrét /Sigurðardóttir/
+2 GIVN Margrét
+2 SURN Sigurðardóttir
+1 SEX F
+1 FAMC @F26@
+1 BIRT
+2 DATE 29 Apr 1913
+2 PLAC Kotströnd Arnarbælissókn, Árnessýsla
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 172519020109:1030:175766849
+2 _APID 182507591767:1030:37351456
+0 @I212565596474@ INDI
+1 NAME Halla /Sigurðardóttir/
+2 GIVN Halla
+2 SURN Sigurðardóttir
+1 SEX F
+1 FAMC @F26@
+1 BIRT
+2 DATE 21 1 1915
+2 PLAC Gljúfur (2. býli) Ölfushreppur, Árnessýsla
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 172519020110:1030:175766849
+0 @I212565596475@ INDI
+1 NAME Sigmaður /Sigurðsson/
+2 GIVN Sigmaður
+2 SURN Sigurðsson
+1 SEX M
+1 FAMC @F26@
+1 BIRT
+2 DATE 18 Feb 1920
+2 PLAC Gljúfur (2. býli) Ölfushreppur, Árnessýsla
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 172519020111:1030:175766849
+2 _APID 182507591845:1030:37351456
+0 @I212565596476@ INDI
+1 NAME Karen Ólafía  /Sigurðardóttir/
+2 GIVN Karen Ólafía 
+2 SURN Sigurðardóttir
+1 SEX F
+1 FAMC @F26@
+1 FAMS @F51@
+1 BIRT
+2 DATE 11 Nov 1909
+2 PLAC Kotströnd, Suðurland, Iceland
+1 DEAT
+2 DATE 21 Dec 2002
+2 PLAC Kópavogskaupstaður, Höfuðborgarsvæði, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 142168286291:1030:159672606
+2 _APID 172519019946:1030:175766849
+2 _APID 182507591144:1030:37351456
+2 _APID 272358381224:1030:73794841
+0 @I212565596851@ INDI
+1 NAME Guðmundur /Hannesson/
+2 GIVN Guðmundur
+2 SURN Hannesson
+1 SEX M
+1 FAMS @F92@
+1 BIRT
+2 DATE 16 Nov 1859
+2 PLAC Lambastadir, Kaldadarnes, Arness, Iceland
+1 DEAT
+2 DATE 1938
+2 PLAC Reykjavík, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182472041724:1030:37351456
+0 @I212565596855@ INDI
+1 NAME Katrín  /Jónasdóttir/
+2 GIVN Katrín 
+2 SURN Jónasdóttir
+1 SEX F
+1 FAMS @F92@
+1 BIRT
+2 DATE 15May1868
+2 PLAC Gaulverjabæ, Iceland
+1 DEAT
+2 DATE 11Sep1955
+2 PLAC Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507630334:1030:37351456
+0 @I212565596863@ INDI
+1 NAME Davíð /Jónsson/ kenari og lögreglumaður
+2 GIVN Davíð
+2 SURN Jónsson
+2 NSFX kenari og lögreglumaður
+1 SEX M
+1 FAMS @F60@
+1 BIRT
+2 DATE 13 Nov 1889
+2 PLAC á, syðri-gengishólum, í, Flóagaflshverfi, Suðurland, Iceland
+1 DEAT
+2 DATE 14 Sep 1932
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507598703:1030:37351456
+0 @I212565596865@ INDI
+1 NAME Girl /Davíðsdóttir/
+2 GIVN Girl
+2 SURN Davíðsdóttir
+1 SEX F
+1 FAMC @F60@
+1 BIRT
+2 DATE 3 Jun 1913
+1 DEAT
+2 DATE 3 jun 1913
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507630708:1030:37351456
+0 @I212565596870@ INDI
+1 NAME Guðmundur Kjartan /Davíðsson/
+2 GIVN Guðmundur Kjartan
+2 SURN Davíðsson
+1 SEX M
+1 FAMC @F60@
+1 BIRT
+2 DATE 28 Jul 1914
+1 DEAT
+2 DATE 1 Aug 1933
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507630800:1030:37351456
+0 @I212565596872@ INDI
+1 NAME Hannes Kristinn /Davíðsson/ arkitekt
+2 GIVN Hannes Kristinn
+2 SURN Davíðsson
+2 NSFX arkitekt
+1 SEX M
+1 FAMC @F60@
+1 BIRT
+2 DATE 3 Sep 1916
+1 DEAT
+2 DATE 29 Apr 1995
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507630871:1030:37351456
+0 @I212565596874@ INDI
+1 NAME Kristín Davíey /Davíðsdóttir/ bankaritari
+2 GIVN Kristín Davíey
+2 SURN Davíðsdóttir
+2 NSFX bankaritari
+1 SEX F
+1 FAMC @F60@
+1 BIRT
+2 DATE 25 May 1921
+1 DEAT
+2 DATE 10 Nov 1997
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507630933:1030:37351456
+0 @I212565597204@ INDI
+1 NAME Gurún /Benediktsdóttir/
+2 GIVN Gurún
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMC @F104@
+1 BIRT
+2 DATE 1771
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 1797
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392554098671:1030:160490195
+0 @I212565597206@ INDI
+1 NAME Þorbjörg /Benediktsdóttir/
+2 GIVN Þorbjörg
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMC @F104@
+1 FAMS @F96@
+1 BIRT
+2 DATE 15 April 1764
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 23 November 1851
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428150298:1030:185577060
+2 _APID 392554098672:1030:160490195
+0 @I212565597208@ INDI
+1 NAME Eiríkur /Benediktsson/
+2 GIVN Eiríkur
+2 SURN Benediktsson
+1 SEX M
+1 FAMC @F104@
+1 BIRT
+2 DATE 1775
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 12 May 1841
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392554098674:1030:160490195
+0 @I212565597211@ INDI
+1 NAME Vilborg /Benediktsdóttir/
+2 GIVN Vilborg
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMC @F104@
+1 BIRT
+2 DATE 1766
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392554098675:1030:160490195
+0 @I212565597212@ INDI
+1 NAME Malmfríur /Benediktsdóttir/
+2 GIVN Malmfríur
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMC @F104@
+1 BIRT
+2 DATE 1767
+2 PLAC Fell, Kálfafellsstaður, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 22 January 1854
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392554098676:1030:160490195
+0 @I212565597490@ INDI
+1 NAME Einar / Eyjólfsson/
+2 GIVN Einar
+2 SURN  Eyjólfsson
+1 SEX M
+1 FAMS @F67@
+1 BIRT
+2 DATE 5 6 1853
+2 PLAC Reykjasókn Árnessýslu
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507588829:1030:37351456
+0 @I212565597492@ INDI
+1 NAME Rannveig /Helgadóttir/
+2 GIVN Rannveig
+2 SURN Helgadóttir
+1 SEX F
+1 FAMS @F67@
+1 BIRT
+2 DATE 7 Aug 1855
+2 PLAC Hraunhreppur, Mýrasýsla, Ísland
+1 DEAT
+2 DATE 16 Feb 1934
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507505416:1030:37351456
+0 @I212565597493@ INDI
+1 NAME Steinunn /Einarsdóttir/
+2 GIVN Steinunn
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMC @F67@
+1 BIRT
+2 DATE 29 Sep 1886
+2 PLAC Kotströnd Arnarbælissókn, Árnessýsla
+1 DEAT
+2 DATE 17 Mar 1982
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507504517:1030:37351456
+0 @I212565597566@ INDI
+1 NAME Ólafur  /Ólafsson/
+2 GIVN Ólafur 
+2 SURN Ólafsson
+1 SEX M
+1 FAMS @F51@
+1 BIRT
+2 DATE 10 Mar 1904
+2 PLAC Kjós Kjalanes, Iceland
+1 DEAT
+2 DATE 13 Mar 1956
+2 PLAC Kjós Kjalanes, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 172519019655:1030:175766849
+0 @I212565598395@ INDI
+1 NAME Benedikt /Hallsson/
+2 GIVN Benedikt
+2 SURN Hallsson
+1 SEX M
+1 FAMC @F46@
+1 FAMS @F7@
+1 FAMS @F9@
+1 BIRT
+2 DATE 15 Jun 1796
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182517284709:1030:37351456
+2 _APID 382428150280:1030:185577060
+2 _APID 392097827148:1030:160490195
+0 @I212565598447@ INDI
+1 NAME Vilborg /Benediktsdóttir/
+2 GIVN Vilborg
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMC @F29@
+1 FAMS @F46@
+1 BIRT
+2 DATE 1766
+2 PLAC á Árnanesi
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507595154:1030:37351456
+2 _APID 382428150336:1030:185577060
+2 _APID 392097827348:1030:160490195
+2 _APID 392554098675:1030:160490195
+0 @I212565598633@ INDI
+1 NAME Hallur ríki hreppstjóri /Þorleifsson/
+2 GIVN Hallur ríki hreppstjóri
+2 SURN Þorleifsson
+1 SEX M
+1 FAMS @F46@
+1 BIRT
+2 DATE Abt 1762
+2 PLAC Of Holar, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852298:1030:37351456
+2 _APID 382428150276:1030:185577060
+2 _APID 392097827239:1030:160490195
+0 @I212565598637@ INDI
+1 NAME Gudmundur /Hallsson/
+2 GIVN Gudmundur
+2 SURN Hallsson
+1 SEX M
+1 FAMC @F46@
+1 BIRT
+2 DATE 18 Sep 1809
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 DEAT
+2 DATE 26 Sep 1809
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852308:1030:37351456
+2 _APID 382428157951:1030:185577060
+2 _APID 392110845927:1030:160490195
+0 @I212565598638@ INDI
+1 NAME Guðrún /Hallsdóttir/
+2 GIVN Guðrún
+2 SURN Hallsdóttir
+1 SEX F
+1 FAMC @F46@
+1 BIRT
+2 DATE 1798
+2 PLAC á Hólum í Bjarnanessókn
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852299:1030:37351456
+2 _APID 382428157954:1030:185577060
+2 _APID 392110845928:1030:160490195
+0 @I212565598640@ INDI
+1 NAME Sigridur /Hallsdottir/
+2 GIVN Sigridur
+2 SURN Hallsdottir
+1 SEX F
+1 FAMC @F46@
+1 BIRT
+2 DATE 24 Oct 1801
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852396:1030:37351456
+2 _APID 382428150332:1030:185577060
+2 _APID 392110845923:1030:160490195
+0 @I212565598642@ INDI
+1 NAME Gudrun /Hallsdottir/
+2 GIVN Gudrun
+2 SURN Hallsdottir
+1 SEX F
+1 FAMC @F46@
+1 BIRT
+2 DATE 7 Sep 1790
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852399:1030:37351456
+2 _APID 382428157952:1030:185577060
+2 _APID 392110845919:1030:160490195
+0 @I212565598643@ INDI
+1 NAME Sigurdur /Hallsson/
+2 GIVN Sigurdur
+2 SURN Hallsson
+1 SEX M
+1 FAMC @F46@
+1 BIRT
+2 DATE 27 Jan 1795
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852310:1030:37351456
+2 _APID 382428150279:1030:185577060
+2 _APID 392110845917:1030:160490195
+0 @I212565598646@ INDI
+1 NAME Thorleifur /Hallsson/
+2 GIVN Thorleifur
+2 SURN Hallsson
+1 SEX M
+1 FAMC @F46@
+1 BIRT
+2 DATE Abt 1808
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428157945:1030:185577060
+2 _APID 392110845926:1030:160490195
+0 @I212565598648@ INDI
+1 NAME Alfheidur /Hallsdottir/
+2 GIVN Alfheidur
+2 SURN Hallsdottir
+1 SEX F
+1 FAMC @F46@
+1 FAMS @F38@
+1 BIRT
+2 DATE 20 Jan 1794
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 170081701891:1030:110313381
+2 _APID 182529852301:1030:37351456
+2 _APID 382428150278:1030:185577060
+2 _APID 392110845916:1030:160490195
+0 @I212565598651@ INDI
+1 NAME Ingibjorg /Hallsdottir/
+2 GIVN Ingibjorg
+2 SURN Hallsdottir
+1 SEX F
+1 FAMC @F46@
+1 BIRT
+2 DATE 27 Oct 1800
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428150331:1030:185577060
+2 _APID 392110845922:1030:160490195
+0 @I212565598653@ INDI
+1 NAME Guðrún /Hallsdóttir/
+2 GIVN Guðrún
+2 SURN Hallsdóttir
+1 SEX F
+1 FAMC @F46@
+1 BIRT
+2 DATE SEP 1799
+2 PLAC Hólar, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852392:1030:37351456
+2 _APID 382428150275:1030:185577060
+0 @I212565598655@ INDI
+1 NAME Katrin /Hallsdottir/
+2 GIVN Katrin
+2 SURN Hallsdottir
+1 SEX F
+1 FAMC @F46@
+1 BIRT
+2 DATE 11 Aug 1803
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852303:1030:37351456
+2 _APID 382428157935:1030:185577060
+2 _APID 392110845924:1030:160490195
+0 @I212565598658@ INDI
+1 NAME Thorleifur /Hallsson/
+2 GIVN Thorleifur
+2 SURN Hallsson
+1 SEX M
+1 FAMC @F46@
+1 BIRT
+2 DATE 10 Jan 1793
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 DEAT
+2 DATE 19 Feb 1799
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852309:1030:37351456
+2 _APID 382428150330:1030:185577060
+2 _APID 392110845920:1030:160490195
+0 @I212565598659@ INDI
+1 NAME Sigridur /Hallsdottir/
+2 GIVN Sigridur
+2 SURN Hallsdottir
+1 SEX F
+1 FAMC @F46@
+1 BIRT
+2 DATE 26 Apr 1789
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 DEAT
+2 DATE ABT 1818
+2 PLAC Kálfafellsstaðir, Borgarhafnarhreppur, Austur-Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852307:1030:37351456
+2 _APID 382428150293:1030:185577060
+2 _APID 392110845918:1030:160490195
+0 @I212565598660@ INDI
+1 NAME Ljotunn /Hallsdottir/
+2 GIVN Ljotunn
+2 SURN Hallsdottir
+1 SEX F
+1 FAMC @F46@
+1 FAMS @F3@
+1 FAMS @F4@
+1 BIRT
+2 DATE 16 Aug 1791
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428150277:1030:185577060
+2 _APID 392110845915:1030:160490195
+0 @I212565598661@ INDI
+1 NAME Thorleifur /Hallsson/
+2 GIVN Thorleifur
+2 SURN Hallsson
+1 SEX M
+1 FAMC @F46@
+1 BIRT
+2 DATE 11 Nov 1805
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 DEAT
+2 DATE 21 Feb 1806
+2 PLAC Holar, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852397:1030:37351456
+2 _APID 382428150334:1030:185577060
+2 _APID 392110845925:1030:160490195
+0 @I212565598665@ INDI
+1 NAME Ingunn /Sigurðardóttir/
+2 GIVN Ingunn
+2 SURN Sigurðardóttir
+1 SEX F
+1 FAMC @F50@
+1 FAMS @F7@
+1 BIRT
+2 DATE 1812
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 17 Dec 1893
+2 PLAC Odda i Myrum, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182507596738:1030:37351456
+2 _APID 382428271568:1030:185577060
+2 _APID 392097826872:1030:160490195
+0 @I212565598666@ INDI
+1 NAME Sigríður /Halldórsdóttir/
+2 GIVN Sigríður
+2 SURN Halldórsdóttir
+1 SEX F
+1 FAMS @F9@
+1 BIRT
+2 DATE ABT 1798
+2 PLAC Þórisdalur, Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE BEF 1840
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852400:1030:37351456
+2 _APID 382428273421:1030:185577060
+0 @I212565598670@ INDI
+1 NAME Rafnkell /Benediktsson/
+2 GIVN Rafnkell
+2 SURN Benediktsson
+1 SEX M
+1 FAMC @F9@
+1 FAMS @F5@
+1 BIRT
+2 DATE 21 NOV 1828
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 21 NOV 1875
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852208:1030:37351456
+2 _APID 382428150286:1030:185577060
+0 @I212565598673@ INDI
+1 NAME Benedikt /Benediktsson/
+2 GIVN Benedikt
+2 SURN Benediktsson
+1 SEX M
+1 FAMC @F9@
+1 BIRT
+2 DATE 12 SEP 1830
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852402:1030:37351456
+2 _APID 382428307773:1030:185577060
+0 @I212565598676@ INDI
+1 NAME Sigríður /Benediktsdóttir/
+2 GIVN Sigríður
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMC @F9@
+1 BIRT
+2 DATE 12 NOV 1834
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852403:1030:37351456
+2 _APID 382428307774:1030:185577060
+0 @I212565598678@ INDI
+1 NAME Guðmundur /Benediktsson/
+2 GIVN Guðmundur
+2 SURN Benediktsson
+1 SEX M
+1 FAMC @F9@
+1 BIRT
+2 DATE 5 JUN 1825
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852404:1030:37351456
+2 _APID 382428307775:1030:185577060
+0 @I212565598683@ INDI
+1 NAME unnamed /Benediktsson/
+2 GIVN unnamed
+2 SURN Benediktsson
+1 SEX M
+1 FAMC @F9@
+1 BIRT
+2 DATE 1832
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 1832
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852405:1030:37351456
+2 _APID 382428307776:1030:185577060
+0 @I212565598686@ INDI
+1 NAME Árni /Benediktsson/
+2 GIVN Árni
+2 SURN Benediktsson
+1 SEX M
+1 FAMC @F9@
+1 BIRT
+2 DATE 8 JUL 1827
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852407:1030:37351456
+2 _APID 382428307777:1030:185577060
+0 @I212565598689@ INDI
+1 NAME Ingibjörg /Benediktsdóttir/
+2 GIVN Ingibjörg
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMC @F9@
+1 BIRT
+2 DATE 1819
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852408:1030:37351456
+2 _APID 382428307778:1030:185577060
+0 @I212565598692@ INDI
+1 NAME Vilborg /Benediktsdóttir/
+2 GIVN Vilborg
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMC @F9@
+1 BIRT
+2 DATE 1822
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852409:1030:37351456
+2 _APID 382428307779:1030:185577060
+0 @I212565598694@ INDI
+1 NAME Guðríður /Benediktsdóttir/
+2 GIVN Guðríður
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMC @F9@
+1 BIRT
+2 DATE 1833
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852411:1030:37351456
+2 _APID 382428307780:1030:185577060
+0 @I212565598696@ INDI
+1 NAME Hallur /Benediktsson/
+2 GIVN Hallur
+2 SURN Benediktsson
+1 SEX M
+1 FAMC @F9@
+1 BIRT
+2 DATE 1823
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182529852413:1030:37351456
+2 _APID 382428307781:1030:185577060
+0 @I212565599075@ INDI
+1 NAME Sigurdur /Arason/
+2 GIVN Sigurdur
+2 SURN Arason
+1 SEX M
+1 FAMC @F1@
+1 FAMS @F50@
+1 BIRT
+2 DATE 1778
+2 PLAC Arnanesi i Nesjum, Austur-Skaftafellssysla, Iceland
+1 DEAT
+2 DATE 11 NOV 1846
+2 PLAC Reynivellir, Austur-Skaftafellssysla, Iceland
+0 @I212565599094@ INDI
+1 NAME Gudny /Thorsteinsdottir/
+2 GIVN Gudny
+2 SURN Thorsteinsdottir
+1 SEX F
+1 FAMC @F89@
+1 FAMS @F50@
+1 BIRT
+2 DATE 1786
+2 PLAC Kalfafelli i Sudursveit, Austur-Skaftafellsysla, Iceland
+1 DEAT
+2 DATE 28 NOV 1857
+2 PLAC Reynivellir, Austur-Skaftafellssysla, Iceland
+0 @I212565599108@ INDI
+1 NAME Benedikt  /Bergsson/ prófastur
+2 GIVN Benedikt 
+2 SURN Bergsson
+2 NSFX prófastur
+1 SEX M
+1 FAMC @F119@
+1 FAMS @F29@
+1 BIRT
+2 DATE 1735
+2 PLAC Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 2 November 1816
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392554098669:1030:160490195
+0 @I212565599113@ INDI
+1 NAME Sigridur /Eiriksdottir/
+2 GIVN Sigridur
+2 SURN Eiriksdottir
+1 SEX F
+1 FAMC @F43@
+1 FAMS @F29@
+1 BIRT
+2 DATE 1738
+2 PLAC Sandfell í Øraefum, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 1 November 1816
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392554098670:1030:160490195
+0 @I212565599129@ INDI
+1 NAME Bergur /Gudmundsson/
+2 GIVN Bergur
+2 SURN Gudmundsson
+1 SEX M
+1 FAMS @F119@
+1 BIRT
+2 DATE 1702
+2 PLAC Hof, Alptafirdi, Surdur-mula, Islande
+1 DEAT
+2 DATE 17 May 1789
+0 @I212565599138@ INDI
+1 NAME Elin /Eiriksdottir/
+2 GIVN Elin
+2 SURN Eiriksdottir
+2 SOUR @S664769351@
+3 _APID 1,9897::31511
+1 SEX F
+2 SOUR @S664769351@
+3 _APID 1,9897::31511
+1 FAMS @F43@
+1 BIRT
+2 DATE 1711
+2 PLAC of, Garpsdalur, AusturBardastron, Iceland
+1 DEAT
+2 DATE 13 Aug 1795
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392554099172:1030:160490195
+1 SOUR @S664769351@
+2 _APID 1,9897::31511
+0 @I212565599178@ INDI
+1 NAME Ari /Sigurdsson/
+2 GIVN Ari
+2 SURN Sigurdsson
+1 SEX M
+1 FAMS @F1@
+1 BIRT
+2 DATE 1740
+2 PLAC Skalafelli i Sudursveit, Austur-Skaftafellsysla, Iceland
+0 @I212565599187@ INDI
+1 NAME Gudrun /Gisladottir/
+2 GIVN Gudrun
+2 SURN Gisladottir
+1 SEX F
+1 FAMC @F15@
+1 FAMS @F1@
+1 BIRT
+2 DATE ABT 1747
+2 PLAC Skalafelli I Sudursveit, Austur-Skaftafellsysla, Iceland
+1 DEAT
+2 DATE 5 JUL 1825
+2 PLAC Skógum, Reykjahverfi, Ísland
+0 @I212565599225@ INDI
+1 NAME Gísli /Hallgrímsson/
+2 GIVN Gísli
+2 SURN Hallgrímsson
+1 SEX M
+1 FAMS @F15@
+1 BIRT
+2 DATE 1709
+1 DEAT
+2 DATE 1761
+0 @I212565599231@ INDI
+1 NAME Guðrún „eldri“  /Eiríksdóttir /
+2 GIVN Guðrún „eldri“ 
+2 SURN Eiríksdóttir 
+1 SEX F
+1 FAMC @F114@
+1 FAMS @F15@
+1 BIRT
+2 DATE 1717
+1 DEAT
+2 DATE 10 Nov 1787
+2 PLAC  í Hrafnagilssókn, Eyj./ Ljósmóðir og húsfreyja á Teigi, í Hraungerði og á Stóra-Eyrarlandi í Hrafnagilshr., Eyj. 
+0 @I212565599257@ INDI
+1 NAME Eiríkur  /Jónsson/
+2 GIVN Eiríkur 
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F109@
+1 FAMS @F114@
+1 BIRT
+2 DATE 1678
+2 PLAC í Leining, Hólar, Norðurland Eystra, Iceland
+1 DEAT
+2 DATE 22 Aug 1756
+2 PLAC Möðruvöllum, Ísland
+0 @I212565599274@ INDI
+1 NAME Jón eldri /Finnbogason/
+2 GIVN Jón eldri
+2 SURN Finnbogason
+1 SEX M
+1 FAMS @F109@
+1 BIRT
+2 DATE 1643
+2 PLAC of Kröggúlfsstaðir, Reykir I Olfusi, Árnessýsla
+1 DEAT
+2 DATE Aft. 1712
+0 @I212565599284@ INDI
+1 NAME Ólöf /Sigurðardóttir/
+2 GIVN Ólöf
+2 SURN Sigurðardóttir
+1 SEX F
+1 FAMS @F109@
+1 BIRT
+2 DATE 1644
+2 PLAC Leyningur, Hólar, Eyjafjarðarsýsla
+1 DEAT
+2 DATE after 1703
+0 @I212565600120@ INDI
+1 NAME Helga /Eiriksdottir/
+2 GIVN Helga
+2 SURN Eiriksdottir
+1 SEX F
+1 BIRT
+2 DATE  1738
+2 PLAC of, Hvammur, Skagafjardar, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 537432624:1030:17641540
+0 @I212565600122@ INDI
+1 NAME Elin /Eiriksdottir/
+2 GIVN Elin
+2 SURN Eiriksdottir
+1 SEX F
+1 BIRT
+2 DATE  1742
+2 PLAC of, Hvammur, Skagafjardar, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 537432626:1030:17641540
+0 @I212565600124@ INDI
+1 NAME Eirikur /Eiriksson/
+2 GIVN Eirikur
+2 SURN Eiriksson
+1 SEX M
+1 BIRT
+2 DATE  1743
+2 PLAC of, Hvammur, Skagafjardar, Iceland
+1 DEAT
+2 DATE 24 Jul 1816
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 537432627:1030:17641540
+0 @I212565600126@ INDI
+1 NAME Bjorn /Eiriksson/
+2 GIVN Bjorn
+2 SURN Eiriksson
+1 SEX M
+1 BIRT
+2 DATE 1745
+2 PLAC of, Hvammur, Skagafjardar, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 537432628:1030:17641540
+0 @I212565602978@ INDI
+1 NAME Bergur prestur /Jónsson/
+2 GIVN Bergur prestur
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F96@
+1 BIRT
+2 DATE 1761
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 14 FEB 1813
+2 PLAC Árnanes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428150300:1030:185577060
+0 @I212565602979@ INDI
+1 NAME Rannveig /Bergsdóttir/
+2 GIVN Rannveig
+2 SURN Bergsdóttir
+1 SEX F
+1 FAMC @F96@
+1 BIRT
+2 DATE ABT 1793
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428263457:1030:185577060
+0 @I212565602980@ INDI
+1 NAME Sigríður /Bergsdóttir/
+2 GIVN Sigríður
+2 SURN Bergsdóttir
+1 SEX F
+1 FAMC @F96@
+1 BIRT
+2 DATE 1787
+2 PLAC Einholt, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428263458:1030:185577060
+0 @I212565602982@ INDI
+1 NAME Benedikt stúdent /Bergsson/
+2 GIVN Benedikt stúdent
+2 SURN Bergsson
+1 SEX M
+1 FAMC @F96@
+1 FAMS @F2@
+1 BIRT
+2 DATE 1788
+2 PLAC Einholt, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 1828
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428263459:1030:185577060
+0 @I212565602986@ INDI
+1 NAME Guðrún /Bergsdóttir/
+2 GIVN Guðrún
+2 SURN Bergsdóttir
+1 SEX F
+1 FAMC @F96@
+1 BIRT
+2 DATE 1789
+2 PLAC Einholt, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428263460:1030:185577060
+0 @I212565602987@ INDI
+1 NAME Jón hreppstjóri /Bergsson/
+2 GIVN Jón hreppstjóri
+2 SURN Bergsson
+1 SEX M
+1 FAMC @F96@
+1 BIRT
+2 DATE 1791
+2 PLAC Einholt, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE AUG 1869
+2 PLAC Þinganes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428263461:1030:185577060
+0 @I212565603173@ INDI
+1 NAME Eirikur /Jonsson/
+2 GIVN Eirikur
+2 SURN Jonsson
+2 SOUR @S664769351@
+3 _APID 1,9897::31510
+1 SEX M
+2 SOUR @S664769351@
+3 _APID 1,9897::31510
+1 FAMS @F43@
+1 BIRT
+2 DATE 10 JAN 1705
+2 PLAC of, Reykir, Skagafjardar, Iceland
+1 DEAT
+2 DATE 8 MAY 1779
+2 PLAC , Hof, AusturHunavatn, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392554099171:1030:160490195
+1 SOUR @S664769351@
+2 _APID 1,9897::31510
+0 @I212565603175@ INDI
+1 NAME Bergur / Benediktsson/
+2 GIVN Bergur
+2 SURN  Benediktsson
+1 SEX M
+1 FAMC @F29@
+1 BIRT
+2 DATE 1768
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 20 August 1833
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392097821942:1030:160490195
+0 @I212565603178@ INDI
+1 NAME Gurún /Benediktsdóttir/
+2 GIVN Gurún
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMC @F29@
+1 BIRT
+2 DATE 1771
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 1797
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392554098671:1030:160490195
+0 @I212565603179@ INDI
+1 NAME Þorbjörg /Benediktsdóttir/
+2 GIVN Þorbjörg
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMC @F29@
+1 BIRT
+2 DATE 15 April 1764
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 23 November 1851
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392554098672:1030:160490195
+0 @I212565603181@ INDI
+1 NAME Eiríkur /Benediktsson/
+2 GIVN Eiríkur
+2 SURN Benediktsson
+1 SEX M
+1 FAMC @F29@
+1 BIRT
+2 DATE 1775
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 12 May 1841
+2 PLAC Árnanesi, Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392554098674:1030:160490195
+0 @I212565603183@ INDI
+1 NAME Malmfríur /Benediktsdóttir/
+2 GIVN Malmfríur
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMC @F29@
+1 BIRT
+2 DATE 1767
+2 PLAC Fell, Kálfafellsstaður, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 22 January 1854
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 392554098676:1030:160490195
+0 @I212565603294@ INDI
+1 NAME Sigríður /Bergsdóttir/
+2 GIVN Sigríður
+2 SURN Bergsdóttir
+1 SEX F
+1 FAMS @F2@
+1 BIRT
+2 DATE APR 1793
+2 PLAC Árnanes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 1866
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428157937:1030:185577060
+0 @I212565603296@ INDI
+1 NAME Guðrún /Benediktsdóttir/
+2 GIVN Guðrún
+2 SURN Benediktsdóttir
+1 SEX F
+1 FAMC @F2@
+1 BIRT
+2 DATE SEP 1818
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 17 Jan 1886
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 172488509211:1030:175766849
+2 _APID 382428182806:1030:185577060
+0 @I212565603708@ INDI
+1 NAME Guðrún /Jónsdóttir/
+2 GIVN Guðrún
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMS @F5@
+1 BIRT
+2 DATE 29 SEP 1828
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428235122:1030:185577060
+0 @I212565603709@ INDI
+1 NAME Kristín /Rafnkelsdóttir/
+2 GIVN Kristín
+2 SURN Rafnkelsdóttir
+1 SEX F
+1 FAMC @F5@
+1 BIRT
+2 DATE JUN 1857
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428235123:1030:185577060
+0 @I212565603710@ INDI
+1 NAME Sigríður /Rafnkelsdóttir/
+2 GIVN Sigríður
+2 SURN Rafnkelsdóttir
+1 SEX F
+1 FAMC @F5@
+1 BIRT
+2 DATE MAY 1860
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE CHILD
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428235124:1030:185577060
+0 @I212565603712@ INDI
+1 NAME Benedikt /Rafnkelsson/
+2 GIVN Benedikt
+2 SURN Rafnkelsson
+1 SEX M
+1 FAMC @F5@
+1 BIRT
+2 DATE DEC 1862
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 30 APR 1952
+2 PLAC Winnipeg, Manitoba, Canada
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428235125:1030:185577060
+0 @I212565603714@ INDI
+1 NAME Guðjón /Rafnkelsson/
+2 GIVN Guðjón
+2 SURN Rafnkelsson
+1 SEX M
+1 FAMC @F5@
+1 BIRT
+2 DATE AUG 1864
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 13 FEB 1959
+2 PLAC Lundar, Manitoba, Canada
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428235126:1030:185577060
+0 @I212565603717@ INDI
+1 NAME Kristín /Rafnkelsdóttir/
+2 GIVN Kristín
+2 SURN Rafnkelsdóttir
+1 SEX F
+1 FAMC @F5@
+1 BIRT
+2 DATE JAN 1868
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 1938
+2 PLAC Manitoba, Canada
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428235127:1030:185577060
+0 @I212565603720@ INDI
+1 NAME Eiríkur /Rafnkelsson/
+2 GIVN Eiríkur
+2 SURN Rafnkelsson
+1 SEX M
+1 FAMC @F5@
+1 BIRT
+2 DATE DEC 1871
+2 PLAC Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428235128:1030:185577060
+0 @I212565604086@ INDI
+1 NAME Jón hreppstjóri /Magnússon/
+2 GIVN Jón hreppstjóri
+2 SURN Magnússon
+1 SEX M
+1 FAMS @F3@
+1 BIRT
+2 DATE 5 OCT 1788
+2 PLAC Bjarnanes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428150272:1030:185577060
+0 @I212565604087@ INDI
+1 NAME Vilborg /Jónsdóttir/
+2 GIVN Vilborg
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F3@
+1 BIRT
+2 DATE 30 SEP 1815
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428150281:1030:185577060
+0 @I212565604091@ INDI
+1 NAME Jón /Jónsson/
+2 GIVN Jón
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F3@
+1 BIRT
+2 DATE ABT 1820
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428150282:1030:185577060
+0 @I212565604094@ INDI
+1 NAME Rannveig /Jónsdóttir/
+2 GIVN Rannveig
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F3@
+1 BIRT
+2 DATE 17 AUG 1818
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428205737:1030:185577060
+0 @I212565604095@ INDI
+1 NAME Hallur /Jónsson/
+2 GIVN Hallur
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F3@
+1 BIRT
+2 DATE 6 NOV 1826
+2 PLAC Hafnanes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428211536:1030:185577060
+0 @I212565604096@ INDI
+1 NAME Halla /Jónsdóttir/
+2 GIVN Halla
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F3@
+1 BIRT
+2 DATE 1816
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428299673:1030:185577060
+0 @I212565604098@ INDI
+1 NAME Jón /Einarsson/
+2 GIVN Jón
+2 SURN Einarsson
+1 SEX M
+1 FAMS @F4@
+1 BIRT
+2 DATE 1772
+2 PLAC Árnanes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 26 SEP 1834
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151326:1030:185577060
+0 @I212565604102@ INDI
+1 NAME Ófeigur /Jónsson/
+2 GIVN Ófeigur
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F4@
+1 FAMS @F28@
+1 BIRT
+2 DATE 3 JUL 1814
+2 PLAC Krossaland, Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151283:1030:185577060
+0 @I212565604251@ INDI
+1 NAME Rannveig /Bergsdóttir/
+2 GIVN Rannveig
+2 SURN Bergsdóttir
+1 SEX F
+1 FAMS @F28@
+1 BIRT
+2 DATE 26 MAR 1823
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 6 MAY 1910
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428150335:1030:185577060
+0 @I212565604252@ INDI
+1 NAME Ófeigur /Ófeigsson/
+2 GIVN Ófeigur
+2 SURN Ófeigsson
+1 SEX M
+1 FAMC @F28@
+1 BIRT
+2 DATE 1842
+2 PLAC Bjarnanes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE CHILD
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151284:1030:185577060
+0 @I212565604253@ INDI
+1 NAME Guðrún /Ófeigsdóttir/
+2 GIVN Guðrún
+2 SURN Ófeigsdóttir
+1 SEX F
+1 FAMC @F28@
+1 BIRT
+2 DATE 8 APR 1844
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 21 SEP 1912
+2 PLAC Framnes, Manitoba, Canada
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151285:1030:185577060
+0 @I212565604254@ INDI
+1 NAME Sigríður /Ófeigsdóttir/
+2 GIVN Sigríður
+2 SURN Ófeigsdóttir
+1 SEX F
+1 FAMC @F28@
+1 BIRT
+2 DATE JUN 1845
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151286:1030:185577060
+0 @I212565604255@ INDI
+1 NAME Bergur /Ófeigsson/
+2 GIVN Bergur
+2 SURN Ófeigsson
+1 SEX M
+1 FAMC @F28@
+1 BIRT
+2 DATE DEC 1846
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151287:1030:185577060
+0 @I212565604256@ INDI
+1 NAME Jón /Ófeigsson/
+2 GIVN Jón
+2 SURN Ófeigsson
+1 SEX M
+1 FAMC @F28@
+1 BIRT
+2 DATE JUN 1848
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151288:1030:185577060
+0 @I212565604257@ INDI
+1 NAME Jón /Ófeigsson/
+2 GIVN Jón
+2 SURN Ófeigsson
+1 SEX M
+1 FAMC @F28@
+1 BIRT
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151289:1030:185577060
+0 @I212565604259@ INDI
+1 NAME Ljótunn /Ófeigsdóttir/
+2 GIVN Ljótunn
+2 SURN Ófeigsdóttir
+1 SEX F
+1 FAMC @F28@
+1 BIRT
+2 DATE OCT 1850
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151290:1030:185577060
+0 @I212565604265@ INDI
+1 NAME Sigurður /Ófeigsson/
+2 GIVN Sigurður
+2 SURN Ófeigsson
+1 SEX M
+1 FAMC @F28@
+1 BIRT
+2 DATE FEB 1853
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE CHILD
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151291:1030:185577060
+0 @I212565604266@ INDI
+1 NAME Einar /Ófeigsson/
+2 GIVN Einar
+2 SURN Ófeigsson
+1 SEX M
+1 FAMC @F28@
+1 BIRT
+2 DATE AUG 1856
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE CHILD
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151292:1030:185577060
+0 @I212565604267@ INDI
+1 NAME Vilborg /Ófeigsdóttir/
+2 GIVN Vilborg
+2 SURN Ófeigsdóttir
+1 SEX F
+1 FAMC @F28@
+1 BIRT
+2 DATE OCT 1854
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE CHILD
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151293:1030:185577060
+0 @I212565604268@ INDI
+1 NAME Jón Bergþór /Ófeigsson/
+2 GIVN Jón Bergþór
+2 SURN Ófeigsson
+1 SEX M
+1 FAMC @F28@
+1 BIRT
+2 DATE DEC 1857
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE CHILD
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151294:1030:185577060
+0 @I212565604269@ INDI
+1 NAME Hallur /Ófeigsson/
+2 GIVN Hallur
+2 SURN Ófeigsson
+1 SEX M
+1 FAMC @F28@
+1 BIRT
+2 DATE APR 1859
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE CHILD
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151295:1030:185577060
+0 @I212565604270@ INDI
+1 NAME Sigurður /Ófeigsson/
+2 GIVN Sigurður
+2 SURN Ófeigsson
+1 SEX M
+1 FAMC @F28@
+1 BIRT
+2 DATE 1860
+2 PLAC Bjarnanes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE CHILD
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151296:1030:185577060
+0 @I212565604271@ INDI
+1 NAME Bergþór /Ófeigsson/
+2 GIVN Bergþór
+2 SURN Ófeigsson
+1 SEX M
+1 FAMC @F28@
+1 BIRT
+2 DATE DEC 1862
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151297:1030:185577060
+0 @I212565604273@ INDI
+1 NAME Sigurður /Ófeigsson/
+2 GIVN Sigurður
+2 SURN Ófeigsson
+1 SEX M
+1 FAMC @F28@
+1 BIRT
+2 DATE AUG 1864
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151298:1030:185577060
+0 @I212565604515@ INDI
+1 NAME Páll /Magnússon/
+2 GIVN Páll
+2 SURN Magnússon
+1 SEX M
+1 FAMS @F38@
+1 BIRT
+2 DATE 4 OCT 1789
+2 PLAC Bjarnanes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 170081701885:1030:110313381
+2 _APID 382428150273:1030:185577060
+0 @I212565604516@ INDI
+1 NAME Hallur /Pálsson/
+2 GIVN Hallur
+2 SURN Pálsson
+1 SEX M
+1 FAMC @F38@
+1 BIRT
+2 DATE MAY 1816
+2 PLAC Dilksnes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 170081701908:1030:110313381
+2 _APID 382428150283:1030:185577060
+0 @I212565604517@ INDI
+1 NAME Guðmundur /Pálsson/
+2 GIVN Guðmundur
+2 SURN Pálsson
+1 SEX M
+1 FAMC @F38@
+1 BIRT
+2 DATE AUG 1830
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 170081701913:1030:110313381
+2 _APID 382428150284:1030:185577060
+0 @I212565604518@ INDI
+1 NAME Rannveig /Pálsdóttir/
+2 GIVN Rannveig
+2 SURN Pálsdóttir
+1 SEX F
+1 FAMC @F38@
+1 FAMS @F95@
+1 BIRT
+2 DATE APR 1823
+2 PLAC Dilknes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 170081701912:1030:110313381
+2 _APID 382428151376:1030:185577060
+2 _APID 402470613126:1030:179377570
+0 @I212565604942@ INDI
+1 NAME Magnus /Palsson/
+2 GIVN Magnus
+2 SURN Palsson
+1 SEX M
+1 FAMC @F38@
+1 BIRT
+2 DATE 11 Jul 1817
+2 PLAC Dilknes, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 170081701909:1030:110313381
+0 @I212565604943@ INDI
+1 NAME Magnus /Palsson/
+2 GIVN Magnus
+2 SURN Palsson
+1 SEX M
+1 FAMC @F38@
+1 BIRT
+2 DATE 13 Feb 1819
+2 PLAC Dilknes, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 170081701910:1030:110313381
+0 @I212565604944@ INDI
+1 NAME Vilborg /Palsdottir/
+2 GIVN Vilborg
+2 SURN Palsdottir
+1 SEX F
+1 FAMC @F38@
+1 BIRT
+2 DATE 25 Aug 1820
+2 PLAC Dilknes, Bjarnanes, Austurskaftafell, Iceland
+1 DEAT
+2 DATE 15 Jul 1832
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 170081701911:1030:110313381
+0 @I212565604945@ INDI
+1 NAME Thordur /Palsson/
+2 GIVN Thordur
+2 SURN Palsson
+1 SEX M
+1 FAMC @F38@
+1 BIRT
+2 DATE 14 Dec 1833
+2 PLAC Dilknes, Bjarnanes, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 170081701914:1030:110313381
+0 @I212565604946@ INDI
+1 NAME Sigmundur /Ketilsson/
+2 GIVN Sigmundur
+2 SURN Ketilsson
+1 SEX M
+1 FAMS @F95@
+1 BIRT
+2 DATE 1823
+2 PLAC Einholt, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428150228:1030:185577060
+2 _APID 402470613153:1030:179377570
+0 @I212565604948@ INDI
+1 NAME unnamed /Sigmundsson/
+2 GIVN unnamed
+2 SURN Sigmundsson
+1 SEX M
+1 FAMC @F95@
+1 BIRT
+2 DATE 1 MAR 1851
+2 PLAC Bjarnanes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE CHILD
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151377:1030:185577060
+0 @I212565604954@ INDI
+1 NAME Páll /Sigmundsson/
+2 GIVN Páll
+2 SURN Sigmundsson
+1 SEX M
+1 FAMC @F95@
+1 BIRT
+2 DATE MAY 1852
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151378:1030:185577060
+0 @I212565604957@ INDI
+1 NAME Ketill /Sigmundsson/
+2 GIVN Ketill
+2 SURN Sigmundsson
+1 SEX M
+1 FAMC @F95@
+1 BIRT
+2 DATE OCT 1855
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151379:1030:185577060
+0 @I212565604958@ INDI
+1 NAME Álfheiður /Sigmundsdóttir/
+2 GIVN Álfheiður
+2 SURN Sigmundsdóttir
+1 SEX F
+1 FAMC @F95@
+1 BIRT
+2 DATE MAR 1856
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151380:1030:185577060
+0 @I212565604961@ INDI
+1 NAME Kristján /Sigmundsson/
+2 GIVN Kristján
+2 SURN Sigmundsson
+1 SEX M
+1 FAMC @F95@
+1 BIRT
+2 DATE MAR 1864
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151382:1030:185577060
+0 @I212565604962@ INDI
+1 NAME Alfríður /Sigmundsdóttir/
+2 GIVN Alfríður
+2 SURN Sigmundsdóttir
+1 SEX F
+1 FAMC @F95@
+1 BIRT
+2 DATE ABT 1865
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151383:1030:185577060
+0 @I212565604964@ INDI
+1 NAME Níels /Sigmundsson/
+2 GIVN Níels
+2 SURN Sigmundsson
+1 SEX M
+1 FAMC @F95@
+1 BIRT
+2 DATE MAY 1865
+2 PLAC Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE CHILD
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151384:1030:185577060
+0 @I212565604966@ INDI
+1 NAME Þórður /Sigmundsson/
+2 GIVN Þórður
+2 SURN Sigmundsson
+1 SEX M
+1 FAMC @F95@
+1 BIRT
+2 DATE 18 Jan 1862
+2 PLAC Iceland
+1 DEAT
+2 DATE 3 April 1924
+2 PLAC Gardar Township, Pembina County, North Dakota, United States of America
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 382428151381:1030:185577060
+2 _APID 402470611454:1030:179377570
+0 @I212565643421@ INDI
+1 NAME Ingunn /Gudmundsdottir/
+2 GIVN Ingunn
+2 SURN Gudmundsdottir
+1 SEX F
+1 FAMC @F141@
+1 FAMS @F89@
+1 BIRT
+2 DATE 1764
+2 PLAC Felli i Sudursveit, Austur-Skaftafellsysla, Iceland
+1 DEAT
+2 DATE 5 OCT 1834
+2 PLAC Kalfafelli i Sudursveit, Austur-Skaftafellsysla, Iceland
+0 @I212565643437@ INDI
+1 NAME Gudmundur "eldri" /Brynjolfsson/
+2 GIVN Gudmundur "eldri"
+2 SURN Brynjolfsson
+1 SEX M
+1 FAMC @F76@
+1 FAMS @F141@
+1 BIRT
+2 DATE 1732
+1 DEAT
+2 DATE JUN 1806
+2 PLAC Kalfafelli i Sudursveit, Austur-Skaftafellsysla, Iceland
+0 @I212565643472@ INDI
+1 NAME Bryjolfur /Gudmundsson/
+2 GIVN Bryjolfur
+2 SURN Gudmundsson
+1 SEX M
+1 FAMC @F65@
+1 FAMS @F76@
+1 BIRT
+2 DATE Abt 1700
+2 PLAC Thvotta, Hof I Alptafirdi, Sudur-Mula, Iceland
+1 DEAT
+2 DATE 29 Oct 1786
+2 PLAC , Kalfafell, Austur-Skaftafell, Iceland
+1 OBJE @O1@
+2 _PRIM Y
+0 @I212565643494@ INDI
+1 NAME Guðný /GUÐMUNDSDÓTTIR/
+2 GIVN Guðný
+2 SURN GUÐMUNDSDÓTTIR
+1 SEX F
+1 FAMC @F64@
+1 FAMS @F76@
+1 BIRT
+2 DATE ABT 1704
+2 PLAC Stafafell, Austur-Skaftafellssysla, Iceland
+1 DEAT
+2 DATE ABT 1780
+2 PLAC Kalfafelli i Sudursveit, Austur-Skaftafellsysla, Iceland
+0 @I212565643511@ INDI
+1 NAME Guðmundur /ÁRNASON/
+2 GIVN Guðmundur
+2 SURN ÁRNASON
+1 SEX M
+1 FAMS @F64@
+1 BIRT
+2 DATE 1679
+2 PLAC Stafafell, Austur-Skaftafellsysla, Islande
+1 DEAT
+2 DATE 1708
+0 @I212565643522@ INDI
+1 NAME Solveig /ÁRNADÓTTIR/
+2 GIVN Solveig
+2 SURN ÁRNADÓTTIR
+1 SEX F
+1 FAMS @F64@
+1 BIRT
+2 DATE 1676
+2 PLAC Tunguhagi, Vallanes, Sudur-Mulasysla, Islande
+1 DEAT
+2 DATE 1708
+2 PLAC Stafafell, Austur-Skaftafellssysla, Islande
+0 @I212565643533@ INDI
+1 NAME Gudmundur /Magnusson/
+2 GIVN Gudmundur
+2 SURN Magnusson
+1 SEX M
+1 FAMS @F65@
+1 BIRT
+2 DATE Abt 1669
+2 PLAC Vindbordssel, Einholt I Hornafirdi, Austur-Skaftafell, Iceland
+1 DEAT
+2 DATE 5 Jan 1726
+2 PLAC Stafafell, Skaftafellsssla, IS
+1 OBJE @O7@
+2 _PRIM Y
+0 @I212565643557@ INDI
+1 NAME Sigridur /Brynjolfsdottir/
+2 GIVN Sigridur
+2 SURN Brynjolfsdottir
+1 SEX F
+1 FAMC @F23@
+1 FAMS @F65@
+1 BIRT
+2 DATE Abt 1680
+2 PLAC Melrakkanes, Hof I Alphafirdi, Sudur-Mula, Iceland
+1 DEAT
+2 DATE Bef 1725
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 152208830172:1030:114334185
+2 _APID 182407689016:1030:157077526
+2 _APID 340026192464:1030:103447234
+1 OBJE @O15@
+2 _PRIM Y
+0 @I212565643568@ INDI
+1 NAME Brynjolfur /Gudmundsson/
+2 GIVN Brynjolfur
+2 SURN Gudmundsson
+1 SEX M
+1 FAMC @F19@
+1 FAMS @F23@
+1 BIRT
+2 DATE Abt 1648
+2 PLAC Melrakkanes, Hof I Alptafirdi, S-Ml, Iceland
+1 DEAT
+2 DATE Bef 1703
+2 PLAC Alftafjord, , Sudur-Mula, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 152208831422:1030:114334185
+2 _APID 182407716895:1030:157077526
+2 _APID 340026192466:1030:103447234
+0 @I212565643671@ INDI
+1 NAME Gudmundur /Bessason/
+2 GIVN Gudmundur
+2 SURN Bessason
+1 SEX M
+1 FAMS @F19@
+1 BIRT
+2 DATE 1600
+2 PLAC Melrakkanes, Hof I Alptafirdi, Sudur-Mulasysla, Iceland
+1 DEAT
+2 PLAC Melrakkanes, Hof I Alptafirdi, Sudur-Mulasysla, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 152208831456:1030:114334185
+2 _APID 182407758010:1030:157077526
+2 _APID 340026194293:1030:103447234
+0 @I212565643676@ INDI
+1 NAME Kristin /Brynjolfsdottir/
+2 GIVN Kristin
+2 SURN Brynjolfsdottir
+1 SEX F
+1 FAMC @F118@
+1 FAMS @F19@
+1 BIRT
+2 DATE ABT 1610
+2 PLAC of Hoskuldstadir, EydalirBreiddal, Sudur Mula, Iceland
+1 DEAT
+2 PLAC Melrakkanes, Hof I Alptafirdi, Sudur-Mulasysla, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 152208831478:1030:114334185
+2 _APID 182407758011:1030:157077526
+2 _APID 340026194294:1030:103447234
+0 @I212565643678@ INDI
+1 NAME Katrin /Hjorleifsdottir/
+2 GIVN Katrin
+2 SURN Hjorleifsdottir
+1 SEX F
+1 FAMS @F23@
+1 BIRT
+2 DATE 1652
+2 PLAC Geithellum I Alptafirdi, Sudur-Mulasysla, Iceland
+1 DEAT
+2 DATE Abt 1710
+2 PLAC Alftafjord, , Sudur-Mula, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 152208831441:1030:114334185
+2 _APID 182407716898:1030:157077526
+2 _APID 340026192467:1030:103447234
+0 @I212565643684@ INDI
+1 NAME Gudmundur /Brynjolfsson/
+2 GIVN Gudmundur
+2 SURN Brynjolfsson
+1 SEX M
+1 FAMC @F23@
+1 BIRT
+2 DATE Abt 1687
+2 PLAC Melrakkanes, H, Sudur-Mula, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182407716901:1030:157077526
+0 @I212565643687@ INDI
+1 NAME Kristin /Brynjolfsdottir/
+2 GIVN Kristin
+2 SURN Brynjolfsdottir
+1 SEX F
+1 FAMC @F23@
+1 BIRT
+2 DATE Abt 1690
+2 PLAC Melrakkanes, H, Sudur-Mula, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182407716903:1030:157077526
+0 @I212565643688@ INDI
+1 NAME Emerentiana /Brynjolfsdottir/
+2 GIVN Emerentiana
+2 SURN Brynjolfsdottir
+1 SEX F
+1 FAMC @F23@
+1 BIRT
+2 DATE Abt 1692
+2 PLAC Melrakkanes, H, Sudur-Mula, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182407716904:1030:157077526
+0 @I212565643691@ INDI
+1 NAME Einar /Brynjolfsson/
+2 GIVN Einar
+2 SURN Brynjolfsson
+1 SEX M
+1 FAMC @F23@
+1 BIRT
+2 DATE Abt 1694
+2 PLAC Melrakkanes, H, Sudur-Mula, Iceland
+1 DEAT
+2 DATE Bef 1703
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182407716906:1030:157077526
+0 @I212565643752@ INDI
+1 NAME Eiríkur /þorsteinsson/
+2 GIVN Eiríkur
+2 SURN þorsteinsson
+1 SEX M
+1 FAMC @F56@
+1 FAMS @F12@
+1 BIRT
+2 DATE 11 Nov 1669
+2 PLAC Modrudalur, Bru a Jokuldal, Nordur Mula, Iceland
+1 DEAT
+2 DATE 8 Nov 1738
+2 PLAC , Saurbaer, Eyjafjardar, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 1868042157:1030:25312791
+2 _APID 26109302065:1030:53749503
+2 _APID 40177846195:1030:62448525
+0 @I212565643766@ INDI
+1 NAME Helga /Bjornsdottir/
+2 GIVN Helga
+2 SURN Bjornsdottir
+1 SEX F
+1 FAMC @F105@
+1 FAMS @F12@
+1 BIRT
+2 DATE 1678
+2 PLAC Miklibaer, Skagafjardar, Iceland
+1 DEAT
+2 DATE 1746
+2 PLAC Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 1868042200:1030:25312791
+2 _APID 26109302067:1030:53749503
+2 _APID 40177846196:1030:62448525
+0 @I212565643797@ INDI
+1 NAME Björn /Skúlason/
+2 GIVN Björn
+2 SURN Skúlason
+1 SEX M
+1 FAMC @F49@
+1 FAMS @F105@
+1 BIRT
+2 DATE 1652
+2 PLAC of, Goddalir, Skagafjardar, Iceland
+1 DEAT
+2 DATE 1690
+2 PLAC Miklibær, Höfðastrandarhreppur, Skagafjarðarsýsla
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 1868148520:1030:25312791
+2 _APID 26883005377:1030:53749503
+2 _APID 40177846679:1030:62448525
+0 @I212565643900@ INDI
+1 NAME Sigríður /þorgilsdóttir/
+2 GIVN Sigríður
+2 SURN þorgilsdóttir
+1 SEX F
+1 FAMS @F105@
+1 BIRT
+2 DATE 1645
+2 PLAC of, Brimilsvöllum, Fróðá, Snæfellsnes, Iceland
+1 DEAT
+2 PLAC Miklibær, Höfðastrandarhreppur, Skagafjarðarsýsla
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 1868148553:1030:25312791
+2 _APID 26883005378:1030:53749503
+2 _APID 40177846680:1030:62448525
+0 @I212565643999@ INDI
+1 NAME Skúli "stutti" /Eiríksson/
+2 GIVN Skúli "stutti"
+2 SURN Eiríksson
+1 SEX M
+1 FAMC @F12@
+1 BIRT
+2 DATE 1720
+2 PLAC of, Garpsdalur, AusturBardastron, Iceland
+1 DEAT
+2 DATE 2 Mar 1804
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 1812699996:1030:25312791
+2 _APID 40177845967:1030:62448525
+0 @I212565644000@ INDI
+1 NAME Sigridur /Eiriksdottir/
+2 GIVN Sigridur
+2 SURN Eiriksdottir
+1 SEX F
+1 FAMC @F12@
+1 BIRT
+2 DATE 1704
+2 PLAC StadurReykjanesi, AusturBardastron, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 1868055369:1030:25312791
+2 _APID 40177846197:1030:62448525
+0 @I212565644001@ INDI
+1 NAME Thorsteinn /Eiriksson/
+2 GIVN Thorsteinn
+2 SURN Eiriksson
+1 SEX M
+1 FAMC @F12@
+1 BIRT
+2 DATE 30 Apr 1713
+2 PLAC of, Garpsdalur, AusturBardastron, Iceland
+1 DEAT
+2 DATE 22 Sep 1767
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 1868055437:1030:25312791
+2 _APID 40177846201:1030:62448525
+0 @I212565644003@ INDI
+1 NAME Gunnlaugur /Eiriksson/
+2 GIVN Gunnlaugur
+2 SURN Eiriksson
+1 SEX M
+1 FAMC @F12@
+1 BIRT
+2 DATE 26 Nov 1714
+2 PLAC of, Garpsdalur, AusturBardastron, Iceland
+1 DEAT
+2 DATE 14 May 1796
+2 PLAC Munkathvera, Eyjafjardar, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 1868055469:1030:25312791
+2 _APID 40177846203:1030:62448525
+0 @I212565644004@ INDI
+1 NAME Domhildur /Eiriksdottir/
+2 GIVN Domhildur
+2 SURN Eiriksdottir
+1 SEX F
+1 FAMC @F12@
+1 BIRT
+2 DATE 1717
+2 PLAC of, Garpsdalur, AusturBardastron, Iceland
+1 DEAT
+2 DATE 1 Sep 1805
+2 PLAC Kristenes, Eyjafjordarsysla, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 1868055506:1030:25312791
+2 _APID 26109299411:1030:53749503
+2 _APID 40177846205:1030:62448525
+0 @I212565644071@ INDI
+1 NAME Arnþrúður /Björnsdóttir/
+2 GIVN Arnþrúður
+2 SURN Björnsdóttir
+1 SEX F
+1 FAMC @F133@
+1 FAMS @F49@
+1 BIRT
+2 DATE 1610
+2 PLAC Kálfsstaðir, Hólar í Hjaltadal, Skagafjarðar, Iceland
+1 DEAT
+2 DATE 1681
+2 PLAC Goddolum, Skagafjardarsysla, Iceland
+0 @I212565644098@ INDI
+1 NAME Skúli /Magnússon/
+2 GIVN Skúli
+2 SURN Magnússon
+1 SEX M
+1 FAMC @F8@
+1 FAMS @F49@
+1 BIRT
+2 DATE Cal 1623
+2 PLAC Mælifell, Skagafjarðar, Iceland
+1 DEAT
+2 DATE 13 Dec 1711
+0 @I212565644136@ INDI
+1 NAME Dómhlidur  /Hjaltadóttir/
+2 GIVN Dómhlidur 
+2 SURN Hjaltadóttir
+1 SEX F
+1 FAMS @F56@
+1 BIRT
+2 DATE 1639
+2 PLAC TeigurFljotshlid, Rangarvalla, Iceland
+1 DEAT
+2 DATE 1715
+2 PLAC Thigeyrar, Thingeyraklaustu,Austur Hunavatn, Iceland
+0 @I212565644153@ INDI
+1 NAME (Rev) Thorsteinn /Gunnlaugsson/
+2 GIVN (Rev) Thorsteinn
+2 SURN Gunnlaugsson
+1 SEX M
+1 FAMC @F125@
+1 FAMS @F56@
+1 BIRT
+2 DATE ABT 1636
+2 PLAC Saurbae, Saurbaejarhreppur, Eyjafjardarsysla, Iceland
+1 DEAT
+2 DATE 1686
+2 PLAC Thingeyrar, Thingeyraklaustu, Austur Hunavatn, Iceland
+0 @I212565644192@ INDI
+1 NAME Gunnlaugur /Sigurdsson/
+2 GIVN Gunnlaugur
+2 SURN Sigurdsson
+1 SEX M
+1 FAMS @F125@
+1 BIRT
+2 DATE 1605
+2 PLAC Saurbær, Eyjafjarðarsýsla, Northeastern Region, Iceland
+1 DEAT
+2 DATE 1685
+2 PLAC Saurbae, Saurbaejarheppur, Eyjafjardarsysla, Iceland
+0 @I212565644214@ INDI
+1 NAME  Magnús /Jónsson/ (Präst)
+2 GIVN  Magnús
+2 SURN Jónsson
+2 NSFX (Präst)
+1 SEX M
+1 FAMC @F10@
+1 FAMS @F8@
+1 BIRT
+2 DATE 1587
+2 PLAC Reykjarholi i Fljotum, Haganeshreppur, Skagafjardarsysla, Iceland
+1 DEAT
+2 DATE 04 May 1662
+2 PLAC Maelifell, Lytingsstadahreppur, Skagafjardarsysla, Iceland
+0 @I212565644234@ INDI
+1 NAME Ingunn /Skúladóttir/
+2 GIVN Ingunn
+2 SURN Skúladóttir
+1 SEX F
+1 FAMC @F103@
+1 FAMS @F8@
+1 BIRT
+2 DATE 1591
+2 PLAC Eirikstadir, Bergsstadur i Svartardal, Austur-Hunavatn, Iceland
+1 DEAT
+2 DATE 1628
+2 PLAC maelifell, lytingsstadahreppur, skagafjardarsysla, Iceland
+0 @I212565644253@ INDI
+1 NAME Guðrún /Halldórsdóttir/
+2 GIVN Guðrún
+2 SURN Halldórsdóttir
+1 SEX F
+1 FAMC @F112@
+1 FAMS @F133@
+1 BIRT
+2 DATE Abt 1584
+2 PLAC of, Viðivellir, Miklibær í Blonduhlíð, Skagafjarðar, Iceland
+1 DEAT
+2 DATE after 1625
+2 PLAC Kalfsgerdi, Iceland
+0 @I212565644279@ INDI
+1 NAME Jon /Eiriksson/
+2 GIVN Jon
+2 SURN Eiriksson
+1 SEX M
+1 FAMS @F10@
+1 BIRT
+2 DATE 1564
+2 PLAC Tunga, Knappstadir, Skagafjardar, Islande
+1 DEAT
+2 DATE Abt. 1630
+2 PLAC Reykjarholi i Fljotum, Haganeshreppur, Skagafjardarsysla, Islande
+0 @I212565644304@ INDI
+1 NAME Sigridur /ÞORLEIFSDÓTTIR/
+2 GIVN Sigridur
+2 SURN ÞORLEIFSDÓTTIR
+1 SEX F
+1 FAMC @F145@
+1 FAMS @F10@
+1 BIRT
+2 DATE 1573
+2 PLAC Knappsstaðir, Skagafjarðar, Iceland
+1 DEAT
+2 DATE Abt. 1650
+2 PLAC Reykjarholi i Fljotum, Haganeshreppur, Skagafjardarsysla, Iceland
+0 @I212565644313@ INDI
+1 NAME Gudny /Gunnarsdottir/
+2 GIVN Gudny
+2 SURN Gunnarsdottir
+1 SEX F
+1 FAMS @F145@
+1 BIRT
+2 DATE Abt 1547
+2 PLAC Tunga, Knappstadir, Skagafjardar, Iceland
+1 DEAT
+2 PLAC Knappsstadir, Skagafjardar, Iceland
+0 @I212565644339@ INDI
+1 NAME Skuli /Einarsson/
+2 GIVN Skuli
+2 SURN Einarsson
+1 SEX M
+1 FAMS @F103@
+1 BIRT
+2 DATE 1560
+2 PLAC eiriksstothim, Iceland
+1 DEAT
+2 DATE 1617
+2 PLAC eiriksstathir, Iceland
+1 OBJE @O2@
+2 _PRIM Y
+0 @I212565644360@ INDI
+1 NAME Steinunn /Guðbrandsdóttir/
+2 GIVN Steinunn
+2 SURN Guðbrandsdóttir
+1 SEX F
+1 FAMC @F90@
+1 FAMS @F103@
+1 BIRT
+2 DATE 1571
+2 PLAC Hólar, Hólar í Hjaltadal, Skagafjarðar, Iceland
+1 DEAT
+2 DATE 1649
+2 PLAC Eiríkstaðir, Bergsstaðir í Svartárdal, Austur-Húnavatns, Iceland
+1 OBJE @O16@
+2 _PRIM Y
+0 @I212565644400@ INDI
+1 NAME Bishop Guðbrandur /Þorláksson/
+2 GIVN Bishop Guðbrandur
+2 SURN Þorláksson
+1 SEX M
+1 FAMC @F80@
+1 FAMS @F90@
+1 BIRT
+2 DATE 1541
+2 PLAC Melstaður, Ytri-Torfustadahreppur, Vestur-Húnavatnssýsla , Iceland
+1 DEAT
+2 DATE 20 Jul 1627
+2 PLAC Hólar, Hólahreppur, Skagafjarðarsýsla, Iceland
+1 OBJE @O17@
+2 _PRIM Y
+0 @I212565644422@ INDI
+1 NAME Guðrún /Gísladóttir/
+2 GIVN Guðrún
+2 SURN Gísladóttir
+1 SEX F
+1 FAMC @F66@
+1 FAMS @F90@
+1 BIRT
+2 DATE 1530
+2 PLAC Hólar, Hólar í Hjaltadal, Skagafjardarsysla , Iceland
+1 DEAT
+2 DATE 1583
+2 PLAC Holar, Skagafjardarsysla, Iceland
+0 @I212565644435@ INDI
+1 NAME Þorlákur /Hallgrímsson/
+2 GIVN Þorlákur
+2 SURN Hallgrímsson
+1 SEX M
+1 FAMS @F80@
+1 BIRT
+2 DATE 1516
+2 PLAC Egilstadir, Hof I Vopnafirdi, Nordur-Mula, Iceland
+1 DEAT
+2 DATE 1594
+2 PLAC Melstaður, Ytri-Torfustadahreppur, Vestur-Húnavatnssýsla , Iceland
+0 @I212565644483@ INDI
+1 NAME Helga /Jónsdóttir/
+2 GIVN Helga
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMS @F80@
+1 BIRT
+2 DATE 1502
+2 PLAC Staðarbakki, Vestur-Húnavatns, Iceland
+1 DEAT
+2 DATE 1600
+2 PLAC Auðunarstaðir, Viðidalstúnga, Vestur-Húnavatnssýsla, Iceland
+0 @I212565644522@ INDI
+1 NAME Gísli "sterki"  /Finnbogason/
+2 GIVN Gísli "sterki" 
+2 SURN Finnbogason
+1 SEX M
+1 FAMS @F66@
+1 BIRT
+2 DATE Abt. 1500
+2 PLAC Grenjaðarstaður, Suður-Þingeyjarsýsla, Norðurland Eystra, Iceland
+1 DEAT
+2 DATE FROM 1551
+2 PLAC Iceland
+0 @I212565644555@ INDI
+1 NAME Unnur /Einarsdóttir/
+2 GIVN Unnur
+2 SURN Einarsdóttir
+1 SEX F
+1 FAMS @F66@
+1 BIRT
+2 DATE Abt. 1515
+2 PLAC Iceland
+1 DEAT
+2 DATE 1587
+2 PLAC Skálholt, Árnessýsla, Icelland
+0 @I212565644990@ INDI
+1 NAME Guðrún /Gunnarsdóttir Oddsson/
+2 GIVN Guðrún
+2 SURN Gunnarsdóttir Oddsson
+1 SEX F
+1 FAMS @F112@
+1 BIRT
+2 DATE 1550
+2 PLAC of, Viðivellir, Miklibær í Blonduhlíð, Skagafjarðar, Iceland
+1 DEAT
+2 PLAC Vidivollum, Blonduhlid, Nordur-Mulasysla, Iceland
+1 OBJE @O32@
+2 _PRIM Y
+0 @I212565646648@ INDI
+1 NAME Eiríkur /Oddson/
+2 GIVN Eiríkur
+2 SURN Oddson
+1 SEX M
+1 FAMS @F73@
+1 BIRT
+2 DATE 1705
+2 PLAC Sandfell í Øraefum, Austur-Skaftafells, Islande
+1 DEAT
+2 DATE 1746
+0 @I212565647058@ INDI
+1 NAME Vilborg /Þórðardóttir/
+2 GIVN Vilborg
+2 SURN Þórðardóttir
+1 SEX F
+1 FAMC @F135@
+1 FAMS @F73@
+1 BIRT
+2 DATE 1700
+2 PLAC starmýri, álftafjarðarhreppi, Múli, Austurland, Iceland
+1 DEAT
+2 DATE 1797
+0 @I212565647095@ INDI
+1 NAME Þórur /Þorvar?Sson/
+2 GIVN Þórur
+2 SURN Þorvar?Sson
+1 SEX M
+1 FAMS @F135@
+1 BIRT
+2 DATE 1661
+2 PLAC Starmýri, Hof í Álptafirði, Suður-Múla, Islande
+0 @I212565647392@ INDI
+1 NAME Brynjolfur /Arnason/ (410)
+2 GIVN Brynjolfur
+2 SURN Arnason
+2 NSFX (410)
+1 SEX M
+1 FAMC @F150@
+1 FAMS @F118@
+1 BIRT
+2 DATE  1572
+2 PLAC of Hoskuldstadir, EydalirBreiddal, Sudur Mula, Iceland
+1 DEAT
+2 PLAC Hoskuldsstodum i Breidadal, Iceland
+0 @I212565647404@ INDI
+1 NAME Arni /Sturlason/
+2 GIVN Arni
+2 SURN Sturlason
+1 SEX M
+1 FAMS @F150@
+1 BIRT
+2 DATE  1542
+2 PLAC of Hoskuldstadir, EydalirBreiddal, Sudur Mula, Iceland
+1 DEAT
+2 PLAC Hoskuldsstodum i Breidadal, Sudur-Mulasysla, Iceland
+1 OBJE @O26@
+2 _PRIM Y
+0 @I212567396652@ INDI
+1 NAME Hugi Einarsson //
+2 GIVN Hugi Einarsson
+1 FAMC @F35@
+1 BIRT
+2 DATE 14 FEB 1965
+1 DEAT
+2 DATE 4 MAR 2015
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+0 @I212567396875@ INDI
+1 NAME Einar Hjalti Steinþórsson //
+2 GIVN Einar Hjalti Steinþórsson
+1 SEX M
+1 FAMC @F116@
+1 BIRT
+2 DATE 26 APR 1969
+0 @I212567429363@ INDI
+1 NAME Benedikt Brynjar /Snæbjörnsson/
+2 GIVN Benedikt Brynjar
+2 SURN Snæbjörnsson
+1 SEX M
+1 FAMC @F42@
+1 BIRT
+2 DATE 11 Mar 2020
+2 PLAC Akureyri, Norðurland Eystra, Iceland
+0 @I212567429497@ INDI
+1 NAME Þorbjörg /Arnórsdóttir/
+2 GIVN Þorbjörg
+2 SURN Arnórsdóttir
+1 SEX F
+1 FAMC @F13@
+1 BIRT
+2 DATE 15 Nov 1953
+0 @I212567429607@ INDI
+1 NAME Agnes Siggerður /Arnórsdóttir/
+2 GIVN Agnes Siggerður
+2 SURN Arnórsdóttir
+1 SEX F
+1 FAMC @F13@
+1 BIRT
+2 DATE 16 Jun 1960
+0 @I212567429661@ INDI
+1 NAME Svava /Arnórsdóttir/
+2 GIVN Svava
+2 SURN Arnórsdóttir
+1 SEX F
+1 FAMC @F13@
+1 BIRT
+2 DATE 26 Jan 1963
+0 @I212567429770@ INDI
+1 NAME Aðalheiður /Sigurjónsdóttir/
+2 GIVN Aðalheiður
+2 SURN Sigurjónsdóttir
+1 SEX F
+1 FAMC @F32@
+1 FAMS @F59@
+1 BIRT
+2 DATE 8 Jul 1928
+0 @I212567429864@ INDI
+1 NAME Guðmundur /Sæmundsson/
+2 GIVN Guðmundur
+2 SURN Sæmundsson
+1 SEX M
+1 FAMS @F59@
+1 BIRT
+2 DATE 17 Jan 1921
+0 @I212567429978@ INDI
+1 NAME Gunnar Þór /Guðmundsson/
+2 GIVN Gunnar Þór
+2 SURN Guðmundsson
+1 SEX M
+1 FAMC @F59@
+1 BIRT
+2 DATE 13 Dec 1947
+0 @I212587940039@ INDI
+1 NAME Þorvarður /Magnússon/
+2 GIVN Þorvarður
+2 SURN Magnússon
+1 SEX M
+1 FAMS @F108@
+1 BIRT
+2 DATE 1765
+1 DEAT
+2 DATE 16 Feb 1837
+0 @I212587940094@ INDI
+1 NAME Lúsía /Jónsdóttir/
+2 GIVN Lúsía
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F148@
+1 FAMS @F108@
+1 BIRT
+2 DATE 1766
+1 DEAT
+2 DATE 22 May 1840
+0 @I212587940121@ INDI
+1 NAME Þorsteinn /Þórðarson/
+2 GIVN Þorsteinn
+2 SURN Þórðarson
+1 SEX M
+1 FAMS @F149@
+1 BIRT
+2 DATE 1769
+1 DEAT
+2 DATE 23 Jul 1843
+0 @I212587940203@ INDI
+1 NAME Sigurður /Jónsson/
+2 GIVN Sigurður
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F34@
+1 BIRT
+2 DATE 1769
+1 DEAT
+2 DATE 23 Apr 1853
+0 @I212587940208@ INDI
+1 NAME Herdís /Hálfdánardóttir/
+2 GIVN Herdís
+2 SURN Hálfdánardóttir
+1 SEX F
+1 FAMS @F34@
+1 BIRT
+2 DATE 1774
+1 DEAT
+2 DATE 7 Aug 1852
+0 @I212587940224@ INDI
+1 NAME Þórunn /Háfdánardóttir/
+2 GIVN Þórunn
+2 SURN Háfdánardóttir
+1 SEX F
+1 FAMS @F132@
+1 BIRT
+2 DATE 1778
+1 DEAT
+2 DATE 19 Jul 1832
+0 @I212587940257@ INDI
+1 NAME Bjarni /Jónsson/
+2 GIVN Bjarni
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F63@
+1 FAMS @F52@
+1 BIRT
+2 DATE 1795
+1 DEAT
+2 DATE 5 Sep 1843
+0 @I212587940275@ INDI
+1 NAME Steinunn /Jónsdóttir/
+2 GIVN Steinunn
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F71@
+1 FAMS @F52@
+1 BIRT
+2 DATE 1790
+1 DEAT
+2 DATE 15 Jun 1862
+0 @I212587940291@ INDI
+1 NAME Jón /Bjarnason/
+2 GIVN Jón
+2 SURN Bjarnason
+1 SEX M
+1 FAMS @F63@
+0 @I212587940320@ INDI
+1 NAME Guðrún /Pálsdóttir/
+2 GIVN Guðrún
+2 SURN Pálsdóttir
+1 SEX F
+1 FAMS @F63@
+0 @I212587940327@ INDI
+1 NAME Jón /Eiríksson/
+2 GIVN Jón
+2 SURN Eiríksson
+1 SEX M
+1 FAMS @F71@
+0 @I212587940349@ INDI
+1 NAME Ingibjörg /Þorvarðardóttir/
+2 GIVN Ingibjörg
+2 SURN Þorvarðardóttir
+1 SEX F
+1 FAMS @F71@
+0 @I212587940437@ INDI
+1 NAME Jón /Steinsson/
+2 GIVN Jón
+2 SURN Steinsson
+1 SEX M
+1 FAMC @F93@
+1 FAMS @F91@
+1 BIRT
+2 DATE 1780
+1 DEAT
+2 DATE 25 Jul 1855
+0 @I212587940454@ INDI
+1 NAME Guðný /Kristjánsdóttir/
+2 GIVN Guðný
+2 SURN Kristjánsdóttir
+1 SEX F
+1 FAMC @F97@
+1 FAMS @F91@
+1 BIRT
+2 DATE 1800
+1 DEAT
+2 DATE 24 Jan 1842
+0 @I212587940462@ INDI
+1 NAME Steinn /Jónsson/
+2 GIVN Steinn
+2 SURN Jónsson
+1 SEX M
+1 FAMS @F93@
+0 @I212587940467@ INDI
+1 NAME Dýrleif /Jónsdóttir/
+2 GIVN Dýrleif
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMS @F93@
+0 @I212587940477@ INDI
+1 NAME Kristján /Vigfússon/
+2 GIVN Kristján
+2 SURN Vigfússon
+1 SEX M
+1 FAMS @F97@
+0 @I212587940483@ INDI
+1 NAME Katrín /Björnsdóttir/
+2 GIVN Katrín
+2 SURN Björnsdóttir
+1 SEX F
+1 FAMS @F97@
+0 @I212587940490@ INDI
+1 NAME Jón /Bjarnason/
+2 GIVN Jón
+2 SURN Bjarnason
+1 SEX M
+1 FAMS @F99@
+0 @I212587940498@ INDI
+1 NAME Guðrún Pálsdóttir //
+2 GIVN Guðrún Pálsdóttir
+1 SEX F
+1 FAMS @F99@
+0 @I212587940534@ INDI
+1 NAME Einar /Eiríksson/
+2 GIVN Einar
+2 SURN Eiríksson
+1 SEX M
+1 FAMC @F6@
+1 FAMS @F106@
+1 BIRT
+2 DATE 28 Nov 1799
+1 DEAT
+2 DATE 18 Oct 1841
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 102548679554:1030:194919450
+0 @I212587940546@ INDI
+1 NAME Auðbjörg / Sigurðardóttir/
+2 GIVN Auðbjörg
+2 SURN  Sigurðardóttir
+1 SEX F
+1 FAMC @F11@
+1 FAMS @F106@
+1 BIRT
+2 DATE 1807
+2 PLAC Reynivellir, Borgarhafnarhreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 17 Jun 1884
+2 PLAC Bredabolsstad i Sudursveit, Austur-Skaftafellssysla, Iceland
+0 @I212587940556@ INDI
+1 NAME Runólfur  /Jónsson/
+2 GIVN Runólfur 
+2 SURN Jónsson
+1 SEX M
+1 FAMC @F16@
+1 FAMS @F107@
+1 BIRT
+2 DATE 11 Jun 1788
+2 PLAC Dilksnes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 2 Jun 1855
+0 @I212587940562@ INDI
+1 NAME Álfheiður /Runólfsdóttir/
+2 GIVN Álfheiður
+2 SURN Runólfsdóttir
+1 SEX F
+1 FAMC @F37@
+1 FAMS @F107@
+1 BIRT
+2 DATE 20 AUG 1790
+2 PLAC Ytriborg, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+1 DEAT
+2 DATE 02 Dec 1841
+2 PLAC Bjarnanessókn, Sveitarfélagið Hornafjörður, A-Skaftafellssýsla
+0 @I212587940597@ INDI
+1 NAME Eiríkur /Einarsson/
+2 GIVN Eiríkur
+2 SURN Einarsson
+1 SEX M
+1 FAMS @F6@
+1 BIRT
+2 DATE 1776
+1 DEAT
+2 DATE 6 Nov 1830
+0 @I212587940625@ INDI
+1 NAME Valgerður /Sigurðardóttir/
+2 GIVN Valgerður
+2 SURN Sigurðardóttir
+1 SEX F
+1 FAMS @F6@
+1 BIRT
+2 DATE 1774
+1 DEAT
+2 DATE 13 Sep 1849
+0 @I212587940641@ INDI
+1 NAME Sigurdur /Arason/
+2 GIVN Sigurdur
+2 SURN Arason
+1 SEX M
+1 FAMC @F113@
+1 FAMS @F11@
+1 BIRT
+2 DATE 1778
+2 PLAC Arnanesi i Nesjum, Austur-Skaftafellssysla, Iceland
+1 DEAT
+2 DATE 11 NOV 1846
+2 PLAC Reynivellir, Austur-Skaftafellssysla, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 30263575001:1030:72870220
+0 @I212587940651@ INDI
+1 NAME Gudny /Thorsteinsdottir/
+2 GIVN Gudny
+2 SURN Thorsteinsdottir
+1 SEX F
+1 FAMC @F47@
+1 FAMS @F11@
+1 BIRT
+2 DATE 1786
+2 PLAC Kalfafelli i Sudursveit, Austur-Skaftafellsysla, Iceland
+1 DEAT
+2 DATE 28 NOV 1857
+2 PLAC Reynivellir, Austur-Skaftafellssysla, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 30263578766:1030:72870220
+0 @I212587940666@ INDI
+1 NAME Jón /Ásgrímsson/
+2 GIVN Jón
+2 SURN Ásgrímsson
+1 SEX M
+1 FAMS @F16@
+1 BIRT
+2 DATE 1765
+1 DEAT
+2 DATE 1803
+0 @I212587940679@ INDI
+1 NAME Margrét /Runólfsdóttir/
+2 GIVN Margrét
+2 SURN Runólfsdóttir
+1 SEX F
+1 FAMS @F16@
+1 BIRT
+2 DATE 1755
+0 @I212587940716@ INDI
+1 NAME Runólfur /Runólfsson/
+2 GIVN Runólfur
+2 SURN Runólfsson
+1 SEX M
+1 FAMS @F37@
+1 BIRT
+2 DATE 1758
+1 DEAT
+2 DATE 2 Nov 1834
+0 @I212587940734@ INDI
+1 NAME Guðrún /Ófeigsdóttir/
+2 GIVN Guðrún
+2 SURN Ófeigsdóttir
+1 SEX F
+1 FAMS @F37@
+1 BIRT
+2 DATE 1755
+0 @I212587942798@ INDI
+1 NAME Thorsteinn /Vigfusson/
+2 GIVN Thorsteinn
+2 SURN Vigfusson
+1 SEX M
+1 FAMS @F47@
+1 BIRT
+2 DATE 1756
+2 PLAC Felli i Sudursveit, Austur-Skaftafellsysla, Iceland
+1 DEAT
+2 DATE ABT 1815
+2 PLAC Skalafelli i Sudursveit, Austur-Skaftafellsysla, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 30263578955:1030:72870220
+0 @I212587942799@ INDI
+1 NAME Ingunn /Gudmundsdottir/
+2 GIVN Ingunn
+2 SURN Gudmundsdottir
+1 SEX F
+1 FAMS @F47@
+1 BIRT
+2 DATE 1764
+2 PLAC Felli i Sudursveit, Austur-Skaftafellsysla, Iceland
+1 DEAT
+2 DATE 05 OCT 1834
+2 PLAC Kalfafelli i Sudursveit, Austur-Skaftafellsysla, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 30263576374:1030:72870220
+0 @I212587942800@ INDI
+1 NAME Gudbjorg /Sigurdardottir/
+2 GIVN Gudbjorg
+2 SURN Sigurdardottir
+1 SEX F
+1 FAMC @F11@
+1 BIRT
+2 DATE 10 MAY 1825
+2 PLAC Reynivellir, Austur-Skaftafellssysla, Iceland
+1 DEAT
+2 DATE 10 OCT 1910
+2 PLAC Foam Lake, Saskatchewan, Canada
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 30263578316:1030:72870220
+0 @I212587942801@ INDI
+1 NAME Ari /Sigurdsson/
+2 GIVN Ari
+2 SURN Sigurdsson
+1 SEX M
+1 FAMC @F11@
+1 BIRT
+2 DATE 19 JAN 1820
+2 PLAC Reynivellir, Kalfafellsstadur, Austurskaftafell, Iceland
+1 DEAT
+2 DATE 4 DEC 1879
+2 PLAC Kalfafell, Vesturskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 30348470714:1030:72870220
+0 @I212587942802@ INDI
+1 NAME Vigfus /Sigurdsson/
+2 GIVN Vigfus
+2 SURN Sigurdsson
+1 SEX M
+1 FAMC @F11@
+1 BIRT
+2 DATE 22 SEP 1826
+2 PLAC Reynivellir, Kalfafellsstadur, Austurskaftafell, Iceland
+1 DEAT
+2 DATE 1912
+2 PLAC Felli i Sudursveit, Austur-Skaftafellsysla, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 30348470715:1030:72870220
+0 @I212587942803@ INDI
+1 NAME Gudrun /Sigurdardottir/
+2 GIVN Gudrun
+2 SURN Sigurdardottir
+1 SEX F
+1 FAMC @F11@
+1 BIRT
+2 DATE 11 APR 1824
+2 PLAC Reynivellir, Kalfafellsstadur, Austurskaftafell, Iceland
+1 DEAT
+2 DATE 15 JUN 1881
+2 PLAC Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 30348470716:1030:72870220
+0 @I212587942804@ INDI
+1 NAME Sigurdur /Sigurdsson/
+2 GIVN Sigurdur
+2 SURN Sigurdsson
+1 SEX M
+1 FAMC @F11@
+1 BIRT
+2 DATE 14 FEB 1823
+2 PLAC Reynivellir, Kalfafellsstadur, Austurskaftafell, Iceland
+1 DEAT
+2 DATE 17 MAR 1883
+2 PLAC Borg, Einholt A Myrum, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 30348470717:1030:72870220
+0 @I212587942805@ INDI
+1 NAME Gudrun "eldri" /Sigurdardottir/
+2 GIVN Gudrun "eldri"
+2 SURN Sigurdardottir
+1 SEX F
+1 FAMC @F11@
+1 BIRT
+2 DATE 12 JUL 1808
+2 PLAC Reynivellir, Kalfafellsstadur, Austurskaftafell, Iceland
+1 DEAT
+2 DATE 21 NOV 1860
+2 PLAC Holtaseli a Myrum, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 30348470720:1030:72870220
+0 @I212587942807@ INDI
+1 NAME Gudmundur /Sigurdsson/
+2 GIVN Gudmundur
+2 SURN Sigurdsson
+1 SEX M
+1 FAMC @F11@
+1 BIRT
+2 DATE 24 FEB 1810
+2 PLAC Reynivellir, Kalfafellsstadur, Austurskaftafell, Iceland
+1 DEAT
+2 DATE 5 JAN 1856
+2 PLAC Hala i Sudursveit, Austur-Skaftafellssyla, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 30348470721:1030:72870220
+0 @I212587942808@ INDI
+1 NAME Ingunn /Sigurdardottir/
+2 GIVN Ingunn
+2 SURN Sigurdardottir
+1 SEX F
+1 FAMC @F11@
+1 BIRT
+2 DATE 10 JAN 1813
+2 PLAC Reynivellir, Kalfafellsstadur, Austurskaftafell, Iceland
+1 DEAT
+2 DATE 1893
+2 PLAC Odda i Myrum, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 30348470723:1030:72870220
+0 @I212587942809@ INDI
+1 NAME Thorsteinn /Sigurdsson/
+2 GIVN Thorsteinn
+2 SURN Sigurdsson
+1 SEX M
+1 FAMC @F11@
+1 BIRT
+2 DATE 26 FEB 1815
+2 PLAC Reynivellir, Kalfafellsstadur, Austurskaftafell, Iceland
+1 DEAT
+2 DATE 19 JUL 1868
+2 PLAC Felli i Sudursveit, Austur-Skaftafellsysla, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 30348470724:1030:72870220
+0 @I212587942810@ INDI
+1 NAME Sigridur /Sigurdardottir/
+2 GIVN Sigridur
+2 SURN Sigurdardottir
+1 SEX F
+1 FAMC @F11@
+1 BIRT
+2 DATE 20 JUL 1817
+2 PLAC Reynivellir, Kalfafellsstadur, Austurskaftafell, Iceland
+1 DEAT
+2 DATE 27 JUL 1817
+2 PLAC Reynivellir, Kalfafellsstadur, Austurskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 30348470725:1030:72870220
+0 @I212587942811@ INDI
+1 NAME Sigridur /Sigurdardottir/
+2 GIVN Sigridur
+2 SURN Sigurdardottir
+1 SEX F
+1 FAMC @F11@
+1 BIRT
+2 DATE 23 NOV 1821
+2 PLAC Reynivellir, Kalfafellsstadur, Austurskaftafell, Iceland
+1 DEAT
+2 DATE 18 JUL 1901
+2 PLAC Kalfafell, Vesturskaftafell, Iceland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 30348470726:1030:72870220
+0 @I212589644405@ INDI
+1 NAME Bjarni /Eyjólfsson/
+2 GIVN Bjarni
+2 SURN Eyjólfsson
+1 SEX M
+1 FAMS @F25@
+1 BIRT
+2 DATE 3 Dec 1879
+1 DEAT
+2 DATE 22 Feb 1951
+0 @I212589644435@ INDI
+1 NAME Ingunn /Bjarnadóttir/
+2 GIVN Ingunn
+2 SURN Bjarnadóttir
+1 SEX F
+1 FAMC @F25@
+1 FAMS @F131@
+1 BIRT
+2 DATE 25 Mar 1905
+1 DEAT
+2 DATE 29 Apr 1972
+0 @I212589644715@ INDI
+1 NAME  Óttar Hrafn /Hróðmarsson/
+2 GIVN  Óttar Hrafn
+2 SURN Hróðmarsson
+1 SEX M
+1 FAMC @F131@
+1 FAMS @F129@
+1 BIRT
+2 DATE 19 Jun 1944
+0 @I212589644765@ INDI
+1 NAME Þorkell Ágúst /Óttarsson/
+2 GIVN Þorkell Ágúst
+2 SURN Óttarsson
+1 SEX M
+1 FAMC @F129@
+1 BIRT
+2 DATE 11 Apr 1969
+0 @I212602651499@ INDI
+1 NAME Baldvin Gunnlaugur /Þorvaldsson/
+2 GIVN Baldvin Gunnlaugur
+2 SURN Þorvaldsson
+2 SOUR
+2 SOUR @S664769255@
+3 _APID 1,9896::259705
+3 _APID 1,9896::483813
+1 SEX M
+2 SOUR
+2 SOUR @S664769255@
+3 _APID 1,9896::259705
+3 _APID 1,9896::483813
+1 FAMC @F88@
+1 FAMS @F30@
+1 BIRT
+2 DATE 23 Sep 1837
+2 PLAC Arnarneshreppur, Eyjafjarðarsýsla, Ísland
+2 SOUR
+2 SOUR @S664769255@
+3 _APID 1,9896::483813
+1 CHR
+2 DATE 24 Sep 1837
+2 PLAC Staerri-Arskogur,Eyjafardarsysla,Iceland
+2 SOUR @S664769255@
+3 _APID 1,9896::483813
+1 DEAT
+2 DATE 5 Oct 1919
+2 SOUR
+1 SOUR
+2 _APID 182497098827:1030:37351456
+2 _APID 382428156823:1030:185577060
+2 _APID 402288821833:1030:161794776
+1 SOUR @S664769255@
+2 _APID 1,9896::259705
+2 _APID 1,9896::483813
+1 OBJE @O28@
+2 _PRIM Y
+0 @I212602651525@ INDI
+1 NAME Baldvina Margrét /Baldvinsdóttir/
+2 GIVN Baldvina Margrét
+2 SURN Baldvinsdóttir
+2 SOUR
+2 SOUR @S664769255@
+3 _APID 1,9896::259704
+1 SEX F
+2 SOUR
+2 SOUR @S664769255@
+3 _APID 1,9896::259704
+1 FAMC @F30@
+1 BIRT
+2 DATE 27 May 1869
+2 PLAC Böggvistöðum, Svarfaðardal, Iceland
+2 SOUR
+2 SOUR @S664769255@
+3 _APID 1,9896::259704
+1 CHR
+2 DATE 30 May 1869
+2 PLAC Tjorn I Svarvadardal,Eyjafardarsysla,Iceland
+2 SOUR @S664769255@
+3 _APID 1,9896::259704
+1 DEAT
+2 DATE 8 Dec 1896
+2 PLAC Akra, Pembina, North Dakota, USA
+2 SOUR
+1 SOUR
+2 _APID 29333816727:1030:18725193
+2 _APID 182497098895:1030:37351456
+1 SOUR @S664769255@
+2 _APID 1,9896::259704
+0 @I212602651768@ INDI
+1 NAME Þóra /Sigurðardóttir/
+2 GIVN Þóra
+2 SURN Sigurðardóttir
+2 SOUR
+2 SOUR @S664769255@
+3 _APID 1,9896::259706
+1 SEX F
+2 SOUR
+2 SOUR @S664769255@
+3 _APID 1,9896::259706
+1 FAMS @F30@
+1 BIRT
+2 DATE 6 Aug 1842
+2 PLAC Arnarneshreppur, Eyjafjarðarsýsla, Ísland
+2 SOUR
+1 DEAT
+2 DATE 20 April 1933
+2 SOUR
+1 SOUR
+2 _APID 182497098768:1030:37351456
+2 _APID 402290170913:1030:161794776
+1 SOUR @S664769255@
+2 _APID 1,9896::259706
+1 OBJE @O14@
+0 @I212605393119@ INDI
+1 NAME Ásgeir /Egilsson/
+2 GIVN Ásgeir
+2 SURN Egilsson
+1 SEX M
+1 FAMS @F53@
+1 BIRT
+2 DATE 14 Jun 1952
+0 @I212605393158@ INDI
+1 NAME Rannveig /Ingvadóttir/
+2 GIVN Rannveig
+2 SURN Ingvadóttir
+1 SEX F
+1 FAMS @F53@
+1 BIRT
+2 DATE 16 Jun 1958
+0 @I212605393272@ INDI
+1 NAME Þröstur /Helgason/
+2 GIVN Þröstur
+2 SURN Helgason
+1 SEX M
+1 FAMC @F136@
+1 FAMS @F70@
+1 FAMS @F79@
+1 BIRT
+2 DATE 23 Mar 1970
+0 @I212605394595@ INDI
+1 NAME Helgi /Kristmundsson/
+2 GIVN Helgi
+2 SURN Kristmundsson
+1 SEX M
+1 FAMS @F136@
+1 BIRT
+2 DATE 16 Aug 1946
+0 @I212605394719@ INDI
+1 NAME Guðrún Ragnhildur /Þrastardóttir/
+2 GIVN Guðrún Ragnhildur
+2 SURN Þrastardóttir
+1 SEX F
+1 FAMC @F79@
+1 BIRT
+2 DATE 13 Oct 2011
+0 @I212605396405@ INDI
+1 NAME Arney Björk /Helgason/
+2 GIVN Arney Björk
+2 SURN Helgason
+1 SEX F
+1 FAMC @F79@
+1 BIRT
+2 DATE 9 Jul 2013
+0 @I212605396479@ INDI
+1 NAME Hrannar Ari /Helgason/
+2 GIVN Hrannar Ari
+2 SURN Helgason
+1 SEX M
+1 FAMC @F79@
+1 BIRT
+2 DATE 8 Jun 2009
+0 @I212605396792@ INDI
+1 NAME Hrafn Helgi /Helgason/
+2 GIVN Hrafn Helgi
+2 SURN Helgason
+1 SEX M
+1 FAMC @F79@
+1 BIRT
+2 DATE 15 oct 2010
+0 @I212605396916@ INDI
+1 NAME Katrín /Helgadóttir/
+2 GIVN Katrín
+2 SURN Helgadóttir
+1 SEX F
+1 FAMC @F136@
+1 BIRT
+2 DATE 5 Jul 1967
+0 @I212605397376@ INDI
+1 NAME Kristín Hrafnhildur /Aradóttir/
+2 GIVN Kristín Hrafnhildur
+2 SURN Aradóttir
+1 SEX F
+1 FAMS @F79@
+0 @I212605397488@ INDI
+1 NAME Egill /Ásgeirsson/
+2 GIVN Egill
+2 SURN Ásgeirsson
+1 SEX M
+1 FAMC @F53@
+1 FAMS @F83@
+1 BIRT
+2 DATE 10 Nov 1981
+0 @I212605397546@ INDI
+1 NAME Óskar /Ásgeirsson/
+2 GIVN Óskar
+2 SURN Ásgeirsson
+1 SEX M
+1 FAMC @F53@
+1 FAMS @F31@
+1 BIRT
+2 DATE 15 Dec 1992
+0 @I212605397836@ INDI
+1 NAME Jón Heiðar /Ásgeirsson/
+2 GIVN Jón Heiðar
+2 SURN Ásgeirsson
+1 SEX M
+1 FAMC @F53@
+1 FAMS @F24@
+1 BIRT
+2 DATE 17 Mar 1991
+0 @I212605397896@ INDI
+1 NAME Vera /Sigurðardóttir/
+2 GIVN Vera
+2 SURN Sigurðardóttir
+1 SEX F
+1 FAMS @F31@
+1 BIRT
+2 DATE 3 Jun 1994
+0 @I212605397983@ INDI
+1 NAME Klara /Óskardóttir/
+2 GIVN Klara
+2 SURN Óskardóttir
+1 SEX F
+1 FAMC @F31@
+1 BIRT
+2 DATE 18 Jun 2019
+0 @I212605398109@ INDI
+1 NAME Elísa /Óskarsdóttir/
+2 GIVN Elísa
+2 SURN Óskarsdóttir
+1 SEX F
+1 FAMC @F31@
+1 BIRT
+2 DATE 21 Jun 2021
+0 @I212605398588@ INDI
+1 NAME Gwen /Gilbank/
+2 GIVN Gwen
+2 SURN Gilbank
+1 SEX F
+1 FAMS @F24@
+1 BIRT
+2 DATE 29 May 1990
+0 @I212605398689@ INDI
+1 NAME Freyja Sif /Jónsdóttir/
+2 GIVN Freyja Sif
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F24@
+1 BIRT
+2 DATE 18 May 2023
+0 @I212605398895@ INDI
+1 NAME Álfheiður Eva /Óladóttir/
+2 GIVN Álfheiður Eva
+2 SURN Óladóttir
+1 SEX F
+1 FAMS @F83@
+1 BIRT
+2 DATE 26 Jul 1982
+0 @I212605398966@ INDI
+1 NAME Ásgeir Óli /Egilsson/
+2 GIVN Ásgeir Óli
+2 SURN Egilsson
+1 SEX M
+1 FAMC @F83@
+1 BIRT
+2 DATE 9 Feb 2006
+0 @I212605399000@ INDI
+1 NAME Þórhallur Hrafn /Egilsson/
+2 GIVN Þórhallur Hrafn
+2 SURN Egilsson
+1 SEX M
+1 FAMC @F83@
+1 BIRT
+2 DATE 19 Apr 2010
+0 @I212605399022@ INDI
+1 NAME Anna María /Egilsdóttir/
+2 GIVN Anna María
+2 SURN Egilsdóttir
+1 SEX F
+1 FAMC @F83@
+1 BIRT
+2 DATE 16 Sep 2017
+0 @I212605399635@ INDI
+1 NAME Snjólaug /Baldvinsdóttir/
+2 GIVN Snjólaug
+2 SURN Baldvinsdóttir
+1 SEX F
+1 FAMC @F30@
+1 BIRT
+2 DATE AUG 1861
+2 PLAC Vallnahreppur, Eyjafjarðarsýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182497098891:1030:37351456
+0 @I212605399637@ INDI
+1 NAME Guðlaug /Baldvinsdóttir/
+2 GIVN Guðlaug
+2 SURN Baldvinsdóttir
+1 SEX F
+1 FAMC @F30@
+1 BIRT
+2 DATE FEB 1875
+2 PLAC Vallnahreppur, Eyjafjarðarsýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182497098892:1030:37351456
+0 @I212605399638@ INDI
+1 NAME Sigurður /Baldvinsson/
+2 GIVN Sigurður
+2 SURN Baldvinsson
+1 SEX M
+1 FAMC @F30@
+1 BIRT
+2 DATE DEC 1863
+2 PLAC Vallnahreppur, Eyjafjarðarsýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182497098893:1030:37351456
+0 @I212605399639@ INDI
+1 NAME Kristín Margrét /Baldvinsdóttir/
+2 GIVN Kristín Margrét
+2 SURN Baldvinsdóttir
+1 SEX F
+1 FAMC @F30@
+1 BIRT
+2 DATE MAY 1866
+2 PLAC Vallnahreppur, Eyjafjarðarsýsla, Ísland
+1 DEAT
+2 DATE BEF 1870
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182497098894:1030:37351456
+0 @I212605399640@ INDI
+1 NAME Soffía Jóhanna /Baldvinsdóttir/
+2 GIVN Soffía Jóhanna
+2 SURN Baldvinsdóttir
+1 SEX F
+1 FAMC @F30@
+1 BIRT
+2 DATE JUL 1870
+2 PLAC Vallnahreppur, Eyjafjarðarsýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182497098898:1030:37351456
+0 @I212605399642@ INDI
+1 NAME Kristín Filippía /Baldvinsdóttir/
+2 GIVN Kristín Filippía
+2 SURN Baldvinsdóttir
+1 SEX F
+1 FAMC @F30@
+1 BIRT
+2 DATE JUL 1872
+2 PLAC Vallnahreppur, Eyjafjarðarsýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182497098899:1030:37351456
+0 @I212605399643@ INDI
+1 NAME Þorvaldur Jón /Baldvinsson/
+2 GIVN Þorvaldur Jón
+2 SURN Baldvinsson
+1 SEX M
+1 FAMC @F30@
+1 BIRT
+2 DATE NOV 1875
+2 PLAC Vallnahreppur, Eyjafjarðarsýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+0 @I212605399645@ INDI
+1 NAME Þorsteinn Kristinn /Baldvinsson/
+2 GIVN Þorsteinn Kristinn
+2 SURN Baldvinsson
+1 SEX M
+1 FAMC @F30@
+1 BIRT
+2 DATE NOV 1876
+2 PLAC Vallnahreppur, Eyjafjarðarsýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182497098903:1030:37351456
+0 @I212605399646@ INDI
+1 NAME Sigríður /Baldvinsdóttir/
+2 GIVN Sigríður
+2 SURN Baldvinsdóttir
+1 SEX F
+1 FAMC @F30@
+1 BIRT
+2 DATE 12 OCT 1862
+2 PLAC Vallnahreppur, Eyjafjarðarsýsla, Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 182497098904:1030:37351456
+0 @I212605399992@ INDI
+1 NAME Arnbjörg /Vignisdóttir/
+2 GIVN Arnbjörg
+2 SURN Vignisdóttir
+1 SEX F
+1 FAMS @F33@
+1 BIRT
+2 DATE 14 Dec 1950
+0 @I212605400066@ INDI
+1 NAME Brynjar Þór /Sigmundsson/
+2 GIVN Brynjar Þór
+2 SURN Sigmundsson
+1 SEX M
+1 FAMC @F33@
+1 FAMS @F44@
+1 BIRT
+2 DATE 9 Aug 1978
+1 DEAT
+2 DATE 3 Dec 2014
+0 @I212605400088@ INDI
+1 NAME Baldur Arna /Sigmundsson/
+2 GIVN Baldur Arna
+2 SURN Sigmundsson
+1 SEX M
+1 FAMC @F33@
+1 FAMS @F39@
+1 BIRT
+2 DATE 27 Jan 1984
+0 @I212605400132@ INDI
+1 NAME Kristrún Ósk /Brynjarsdóttir/
+2 GIVN Kristrún Ósk
+2 SURN Brynjarsdóttir
+1 SEX F
+1 FAMC @F44@
+1 BIRT
+2 DATE 24 Dec 1999
+0 @I212605400204@ INDI
+1 NAME Guðlaug Erla /Ágústsdóttir/
+2 GIVN Guðlaug Erla
+2 SURN Ágústsdóttir
+1 SEX F
+1 FAMS @F44@
+1 BIRT
+2 DATE 16 Aug 1979
+0 @I212605400276@ INDI
+1 NAME Erla /Arnardóttir/
+2 GIVN Erla
+2 SURN Arnardóttir
+1 SEX F
+1 FAMS @F39@
+1 BIRT
+2 DATE 29 Jan 1986
+0 @I212605400341@ INDI
+1 NAME Ása Karitas /Baldursdóttir/
+2 GIVN Ása Karitas
+2 SURN Baldursdóttir
+1 SEX F
+1 FAMC @F39@
+1 BIRT
+2 DATE 1 Jun 2013
+0 @I212605400382@ INDI
+1 NAME Ylfa Björg /Baldursdóttir/
+2 GIVN Ylfa Björg
+2 SURN Baldursdóttir
+1 SEX F
+1 FAMC @F39@
+1 BIRT
+2 DATE 10 Aug 2016
+0 @I212605400470@ INDI
+1 NAME Ragnheiður /Sigurgeirsdóttir/
+2 GIVN Ragnheiður
+2 SURN Sigurgeirsdóttir
+1 SEX F
+1 FAMC @F102@
+1 BIRT
+2 DATE 4 Nov 1950
+0 @I212605400518@ INDI
+1 NAME Agnes /Sigurgeirsdóttir/
+2 GIVN Agnes
+2 SURN Sigurgeirsdóttir
+1 SEX F
+1 FAMC @F102@
+1 BIRT
+2 DATE 6 Dec 1948
+0 @I212605400576@ INDI
+1 NAME Hildur Björk /Sigurgeirsdóttir/
+2 GIVN Hildur Björk
+2 SURN Sigurgeirsdóttir
+1 SEX F
+1 FAMC @F102@
+1 BIRT
+2 DATE 29 Jan 1947
+0 @I212605400659@ INDI
+1 NAME Ólöf Stefanía /Arngrímsdóttir/
+2 GIVN Ólöf Stefanía
+2 SURN Arngrímsdóttir
+1 SEX F
+1 FAMC @F102@
+1 BIRT
+2 DATE 20 Jun 1945
+0 @I212605400692@ INDI
+1 NAME Ingunn Elísabet /Sigurgeirsdóttir/
+2 GIVN Ingunn Elísabet
+2 SURN Sigurgeirsdóttir
+1 SEX F
+1 FAMC @F102@
+1 BIRT
+2 DATE 18 May 1944
+0 @I212605400784@ INDI
+1 NAME Sigurjón Eðvarð /Sigurgeirsson/
+2 GIVN Sigurjón Eðvarð
+2 SURN Sigurgeirsson
+1 SEX M
+1 FAMC @F102@
+1 FAMS @F128@
+1 BIRT
+2 DATE 8 Aug 1940
+1 DEAT
+2 DATE 4 Apr 2020
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124841:1030:88380649
+2 _APID 392614196609:1030:88380649
+0 @I212605400868@ INDI
+1 NAME Jónína Guðbjörg /Sigurgeirsdóttir/
+2 GIVN Jónína Guðbjörg
+2 SURN Sigurgeirsdóttir
+1 SEX F
+1 FAMC @F102@
+1 FAMS @F115@
+1 BIRT
+2 DATE 02 AUG 1937
+1 DEAT
+2 DATE 16 May 2024
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124835:1030:88380649
+2 _APID 392614196611:1030:88380649
+0 @I212605401062@ INDI
+1 NAME Sigurbjörg /Sigurjónsdóttir/
+2 GIVN Sigurbjörg
+2 SURN Sigurjónsdóttir
+1 SEX F
+1 FAMC @F32@
+1 BIRT
+2 DATE 18 Mar 1938
+0 @I212605402404@ INDI
+1 NAME Drengur /Þorvarðarson/
+2 GIVN Drengur
+2 SURN Þorvarðarson
+1 SEX M
+1 FAMC @F77@
+1 BIRT
+2 DATE 13 Aug 1891
+2 PLAC Odda, Einholtssókn, A-Skaft. Ísland
+1 DEAT
+2 DATE 13 Aug 1891
+2 PLAC odda, einholtssókn, a-skaft., Ísland
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+0 @I212605403026@ INDI
+1 NAME Gunnhildur Þóra /Guðmundsdóttir/
+2 GIVN Gunnhildur Þóra
+2 SURN Guðmundsdóttir
+1 SEX F
+1 FAMC @F115@
+1 FAMS @F123@
+1 BIRT
+2 DATE (1968)
+1 DEAT
+2 DATE (2012)
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124848:1030:88380649
+0 @I212605405260@ INDI
+1 NAME Guðjón Páll /Guðmundsson/
+2 GIVN Guðjón Páll
+2 SURN Guðmundsson
+1 SEX M
+1 FAMC @F115@
+1 FAMS @F126@
+1 BIRT
+2 DATE 05 MAY 1962
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124850:1030:88380649
+0 @I212605405375@ INDI
+1 NAME Hjalti Geir /Guðmundsson/
+2 GIVN Hjalti Geir
+2 SURN Guðmundsson
+1 SEX M
+1 FAMC @F115@
+1 BIRT
+2 DATE 11 APR 1966
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124849:1030:88380649
+0 @I212605405377@ INDI
+1 NAME Guðmundur Örn /Guðjónsson/
+2 GIVN Guðmundur Örn
+2 SURN Guðjónsson
+1 SEX M
+1 FAMC @F126@
+1 BIRT
+2 DATE 08 JUN 1988
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124851:1030:88380649
+0 @I212605405378@ INDI
+1 NAME Alexander /Guðjónsson/
+2 GIVN Alexander
+2 SURN Guðjónsson
+1 SEX M
+1 FAMC @F126@
+1 BIRT
+2 DATE 21 JAN 1997
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124852:1030:88380649
+0 @I212605405380@ INDI
+1 NAME Katrín Rós /Guðjónsdóttir/
+2 GIVN Katrín Rós
+2 SURN Guðjónsdóttir
+1 SEX F
+1 FAMC @F126@
+1 BIRT
+2 DATE 01 DEC 2001
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124853:1030:88380649
+0 @I212605405381@ INDI
+1 NAME Anna Lydia /Guðjónsdóttir/
+2 GIVN Anna Lydia
+2 SURN Guðjónsdóttir
+1 SEX F
+1 FAMC @F126@
+1 BIRT
+2 DATE 22 JUN 2007
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124854:1030:88380649
+0 @I212605405437@ INDI
+1 NAME Saga Jóhanna Inger /Mellbin/
+2 GIVN Saga Jóhanna Inger
+2 SURN Mellbin
+1 SEX F
+1 FAMC @F123@
+1 BIRT
+2 DATE 12 SEP 1989
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124855:1030:88380649
+0 @I212605405438@ INDI
+1 NAME Fanny Ósk /Mellbin/
+2 GIVN Fanny Ósk
+2 SURN Mellbin
+1 SEX F
+1 FAMC @F123@
+1 BIRT
+2 DATE 17 JUN 1991
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124856:1030:88380649
+0 @I212605405890@ INDI
+1 NAME Þóra Ingibjörg /Sigurjónsdóttir/
+2 GIVN Þóra Ingibjörg
+2 SURN Sigurjónsdóttir
+1 SEX F
+1 FAMC @F128@
+1 FAMS @F143@
+1 BIRT
+2 DATE 29 SEP 1969
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124857:1030:88380649
+0 @I212605405891@ INDI
+1 NAME Árný Jóhanna /Sigurjónsdóttir/
+2 GIVN Árný Jóhanna
+2 SURN Sigurjónsdóttir
+1 SEX F
+1 FAMC @F128@
+1 FAMS @F57@
+1 BIRT
+2 DATE 19 SEP 1973
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124858:1030:88380649
+0 @I212605405963@ INDI
+1 NAME Unnur Hlíf /Rúnarsdóttir/
+2 GIVN Unnur Hlíf
+2 SURN Rúnarsdóttir
+1 SEX F
+1 FAMC @F143@
+1 BIRT
+2 DATE 08 JUN 1999
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124859:1030:88380649
+0 @I212605405965@ INDI
+1 NAME Auður Bríet /Rúnarsdóttir/
+2 GIVN Auður Bríet
+2 SURN Rúnarsdóttir
+1 SEX F
+1 FAMC @F143@
+1 BIRT
+2 DATE 10 MAY 2004
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124860:1030:88380649
+0 @I212605406046@ INDI
+1 NAME Hans Henrik /Christensen/
+2 GIVN Hans Henrik
+2 SURN Christensen
+1 SEX M
+1 FAMS @F57@
+1 BIRT
+2 DATE 25 Oct 1980
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567361637:1030:88380649
+0 @I212605406049@ INDI
+1 NAME Sigurjón Eðvarð /Christensen/
+2 GIVN Sigurjón Eðvarð
+2 SURN Christensen
+1 SEX M
+1 FAMC @F57@
+1 BIRT
+2 DATE 15 FEB 2009
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124861:1030:88380649
+0 @I212605406050@ INDI
+1 NAME Hans Freyr /Christensen/
+2 GIVN Hans Freyr
+2 SURN Christensen
+1 SEX M
+1 FAMC @F57@
+1 BIRT
+2 DATE 08 DEC 2012
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124862:1030:88380649
+0 @I212605409011@ INDI
+1 NAME Þorlákur /Guðmundsson/
+2 GIVN Þorlákur
+2 SURN Guðmundsson
+1 SEX M
+1 FAMC @F122@
+1 FAMS @F147@
+1 BIRT
+2 DATE 12 SEP 1961
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124863:1030:88380649
+0 @I212605409012@ INDI
+1 NAME Hjalti Þór /Ragnarsson/
+2 GIVN Hjalti Þór
+2 SURN Ragnarsson
+1 SEX M
+1 FAMC @F122@
+1 FAMS @F142@
+1 BIRT
+2 DATE 06 APR 1965
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124864:1030:88380649
+0 @I212605409013@ INDI
+1 NAME Helena /Ragnarsdóttir/
+2 GIVN Helena
+2 SURN Ragnarsdóttir
+1 SEX F
+1 FAMC @F122@
+1 FAMS @F134@
+1 BIRT
+2 DATE 20 OCT 1962
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124866:1030:88380649
+0 @I212605409067@ INDI
+1 NAME Örlygur Andri /Ragnarsson/
+2 GIVN Örlygur Andri
+2 SURN Ragnarsson
+1 SEX M
+1 FAMC @F122@
+1 FAMS @F146@
+1 BIRT
+2 DATE 09 APR 1968
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124865:1030:88380649
+0 @I212605409198@ INDI
+1 NAME Margrét Erla /Þorláksdóttir/
+2 GIVN Margrét Erla
+2 SURN Þorláksdóttir
+1 SEX F
+1 FAMC @F147@
+1 FAMS @F120@
+1 BIRT
+2 DATE 10 OCT 1982
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124867:1030:88380649
+0 @I212605409315@ INDI
+1 NAME Frosti /Jóhannesson/
+2 GIVN Frosti
+2 SURN Jóhannesson
+1 SEX M
+1 FAMC @F120@
+1 BIRT
+2 DATE 20 OCT 2009
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124889:1030:88380649
+0 @I212605409316@ INDI
+1 NAME Vikar /Jóhannesson/
+2 GIVN Vikar
+2 SURN Jóhannesson
+1 SEX M
+1 FAMC @F120@
+1 BIRT
+2 DATE 23 MAY 2015
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124925:1030:88380649
+0 @I212605409415@ INDI
+1 NAME Lilja /Þórðardóttir/
+2 GIVN Lilja
+2 SURN Þórðardóttir
+1 SEX F
+1 FAMC @F134@
+1 FAMS @F127@
+1 BIRT
+2 DATE 07 DEC 1980
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124868:1030:88380649
+0 @I212605409417@ INDI
+1 NAME Stefán Björn /DPétursson/
+2 GIVN Stefán Björn
+2 SURN DPétursson
+1 SEX M
+1 FAMC @F134@
+1 BIRT
+2 DATE 15 OCT 1994
+2 PLAC Danmörk
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124869:1030:88380649
+0 @I212605409419@ INDI
+1 NAME Axel Örn /Pétursson/
+2 GIVN Axel Örn
+2 SURN Pétursson
+1 SEX M
+1 FAMC @F134@
+1 BIRT
+2 DATE 22 JAN 1997
+2 PLAC Danmörk
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124870:1030:88380649
+0 @I212605409478@ INDI
+1 NAME Hekla /Úlfarsdóttir/
+2 GIVN Hekla
+2 SURN Úlfarsdóttir
+1 SEX F
+1 FAMC @F127@
+1 BIRT
+2 DATE 07 JUN 2013
+2 PLAC Danmörk
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124890:1030:88380649
+0 @I212605409479@ INDI
+1 NAME Edda /Úlfarsdóttir/
+2 GIVN Edda
+2 SURN Úlfarsdóttir
+1 SEX F
+1 FAMC @F127@
+1 BIRT
+2 DATE 10 APR 2015
+2 PLAC Danmörk
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124926:1030:88380649
+0 @I212605409541@ INDI
+1 NAME Davíð Þór /Hjaltason/
+2 GIVN Davíð Þór
+2 SURN Hjaltason
+1 SEX M
+1 FAMC @F142@
+1 FAMS @F138@
+1 BIRT
+2 DATE 03 JUN 1983
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124871:1030:88380649
+0 @I212605409542@ INDI
+1 NAME Daníel Þór /Hjaltason/
+2 GIVN Daníel Þór
+2 SURN Hjaltason
+1 SEX M
+1 FAMC @F142@
+1 FAMS @F137@
+1 BIRT
+2 DATE 14 FEB 1985
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124872:1030:88380649
+0 @I212605409543@ INDI
+1 NAME Danival Snær /Hjaltason/
+2 GIVN Danival Snær
+2 SURN Hjaltason
+1 SEX M
+1 FAMC @F142@
+1 BIRT
+2 DATE 15 SEP 1994
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124873:1030:88380649
+0 @I212605409544@ INDI
+1 NAME Dagmar Ýr /Hjaltadóttir/
+2 GIVN Dagmar Ýr
+2 SURN Hjaltadóttir
+1 SEX F
+1 FAMC @F142@
+1 BIRT
+2 DATE 29 MAY 1987
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124874:1030:88380649
+0 @I212605409545@ INDI
+1 NAME Svanhildur /Hjaltadóttir/
+2 GIVN Svanhildur
+2 SURN Hjaltadóttir
+1 SEX F
+1 FAMC @F142@
+1 BIRT
+2 DATE 03 JUL 1989
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124875:1030:88380649
+0 @I212605409606@ INDI
+1 NAME Óliver /Davíðsson/
+2 GIVN Óliver
+2 SURN Davíðsson
+1 SEX M
+1 FAMC @F138@
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124922:1030:88380649
+0 @I212605409641@ INDI
+1 NAME Máni Snær /Daníelsson/
+2 GIVN Máni Snær
+2 SURN Daníelsson
+1 SEX M
+1 FAMC @F137@
+1 BIRT
+2 DATE 29 AUG 2011
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124891:1030:88380649
+0 @I212605409642@ INDI
+1 NAME Stúlka /Daníelsdóttir/
+2 GIVN Stúlka
+2 SURN Daníelsdóttir
+1 SEX F
+1 FAMC @F137@
+1 BIRT
+2 DATE 01 JAN 2016
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124927:1030:88380649
+0 @I212605409721@ INDI
+1 NAME Arnar Logi /Andrason/
+2 GIVN Arnar Logi
+2 SURN Andrason
+1 SEX M
+1 FAMC @F146@
+1 BIRT
+2 DATE 26 JAN 2004
+1 SOUR @S664739640@
+2 PAGE Ancestry Family Tree
+2 _APID 48567124876:1030:88380649
+0 @I212607801663@ INDI
+1 NAME Þorvaldur /Gunnlaugsson/
+2 GIVN Þorvaldur
+2 SURN Gunnlaugsson
+2 SOUR @S664769255@
+3 _APID 1,9896::483814
+2 SOUR @S664769351@
+3 _APID 1,9897::42640
+1 SEX M
+2 SOUR @S664769255@
+3 _APID 1,9896::483814
+2 SOUR @S664769351@
+3 _APID 1,9897::42640
+1 FAMC @F58@
+1 FAMS @F88@
+1 BIRT
+2 DATE 6 NOV 1805
+2 PLAC Krossar, Arnarneshreppur, Eyjafjarðarsýsla, Ísland
+1 DEAT
+2 DATE 11 APR 1880
+2 PLAC Akureyri, Eyjafjarðarsýsla, Ísland
+1 SOUR @S664769255@
+2 _APID 1,9896::483814
+1 SOUR @S664769351@
+2 _APID 1,9897::42640
+0 @I212607801702@ INDI
+1 NAME Snjólaug /Baldvinsdóttir/
+2 GIVN Snjólaug
+2 SURN Baldvinsdóttir
+2 SOUR @S664769255@
+3 _APID 1,9896::483815
+2 SOUR @S664769351@
+3 _APID 1,9897::42639
+1 SEX F
+2 SOUR @S664769255@
+3 _APID 1,9896::483815
+2 SOUR @S664769351@
+3 _APID 1,9897::42639
+1 FAMC @F94@
+1 FAMS @F88@
+1 BIRT
+2 DATE 27 FEB 1809
+2 PLAC Grenjaðarstaður, Helgastaðahreppur, Suður–Þingeyjarsýsla, Ísland
+1 DEAT
+2 DATE 13 DEC 1890
+2 PLAC Krossar, Arnarneshreppur, Eyjafjarðarsýsla, Ísland
+1 SOUR @S664769255@
+2 _APID 1,9896::483815
+1 SOUR @S664769351@
+2 _APID 1,9897::42639
+0 @I212607802008@ INDI
+1 NAME Gunnlaugur /Þorvaldsson/
+2 GIVN Gunnlaugur
+2 SURN Þorvaldsson
+2 SOUR @S664769255@
+3 _APID 1,9896::47941
+3 _APID 1,9896::476176
+2 SOUR @S664739658@
+3 _APID 1,62476::6810805988
+1 SEX M
+2 SOUR @S664769255@
+3 _APID 1,9896::47941
+3 _APID 1,9896::476176
+2 SOUR @S664739658@
+3 _APID 1,62476::6810805988
+1 FAMC @F68@
+1 FAMS @F48@
+1 FAMS @F58@
+1 BIRT
+2 DATE Abt 1772
+2 PLAC Ingvarir, Vallnahreppur, Eyjafjarðarsýsla, Ísland
+2 SOUR @S664739658@
+3 _APID 1,62476::6810805988
+1 DEAT
+2 DATE 25 MAR 1831
+2 PLAC Hella, Arnarneshreppur, Eyjafjarðarsýsla, Ísland
+2 SOUR @S664739658@
+3 _APID 1,62476::6810805988
+1 SOUR @S664769255@
+2 _APID 1,9896::47941
+2 _APID 1,9896::476176
+1 SOUR @S664739658@
+2 _APID 1,62476::6810805988
+0 @I212607802041@ INDI
+1 NAME Þorvaldur /Sigurðsson/
+2 GIVN Þorvaldur
+2 SURN Sigurðsson
+2 SOUR @S664739658@
+3 _APID 1,62476::6810806121
+1 SEX M
+2 SOUR @S664739658@
+3 _APID 1,62476::6810806121
+1 FAMS @F68@
+1 BIRT
+2 DATE 1734
+2 SOUR @S664739658@
+3 _APID 1,62476::6810806121
+1 DEAT
+2 DATE 21 May 1785
+2 SOUR @S664739658@
+3 _APID 1,62476::6810806121
+1 SOUR @S664739658@
+2 _APID 1,62476::6810806121
+0 @I212607802042@ INDI
+1 NAME Hólmfríður /Þorvaldsdóttir/
+2 GIVN Hólmfríður
+2 SURN Þorvaldsdóttir
+2 SOUR @S664739658@
+3 _APID 1,62476::6810805984
+1 SEX F
+2 SOUR @S664739658@
+3 _APID 1,62476::6810805984
+1 FAMS @F68@
+1 BIRT
+2 DATE 1745
+2 SOUR @S664739658@
+3 _APID 1,62476::6810805984
+1 DEAT
+2 DATE 1813
+2 SOUR @S664739658@
+3 _APID 1,62476::6810805984
+1 SOUR @S664739658@
+2 _APID 1,62476::6810805984
+0 @I212607802065@ INDI
+1 NAME Thora /Jonsdr/
+2 GIVN Thora
+2 SURN Jonsdr
+2 SOUR @S664769255@
+3 _APID 1,9896::476177
+1 SEX F
+2 SOUR @S664769255@
+3 _APID 1,9896::476177
+1 FAMS @F48@
+1 SOUR @S664769255@
+2 _APID 1,9896::476177
+0 @I212607802066@ INDI
+1 NAME Sigridur /Gunnlaugsson/
+2 GIVN Sigridur
+2 SURN Gunnlaugsson
+2 SOUR @S664769255@
+3 _APID 1,9896::476175
+1 SEX F
+2 SOUR @S664769255@
+3 _APID 1,9896::476175
+1 FAMC @F48@
+1 BIRT
+2 DATE 12 Apr 1817
+2 SOUR @S664769255@
+3 _APID 1,9896::476175
+1 CHR
+2 DATE 13 Apr 1817
+2 PLAC Staerri-Arskogur,Eyjafardarsysla,Iceland
+2 SOUR @S664769255@
+3 _APID 1,9896::476175
+1 SOUR @S664769255@
+2 _APID 1,9896::476175
+0 @I212607802095@ INDI
+1 NAME Þóra /Jónsdóttir/
+2 GIVN Þóra
+2 SURN Jónsdóttir
+2 SOUR @S664769255@
+3 _APID 1,9896::48142
+1 SEX F
+2 SOUR @S664769255@
+3 _APID 1,9896::48142
+1 FAMS @F58@
+1 BIRT
+2 DATE 1782
+2 PLAC Krossar, Arnarneshreppur, Eyjafjarðarsýsla, Ísland
+1 DEAT
+2 DATE 30 JUL 1862
+2 PLAC Krossum
+1 SOUR @S664769255@
+2 _APID 1,9896::48142
+0 @I212607802127@ INDI
+1 NAME Jon /Gunnlaugsson/
+2 GIVN Jon
+2 SURN Gunnlaugsson
+2 SOUR @S664769255@
+3 _APID 1,9896::48143
+1 SEX M
+2 SOUR @S664769255@
+3 _APID 1,9896::48143
+1 FAMC @F58@
+1 BIRT
+2 DATE 12 Dec 1819
+2 SOUR @S664769255@
+3 _APID 1,9896::48143
+1 CHR
+2 DATE 21 Dec 1819
+2 PLAC Staerri-Arskogur,Eyjafardarsysla,Iceland
+2 SOUR @S664769255@
+3 _APID 1,9896::48143
+1 SOUR @S664769255@
+2 _APID 1,9896::48143
+0 @I212607802162@ INDI
+1 NAME Baldvin /Thortsteinsson/
+2 GIVN Baldvin
+2 SURN Thortsteinsson
+2 SOUR @S664769255@
+3 _APID 1,9896::394101
+2 SOUR @S664769351@
+3 _APID 1,9897::9762
+1 SEX M
+2 SOUR @S664769255@
+3 _APID 1,9896::394101
+2 SOUR @S664769351@
+3 _APID 1,9897::9762
+1 FAMC @F78@
+1 FAMS @F87@
+1 FAMS @F94@
+1 BIRT
+2 DATE 20 Jun 1781
+2 PLAC , Upsir, Svarfadardalur, Iceland
+1 CHR
+2 DATE 20 Jun 1781
+2 PLAC Grenjadarstadur,Sudur-Thingeyjarsysla,Iceland
+2 SOUR @S664769255@
+3 _APID 1,9896::394101
+1 DEAT
+2 DATE 28 Dec 1858
+2 PLAC , , Upsir, Iceland
+1 SOUR @S664769255@
+2 _APID 1,9896::394101
+1 SOUR @S664769351@
+2 _APID 1,9897::9762
+0 @I212607802194@ INDI
+1 NAME Thorsteinn /Hallgrymsson/
+2 GIVN Thorsteinn
+2 SURN Hallgrymsson
+2 SOUR @S664769255@
+3 _APID 1,9896::394103
+1 SEX M
+2 SOUR @S664769255@
+3 _APID 1,9896::394103
+1 FAMS @F78@
+1 SOUR @S664769255@
+2 _APID 1,9896::394103
+0 @I212607802195@ INDI
+1 NAME Jorun /Laurusdr/
+2 GIVN Jorun
+2 SURN Laurusdr
+2 SOUR @S664769255@
+3 _APID 1,9896::394102
+1 SEX F
+2 SOUR @S664769255@
+3 _APID 1,9896::394102
+1 FAMS @F78@
+1 SOUR @S664769255@
+2 _APID 1,9896::394102
+0 @I212607802223@ INDI
+1 NAME Philippia /Erlendsdr/
+2 GIVN Philippia
+2 SURN Erlendsdr
+2 SOUR @S664769351@
+3 _APID 1,9897::9763
+1 SEX F
+2 SOUR @S664769351@
+3 _APID 1,9897::9763
+1 FAMS @F87@
+1 SOUR @S664769351@
+2 _APID 1,9897::9763
+0 @I212607802242@ INDI
+1 NAME Filippia /Erlendsdottir/
+2 GIVN Filippia
+2 SURN Erlendsdottir
+2 SOUR @S664769255@
+3 _APID 1,9896::431758
+2 SOUR @S664769351@
+3 _APID 1,9897::9763
+1 SEX F
+2 SOUR @S664769255@
+3 _APID 1,9896::431758
+2 SOUR @S664769351@
+3 _APID 1,9897::9763
+1 FAMC @F110@
+1 FAMS @F94@
+1 BIRT
+2 DATE 7 Feb 1785
+2 PLAC , Munkathvera, Eyjafjord, Iceland
+2 SOUR @S664769255@
+3 _APID 1,9896::431758
+1 CHR
+2 DATE 08 Feb 1785
+2 PLAC Munkathvera,Eyjafardarsysla,Iceland
+2 SOUR @S664769255@
+3 _APID 1,9896::431758
+1 DEAT
+2 DATE 5 May 1838
+2 PLAC , , , Iceland
+1 SOUR @S664769255@
+2 _APID 1,9896::431758
+1 SOUR @S664769351@
+2 _APID 1,9897::9763
+0 @I212607802302@ INDI
+1 NAME Erlendur /Hialmarsson/
+2 GIVN Erlendur
+2 SURN Hialmarsson
+2 SOUR @S664769255@
+3 _APID 1,9896::431757
+1 SEX M
+2 SOUR @S664769255@
+3 _APID 1,9896::431757
+1 FAMS @F110@
+1 SOUR @S664769255@
+2 _APID 1,9896::431757
+0 @I212607802303@ INDI
+1 NAME Charitas /Sveinsdottir/
+2 GIVN Charitas
+2 SURN Sveinsdottir
+2 SOUR @S664769255@
+3 _APID 1,9896::431759
+1 SEX F
+2 SOUR @S664769255@
+3 _APID 1,9896::431759
+1 FAMS @F110@
+1 SOUR @S664769255@
+2 _APID 1,9896::431759
+0 @I212609210740@ INDI
+1 NAME Helga /Árnadóttir/
+2 GIVN Helga
+2 SURN Árnadóttir
+1 SEX F
+1 FAMS @F148@
+1 BIRT
+2 DATE 1737
+2 PLAC Holt, Einholt á Mýrum, Austur-Skaftafells, Islande
+1 DEAT
+2 PLAC Iceland
+0 @I212609210754@ INDI
+1 NAME Ari /Sigurdsson/
+2 GIVN Ari
+2 SURN Sigurdsson
+1 SEX M
+1 FAMS @F113@
+1 BIRT
+2 DATE 1740
+2 PLAC Skalafelli i Sudursveit, Austur-Skaftafellsysla, Iceland
+0 @I212609213335@ INDI
+1 NAME Þórdís Kristín /O'connor/
+2 GIVN Þórdís Kristín
+2 SURN O'connor
+1 SEX F
+1 FAMS @F100@
+1 BIRT
+2 DATE 2 Mar 2006
+0 @I212609213390@ INDI
+1 NAME Mahaut Ingiríður /Matharel/
+2 GIVN Mahaut Ingiríður
+2 SURN Matharel
+1 SEX F
+1 FAMS @F98@
+1 BIRT
+2 DATE Jun 2007 12
+0 @I212609213455@ INDI
+1 NAME Anna Huyen /Ngo/
+2 GIVN Anna Huyen
+2 SURN Ngo
+1 SEX F
+1 FAMS @F20@
+1 BIRT
+2 DATE 2003
+1 OBJE @O9@
+2 _PRIM Y
+0 @I212609213494@ INDI
+1 NAME Natálie / Stiborová/
+2 GIVN Natálie
+2 SURN  Stiborová
+1 SEX F
+1 FAMS @F45@
+0 @I212748095512@ INDI
+1 NAME Davíð Ingimar /Þórmundsson/
+2 GIVN Davíð Ingimar
+2 SURN Þórmundsson
+1 SEX M
+1 FAMS @F74@
+1 BIRT
+2 DATE 27 Jul 2004
+2 PLAC Selfoss, Suðurland, Iceland
+0 @I212750328624@ INDI
+1 NAME Thorsteinn /Vigfusson/
+2 GIVN Thorsteinn
+2 SURN Vigfusson
+1 SEX M
+1 FAMS @F89@
+1 BIRT
+2 DATE 1756
+2 PLAC Felli i Sudursveit, Austur-Skaftafellsysla, Iceland
+1 DEAT
+2 DATE ABT 1815
+2 PLAC Skalafelli i Sudursveit, Austur-Skaftafellsysla, Iceland
+0 @F1@ FAM
+1 HUSB @I212565599178@
+1 WIFE @I212565599187@
+1 CHIL @I212565599075@
+0 @F2@ FAM
+1 HUSB @I212565602982@
+1 WIFE @I212565603294@
+1 CHIL @I212565603296@
+0 @F3@ FAM
+1 HUSB @I212565604086@
+1 WIFE @I212565598660@
+1 CHIL @I212565604087@
+1 CHIL @I212565604096@
+1 CHIL @I212565604094@
+1 CHIL @I212565604091@
+1 CHIL @I212565604095@
+1 MARR
+2 DATE 13 OCT 1814
+2 PLAC Bjarnanes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+0 @F4@ FAM
+1 HUSB @I212565604098@
+1 WIFE @I212565598660@
+1 CHIL @I212565604102@
+0 @F5@ FAM
+1 HUSB @I212565598670@
+1 WIFE @I212565603708@
+1 CHIL @I212565603709@
+1 CHIL @I212565603710@
+1 CHIL @I212565603712@
+1 CHIL @I212565603714@
+1 CHIL @I212565603717@
+1 CHIL @I212565603720@
+1 MARR
+2 DATE 1856
+2 PLAC Stafafell, Bæjarhreppur, Austur–Skaftafellssýsla, Ísland
+0 @F6@ FAM
+1 HUSB @I212587940597@
+1 WIFE @I212587940625@
+1 CHIL @I212587940534@
+0 @F7@ FAM
+1 HUSB @I212565598395@
+1 WIFE @I212565598665@
+1 CHIL @I212565583779@
+0 @F8@ FAM
+1 HUSB @I212565644214@
+1 WIFE @I212565644234@
+1 CHIL @I212565644098@
+0 @F9@ FAM
+1 HUSB @I212565598395@
+1 WIFE @I212565598666@
+1 CHIL @I212565598689@
+1 CHIL @I212565598692@
+1 CHIL @I212565598696@
+1 CHIL @I212565598678@
+1 CHIL @I212565598686@
+1 CHIL @I212565598670@
+1 CHIL @I212565598673@
+1 CHIL @I212565598683@
+1 CHIL @I212565598694@
+1 CHIL @I212565598676@
+0 @F10@ FAM
+1 HUSB @I212565644279@
+1 WIFE @I212565644304@
+1 CHIL @I212565644214@
+0 @F11@ FAM
+1 HUSB @I212587940641@
+1 WIFE @I212587940651@
+1 CHIL @I212587940546@
+1 CHIL @I212587942805@
+1 CHIL @I212587942807@
+1 CHIL @I212587942808@
+1 CHIL @I212587942809@
+1 CHIL @I212587942810@
+1 CHIL @I212587942801@
+1 CHIL @I212587942811@
+1 CHIL @I212587942804@
+1 CHIL @I212587942803@
+1 CHIL @I212587942800@
+1 CHIL @I212587942802@
+1 MARR
+2 DATE ABT 1806
+2 PLAC Reynivellir, Kalfafellsstadur, Austurskaftafell, Iceland
+0 @F12@ FAM
+1 HUSB @I212565643752@
+1 WIFE @I212565643766@
+1 CHIL @I212565644000@
+1 CHIL @I212565644001@
+1 CHIL @I212565644003@
+1 CHIL @I212565644004@
+1 CHIL @I212565643999@
+1 MARR
+2 DATE 1702
+0 @F13@ FAM
+1 HUSB @I212565201813@
+1 WIFE @I212565583356@
+1 CHIL @I212567429497@
+1 CHIL @I212567429607@
+1 CHIL @I212567429661@
+0 @F14@ FAM
+1 HUSB @I212565582845@
+1 WIFE @I212565201811@
+0 @F15@ FAM
+1 HUSB @I212565599225@
+1 WIFE @I212565599231@
+1 CHIL @I212565599187@
+0 @F16@ FAM
+1 HUSB @I212587940666@
+1 WIFE @I212587940679@
+1 CHIL @I212587940556@
+0 @F17@ FAM
+1 HUSB @I212097023484@
+1 WIFE @I212565201202@
+1 CHIL @I212565591524@
+1 CHIL @I212565591452@
+1 CHIL @I212097023483@
+1 CHIL @I212565591220@
+0 @F18@ FAM
+1 HUSB @I212097023483@
+1 WIFE @I212565585214@
+1 CHIL @I212565202554@
+1 CHIL @I212565590088@
+1 CHIL @I212565578896@
+1 CHIL @I212565590302@
+0 @F19@ FAM
+1 HUSB @I212565643671@
+1 WIFE @I212565643676@
+1 CHIL @I212565643568@
+1 MARR
+2 DATE 1638
+2 PLAC of, Hof I Alptafjord, Sudur Mula, Iceland
+0 @F20@ FAM
+1 HUSB @I212565202554@
+1 WIFE @I212609213455@
+0 @F21@ FAM
+1 HUSB @I212565591452@
+1 WIFE @I212565592449@
+1 CHIL @I212565592666@
+1 CHIL @I212565592698@
+1 CHIL @I212565592797@
+0 @F22@ FAM
+1 HUSB @I212565591452@
+1 WIFE @I212565592871@
+1 CHIL @I212565592615@
+0 @F23@ FAM
+1 HUSB @I212565643568@
+1 WIFE @I212565643678@
+1 CHIL @I212565643557@
+1 CHIL @I212565643684@
+1 CHIL @I212565643687@
+1 CHIL @I212565643688@
+1 CHIL @I212565643691@
+0 @F24@ FAM
+1 HUSB @I212605397836@
+1 WIFE @I212605398588@
+1 CHIL @I212605398689@
+0 @F25@ FAM
+1 HUSB @I212589644405@
+1 WIFE @I212565580184@
+1 CHIL @I212589644435@
+0 @F26@ FAM
+1 HUSB @I212565580185@
+1 WIFE @I212565596466@
+1 CHIL @I212565596476@
+1 CHIL @I212565596469@
+1 CHIL @I212565596471@
+1 CHIL @I212565596474@
+1 CHIL @I212565596475@
+0 @F27@ FAM
+1 HUSB @I212565580186@
+1 WIFE @I212565586792@
+1 CHIL @I212565586794@
+1 MARR
+2 DATE 3 Nov 1923
+0 @F28@ FAM
+1 HUSB @I212565604102@
+1 WIFE @I212565604251@
+1 CHIL @I212565604252@
+1 CHIL @I212565604253@
+1 CHIL @I212565604254@
+1 CHIL @I212565604255@
+1 CHIL @I212565604256@
+1 CHIL @I212565604259@
+1 CHIL @I212565604265@
+1 CHIL @I212565604267@
+1 CHIL @I212565604266@
+1 CHIL @I212565604268@
+1 CHIL @I212565604269@
+1 CHIL @I212565604270@
+1 CHIL @I212565604271@
+1 CHIL @I212565604273@
+1 CHIL @I212565604257@
+1 MARR
+2 DATE 25 OCT 1842
+2 PLAC Bjarnanes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+0 @F29@ FAM
+1 HUSB @I212565599108@
+1 WIFE @I212565599113@
+1 CHIL @I212565603179@
+1 CHIL @I212565598447@
+1 CHIL @I212565603183@
+1 CHIL @I212565603175@
+1 CHIL @I212565603178@
+1 CHIL @I212565603181@
+1 MARR
+2 DATE 1763
+2 PLAC Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+0 @F30@ FAM
+1 HUSB @I212602651499@
+1 WIFE @I212602651768@
+1 CHIL @I212605399635@
+1 CHIL @I212605399646@
+1 CHIL @I212605399638@
+1 CHIL @I212605399639@
+1 CHIL @I212602651525@
+1 CHIL @I212605399640@
+1 CHIL @I212605399642@
+1 CHIL @I212605399637@
+1 CHIL @I212605399643@
+1 CHIL @I212605399645@
+1 CHIL @I212565581902@
+0 @F31@ FAM
+1 HUSB @I212605397546@
+1 WIFE @I212605397896@
+1 CHIL @I212605397983@
+1 CHIL @I212605398109@
+0 @F32@ FAM
+1 HUSB @I212565201805@
+1 WIFE @I212565201806@
+1 CHIL @I212565201807@
+1 CHIL @I212565201809@
+1 CHIL @I212565201811@
+1 CHIL @I212565201813@
+1 CHIL @I212567429770@
+1 CHIL @I212605401062@
+1 CHIL @I212565201202@
+0 @F33@ FAM
+1 HUSB @I212565582260@
+1 WIFE @I212605399992@
+1 CHIL @I212605400066@
+1 CHIL @I212605400088@
+0 @F34@ FAM
+1 HUSB @I212587940203@
+1 WIFE @I212587940208@
+1 CHIL @I212565585722@
+0 @F35@ FAM
+1 HUSB @I212565201807@
+1 WIFE @I212565595262@
+1 CHIL @I212565595313@
+1 CHIL @I212567396652@
+1 MARR
+2 DATE BEF 1949
+0 @F36@ FAM
+1 HUSB @I212565594039@
+1 WIFE @I212565594040@
+1 CHIL @I212565583136@
+1 CHIL @I212565594041@
+1 MARR
+2 DATE 06 Nov 1865
+2 PLAC Einholt A Myrum,Austur-Skaftafellssysla,Iceland
+0 @F37@ FAM
+1 HUSB @I212587940716@
+1 WIFE @I212587940734@
+1 CHIL @I212587940562@
+0 @F38@ FAM
+1 HUSB @I212565604515@
+1 WIFE @I212565598648@
+1 CHIL @I212565604516@
+1 CHIL @I212565604942@
+1 CHIL @I212565604943@
+1 CHIL @I212565604944@
+1 CHIL @I212565604518@
+1 CHIL @I212565604517@
+1 CHIL @I212565604945@
+1 MARR
+2 DATE 13 OCT 1814
+2 PLAC Bjarnanes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+0 @F39@ FAM
+1 HUSB @I212605400088@
+1 WIFE @I212605400276@
+1 CHIL @I212605400341@
+1 CHIL @I212605400382@
+0 @F40@ FAM
+1 HUSB @I212565583783@
+1 WIFE @I212565580541@
+0 @F41@ FAM
+1 HUSB @I212565583776@
+1 WIFE @I212565583779@
+1 CHIL @I212565580541@
+1 CHIL @I212565583781@
+1 MARR
+2 DATE 06 Nov 1865
+2 PLAC Einholt A Myrum,Austur-Skaftafellssysla,Iceland
+0 @F42@ FAM
+1 HUSB @I212565591220@
+1 WIFE @I212565590946@
+1 CHIL @I212565591065@
+1 CHIL @I212565592934@
+1 CHIL @I212565592966@
+1 CHIL @I212565592981@
+1 CHIL @I212565593048@
+1 CHIL @I212567429363@
+0 @F43@ FAM
+1 HUSB @I212565603173@
+1 WIFE @I212565599138@
+1 CHIL @I212565599113@
+1 MARR
+2 DATE 1737
+2 PLAC Hrafnagil,Eyjafardarsysla,Iceland
+2 SOUR @S664769351@
+3 _HPID 1,9897::31510
+3 _WPID 1,9897::31511
+0 @F44@ FAM
+1 HUSB @I212605400066@
+1 WIFE @I212605400204@
+1 CHIL @I212605400132@
+0 @F45@ FAM
+1 HUSB @I212609213494@
+1 WIFE @I212565592615@
+0 @F46@ FAM
+1 HUSB @I212565598633@
+1 WIFE @I212565598447@
+1 CHIL @I212565598659@
+1 CHIL @I212565598642@
+1 CHIL @I212565598660@
+1 CHIL @I212565598658@
+1 CHIL @I212565598648@
+1 CHIL @I212565598643@
+1 CHIL @I212565598395@
+1 CHIL @I212565598638@
+1 CHIL @I212565598653@
+1 CHIL @I212565598651@
+1 CHIL @I212565598640@
+1 CHIL @I212565598655@
+1 CHIL @I212565598661@
+1 CHIL @I212565598646@
+1 CHIL @I212565598637@
+1 MARR
+2 DATE 8 August 1788
+2 PLAC Bjarnanes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+0 @F47@ FAM
+1 HUSB @I212587942798@
+1 WIFE @I212587942799@
+1 CHIL @I212587940651@
+1 MARR
+2 PLAC Felli i Sudursveit, Austur-Skaftafellsysla, Iceland
+0 @F48@ FAM
+1 HUSB @I212607802008@
+1 WIFE @I212607802065@
+1 CHIL @I212607802066@
+0 @F49@ FAM
+1 HUSB @I212565644098@
+1 WIFE @I212565644071@
+1 CHIL @I212565643797@
+0 @F50@ FAM
+1 HUSB @I212565599075@
+1 WIFE @I212565599094@
+1 CHIL @I212565598665@
+0 @F51@ FAM
+1 HUSB @I212565597566@
+1 WIFE @I212565596476@
+0 @F52@ FAM
+1 HUSB @I212587940257@
+1 WIFE @I212587940275@
+1 CHIL @I212565583776@
+0 @F53@ FAM
+1 HUSB @I212605393119@
+1 WIFE @I212605393158@
+1 CHIL @I212565585214@
+1 CHIL @I212605397488@
+1 CHIL @I212605397836@
+1 CHIL @I212605397546@
+0 @F54@ FAM
+1 HUSB @I212565586303@
+1 WIFE @I212565586954@
+1 CHIL @I212565586956@
+0 @F55@ FAM
+1 HUSB @I212565586298@
+1 WIFE @I212565586299@
+1 CHIL @I212565204726@
+1 CHIL @I212565586304@
+1 CHIL @I212565586302@
+1 CHIL @I212565586303@
+1 CHIL @I212565587151@
+1 CHIL @I212565586306@
+1 CHIL @I212565586307@
+1 CHIL @I212565586300@
+1 CHIL @I212565586308@
+1 CHIL @I212565586301@
+1 MARR
+2 DATE 1789
+2 PLAC Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+0 @F56@ FAM
+1 HUSB @I212565644153@
+1 WIFE @I212565644136@
+1 CHIL @I212565643752@
+0 @F57@ FAM
+1 HUSB @I212605406046@
+1 WIFE @I212605405891@
+1 CHIL @I212605406049@
+1 CHIL @I212605406050@
+1 MARR
+2 DATE 13 jul 2013
+0 @F58@ FAM
+1 HUSB @I212607802008@
+1 WIFE @I212607802095@
+1 CHIL @I212607801663@
+1 CHIL @I212607802127@
+0 @F59@ FAM
+1 HUSB @I212567429864@
+1 WIFE @I212567429770@
+1 CHIL @I212567429978@
+0 @F60@ FAM
+1 HUSB @I212565596863@
+1 WIFE @I212565586792@
+1 CHIL @I212565596865@
+1 CHIL @I212565596870@
+1 CHIL @I212565596872@
+1 CHIL @I212565596874@
+1 MARR
+2 DATE 26 May 1912
+0 @F61@ FAM
+1 HUSB @I212565594390@
+1 WIFE @I212565594391@
+1 CHIL @I212565594393@
+1 CHIL @I212565583783@
+1 MARR
+2 DATE 15 Jun 1865
+2 PLAC Einholt A Myrum,Austur-Skaftafellssysla,Iceland
+0 @F62@ FAM
+1 HUSB @I212565583132@
+1 WIFE @I212565583134@
+1 CHIL @I212565583135@
+1 CHIL @I212565204711@
+1 MARR
+2 DATE 15 Jun 1865
+2 PLAC Einholt A Myrum,Austur-Skaftafellssysla,Iceland
+0 @F63@ FAM
+1 HUSB @I212587940291@
+1 WIFE @I212587940320@
+1 CHIL @I212587940257@
+0 @F64@ FAM
+1 HUSB @I212565643511@
+1 WIFE @I212565643522@
+1 CHIL @I212565643494@
+0 @F65@ FAM
+1 HUSB @I212565643533@
+1 WIFE @I212565643557@
+1 CHIL @I212565643472@
+0 @F66@ FAM
+1 HUSB @I212565644522@
+1 WIFE @I212565644555@
+1 CHIL @I212565644422@
+0 @F67@ FAM
+1 HUSB @I212565597490@
+1 WIFE @I212565597492@
+1 CHIL @I212565597493@
+1 CHIL @I212565596466@
+0 @F68@ FAM
+1 HUSB @I212607802041@
+1 WIFE @I212607802042@
+1 CHIL @I212607802008@
+0 @F69@ FAM
+1 HUSB @I212565582134@
+1 WIFE @I212565582135@
+1 CHIL @I212565201500@
+0 @F70@ FAM
+1 HUSB @I212605393272@
+1 WIFE @I212565585214@
+0 @F71@ FAM
+1 HUSB @I212587940327@
+1 WIFE @I212587940349@
+1 CHIL @I212587940275@
+0 @F72@ FAM
+1 HUSB @I212565585722@
+1 WIFE @I212565585723@
+1 CHIL @I212565583134@
+0 @F73@ FAM
+1 HUSB @I212565646648@
+1 WIFE @I212565647058@
+1 CHIL @I212565587057@
+0 @F74@ FAM
+1 HUSB @I212565590088@
+1 WIFE @I212748095512@
+0 @F75@ FAM
+1 HUSB @I212565204711@
+1 WIFE @I212565583136@
+0 @F76@ FAM
+1 HUSB @I212565643472@
+1 WIFE @I212565643494@
+1 CHIL @I212565643437@
+0 @F77@ FAM
+1 HUSB @I212565204711@
+1 WIFE @I212565580541@
+1 CHIL @I212605402404@
+1 CHIL @I212565201805@
+0 @F78@ FAM
+1 HUSB @I212607802194@
+1 WIFE @I212607802195@
+1 CHIL @I212607802162@
+0 @F79@ FAM
+1 HUSB @I212605393272@
+1 WIFE @I212605397376@
+1 CHIL @I212605396479@
+1 CHIL @I212605396792@
+1 CHIL @I212605394719@
+1 CHIL @I212605396405@
+0 @F80@ FAM
+1 HUSB @I212565644435@
+1 WIFE @I212565644483@
+1 CHIL @I212565644400@
+0 @F81@ FAM
+1 HUSB @I212565584567@
+1 WIFE @I212565204726@
+1 CHIL @I212565204724@
+1 CHIL @I212565584568@
+1 CHIL @I212565584572@
+1 CHIL @I212565584569@
+1 CHIL @I212565584571@
+1 MARR
+2 DATE 1820
+2 PLAC Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+2 SOUR @S664739658@
+3 _WPID 1,62476::4828826488
+0 @F82@ FAM
+1 HUSB @I212565584573@
+1 WIFE @I212565204724@
+1 CHIL @I212565584577@
+1 CHIL @I212565584581@
+1 MARR
+2 DATE 15 NOV 1845
+2 PLAC Kálfafellsstaður, Borgarhafnarhreppur, Austur–Skaftafellssýsla, Ísland
+0 @F83@ FAM
+1 HUSB @I212605397488@
+1 WIFE @I212605398895@
+1 CHIL @I212605398966@
+1 CHIL @I212605399000@
+1 CHIL @I212605399022@
+0 @F84@ FAM
+1 HUSB @I212565204678@
+1 WIFE @I212565204685@
+1 CHIL @I212565204661@
+1 CHIL @I212565584123@
+1 MARR
+2 DATE 04 Nov 1854
+2 PLAC Stafafell I Loni,Austur-Skaftafellssysla,Iceland
+0 @F85@ FAM
+1 HUSB @I212565204698@
+1 WIFE @I212565204661@
+1 CHIL @I212565580185@
+1 CHIL @I212565580190@
+1 CHIL @I212565580184@
+1 CHIL @I212565580187@
+1 CHIL @I212565580186@
+1 CHIL @I212565201806@
+1 MARR
+2 DATE 01 Nov 1876
+2 PLAC Einholt A Myrum,Austur-Skaftafellssysla,Iceland
+2 SOUR @S664769351@
+3 _HPID 1,9897::69680
+0 @F86@ FAM
+1 HUSB @I212565595313@
+1 WIFE @I212565595360@
+0 @F87@ FAM
+1 HUSB @I212607802162@
+1 WIFE @I212607802223@
+1 MARR
+2 DATE 07 Oct 1805
+2 PLAC Husavik A Tjornesi,Sudur-Thingeyjarsysla,Iceland
+2 SOUR @S664769351@
+3 _HPID 1,9897::9762
+3 _WPID 1,9897::9763
+0 @F88@ FAM
+1 HUSB @I212607801663@
+1 WIFE @I212607801702@
+1 CHIL @I212602651499@
+1 MARR
+2 DATE 29 Sep 1835
+2 PLAC Upsir,Eyjafardarsysla,Iceland
+2 SOUR @S664769351@
+3 _WPID 1,9897::42639
+1 MARR
+2 PLAC Upsir,Eyjafardarsysla,Iceland
+2 SOUR @S664769351@
+3 _HPID 1,9897::42640
+0 @F89@ FAM
+1 HUSB @I212750328624@
+1 WIFE @I212565643421@
+1 CHIL @I212565599094@
+0 @F90@ FAM
+1 HUSB @I212565644400@
+1 WIFE @I212565644422@
+1 CHIL @I212565644360@
+0 @F91@ FAM
+1 HUSB @I212587940437@
+1 WIFE @I212587940454@
+1 CHIL @I212565584380@
+0 @F92@ FAM
+1 HUSB @I212565596851@
+1 WIFE @I212565596855@
+1 CHIL @I212565586792@
+0 @F93@ FAM
+1 HUSB @I212587940462@
+1 WIFE @I212587940467@
+1 CHIL @I212587940437@
+0 @F94@ FAM
+1 HUSB @I212607802162@
+1 WIFE @I212607802242@
+1 CHIL @I212607801702@
+1 MARR
+2 DATE 07 Oct 1805
+2 PLAC Husavik A Tjornesi,Sudur-Thingeyjarsysla,Iceland
+2 SOUR @S664769351@
+3 _HPID 1,9897::9762
+3 _WPID 1,9897::9763
+0 @F95@ FAM
+1 HUSB @I212565604946@
+1 WIFE @I212565604518@
+1 CHIL @I212565604948@
+1 CHIL @I212565604954@
+1 CHIL @I212565604957@
+1 CHIL @I212565604958@
+1 CHIL @I212565604966@
+1 CHIL @I212565604961@
+1 CHIL @I212565604962@
+1 CHIL @I212565604964@
+1 MARR
+2 DATE 25 OCT 1851
+2 PLAC Bjarnanes, Bjarnaneshreppur, Austur–Skaftafellssýsla, Ísland
+0 @F96@ FAM
+1 HUSB @I212565602978@
+1 WIFE @I212565597206@
+1 CHIL @I212565602980@
+1 CHIL @I212565602982@
+1 CHIL @I212565602986@
+1 CHIL @I212565602987@
+1 CHIL @I212565602979@
+0 @F97@ FAM
+1 HUSB @I212587940477@
+1 WIFE @I212587940483@
+1 CHIL @I212587940454@
+0 @F98@ FAM
+1 HUSB @I212565592698@
+1 WIFE @I212609213390@
+0 @F99@ FAM
+1 HUSB @I212587940490@
+1 WIFE @I212587940498@
+1 CHIL @I212565584567@
+0 @F100@ FAM
+1 HUSB @I212565592666@
+1 WIFE @I212609213335@
+0 @F101@ FAM
+1 HUSB @I212565581902@
+1 WIFE @I212565201524@
+1 CHIL @I212565201521@
+0 @F102@ FAM
+1 HUSB @I212565201500@
+1 WIFE @I212565201521@
+1 CHIL @I212605400868@
+1 CHIL @I212097023484@
+1 CHIL @I212605400784@
+1 CHIL @I212565201856@
+1 CHIL @I212605400692@
+1 CHIL @I212605400659@
+1 CHIL @I212605400576@
+1 CHIL @I212605400518@
+1 CHIL @I212605400470@
+1 CHIL @I212565582260@
+0 @F103@ FAM
+1 HUSB @I212565644339@
+1 WIFE @I212565644360@
+1 CHIL @I212565644234@
+0 @F104@ FAM
+1 HUSB @I212565587054@
+1 WIFE @I212565587057@
+1 CHIL @I212565597206@
+1 CHIL @I212565597211@
+1 CHIL @I212565597212@
+1 CHIL @I212565586298@
+1 CHIL @I212565597204@
+1 CHIL @I212565597208@
+1 MARR
+2 DATE 1763
+2 PLAC Bjarnanes í Hornafirði, Austur-Skaftafells, Islande
+0 @F105@ FAM
+1 HUSB @I212565643797@
+1 WIFE @I212565643900@
+1 CHIL @I212565643766@
+1 MARR
+2 DATE 1676
+2 PLAC of, Miklibær í  Blónduhlíð, Skagafjarðar, Iceland
+0 @F106@ FAM
+1 HUSB @I212587940534@
+1 WIFE @I212587940546@
+1 CHIL @I212565204678@
+0 @F107@ FAM
+1 HUSB @I212587940556@
+1 WIFE @I212587940562@
+1 CHIL @I212565204685@
+0 @F108@ FAM
+1 HUSB @I212587940039@
+1 WIFE @I212587940094@
+1 CHIL @I212565585953@
+0 @F109@ FAM
+1 HUSB @I212565599274@
+1 WIFE @I212565599284@
+1 CHIL @I212565599257@
+0 @F110@ FAM
+1 HUSB @I212607802302@
+1 WIFE @I212607802303@
+1 CHIL @I212607802242@
+0 @F111@ FAM
+1 HUSB @I212565585953@
+1 WIFE @I212565585954@
+1 CHIL @I212565583132@
+0 @F112@ FAM
+1 WIFE @I212565644990@
+1 CHIL @I212565644253@
+0 @F113@ FAM
+1 HUSB @I212609210754@
+1 CHIL @I212587940641@
+0 @F114@ FAM
+1 HUSB @I212565599257@
+1 CHIL @I212565599231@
+0 @F115@ FAM
+1 WIFE @I212605400868@
+1 CHIL @I212605405260@
+1 CHIL @I212605405375@
+1 CHIL @I212605403026@
+0 @F116@ FAM
+1 HUSB @I212565595313@
+1 CHIL @I212567396875@
+0 @F117@ FAM
+1 HUSB @I212565201809@
+1 CHIL @I212565582748@
+0 @F118@ FAM
+1 HUSB @I212565647392@
+1 CHIL @I212565643676@
+0 @F119@ FAM
+1 HUSB @I212565599129@
+1 CHIL @I212565599108@
+0 @F120@ FAM
+1 WIFE @I212605409198@
+1 CHIL @I212605409315@
+1 CHIL @I212605409316@
+0 @F121@ FAM
+1 WIFE @I212565583136@
+1 CHIL @I212565594042@
+0 @F122@ FAM
+1 HUSB @I212565201856@
+1 CHIL @I212605409011@
+1 CHIL @I212605409013@
+1 CHIL @I212605409012@
+1 CHIL @I212605409067@
+0 @F123@ FAM
+1 WIFE @I212605403026@
+1 CHIL @I212605405437@
+1 CHIL @I212605405438@
+0 @F124@ FAM
+1 WIFE @I212565586952@
+1 CHIL @I212565586303@
+0 @F125@ FAM
+1 HUSB @I212565644192@
+1 CHIL @I212565644153@
+0 @F126@ FAM
+1 HUSB @I212605405260@
+1 CHIL @I212605405377@
+1 CHIL @I212605405378@
+1 CHIL @I212605405380@
+1 CHIL @I212605405381@
+0 @F127@ FAM
+1 WIFE @I212605409415@
+1 CHIL @I212605409478@
+1 CHIL @I212605409479@
+0 @F128@ FAM
+1 HUSB @I212605400784@
+1 CHIL @I212605405890@
+1 CHIL @I212605405891@
+0 @F129@ FAM
+1 HUSB @I212589644715@
+1 CHIL @I212589644765@
+0 @F130@ FAM
+1 HUSB @I212565583783@
+1 CHIL @I212565594398@
+1 CHIL @I212565594394@
+0 @F131@ FAM
+1 WIFE @I212589644435@
+1 CHIL @I212589644715@
+0 @F132@ FAM
+1 WIFE @I212587940224@
+1 CHIL @I212565585723@
+0 @F133@ FAM
+1 WIFE @I212565644253@
+1 CHIL @I212565644071@
+0 @F134@ FAM
+1 WIFE @I212605409013@
+1 CHIL @I212605409415@
+1 CHIL @I212605409417@
+1 CHIL @I212605409419@
+0 @F135@ FAM
+1 HUSB @I212565647095@
+1 CHIL @I212565647058@
+0 @F136@ FAM
+1 HUSB @I212605394595@
+1 CHIL @I212605396916@
+1 CHIL @I212605393272@
+0 @F137@ FAM
+1 HUSB @I212605409542@
+1 CHIL @I212605409641@
+1 CHIL @I212605409642@
+0 @F138@ FAM
+1 HUSB @I212605409541@
+1 CHIL @I212605409606@
+0 @F139@ FAM
+1 WIFE @I212565204724@
+1 CHIL @I212565204698@
+0 @F140@ FAM
+1 HUSB @I212565584380@
+1 CHIL @I212565204698@
+0 @F141@ FAM
+1 HUSB @I212565643437@
+1 CHIL @I212565643421@
+0 @F142@ FAM
+1 HUSB @I212605409012@
+1 CHIL @I212605409541@
+1 CHIL @I212605409542@
+1 CHIL @I212605409544@
+1 CHIL @I212605409545@
+1 CHIL @I212605409543@
+0 @F143@ FAM
+1 WIFE @I212605405890@
+1 CHIL @I212605405963@
+1 CHIL @I212605405965@
+0 @F144@ FAM
+1 HUSB @I212565587758@
+1 CHIL @I212565587054@
+0 @F145@ FAM
+1 WIFE @I212565644313@
+1 CHIL @I212565644304@
+0 @F146@ FAM
+1 HUSB @I212605409067@
+1 CHIL @I212605409721@
+0 @F147@ FAM
+1 HUSB @I212605409011@
+1 CHIL @I212605409198@
+0 @F148@ FAM
+1 WIFE @I212609210740@
+1 CHIL @I212587940094@
+0 @F149@ FAM
+1 HUSB @I212587940121@
+1 CHIL @I212565585954@
+0 @F150@ FAM
+1 HUSB @I212565647404@
+1 CHIL @I212565647392@
+0 @O1@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpg
+3 _SIZE 127465
+3 _WDTH 2560
+3 _HGHT 1843
+2 TITL Photo
+1 _OID 0c05e46e-5999-488e-b86f-6d1557d8a700
+1 _CREA 2024-04-21 20:51:16.064
+1 _USER R76r/SUg637FjC0ETYKVGOYIp7gRFHrTSv83i5p90AgiZjtK4s4l4qgF8bAj1ENT/UpkJ0k1i0hiUxyjiMqs1A==
+2 _ENCR 1
+1 _CLON
+2 _TID 180043628
+2 _PID 382426944014
+2 _OID a3d84d26-e12d-4f17-a81c-111ac6ef3a21
+2 _USER ldyo8oD2YhH6qJO3OdgPgSJ9675Ju7BWPU2Ju1OVCO1/NxJ55jPp0bxllKLenFPjufUZa/IH6QaR79dguNQbbA==
+3 _ENCR 1
+2 _DATE 2022-10-11 19:31:54.000
+1 _ORIG u
+1 _MSER
+2 _LKID a3d84d26-e12d-4f17-a81c-111ac6ef3a21
+1 _ATL N
+0 @O2@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 9937
+3 _WDTH 219
+3 _HGHT 230
+2 TITL images
+1 _OID 16fc8541-4c07-4e79-b6a3-205ea244b043
+1 _CREA 2024-04-21 20:58:53.894
+1 _USER 5uslvOXlBvpvHIV46zqo15ewNThE/o2XO8D0/xoxtaop329mvr064z3547hLy3oQWcaTjghDt4y5R3CZ2erraA==
+2 _ENCR 1
+1 _CLON
+2 _TID 172339868
+2 _PID 322253694594
+2 _OID a2a458ff-348d-4c3e-9961-444da89f3a7a
+2 _USER XRVG67XiHr4qv98DfkyqH9f8zFDMn2h0uO13pd/znmQ5dXGnwzrDdi5ljYTLi1CS3J2z1XWYiaL495YZYyCJHQ==
+3 _ENCR 1
+2 _DATE 2020-12-28 10:18:40.000
+1 _ORIG u
+1 _MSER
+2 _LKID a2a458ff-348d-4c3e-9961-444da89f3a7a
+1 _ATL N
+0 @O3@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 56957
+3 _WDTH 563
+3 _HGHT 563
+2 TITL jonavaldis
+1 _OID 18c1c3a9-0fc1-4b55-a7b7-d2a10219bf05
+1 _META <metadataxml></metadataxml>
+1 _CREA 2024-04-21 19:18:49.396
+1 _USER uvpZEZ5o7xWBmPzvskuMrS/kyw+kExB/93fOCmRfCoP4P9XK/V941IiNQyOSQXBeJfrLR67QrV1Fl/kFvVRs5w==
+2 _ENCR 1
+1 _ORIG acom
+1 _ATL Y
+0 @O4@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpeg
+3 _SIZE 8408
+3 _WDTH 157
+3 _HGHT 240
+2 TITL  Sigurður Benediktsson
+1 _OID 33208d64-58a4-4892-b3b5-c84063898fc3
+1 _CREA 2024-04-21 18:32:10.807
+1 _USER HGs82b2HfyXJH1p4N8EbuRL0gVmQE2pkV/DW6JzS1AVrutpn2pPxGnyJXPJbIGGVwrzQ8enGhfX1cpyK1JbfOw==
+2 _ENCR 1
+1 _CLON
+2 _TID 37351456
+2 _PID 182507591360
+2 _OID 7fc23b7c-c0df-4898-ace2-c1c3be5de7a6
+2 _USER ZuzF5TWwd8IClP7nyz1tBNE24bk0jZXi9VbkUQG9BJAkBxh86dlLdT9wWzF5oRVrQmMK1Bk2QbFDEIkTDNAOCg==
+3 _ENCR 1
+2 _DATE 2023-09-03 15:12:42.455
+1 _ORIG acom
+1 _MSER
+2 _LKID 7fc23b7c-c0df-4898-ace2-c1c3be5de7a6
+1 _ATL N
+0 @O5@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 530916
+3 _WDTH 2417
+3 _HGHT 1454
+2 TITL 20240613_204741
+1 _OID 3bb19e81-8e01-42d8-9ecf-3bc587476a22
+1 _META <metadataxml></metadataxml>
+1 _CREA 2024-09-22 12:24:33.399
+1 _USER 3pxezwECRLSCRl8tR/2/VEEPnCi1CJHCQAwoiM6QzkJUGTCJsrR8tT+su8yWp+YQ6oWqasqJLPWNVCQwBmnMhg==
+2 _ENCR 1
+1 _ORIG acom
+1 _ATL Y
+0 @O6@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpeg
+3 _SIZE 10439
+3 _WDTH 160
+3 _HGHT 223
+2 TITL  Guðjón Benediktsson
+1 _OID 47ffe58a-6f50-4540-9e2f-6dcac4c57890
+1 _CREA 2024-04-21 18:32:19.816
+1 _USER 5bEeO2i3twwVMVTie+/yFtYZEHGLoHK7/VDjfakuRTzSlq0hrk6vFPvo2+qDPKgPs+3+MHSyhkDQKp+z8vFuzQ==
+2 _ENCR 1
+1 _CLON
+2 _TID 37351456
+2 _PID 182507597631
+2 _OID 7fd8e46c-9770-4a2f-984d-3bdb2743d390
+2 _USER EwBr5JvDmW2v9vwsVda8T3yaNMqSUU9R2Q/k9TRxn+sKjL+ZFRiT8g/bi9GjPrKbsOchlAAIE3SlkrLViyjMRQ==
+3 _ENCR 1
+2 _DATE 2023-09-03 15:18:16.991
+1 _ORIG acom
+1 _MSER
+2 _LKID 7fd8e46c-9770-4a2f-984d-3bdb2743d390
+1 _ATL N
+0 @O7@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpg
+3 _SIZE 127465
+3 _WDTH 2560
+3 _HGHT 1843
+2 TITL Photo
+1 _OID 5894159a-660c-4ac9-80a8-31828cb4154a
+1 _CREA 2024-04-21 20:51:45.648
+1 _USER BfwmBrQpRwMvXTpy0cIoBUMduzBtfV379KLVBbnYQuEXfGP19fkTULEpm/6YlprbZiiIKyrzQNp4sqDezHAklA==
+2 _ENCR 1
+1 _CLON
+2 _TID 180043628
+2 _PID 382426944077
+2 _OID 67343fe6-6791-445a-b682-3ca97c04d882
+2 _USER VE4anLO+HuqujBvFzuIZCPN5I3MpJudXKQjTe5mQ5tqj2C/q0ShulNECMj8qBcgBtANvI0uCYGiEkyrXXVDckQ==
+3 _ENCR 1
+2 _DATE 2022-10-11 19:32:23.442
+1 _ORIG u
+1 _MSER
+2 _LKID 67343fe6-6791-445a-b682-3ca97c04d882
+1 _ATL N
+0 @O8@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 67688
+3 _WDTH 439
+3 _HGHT 309
+2 TITL 2018-07-22 12.56.38-eþs (2)
+1 _OID 63b8d578-90e3-4216-9c0f-d074012e08ff
+1 _CREA 2024-04-19 08:58:39.021
+1 _USER D9ok/N9giykhQtGNYhssa4ah9TIRcEI+YtAIr2MSxjBJ43XM+wy/I5lG8CETm+gkWrMi9fvmxuVGbQNB7YyKgQ==
+2 _ENCR 1
+1 _CLON
+2 _TID 160490195
+2 _PID 392097275647
+2 _OID 8ab0ffa5-197e-4b8b-85e0-0ba37781be2b
+2 _USER mZcnUnKWhWVm63aJALnHUd9sPqWfy42yOCEukFG1+4qJHNqD/+NAF2KiaXySy70+JjyZFTZyagnFE3szfn9drQ==
+3 _ENCR 1
+2 _DATE 2019-04-19 22:48:36.000
+1 _ORIG u
+1 _MSER
+2 _LKID 8ab0ffa5-197e-4b8b-85e0-0ba37781be2b
+1 _ATL Y
+0 @O9@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 39698
+3 _WDTH 480
+3 _HGHT 480
+2 TITL 449230190_7135974666503661_2935239802545921141_n
+1 _OID 69c434e7-11ad-43a4-b984-4cab93935bcb
+1 _META <metadataxml></metadataxml>
+1 _CREA 2024-09-22 12:11:28.384
+1 _USER uDqDjoxM4hzxN9NRuek72LP/u+/L6/Jlt9C5sliINZGuVwm1g6KxUZIEwKED7AAj0hnwxDQAuaLqqlkRAWR8OA==
+2 _ENCR 1
+1 _ORIG acom
+1 _ATL Y
+0 @O10@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 135292
+3 _WDTH 720
+3 _HGHT 720
+2 TITL stella
+1 _OID 71aac5b0-bc39-4095-a678-eab836dd4b8a
+1 _META <metadataxml></metadataxml>
+1 _CREA 2024-04-21 19:16:46.322
+1 _USER SlWz3+8Vs/eXQzZsKRCtG72bRZdYfPJr1SMUqARkAC7lq1chZc6vw2458aym99k7/5JspWFfc5SP//W/VJEL8A==
+2 _ENCR 1
+1 _ORIG acom
+1 _ATL Y
+0 @O11@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpeg
+3 _SIZE 7003
+3 _WDTH 300
+3 _HGHT 300
+2 TITL  Gunnar Benediktsson
+1 _OID 75a767d6-3231-4c8e-b099-6ce20bb9eaf0
+1 _CREA 2024-04-21 19:53:06.966
+1 _USER hVDhMH0pkIsdRIxuZAD2uycyx0pWuGyOlLPReGCD/mdd5BManfX1/2v0Nfm5dfs9mIA7V2bei0UHtyXWmlXIdw==
+2 _ENCR 1
+1 _CLON
+2 _TID 37351456
+2 _PID 182507631574
+2 _OID 413b6e46-ab1e-47f3-ad28-685c2bd65b89
+2 _USER 3Gceut6GpT4tPnR1jzvZjtEjGalNGEs4fxmhJ4mguaG/r9EJdRpAOxN3YHDLaUtXsyLQNseq+Q12RwbU4n2J2Q==
+3 _ENCR 1
+2 _DATE 2023-09-03 16:57:49.053
+1 _ORIG acom
+1 _MSER
+2 _LKID 413b6e46-ab1e-47f3-ad28-685c2bd65b89
+1 _ATL N
+0 @O12@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 27645
+3 _WDTH 114
+3 _HGHT 99
+2 TITL ragna (2)
+1 _OID 76a2bc8a-8d1e-438f-9c73-7bb7d2dcb744
+1 _CREA 2024-04-21 18:13:14.170
+1 _USER vrW04XdWzqZAL7JxyenBOWXe5rcGyLZlS17QF8bNduQyYwMT73qz+VFi/caqlaSR+17FpGrx1ZhEw9++8undpg==
+2 _ENCR 1
+1 _CLON
+2 _TID 160490195
+2 _PID 392097308269
+2 _OID 7725c179-c581-4090-b4d4-26c8bd614d98
+2 _USER G9M8ayLBQJyGj3sxJGc1z4NubVkQ5fwBxWQ7UG34vkm3Z0oqhLWrGcF73ZfKTLu/FTdv3aS9m4LEgAH2WH/NZg==
+3 _ENCR 1
+2 _DATE 2019-04-19 23:38:36.512
+1 _ORIG u
+1 _MSER
+2 _LKID 7725c179-c581-4090-b4d4-26c8bd614d98
+1 _ATL N
+0 @O13@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 2681387
+3 _WDTH 4608
+3 _HGHT 2184
+2 TITL 20240622_145638
+1 _OID 7b1636b7-0b40-4dce-b480-f8748ff56a14
+1 _CREA 2024-09-22 12:17:31.525
+1 _USER nw13WvWJAdnDj8pEWNXMAPjt8ZginKviu/WXxbfMpnM/4RKUmTinEURzY4P4rIxZ+HflVVO/AUOPGmWhlezn9g==
+2 _ENCR 1
+1 _ORIG acom
+1 _ATL Y
+0 @O14@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpeg
+3 _SIZE 16410
+3 _WDTH 300
+3 _HGHT 300
+2 TITL Þóra Sigurðardóttir
+1 _OID 81622187-cbbb-45bf-a63d-da4919eb6ae5
+1 _CREA 2024-09-16 18:10:03.926
+1 _USER m9q95JNG/SDUs8eMAOcXloeBKeTgMVkWLP0cxZLTt7qJGEINoiFoc+op8vcyodQgVBtXn7wZ7JP1xWnryeXSqw==
+2 _ENCR 1
+1 _CLON
+2 _TID 37351456
+2 _PID 182497098768
+2 _OID 7c80b76a-4cc5-4523-9eee-8ccfcd532f93
+2 _USER spe2ozIPzJM32j2eAIhEyqtXce5ZS62atoIhlrQlDRMAUHk1y87Fe/E5vmRKY0gVltLgraaADF/SjY9s3/PnUA==
+3 _ENCR 1
+2 _DATE 2023-07-25 15:06:10.000
+1 _ORIG u
+1 _MSER
+2 _LKID 7c80b76a-4cc5-4523-9eee-8ccfcd532f93
+1 _ATL N
+0 @O15@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpg
+3 _SIZE 127465
+3 _WDTH 2560
+3 _HGHT 1843
+2 TITL Photo
+1 _OID 83220fea-47d8-4bd1-87b7-bcfb74931332
+1 _CREA 2024-04-21 20:51:54.471
+1 _USER Na4WOnf49FCb3PnxMjmne0ZfvqbgvliDPp1nPJvVdXWrp5t0u0VTLZX4aR/6tV8l6E60Q7k7ilbDiutpz5Cp1w==
+2 _ENCR 1
+1 _CLON
+2 _TID 180043628
+2 _PID 382426945034
+2 _OID 6734cef8-ab44-4dc4-b596-b961619ab491
+2 _USER eEbE+SobnqEjl5Vy6RXv9nw1nRWZNEtMzoZvqUU2BwYsq/cVB7J9P6yc+X6qBOjtIJqvfU7GvEXmixsMQa8Bxg==
+3 _ENCR 1
+2 _DATE 2022-10-11 19:40:23.712
+1 _ORIG u
+1 _MSER
+2 _LKID 6734cef8-ab44-4dc4-b596-b961619ab491
+1 _ATL N
+0 @O16@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 19170
+3 _WDTH 240
+3 _HGHT 163
+2 TITL nedladdning (2)
+1 _OID 8a4a9714-16b1-4b19-8f3c-beda8fe668b3
+1 _CREA 2024-04-21 20:59:08.732
+1 _USER IHdBaJ8U/QhJQrPfoYn8Z8iuSDEF43wg588joi4vx9LNgO//km/8hTdSJt/nLYq0tnpDq+O1jUu9N6bEXer+9Q==
+2 _ENCR 1
+1 _CLON
+2 _TID 172339868
+2 _PID 322253694416
+2 _OID db1b734f-c3bc-45c9-a92a-e481f80a32f9
+2 _USER 9bbsFB8Q15O2YdjmgSMERQnUFqhU/COziJcH+gYSEvFbPiGh/RB7t1Bc0OIbHR3G3fUv/efYJHATZ3mcozbKWQ==
+3 _ENCR 1
+2 _DATE 2020-12-28 10:15:46.000
+1 _ORIG u
+1 _MSER
+2 _LKID db1b734f-c3bc-45c9-a92a-e481f80a32f9
+1 _ATL N
+0 @O17@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 98675
+3 _WDTH 440
+3 _HGHT 552
+2 TITL 440px-Portrait_of_Guðbrandur_Þorláksson_-_3_(cropped)
+1 _OID 91ed274e-77b1-4469-9ac5-3bd2703eb548
+1 _CREA 2024-04-21 20:59:21.471
+1 _USER ImJS7bwRYN1zsi8iak0qB0cIq7bLfq1JgLWRNZ9cHJGQL+RcxchP3t7AMSYuy4ctLoKp1KBxVNhfdqcnoHCIGA==
+2 _ENCR 1
+1 _CLON
+2 _TID 37351456
+2 _OID 3e0794d9-354f-48f8-a7b3-a8942ab99417
+2 _USER yuR3+nPY05ilg2BCG0f88qZNzhp9DQndWAGs2+FxhYdxzDSLm9z/s66/EyC2iViSOYgpplyyxOLpQIE51OvhHA==
+3 _ENCR 1
+2 _DATE 2020-12-28 00:27:18.000
+1 _ORIG u
+1 _MSER
+2 _LKID 3e0794d9-354f-48f8-a7b3-a8942ab99417
+1 _ATL N
+0 @O18@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 470162
+3 _WDTH 1476
+3 _HGHT 1824
+2 TITL þorbben
+1 _OID 932e4766-40fc-4584-bdad-7ee0401bd0af
+1 _CREA 2024-04-21 17:28:02.923
+1 _USER qt1UwTcw4UKnFjYP0bzrQfedxrAjhfyzaEZo4NAUTtpWviR21lFm60GbI8GtV2UrMqLDdepPKWDuKgUSdxaVpw==
+2 _ENCR 1
+1 _CLON
+2 _TID 160490195
+2 _PID 392097285137
+2 _OID 04d8aa05-acd0-4355-a281-450d004180aa
+2 _USER exgo0Cib/AjviNxz1gOv7PzcC7ku1TW0ElcCFLHfNGGlzeIqdvV/zs37KsxH6M1IwQ7hM6mAPbjaYppM7M259w==
+3 _ENCR 1
+2 _DATE 2019-04-19 22:36:09.373
+1 _ORIG u
+1 _MSER
+2 _LKID 04d8aa05-acd0-4355-a281-450d004180aa
+1 _ATL N
+0 @O19@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 140813
+3 _WDTH 828
+3 _HGHT 828
+2 TITL 355383968_2320508994811637_8065078245761327134_n
+1 _OID 93ae11f6-753a-4571-9509-4b38075ec7fa
+1 _META <metadataxml></metadataxml>
+1 _CREA 2024-09-22 12:12:33.449
+1 _USER +yhBBoPpIAc9p6gyug1tpwd3H9RKg6vfbJQUAEOdttwxYOcvkpYGzSKbu+HQ0+u3QvbvG1yjBmId3dkRiNCG8A==
+2 _ENCR 1
+1 _ORIG acom
+1 _ATL Y
+0 @O20@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 94023
+3 _WDTH 915
+3 _HGHT 915
+2 TITL snaesi
+1 _OID 9439fd3c-3b05-46db-9758-05c298b2f123
+1 _META <metadataxml></metadataxml>
+1 _CREA 2024-04-21 19:16:25.881
+1 _USER DF1rng+AGDJMlzdZnCPJX6/cefcdEtt72eZeduVaD3iOi7zpZeb2pza2e8/b/WY/KncO8aAQN16krcLUOkJUxQ==
+2 _ENCR 1
+1 _ORIG acom
+1 _ATL Y
+0 @O21@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpg
+3 _SIZE 16542
+3 _WDTH 359
+3 _HGHT 388
+2 TITL Android Photo
+1 _OID 9e25f153-a822-4c32-94b9-e5f4b3982917
+1 DATE 05 Jul 2019
+1 _META <metadataxml />
+1 _CREA 2024-04-19 10:34:21.885
+1 _USER 4N1zof6xrR62nn/lPMNThEHhMAZ2mz0Bo7ieigeGpciraXcreY5D44I1Ia3tX+PvHBvfaaTti/qwSIBTU9c3Og==
+2 _ENCR 1
+1 _CLON
+2 _TID 160490195
+2 _PID 392097406484
+2 _OID cc230c40-ddff-4b69-90f1-73ff239ea714
+2 _USER U64FwLizZGLCYlCHRM6WmgKkO2bWzPpgjZA4OJqFRESVermTsY5qb4kNx/TABU/UeS4BQEB5gf9PASWI6xgG9A==
+3 _ENCR 1
+2 _DATE 2019-07-05 17:12:15.000
+1 _ORIG u
+1 _MSER
+2 _LKID cc230c40-ddff-4b69-90f1-73ff239ea714
+1 _ATL N
+0 @O22@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 1081027
+3 _WDTH 3120
+3 _HGHT 4160
+2 TITL 20190212_204650-bes
+1 _OID b386aef5-a836-4418-9fdf-2cf7c859cd6c
+1 _META <metadataxml></metadataxml>
+1 _CREA 2024-04-21 19:24:12.569
+1 _USER JWhYxnGTYRIoXLo0jZuZslP50vSsTCdTac/l6xI8+JIbCmkNyl8s4SoVscPTRDWZ3nCZObXVAbziXt2lMqFhXA==
+2 _ENCR 1
+1 _ORIG acom
+1 _ATL Y
+0 @O23@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 95725
+3 _WDTH 960
+3 _HGHT 960
+2 TITL iþg
+1 _OID b989926b-f682-43ae-a895-7a9eb4bccd84
+1 _META <metadataxml></metadataxml>
+1 _CREA 2024-04-21 19:15:41.691
+1 _USER F4MqfGu9bpnRvKTJThdl9sc0zVUCbpWiYkQrMCPDFGuRfgoqQKt8RCWR/kIPygLPnTxMwDVd2IRW4+dAq9xUew==
+2 _ENCR 1
+1 _ORIG acom
+1 _ATL Y
+0 @O24@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 1025209
+3 _WDTH 2766
+3 _HGHT 2318
+2 TITL 2018-09-27_07_42_08-þss
+1 _OID ba06cdb6-34d4-4ca9-8033-c0e3d1a5ffc9
+1 _META <metadataxml></metadataxml>
+1 _CREA 2024-04-21 19:24:34.379
+1 _USER lsDtAycyBhQeRFJIDIb9izT4CMpGvLi6A4RpNIjC9WYD5fkBE7HAIaluE9V67q0ydSTPLTuubz4klrd5Gxt56Q==
+2 _ENCR 1
+1 _ORIG acom
+1 _ATL Y
+0 @O25@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 772629
+3 _WDTH 1536
+3 _HGHT 2048
+2 TITL 10225389355537497
+1 _OID d92bc0f6-2f24-47b2-8907-a8a1db16aa25
+1 _META <metadataxml></metadataxml>
+1 _CREA 2024-09-22 12:25:55.819
+1 _USER HF7L9E7a/uOveJe7L986cXkRlgfkaJB1rJvSBqF1O6qQPTZy6Av8uX23eZRATfzbRJ4YYZ5kBMBByH9bsuRt1A==
+2 _ENCR 1
+1 _ORIG acom
+1 _ATL Y
+0 @O26@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 17267
+3 _WDTH 253
+3 _HGHT 196
+2 TITL Iceland male
+1 _OID dad1b33b-5a51-452b-b3b4-e9648c71ef3c
+1 _CREA 2024-04-21 21:26:35.123
+1 _USER N7pGHZeSQ0al0KekscesUJE68sR/eRT5DRFQTgKuUTyhlU9Td17rNEZt464rQs0zaea8dPpdDVu9AZPJLUu38Q==
+2 _ENCR 1
+1 _CLON
+2 _TID 157077526
+2 _PID 182407759286
+2 _OID 261c9c57-f5a1-4f6e-87f5-acbc34dc47c2
+2 _USER OWPS/rdjY3wX6bU/vf6jMrDtOqq734f+zwZceR8OL8lMkf88/daLAeOvCji3Q9mBvWn72/NmJwNJ7UuyVToZqg==
+3 _ENCR 1
+2 _DATE 2022-08-16 20:40:37.093
+1 _ORIG u
+1 _MSER
+2 _LKID 261c9c57-f5a1-4f6e-87f5-acbc34dc47c2
+1 _ATL N
+0 @O27@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 408917
+3 _WDTH 1476
+3 _HGHT 1831
+2 TITL sigurjoneinars
+1 _OID dbd6671a-6d77-4e20-8786-f62823f4acde
+1 _CREA 2024-04-21 17:32:26.588
+1 _USER 3jOBIIiqxFnir1UrHzsia8CTOg1FR6nUN6amL8GRah+7pfJKVuXl/hYtPG5sQSt+CfjlkINf2keBBS+lx/aagA==
+2 _ENCR 1
+1 _CLON
+2 _TID 160490195
+2 _PID 392097284957
+2 _OID 9a2819d6-824c-47bd-85c3-d6e224fdb569
+2 _USER 0X/36XBFkQ6Vs03UWZgi9/dBiSSWlxIjLBwMVTZcVf5RvibtZf/1XCeT5bW4QsH6+Ly749UaaCmBGTGg9rBOZQ==
+3 _ENCR 1
+2 _DATE 2019-04-19 22:39:27.522
+1 _ORIG u
+1 _MSER
+2 _LKID 9a2819d6-824c-47bd-85c3-d6e224fdb569
+1 _ATL N
+0 @O28@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE png
+3 _SIZE 15007
+3 _WDTH 189
+3 _HGHT 251
+2 TITL Baldvin Þorvaldsson
+1 _OID e1bfe507-3505-451a-82e0-c9da4236de99
+1 _CREA 2024-08-27 16:06:51.705
+1 _USER Yo1a5xIYQYKDpg+zv5Wlf7Ss+wPTXbaod2NDEPXcebDANdryOiz7nq5FSXtaCU7IaxGa5wJ9Fp2iYNPMOpPRmw==
+2 _ENCR 1
+1 _CLON
+2 _TID 161794776
+2 _PID 402288821833
+2 _OID 10c8e1c2-2b12-46df-99ac-1ed60b916383
+2 _USER qLQTXVNc0SDcPJQRy4Kg0d+r0UvxQ4hIvMmSEIzucTnkB0jmz2YZs6Q8BSbEy+3wF+WPByYFLOi3H/bt7Xxv+w==
+3 _ENCR 1
+2 _DATE 2021-05-19 17:22:15.000
+1 _ORIG u
+1 _MSER
+2 _LKID 10c8e1c2-2b12-46df-99ac-1ed60b916383
+1 _ATL N
+0 @O29@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 31316
+3 _WDTH 110
+3 _HGHT 149
+2 TITL arnor (2)
+1 _OID e24bb980-5493-49cf-b9c7-4688c2e96442
+1 _CREA 2024-04-21 18:01:00.076
+1 _USER +eqbZYYkzg1ztxLaeUtTykfB3QrYyVCvg21XkjGzmG/GuDn5KbES6Cf8BxVOSOQik9eZI6XfCIzqTfTU1Bif6w==
+2 _ENCR 1
+1 _CLON
+2 _TID 160490195
+2 _PID 392097308138
+2 _OID 454a6698-80f9-452c-8368-c4ed92dab07c
+2 _USER SE7gG65njLCCzj38dqGNkenUNKomRLMlnAJV8Q3okk2YYy1xAFCF0OTMCSGoTWb7Y6TRPJi95XFgsIDbYgtpIA==
+3 _ENCR 1
+2 _DATE 2019-04-19 23:37:28.390
+1 _ORIG u
+1 _MSER
+2 _LKID 454a6698-80f9-452c-8368-c4ed92dab07c
+1 _ATL N
+0 @O30@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpeg
+3 _SIZE 10490
+3 _WDTH 300
+3 _HGHT 300
+2 TITL Álfheiður Sigurðardóttir
+1 _OID e8507f31-96aa-4963-a382-4e993e983f25
+1 _CREA 2024-04-19 10:33:10.748
+1 _USER gkSQFuDGlpiiN8wnYINqrr7TSqKMesDDGI7rGJUrTVBcaStuMsxpjv1l/JhSU64BzYDUCt2kXbt8lUWp6rw+AA==
+2 _ENCR 1
+1 _CLON
+2 _TID 37351456
+2 _PID 182507595527
+2 _OID bbe03ae3-4aa1-413e-941b-5b5c43569622
+2 _USER LD/i+ryLyN++pKlvRoy7CPrlfBwTpXcxjwN/Sr87b8q9WyIEqt1n81ZPdxukVN2AznIqVByikWiPXmdJ7INfcQ==
+3 _ENCR 1
+2 _DATE 2023-09-03 14:54:00.054
+1 _ORIG acom
+1 _MSER
+2 _LKID bbe03ae3-4aa1-413e-941b-5b5c43569622
+1 _ATL N
+0 @O31@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE png
+3 _SIZE 11296
+3 _WDTH 191
+3 _HGHT 255
+2 TITL Sigurjón Baldvinsson
+1 _OID e94976af-51eb-4334-835d-729733054ab3
+1 _CREA 2024-09-08 14:26:59.261
+1 _USER 697gj7pxamfwhdUnHtteeiOPEZQV4m3FqdUxNxa1hfy3r+9sUJbxZLmZQxGKr94SNVNPZx94I0bCzoHS7ABuPA==
+2 _ENCR 1
+1 _CLON
+2 _TID 161794776
+2 _PID 402135457132
+2 _OID d3423d7d-9fa0-4f12-93e3-379d2449b120
+2 _USER 994jBCXJG6t8l350FZJnMZblTzx0RvaH6bZCYq00uWhg2Kl6kD7CDQ8VFtFlLyL4DPTuSvk7ny6jHcGy/zotow==
+3 _ENCR 1
+2 _DATE 2021-05-19 17:22:39.000
+1 _ORIG u
+1 _MSER
+2 _LKID d3423d7d-9fa0-4f12-93e3-379d2449b120
+1 _ATL N
+0 @O32@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE png
+3 _SIZE 4065
+3 _WDTH 236
+3 _HGHT 170
+2 TITL 236px-Flag_of_Iceland.svg
+1 _OID eb91a1a9-cc00-4e74-b660-f2d1aee10f45
+1 _CREA 2024-04-21 21:05:26.965
+1 _USER NRf5L+AX3qrax88AN3BG+03Gky6XWmNTxHGHVk6nIvLwsHTjunP/pLlrc+ZuPxoCbKYjg3tscdXsQOygyplgDQ==
+2 _ENCR 1
+1 _CLON
+2 _TID 166467671
+2 _PID 432343116808
+2 _OID 51c3f08e-723e-4277-b21e-c0e8248b4ea2
+2 _USER ExMKFExLRnR14YQZjszeApJXL3N5N5R9XIFz3A/nplrQof17YvMHSd+8KvRILPWhEdMu+RtK33kBifvM5Um0tA==
+3 _ENCR 1
+2 _DATE 2022-12-31 20:46:02.905
+1 _ORIG u
+1 _MSER
+2 _LKID 51c3f08e-723e-4277-b21e-c0e8248b4ea2
+1 _ATL N
+0 @O33@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _STYPE jpeg
+3 _SIZE 47709
+3 _WDTH 301
+3 _HGHT 221
+2 TITL 2014-11-30_13_30_09-gudjonsigurg__2_
+1 _OID efe3f725-6c75-47c8-ab2c-ad42dae94e5a
+1 _META <metadataxml></metadataxml>
+1 _CREA 2024-09-08 14:32:29.041
+1 _USER Hme5P5Xw1tXy5MwhUEk9cUnH0zBO5erYNGg6KmN2zQptXdUQXrjr51SdPx9ALEbvcGSauvRuXxFme959kaC/zg==
+2 _ENCR 1
+1 _ORIG acom
+1 _ATL Y
+0 @O34@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpeg
+3 _SIZE 14744
+3 _WDTH 268
+3 _HGHT 252
+2 TITL Guðjón Benediktsson
+1 _OID f8f03026-68cd-48d5-8e19-2f5ee693f8f7
+1 _CREA 2024-04-21 18:32:24.502
+1 _USER ePJDSCrkQU43cWsL0GRIrnd7riOk37JzABh3mw5xHIfROPJPScjMHaVTtf7Nr/psqm2wPBRasxBHei0Mo5dxFA==
+2 _ENCR 1
+1 _CLON
+2 _TID 37351456
+2 _PID 182507597631
+2 _OID bdc386cc-dd9f-4d6c-83d8-794426325101
+2 _USER 1vnMlsOXmFZ0aTnD90BVYHt/9Mi6Pianx5MaTd5UCkzZoHGE2KmGE0AVILgyMZusEiGGGdrOb5MctN1X6YJkGQ==
+3 _ENCR 1
+2 _DATE 2023-09-03 15:22:51.781
+1 _ORIG acom
+1 _MSER
+2 _LKID bdc386cc-dd9f-4d6c-83d8-794426325101
+1 _ATL N
+0 @O35@ OBJE
+1 FILE
+2 FORM jpg
+3 TYPE image
+3 _MTYPE portrait
+3 _STYPE jpg
+3 _SIZE 16542
+3 _WDTH 359
+3 _HGHT 388
+2 TITL Android Photo
+1 _OID f9d35e6f-963d-444e-8ccb-a1a793cf23fc
+1 DATE 05 Jul 2019
+1 _META <metadataxml />
+1 _CREA 2024-04-21 18:04:20.838
+1 _USER uqdasmT4Y62U8VU3DmawDTwK/lJrU7Ww+PmUT1reQk/L2V0ICwLL/nvnL0raWnYTZOl1HntYqvuqjeOa+XwRMg==
+2 _ENCR 1
+1 _CLON
+2 _TID 160490195
+2 _PID 392097406557
+2 _OID f1023e77-c571-454f-856a-39e25d8129bd
+2 _USER VWv7jY18l2/JrGN+8XueMu16S+jeFjhyaqkLdAYgm2f4gQ0wgE2XyY4h7pZyQO9acTAv1HvM/7d4tit+3ZBliw==
+3 _ENCR 1
+2 _DATE 2019-07-05 17:12:42.000
+1 _ORIG u
+1 _MSER
+2 _LKID f1023e77-c571-454f-856a-39e25d8129bd
+1 _ATL N
+0 @S664739640@ SOUR
+1 TITL Ancestry Family Trees
+1 PUBL Online publication - Provo, UT, USA: Ancestry.com.  Original data:  Family Tree files submitted by Ancestry members.
+1 _APID 1,1030::0
+1 REPO @R555796960@
+0 @S664739658@ SOUR
+1 TITL Geneanet Community Trees Index
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2022
+2 PLAC Lehi, UT, USA
+1 _APID 1,62476::0
+1 REPO @R555796960@
+1 NOTE &lt;i&gt;Geneanet Community Trees Index&lt;/i&gt;. Paris, France: Geneanet.
+0 @S664769255@ SOUR
+1 TITL Iceland, Select Baptisms, 1730-1905
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2014
+2 PLAC Provo, UT, USA
+1 _APID 1,9896::0
+1 REPO @R555796960@
+1 NOTE &lt;i&gt;Iceland, Baptisms, 1730-1905&lt;/i&gt;. Salt Lake City, Utah: FamilySearch, 2013.
+0 @S664769314@ SOUR
+1 TITL Web: Iceland Census, 1870
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2014
+2 PLAC Provo, UT, USA
+1 _APID 1,70783::0
+1 REPO @R555796960@
+1 NOTE &lt;i&gt;Islands Nationalarkivs Folketællingsdatabase&lt;/i&gt;. National Archives of Iceland. http://manntal.is/Upplysingar/#:  accessed 5 December 2014.
+0 @S664769322@ SOUR
+1 TITL Web: Iceland Census, 1880
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2014
+2 PLAC Provo, UT, USA
+1 _APID 1,70784::0
+1 REPO @R555796960@
+1 NOTE &lt;i&gt;Islands Nationalarkivs Folketællingsdatabase&lt;/i&gt;. National Archives of Iceland. http://manntal.is/Upplysingar/#:  accessed 5 December 2014.
+0 @S664769326@ SOUR
+1 TITL Web: Iceland Census, 1890
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2014
+2 PLAC Provo, UT, USA
+1 _APID 1,70785::0
+1 REPO @R555796960@
+1 NOTE &lt;i&gt;Islands Nationalarkivs Folketællingsdatabase&lt;/i&gt;. National Archives of Iceland. http://manntal.is/Upplysingar/#:  accessed 5 December 2014.
+0 @S664769351@ SOUR
+1 TITL Iceland, Select Marriages, 1770-1920
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2014
+2 PLAC Provo, UT, USA
+1 _APID 1,9897::0
+1 REPO @R555796960@
+1 NOTE &lt;i&gt;Iceland, Marriages, 1770-1920&lt;/i&gt;. Salt Lake City, Utah: FamilySearch, 2013.
+0 @S664770144@ SOUR
+1 TITL Saskatchewan, Canada, Cemetery Transcripts, 1850-1994
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2017
+2 PLAC Lehi, UT, USA
+1 _APID 1,61500::0
+1 REPO @R555796960@
+0 @S664771794@ SOUR
+1 TITL Canada, Find a Grave® Index, 1600s-Current
+1 AUTH Ancestry.com
+1 PUBL Ancestry.com Operations, Inc.
+2 DATE 2012
+2 PLAC Lehi, UT, USA
+1 _APID 1,60527::0
+1 REPO @R555796960@
+1 NOTE &lt;i&gt;Find a Grave&lt;/i&gt;. Find a Grave®. http://www.findagrave.com/cgi-bin/fg.cgi.
+0 @R555796960@ REPO
+1 NAME Ancestry.com
+0 TRLR
