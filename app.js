@@ -71,7 +71,8 @@ function parseGEDCOM(text) {
           fatherId: null,
           motherId: null,
           spouses: [],
-          children: []
+          children: [],
+          note: ''
         };
         people.set(pointer, activePerson);
       } else if (tag === 'FAM' && pointer) {
@@ -116,6 +117,13 @@ function parseGEDCOM(text) {
           activePerson.famc = value;
         } else if (tag === 'FAMS') {
           activePerson.fams.push(value);
+        } else if (tag === 'NOTE') {
+          activePerson.note = value;
+          dateType = 'NOTE';
+        } else if (tag === 'CONC' && dateType === 'NOTE') {
+          activePerson.note = (activePerson.note || '') + value;
+        } else if (tag === 'CONT' && dateType === 'NOTE') {
+          activePerson.note = (activePerson.note || '') + '\n' + value;
         }
       } else if (currentEntity === 'FAM' && activeFamily) {
         if (tag === 'HUSB') {
@@ -773,6 +781,35 @@ function selectPerson(personId) {
 
   // Setup Search Links
   setupSearchLinks(person);
+
+  // Render Research Log (NOTE)
+  const notesContainer = document.getElementById('p-research-notes');
+  const badgeEl = document.getElementById('research-status-badge');
+  
+  if (person.note && person.note.trim()) {
+    let cleanNote = person.note;
+    
+    // Look for status markers
+    let status = "Í vinnslu";
+    let badgeClass = "badge-warning";
+    
+    if (cleanNote.includes("[Lokið]") || cleanNote.toLowerCase().includes("lokið")) {
+      status = "Lokið";
+      badgeClass = "badge-success";
+    } else if (cleanNote.includes("[Óhafið]") || cleanNote.toLowerCase().includes("óhafið")) {
+      status = "Óhafið";
+      badgeClass = "badge-secondary";
+    }
+    
+    badgeEl.textContent = status;
+    badgeEl.className = `badge ${badgeClass}`;
+    // Strip status tag if present
+    notesContainer.textContent = cleanNote.replace(/\[(Lokið|Í vinnslu|Óhafið)\]/gi, '').trim();
+  } else {
+    badgeEl.textContent = "Óhafið";
+    badgeEl.className = "badge badge-secondary";
+    notesContainer.textContent = "Enginn rannsóknarferill skráður.";
+  }
 
   // Clear workspace inputs for new person (or load cached data)
   clearWorkspaceInputsForNewPerson();

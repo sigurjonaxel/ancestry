@@ -182,6 +182,9 @@
 2 _APID 392097284957:1030:160490195
 1 OBJE @O27@
 2 _PRIM Y
+1 NOTE [Lokið] Rannsóknarferill:
+2 CONT * Leit gerð í Íslendingabók árið 2026.
+2 CONT * Fundin og skráð 7 alsystkini Sigurjóns sem vantaði alveg í tréð.
 0 @I212565201806@ INDI
 1 NAME Þorbjörg /Benediktsdóttir/
 2 GIVN Þorbjörg
@@ -199,6 +202,9 @@
 2 _APID 392097285137:1030:160490195
 1 OBJE @O18@
 2 _PRIM Y
+1 NOTE [Lokið] Rannsóknarferill:
+2 CONT * Leit gerð í Íslendingabók árið 2026.
+2 CONT * Fundin og skráð 6 alsystkini Þorbjargar sem vantaði (alls 11 alsystkini).
 0 @I212565201807@ INDI
 1 NAME Einar /Sigurjónsson/
 2 GIVN Einar
@@ -222,6 +228,9 @@
 1 FAMS @FADD250@
 1 FAMS @FADD251@
 1 FAMS @FADD252@
+1 NOTE [Lokið] Rannsóknarferill:
+2 CONT * Ættarmótsskrá (aettarmot.md) borin saman við GEDCOM skrá.
+2 CONT * Bætt við 3 börnum og öllum afkomendum þeirra og mökum.
 0 @I212565201809@ INDI
 1 NAME Benedikt /Sigurjónsson/
 2 GIVN Benedikt
