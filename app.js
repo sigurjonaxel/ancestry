@@ -54,7 +54,7 @@ function parseGEDCOM(text) {
 
     if (level === 0) {
       // Start of a new top-level record
-      if (value === 'INDI' && pointer) {
+      if (tag === 'INDI' && pointer) {
         currentEntity = 'INDI';
         currentId = pointer;
         activePerson = {
@@ -74,7 +74,7 @@ function parseGEDCOM(text) {
           children: []
         };
         people.set(pointer, activePerson);
-      } else if (value === 'FAM' && pointer) {
+      } else if (tag === 'FAM' && pointer) {
         currentEntity = 'FAM';
         currentId = pointer;
         activeFamily = {
