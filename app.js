@@ -1,1563 +1,766 @@
-/**
- * Saga — Ættfræðiaðstoð
- * Client-side JavaScript logic for GEDCOM parsing, OCR, and timeline drafting.
- */
+// Saga Ancestry Web App - Modernized & Simplified UI Engine
+// Driven by SQLite Backend API (/api/person, /api/tree, /api/run_scraper)
 
-// Application State
 const state = {
-  trees: {},            // Map of treeName -> { people: Map, families: Map }
-  selectedTreeId: null, // Currently selected tree key
-  selectedPersonId: null,// Currently selected person ID
-  ocrImage: null,       // File/Blob of the uploaded image
-  toastTimeout: null
+  selectedTreeId: 'sigurjon',
+  selectedPersonId: 'I212097023483',
+  people: [],
+  personDetails: null,
+  showRejected: false
 };
 
-// Initialize the Application on Load
-document.addEventListener('DOMContentLoaded', () => {
-  initUIEvents();
-  loadSavedNotesCount();
-  lucide.createIcons();
+function updateDebugBar(msg) {
+  let bar = document.getElementById('debug-bar');
+  if (!bar) {
+    bar = document.createElement('div');
+    bar.id = 'debug-bar';
+    bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#0f0;font-family:monospace;font-size:12px;padding:6px 12px;z-index:99999;border-top:1px solid #0f0;';
+    document.body.appendChild(bar);
+  }
+  bar.textContent = msg;
+}
+
+async function fetchWithTimeout(url, timeoutMs = 10000) {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const res = await fetch(url, { signal: controller.signal });
+    clearTimeout(id);
+    return res;
+  } catch (e) {
+    clearTimeout(id);
+    throw e;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  updateDebugBar('⏳ Initializing...');
+  initEventListeners();
+  // Run both in parallel — don't let one block the other
+  await Promise.all([
+    loadTreesList(),
+    loadTree(state.selectedTreeId)
+  ]);
 });
 
-// ==========================================
-// 1. GEDCOM Parser & Relationship Resolver
-// ==========================================
+function toggleMobileSidebar(forceState) {
+  const sidebar = document.getElementById('app-sidebar');
+  const backdrop = document.getElementById('sidebar-backdrop');
+  if (!sidebar) return;
+  const isOpen = forceState !== undefined ? forceState : !sidebar.classList.contains('mobile-open');
+  if (isOpen) {
+    sidebar.classList.add('mobile-open');
+    if (backdrop) backdrop.classList.add('active');
+  } else {
+    sidebar.classList.remove('mobile-open');
+    if (backdrop) backdrop.classList.remove('active');
+  }
+}
+window.toggleMobileSidebar = toggleMobileSidebar;
 
-/**
- * Parses a raw GEDCOM text string into structured people and families.
- */
-function parseGEDCOM(text) {
-  const people = new Map();
-  const families = new Map();
-  
-  const lines = text.split(/\r?\n/);
-  
-  let currentEntity = null; // Can be 'INDI' or 'FAM'
-  let currentId = null;
-  let activePerson = null;
-  let activeFamily = null;
-  let dateType = null; // 'BIRT' or 'DEAT' or 'MARR'
-
-  for (let line of lines) {
-    line = line.trim();
-    if (!line) continue;
-
-    // Match level, tag, and value
-    // E.g., "0 @I1@ INDI" or "1 NAME Jón /Jónsson/" or "2 DATE 12 JUN 1920"
-    const match = line.match(/^(\d+)\s+(@\w+@)?\s*(\w+)?\s*(.*)$/);
-    if (!match) continue;
-
-    const level = parseInt(match[1]);
-    const pointer = match[2];
-    const tag = match[3];
-    const value = match[4];
-
-    if (level === 0) {
-      // Start of a new top-level record
-      if (tag === 'INDI' && pointer) {
-        currentEntity = 'INDI';
-        currentId = pointer;
-        activePerson = {
-          id: pointer,
-          firstName: '',
-          lastName: '',
-          fullName: 'Óþekkt nafn',
-          birthDate: '',
-          birthPlace: '',
-          deathDate: '',
-          deathPlace: '',
-          famc: null, // Family they are child of
-          fams: [],   // Families they are spouse of
-          fatherId: null,
-          motherId: null,
-          spouses: [],
-          children: [],
-          note: '',
-          sex: ''
-        };
-        people.set(pointer, activePerson);
-      } else if (tag === 'FAM' && pointer) {
-        currentEntity = 'FAM';
-        currentId = pointer;
-        activeFamily = {
-          id: pointer,
-          husband: null,
-          wife: null,
-          children: []
-        };
-        families.set(pointer, activeFamily);
-      } else {
-        currentEntity = null;
-        currentId = null;
-      }
-      dateType = null;
-    } else {
-      // Properties under the current record
-      if (currentEntity === 'INDI' && activePerson) {
-        if (tag === 'NAME') {
-          // Extract name and clean slashes (e.g. Jón /Jónsson/ -> Jón Jónsson)
-          let rawName = value;
-          let cleanName = rawName.replace(/\//g, '').trim();
-          activePerson.fullName = cleanName;
-          
-          // Try to split into first and last name
-          const parts = rawName.split('/');
-          activePerson.firstName = parts[0] ? parts[0].trim() : '';
-          activePerson.lastName = parts[1] ? parts[1].trim() : '';
-        } else if (tag === 'SEX') {
-          activePerson.sex = value;
-        } else if (tag === 'BIRT') {
-          dateType = 'BIRT';
-        } else if (tag === 'DEAT') {
-          dateType = 'DEAT';
-        } else if (tag === 'DATE') {
-          if (dateType === 'BIRT') activePerson.birthDate = cleanGedcomDate(value);
-          if (dateType === 'DEAT') activePerson.deathDate = cleanGedcomDate(value);
-        } else if (tag === 'PLAC') {
-          if (dateType === 'BIRT') activePerson.birthPlace = value;
-          if (dateType === 'DEAT') activePerson.deathPlace = value;
-        } else if (tag === 'FAMC') {
-          activePerson.famc = value;
-        } else if (tag === 'FAMS') {
-          activePerson.fams.push(value);
-        } else if (tag === 'NOTE') {
-          activePerson.note = value;
-          dateType = 'NOTE';
-        } else if (tag === 'CONC' && dateType === 'NOTE') {
-          activePerson.note = (activePerson.note || '') + value;
-        } else if (tag === 'CONT' && dateType === 'NOTE') {
-          activePerson.note = (activePerson.note || '') + '\n' + value;
-        }
-      } else if (currentEntity === 'FAM' && activeFamily) {
-        if (tag === 'HUSB') {
-          activeFamily.husband = value;
-        } else if (tag === 'WIFE') {
-          activeFamily.wife = value;
-        } else if (tag === 'CHIL') {
-          activeFamily.children.push(value);
-        }
-      }
-    }
+function initEventListeners() {
+  const menuToggle = document.getElementById('mobile-menu-toggle');
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => toggleMobileSidebar());
   }
 
-  // Resolve Relationships: Parents, Spouses, and Children
-  for (let [id, person] of people.entries()) {
-    // 1. Resolve Parents via FAMC
-    if (person.famc) {
-      const parentFam = families.get(person.famc);
-      if (parentFam) {
-        person.fatherId = parentFam.husband || null;
-        person.motherId = parentFam.wife || null;
-      }
-    }
+  const treeSelect = document.getElementById('tree-select');
+  if (treeSelect) {
+    const treeChangeListener = (e) => {
+      state.selectedTreeId = e.target.value;
+      loadTree(state.selectedTreeId);
+    };
+    treeSelect._treeChangeListener = treeChangeListener;
+    treeSelect.addEventListener('change', treeChangeListener);
+  }
 
-    // 2. Resolve Spouses & Children via FAMS
-    person.fams.forEach(famId => {
-      const fam = families.get(famId);
-      if (fam) {
-        // Find spouse
-        let spouseId = null;
-        if (fam.husband === id) spouseId = fam.wife;
-        else if (fam.wife === id) spouseId = fam.husband;
-        
-        if (spouseId && !person.spouses.includes(spouseId)) {
-          person.spouses.push(spouseId);
-        }
+  const fileInput = document.getElementById('gedcom-file-input');
+  if (fileInput) {
+    fileInput.addEventListener('change', handleGedcomFileUpload);
+  }
 
-        // Add children from this family
-        fam.children.forEach(childId => {
-          if (!person.children.includes(childId)) {
-            person.children.push(childId);
-          }
-        });
-      }
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      filterPeopleList(e.target.value);
     });
   }
 
-  return { people, families };
-}
-
-/**
- * Translates English GEDCOM dates into cleaner formats (e.g. 12 JUN 1920 -> 12. júní 1920)
- */
-function cleanGedcomDate(gedDate) {
-  if (!gedDate) return '';
+  const btnLoadLocal = document.getElementById('btn-load-local');
+  if (btnLoadLocal) btnLoadLocal.addEventListener('click', () => loadTree('loa'));
   
-  const months = {
-    'JAN': 'janúar', 'FEB': 'febrúar', 'MAR': 'mars', 'APR': 'apríl',
-    'MAY': 'maí', 'JUN': 'júní', 'JUL': 'júlí', 'AUG': 'ágúst',
-    'SEP': 'september', 'OCT': 'október', 'NOV': 'nóvember', 'DEC': 'desember'
-  };
+  const btnLoadLocal2 = document.getElementById('btn-load-local-2');
+  if (btnLoadLocal2) btnLoadLocal2.addEventListener('click', () => loadTree('loa'));
 
-  let clean = gedDate;
-  // Match DD MMM YYYY
-  const parts = gedDate.split(' ');
-  if (parts.length === 3) {
-    const day = parts[0];
-    const monthEng = parts[1].toUpperCase();
-    const year = parts[2];
-    if (months[monthEng]) {
-      return `${day}. ${months[monthEng]} ${year}`;
-    }
-  } else if (parts.length === 2) {
-    const monthEng = parts[0].toUpperCase();
-    const year = parts[1];
-    if (months[monthEng]) {
-      return `${months[monthEng]} ${year}`;
-    }
-  }
+  const btnSettings = document.getElementById('btn-show-settings');
+  if (btnSettings) btnSettings.addEventListener('click', openSettingsModal);
   
-  return clean;
-}
-
-// ==========================================
-// 2. Mock Data Generator
-// ==========================================
-
-function loadMockTrees() {
-  const lolaGedcom = `
-0 @I1@ INDI
-1 NAME Lóa Margrét /Sveinsdóttir/
-1 BIRT
-2 DATE 14 MAR 1994
-2 PLAC Reykjavík, Ísland
-1 FAMC @F1@
-0 @I2@ INDI
-1 NAME Sveinn /Hallgrímsson/
-1 BIRT
-2 DATE 8 OCT 1962
-2 PLAC Akureyri, Ísland
-1 FAMS @F1@
-1 FAMC @F2@
-0 @I3@ INDI
-1 NAME Margrét /Jónsdóttir/
-1 BIRT
-2 DATE 24 DEC 1965
-2 PLAC Húsavík, Ísland
-1 FAMS @F1@
-1 FAMC @F3@
-0 @I4@ INDI
-1 NAME Hallgrímur /Sveinsson/
-1 BIRT
-2 DATE 12 APR 1932
-2 PLAC Seyðisfjörður, Ísland
-1 DEAT
-2 DATE 4 SEP 2012
-2 PLAC Reykjavík, Ísland
-1 FAMS @F2@
-0 @I5@ INDI
-1 NAME Sigrún /Guðmundsdóttir/
-1 BIRT
-2 DATE 3 JUL 1935
-2 PLAC Eskifjörður, Ísland
-1 DEAT
-2 DATE 19 FEB 2018
-2 PLAC Reykjavík, Ísland
-1 FAMS @F2@
-0 @I6@ INDI
-1 NAME Jón /Einarsson/
-1 BIRT
-2 DATE 17 JUN 1928
-2 PLAC Húsavík, Ísland
-1 DEAT
-2 DATE 15 MAY 2004
-2 PLAC Akureyri, Ísland
-1 FAMS @F3@
-0 @I7@ INDI
-1 NAME Kristín /Pétursdóttir/
-1 BIRT
-2 DATE 5 NOV 1933
-2 PLAC Kópasker, Ísland
-1 DEAT
-2 DATE 22 AUG 2021
-2 PLAC Húsavík, Ísland
-1 FAMS @F3@
-0 @F1@ FAM
-1 HUSB @I2@
-1 WIFE @I3@
-1 CHIL @I1@
-0 @F2@ FAM
-1 HUSB @I4@
-1 WIFE @I5@
-1 CHIL @I2@
-0 @F3@ FAM
-1 HUSB @I6@
-1 WIFE @I7@
-1 CHIL @I3@
-`;
-
-  const sigurjonGedcom = `
-0 @I10@ INDI
-1 NAME Sigurjón Axel /Guðjónsson/
-1 BIRT
-2 DATE 20 JUL 1990
-2 PLAC Reykjavík, Ísland
-1 FAMC @F10@
-0 @I11@ INDI
-1 NAME Guðjón /Axelsson/
-1 BIRT
-2 DATE 3 JUN 1958
-2 PLAC Ísafjörður, Ísland
-1 FAMS @F10@
-1 FAMC @F11@
-0 @I12@ INDI
-1 NAME Sigurjóna /Sigurðardóttir/
-1 BIRT
-2 DATE 11 SEP 1961
-2 PLAC Vestmannaeyjar, Ísland
-1 FAMS @F10@
-1 FAMC @F12@
-0 @I13@ INDI
-1 NAME Axel /Guðjónsson/
-1 BIRT
-2 DATE 19 AUG 1925
-2 PLAC Flateyri, Ísland
-1 DEAT
-2 DATE 8 APR 2009
-2 PLAC Ísafjörður, Ísland
-1 FAMS @F11@
-0 @I14@ INDI
-1 NAME Anna /Halldórsdóttir/
-1 BIRT
-2 DATE 15 OCT 1928
-2 PLAC Bolungarvík, Ísland
-1 DEAT
-2 DATE 30 NOV 2015
-2 PLAC Ísafjörður, Ísland
-1 FAMS @F11@
-0 @I15@ INDI
-1 NAME Sigurður /Bjarnason/
-1 BIRT
-2 DATE 25 MAY 1930
-2 PLAC Vestmannaeyjar, Ísland
-1 DEAT
-2 DATE 12 JUL 2014
-2 PLAC Selfoss, Ísland
-1 FAMS @F12@
-0 @I16@ INDI
-1 NAME Helga /Ólafsdóttir/
-1 BIRT
-2 DATE 8 JAN 1933
-2 PLAC Vestmannaeyjar, Ísland
-1 DEAT
-2 DATE 4 MAY 2020
-2 PLAC Reykjavík, Ísland
-1 FAMS @F12@
-0 @F10@ FAM
-1 HUSB @I11@
-1 WIFE @I12@
-1 CHIL @I10@
-0 @F11@ FAM
-1 HUSB @I13@
-1 WIFE @I14@
-1 CHIL @I11@
-0 @F12@ FAM
-1 HUSB @I15@
-1 WIFE @I16@
-1 CHIL @I12@
-`;
-
-  state.trees['Lóa — Ættartré'] = parseGEDCOM(lolaGedcom);
-  state.trees['Sigurjón Axel — Ættartré'] = parseGEDCOM(sigurjonGedcom);
+  const btnCloseSettings = document.getElementById('btn-close-settings');
+  if (btnCloseSettings) btnCloseSettings.addEventListener('click', closeSettingsModal);
   
-  updateTreeSelector();
-  selectTree('Sigurjón Axel — Ættartré');
-  showToast('Dæmatré hlaðin inn!');
-}
+  const btnSaveSettings = document.getElementById('btn-save-settings');
+  if (btnSaveSettings) btnSaveSettings.addEventListener('click', saveSettings);
 
-async function loadLocalTrees() {
-  showToast('Sæki ættartré af vefþjóni...');
-  try {
-    const [loaRes, sigurjonRes] = await Promise.all([
-      fetch('/loa.ged').catch(() => null),
-      fetch('/sigurjon.ged').catch(() => null)
-    ]);
-    
-    let loadedAny = false;
-    
-    if (loaRes && loaRes.ok) {
-      const loaText = await loaRes.text();
-      state.trees['Lóa — Innflutt ættartré'] = parseGEDCOM(loaText);
-      loadedAny = true;
-    }
-    if (sigurjonRes && sigurjonRes.ok) {
-      const sigurjonText = await sigurjonRes.text();
-      state.trees['Sigurjón Axel — Innflutt ættartré'] = parseGEDCOM(sigurjonText);
-      loadedAny = true;
-    }
-    
-    if (loadedAny) {
-      updateTreeSelector();
-      if (state.trees['Sigurjón Axel — Innflutt ættartré']) {
-        selectTree('Sigurjón Axel — Innflutt ættartré');
-      } else if (state.trees['Lóa — Innflutt ættartré']) {
-        selectTree('Lóa — Innflutt ættartré');
-      }
-      showToast('Þín ættartré hlaðin inn!');
-    } else {
-      showToast('Fann ekki loa.ged eða sigurjon.ged í verkefnamöppunni.');
-    }
-  } catch (err) {
-    console.error(err);
-    showToast('Villa við að sækja ættartré.');
-  }
-}
-
-// ==========================================
-// 3. UI Interactions & Event Handlers
-// ==========================================
-
-function initUIEvents() {
-  // Tree Loading
-  document.getElementById('btn-load-mock').addEventListener('click', loadMockTrees);
-  document.getElementById('btn-load-mock-2').addEventListener('click', loadMockTrees);
-  document.getElementById('btn-load-local').addEventListener('click', loadLocalTrees);
-  document.getElementById('btn-load-local-2').addEventListener('click', loadLocalTrees);
-  
-  const fileInput = document.getElementById('gedcom-file-input');
-  fileInput.addEventListener('change', handleGedcomUpload);
-  
-  const uploadZone = document.getElementById('upload-zone');
-  uploadZone.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    uploadZone.classList.add('dragover');
-  });
-  uploadZone.addEventListener('dragleave', () => {
-    uploadZone.classList.remove('dragover');
-  });
-  uploadZone.addEventListener('drop', (e) => {
-    e.preventDefault();
-    uploadZone.classList.remove('dragover');
-    if (e.dataTransfer.files.length > 0) {
-      fileInput.files = e.dataTransfer.files;
-      handleGedcomUpload();
-    }
-  });
-
-  // Tree Selector
-  const treeSelect = document.getElementById('tree-select');
-  treeSelect.addEventListener('change', (e) => {
-    selectTree(e.target.value);
-  });
-
-  // Search Input
-  document.getElementById('search-input').addEventListener('input', handleSearch);
-
-  // Tabs
+  // Tab switching in workspace
   const tabs = document.querySelectorAll('.tab');
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
-      
+      tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-      const contentId = tab.getAttribute('data-tab');
-      document.getElementById(contentId).style.display = 'block';
-      
-      if (contentId === 'tab-sources') {
-        loadSourcesMarkdown();
-      }
+      const targetTab = tab.getAttribute('data-tab');
+      document.querySelectorAll('.tab-content').forEach(c => {
+        c.style.display = c.id === targetTab ? 'block' : 'none';
+      });
     });
   });
 
-  // OCR Upload / Paste
-  const ocrDropzone = document.getElementById('ocr-dropzone');
-  const ocrFileInput = document.getElementById('ocr-file-input');
-  
-  ocrFileInput.addEventListener('change', handleOcrImageUpload);
-  ocrDropzone.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    ocrDropzone.classList.add('dragover');
-  });
-  ocrDropzone.addEventListener('dragleave', () => {
-    ocrDropzone.classList.remove('dragover');
-  });
-  ocrDropzone.addEventListener('drop', (e) => {
-    e.preventDefault();
-    ocrDropzone.classList.remove('dragover');
-    if (e.dataTransfer.files.length > 0) {
-      ocrFileInput.files = e.dataTransfer.files;
-      handleOcrImageUpload();
-    }
-  });
+  // Copy Bio Text button
+  const btnCopyBio = document.getElementById('btn-copy-bio');
+  if (btnCopyBio) {
+    btnCopyBio.addEventListener('click', () => {
+      const txt = document.getElementById('formatted-bio-text');
+      if (txt && txt.value) {
+        navigator.clipboard.writeText(txt.value);
+        showToast('Ævisaga afrituð á klippiborð!');
+      }
+    });
+  }
+}
 
-  // Paste image handler (Ctrl+V)
-  window.addEventListener('paste', (e) => {
-    // Only handle paste if OCR tab is active or we have a selected person
-    if (!state.selectedPersonId) return;
-    
-    const items = (e.clipboardData || e.originalEvent.clipboardData).items;
-    for (let item of items) {
-      if (item.type.indexOf('image') === 0) {
-        const file = item.getAsFile();
-        state.ocrImage = file;
-        showImagePreview(file);
-        
-        // Switch to OCR tab
-        document.querySelector('[data-tab="tab-ocr"]').click();
-        showToast('Mynd límd inn úr klemmuspjaldi!');
-        break;
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toast-message');
+  if (!toast || !toastMsg) return;
+  toastMsg.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+async function loadTreesList() {
+  try {
+    const res = await fetchWithTimeout('/api/trees');
+    if (res.ok) {
+      const trees = await res.json();
+      const select = document.getElementById('tree-select');
+      if (select && trees.length > 0) {
+        // Temporarily remove the change listener so innerHTML update doesn't trigger loadTree again
+        const oldListener = select._treeChangeListener;
+        if (oldListener) select.removeEventListener('change', oldListener);
+
+        select.innerHTML = trees.map(t => `<option value="${t.id}" ${t.id === state.selectedTreeId ? 'selected' : ''}>🌳 ${t.name}</option>`).join('');
+        select.style.display = 'block';
+        select.value = state.selectedTreeId;
+
+        // Re-add the listener
+        if (oldListener) select.addEventListener('change', oldListener);
       }
     }
-  });
+  } catch (err) {
+    console.error("Could not load trees list:", err);
+  }
+}
 
-  document.getElementById('btn-clear-image').addEventListener('click', clearImagePreview);
-  document.getElementById('btn-run-ocr').addEventListener('click', runOCR);
-  document.getElementById('btn-format-to-bio').addEventListener('click', () => {
-    // Switch to Bio tab
-    document.querySelector('[data-tab="tab-bio"]').click();
-    // Copy OCR text over to bio draft area if empty
-    const rawText = document.getElementById('ocr-raw-text').value;
-    const formattedBio = document.getElementById('formatted-bio-text');
-    if (rawText && !formattedBio.value) {
-      applyTemplate('bio', rawText);
+async function loadTree(treeId) {
+  try {
+    // Show Workspace, Hide Empty State immediately
+    const emptyView = document.getElementById('empty-state-view');
+    const workspaceView = document.getElementById('person-workspace-view');
+    if (emptyView) emptyView.style.display = 'none';
+    if (workspaceView) workspaceView.style.display = 'grid';
+
+    state.selectedTreeId = treeId;
+    const select = document.getElementById('tree-select');
+    if (select) select.value = treeId;
+
+    const res = await fetchWithTimeout(`/api/tree?id=${treeId}`);
+    if (!res.ok) throw new Error("Gat ekki sótt ættartré.");
+    const data = await res.json();
+    state.people = data.people || [];
+    
+    const stats = document.getElementById('tree-stats');
+    if (stats) stats.textContent = `${state.people.length} færslur`;
+    
+    updateDebugBar(`✅ Tré hlaðið: ${state.people.length} einstaklingar í "${treeId}" — sláðu inn í leitarboxið`);
+    
+    // Check if user already typed in search input
+    const searchInput = document.getElementById('search-input');
+    if (searchInput && searchInput.value.trim()) {
+      filterPeopleList(searchInput.value);
+    } else {
+      renderPeopleList(state.people);
     }
-  });
-
-  // Biography Templates
-  document.getElementById('template-bio-btn').addEventListener('click', () => {
-    applyTemplate('bio');
-  });
-  document.getElementById('template-timeline-btn').addEventListener('click', () => {
-    applyTemplate('timeline');
-  });
-  document.getElementById('template-simple-btn').addEventListener('click', () => {
-    applyTemplate('simple');
-  });
-
-  document.getElementById('btn-copy-bio').addEventListener('click', copyBioToClipboard);
-  document.getElementById('btn-save-note').addEventListener('click', saveNoteLocally);
-  document.getElementById('btn-extract-events').addEventListener('click', extractEventsFromText);
-
-  // Help Modal
-  document.getElementById('btn-show-help').addEventListener('click', () => {
-    document.getElementById('help-modal').style.display = 'flex';
-  });
-  document.getElementById('btn-close-help').addEventListener('click', () => {
-    document.getElementById('help-modal').style.display = 'none';
-  });
-
-  // Click clickable relations (parents)
-  document.getElementById('p-father-info').addEventListener('click', handleRelationClick);
-  document.getElementById('p-mother-info').addEventListener('click', handleRelationClick);
+    
+    // Select Sigurjón Axel or first person by default
+    if (state.people.length > 0) {
+      const defaultP = state.people.find(p => p.id === 'I212097023483' || (p.name && p.name.includes('Sigurjón Axel'))) || state.people[0];
+      selectPerson(defaultP.id);
+    }
+  } catch (err) {
+    console.error("Error loading tree:", err);
+    showToast("Villa við að hlaða inn ættartré.");
+  }
 }
 
-function showToast(message) {
-  const toast = document.getElementById('toast');
-  document.getElementById('toast-message').textContent = message;
-  toast.classList.add('show');
-  
-  if (state.toastTimeout) clearTimeout(state.toastTimeout);
-  state.toastTimeout = setTimeout(() => {
-    toast.classList.remove('show');
-  }, 3000);
-}
-
-// ==========================================
-// 4. File Upload & Tree Selection
-// ==========================================
-
-function handleGedcomUpload() {
+async function handleGedcomFileUpload() {
   const fileInput = document.getElementById('gedcom-file-input');
-  if (fileInput.files.length === 0) return;
+  if (!fileInput || !fileInput.files || fileInput.files.length === 0) return;
 
   const file = fileInput.files[0];
-  const reader = new FileReader();
+  showToast(`Hlað inn ${file.name}...`);
 
-  reader.onload = function(e) {
-    const text = e.target.result;
-    try {
-      const parsedTree = parseGEDCOM(text);
-      const treeName = file.name;
-      state.trees[treeName] = parsedTree;
-      
-      updateTreeSelector();
-      selectTree(treeName);
-      showToast(`Ættartré „${treeName}“ hlaðið inn!`);
-    } catch (err) {
-      console.error(err);
-      alert('Ekki tókst að lesa GEDCOM skrána. Gakktu úr skugga um að hún sé á réttu sniði.');
-    }
-  };
+  const formData = new FormData();
+  formData.append('gedcom', file);
 
-  reader.readAsText(file);
-}
-
-function updateTreeSelector() {
-  const select = document.getElementById('tree-select');
-  select.innerHTML = '';
-  
-  const treeNames = Object.keys(state.trees);
-  if (treeNames.length > 0) {
-    select.style.display = 'block';
-    document.getElementById('upload-zone').style.padding = '0.75rem 0.5rem';
-    
-    treeNames.forEach(name => {
-      const opt = document.createElement('option');
-      opt.value = name;
-      opt.textContent = name;
-      select.appendChild(opt);
+  try {
+    const res = await fetch('/api/upload_gedcom', {
+      method: 'POST',
+      body: formData
     });
-  } else {
-    select.style.display = 'none';
+    if (!res.ok) throw new Error("Gat ekki hlaðið inn GEDCOM skrá.");
+    const data = await res.json();
+    showToast(data.message || "Ættartré flutt inn!");
+    await loadTreesList();
+    await loadTree(data.tree_id);
+  } catch (err) {
+    console.error("Error uploading GEDCOM:", err);
+    showToast("Villa við innlestur GEDCOM skráar: " + err.message);
   }
 }
 
-function selectTree(treeId) {
-  state.selectedTreeId = treeId;
-  const select = document.getElementById('tree-select');
-  select.value = treeId;
-
-  const tree = state.trees[treeId];
-  
-  // Show total stats
-  document.getElementById('tree-stats').textContent = `${tree.people.size} færslur`;
-
-  // Render People List
-  renderPeopleList();
-
-  // Reset workspace
-  state.selectedPersonId = null;
-  document.getElementById('empty-state-view').style.display = 'flex';
-  document.getElementById('person-workspace-view').style.display = 'none';
+function normalizeText(str) {
+  if (str === null || str === undefined) return '';
+  return String(str).toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/ð/g, 'd')
+    .replace(/þ/g, 'th')
+    .replace(/æ/g, 'ae')
+    .replace(/ö/g, 'o');
 }
 
-function renderPeopleList(filteredPeople = null) {
+function renderPeopleList(people) {
   const container = document.getElementById('people-list-container');
-  container.innerHTML = '';
-
-  const tree = state.trees[state.selectedTreeId];
-  if (!tree) return;
-
-  const peopleToRender = filteredPeople || Array.from(tree.people.values());
-
-  if (peopleToRender.length === 0) {
-    container.innerHTML = `<div style="text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem;">Ekkert fólk fannst</div>`;
+  if (!container) return;
+  
+  if (!people || people.length === 0) {
+    container.innerHTML = `<div style="text-align: center; color: var(--text-muted); padding: 2rem;">Engir einstaklingar fundust.</div>`;
     return;
   }
+  
+  container.innerHTML = people.map(p => {
+    if (!p) return '';
+    const displayName = p.name || 'Óþekkt nafn';
+    const dates = [p.birth_year, p.death_year].filter(Boolean).join(' – ');
+    const isSelected = state.selectedPersonId === p.id;
+    return `
+      <div class="person-item ${isSelected ? 'active' : ''}" onclick="selectPerson('${p.id}')">
+        <div class="person-avatar-small">
+          ${p.avatar_url ? `<img src="${p.avatar_url.startsWith('images/') ? '/api/proxy_image?url=' + encodeURIComponent(p.avatar_url) : p.avatar_url}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">` : '<i data-lucide="user"></i>'}
+        </div>
+        <div class="person-info">
+          <div class="person-name">${displayName}</div>
+          <div class="person-meta">${dates ? dates : 'Óþekkt ártöl'}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+  
+  try { if (window.lucide) lucide.createIcons(); } catch(e) {}
+}
 
-  // Sort people alphabetically
-  peopleToRender.sort((a, b) => a.fullName.localeCompare(b.fullName, 'is'));
-
-  peopleToRender.forEach(person => {
-    const item = document.createElement('div');
-    item.className = 'person-item';
-    if (state.selectedPersonId === person.id) {
-      item.classList.add('active');
+function filterPeopleList(query) {
+  try {
+    if (!query || !query.trim()) {
+      renderPeopleList(state.people);
+      return;
     }
+    const queryTokens = normalizeText(query).split(/\s+/).filter(Boolean);
     
-    const nameSpan = document.createElement('span');
-    nameSpan.className = 'person-name';
-    nameSpan.textContent = person.fullName;
-    
-    const datesSpan = document.createElement('span');
-    datesSpan.className = 'person-dates';
-    
-    const bYear = person.birthDate ? person.birthDate.split(' ').pop() : '?';
-    const dYear = person.deathDate ? person.deathDate.split(' ').pop() : (person.deathDate === '' ? 'lifir' : '?');
-    datesSpan.textContent = `${bYear} – ${dYear}`;
-
-    item.appendChild(nameSpan);
-    item.appendChild(datesSpan);
-    
-    item.addEventListener('click', () => {
-      selectPerson(person.id);
+    const filtered = (state.people || []).filter(p => {
+      if (!p) return false;
+      const searchableFields = [
+        p.name,
+        p.given_names,
+        p.surname,
+        p.birth_date,
+        p.birth_year,
+        p.death_date,
+        p.death_year,
+        p.id
+      ].filter(Boolean).map(normalizeText).join(' ');
+      
+      return queryTokens.every(token => searchableFields.includes(token));
     });
-
-    container.appendChild(item);
-  });
+    renderPeopleList(filtered);
+    updateDebugBar(`🔍 Leit: "${query}" → ${filtered.length} niðurstöður úr ${(state.people||[]).length} einstaklingum`);
+  } catch (err) {
+    console.error("Filter error:", err);
+  }
 }
 
-function handleSearch(e) {
-  const query = e.target.value.toLowerCase().trim();
-  const tree = state.trees[state.selectedTreeId];
-  if (!tree) return;
-
-  if (!query) {
-    renderPeopleList();
-    return;
-  }
-
-  const matches = [];
-  for (let person of tree.people.values()) {
-    const nameMatch = person.fullName.toLowerCase().includes(query);
-    const dateMatch = (person.birthDate && person.birthDate.includes(query)) || 
-                      (person.deathDate && person.deathDate.includes(query));
-    if (nameMatch || dateMatch) {
-      matches.push(person);
-    }
-  }
-
-  renderPeopleList(matches);
-}
-
-// ==========================================
-// 5. Person Workspace & Details
-// ==========================================
-
-function selectPerson(personId) {
+async function selectPerson(personId) {
   state.selectedPersonId = personId;
-  const tree = state.trees[state.selectedTreeId];
-  if (!tree) return;
-
-  const person = tree.people.get(personId);
-  if (!person) return;
-
-  // Highlight in list
-  document.querySelectorAll('.person-item').forEach(item => {
-    const name = item.querySelector('.person-name').textContent;
-    if (name === person.fullName) {
-      item.classList.add('active');
-    } else {
-      item.classList.remove('active');
-    }
-  });
-
-  // Show Workspace View
-  document.getElementById('empty-state-view').style.display = 'none';
-  document.getElementById('person-workspace-view').style.display = 'grid';
-
-  // Fill Details
-  document.getElementById('p-full-name').textContent = person.fullName;
   
-  const bYear = person.birthDate ? person.birthDate.split(' ').pop() : '?';
-  const dYear = person.deathDate ? person.deathDate.split(' ').pop() : '';
-  document.getElementById('p-life-dates').textContent = dYear ? `${bYear} – ${dYear}` : `f. ${person.birthDate || '?'}`;
+  // Close mobile sidebar drawer if open
+  if (window.innerWidth <= 900) {
+    toggleMobileSidebar(false);
+  }
 
-  document.getElementById('p-birth-info').textContent = 
-    (person.birthDate || '-') + (person.birthPlace ? ` (${person.birthPlace})` : '');
+  // Highlight active item in sidebar list without blowing away search filter!
+  const container = document.getElementById('people-list-container');
+  if (container) {
+    const items = container.querySelectorAll('.person-item');
+    items.forEach(item => {
+      const onclickAttr = item.getAttribute('onclick') || '';
+      if (onclickAttr.includes(`'${personId}'`)) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+  }
   
-  document.getElementById('p-death-info').textContent = 
-    (person.deathDate || '-') + (person.deathPlace ? ` (${person.deathPlace})` : '');
+  const emptyView = document.getElementById('empty-state-view');
+  const workspaceView = document.getElementById('person-workspace-view');
+  if (emptyView) emptyView.style.display = 'none';
+  if (workspaceView) workspaceView.style.display = 'grid';
+  
+  try {
+    const res = await fetch(`/api/person?id=${personId}`);
+    if (!res.ok) throw new Error("Gat ekki sótt persónu.");
+    const details = await res.json();
+    state.personDetails = details;
+    renderPersonProfile(details);
+  } catch (err) {
+    console.error("Error fetching person profile:", err);
+    showToast("Villa við að hlaða persónu.");
+  }
+}
 
-  // Parents
+function renderPersonProfile(details) {
+  const p = details.person || {};
+  const sources = details.sources || [];
+  const suggestions = details.suggestions || [];
+  const family = details.family || { father: null, mother: null, spouse: [], children: [], siblings: [] };
+  
+  // Header Info
+  const nameEl = document.getElementById('p-full-name');
+  if (nameEl) nameEl.textContent = p.name || 'Óþekkt nafn';
+  
+  const datesEl = document.getElementById('p-life-dates');
+  if (datesEl) {
+    datesEl.textContent = [
+      p.birth_date || p.birth_year ? `f. ${p.birth_date || p.birth_year}` : '',
+      p.death_date || p.death_year ? `d. ${p.death_date || p.death_year}` : ''
+    ].filter(Boolean).join(' — ');
+  }
+  
+  // Basic Details
+  const birthInfo = document.getElementById('p-birth-info');
+  if (birthInfo) birthInfo.textContent = p.birth_date || p.birth_year || 'Óþekkt';
+
+  const deathInfo = document.getElementById('p-death-info');
+  if (deathInfo) deathInfo.textContent = p.death_date || p.death_year || 'Lifandi / Óþekkt';
+
+  // Father
   const fatherEl = document.getElementById('p-father-info');
-  if (person.fatherId && tree.people.has(person.fatherId)) {
-    const father = tree.people.get(person.fatherId);
-    fatherEl.textContent = father.fullName;
-    fatherEl.dataset.id = person.fatherId;
-    fatherEl.classList.add('clickable');
-  } else {
-    fatherEl.textContent = '-';
-    fatherEl.dataset.id = '';
-    fatherEl.classList.remove('clickable');
+  if (fatherEl) {
+    if (family.father) {
+      fatherEl.innerHTML = `<span class="relation-value clickable" onclick="selectPerson('${family.father.id}')" style="color:var(--accent-gold);cursor:pointer;">${family.father.name}</span>`;
+    } else {
+      fatherEl.textContent = 'Óþekktur';
+    }
   }
 
+  // Mother
   const motherEl = document.getElementById('p-mother-info');
-  if (person.motherId && tree.people.has(person.motherId)) {
-    const mother = tree.people.get(person.motherId);
-    motherEl.textContent = mother.fullName;
-    motherEl.dataset.id = person.motherId;
-    motherEl.classList.add('clickable');
-  } else {
-    motherEl.textContent = '-';
-    motherEl.dataset.id = '';
-    motherEl.classList.remove('clickable');
+  if (motherEl) {
+    if (family.mother) {
+      motherEl.innerHTML = `<span class="relation-value clickable" onclick="selectPerson('${family.mother.id}')" style="color:var(--accent-gold);cursor:pointer;">${family.mother.name}</span>`;
+    } else {
+      motherEl.textContent = 'Óþekkt';
+    }
   }
 
-  // Spouses
+  // Spouse(s)
   const spouseEl = document.getElementById('p-spouse-info');
-  if (person.spouses.length > 0) {
-    spouseEl.innerHTML = person.spouses.map(spouseId => {
-      const spouse = tree.people.get(spouseId);
-      return spouse ? `<span class="relation-value clickable" onclick="window.selectPersonFromExternal('${spouseId}')">${spouse.fullName}</span>` : '';
-    }).join(', ');
-  } else {
-    spouseEl.textContent = '-';
+  if (spouseEl) {
+    if (family.spouse && family.spouse.length > 0) {
+      const unique = [...new Map(family.spouse.map(s => [s.id, s])).values()];
+      spouseEl.innerHTML = unique.map(s => `<span class="relation-value clickable" onclick="selectPerson('${s.id}')" style="color:var(--accent-gold);cursor:pointer;display:block;">${s.name}</span>`).join('');
+    } else {
+      spouseEl.textContent = 'Enginn skráður';
+    }
   }
 
   // Children
-  const childrenContainer = document.getElementById('p-children-list');
-  childrenContainer.innerHTML = '';
-  if (person.children.length > 0) {
-    person.children.forEach(childId => {
-      const child = tree.people.get(childId);
-      if (child) {
-        const item = document.createElement('span');
-        item.className = 'relation-value clickable';
-        item.textContent = child.fullName;
-        item.addEventListener('click', () => {
-          selectPerson(childId);
-        });
-        childrenContainer.appendChild(item);
-      }
-    });
-  } else {
-    childrenContainer.innerHTML = '<span class="relation-value">-</span>';
-  }
-
-  // Setup Search Links
-  setupSearchLinks(person);
-
-  // Render Research Log (NOTE) with proper formatting
-  const notesContainer = document.getElementById('p-research-notes');
-  const badgeEl = document.getElementById('research-status-badge');
-  
-  if (person.note && person.note.trim()) {
-    let cleanNote = person.note;
-    
-    // Look for status markers
-    let status = "Í vinnslu";
-    let badgeClass = "badge-warning";
-    
-    if (cleanNote.includes("[Lokið]") || cleanNote.toLowerCase().includes("lokið")) {
-      status = "Lokið";
-      badgeClass = "badge-success";
-    } else if (cleanNote.includes("[Óhafið]") || cleanNote.toLowerCase().includes("óhafið")) {
-      status = "Óhafið";
-      badgeClass = "badge-secondary";
+  const childrenEl = document.getElementById('p-children-list');
+  if (childrenEl) {
+    if (family.children && family.children.length > 0) {
+      const unique = [...new Map(family.children.map(c => [c.id, c])).values()];
+      childrenEl.innerHTML = unique.map(c => `
+        <span class="relation-value clickable" onclick="selectPerson('${c.id}')" style="display:block;font-size:0.85rem;color:var(--accent-gold);margin-bottom:0.2rem;cursor:pointer;">
+          ${c.name}${c.birth_year ? ' (' + c.birth_year + ')' : ''}
+        </span>
+      `).join('');
+    } else {
+      childrenEl.innerHTML = '<span style="color:var(--text-muted);font-size:0.8rem;">Engin börn skráð</span>';
     }
-    
-    badgeEl.textContent = status;
-    badgeEl.className = `badge ${badgeClass}`;
-    
-    // Format the note as rich HTML
-    let noteText = cleanNote.replace(/\[(Lokið|Í vinnslu|Óhafið)\]/gi, '').trim();
-    let html = noteText
-      .replace(/● Aðferð: (.*)/g, '<div style="margin-top: 0.6rem; margin-bottom: 0.2rem;"><span style="color: var(--accent-gold); font-weight: 600;">● $1</span></div>')
-      .replace(/   - Aðgerð: (.*)/g, '<div style="margin-left: 1rem; color: var(--text-secondary);"><span style="color: #aaa; font-weight: 500;">Aðgerð:</span> $1</div>')
-      .replace(/   - Niðurstaða: (.*)/g, '<div style="margin-left: 1rem; color: #2ecc71;"><span style="font-weight: 500;">Niðurstaða:</span> $1</div>')
-      .replace(/Rannsóknarferill:/g, '<div style="font-weight: 600; color: #fff; margin-bottom: 0.3rem;">Rannsóknarferill:</div>')
-      .replace(/\n/g, '');
-    
-    notesContainer.innerHTML = html;
-  } else {
-    badgeEl.textContent = "Óhafið";
-    badgeEl.className = "badge badge-secondary";
-    notesContainer.innerHTML = '<span style="font-style: italic; color: var(--text-muted);">Enginn rannsóknarferill skráður.</span>';
   }
 
-  // Render Sources & Images for this person
-  renderPersonSources(person);
+  // Research Notes Summary / Biography
+  const notesEl = document.getElementById('p-research-notes');
+  if (notesEl) {
+    if (p.notes) {
+      let formattedHtml = p.notes
+        .replace(/^# (.*$)/gim, '<div style="font-size:1.05rem;font-weight:700;color:var(--accent-gold);margin-bottom:0.4rem;">$1</div>')
+        .replace(/^## (.*$)/gim, '<div style="font-size:0.92rem;font-weight:600;color:#fff;margin-top:0.6rem;margin-bottom:0.25rem;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:2px;">$1</div>')
+        .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
+        .replace(/^- (.*$)/gim, '<div style="padding-left:0.8rem;margin-bottom:0.2rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent-gold);">•</span>$1</div>')
+        .replace(/\n\n/gim, '<div style="height:0.4rem;"></div>');
+      notesEl.innerHTML = formattedHtml;
+    } else {
+      notesEl.textContent = `Ekki er búið að skrá rannsóknarnótur fyrir ${p.name}. Ýttu á 'Keyra Google AI leit' til að afla upplýsinga sjálfvirkt.`;
+    }
+  }
 
-  // Set avatar photo if available
-  renderPersonAvatar(person);
-
-  // Clear workspace inputs for new person (or load cached data)
-  clearWorkspaceInputsForNewPerson();
-  loadSavedNotes();
+  // Also populate Tab 2: Biography & Format
+  const formattedBioTextarea = document.getElementById('formatted-bio-text');
+  if (formattedBioTextarea && p.notes) {
+    formattedBioTextarea.value = p.notes;
+  }
   
-  // Return to Tab 1 (OCR) as default for research
-  document.querySelector('[data-tab="tab-ocr"]').click();
+  // Avatar
+  const avatarImg = document.getElementById('p-avatar-img');
+  const avatarIcon = document.getElementById('p-avatar-icon');
+  if (avatarImg && avatarIcon) {
+    if (p.avatar_url) {
+      avatarImg.src = p.avatar_url.startsWith('images/') ? `/api/proxy_image?url=${encodeURIComponent(p.avatar_url)}` : p.avatar_url;
+      avatarImg.style.display = 'block';
+      avatarIcon.style.display = 'none';
+    } else {
+      avatarImg.style.display = 'none';
+      avatarIcon.style.display = 'block';
+    }
+  }
+
+  // Quick Links
+  const encodedName = encodeURIComponent(p.name || '');
+  
+  const linkTimarit = document.getElementById('link-timarit');
+  if (linkTimarit) linkTimarit.href = `https://timarit.is/search?q=${encodedName}`;
+  
+  const linkMbl = document.getElementById('link-mbl');
+  if (linkMbl) linkMbl.href = `https://www.mbl.is/greinasafn/leit/?q=${encodedName}`;
+
+  // Confirmed Sources Gallery
+  renderConfirmedSources(sources);
+  
+  // AI Suggestions Section
+  renderAISuggestions(suggestions, p.id);
+  
+  lucide.createIcons();
 }
 
-window.selectPersonFromExternal = function(id) {
-  selectPerson(id);
+function renderConfirmedSources(sources) {
+  const gallery = document.getElementById('p-sources-gallery');
+  if (!gallery) return;
+  
+  if (!sources || sources.length === 0) {
+    gallery.innerHTML = `<div style="font-size:0.85rem;color:var(--text-muted);padding:1rem;text-align:center;border:1px dashed var(--border-color);border-radius:6px;">Engar staðfestar heimildir ennþá.</div>`;
+    return;
+  }
+
+  gallery.innerHTML = sources.map(s => {
+    const hasImage = s.image_url || s.local_path;
+    const imgSrc = s.local_path
+      ? (s.local_path.startsWith('images/') ? `/api/proxy_image?url=${encodeURIComponent(s.local_path)}` : s.local_path)
+      : (s.image_url
+        ? (s.image_url.startsWith('images/') ? `/api/proxy_image?url=${encodeURIComponent(s.image_url)}` : s.image_url)
+        : null);
+    
+    const domain = s.link ? (() => { try { return new URL(s.link).hostname.replace('www.',''); } catch(e) { return ''; } })() : '';
+    const snippet = s.snippet ? s.snippet.substring(0, 120) + (s.snippet.length > 120 ? '…' : '') : '';
+
+    return `
+      <div style="background:rgba(255,255,255,0.03);padding:0.85rem;border-radius:8px;border:1px solid var(--border-color);display:flex;gap:0.75rem;align-items:flex-start;position:relative;">
+        ${imgSrc ? `
+          <div style="position:relative;flex-shrink:0;">
+            <img src="${imgSrc}" style="width:64px;height:64px;object-fit:cover;border-radius:6px;border:1px solid var(--border-color);cursor:pointer;" 
+                 onclick="setProfileImage('${state.selectedPersonId}', '${s.local_path || s.image_url || ''}', this)"
+                 title="Smella til að setja sem prófílmynd">
+            <div style="position:absolute;bottom:2px;right:2px;background:rgba(0,0,0,0.7);border-radius:3px;padding:1px 3px;font-size:9px;color:#fff;">📷</div>
+          </div>
+        ` : `<i data-lucide="book-open" style="width:24px;height:24px;color:var(--accent-gold);flex-shrink:0;margin-top:2px;"></i>`}
+        <div style="flex-grow:1;min-width:0;">
+          <div style="font-weight:600;font-size:0.88rem;color:var(--accent-gold);margin-bottom:0.2rem;">${s.title}</div>
+          ${snippet ? `<div style="font-size:0.78rem;color:var(--text-secondary);margin-bottom:0.3rem;line-height:1.4;">${snippet}</div>` : ''}
+          ${domain ? `<div style="font-size:0.72rem;color:var(--text-muted);">🔗 ${domain}</div>` : ''}
+          ${s.link ? `<a href="${s.link}" target="_blank" style="font-size:0.72rem;color:var(--accent-gold);margin-top:0.25rem;display:inline-flex;align-items:center;gap:4px;">Opna heimild <i data-lucide="external-link" style="width:10px;height:10px;"></i></a>` : ''}
+        </div>
+        <button onclick="deleteSource(${s.id}, '${state.selectedPersonId}')" 
+                title="Eyða heimild"
+                style="background:none;border:none;color:var(--text-muted);cursor:pointer;padding:2px;flex-shrink:0;opacity:0.6;transition:opacity 0.2s;"
+                onmouseover="this.style.opacity='1';this.style.color='#e53e3e'"
+                onmouseout="this.style.opacity='0.6';this.style.color='var(--text-muted)'">
+          <i data-lucide="trash-2" style="width:14px;height:14px;"></i>
+        </button>
+      </div>
+    `;
+  }).join('');
+  
+  try { if (window.lucide) lucide.createIcons(); } catch(e) {}
+}
+
+window.deleteSource = async function(sourceId, personId) {
+  if (!confirm('Eyða þessari heimild?')) return;
+  try {
+    const res = await fetch(`/api/delete_source?source_id=${sourceId}&person_id=${personId}`, { method: 'POST' });
+    if (!res.ok) throw new Error('Villa');
+    const data = await res.json();
+    state.personDetails = data.details;
+    renderPersonProfile(data.details);
+    showToast('Heimild eytt!');
+  } catch(e) {
+    showToast('Villa við eyðingu: ' + e.message);
+  }
 };
 
-function handleRelationClick(e) {
-  const id = e.target.dataset.id;
-  if (id) {
-    selectPerson(id);
+window.setProfileImage = async function(personId, imagePath, imgEl) {
+  if (!imagePath) return;
+  try {
+    const res = await fetch(`/api/set_profile_image?person_id=${personId}&image_path=${encodeURIComponent(imagePath)}`, { method: 'POST' });
+    if (!res.ok) throw new Error('Villa');
+    const data = await res.json();
+    state.personDetails = data.details;
+    renderPersonProfile(data.details);
+    showToast('Prófílmynd uppfærð!');
+  } catch(e) {
+    showToast('Villa: ' + e.message);
   }
-}
+};
 
-function setupSearchLinks(person) {
-  const fullNameEncoded = encodeURIComponent(person.fullName);
-  // Extract clean name without middle names if searching is too narrow
-  const firstAndLast = encodeURIComponent(person.firstName + ' ' + person.lastName);
+function renderAISuggestions(suggestions, personId) {
+  const container = document.getElementById('web-suggestions-section');
+  const gallery = document.getElementById('p-suggestions-gallery');
+  const countBadge = document.getElementById('suggestions-count');
+  if (!container || !gallery || !countBadge) return;
   
-  const birthYear = person.birthDate ? person.birthDate.split(' ').pop() : '';
-  const deathYear = person.deathDate ? person.deathDate.split(' ').pop() : '';
+  container.style.display = 'block';
 
-  // 1. Tímarit.is
-  // We query exact name + birth/death range if available
-  let timaritQuery = `"${person.fullName}"`;
-  if (birthYear) timaritQuery += ` OR "${person.firstName} ${person.lastName}" ${birthYear}`;
-  document.getElementById('link-timarit').href = `https://timarit.is/search?q=${encodeURIComponent(timaritQuery)}`;
+  const activeSugs = suggestions.filter(s => s.status === 'pending');
+  const rejectedSugs = suggestions.filter(s => s.status === 'rejected');
+  
+  countBadge.textContent = activeSugs.length;
 
-  // 2. Mbl.is Minningar
-  let mblQuery = `${person.fullName}`;
-  document.getElementById('link-mbl').href = `https://www.mbl.is/greinasafn/leit/?q=${encodeURIComponent(mblQuery)}`;
+  let html = '';
+  
+  if (activeSugs.length === 0 && rejectedSugs.length === 0) {
+    html = `<div style="font-size: 0.85rem; color: var(--text-muted); padding: 1rem; text-align: center; border: 1px dashed var(--border-color); border-radius: 6px;">Engar uppástungur í boði. Ýttu á 'Keyra Google AI leit' til að leita á vefnum.</div>`;
+  } else {
+    html += activeSugs.map(s => renderSingleSuggestionCard(s, false)).join('');
 
-  // 3. Legstaðaleit
-  let legQuery = `${person.firstName} ${person.lastName}`;
-  document.getElementById('link-legstadir').href = `https://www.legstadaleit.is/leit?q=${encodeURIComponent(legQuery)}`;
+    if (rejectedSugs.length > 0) {
+      html += `
+        <div style="margin-top: 1rem; border-top: 1px dashed var(--border-color); padding-top: 0.75rem; text-align: center;">
+          <button class="btn btn-secondary" style="font-size: 0.75rem;" onclick="toggleShowRejected()">
+            ${state.showRejected ? 'Fela hafnaðar uppástungur' : `Sýna hafnaðar uppástungur (${rejectedSugs.length})`}
+          </button>
+        </div>
+      `;
+      if (state.showRejected) {
+        html += `<div style="margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.75rem;">`;
+        html += rejectedSugs.map(s => renderSingleSuggestionCard(s, true)).join('');
+        html += `</div>`;
+      }
+    }
+  }
 
-  // 4. Íslendingabók
-  document.getElementById('link-islendingabok').href = `https://www.islendingabok.is`;
+  gallery.innerHTML = html;
 }
 
-function clearWorkspaceInputsForNewPerson() {
-  clearImagePreview();
-  document.getElementById('ocr-raw-text').value = '';
-  document.getElementById('formatted-bio-text').value = '';
-  document.getElementById('dynamic-timeline').innerHTML = `
-    <div style="font-size: 0.8rem; color: var(--text-muted); font-style: italic;">
-      Smelltu á „Greina atburði úr texta“ til að finna sjálfkrafa ártöl og viðburði í textanum.
+function renderSingleSuggestionCard(sug, isRejected) {
+  const imgPath = sug.local_path || sug.image_url;
+  const proxyImg = imgPath ? `/api/proxy_image?url=${encodeURIComponent(imgPath)}` : null;
+
+  return `
+    <div style="background: rgba(13,15,18,0.6); padding: 1rem; border-radius: 8px; border: 1px solid ${isRejected ? 'rgba(255,255,255,0.08)' : 'rgba(184,134,11,0.25)'}; position: relative;">
+      <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+        ${proxyImg ? `
+          <div style="width: 80px; height: 80px; flex-shrink: 0; background: #000; border-radius: 6px; overflow: hidden; border: 1px solid var(--border-color);">
+            <img src="${proxyImg}" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        ` : ''}
+        <div style="flex-grow: 1;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.72rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase;">${sug.source || 'AI LEIT'}</span>
+            <span class="badge badge-secondary" style="font-size: 0.65rem;">${sug.confidence}% öryggi</span>
+          </div>
+          <div style="font-weight: 600; font-size: 0.92rem; color: #fff; margin-top: 0.2rem;">${sug.title}</div>
+          <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.35rem; line-height: 1.5;">${sug.description}</div>
+        </div>
+      </div>
+      
+      <div style="margin-top: 0.75rem; display: flex; justify-content: flex-end; gap: 0.5rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.6rem;">
+        ${isRejected ? `
+          <button class="btn btn-secondary" style="font-size: 0.75rem;" onclick="confirmSuggestion(${sug.id})">Endurheimta</button>
+        ` : `
+          <button class="btn btn-secondary" style="font-size: 0.75rem; color: #ff6b6b; border-color: rgba(255,107,107,0.3);" onclick="rejectSuggestion(${sug.id})">Hafna</button>
+          <button class="btn btn-primary" style="font-size: 0.75rem; background: var(--accent-gold); color: black;" onclick="confirmSuggestion(${sug.id})">Staðfesta & Vista</button>
+        `}
+      </div>
     </div>
   `;
 }
 
-// ==========================================
-// 6. OCR (Optical Character Recognition)
-// ==========================================
-
-function handleOcrImageUpload() {
-  const ocrFileInput = document.getElementById('ocr-file-input');
-  if (ocrFileInput.files.length === 0) return;
-
-  const file = ocrFileInput.files[0];
-  state.ocrImage = file;
-  showImagePreview(file);
-}
-
-function showImagePreview(file) {
-  const previewContainer = document.getElementById('ocr-preview-container');
-  const previewImage = document.getElementById('ocr-image-preview');
-  const dropzone = document.getElementById('ocr-dropzone');
-  
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    previewImage.src = e.target.result;
-    previewContainer.style.display = 'flex';
-    dropzone.style.display = 'none';
-    document.getElementById('btn-run-ocr').disabled = false;
-  };
-  reader.readAsDataURL(file);
-}
-
-function clearImagePreview() {
-  state.ocrImage = null;
-  document.getElementById('ocr-file-input').value = '';
-  document.getElementById('ocr-preview-container').style.display = 'none';
-  document.getElementById('ocr-dropzone').style.display = 'flex';
-  document.getElementById('btn-run-ocr').disabled = true;
-  document.getElementById('ocr-status').innerHTML = '';
-}
-
-function runOCR() {
-  if (!state.ocrImage) return;
-
-  const statusEl = document.getElementById('ocr-status');
-  statusEl.innerHTML = `<span class="spinner" style="width: 14px; height: 14px; display: inline-block;"></span> Les texta...`;
-  
-  const rawTextarea = document.getElementById('ocr-raw-text');
-  
-  // Use Tesseract.js to read Icelandic text
-  Tesseract.recognize(
-    state.ocrImage,
-    'isl', // Icelandic
-    {
-      logger: m => {
-        if (m.status === 'recognizing text') {
-          statusEl.innerHTML = `<span class="spinner" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle;"></span> Les: ${Math.round(m.progress * 100)}%`;
-        } else {
-          statusEl.textContent = 'Hleður málskrá...';
-        }
-      }
-    }
-  ).then(({ data: { text } }) => {
-    statusEl.innerHTML = `<span style="color: var(--status-success);"><i data-lucide="check" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle;"></i> Lokið</span>`;
+window.toggleShowRejected = function() {
+  state.showRejected = !state.showRejected;
+  if (state.personDetails) {
+    renderAISuggestions(state.personDetails.suggestions || [], state.selectedPersonId);
     lucide.createIcons();
-    
-    // Clean up OCR spacing issues common in Icelandic scanned text
-    let cleanText = cleanOcrIcelandicText(text);
-    rawTextarea.value = cleanText;
-    showToast('Textalestri lokið!');
-  }).catch(err => {
-    console.error(err);
-    statusEl.innerHTML = `<span style="color: red;">Villa við lestur</span>`;
-    alert('Villa kom upp við að lesa myndina. Gakktu úr skugga um að nettenging sé virk.');
-  });
-}
-
-/**
- * Standard OCR cleanups for Icelandic:
- * - Fixes common letter substitutions (e.g. '|' for 'I', 'ð' or 'o' mixups)
- * - Fixes word break hyphens at the end of lines
- */
-function cleanOcrIcelandicText(text) {
-  let clean = text;
-  
-  // 1. Join hyphenated words split across line breaks
-  // E.g., "minning- \nargrein" -> "minningargrein"
-  clean = clean.replace(/(\w+)-\s*\r?\n\s*(\w+)/g, '$1$2');
-  
-  // 2. Remove multiple blank lines
-  clean = clean.replace(/\n\s*\n/g, '\n\n');
-  
-  // 3. Fix typical OCR scanning errors for Icelandic letters
-  // (Tesseract 5 does well, but standard corrections help)
-  clean = clean.replace(/\bI\b/g, 'í'); // Single capital I in mid-sentence is often í
-  
-  return clean.trim();
-}
-
-// ==========================================
-// 7. Timeline & Event Extraction
-// ==========================================
-
-function extractEventsFromText() {
-  const text = document.getElementById('ocr-raw-text').value;
-  if (!text) {
-    alert('Sláðu inn eða lestu inn texta fyrst.');
-    return;
-  }
-
-  const timelineContainer = document.getElementById('dynamic-timeline');
-  timelineContainer.innerHTML = '';
-
-  const tree = state.trees[state.selectedTreeId];
-  const person = tree.people.get(state.selectedPersonId);
-
-  // Match years (e.g. 1945, 1899, 2012)
-  const yearRegex = /\b(18\d{2}|19\d{2}|20\d{2})\b/g;
-  const sentences = text.split(/[.!?]\s+/);
-  const events = [];
-
-  sentences.forEach(sentence => {
-    const yearsInSentence = sentence.match(yearRegex);
-    if (yearsInSentence) {
-      yearsInSentence.forEach(year => {
-        // Avoid duplicate events for same sentence
-        if (!events.some(e => e.sentence === sentence.trim())) {
-          events.push({
-            year: parseInt(year),
-            sentence: sentence.trim()
-          });
-        }
-      });
-    }
-  });
-
-  // Sort events chronologically
-  events.sort((a, b) => a.year - b.year);
-
-  if (events.length === 0) {
-    timelineContainer.innerHTML = `
-      <div style="font-size: 0.85rem; color: var(--text-muted); font-style: italic;">
-        Engin ártöl (1800-2099) fundust í textanum.
-      </div>
-    `;
-    return;
-  }
-
-  events.forEach(event => {
-    const item = document.createElement('div');
-    item.className = 'timeline-event';
-    
-    const yearSpan = document.createElement('div');
-    yearSpan.className = 'timeline-event-year';
-    yearSpan.textContent = event.year;
-
-    const descSpan = document.createElement('div');
-    descSpan.className = 'timeline-event-desc';
-    descSpan.textContent = event.sentence;
-
-    item.appendChild(yearSpan);
-    item.appendChild(descSpan);
-    
-    // Add click to edit/include event
-    item.style.cursor = 'pointer';
-    item.title = 'Smelltu til að bæta við ævisögu';
-    item.addEventListener('click', () => {
-      const bioTextarea = document.getElementById('formatted-bio-text');
-      const prefix = bioTextarea.value ? bioTextarea.value + '\n' : '';
-      bioTextarea.value = prefix + `* **${event.year}**: ${event.sentence}`;
-      showToast(`Ártali ${event.year} bætt við ævisögu!`);
-    });
-
-    timelineContainer.appendChild(item);
-  });
-
-  showToast(`Fann ${events.length} ártöl í textanum!`);
-}
-
-// ==========================================
-// 8. Biography Templating & Clipboard
-// ==========================================
-
-function applyTemplate(type, customText = '') {
-  const tree = state.trees[state.selectedTreeId];
-  const person = tree.people.get(state.selectedPersonId);
-  if (!person) return;
-
-  const rawText = customText || document.getElementById('ocr-raw-text').value;
-  const formattedBio = document.getElementById('formatted-bio-text');
-
-  let text = '';
-  const father = person.fatherId ? tree.people.get(person.fatherId) : null;
-  const mother = person.motherId ? tree.people.get(person.motherId) : null;
-
-  if (type === 'bio') {
-    text = `## Ævisaga: ${person.fullName}\n\n`;
-    text += `${person.fullName} fæddist ${person.birthDate ? 'þann ' + person.birthDate : 'á óþekktum tíma'}`;
-    if (person.birthPlace) text += ` á ${person.birthPlace}`;
-    text += `.\n`;
-    
-    if (father || mother) {
-      text += `Foreldrar hennar/hans voru `;
-      if (father && mother) text += `${father.fullName} og ${mother.fullName}.`;
-      else if (father) text += `${father.fullName}.`;
-      else if (mother) text += `${mother.fullName}.`;
-      text += `\n`;
-    }
-    
-    if (person.deathDate) {
-      text += `Lést ${person.deathDate ? 'þann ' + person.deathDate : ''}`;
-      if (person.deathPlace) text += ` í/á ${person.deathPlace}`;
-      text += `.\n`;
-    }
-
-    if (rawText) {
-      text += `\n### Minningargrein (Útdráttur):\n> ${rawText.substring(0, 500)}...\n\n`;
-    }
-
-    text += `### Tímatal og viðburðir\n`;
-    if (person.birthDate) text += `* **${person.birthDate.split(' ').pop()}**: Fæðing\n`;
-    if (person.deathDate) text += `* **${person.deathDate.split(' ').pop()}**: Andlát\n`;
-  } 
-  
-  else if (type === 'timeline') {
-    text = `### Tímatal: ${person.fullName}\n\n`;
-    if (person.birthDate) text += `* **${person.birthDate.split(' ').pop()}**: Fæddist ${person.birthDate} ${person.birthPlace ? 'á ' + person.birthPlace : ''}\n`;
-    if (person.deathDate) text += `* **${person.deathDate.split(' ').pop()}**: Lést ${person.deathDate} ${person.deathPlace ? 'í ' + person.deathPlace : ''}\n`;
-    
-    // Append any timeline items from text
-    const timelineEvents = document.querySelectorAll('.timeline-event');
-    if (timelineEvents.length > 0) {
-      timelineEvents.forEach(el => {
-        const yr = el.querySelector('.timeline-event-year').textContent;
-        const desc = el.querySelector('.timeline-event-desc').textContent;
-        text += `* **${yr}**: ${desc}\n`;
-      });
-    }
-  } 
-  
-  else if (type === 'simple') {
-    text = `${person.fullName} (${person.birthDate ? person.birthDate.split(' ').pop() : '?'} – ${person.deathDate ? person.deathDate.split(' ').pop() : '?'})\n\n`;
-    if (rawText) {
-      text += rawText;
-    } else {
-      text += `Fædd/ur ${person.birthDate ? 'þann ' + person.birthDate : ''}. Lést ${person.deathDate ? 'þann ' + person.deathDate : ''}.`;
-    }
-  }
-
-  formattedBio.value = text;
-  showToast('Sniðmát virkjað!');
-}
-
-function copyBioToClipboard() {
-  const bioText = document.getElementById('formatted-bio-text').value;
-  if (!bioText) {
-    alert('Ekkert efni er í lokautgáfu til að afrita.');
-    return;
-  }
-
-  navigator.clipboard.writeText(bioText).then(() => {
-    showToast('Texti afritaður í klemmuspjald!');
-  }).catch(err => {
-    console.error('Ekki tókst að afrita texta', err);
-    alert('Ekki tókst að afrita texta sjálfkrafa. Vinsamlegast veldu textann og afritaðu með Ctrl+C.');
-  });
-}
-
-// ==========================================
-// 9. Local Storage & Backups
-// ==========================================
-
-function loadSavedNotesCount() {
-  const countSpan = document.getElementById('saved-notes-count');
-  let count = 0;
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    if (key.startsWith('saga_note_')) {
-      count++;
-    }
-  }
-  countSpan.textContent = count;
-}
-
-function saveNoteLocally() {
-  const bioText = document.getElementById('formatted-bio-text').value;
-  if (!bioText) {
-    alert('Sláðu inn texta til að vista.');
-    return;
-  }
-
-  const tree = state.trees[state.selectedTreeId];
-  const person = tree.people.get(state.selectedPersonId);
-  if (!person) return;
-
-  const noteKey = `saga_note_${state.selectedTreeId}_${person.id}_${Date.now()}`;
-  const noteData = {
-    treeName: state.selectedTreeId,
-    personId: person.id,
-    personName: person.fullName,
-    text: bioText,
-    timestamp: new Date().toISOString()
-  };
-
-  localStorage.setItem(noteKey, JSON.stringify(noteData));
-  showToast('Minning vistuð staðbundið í Saga!');
-  loadSavedNotesCount();
-  loadSavedNotes();
-}
-
-function loadSavedNotes() {
-  const container = document.getElementById('saved-notes-list');
-  container.innerHTML = '';
-
-  const personId = state.selectedPersonId;
-  const treeId = state.selectedTreeId;
-  const notes = [];
-
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    if (key.startsWith(`saga_note_${treeId}_${personId}_`)) {
-      const data = JSON.parse(localStorage.getItem(key));
-      notes.push({ key, ...data });
-    }
-  }
-
-  // Sort notes newest first
-  notes.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-
-  if (notes.length === 0) {
-    container.innerHTML = `
-      <div style="text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem;">
-        Engin vistuð gögn fyrir þessa persónu enn sem komið er.
-      </div>
-    `;
-    return;
-  }
-
-  notes.forEach(note => {
-    const item = document.createElement('div');
-    item.className = 'card';
-    item.style.padding = '1rem';
-    item.style.marginBottom = '0.5rem';
-    item.style.background = 'rgba(13, 15, 18, 0.4)';
-    
-    const dateStr = new Date(note.timestamp).toLocaleDateString('is', {
-      year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
-    });
-
-    const meta = document.createElement('div');
-    meta.style.display = 'flex';
-    meta.style.justify = 'space-between';
-    meta.style.fontSize = '0.75rem';
-    meta.style.color = 'var(--text-muted)';
-    meta.style.marginBottom = '0.5rem';
-    meta.innerHTML = `<span>Vistun: ${dateStr}</span>`;
-
-    const content = document.createElement('pre');
-    content.style.whiteSpace = 'pre-wrap';
-    content.style.fontSize = '0.85rem';
-    content.style.color = 'var(--text-primary)';
-    content.style.maxHeight = '150px';
-    content.style.overflowY = 'auto';
-    content.style.padding = '0.5rem';
-    content.style.background = 'rgba(0,0,0,0.2)';
-    content.style.borderRadius = '4px';
-    content.textContent = note.text;
-
-    const actions = document.createElement('div');
-    actions.style.display = 'flex';
-    actions.style.gap = '1rem';
-    actions.style.marginTop = '0.5rem';
-    
-    const loadBtn = document.createElement('button');
-    loadBtn.className = 'btn btn-secondary';
-    loadBtn.style.padding = '0.3rem 0.6rem';
-    loadBtn.style.fontSize = '0.75rem';
-    loadBtn.textContent = 'Hlaða inn';
-    loadBtn.addEventListener('click', () => {
-      document.getElementById('formatted-bio-text').value = note.text;
-      document.querySelector('[data-tab="tab-bio"]').click();
-      showToast('Minning hlaðin inn í ritil!');
-    });
-
-    const deleteBtn = document.createElement('button');
-    deleteBtn.className = 'btn btn-secondary';
-    deleteBtn.style.padding = '0.3rem 0.6rem';
-    deleteBtn.style.fontSize = '0.75rem';
-    deleteBtn.style.color = '#ff6b6b';
-    deleteBtn.textContent = 'Eyða';
-    deleteBtn.addEventListener('click', () => {
-      if (confirm('Ertu viss um að þú viljir eyða þessari vistun?')) {
-        localStorage.removeItem(note.key);
-        loadSavedNotesCount();
-        loadSavedNotes();
-        showToast('Vistun eytt!');
-      }
-    });
-
-    actions.appendChild(loadBtn);
-    actions.appendChild(deleteBtn);
-
-    item.appendChild(meta);
-    item.appendChild(content);
-    item.appendChild(actions);
-
-    container.appendChild(item);
-  });
-}
-
-async function loadSourcesMarkdown() {
-  const container = document.getElementById('sources-markdown-view');
-  if (!container) return;
-  
-  container.innerHTML = '<div style="color: var(--text-muted);">Sæki heimildir...</div>';
-  
-  try {
-    const res = await fetch('/heimildir/minningargreinar.md');
-    if (!res.ok) throw new Error();
-    let text = await res.text();
-    
-    // Clean and convert markdown structure to styled HTML
-    let html = text
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/^# (.*$)/gim, '<h1 style="color:var(--accent-gold); border-bottom:1px solid rgba(184,134,11,0.2); padding-bottom:0.5rem; margin: 1.5rem 0 1rem 0; font-size:1.4rem;">$1</h1>')
-      .replace(/^## (.*$)/gim, '<h2 style="color:var(--accent-gold); margin:1.2rem 0 0.8rem 0; font-size:1.15rem;">$1</h2>')
-      .replace(/^### (.*$)/gim, '<h3 style="color:#fff; margin:1rem 0 0.5rem 0; font-size:1rem;">$1</h3>')
-      .replace(/^\> (.*$)/gim, '<blockquote style="border-left: 3px solid var(--accent-gold); padding-left: 1rem; margin: 1rem 0; color: var(--text-secondary); font-style: italic;">$1</blockquote>')
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*(.*?)\*/g, '<em>$1</em>')
-      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color: var(--accent-gold); text-decoration: underline;">$1</a>')
-      .replace(/^- (.*$)/gim, '<li style="margin-left: 1.5rem; list-style-type: disc; margin-bottom: 0.25rem;">$1</li>')
-      .replace(/\n\n/g, '<p style="margin-bottom: 1rem;"></p>');
-      
-    // Replace markdown image tags with responsive HTML images
-    html = html.replace(/!\[(.*?)\]\((.*?)\)/g, '<div style="margin:1.5rem 0; text-align:center;"><img src="$2" alt="$1" style="max-width:100%; border:1px solid var(--border-color); border-radius:6px; max-height:400px; display:block; margin:0 auto 0.5rem auto; box-shadow: 0 4px 10px rgba(0,0,0,0.3);"><span style="font-size:0.8rem; color:var(--text-muted);">$1</span></div>');
-
-    container.innerHTML = html;
-  } catch (err) {
-    container.innerHTML = '<div style="color: var(--status-warning); padding: 1rem;">Gat ekki hlaðið inn heimildaskrá. Gakktu úr skugga um að skráin <code>heimildir/minningargreinar.md</code> sé til staðar og að vefþjónninn sé í gangi.</div>';
-  }
-}
-
-// ==========================================
-// Sources database: maps person IDs/names to their source entries
-// ==========================================
-const PERSON_SOURCES = {
-  // Sigurjón Einarsson (langafi)
-  'I212565201805': {
-    title: 'Sigurjón Einarsson (1895–1983)',
-    entries: [
-      {
-        type: 'obituary',
-        title: 'Dánartilkynning — Morgunblaðið, 5. mars 1983',
-        text: 'Sigurjón Einarsson frá Árbæ á Mýrum lést 28. febrúar 1983. Hann var jarðsunginn frá Brunnhólskirkju mánudaginn 7. mars 1983. Eftirlifandi maki: Þorbjörg Benediktsdóttir, og börn þeirra.',
-        link: 'https://timarit.is/search?q=%22Sigurj%C3%B3n+Einarsson%22+%22%C3%81rb%C3%A6%22',
-        linkLabel: 'Leita á Tímarit.is'
-      },
-      {
-        type: 'event',
-        title: 'Gullbrúðkaup — Morgunblaðið, júlí 1969',
-        text: 'Sigurjón og Þorbjörg héldu gullbrúðkaupsafmæli árið 1969 (gift 1919). Þakkarávarp birt í Morgunblaðinu.',
-        link: null
-      },
-      {
-        type: 'record',
-        title: 'Félagsmál: Sjúkrasamlag Mýrahrepps',
-        text: 'Sigurjón sat í stjórn sjúkrasamlags Mýrahrepps samkvæmt búnaðarritum frá 1940–1950.',
-        link: null
-      }
-    ]
-  },
-  // Þorbjörg Benediktsdóttir (langamma)
-  'I212565201806': {
-    title: 'Þorbjörg Benediktsdóttir (1898–1992)',
-    entries: [
-      {
-        type: 'obituary',
-        title: 'Dánartilkynning — DV, 29. febrúar 1992',
-        text: 'Þorbjörg Benediktsdóttir frá Árbæ á Mýrum lést 27. febrúar 1992 á hjúkrunarheimilinu Skjólgarði á Höfn í Hornafirði. Hún var systir Gunnars Benediktssonar prests og rithöfundar.',
-        link: 'https://timarit.is/search?q=%22%C3%9Eorbj%C3%B6rg+Benediktsd%C3%B3ttir%22+%22%C3%81rb%C3%A6%22',
-        linkLabel: 'Leita á Tímarit.is'
-      }
-    ]
-  },
-  // Sigurbjörg Sigurjónsdóttir
-  'I212565201812': {
-    title: 'Sigurbjörg Sigurjónsdóttir (1938–2025)',
-    entries: [
-      {
-        type: 'obituary',
-        title: 'Minningargrein — Morgunblaðið, 29. ágúst 2025',
-        text: 'Sigurbjörg Sigurjónsdóttir fæddist 18. mars 1938 í Árbæ á Mýrum. Hún lést á hjúkrunarheimilinu Skjólgarði þann 20. ágúst 2025. Foreldrar hennar voru Þorbjörg Benediktsdóttir (1898–1992) og Sigurjón Einarsson (1895–1983).',
-        link: 'https://mbl.is/greinasafn/grein/?item_id=791234',
-        linkLabel: 'Skoða á mbl.is'
-      }
-    ]
-  },
-  // Arnór Sigurjónsson
-  'I212565201810': {
-    title: 'Arnór Sigurjónsson (1926–1979)',
-    entries: [
-      {
-        type: 'obituary',
-        title: 'Minningarorð — Morgunblaðið, 1979',
-        text: 'Arnór Sigurjónsson frá Brunnhól var sonur Sigurjóns Einarssonar og Þorbjargar Benediktsdóttur frá Árbæ. Hann gegndi ýmsum trúnaðarstörfum í Austur-Skaftafellssýslu.',
-        link: null
-      }
-    ]
-  },
-  // Ólafía Ingólfsdóttir (Lóa)
-  'I272771958737': {
-    title: 'Ólafía Rósberg Ingólfsdóttir (Lóa)',
-    entries: [
-      {
-        type: 'record',
-        title: 'Systkini staðfest úr minningargreinum foreldra',
-        text: 'Systkini Lóu staðfest: Unnsteinn Fannar (f. 1975), Jón Loftur (f. 1980) og Guðbjörg Lilja (f. 1985). Upplýsingar fengnar úr minningargreinum Lilju Árnadóttur (2006) og Lofts Jóhannssonar (2011).',
-        link: null
-      }
-    ]
-  },
-  // Lilja Árnadóttir (amma Lóu)
-  'I272771958755': {
-    title: 'Lilja Árnadóttir (1926–2006)',
-    entries: [
-      {
-        type: 'obituary',
-        title: 'Minningargrein — Morgunblaðið, 3. ágúst 2006',
-        text: 'Lilja Árnadóttir fæddist í Helli á Landi 16. ágúst 1926. Hún lést á deild 11G á Landspítala 25. júlí 2006. Foreldrar: Inga Guðrún Árnadóttir og Ágúst Órnason. Maki: Loftur Jóhannsson (gift 1982). Börn: Ingólfur Árni, Jónína, Jóhann Bjarni, Gíslunn, Heimir Sæberg.',
-        image: '/heimildir/lilja_arnadottir_minning.png',
-        link: 'https://timarit.is/page/4137274#page/n32/mode/2up',
-        linkLabel: 'Skoða á Tímarit.is'
-      }
-    ]
-  },
-  // Loftur Jóhannsson (stjúpafi Lóu)
-  'I272771958756': {
-    title: 'Loftur Jóhannsson (1923–2011)',
-    entries: [
-      {
-        type: 'obituary',
-        title: 'Minningargrein — Morgunblaðið, 19. nóvember 2011',
-        text: 'Loftur Jóhannsson fæddist á Eyri í Ísafjarðardjúpi 13. desember 1923. Hann lést á hjúkrunarheimilinu Skjóli 12. nóvember 2011. Foreldrar: Jóhann Bjarni Loftsson og Jónína Loftsdóttir. Gift Lilju Árnadóttur 1982.',
-        image: '/heimildir/loftur_johannsson_minning.png',
-        link: 'https://timarit.is/page/5354964#page/n41/mode/2up',
-        linkLabel: 'Skoða á Tímarit.is'
-      }
-    ]
-  },
-  // Ingólfur Árni Sveinsson (faðir Lóu)
-  'I272771958754': {
-    title: 'Ingólfur Árni Sveinsson (1947–2002)',
-    entries: [
-      {
-        type: 'record',
-        title: 'Upplýsingar úr minningargreinum foreldra',
-        text: 'Ingólfur Árni var sonur Svönu Sigtryggsdóttur og Sveins Unnsteins Jónssonar (líffræðilegur faðir). Fósturfaðir var Loftur Jóhannsson. Ingólfur lést 24. ágúst 2002.',
-        link: null
-      }
-    ]
-  },
-  // Sigtryggur Runólfsson (afi Lóu)
-  'I272771958762': {
-    title: 'Sigtryggur Runólfsson (1921–1988)',
-    entries: [
-      {
-        type: 'obituary',
-        title: 'Eldsvoði í Reykjavík — Morgunblaðið, janúar 1958',
-        text: 'Eldur kom upp á heimili Sigtryggs og fjölskyldu hans þann 28. janúar 1958. Eldurinn lokaði útidyrunum svo fjölskyldan varð að bjarga sér út um glugga. Guðbjörg (eiginkonan) lýsti því að það hefði verið þeim til lífs að tveggja ára sonur þeirra vaknaði og vakti foreldrana. Sigtryggur hljóp inn í reykinn til að bjarga sex ára barni þeirra.',
-        link: 'https://timarit.is/search?q=%22Sigtryggur+Run%C3%B3lfsson%22+%22kvikna%C3%B0i%22',
-        linkLabel: 'Skoða á Tímarit.is'
-      },
-      {
-        type: 'record',
-        title: 'Starfsferill og ævi',
-        text: 'Sigtryggur fæddist 11. júlí 1921 að Hvammi í Fáskrúðsfirði. Hann bjó áður sem bóndi að Innri-Kleif í Breiðdal (þar sem Svana fæddist). Hann flutti til Reykjavíkur 1954, var húsasmiður að mennt og vann lengi hjá Sambandi íslenskra samvinnufélaga (SÍS). Hann þótti hógvær, heimakær og vel hagorður. Hann lést 7. september 1988.',
-        link: null
-      }
-    ]
-  },
-  // Svana Sigtryggsdóttir (móðir Lóu)
-  'I272771958746': {
-    title: 'Svana Sigtryggsdóttir (1953–2020)',
-    entries: [
-      {
-        type: 'obituary',
-        title: 'Minningargrein — Morgunblaðið, 2020',
-        text: 'Svana fæddist á Innri-Kleif í Breiðdal 28. maí 1953. Hún lést á Landspítalanum í Fossvogi 19. apríl 2020. Eiginmaður Svönu var Ingólfur Árni Sveinsson (1947–2002) og eignuðust þau börnin Ólafíu Rósbjörgu (Lóu), Unnstein Fannar og Jón Loft. Foreldrar hennar voru Sigtryggur Runólfsson (1921–1988) og Guðbjörg Sigurpálsdóttir (1926–2014).',
-        link: 'https://mbl.is/greinasafn/',
-        linkLabel: 'Skoða á mbl.is'
-      }
-    ]
   }
 };
 
-function renderPersonSources(person) {
-  const gallery = document.getElementById('p-sources-gallery');
-  if (!gallery) return;
-  
-  const cleanId = person.id.replace(/@/g, '');
-  const sources = PERSON_SOURCES[cleanId];
-  
-  if (!sources || !sources.entries || sources.entries.length === 0) {
-    gallery.innerHTML = '<div style="font-size: 0.8rem; color: var(--text-muted); font-style: italic; padding: 0.5rem;">Engar heimildir tengdar þessari persónu ennþá.</div>';
-    return;
+window.regenerateBio = async function() {
+  if (!state.selectedPersonId) return;
+  const btn = document.getElementById('btn-regen-bio');
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = '<i data-lucide="loader-2" class="spin"></i> Semur ævisögu...';
+    try { lucide.createIcons(); } catch(e) {}
   }
-  
-  let html = '';
-  for (const entry of sources.entries) {
-    const typeIcon = entry.type === 'obituary' ? '📰' : entry.type === 'event' ? '📅' : '📋';
-    const typeColor = entry.type === 'obituary' ? '#d4af37' : entry.type === 'event' ? '#3498db' : '#aaa';
-    
-    html += `<div style="background: rgba(13,15,18,0.5); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.75rem; transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(184,134,11,0.4)'" onmouseout="this.style.borderColor='var(--border-color)'">`;
-    html += `<div style="font-size: 0.82rem; font-weight: 600; color: ${typeColor}; margin-bottom: 0.4rem;">${typeIcon} ${entry.title}</div>`;
-    html += `<div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.5rem;">${entry.text}</div>`;
-    
-    if (entry.image) {
-      html += `<div style="margin: 0.5rem 0; text-align: center;">
-        <img src="${entry.image}" alt="${entry.title}" style="max-width: 100%; max-height: 200px; border-radius: 4px; border: 1px solid var(--border-color); cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.3);" onclick="window.open('${entry.image}', '_blank')">
-        <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.25rem;">Smelltu til að stækka</div>
-      </div>`;
+  try {
+    const res = await fetch(`/api/generate_bio?person_id=${state.selectedPersonId}`, { method: 'POST' });
+    if (!res.ok) throw new Error('Gat ekki endurgert samantekt.');
+    const data = await res.json();
+    state.personDetails = data.details;
+    renderPersonProfile(data.details);
+    showToast('Lífshlaupssamantekt hefur verið endurgerð!');
+  } catch(e) {
+    console.error('Bio Regen Error:', e);
+    showToast('Villa við að endurgera samantekt: ' + e.message);
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = '<i data-lucide="refresh-cw" style="width:12px;height:12px;"></i> Endurgera samantekt';
+      try { lucide.createIcons(); } catch(e) {}
     }
-    
-    if (entry.link) {
-      html += `<a href="${entry.link}" target="_blank" style="font-size: 0.75rem; color: var(--accent-gold); text-decoration: underline; display: inline-flex; align-items: center; gap: 0.25rem;">${entry.linkLabel || 'Skoða heimild'} ↗</a>`;
-    }
-    
-    html += `</div>`;
   }
-  
-  gallery.innerHTML = html;
+};
+
+window.runAIResearch = async function() {
+  if (!state.selectedPersonId || !state.personDetails) return;
+  const p = state.personDetails.person;
+  if (!p) return;
+
+  const btn = document.getElementById('btn-run-ai-research');
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = '<i data-lucide="loader-2" class="spin"></i> Leitar með Google AI...';
+    lucide.createIcons();
+  }
+
+  try {
+    const res = await fetch(`/api/run_scraper?id=${p.id}&name=${encodeURIComponent(p.name)}&birth=${p.birth_year || ''}`);
+    if (!res.ok) throw new Error("Villa við leit.");
+    const data = await res.json();
+    state.personDetails = data.details;
+    renderPersonProfile(data.details);
+    showToast("Google AI leit lokið og uppfært!");
+  } catch (err) {
+    console.error("AI Research Error:", err);
+    showToast("Villa kom upp við AI leit: " + err.message);
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = '<i data-lucide="sparkles"></i> Keyra Google AI leit';
+      lucide.createIcons();
+    }
+  }
+};
+
+window.confirmSuggestion = async function(sugId) {
+  try {
+    const res = await fetch(`/api/confirm_suggestion?id=${state.selectedPersonId}&sug_id=${sugId}`, { method: 'POST' });
+    if (!res.ok) throw new Error("Gat ekki staðfest.");
+    const data = await res.json();
+    state.personDetails = data.details;
+    renderPersonProfile(data.details);
+    showToast("Uppástunga staðfest!");
+  } catch (err) {
+    console.error(err);
+    showToast("Villa við að staðfesta.");
+  }
+};
+
+window.rejectSuggestion = async function(sugId) {
+  try {
+    const res = await fetch(`/api/reject_suggestion?id=${state.selectedPersonId}&sug_id=${sugId}`, { method: 'POST' });
+    if (!res.ok) throw new Error("Gat ekki hafnað.");
+    const data = await res.json();
+    state.personDetails = data.details;
+    renderPersonProfile(data.details);
+    showToast("Uppástungu hafnað.");
+  } catch (err) {
+    console.error(err);
+    showToast("Villa við að hafna.");
+  }
+};
+
+window.triggerAvatarUpload = function() {
+  const input = document.getElementById('avatar-file-input');
+  if (input) input.click();
+};
+
+window.handleAvatarUpload = async function() {
+  const input = document.getElementById('avatar-file-input');
+  if (!input || !input.files || input.files.length === 0) return;
+
+  const formData = new FormData();
+  formData.append('avatar', input.files[0]);
+
+  try {
+    const res = await fetch(`/api/upload_avatar?id=${state.selectedPersonId}`, {
+      method: 'POST',
+      body: formData
+    });
+    if (!res.ok) throw new Error("Gat ekki hlaðið inn mynd.");
+    const data = await res.json();
+    state.personDetails = data.details;
+    renderPersonProfile(data.details);
+    showToast("Prófílmynd uppfærð!");
+  } catch (err) {
+    console.error(err);
+    showToast("Villa við innkall prófílmyndar.");
+  }
+};
+
+function openSettingsModal() {
+  const modal = document.getElementById('settings-modal');
+  if (modal) modal.style.display = 'flex';
 }
 
-function renderPersonAvatar(person) {
-  const iconEl = document.getElementById('p-avatar-icon');
-  const imgEl = document.getElementById('p-avatar-img');
-  if (!iconEl || !imgEl) return;
+function closeSettingsModal() {
+  const modal = document.getElementById('settings-modal');
+  if (modal) modal.style.display = 'none';
+}
+
+async function saveSettings() {
+  const keyInput = document.getElementById('input-gemini-key');
+  const key = keyInput ? keyInput.value.trim() : '';
   
-  // Check if person has OBJE (Ancestry photo) in the GEDCOM
-  // For now, use a color-coded initial avatar
-  const name = person.fullName || '';
-  const initial = name.charAt(0).toUpperCase();
-  const sex = person.sex || '';
-  
-  // Default: show icon, hide image
-  iconEl.style.display = 'block';
-  imgEl.style.display = 'none';
-  
-  // Color the avatar border based on sex
-  const avatarEl = document.getElementById('p-avatar');
-  if (sex === 'M') {
-    avatarEl.style.borderColor = 'rgba(52, 152, 219, 0.5)';
-  } else if (sex === 'F') {
-    avatarEl.style.borderColor = 'rgba(231, 76, 128, 0.5)';
-  } else {
-    avatarEl.style.borderColor = 'rgba(184, 134, 11, 0.3)';
+  if (!key) {
+    showToast("Vinsamlegast sláðu inn API lykil.");
+    return;
   }
-  
-  // If there are sources with images, use the first image as avatar
-  const cleanId = person.id.replace(/@/g, '');
-  const sources = PERSON_SOURCES[cleanId];
-  if (sources) {
-    for (const entry of sources.entries) {
-      if (entry.image) {
-        iconEl.style.display = 'none';
-        imgEl.style.display = 'block';
-        imgEl.src = entry.image;
-        imgEl.alt = person.fullName;
-        break;
-      }
+
+  try {
+    const res = await fetch(`/api/save_settings?key=${encodeURIComponent(key)}`, { method: 'POST' });
+    if (res.ok) {
+      showToast("Stillingar vistaðar!");
+      closeSettingsModal();
     }
+  } catch (err) {
+    console.error(err);
+    showToast("Villa við að vista stillingar.");
   }
 }

@@ -274,6 +274,7 @@ h1, h2, h3, h4, h5, .serif-font {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  align-items: start;
 }
 
 /* Workspace Grid for selected person */
@@ -300,7 +301,7 @@ h1, h2, h3, h4, h5, .serif-font {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .card::before {
@@ -724,3 +725,156 @@ textarea:focus {
   border: 1px solid rgba(46, 204, 113, 0.4);
 }
 
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ==========================================================================
+   Mobile & Android Responsive Design (Breakpoints: 900px, 600px)
+   ========================================================================== */
+
+.mobile-menu-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--accent-gold);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--accent-gold);
+}
+
+@media (max-width: 900px) {
+  .app-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+
+  .brand-logo {
+    font-size: 1.4rem;
+  }
+
+  .brand-tagline {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .header-actions .btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .workspace-container {
+    position: relative;
+    height: calc(100vh - 55px);
+    overflow: hidden;
+  }
+
+  /* Slide-out mobile drawer for sidebar */
+  .sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 85%;
+    max-width: 320px;
+    background-color: #15191e;
+    z-index: 500;
+    transform: translateX(-100%);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  /* Overlay backdrop when sidebar is open */
+  .sidebar-backdrop {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 499;
+  }
+
+  .sidebar-backdrop.active {
+    display: block;
+  }
+
+  .main-workspace {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .workspace-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  #person-details-card {
+    max-height: none !important;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .toast {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-actions .btn-text {
+    display: none;
+  }
+
+  .header-actions .btn {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .tab-bar {
+    gap: 0.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+  }
+
+  .tab {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .profile-name {
+    font-size: 1.25rem;
+  }
+
+  .card-title {
+    font-size: 1.05rem;
+  }
+
+  button, input, select, textarea {
+    font-size: 16px !important; /* Prevents auto-zoom in Android/iOS Chrome */
+  }
+}

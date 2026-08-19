@@ -22,6 +22,10 @@
 1 NAME Ancestry.com Member Trees Submitter
 0 @I272771958737@ INDI
 1 NAME Ólafía Rósbjörg /Ingólfsdóttir/
+1 OBJE
+2 FILE images/I272771958737_profile_1783117706.jpg
+2 FORM JPEG
+2 TITL Prófílmynd
 2 GIVN Ólafía Rósbjörg
 2 SURN Ingólfsdóttir
 1 SEX F
@@ -29,13 +33,15 @@
 1 BIRT
 2 DATE 10 Jan 1974
 1 _FSID PHMS-V5X
+1 FAMS @F_ADD_100@
+1 FAMS @F_ADD_200@
+1 OBJE
+2 FILE images/loa_profile.jpg
+2 TITL Ólafía Rósbjörg Ingólfsdóttir
 1 NOTE [Lokið] Rannsóknarferill:
-2 CONT ● Aðferð: Innskráð leit (Íslendingabók)
-2 CONT    - Aðgerð: Reynt að rekja beina framætt Lóu.
-2 CONT    - Niðurstaða: Leit óvirk vegna persónuverndarreglna á Íslendingabók.
 2 CONT ● Aðferð: Vefleit (Tímarit.is & Morgunblaðið)
-2 CONT    - Aðgerð: Leit í dánartilkynningum og minningargreinum afa og ömmu.
-2 CONT    - Niðurstaða: Fundust 3 alsystkini Lóu (Unnsteinn Fannar, Jón Loftur, Guðbjörg Lilja) sem vantaði, og þau skráð í loa.ged.
+2 CONT    - Aðgerð: Leit í minningargreinum foreldra hennar (Ingólfs Árna Sveinssonar d. 2002 og Svönu Sigtryggsdóttur d. 2020).
+2 CONT    - Niðurstaða: Fundust tvær dætur hennar með Jóni Óskari Péturssyni sem vantaði: Vala Björk Jónsdóttir og Sara Kristín Jónsdóttir. Þær voru skráðar og tengdar í loa.ged ásamt Viktor Inga.
 0 @I272771958734@ INDI
 1 NAME Gislunn /Arnadottir/
 2 GIVN Gislunn
@@ -174,7 +180,7 @@
 1 NOTE [Lokið] Rannsóknarferill:
 2 CONT ● Aðferð: Vefleit (Morgunblaðið Greinasafn)
 2 CONT    - Aðgerð: Leitað að minningargrein um Svönu Sigtryggsdóttur (d. 2020).
-2 CONT    - Niðurstaða: Minningargrein frá júní 2020 fannst. Hún staðfesti 10 systkini Svönu (móðursystkin Lóu), sem voru öll skráð í loa.ged.
+2 CONT    - Niðurstaða: Minningargrein frá maí 2020 fannst. Hún staðfesti 10 systkini hennar og barnabörn hennar (börn Ólafíu Rósbjargar og Jóns Óskars: Viktor Inga, Vala Björk og Sara Kristín). Allt skráð í loa.ged.
 0 @I272771958747@ INDI
 1 NAME Gudrun /Gisladottir/
 2 GIVN Gudrun
@@ -281,8 +287,8 @@
 1 _FSID PHMS-53L
 1 NOTE [Lokið] Rannsóknarferill:
 2 CONT ● Aðferð: Vefleit (Morgunblaðið Greinasafn)
-2 CONT    - Aðgerð: Leitað að minningargreinum um Ingólf Árna Sveinsson (d. 2006).
-2 CONT    - Niðurstaða: Fundust 2 minningargreinar (2002 & 2011). Staðfestur líffræðilegur faðir (Sveinn Unnsteinn Jónsson) og fósturfaðir (Loftur Jóhannsson). Bætt við 4 hálfsystkinum föðurættar (Liljubörn).
+2 CONT    - Aðgerð: Leitað að minningargreinum um Ingólf Árna Sveinsson (d. 2002).
+2 CONT    - Niðurstaða: Minningargrein fannst og staðfesti fjölskyldu og barnabörn (þar á meðal börn Ólafíu Rósbjargar og Jóns Óskars: Viktor Inga, Vala Björk og Sara Kristín). Allt skráð í loa.ged.
 0 @I272771958755@ INDI
 1 NAME Vernhard /Jonsson/
 2 GIVN Vernhard
@@ -7088,4 +7094,160 @@
 1 BIRT
 2 DATE 5 May 1959
 1 FAMC @F31@
+0 @I_ADD_100@ INDI
+1 NAME Sigurjón Axel /Guðjónsson/
+2 GIVN Sigurjón Axel
+2 SURN Guðjónsson
+1 OBJE
+2 FILE images/I212097023483_media_1783440171.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783440162.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783440161.webp
+2 FORM WEBP
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783440157.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783440155.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783440154.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783440154.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783440152.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783440151.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783440147.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783439589.webp
+2 FORM WEBP
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783439587.webp
+2 FORM WEBP
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783439584.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783439579.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783439573.webp
+2 FORM WEBP
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783439571.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783439569.png
+2 FORM PNG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783422878.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783422875.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_media_1783422870.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_profile_1783422807.jpg
+2 FORM JPEG
+2 TITL Prófílmynd
+1 OBJE
+2 FILE images/I212097023483_profile_1783422781.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I212097023483_profile_1783422778.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 SEX M
+1 BIRT
+2 DATE 4 Feb 1974
+1 FAMS @F_ADD_100@
+0 @F_ADD_100@ FAM
+1 HUSB @I_ADD_100@
+1 WIFE @I272771958737@
+1 MARR
+2 DATE 21 Feb 2026
+2 TYPE Kærustupar
+0 @I_ADD_200@ INDI
+1 NAME Jón Óskar /Pétursson/
+2 GIVN Jón Óskar
+2 SURN Pétursson
+1 SEX M
+1 FAMS @F_ADD_200@
+0 @F_ADD_200@ FAM
+1 HUSB @I_ADD_200@
+1 WIFE @I272771958737@
+1 DIV Y
+1 CHIL @I_ADD_300@
+1 CHIL @I_ADD_301@
+1 CHIL @I_ADD_302@
+0 @I_ADD_300@ INDI
+1 NAME Viktor Ingi /Jónsson/
+2 GIVN Viktor Ingi
+2 SURN Jónsson
+1 OBJE
+2 FILE https://www.hunathing.is/static/files/_blob/cuikhix9wjvec4ok4l8tus.jpg
+2 FORM JPEG
+2 TITL Prófílmynd
+1 OBJE
+2 FILE images/I_ADD_300_media_1783390753.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 OBJE
+2 FILE images/I_ADD_300_media_1783389477.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 SEX M
+1 BIRT
+2 DATE 14 MAR 1999
+2 PLAC Ísland
+1 OBJE
+2 FILE images/I_ADD_300_profile_1783383359.jpg
+2 FORM JPEG
+2 TITL Mynd
+1 FAMC @F_ADD_200@
+0 @I_ADD_301@ INDI
+1 NAME Vala Björk /Jónsdóttir/
+2 GIVN Vala Björk
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F_ADD_200@
+0 @I_ADD_302@ INDI
+1 NAME Sara Kristín /Jónsdóttir/
+2 GIVN Sara Kristín
+2 SURN Jónsdóttir
+1 SEX F
+1 FAMC @F_ADD_200@
 0 TRLR

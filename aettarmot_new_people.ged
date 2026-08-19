@@ -1,0 +1,1917 @@
+0 HEAD
+1 CHAR UTF-8
+0 @I_1@ INDI
+1 NAME Einar Sigurjónsson
+1 BIRT
+2 DATE 04.08.1920
+1 DEAT
+2 DATE 15.07.2004
+1 FAMS @F_1@
+0 @S_1@ INDI
+1 NAME Unnur Kristjánsdóttir
+1 BIRT
+2 DATE 08.02.1923
+1 DEAT
+2 DATE 12.12.2017
+1 FAMS @F_1@
+0 @I_1_1@ INDI
+1 NAME Steinþór Einarsson
+1 BIRT
+2 DATE 19.01.1949
+1 FAMC @F_1@
+1 FAMS @F_1_1@
+0 @S_1_1@ INDI
+1 NAME Ragnhildur Guðný Guðmundsdóttir
+1 BIRT
+2 DATE 30.10.1951
+1 FAMS @F_1_1@
+0 @I_1_1_1@ INDI
+1 NAME Einar Hjalti Steinþórsson
+1 BIRT
+2 DATE 26.04.1969
+1 FAMC @F_1_1@
+1 FAMS @F_1_1_1@
+0 @S_1_1_1@ INDI
+1 NAME Sigríður Lucia Þórarinsdóttir
+1 BIRT
+2 DATE 09.07.1971
+1 FAMS @F_1_1_1@
+0 @I_1_1_2@ INDI
+1 NAME Gunnar Smári Steinþórsson
+1 BIRT
+2 DATE 10.06.1975
+1 FAMC @F_1_1@
+1 FAMS @F_1_1_2@
+0 @S_1_1_2@ INDI
+1 NAME Tatjana Potapcik
+1 BIRT
+2 DATE 27.01.1952
+1 FAMS @F_1_1_2@
+0 @I_1_1_3@ INDI
+1 NAME Denis Potapcik
+1 BIRT
+2 DATE 21.03.1979
+1 FAMC @F_1_1@
+1 FAMS @F_1_1_3@
+0 @S_1_1_3@ INDI
+1 NAME Olga Soffía Sergejsdóttir
+1 BIRT
+2 DATE 27.10.1979
+1 FAMS @F_1_1_3@
+0 @I_1_1_3_1@ INDI
+1 NAME Andrea Irena Denisdóttir
+1 BIRT
+2 DATE 02.07.2003
+1 FAMC @F_1_1_3@
+1 FAMS @F_1_1_3_1@
+0 @S_1_1_3_1@ INDI
+1 NAME Sonita Skodzus
+1 BIRT
+2 DATE 20.12.1979
+1 FAMS @F_1_1_3_1@
+0 @I_1_1_3_2@ INDI
+1 NAME Alina Lára Denisdóttir
+1 BIRT
+2 DATE 20.08.2007
+1 FAMC @F_1_1_3@
+1 FAMS @F_1_1_3_2@
+0 @S_1_1_3_2@ INDI
+1 NAME Eugenija Poramonova
+1 BIRT
+2 DATE 25.02.1991
+1 FAMS @F_1_1_3_2@
+0 @I_1_1_3_3@ INDI
+1 NAME Nikolleta Potapcik
+1 BIRT
+2 DATE 25.05.2017
+1 FAMC @F_1_1_3@
+0 @I_1_2@ INDI
+1 NAME Sigurjón Einarsson
+1 BIRT
+2 DATE 12.03.1950
+1 FAMC @F_1@
+1 FAMS @F_1_2@
+0 @S_1_2@ INDI
+1 NAME Gunnhildur Bjarnadóttir
+1 BIRT
+2 DATE 08.06.1954
+1 FAMS @F_1_2@
+0 @I_1_2_1@ INDI
+1 NAME Einar Sigurjónsson
+1 BIRT
+2 DATE 12.11.1976
+1 FAMC @F_1_2@
+1 FAMS @F_1_2_1@
+0 @S_1_2_1@ INDI
+1 NAME Heiður Kristjana Sigurgeirsdóttir
+1 BIRT
+2 DATE 20.08.1972
+1 FAMS @F_1_2_1@
+0 @I_1_2_1_1@ INDI
+1 NAME Perla Sólveig Reynisdóttir
+1 BIRT
+2 DATE 24.07.1995
+1 FAMC @F_1_2_1@
+1 FAMS @F_1_2_1_1@
+0 @S_1_2_1_1@ INDI
+1 NAME Benóný Þórhallsson
+1 BIRT
+2 DATE 24.05.1993
+1 FAMS @F_1_2_1_1@
+0 @I_1_2_1_1_1@ INDI
+1 NAME Natalía María Benónýsdóttir
+1 BIRT
+2 DATE 19.01.2017
+1 FAMC @F_1_2_1_1@
+0 @I_1_2_1_1_2@ INDI
+1 NAME Júlínana Svava Benónýsdóttir
+1 BIRT
+2 DATE 05.04.2019
+1 FAMC @F_1_2_1_1@
+0 @I_1_2_1_2@ INDI
+1 NAME Tinna Mirjam Reynisdóttir
+1 BIRT
+2 DATE 05.08.1997
+1 FAMC @F_1_2_1@
+0 @I_1_2_1_3@ INDI
+1 NAME Hildur Sunna Einarsdóttir
+1 BIRT
+2 DATE 24.04.2007
+1 FAMC @F_1_2_1@
+0 @I_1_2_1_4@ INDI
+1 NAME Sindri Sigurjón Einarsson
+1 BIRT
+2 DATE 25.08.2009
+1 FAMC @F_1_2_1@
+0 @I_1_2_2@ INDI
+1 NAME Björg Sigurjónsdóttir
+1 BIRT
+2 DATE 28.01.1980
+1 FAMC @F_1_2@
+0 @I_1_2_3@ INDI
+1 NAME Heiðar Sigurjónsson
+1 BIRT
+2 DATE 20.02.1983
+1 FAMC @F_1_2@
+1 FAMS @F_1_2_3@
+0 @S_1_2_3@ INDI
+1 NAME Stefanía Huld Marteinsdóttir
+1 BIRT
+2 DATE 14.11.1984
+1 FAMS @F_1_2_3@
+0 @I_1_2_3_1@ INDI
+1 NAME Elís Carlo Jóhannsson
+1 BIRT
+2 DATE 19.03.2006
+1 FAMC @F_1_2_3@
+0 @I_1_2_3_2@ INDI
+1 NAME Alex Hugi Heiðarsson
+1 BIRT
+2 DATE 11.08.2018
+1 FAMC @F_1_2_3@
+0 @I_1_2_3_3@ INDI
+1 NAME Ari Marteinn Heiðarsson
+1 BIRT
+2 DATE 13.02.2024
+1 FAMC @F_1_2_3@
+0 @I_1_2_4@ INDI
+1 NAME Ósk Sigurjónsdóttir
+1 BIRT
+2 DATE 03.09.1989
+1 FAMC @F_1_2@
+1 FAMS @F_1_2_4@
+0 @S_1_2_4@ INDI
+1 NAME Kevin Otieno Okello
+1 BIRT
+2 DATE 20.12.1985
+1 FAMS @F_1_2_4@
+0 @I_1_2_4_1@ INDI
+1 NAME Telma Atieno Okello
+1 BIRT
+2 DATE 07.06.2013
+1 FAMC @F_1_2_4@
+0 @I_1_3@ INDI
+1 NAME Rannveig Einarsdóttir
+1 BIRT
+2 DATE 24.01.1956
+1 FAMC @F_1@
+1 FAMS @F_1_3@
+0 @S_1_3@ INDI
+1 NAME Magnús Sigurður Jónasson
+1 BIRT
+2 DATE 05.07.1948
+1 FAMS @F_1_3@
+0 @I_1_3_1@ INDI
+1 NAME Jónas Magnússon
+1 BIRT
+2 DATE 01.10.1982
+1 FAMC @F_1_3@
+1 FAMS @F_1_3_1@
+0 @S_1_3_1@ INDI
+1 NAME Alma Sigurðardóttir
+1 BIRT
+2 DATE 13.03.1981
+1 FAMS @F_1_3_1@
+0 @I_1_3_1_1@ INDI
+1 NAME Magnús Sigurður Jónasson
+1 BIRT
+2 DATE 21.12.2008
+1 FAMC @F_1_3_1@
+0 @I_1_3_1_2@ INDI
+1 NAME Björn Kári Jónasson
+1 BIRT
+2 DATE 21.10.2014
+1 FAMC @F_1_3_1@
+0 @I_1_3_2@ INDI
+1 NAME Fanney Magnúsdóttir
+1 BIRT
+2 DATE 09.10.1989
+1 FAMC @F_1_3@
+1 FAMS @F_1_3_2@
+0 @S_1_3_2@ INDI
+1 NAME Pálmar Jónsson
+1 BIRT
+2 DATE 14.04.1986
+1 FAMS @F_1_3_2@
+0 @I_1_4@ INDI
+1 NAME Kristján Einarsson
+1 BIRT
+2 DATE 12.11.1957
+1 FAMC @F_1@
+1 FAMS @F_1_4@
+0 @S_1_4@ INDI
+1 NAME Guðmunda G. Guðmundsdóttir
+1 BIRT
+2 DATE 17.01.1966
+1 FAMS @F_1_4@
+0 @I_1_4_1@ INDI
+1 NAME Sigursteinn Pétur Steinarsson
+1 BIRT
+2 DATE 04.04.1987
+1 FAMC @F_1_4@
+1 FAMS @F_1_4_1@
+0 @S_1_4_1@ INDI
+1 NAME Eyrún Sif Rögnvaldsdóttir
+1 BIRT
+2 DATE 03.01.1987
+1 FAMS @F_1_4_1@
+0 @I_1_4_1_1@ INDI
+1 NAME María Mist Sigursteinsdóttir
+1 BIRT
+2 DATE 30.10.2004
+1 FAMC @F_1_4_1@
+1 FAMS @F_1_4_1_1@
+0 @S_1_4_1_1@ INDI
+1 NAME Oddur Auðunsson
+1 BIRT
+2 DATE 17.11.2004
+1 FAMS @F_1_4_1_1@
+0 @I_1_4_1_1_1@ INDI
+1 NAME Loki Oddsson
+1 BIRT
+2 DATE 06.04.2024
+1 FAMC @F_1_4_1_1@
+0 @I_1_4_1_1_2@ INDI
+1 NAME Ýmir Oddsson
+1 BIRT
+2 DATE 06.04.2024
+1 FAMC @F_1_4_1_1@
+0 @I_1_5@ INDI
+1 NAME Hugi Einarsson
+1 BIRT
+2 DATE 14.02.1965
+1 DEAT
+2 DATE 04.03.2015
+1 FAMC @F_1@
+1 FAMS @F_1_5@
+0 @S_1_5@ INDI
+1 NAME Ingibjörg Ársælsdóttir
+1 BIRT
+2 DATE 06.05.1964
+1 FAMS @F_1_5@
+0 @I_1_5_1@ INDI
+1 NAME Örvar Hugason
+1 BIRT
+2 DATE 01.10.1987
+1 FAMC @F_1_5@
+1 FAMS @F_1_5_1@
+0 @S_1_5_1@ INDI
+1 NAME Elín Dögg Haraldsdóttir
+1 BIRT
+2 DATE 04.01.1985
+1 FAMS @F_1_5_1@
+0 @I_1_5_1_1@ INDI
+1 NAME Haraldur Aron Örvarsson
+1 BIRT
+2 DATE 01.06.2011
+1 FAMC @F_1_5_1@
+0 @I_1_5_1_2@ INDI
+1 NAME Brynja Sif Örvarsdóttir
+1 BIRT
+2 DATE 10.07.2013
+1 FAMC @F_1_5_1@
+1 FAMS @F_1_5_1_2@
+0 @S_1_5_1_2@ INDI
+1 NAME Viktoría Ýr Norðdahl
+1 BIRT
+2 DATE 09.12.1991
+1 FAMS @F_1_5_1_2@
+0 @I_1_5_1_3@ INDI
+1 NAME Róbert Freyr Atlason Norðdahl
+1 BIRT
+2 DATE 20.12.2011
+1 FAMC @F_1_5_1@
+0 @I_1_5_1_4@ INDI
+1 NAME Guðrún Ingileif Unnur Örvarsdóttir Norðdahl
+1 BIRT
+2 DATE 24.10.2022
+1 FAMC @F_1_5_1@
+1 FAMS @F_1_5_1_4@
+0 @S_1_5_1_4@ INDI
+1 NAME Sigrún Kapitola Guðrúnardóttir
+1 BIRT
+2 DATE 24.11.1977
+1 FAMS @F_1_5_1_4@
+0 @I_1_5_2@ INDI
+1 NAME Unnar Freyr Hugason
+1 BIRT
+2 DATE 06.02.2003
+1 FAMC @F_1_5@
+0 @I_1_5_3@ INDI
+1 NAME Vigdís Dröfn Hugadóttir
+1 BIRT
+2 DATE 28.04.2006
+1 FAMC @F_1_5@
+0 @I_2@ INDI
+1 NAME Benedikt Sigurjónsson
+1 BIRT
+2 DATE 12.04.1922
+1 DEAT
+2 DATE 21.09.2009
+1 FAMS @F_2@
+0 @S_2@ INDI
+1 NAME Sigríður Sigurðardóttir
+1 BIRT
+2 DATE 08.03.1924
+1 FAMS @F_2@
+0 @I_2_1@ INDI
+1 NAME Ingi Gunnar Benediktsson
+1 BIRT
+2 DATE 30.07.1952
+1 DEAT
+2 DATE 16.05.2012
+1 FAMC @F_2@
+1 FAMS @F_2_1@
+0 @S_2_1@ INDI
+1 NAME Sigrún Hrefna Guðmundsdóttir
+1 BIRT
+2 DATE 29.04.1947
+1 DEAT
+2 DATE 25.05.2011
+1 FAMS @F_2_1@
+0 @I_2_1_1@ INDI
+1 NAME Guðbjörg Forberg
+1 BIRT
+2 DATE 15.09.1977
+1 FAMC @F_2_1@
+1 FAMS @F_2_1_1@
+0 @S_2_1_1@ INDI
+1 NAME Drífa Konráðsdóttir
+1 BIRT
+2 DATE 26.05.1944
+1 DEAT
+2 DATE 20.08.2011
+1 FAMS @F_2_1_1@
+0 @I_2_2@ INDI
+1 NAME Sigrún Björk Benediktsdóttir
+1 BIRT
+2 DATE 25.04.1961
+1 FAMC @F_2@
+1 FAMS @F_2_2@
+0 @S_2_2@ INDI
+1 NAME Valtýr Valtýsson
+1 BIRT
+2 DATE 22.10.1960
+1 FAMS @F_2_2@
+0 @I_2_2_1@ INDI
+1 NAME Valtýr Bjarki Valtýsson
+1 BIRT
+2 DATE 22.10.1982
+1 FAMC @F_2_2@
+1 FAMS @F_2_2_1@
+0 @S_2_2_1@ INDI
+1 NAME Dagný Ásta Guðbrandsdóttir
+1 BIRT
+2 DATE 24.09.1986
+1 FAMS @F_2_2_1@
+0 @I_2_2_1_1@ INDI
+1 NAME Valdís Björk Valtýsdóttir
+1 BIRT
+2 DATE 29.12.2016
+1 FAMC @F_2_2_1@
+0 @I_2_2_1_2@ INDI
+1 NAME Birkir Snær Valtýsson
+1 BIRT
+2 DATE 03.12.2019
+1 FAMC @F_2_2_1@
+0 @I_2_2_1_3@ INDI
+1 NAME Klara Lind Valtýsdóttir
+1 BIRT
+2 DATE 19.05.2023
+1 FAMC @F_2_2_1@
+0 @I_2_2_2@ INDI
+1 NAME Kristinn Þór Valtýsson
+1 BIRT
+2 DATE 22.11.1985
+1 FAMC @F_2_2@
+1 FAMS @F_2_2_2@
+0 @S_2_2_2@ INDI
+1 NAME Helena Björgvinsdóttir
+1 BIRT
+2 DATE 11.10.1985
+1 FAMS @F_2_2_2@
+0 @I_2_2_2_1@ INDI
+1 NAME Benedikt Kristinsson
+1 BIRT
+2 DATE 13.09.2013
+1 FAMC @F_2_2_2@
+0 @I_2_2_2_2@ INDI
+1 NAME Lilja Rún Kristinsdóttir
+1 BIRT
+2 DATE 16.05.2017
+1 FAMC @F_2_2_2@
+0 @I_2_2_3@ INDI
+1 NAME Vala Rún Valtýsdóttir
+1 BIRT
+2 DATE 29.09.1994
+1 FAMC @F_2_2@
+1 FAMS @F_2_2_3@
+0 @S_2_2_3@ INDI
+1 NAME Kristinn Júlíusson
+1 BIRT
+2 DATE 18.08.1993
+1 FAMS @F_2_2_3@
+0 @I_2_2_3_1@ INDI
+1 NAME Embla Rún Kristinsdóttir
+1 BIRT
+2 DATE 17.09.2021
+1 FAMC @F_2_2_3@
+0 @I_3@ INDI
+1 NAME Ingunn Sigríður Sigurjónsdóttir
+1 BIRT
+2 DATE 05.10.1924
+1 DEAT
+2 DATE 09.06.2000
+1 FAMS @F_3@
+0 @S_3@ INDI
+1 NAME Karl Björnsson
+1 BIRT
+2 DATE 31.12.1920
+1 DEAT
+2 DATE 07.07.1991
+1 FAMS @F_3@
+0 @I_3_1@ INDI
+1 NAME Sigþór Borgar Karlsson
+1 BIRT
+2 DATE 09.08.1947
+1 FAMC @F_3@
+1 FAMS @F_3_1@
+0 @S_3_1@ INDI
+1 NAME Guðrún Sigurjónsdóttir
+1 BIRT
+2 DATE 12.11.1952
+1 DEAT
+2 DATE 15.08.2017
+1 FAMS @F_3_1@
+0 @I_3_1_1@ INDI
+1 NAME Vignir Örn Sigþórsson
+1 BIRT
+2 DATE 14.12.1978
+1 FAMC @F_3_1@
+1 FAMS @F_3_1_1@
+0 @S_3_1_1@ INDI
+1 NAME Guðbjörg Birna Jónsdóttir
+1 BIRT
+2 DATE 09.05.1979
+1 FAMS @F_3_1_1@
+0 @I_3_1_1_1@ INDI
+1 NAME Jökull Örn Vignisson
+1 BIRT
+2 DATE 20.02.2006
+1 FAMC @F_3_1_1@
+0 @I_3_1_1_2@ INDI
+1 NAME Hrafnhildur Steinunn Vignisdóttir
+1 BIRT
+2 DATE 07.05.2010
+1 FAMC @F_3_1_1@
+0 @I_3_1_1_3@ INDI
+1 NAME Arna Guðrún Vignisdóttir
+1 BIRT
+2 DATE 21.05.2012
+1 FAMC @F_3_1_1@
+0 @I_3_2@ INDI
+1 NAME Vilberg Karlsson
+1 BIRT
+2 DATE 13.10.1951
+1 FAMC @F_3@
+1 FAMS @F_3_2@
+0 @S_3_2@ INDI
+1 NAME Sigríður Olsen
+1 BIRT
+2 DATE 29.11.1952
+1 FAMS @F_3_2@
+0 @I_3_2_1@ INDI
+1 NAME Karl Ingi Vilbergsson
+1 BIRT
+2 DATE 23.03.1973
+1 FAMC @F_3_2@
+1 FAMS @F_3_2_1@
+0 @S_3_2_1@ INDI
+1 NAME Anna Guðrún Pind Jörgensdóttir
+1 BIRT
+2 DATE 08.01.1974
+1 FAMS @F_3_2_1@
+0 @I_3_2_1_1@ INDI
+1 NAME Aldís Hlín Skúladóttir
+1 BIRT
+2 DATE 25.03.1993
+1 FAMC @F_3_2_1@
+1 FAMS @F_3_2_1_1@
+0 @S_3_2_1_1@ INDI
+1 NAME Brynjólfur Kristinn Friðjónsson
+1 BIRT
+2 DATE 12.10.1979
+1 FAMS @F_3_2_1_1@
+0 @I_3_2_1_1_1@ INDI
+1 NAME Drífa Hrönn Brynjólfsdóttir
+1 BIRT
+2 DATE 09.07.2005
+1 FAMC @F_3_2_1_1@
+0 @I_3_2_1_1_2@ INDI
+1 NAME Anna Kristín Brynjólfsdóttir
+1 BIRT
+2 DATE 18.01.2013
+1 FAMC @F_3_2_1_1@
+0 @I_3_2_1_1_3@ INDI
+1 NAME Þengill Týr Brynjólfsson
+1 BIRT
+2 DATE 04.08.2017
+1 FAMC @F_3_2_1_1@
+1 FAMS @F_3_2_1_1_3@
+0 @S_3_2_1_1_3@ INDI
+1 NAME Logi Már Birgisson
+1 BIRT
+2 DATE 10.06.1993
+1 FAMS @F_3_2_1_1_3@
+0 @I_3_2_1_1_4@ INDI
+1 NAME Birgir Geir Logason
+1 BIRT
+2 DATE 25.02.2022
+1 FAMC @F_3_2_1_1@
+0 @I_3_2_1_2@ INDI
+1 NAME Júlía Blær Karlsdóttir
+1 BIRT
+2 DATE 02.11.1997
+1 FAMC @F_3_2_1@
+0 @I_3_2_1_3@ INDI
+1 NAME Bríet Sigríður Karlsdóttir
+1 BIRT
+2 DATE 31.05.2002
+1 FAMC @F_3_2_1@
+0 @I_3_2_2@ INDI
+1 NAME Stefanía Margrét Vilbergsdóttir
+1 BIRT
+2 DATE 24.09.1981
+1 FAMC @F_3_2@
+1 FAMS @F_3_2_2@
+0 @S_3_2_2@ INDI
+1 NAME Jón Davíð Ragnarsson
+1 BIRT
+2 DATE 23.07.1973
+1 FAMS @F_3_2_2@
+0 @I_3_2_2_1@ INDI
+1 NAME Ásta Margrét Jónsdóttir
+1 BIRT
+2 DATE 20.03.1999
+1 FAMC @F_3_2_2@
+0 @I_3_2_2_2@ INDI
+1 NAME Katla Ragnheiður Jónsdóttir
+1 BIRT
+2 DATE 17.05.2010
+1 FAMC @F_3_2_2@
+0 @I_3_2_2_3@ INDI
+1 NAME Vigdís Jara Jónsdóttir
+1 BIRT
+2 DATE 21.07.2014
+1 FAMC @F_3_2_2@
+0 @I_3_3@ INDI
+1 NAME Vigdís Karlsdóttir
+1 BIRT
+2 DATE 08.05.1956
+1 FAMC @F_3@
+1 FAMS @F_3_3@
+0 @S_3_3@ INDI
+1 NAME Oddur Guðni Friðriksson
+1 BIRT
+2 DATE 26.06.1956
+1 FAMS @F_3_3@
+0 @I_3_3_1@ INDI
+1 NAME Ingunn Oddsdóttir
+1 BIRT
+2 DATE 28.11.1985
+1 FAMC @F_3_3@
+1 FAMS @F_3_3_1@
+0 @S_3_3_1@ INDI
+1 NAME Gunnsteinn Þórisson
+1 BIRT
+2 DATE 16.09.1987
+1 FAMS @F_3_3_1@
+0 @I_3_3_2@ INDI
+1 NAME Guðni Friðrik Oddsson
+1 BIRT
+2 DATE 04.07.1993
+1 FAMC @F_3_3@
+1 FAMS @F_3_3_2@
+0 @S_3_3_2@ INDI
+1 NAME Ingunn Elísabet Markúsdóttir
+1 BIRT
+2 DATE 04.03.1994
+1 FAMS @F_3_3_2@
+0 @I_3_3_2_1@ INDI
+1 NAME Björgvin Karl Guðnason
+1 BIRT
+2 DATE 07.11.2019
+1 FAMC @F_3_3_2@
+0 @I_4@ INDI
+1 NAME Arnór Sigurjónsson
+1 BIRT
+2 DATE 16.07.1926
+1 DEAT
+2 DATE 15.09.1979
+1 FAMS @F_4@
+0 @S_4@ INDI
+1 NAME Ragna Sigurðardóttir
+1 BIRT
+2 DATE 04.03.1931
+1 DEAT
+2 DATE 30.01.2018
+1 FAMS @F_4@
+0 @I_4_1@ INDI
+1 NAME Þorbjörg Arnórsdóttir
+1 BIRT
+2 DATE 15.11.1953
+1 FAMC @F_4@
+1 FAMS @F_4_1@
+0 @S_4_1@ INDI
+1 NAME Fjölnir Torfason
+1 BIRT
+2 DATE 01.10.1952
+1 FAMS @F_4_1@
+0 @I_4_1_1@ INDI
+1 NAME Kristinn Heiðar Fjölnisson
+1 BIRT
+2 DATE 20.04.1973
+1 FAMC @F_4_1@
+0 @I_4_1_2@ INDI
+1 NAME Arnór Már Fjölnisson
+1 BIRT
+2 DATE 26.02.1975
+1 FAMC @F_4_1@
+1 FAMS @F_4_1_2@
+0 @S_4_1_2@ INDI
+1 NAME Ann Marie-Louise Sara Johansson
+1 BIRT
+2 DATE 21.10.1983
+1 FAMS @F_4_1_2@
+0 @I_4_1_2_1@ INDI
+1 NAME Ingibjörg Matilda Arnórsdóttir
+1 BIRT
+2 DATE 17.06.2013
+1 FAMC @F_4_1_2@
+0 @I_4_1_2_2@ INDI
+1 NAME Vilma Ósk Arnórsdóttir
+1 BIRT
+2 DATE 20.07.2016
+1 FAMC @F_4_1_2@
+0 @I_4_1_3@ INDI
+1 NAME Vésteinn Fjölnisson
+1 BIRT
+2 DATE 01.09.1981
+1 FAMC @F_4_1@
+1 FAMS @F_4_1_3@
+0 @S_4_1_3@ INDI
+1 NAME Þórey Gísladóttir
+1 BIRT
+2 DATE 23.08.1984
+1 FAMS @F_4_1_3@
+0 @I_4_1_3_1@ INDI
+1 NAME Fjölnir Freyr Vésteinsson
+1 BIRT
+2 DATE 21.02.2014
+1 FAMC @F_4_1_3@
+0 @I_4_1_3_2@ INDI
+1 NAME Helga Guðrún Vésteinsdóttir
+1 BIRT
+2 DATE 18.06.2021
+1 FAMC @F_4_1_3@
+0 @I_4_1_4@ INDI
+1 NAME Ragnar Ægir Fjölnisson
+1 BIRT
+2 DATE 18.02.1990
+1 FAMC @F_4_1@
+1 FAMS @F_4_1_4@
+0 @S_4_1_4@ INDI
+1 NAME Theresa Maria Quinkler
+1 BIRT
+2 DATE 24.10.1987
+1 FAMS @F_4_1_4@
+0 @I_4_1_4_1@ INDI
+1 NAME Magnús Torfi Ragnarsson
+1 BIRT
+2 DATE 25.08.2018
+1 FAMC @F_4_1_4@
+0 @I_4_1_4_2@ INDI
+1 NAME Hákon Nonni Ragnarsson
+1 BIRT
+2 DATE 16.02.2021
+1 FAMC @F_4_1_4@
+0 @I_4_1_4_3@ INDI
+1 NAME Júlíus Raban Ragnarsson
+1 BIRT
+2 DATE 13.05.2024
+1 FAMC @F_4_1_4@
+0 @I_4_2@ INDI
+1 NAME Agnes Siggerður Arnórsdóttir
+1 BIRT
+2 DATE 16.06.1960
+1 FAMC @F_4@
+1 FAMS @F_4_2@
+0 @S_4_2@ INDI
+1 NAME Olav Gaute Hellesø
+1 BIRT
+2 DATE 04.07.1965
+1 FAMS @F_4_2@
+0 @I_4_2_1@ INDI
+1 NAME Tómas Óskar Hellesø
+1 BIRT
+2 DATE 29.04.1991
+1 FAMC @F_4_2@
+0 @I_4_2_2@ INDI
+1 NAME Rúnar Hellesø
+1 BIRT
+2 DATE 21.12.1995
+1 FAMC @F_4_2@
+1 FAMS @F_4_2_2@
+0 @S_4_2_2@ INDI
+1 NAME Pauline Amalie Westgren
+1 BIRT
+2 DATE 11.01.1996
+1 FAMS @F_4_2_2@
+0 @S_4_2_2@ INDI
+1 NAME Per Ingesman
+1 BIRT
+2 DATE 06.11.1953
+1 FAMS @F_4_2_2@
+0 @I_4_2_3@ INDI
+1 NAME Filip Ingesman
+1 BIRT
+2 DATE 02.10.1990
+1 FAMC @F_4_2@
+1 FAMS @F_4_2_3@
+0 @S_4_2_3@ INDI
+1 NAME Lea Høj Bank Lykke
+1 BIRT
+2 DATE 08.08.1988
+1 FAMS @F_4_2_3@
+0 @I_4_2_3_1@ INDI
+1 NAME Mirlo Sabro Lykke
+1 BIRT
+2 DATE 07.02.2015
+1 FAMC @F_4_2_3@
+0 @I_4_2_3_2@ INDI
+1 NAME Theo Sabro Lykke
+1 BIRT
+2 DATE 27.11.2018
+1 FAMC @F_4_2_3@
+0 @I_4_2_4@ INDI
+1 NAME Stefán Ingesman
+1 BIRT
+2 DATE 09.02.2004
+1 FAMC @F_4_2@
+0 @I_4_3@ INDI
+1 NAME Svava Arnórsdóttir
+1 BIRT
+2 DATE 26.01.1963
+1 FAMC @F_4@
+1 FAMS @F_4_3@
+0 @S_4_3@ INDI
+1 NAME Guðmundur Benedikt Baldvinson
+1 BIRT
+2 DATE 10.06.1963
+1 DEAT
+2 DATE 06.11.2018
+1 FAMS @F_4_3@
+0 @I_4_3_1@ INDI
+1 NAME Fannar Benedikt Guðmundsson
+1 BIRT
+2 DATE 27.05.1986
+1 FAMC @F_4_3@
+0 @I_4_3_2@ INDI
+1 NAME Ragna Guðrún Guðmundsdóttir
+1 BIRT
+2 DATE 24.08.2002
+1 FAMC @F_4_3@
+0 @I_5@ INDI
+1 NAME Aðalheiður Sigurjónsdóttir
+1 BIRT
+2 DATE 08.07.1928
+1 FAMS @F_5@
+0 @S_5@ INDI
+1 NAME Guðmundur Sæmundsson
+1 BIRT
+2 DATE 17.01.1921
+1 DEAT
+2 DATE 24.04.2005
+1 FAMS @F_5@
+0 @I_5_1@ INDI
+1 NAME Gunnar Þór Guðmundsson
+1 BIRT
+2 DATE 13.12.1947
+1 FAMC @F_5@
+1 FAMS @F_5_1@
+0 @S_5_1@ INDI
+1 NAME Ragnheiður Ásgeirsdóttir
+1 BIRT
+2 DATE 19.07.1951
+1 FAMS @F_5_1@
+0 @I_5_1_1@ INDI
+1 NAME Þorbjörg Gunnarsdóttir
+1 BIRT
+2 DATE 22.03.1969
+1 FAMC @F_5_1@
+1 FAMS @F_5_1_1@
+0 @S_5_1_1@ INDI
+1 NAME Marteinn L. Gíslason
+1 BIRT
+2 DATE 20.03.1965
+1 FAMS @F_5_1_1@
+0 @I_5_1_1_1@ INDI
+1 NAME Lena Hrönn Marteinsdóttir
+1 BIRT
+2 DATE 14.03.1987
+1 FAMC @F_5_1_1@
+1 FAMS @F_5_1_1_1@
+0 @S_5_1_1_1@ INDI
+1 NAME Jón Birnir Jónsson
+1 BIRT
+2 DATE 22.04.1986
+1 FAMS @F_5_1_1_1@
+0 @I_5_1_1_1_1@ INDI
+1 NAME Ívar Örn Jónsson
+1 BIRT
+2 DATE 15.05.2012
+1 FAMC @F_5_1_1_1@
+0 @I_5_1_1_1_2@ INDI
+1 NAME Adam Hrafn Jónsson
+1 BIRT
+2 DATE 05.09.2016
+1 FAMC @F_5_1_1_1@
+0 @I_5_1_1_2@ INDI
+1 NAME Gunnar Örn Marteinsson
+1 BIRT
+2 DATE 16.03.1988
+1 FAMC @F_5_1_1@
+1 FAMS @F_5_1_1_2@
+0 @S_5_1_1_2@ INDI
+1 NAME Hildur Ósk Hansdóttir
+1 BIRT
+2 DATE 04.12.1999
+1 FAMS @F_5_1_1_2@
+0 @I_5_1_1_2_1@ INDI
+1 NAME Glódis Marey Gunnarsdóttir
+1 BIRT
+2 DATE 15.06.2020
+1 FAMC @F_5_1_1_2@
+0 @I_5_1_1_3@ INDI
+1 NAME Heiðdís Anna Marteinsdóttir
+1 BIRT
+2 DATE 06.03.1996
+1 FAMC @F_5_1_1@
+1 FAMS @F_5_1_1_3@
+0 @S_5_1_1_3@ INDI
+1 NAME Steinþór Benediktsson
+1 BIRT
+2 DATE 23.09.1990
+1 FAMS @F_5_1_1_3@
+0 @I_5_1_1_3_1@ INDI
+1 NAME Benedikt Örn Steinþórsson
+1 BIRT
+2 DATE 27.02.1974
+1 FAMC @F_5_1_1_3@
+0 @I_5_1_2@ INDI
+1 NAME Guðmundur Heiðar Gunnarsson
+1 BIRT
+2 DATE 27.02.1974
+1 FAMC @F_5_1@
+1 FAMS @F_5_1_2@
+0 @S_5_1_2@ INDI
+1 NAME Heiðrún Högnadóttir
+1 BIRT
+2 DATE 11.10.1978
+1 FAMS @F_5_1_2@
+0 @I_5_1_2_1@ INDI
+1 NAME Sunna Dögg Guðmundsdóttir
+1 BIRT
+2 DATE 04.09.1999
+1 FAMC @F_5_1_2@
+0 @I_5_1_2_2@ INDI
+1 NAME Elísabet Guðmundsdóttir
+1 BIRT
+2 DATE 29.10.2005
+1 FAMC @F_5_1_2@
+0 @I_5_1_2_3@ INDI
+1 NAME Sóley Guðmundsdóttir
+1 BIRT
+2 DATE 17.02.2011
+1 FAMC @F_5_1_2@
+0 @I_5_1_3@ INDI
+1 NAME Elmar Gunnarsson
+1 BIRT
+2 DATE 28.01.1987
+1 FAMC @F_5_1@
+1 FAMS @F_5_1_3@
+0 @S_5_1_3@ INDI
+1 NAME Hildur Rós Guðbjargardóttir
+1 BIRT
+2 DATE 28.04.1992
+1 FAMS @F_5_1_3@
+0 @I_5_1_3_1@ INDI
+1 NAME Ragnheiður Adela Elmarsdóttir
+1 BIRT
+2 DATE 10.06.2012
+1 FAMC @F_5_1_3@
+0 @I_5_1_3_2@ INDI
+1 NAME Svandís Karla Elmarsdóttir
+1 BIRT
+2 DATE 31.03.2014
+1 FAMC @F_5_1_3@
+1 FAMS @F_5_1_3_2@
+0 @S_5_1_3_2@ INDI
+1 NAME Júlía Jóelsdóttir
+1 BIRT
+2 DATE 21.01.1994
+1 FAMS @F_5_1_3_2@
+0 @I_5_2@ INDI
+1 NAME Páll Guðmundsson
+1 BIRT
+2 DATE 08.09.1950
+1 FAMC @F_5@
+1 FAMS @F_5_2@
+0 @S_5_2@ INDI
+1 NAME Dagný Rögnvaldsdóttir
+1 BIRT
+2 DATE 31.01.1957
+1 FAMS @F_5_2@
+0 @I_5_2_1@ INDI
+1 NAME Ragnar Aðalsteinn Pálsson
+1 BIRT
+2 DATE 28.12.1975
+1 FAMC @F_5_2@
+1 FAMS @F_5_2_1@
+0 @S_5_2_1@ INDI
+1 NAME Sigurveig Margrét Önundardóttir
+1 BIRT
+2 DATE 24.03.1976
+1 FAMS @F_5_2_1@
+0 @I_5_2_1_1@ INDI
+1 NAME Brynjar Örn Ragnarsson
+1 BIRT
+2 DATE 28.12.1999
+1 FAMC @F_5_2_1@
+0 @I_5_2_1_2@ INDI
+1 NAME Hinrik Orri Ragnarsson
+1 BIRT
+2 DATE 13.11.2008
+1 FAMC @F_5_2_1@
+0 @I_5_2_2@ INDI
+1 NAME Kristrún Ósk Pálsdóttir
+1 BIRT
+2 DATE 20.08.1979
+1 FAMC @F_5_2@
+1 FAMS @F_5_2_2@
+0 @S_5_2_2@ INDI
+1 NAME Emil Þór Erlingsson
+1 BIRT
+2 DATE 13.06.1967
+1 FAMS @F_5_2_2@
+0 @I_5_2_2_1@ INDI
+1 NAME Þórdís Fríða Emilsdóttir
+1 BIRT
+2 DATE 09.11.1997
+1 FAMC @F_5_2_2@
+0 @I_5_2_2_2@ INDI
+1 NAME Erlingur Páll Emilsson
+1 BIRT
+2 DATE 02.08.2007
+1 FAMC @F_5_2_2@
+0 @I_5_3@ INDI
+1 NAME Guðríður Guðmundsdóttir
+1 BIRT
+2 DATE 27.08.1952
+1 FAMC @F_5@
+1 FAMS @F_5_3@
+0 @S_5_3@ INDI
+1 NAME Þór Björnsson
+1 BIRT
+2 DATE 04.09.1955
+1 FAMS @F_5_3@
+0 @I_5_3_1@ INDI
+1 NAME Gréta Þórsdóttir Björnsson
+1 BIRT
+2 DATE 28.03.1986
+1 FAMC @F_5_3@
+1 FAMS @F_5_3_1@
+0 @S_5_3_1@ INDI
+1 NAME Halldór Snorrason
+1 BIRT
+2 DATE 30.03.1986
+1 FAMS @F_5_3_1@
+0 @I_5_3_1_1@ INDI
+1 NAME Snorri Þór Halldórsson
+1 BIRT
+2 DATE 24.09.2012
+1 FAMC @F_5_3_1@
+0 @I_5_3_1_2@ INDI
+1 NAME Sindri Þeyr Halldórsson
+1 BIRT
+2 DATE 17.04.2015
+1 FAMC @F_5_3_1@
+0 @I_5_3_2@ INDI
+1 NAME Björn Þórsson Björnsson
+1 BIRT
+2 DATE 03.10.1988
+1 FAMC @F_5_3@
+1 FAMS @F_5_3_2@
+0 @S_5_3_2@ INDI
+1 NAME Ginta Regínudóttir
+1 BIRT
+2 DATE 12.12.1988
+1 FAMS @F_5_3_2@
+0 @I_5_3_2_1@ INDI
+1 NAME Aron Þór Björnsson Björnsson
+1 BIRT
+2 DATE 05.08.2012
+1 FAMC @F_5_3_2@
+0 @I_5_3_2_2@ INDI
+1 NAME Emilía Björnsdóttir Björnsson
+1 BIRT
+2 DATE 11.04.2020
+1 FAMC @F_5_3_2@
+0 @I_5_4@ INDI
+1 NAME Ingunn Guðmundsdóttir
+1 BIRT
+2 DATE 30.01.1958
+1 FAMC @F_5@
+1 FAMS @F_5_4@
+0 @S_5_4@ INDI
+1 NAME Björn Gunnlaugsson
+1 BIRT
+2 DATE 19.12.1952
+1 FAMS @F_5_4@
+0 @I_5_4_1@ INDI
+1 NAME Arnar Freyr Björnsson
+1 BIRT
+2 DATE 14.01.1977
+1 FAMC @F_5_4@
+1 FAMS @F_5_4_1@
+0 @S_5_4_1@ INDI
+1 NAME Magnea Arnardóttir
+1 BIRT
+2 DATE 28.03.1987
+1 FAMS @F_5_4_1@
+0 @I_5_4_1_1@ INDI
+1 NAME Hrefna Arnarsdóttir
+1 BIRT
+2 DATE 02.02.2011
+1 FAMC @F_5_4_1@
+0 @I_5_4_1_2@ INDI
+1 NAME Kári Arnarsson
+1 BIRT
+2 DATE 11.11.2012
+1 FAMC @F_5_4_1@
+0 @I_5_4_2@ INDI
+1 NAME Bryndís Ósk Björnsdóttir
+1 BIRT
+2 DATE 10.09.1978
+1 FAMC @F_5_4@
+1 FAMS @F_5_4_2@
+0 @S_5_4_2@ INDI
+1 NAME Gísli Jóhann Johnsen
+1 BIRT
+2 DATE 16.06.1967
+1 FAMS @F_5_4_2@
+0 @I_5_4_2_1@ INDI
+1 NAME Ólöf Ósk Johnsen
+1 BIRT
+2 DATE 19.09.1992
+1 FAMC @F_5_4_2@
+1 FAMS @F_5_4_2_1@
+0 @S_5_4_2_1@ INDI
+1 NAME Sævar Már Gústavsson
+1 BIRT
+2 DATE 19.06.1991
+1 FAMS @F_5_4_2_1@
+0 @I_5_4_2_1_1@ INDI
+1 NAME Hlynur Már Sævarsson
+1 BIRT
+2 DATE 10.07.2016
+1 FAMC @F_5_4_2_1@
+0 @I_5_4_2_1_2@ INDI
+1 NAME Benedikta Gígja Sævarsdóttir
+1 BIRT
+2 DATE 29.07.2021
+1 FAMC @F_5_4_2_1@
+0 @I_5_4_2_2@ INDI
+1 NAME Inga Rós Johnsen
+1 BIRT
+2 DATE 16.01.1999
+1 FAMC @F_5_4_2@
+1 FAMS @F_5_4_2_2@
+0 @S_5_4_2_2@ INDI
+1 NAME Eggert Briem
+1 BIRT
+2 DATE 18.12.1973
+1 FAMS @F_5_4_2_2@
+0 @I_5_4_2_3@ INDI
+1 NAME Björn Októvíus Briem
+1 BIRT
+2 DATE 11.06.2000
+1 FAMC @F_5_4_2@
+1 FAMS @F_5_4_2_3@
+0 @I_5_4_2_3_1@ INDI
+1 NAME Stormur Adrían Briem Björnsson
+1 BIRT
+2 DATE 17.06.2023
+1 FAMC @F_5_4_2_3@
+0 @I_5_4_2_4@ INDI
+1 NAME Hjördís Lóa Johnsen
+1 BIRT
+2 DATE 24.10.2004
+1 FAMC @F_5_4_2@
+0 @I_5_4_3@ INDI
+1 NAME Gunnlaugur Bragi Björnsson
+1 BIRT
+2 DATE 01.07.1989
+1 FAMC @F_5_4@
+1 FAMS @F_5_4_3@
+0 @S_5_4_3@ INDI
+1 NAME Atte Hänninen
+1 BIRT
+2 DATE 19.02.1993
+1 FAMS @F_5_4_3@
+0 @I_5_5@ INDI
+1 NAME Ármann Karl Guðmundsson
+1 BIRT
+2 DATE 21.01.1965
+1 FAMC @F_5@
+1 FAMS @F_5_5@
+0 @S_5_5@ INDI
+1 NAME Hólmfríður Guðlaugsdóttir
+1 BIRT
+2 DATE 13.01.1963
+1 FAMS @F_5_5@
+0 @I_5_5_1@ INDI
+1 NAME Ingibjörg Ester Ármannsdóttir
+1 BIRT
+2 DATE 27.06.1988
+1 FAMC @F_5_5@
+1 FAMS @F_5_5_1@
+0 @S_5_5_1@ INDI
+1 NAME Brynjar Örn Ellertsson
+1 BIRT
+2 DATE 12.11.1985
+1 FAMS @F_5_5_1@
+0 @I_5_5_1_1@ INDI
+1 NAME Bjarki Þór Brynjarsson
+1 BIRT
+2 DATE 26.09.2015
+1 FAMC @F_5_5_1@
+0 @I_5_5_1_2@ INDI
+1 NAME Birkir Hrafn Brynjarsson
+1 BIRT
+2 DATE 22.07.2018
+1 FAMC @F_5_5_1@
+0 @I_5_5_1_3@ INDI
+1 NAME Breki Týr Brynjarsson
+1 BIRT
+2 DATE 03.07.2021
+1 FAMC @F_5_5_1@
+0 @I_5_5_2@ INDI
+1 NAME Óskar Ármannsson
+1 BIRT
+2 DATE 05.07.1998
+1 FAMC @F_5_5@
+1 FAMS @F_5_5_2@
+0 @S_5_5_2@ INDI
+1 NAME Heiðrún Ásta Torfadóttir
+1 BIRT
+2 DATE 26.11.1999
+1 FAMS @F_5_5_2@
+0 @I_5_5_2_1@ INDI
+1 NAME Ársól Lilja Óskarsdóttir
+1 BIRT
+2 DATE 12.10.2023
+1 FAMC @F_5_5_2@
+0 @I_5_5_3@ INDI
+1 NAME Víðir Ármannsson
+1 BIRT
+2 DATE 04.12.2000
+1 FAMC @F_5_5@
+0 @I_5_5_4@ INDI
+1 NAME Aðalheiður Ármannsdóttir
+1 BIRT
+2 DATE 04.12.2000
+1 FAMC @F_5_5@
+1 FAMS @F_5_5_4@
+0 @S_5_5_4@ INDI
+1 NAME Allan Bjarki Jónsson
+1 BIRT
+2 DATE 22.10.1997
+1 FAMS @F_5_5_4@
+0 @I_6@ INDI
+1 NAME Sigurbjörg Sigurjónsdóttir
+1 BIRT
+2 DATE 18.03.1938
+1 FAMS @F_6@
+0 @S_6@ INDI
+1 NAME Sigurjón Bjarnason
+1 BIRT
+2 DATE 15.04.1932
+1 DEAT
+2 DATE 20.01.2024
+1 FAMS @F_6@
+0 @I_6_1@ INDI
+1 NAME Ásdís Eyrún Sigurjónsdóttir
+1 BIRT
+2 DATE 15.09.1961
+1 FAMC @F_6@
+1 FAMS @F_6_1@
+0 @S_6_1@ INDI
+1 NAME Ragnar Jónsson
+1 BIRT
+2 DATE 15.02.1948
+1 FAMS @F_6_1@
+0 @I_6_1_1@ INDI
+1 NAME Sigurjón Fannar Ragnarsson
+1 BIRT
+2 DATE 06.12.1980
+1 FAMC @F_6_1@
+1 FAMS @F_6_1_1@
+0 @S_6_1_1@ INDI
+1 NAME Karítas Heiðbrá Harðardóttir
+1 BIRT
+2 DATE 04.06.1976
+1 FAMS @F_6_1_1@
+0 @I_6_1_1_1@ INDI
+1 NAME Bjarney Birta Atladóttir
+1 BIRT
+2 DATE 27.01.1998
+1 FAMC @F_6_1_1@
+0 @I_6_1_1_2@ INDI
+1 NAME Eiður Örn Arnórsson
+1 BIRT
+2 DATE 27.04.2003
+1 FAMC @F_6_1_1@
+0 @I_6_1_1_3@ INDI
+1 NAME Vilhelm Logi Arnórsson
+1 BIRT
+2 DATE 20.10.2008
+1 FAMC @F_6_1_1@
+0 @I_6_1_1_4@ INDI
+1 NAME Hilmar Nói Sigurjónsson
+1 BIRT
+2 DATE 07.04.2014
+1 FAMC @F_6_1_1@
+0 @I_6_1_2@ INDI
+1 NAME Helga Björg Ragnarsdóttir
+1 BIRT
+2 DATE 18.07.1987
+1 FAMC @F_6_1@
+1 FAMS @F_6_1_2@
+0 @S_6_1_2@ INDI
+1 NAME Ingimundur Jónasson
+1 BIRT
+2 DATE 22.01.1982
+1 FAMS @F_6_1_2@
+0 @I_6_1_2_1@ INDI
+1 NAME Karítas Ýr Ingimundardóttir
+1 BIRT
+2 DATE 24.06.2010
+1 FAMC @F_6_1_2@
+0 @I_6_1_2_2@ INDI
+1 NAME Ragna Karen Ingimundardóttir
+1 BIRT
+2 DATE 29.10.2016
+1 FAMC @F_6_1_2@
+0 @I_6_2@ INDI
+1 NAME Elvar Þór Sigurjónsson
+1 BIRT
+2 DATE 08.10.1965
+1 FAMC @F_6@
+1 FAMS @F_6_2@
+0 @S_6_2@ INDI
+1 NAME Elínborg Baldursdóttir
+1 BIRT
+2 DATE 10.07.1971
+1 FAMS @F_6_2@
+0 @I_6_2_1@ INDI
+1 NAME Rakel Ösp Elvarsdóttir
+1 BIRT
+2 DATE 16.09.1992
+1 FAMC @F_6_2@
+1 FAMS @F_6_2_1@
+0 @S_6_2_1@ INDI
+1 NAME Hrannar Ingi Hjaltason
+1 BIRT
+2 DATE 24.02.1989
+1 FAMS @F_6_2_1@
+0 @I_6_2_1_1@ INDI
+1 NAME Breki Snær Hrannarsson
+1 BIRT
+2 DATE 12.12.2022
+1 FAMC @F_6_2_1@
+0 @I_6_2_2@ INDI
+1 NAME Birkir Freyr Elvarsson
+1 BIRT
+2 DATE 06.02.1998
+1 FAMC @F_6_2@
+1 FAMS @F_6_2_2@
+0 @S_6_2_2@ INDI
+1 NAME Valdís Kapitola Þorvarðardóttir
+1 BIRT
+2 DATE 08.06.2000
+1 FAMS @F_6_2_2@
+0 @I_7@ INDI
+1 NAME Erla Þórhildur Sigurjónsdóttir
+1 BIRT
+2 DATE 17.07.1944
+1 FAMS @F_7@
+0 @S_7@ INDI
+1 NAME Guðjón Ingvar Sigurgeirsson
+1 BIRT
+2 DATE 30.06.1939
+1 FAMS @F_7@
+0 @I_7_1@ INDI
+1 NAME Sigurgeir Guðjónsson
+1 BIRT
+2 DATE 28.08.1965
+1 FAMC @F_7@
+0 @I_7_2@ INDI
+1 NAME Ingvar Þór Guðjónsson
+1 BIRT
+2 DATE 01.09.1967
+1 FAMC @F_7@
+1 FAMS @F_7_2@
+0 @S_7_2@ INDI
+1 NAME Einarína Einarsdóttir
+1 BIRT
+2 DATE 20.04.1967
+1 FAMS @F_7_2@
+0 @I_7_2_1@ INDI
+1 NAME Þorbjörg Ingvarsdóttir
+1 BIRT
+2 DATE 08.04.2001
+1 FAMC @F_7_2@
+1 FAMS @F_7_2_1@
+0 @S_7_2_1@ INDI
+1 NAME Jóna Valdís Ólafsdóttir
+1 BIRT
+2 DATE 16.03.1974
+1 FAMS @F_7_2_1@
+0 @I_7_2_2@ INDI
+1 NAME Tómas Óli Ingvarsson
+1 BIRT
+2 DATE 05.05.2005
+1 FAMC @F_7_2@
+0 @I_7_2_3@ INDI
+1 NAME Guðjón Elí Ingvarsson
+1 BIRT
+2 DATE 25.07.2007
+1 FAMC @F_7_2@
+0 @I_7_2_4@ INDI
+1 NAME Álfheiður Anna Ingvarsdóttir
+1 BIRT
+2 DATE 21.12.2010
+1 FAMC @F_7_2@
+0 @I_7_3@ INDI
+1 NAME Sigurjón Axel Guðjónsson
+1 BIRT
+2 DATE 04.02.1974
+1 FAMC @F_7@
+1 FAMS @F_7_3@
+0 @S_7_3@ INDI
+1 NAME Ása Björk Ásgeirsdóttir
+1 BIRT
+2 DATE 06.03.1976
+1 FAMS @F_7_3@
+0 @I_7_3_1@ INDI
+1 NAME Axel Bjarkar Sigurjónsson
+1 BIRT
+2 DATE 22.06.2003
+1 FAMC @F_7_3@
+0 @I_7_3_2@ INDI
+1 NAME Rannveig Arna Sigurjónsdóttir
+1 BIRT
+2 DATE 05.09.2005
+1 FAMC @F_7_3@
+0 @I_7_3_3@ INDI
+1 NAME Þórhildur Soffía Sigurjónsdóttir
+1 BIRT
+2 DATE 10.08.2010
+1 FAMC @F_7_3@
+0 @I_7_3_4@ INDI
+1 NAME Birkir Evan Sigurjónsson
+1 BIRT
+2 DATE 06.05.2014
+1 FAMC @F_7_3@
+0 @I_7_4@ INDI
+1 NAME Snæbjörn Ómar Guðjónsson
+1 BIRT
+2 DATE 04.08.1978
+1 FAMC @F_7@
+1 FAMS @F_7_4@
+0 @S_7_4@ INDI
+1 NAME Stella Bryndís Helgadóttir
+1 BIRT
+2 DATE 28.10.1978
+1 FAMS @F_7_4@
+0 @I_7_4_1@ INDI
+1 NAME Kristófer Breki Snæbjörnsson
+1 BIRT
+2 DATE 28.07.2001
+1 FAMC @F_7_4@
+0 @I_7_4_2@ INDI
+1 NAME Alexander Brimar Snæbjörnsson
+1 BIRT
+2 DATE 03.08.2004
+1 FAMC @F_7_4@
+0 @I_7_4_3@ INDI
+1 NAME Melkorka Bríet Snæbjörnsdóttir
+1 BIRT
+2 DATE 06.03.2010
+1 FAMC @F_7_4@
+0 @I_7_4_4@ INDI
+1 NAME Baltasar Bragi Snæbjörnsson
+1 BIRT
+2 DATE 18.10.2012
+1 FAMC @F_7_4@
+0 @I_7_4_5@ INDI
+1 NAME Kormákur Brímir Snæbjörnsson
+1 BIRT
+2 DATE 07.09.2014
+1 FAMC @F_7_4@
+0 @I_7_4_6@ INDI
+1 NAME Benedikt Brynjar Snæbjörnsson
+1 BIRT
+2 DATE 11.03.2020
+1 FAMC @F_7_4@
+0 @F_1@ FAM
+1 HUSB @I_1@
+1 WIFE @S_1@
+1 CHIL @I_1_1@
+1 CHIL @I_1_2@
+1 CHIL @I_1_3@
+1 CHIL @I_1_4@
+1 CHIL @I_1_5@
+0 @F_1_1@ FAM
+1 HUSB @I_1_1@
+1 WIFE @S_1_1@
+1 CHIL @I_1_1_1@
+1 CHIL @I_1_1_2@
+1 CHIL @I_1_1_3@
+0 @F_1_1_1@ FAM
+1 HUSB @I_1_1_1@
+1 WIFE @S_1_1_1@
+0 @F_1_1_2@ FAM
+1 HUSB @I_1_1_2@
+1 WIFE @S_1_1_2@
+0 @F_1_1_3@ FAM
+1 HUSB @I_1_1_3@
+1 WIFE @S_1_1_3@
+1 CHIL @I_1_1_3_1@
+1 CHIL @I_1_1_3_2@
+1 CHIL @I_1_1_3_3@
+0 @F_1_1_3_1@ FAM
+1 HUSB @I_1_1_3_1@
+1 WIFE @S_1_1_3_1@
+0 @F_1_1_3_2@ FAM
+1 HUSB @I_1_1_3_2@
+1 WIFE @S_1_1_3_2@
+0 @F_1_2@ FAM
+1 HUSB @I_1_2@
+1 WIFE @S_1_2@
+1 CHIL @I_1_2_1@
+1 CHIL @I_1_2_2@
+1 CHIL @I_1_2_3@
+1 CHIL @I_1_2_4@
+0 @F_1_2_1@ FAM
+1 HUSB @I_1_2_1@
+1 WIFE @S_1_2_1@
+1 CHIL @I_1_2_1_1@
+1 CHIL @I_1_2_1_2@
+1 CHIL @I_1_2_1_3@
+1 CHIL @I_1_2_1_4@
+0 @F_1_2_1_1@ FAM
+1 HUSB @I_1_2_1_1@
+1 WIFE @S_1_2_1_1@
+1 CHIL @I_1_2_1_1_1@
+1 CHIL @I_1_2_1_1_2@
+0 @F_1_2_3@ FAM
+1 HUSB @I_1_2_3@
+1 WIFE @S_1_2_3@
+1 CHIL @I_1_2_3_1@
+1 CHIL @I_1_2_3_2@
+1 CHIL @I_1_2_3_3@
+0 @F_1_2_4@ FAM
+1 HUSB @I_1_2_4@
+1 WIFE @S_1_2_4@
+1 CHIL @I_1_2_4_1@
+0 @F_1_3@ FAM
+1 HUSB @I_1_3@
+1 WIFE @S_1_3@
+1 CHIL @I_1_3_1@
+1 CHIL @I_1_3_2@
+0 @F_1_3_1@ FAM
+1 HUSB @I_1_3_1@
+1 WIFE @S_1_3_1@
+1 CHIL @I_1_3_1_1@
+1 CHIL @I_1_3_1_2@
+0 @F_1_3_2@ FAM
+1 HUSB @I_1_3_2@
+1 WIFE @S_1_3_2@
+0 @F_1_4@ FAM
+1 HUSB @I_1_4@
+1 WIFE @S_1_4@
+1 CHIL @I_1_4_1@
+0 @F_1_4_1@ FAM
+1 HUSB @I_1_4_1@
+1 WIFE @S_1_4_1@
+1 CHIL @I_1_4_1_1@
+0 @F_1_4_1_1@ FAM
+1 HUSB @I_1_4_1_1@
+1 WIFE @S_1_4_1_1@
+1 CHIL @I_1_4_1_1_1@
+1 CHIL @I_1_4_1_1_2@
+0 @F_1_5@ FAM
+1 HUSB @I_1_5@
+1 WIFE @S_1_5@
+1 CHIL @I_1_5_1@
+1 CHIL @I_1_5_2@
+1 CHIL @I_1_5_3@
+0 @F_1_5_1@ FAM
+1 HUSB @I_1_5_1@
+1 WIFE @S_1_5_1@
+1 CHIL @I_1_5_1_1@
+1 CHIL @I_1_5_1_2@
+1 CHIL @I_1_5_1_3@
+1 CHIL @I_1_5_1_4@
+0 @F_1_5_1_2@ FAM
+1 HUSB @I_1_5_1_2@
+1 WIFE @S_1_5_1_2@
+0 @F_1_5_1_4@ FAM
+1 HUSB @I_1_5_1_4@
+1 WIFE @S_1_5_1_4@
+0 @F_2@ FAM
+1 HUSB @I_2@
+1 WIFE @S_2@
+1 CHIL @I_2_1@
+1 CHIL @I_2_2@
+0 @F_2_1@ FAM
+1 HUSB @I_2_1@
+1 WIFE @S_2_1@
+1 CHIL @I_2_1_1@
+0 @F_2_1_1@ FAM
+1 HUSB @I_2_1_1@
+1 WIFE @S_2_1_1@
+0 @F_2_2@ FAM
+1 HUSB @I_2_2@
+1 WIFE @S_2_2@
+1 CHIL @I_2_2_1@
+1 CHIL @I_2_2_2@
+1 CHIL @I_2_2_3@
+0 @F_2_2_1@ FAM
+1 HUSB @I_2_2_1@
+1 WIFE @S_2_2_1@
+1 CHIL @I_2_2_1_1@
+1 CHIL @I_2_2_1_2@
+1 CHIL @I_2_2_1_3@
+0 @F_2_2_2@ FAM
+1 HUSB @I_2_2_2@
+1 WIFE @S_2_2_2@
+1 CHIL @I_2_2_2_1@
+1 CHIL @I_2_2_2_2@
+0 @F_2_2_3@ FAM
+1 HUSB @I_2_2_3@
+1 WIFE @S_2_2_3@
+1 CHIL @I_2_2_3_1@
+0 @F_3@ FAM
+1 HUSB @I_3@
+1 WIFE @S_3@
+1 CHIL @I_3_1@
+1 CHIL @I_3_2@
+1 CHIL @I_3_3@
+0 @F_3_1@ FAM
+1 HUSB @I_3_1@
+1 WIFE @S_3_1@
+1 CHIL @I_3_1_1@
+0 @F_3_1_1@ FAM
+1 HUSB @I_3_1_1@
+1 WIFE @S_3_1_1@
+1 CHIL @I_3_1_1_1@
+1 CHIL @I_3_1_1_2@
+1 CHIL @I_3_1_1_3@
+0 @F_3_2@ FAM
+1 HUSB @I_3_2@
+1 WIFE @S_3_2@
+1 CHIL @I_3_2_1@
+1 CHIL @I_3_2_2@
+0 @F_3_2_1@ FAM
+1 HUSB @I_3_2_1@
+1 WIFE @S_3_2_1@
+1 CHIL @I_3_2_1_1@
+1 CHIL @I_3_2_1_2@
+1 CHIL @I_3_2_1_3@
+0 @F_3_2_1_1@ FAM
+1 HUSB @I_3_2_1_1@
+1 WIFE @S_3_2_1_1@
+1 CHIL @I_3_2_1_1_1@
+1 CHIL @I_3_2_1_1_2@
+1 CHIL @I_3_2_1_1_3@
+1 CHIL @I_3_2_1_1_4@
+0 @F_3_2_1_1_3@ FAM
+1 HUSB @I_3_2_1_1_3@
+1 WIFE @S_3_2_1_1_3@
+0 @F_3_2_2@ FAM
+1 HUSB @I_3_2_2@
+1 WIFE @S_3_2_2@
+1 CHIL @I_3_2_2_1@
+1 CHIL @I_3_2_2_2@
+1 CHIL @I_3_2_2_3@
+0 @F_3_3@ FAM
+1 HUSB @I_3_3@
+1 WIFE @S_3_3@
+1 CHIL @I_3_3_1@
+1 CHIL @I_3_3_2@
+0 @F_3_3_1@ FAM
+1 HUSB @I_3_3_1@
+1 WIFE @S_3_3_1@
+0 @F_3_3_2@ FAM
+1 HUSB @I_3_3_2@
+1 WIFE @S_3_3_2@
+1 CHIL @I_3_3_2_1@
+0 @F_4@ FAM
+1 HUSB @I_4@
+1 WIFE @S_4@
+1 CHIL @I_4_1@
+1 CHIL @I_4_2@
+1 CHIL @I_4_3@
+0 @F_4_1@ FAM
+1 HUSB @I_4_1@
+1 WIFE @S_4_1@
+1 CHIL @I_4_1_1@
+1 CHIL @I_4_1_2@
+1 CHIL @I_4_1_3@
+1 CHIL @I_4_1_4@
+0 @F_4_1_2@ FAM
+1 HUSB @I_4_1_2@
+1 WIFE @S_4_1_2@
+1 CHIL @I_4_1_2_1@
+1 CHIL @I_4_1_2_2@
+0 @F_4_1_3@ FAM
+1 HUSB @I_4_1_3@
+1 WIFE @S_4_1_3@
+1 CHIL @I_4_1_3_1@
+1 CHIL @I_4_1_3_2@
+0 @F_4_1_4@ FAM
+1 HUSB @I_4_1_4@
+1 WIFE @S_4_1_4@
+1 CHIL @I_4_1_4_1@
+1 CHIL @I_4_1_4_2@
+1 CHIL @I_4_1_4_3@
+0 @F_4_2@ FAM
+1 HUSB @I_4_2@
+1 WIFE @S_4_2@
+1 CHIL @I_4_2_1@
+1 CHIL @I_4_2_2@
+1 CHIL @I_4_2_3@
+1 CHIL @I_4_2_4@
+0 @F_4_2_2@ FAM
+1 HUSB @I_4_2_2@
+1 WIFE @S_4_2_2@
+0 @F_4_2_3@ FAM
+1 HUSB @I_4_2_3@
+1 WIFE @S_4_2_3@
+1 CHIL @I_4_2_3_1@
+1 CHIL @I_4_2_3_2@
+0 @F_4_3@ FAM
+1 HUSB @I_4_3@
+1 WIFE @S_4_3@
+1 CHIL @I_4_3_1@
+1 CHIL @I_4_3_2@
+0 @F_5@ FAM
+1 HUSB @I_5@
+1 WIFE @S_5@
+1 CHIL @I_5_1@
+1 CHIL @I_5_2@
+1 CHIL @I_5_3@
+1 CHIL @I_5_4@
+1 CHIL @I_5_5@
+0 @F_5_1@ FAM
+1 HUSB @I_5_1@
+1 WIFE @S_5_1@
+1 CHIL @I_5_1_1@
+1 CHIL @I_5_1_2@
+1 CHIL @I_5_1_3@
+0 @F_5_1_1@ FAM
+1 HUSB @I_5_1_1@
+1 WIFE @S_5_1_1@
+1 CHIL @I_5_1_1_1@
+1 CHIL @I_5_1_1_2@
+1 CHIL @I_5_1_1_3@
+0 @F_5_1_1_1@ FAM
+1 HUSB @I_5_1_1_1@
+1 WIFE @S_5_1_1_1@
+1 CHIL @I_5_1_1_1_1@
+1 CHIL @I_5_1_1_1_2@
+0 @F_5_1_1_2@ FAM
+1 HUSB @I_5_1_1_2@
+1 WIFE @S_5_1_1_2@
+1 CHIL @I_5_1_1_2_1@
+0 @F_5_1_1_3@ FAM
+1 HUSB @I_5_1_1_3@
+1 WIFE @S_5_1_1_3@
+1 CHIL @I_5_1_1_3_1@
+0 @F_5_1_2@ FAM
+1 HUSB @I_5_1_2@
+1 WIFE @S_5_1_2@
+1 CHIL @I_5_1_2_1@
+1 CHIL @I_5_1_2_2@
+1 CHIL @I_5_1_2_3@
+0 @F_5_1_3@ FAM
+1 HUSB @I_5_1_3@
+1 WIFE @S_5_1_3@
+1 CHIL @I_5_1_3_1@
+1 CHIL @I_5_1_3_2@
+0 @F_5_1_3_2@ FAM
+1 HUSB @I_5_1_3_2@
+1 WIFE @S_5_1_3_2@
+0 @F_5_2@ FAM
+1 HUSB @I_5_2@
+1 WIFE @S_5_2@
+1 CHIL @I_5_2_1@
+1 CHIL @I_5_2_2@
+0 @F_5_2_1@ FAM
+1 HUSB @I_5_2_1@
+1 WIFE @S_5_2_1@
+1 CHIL @I_5_2_1_1@
+1 CHIL @I_5_2_1_2@
+0 @F_5_2_2@ FAM
+1 HUSB @I_5_2_2@
+1 WIFE @S_5_2_2@
+1 CHIL @I_5_2_2_1@
+1 CHIL @I_5_2_2_2@
+0 @F_5_3@ FAM
+1 HUSB @I_5_3@
+1 WIFE @S_5_3@
+1 CHIL @I_5_3_1@
+1 CHIL @I_5_3_2@
+0 @F_5_3_1@ FAM
+1 HUSB @I_5_3_1@
+1 WIFE @S_5_3_1@
+1 CHIL @I_5_3_1_1@
+1 CHIL @I_5_3_1_2@
+0 @F_5_3_2@ FAM
+1 HUSB @I_5_3_2@
+1 WIFE @S_5_3_2@
+1 CHIL @I_5_3_2_1@
+1 CHIL @I_5_3_2_2@
+0 @F_5_4@ FAM
+1 HUSB @I_5_4@
+1 WIFE @S_5_4@
+1 CHIL @I_5_4_1@
+1 CHIL @I_5_4_2@
+1 CHIL @I_5_4_3@
+0 @F_5_4_1@ FAM
+1 HUSB @I_5_4_1@
+1 WIFE @S_5_4_1@
+1 CHIL @I_5_4_1_1@
+1 CHIL @I_5_4_1_2@
+0 @F_5_4_2@ FAM
+1 HUSB @I_5_4_2@
+1 WIFE @S_5_4_2@
+1 CHIL @I_5_4_2_1@
+1 CHIL @I_5_4_2_2@
+1 CHIL @I_5_4_2_3@
+1 CHIL @I_5_4_2_4@
+0 @F_5_4_2_1@ FAM
+1 HUSB @I_5_4_2_1@
+1 WIFE @S_5_4_2_1@
+1 CHIL @I_5_4_2_1_1@
+1 CHIL @I_5_4_2_1_2@
+0 @F_5_4_2_2@ FAM
+1 HUSB @I_5_4_2_2@
+1 WIFE @S_5_4_2_2@
+0 @F_5_4_2_3@ FAM
+1 HUSB @I_5_4_2_3@
+1 CHIL @I_5_4_2_3_1@
+0 @F_5_4_3@ FAM
+1 HUSB @I_5_4_3@
+1 WIFE @S_5_4_3@
+0 @F_5_5@ FAM
+1 HUSB @I_5_5@
+1 WIFE @S_5_5@
+1 CHIL @I_5_5_1@
+1 CHIL @I_5_5_2@
+1 CHIL @I_5_5_3@
+1 CHIL @I_5_5_4@
+0 @F_5_5_1@ FAM
+1 HUSB @I_5_5_1@
+1 WIFE @S_5_5_1@
+1 CHIL @I_5_5_1_1@
+1 CHIL @I_5_5_1_2@
+1 CHIL @I_5_5_1_3@
+0 @F_5_5_2@ FAM
+1 HUSB @I_5_5_2@
+1 WIFE @S_5_5_2@
+1 CHIL @I_5_5_2_1@
+0 @F_5_5_4@ FAM
+1 HUSB @I_5_5_4@
+1 WIFE @S_5_5_4@
+0 @F_6@ FAM
+1 HUSB @I_6@
+1 WIFE @S_6@
+1 CHIL @I_6_1@
+1 CHIL @I_6_2@
+0 @F_6_1@ FAM
+1 HUSB @I_6_1@
+1 WIFE @S_6_1@
+1 CHIL @I_6_1_1@
+1 CHIL @I_6_1_2@
+0 @F_6_1_1@ FAM
+1 HUSB @I_6_1_1@
+1 WIFE @S_6_1_1@
+1 CHIL @I_6_1_1_1@
+1 CHIL @I_6_1_1_2@
+1 CHIL @I_6_1_1_3@
+1 CHIL @I_6_1_1_4@
+0 @F_6_1_2@ FAM
+1 HUSB @I_6_1_2@
+1 WIFE @S_6_1_2@
+1 CHIL @I_6_1_2_1@
+1 CHIL @I_6_1_2_2@
+0 @F_6_2@ FAM
+1 HUSB @I_6_2@
+1 WIFE @S_6_2@
+1 CHIL @I_6_2_1@
+1 CHIL @I_6_2_2@
+0 @F_6_2_1@ FAM
+1 HUSB @I_6_2_1@
+1 WIFE @S_6_2_1@
+1 CHIL @I_6_2_1_1@
+0 @F_6_2_2@ FAM
+1 HUSB @I_6_2_2@
+1 WIFE @S_6_2_2@
+0 @F_7@ FAM
+1 HUSB @I_7@
+1 WIFE @S_7@
+1 CHIL @I_7_1@
+1 CHIL @I_7_2@
+1 CHIL @I_7_3@
+1 CHIL @I_7_4@
+0 @F_7_2@ FAM
+1 HUSB @I_7_2@
+1 WIFE @S_7_2@
+1 CHIL @I_7_2_1@
+1 CHIL @I_7_2_2@
+1 CHIL @I_7_2_3@
+1 CHIL @I_7_2_4@
+0 @F_7_2_1@ FAM
+1 HUSB @I_7_2_1@
+1 WIFE @S_7_2_1@
+0 @F_7_3@ FAM
+1 HUSB @I_7_3@
+1 WIFE @S_7_3@
+1 CHIL @I_7_3_1@
+1 CHIL @I_7_3_2@
+1 CHIL @I_7_3_3@
+1 CHIL @I_7_3_4@
+0 @F_7_4@ FAM
+1 HUSB @I_7_4@
+1 WIFE @S_7_4@
+1 CHIL @I_7_4_1@
+1 CHIL @I_7_4_2@
+1 CHIL @I_7_4_3@
+1 CHIL @I_7_4_4@
+1 CHIL @I_7_4_5@
+1 CHIL @I_7_4_6@
+0 TRLR
