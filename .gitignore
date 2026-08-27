@@ -8,3 +8,11 @@ Thumbs.db
 
 # Local user files
 *.local
+.env
+.venv
+__pycache__/
+*.pyc
+ancestry.db
+images/cache/
+test_*.py
+scratch/

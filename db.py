@@ -1,6 +1,7 @@
 import sqlite3
 import json
 import os
+import hashlib
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "ancestry.db")
 
@@ -99,27 +100,39 @@ def save_suggestion(person_id, sug_type, source, url, image_url, local_path, tit
         cursor = conn.cursor()
         
         # 1. Do not re-add if already exists in confirmed sources!
-        if url:
+        if url and url.strip():
             cursor.execute("SELECT id FROM sources WHERE person_id = ? AND link = ?", (clean_id, url))
             if cursor.fetchone():
                 return
         if image_url or local_path:
-            cursor.execute("SELECT id FROM sources WHERE person_id = ? AND (image_url = ? OR image_url = ?)", (clean_id, image_url, local_path))
-            if cursor.fetchone():
-                return
-        if title:
+            # Check by exact path or image hash
+            cursor.execute("SELECT id, image_url FROM sources WHERE person_id = ?", (clean_id,))
+            existing_srcs = cursor.fetchall()
+            target_path = local_path or image_url
+            if target_path and os.path.exists(target_path):
+                target_hash = hashlib.md5(open(target_path, 'rb').read()).hexdigest()
+                for es in existing_srcs:
+                    es_path = es['image_url']
+                    if es_path and os.path.exists(es_path):
+                        if hashlib.md5(open(es_path, 'rb').read()).hexdigest() == target_hash:
+                            return # Already in confirmed sources!
+
+        if title and title.strip():
             cursor.execute("SELECT id FROM sources WHERE person_id = ? AND title = ?", (clean_id, title))
             if cursor.fetchone():
                 return
 
         # 2. Do not re-add if already exists in ai_suggestions (pending OR rejected)
         if sug_type == 'image' and (image_url or local_path):
-            cursor.execute("""
-                SELECT id FROM ai_suggestions 
-                WHERE person_id = ? AND (image_url = ? OR local_path = ? OR (url = ? AND url != ''))
-            """, (clean_id, image_url, local_path, url))
-            if cursor.fetchone():
-                return
+            target_path = local_path or image_url
+            if target_path and os.path.exists(target_path):
+                target_hash = hashlib.md5(open(target_path, 'rb').read()).hexdigest()
+                cursor.execute("SELECT id, local_path, image_url FROM ai_suggestions WHERE person_id = ?", (clean_id,))
+                for row in cursor.fetchall():
+                    r_path = row['local_path'] or row['image_url']
+                    if r_path and os.path.exists(r_path):
+                        if hashlib.md5(open(r_path, 'rb').read()).hexdigest() == target_hash:
+                            return # Already classified as pending or rejected!
         elif url and url.strip():
             cursor.execute("""
                 SELECT id FROM ai_suggestions 

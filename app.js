@@ -33,15 +33,27 @@ async function fetchWithTimeout(url, timeoutMs = 10000) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-  updateDebugBar('⏳ Initializing...');
+async function initApp() {
+  updateDebugBar('⏳ Hleð inn gögnum...');
   initEventListeners();
-  // Run both in parallel — don't let one block the other
-  await Promise.all([
-    loadTreesList(),
-    loadTree(state.selectedTreeId)
-  ]);
-});
+  try {
+    await loadTreesList();
+  } catch(e) {
+    console.error('loadTreesList failed:', e);
+  }
+  try {
+    await loadTree(state.selectedTreeId);
+  } catch(e) {
+    console.error('loadTree failed:', e);
+    updateDebugBar('⚠️ Gat ekki hlaðið tré sjálfkrafa, reyndu að velja tré úr listanum');
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
 
 function toggleMobileSidebar(forceState) {
   const sidebar = document.getElementById('app-sidebar');
@@ -160,7 +172,7 @@ async function loadTreesList() {
   }
 }
 
-async function loadTree(treeId) {
+async function loadTree(treeId, targetPersonId = null) {
   try {
     // Show Workspace, Hide Empty State immediately
     const emptyView = document.getElementById('empty-state-view');
@@ -190,9 +202,17 @@ async function loadTree(treeId) {
       renderPeopleList(state.people);
     }
     
-    // Select Sigurjón Axel or first person by default
-    if (state.people.length > 0) {
-      const defaultP = state.people.find(p => p.id === 'I212097023483' || (p.name && p.name.includes('Sigurjón Axel'))) || state.people[0];
+    // If targetPersonId is given, select that specific person
+    if (targetPersonId) {
+      selectPerson(targetPersonId);
+    } else if (state.people.length > 0) {
+      // Default: In loa tree default to Lóa, in sigurjon tree default to Sigurjón
+      let defaultP;
+      if (treeId === 'loa') {
+        defaultP = state.people.find(p => p.id === 'I272771958737' || (p.name && p.name.includes('Ólafía'))) || state.people[0];
+      } else {
+        defaultP = state.people.find(p => p.id === 'I212097023483' || (p.name && p.name.includes('Sigurjón Axel'))) || state.people[0];
+      }
       selectPerson(defaultP.id);
     }
   } catch (err) {
@@ -298,6 +318,27 @@ function filterPeopleList(query) {
 }
 
 async function selectPerson(personId) {
+  // Snjallt trjáhopp (Cross-Tree Navigation):
+  // Ef smellt er á Lóu í Sigurjóns tré -> Hoppum sjálfkrafa yfir í Lóu tré (þar sem öll hennar börn og foreldrar eru)!
+  if (personId === 'I_ADD_LOA_I212097023483' && state.selectedTreeId !== 'loa') {
+    state.selectedTreeId = 'loa';
+    const treeSelect = document.getElementById('tree-select');
+    if (treeSelect) treeSelect.value = 'loa';
+    showToast("🌳 Skipti yfir í Lóu ættartré...");
+    await loadTree('loa', 'I272771958737');
+    return;
+  }
+
+  // Ef smellt er á Sigurjón í Lóu tré -> Hoppum sjálfkrafa yfir í Sigurjóns tré (þar sem öll hans börn og foreldrar eru)!
+  if (personId === 'I_ADD_100' && state.selectedTreeId !== 'sigurjon') {
+    state.selectedTreeId = 'sigurjon';
+    const treeSelect = document.getElementById('tree-select');
+    if (treeSelect) treeSelect.value = 'sigurjon';
+    showToast("🌳 Skipti yfir í Sigurjóns ættartré...");
+    await loadTree('sigurjon', 'I212097023483');
+    return;
+  }
+
   state.selectedPersonId = personId;
   
   // Close mobile sidebar drawer if open
@@ -352,6 +393,24 @@ function renderPersonProfile(details) {
       p.birth_date || p.birth_year ? `f. ${p.birth_date || p.birth_year}` : '',
       p.death_date || p.death_year ? `d. ${p.death_date || p.death_year}` : ''
     ].filter(Boolean).join(' — ');
+  }
+
+  // Profile Confidence & Identity Verification Badge
+  const confBadge = document.getElementById('p-confidence-badge');
+  if (confBadge) {
+    const verifiedSourcesCount = sources.length;
+    const hasNotes = !!(p.notes && p.notes.length > 50);
+    
+    if (verifiedSourcesCount >= 2 || (hasNotes && verifiedSourcesCount >= 1)) {
+      confBadge.className = 'badge badge-success';
+      confBadge.innerHTML = `<i data-lucide="shield-check" style="width:12px;height:12px;"></i> <span>Hátt áreiðanleikastig (${verifiedSourcesCount} staðfestar heimildir)</span>`;
+    } else if (hasNotes || (family.father || family.mother || (family.spouse && family.spouse.length > 0))) {
+      confBadge.className = 'badge badge-warning';
+      confBadge.innerHTML = `<i data-lucide="check-circle" style="width:12px;height:12px;"></i> <span>Staðfest ættartré (${verifiedSourcesCount} vefheimildir)</span>`;
+    } else {
+      confBadge.className = 'badge badge-secondary';
+      confBadge.innerHTML = `<i data-lucide="help-circle" style="width:12px;height:12px;"></i> <span>Óyfirfarin færtla</span>`;
+    }
   }
   
   // Basic Details
@@ -433,13 +492,19 @@ function renderPersonProfile(details) {
   const avatarImg = document.getElementById('p-avatar-img');
   const avatarIcon = document.getElementById('p-avatar-icon');
   if (avatarImg && avatarIcon) {
+    const btnRemove = document.getElementById('btn-remove-avatar');
     if (p.avatar_url) {
       avatarImg.src = p.avatar_url.startsWith('images/') ? `/api/proxy_image?url=${encodeURIComponent(p.avatar_url)}` : p.avatar_url;
       avatarImg.style.display = 'block';
       avatarIcon.style.display = 'none';
+      if (p.avatar_verified) {
+        avatarImg.title = "✓ Staðfest prófílmynd (Læst)";
+      }
+      if (btnRemove) btnRemove.style.display = 'inline-flex';
     } else {
       avatarImg.style.display = 'none';
       avatarIcon.style.display = 'block';
+      if (btnRemove) btnRemove.style.display = 'none';
     }
   }
 
@@ -458,7 +523,14 @@ function renderPersonProfile(details) {
   // AI Suggestions Section
   renderAISuggestions(suggestions, p.id);
   
-  lucide.createIcons();
+  // Render Interactive Tree immediately and reliably
+  try {
+    renderInteractiveTree();
+  } catch(err) {
+    console.error("renderInteractiveTree call error:", err);
+  }
+  
+  try { if (window.lucide) lucide.createIcons(); } catch(e) {}
 }
 
 function renderConfirmedSources(sources) {
@@ -492,7 +564,10 @@ function renderConfirmedSources(sources) {
           </div>
         ` : `<i data-lucide="book-open" style="width:24px;height:24px;color:var(--accent-gold);flex-shrink:0;margin-top:2px;"></i>`}
         <div style="flex-grow:1;min-width:0;">
-          <div style="font-weight:600;font-size:0.88rem;color:var(--accent-gold);margin-bottom:0.2rem;">${s.title}</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.2rem;">
+            <div style="font-weight:600;font-size:0.88rem;color:var(--accent-gold);">${s.title}</div>
+            <span class="badge badge-success" style="font-size:0.62rem;padding:1px 5px;">✓ Staðfest</span>
+          </div>
           ${snippet ? `<div style="font-size:0.78rem;color:var(--text-secondary);margin-bottom:0.3rem;line-height:1.4;">${snippet}</div>` : ''}
           ${domain ? `<div style="font-size:0.72rem;color:var(--text-muted);">🔗 ${domain}</div>` : ''}
           ${s.link ? `<a href="${s.link}" target="_blank" style="font-size:0.72rem;color:var(--accent-gold);margin-top:0.25rem;display:inline-flex;align-items:center;gap:4px;">Opna heimild <i data-lucide="external-link" style="width:10px;height:10px;"></i></a>` : ''}
@@ -534,6 +609,21 @@ window.setProfileImage = async function(personId, imagePath, imgEl) {
     state.personDetails = data.details;
     renderPersonProfile(data.details);
     showToast('Prófílmynd uppfærð!');
+  } catch(e) {
+    showToast('Villa: ' + e.message);
+  }
+};
+
+window.removeProfileAvatar = async function() {
+  if (!state.selectedPersonId) return;
+  if (!confirm('Viltu fjarlægja prófílmyndina af þessum einstaklingi?')) return;
+  try {
+    const res = await fetch(`/api/set_profile_image?person_id=${state.selectedPersonId}&image_path=`, { method: 'POST' });
+    if (!res.ok) throw new Error('Villa');
+    const data = await res.json();
+    state.personDetails = data.details;
+    renderPersonProfile(data.details);
+    showToast('Prófílmynd fjarlægð!');
   } catch(e) {
     showToast('Villa: ' + e.message);
   }
@@ -592,11 +682,21 @@ function renderSingleSuggestionCard(sug, isRejected) {
         ` : ''}
         <div style="flex-grow: 1;">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 0.72rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase;">${sug.source || 'AI LEIT'}</span>
+            <span style="font-size: 0.72rem; color: #ffb86c; font-weight: 700; text-transform: uppercase;">
+              ${sug.type === 'image' ? '💡 Óstaðfest myndatillaga (Ágiskun)' : (sug.source || 'AI LEIT')}
+            </span>
             <span class="badge badge-secondary" style="font-size: 0.65rem;">${sug.confidence}% öryggi</span>
           </div>
           <div style="font-weight: 600; font-size: 0.92rem; color: #fff; margin-top: 0.2rem;">${sug.title}</div>
           <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.35rem; line-height: 1.5;">${sug.description}</div>
+          ${sug.type === 'image' ? '<div style="font-size:0.72rem;color:#f1fa8c;margin-top:0.25rem;">⚠️ Þetta er óstaðfest uppástunga af vefnum. Hún verður ekki prófílmynd nema þú ýtir á „Staðfesta & Vista“.</div>' : ''}
+          ${sug.url ? `
+            <div style="margin-top: 0.35rem;">
+              <a href="${sug.url}" target="_blank" style="font-size: 0.75rem; color: var(--accent-gold); display: inline-flex; align-items: center; gap: 4px; text-decoration: none;">
+                🔗 Skoða vefsíðu / heimild <i data-lucide="external-link" style="width: 11px; height: 11px;"></i>
+              </a>
+            </div>
+          ` : ''}
         </div>
       </div>
       
@@ -764,3 +864,305 @@ async function saveSettings() {
     showToast("Villa við að vista stillingar.");
   }
 }
+
+
+
+// ==========================================
+// GLÆSILEGT GAGNVIRKT ÆTTARTRÉ (DESKTOP + MOBILE ENGINE)
+// ==========================================
+
+async function renderInteractiveTree() {
+  const container = document.getElementById('interactive-tree-canvas');
+  if (!container) return;
+  
+  const currentId = state.selectedPersonId;
+  if (!currentId) {
+    container.innerHTML = '<div style="text-align:center;color:var(--text-muted);padding:3rem;">Engin persóna valin.</div>';
+    return;
+  }
+
+  container.innerHTML = `
+    <div style="text-align:center;padding:3rem;color:var(--accent-gold);">
+      <i data-lucide="loader-2" class="spin" style="width:28px;height:28px;"></i>
+      <div style="margin-top:0.5rem;font-size:0.85rem;">Teikna ættartré...</div>
+    </div>
+  `;
+  try { if (window.lucide) lucide.createIcons(); } catch(e) {}
+
+  try {
+    const res = await fetch(`/api/person?id=${currentId}`);
+    if (!res.ok) throw new Error("Gat ekki sótt gögn fyrir ættartré.");
+    const data = await res.json();
+    const p = data.person;
+    const fam = data.family || {};
+
+    let pGrandParents = { ff: null, fm: null, mf: null, mm: null };
+    
+    if (fam.father && fam.father.id) {
+      try {
+        const fRes = await fetch(`/api/person?id=${fam.father.id}`);
+        if (fRes.ok) {
+          const fData = await fRes.json();
+          pGrandParents.ff = fData.family?.father || null;
+          pGrandParents.fm = fData.family?.mother || null;
+        }
+      } catch(e){}
+    }
+    if (fam.mother && fam.mother.id) {
+      try {
+        const mRes = await fetch(`/api/person?id=${fam.mother.id}`);
+        if (mRes.ok) {
+          const mData = await mRes.json();
+          pGrandParents.mf = mData.family?.father || null;
+          pGrandParents.mm = mData.family?.mother || null;
+        }
+      } catch(e){}
+    }
+
+    function renderNode(person, role, isFocus = false) {
+      if (!person) {
+        return `
+          <div style="width:170px;padding:0.75rem;border-radius:8px;border:1px dashed rgba(255,255,255,0.15);background:rgba(0,0,0,0.2);text-align:center;color:var(--text-muted);font-size:0.75rem;">
+            <em>Óþekkt(ur) ${role}</em>
+          </div>
+        `;
+      }
+      const pName = person.name || 'Óþekkt nafn';
+      const bYear = person.birth_year ? `f. ${person.birth_year}` : '';
+      const dYear = person.death_year ? `d. ${person.death_year}` : '';
+      const dates = [bYear, dYear].filter(Boolean).join(' – ');
+      const avatarUrl = person.avatar_url ? (person.avatar_url.startsWith('images/') ? `/api/proxy_image?url=${encodeURIComponent(person.avatar_url)}` : person.avatar_url) : '';
+      
+      const borderColor = isFocus ? 'var(--accent-gold)' : 'rgba(255,255,255,0.15)';
+      const bg = isFocus ? 'linear-gradient(135deg, rgba(184,134,11,0.25) 0%, rgba(20,24,30,0.95) 100%)' : 'rgba(20,24,30,0.85)';
+      const boxShadow = isFocus ? '0 0 16px rgba(184,134,11,0.4), 0 4px 12px rgba(0,0,0,0.6)' : '0 4px 10px rgba(0,0,0,0.4)';
+
+      return `
+        <div onclick="selectPerson('${person.id}')" style="width:190px;padding:0.75rem;border-radius:10px;border:2px solid ${borderColor};background:${bg};box-shadow:${boxShadow};cursor:pointer;transition:all 0.2s ease;text-align:center;position:relative;" onmouseover="this.style.transform='translateY(-3px)';this.style.borderColor='var(--accent-gold)'" onmouseout="this.style.transform='none';this.style.borderColor='${borderColor}'">
+          ${isFocus ? '<span style="position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--accent-gold);color:#000;font-size:0.65rem;font-weight:bold;padding:1px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:0.5px;">Valin persóna</span>' : ''}
+          <div style="display:flex;align-items:center;gap:0.5rem;text-align:left;">
+            <div style="width:42px;height:42px;border-radius:50%;overflow:hidden;border:1.5px solid ${isFocus ? 'var(--accent-gold)' : 'rgba(255,255,255,0.2)'};background:rgba(0,0,0,0.4);flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+              ${avatarUrl ? `<img src="${avatarUrl}" style="width:100%;height:100%;object-fit:cover;">` : '<i data-lucide="user" style="width:20px;height:20px;color:var(--text-muted);"></i>'}
+            </div>
+            <div style="overflow:hidden;flex-grow:1;">
+              <div style="font-weight:600;font-size:0.85rem;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${pName}">${pName}</div>
+              <div style="font-size:0.72rem;color:var(--text-secondary);margin-top:2px;">${dates || role}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderMobileCard(person, role, isFocus = false) {
+      if (!person) return '';
+      const pName = person.name || 'Óþekkt';
+      const bYear = person.birth_year ? `f. ${person.birth_year}` : '';
+      const dYear = person.death_year ? `d. ${person.death_year}` : '';
+      const dates = [bYear, dYear].filter(Boolean).join(' – ');
+      const avatarUrl = person.avatar_url ? (person.avatar_url.startsWith('images/') ? `/api/proxy_image?url=${encodeURIComponent(person.avatar_url)}` : person.avatar_url) : '';
+
+      return `
+        <div class="mobile-tree-card ${isFocus ? 'focus' : ''}" onclick="selectPerson('${person.id}')">
+          <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;border:1.5px solid ${isFocus ? 'var(--accent-gold)' : 'rgba(255,255,255,0.2)'};background:rgba(0,0,0,0.4);flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+            ${avatarUrl ? `<img src="${avatarUrl}" style="width:100%;height:100%;object-fit:cover;">` : '<i data-lucide="user" style="width:18px;height:18px;color:var(--text-muted);"></i>'}
+          </div>
+          <div style="flex-grow:1;overflow:hidden;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-weight:600;font-size:0.88rem;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${pName}</span>
+              ${role ? `<span style="font-size:0.68rem;color:var(--accent-gold);background:rgba(184,134,11,0.15);padding:1px 6px;border-radius:4px;">${role}</span>` : ''}
+            </div>
+            <div style="font-size:0.72rem;color:var(--text-secondary);margin-top:2px;">${dates}</div>
+          </div>
+          <i data-lucide="chevron-right" style="width:16px;height:16px;color:var(--accent-gold);flex-shrink:0;"></i>
+        </div>
+      `;
+    }
+
+    // 1. DESKTOP 2D GRAPH
+    let desktopHtml = `
+      <div class="tree-container-desktop" style="flex-direction:column;align-items:center;gap:2rem;min-width:760px;padding:1rem 0;">
+        
+        <!-- Afar og Ömmur -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;width:100%;">
+          <div style="font-size:0.75rem;font-weight:bold;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;">👵👴 Afar & Ömmur</div>
+          <div style="display:flex;justify-content:space-around;width:100%;gap:1rem;">
+            <div style="display:flex;gap:0.6rem;">
+              ${renderNode(pGrandParents.ff, 'Föðurafi')}
+              ${renderNode(pGrandParents.fm, 'Föðuramma')}
+            </div>
+            <div style="display:flex;gap:0.6rem;">
+              ${renderNode(pGrandParents.mf, 'Móðurafi')}
+              ${renderNode(pGrandParents.mm, 'Móðuramma')}
+            </div>
+          </div>
+        </div>
+
+        <div style="width:60%;height:2px;background:rgba(184,134,11,0.25);position:relative;">
+          <div style="position:absolute;left:25%;top:-10px;bottom:-10px;width:2px;background:rgba(184,134,11,0.25);"></div>
+          <div style="position:absolute;right:25%;top:-10px;bottom:-10px;width:2px;background:rgba(184,134,11,0.25);"></div>
+        </div>
+
+        <!-- Foreldrar -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;width:100%;">
+          <div style="font-size:0.75rem;font-weight:bold;color:var(--accent-gold);text-transform:uppercase;letter-spacing:1px;">👨‍👩‍👦 Foreldrar</div>
+          <div style="display:flex;justify-content:center;gap:3rem;">
+            ${renderNode(fam.father, 'Faðir')}
+            ${renderNode(fam.mother, 'Móðir')}
+          </div>
+        </div>
+
+        <div style="width:2px;height:24px;background:var(--accent-gold);"></div>
+
+        <!-- Valin persóna & Maki -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.6rem;">
+          <div style="display:flex;align-items:center;gap:1.2rem;background:rgba(184,134,11,0.06);padding:1rem 1.5rem;border-radius:14px;border:1px solid rgba(184,134,11,0.25);">
+            ${renderNode(p, 'Valin persóna', true)}
+            ${(fam.spouse && fam.spouse.length > 0) ? `
+              <div style="display:flex;align-items:center;gap:0.5rem;">
+                <span style="font-size:1.2rem;" title="Maki">💍</span>
+                <div style="display:flex;gap:0.6rem;">
+                  ${fam.spouse.map(s => renderNode(s, 'Maki')).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+
+        <!-- Systkini -->
+        ${(fam.siblings && fam.siblings.length > 0) ? `
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;width:100%;margin-top:-0.5rem;">
+            <div style="font-size:0.75rem;font-weight:bold;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;">👫 Systkini (${fam.siblings.length})</div>
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;max-width:850px;">
+              ${fam.siblings.map(s => renderNode(s, 'Systkini')).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Börn -->
+        ${(fam.children && fam.children.length > 0) ? `
+          <div style="width:2px;height:24px;background:var(--accent-gold);"></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;width:100%;">
+            <div style="font-size:0.75rem;font-weight:bold;color:var(--accent-gold);text-transform:uppercase;letter-spacing:1px;">👶 Börn & Afkomendur (${fam.children.length})</div>
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.8rem;max-width:850px;">
+              ${fam.children.map(c => renderNode(c, 'Barn')).join('')}
+            </div>
+          </div>
+        ` : ''}
+      </div>
+    `;
+
+    // 2. MOBILE CARD FLOW (Responsive Vertical Flow for Phones)
+    const grandList = [pGrandParents.ff, pGrandParents.fm, pGrandParents.mf, pGrandParents.mm].filter(Boolean);
+    const parentList = [fam.father, fam.mother].filter(Boolean);
+
+    let mobileHtml = `
+      <div class="tree-container-mobile">
+        
+        <!-- Focus Person -->
+        <div class="mobile-tree-section" style="border-color:var(--accent-gold);background:rgba(184,134,11,0.06);">
+          <div class="mobile-tree-header"><i data-lucide="user-check" style="width:14px;height:14px;"></i> Valin persóna</div>
+          <div class="mobile-tree-cards">
+            ${renderMobileCard(p, 'Aðalpersóna', true)}
+          </div>
+        </div>
+
+        <!-- Makar -->
+        ${(fam.spouse && fam.spouse.length > 0) ? `
+          <div class="mobile-tree-section">
+            <div class="mobile-tree-header"><i data-lucide="heart" style="width:14px;height:14px;"></i> Maki (${fam.spouse.length})</div>
+            <div class="mobile-tree-cards">
+              ${fam.spouse.map(s => renderMobileCard(s, 'Maki')).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Foreldrar -->
+        ${parentList.length > 0 ? `
+          <div class="mobile-tree-section">
+            <div class="mobile-tree-header"><i data-lucide="users" style="width:14px;height:14px;"></i> Foreldrar (${parentList.length})</div>
+            <div class="mobile-tree-cards">
+              ${parentList.map(par => renderMobileCard(par, par.id === fam.father?.id ? 'Faðir' : 'Móðir')).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Afar og Ömmur -->
+        ${grandList.length > 0 ? `
+          <div class="mobile-tree-section">
+            <div class="mobile-tree-header"><i data-lucide="history" style="width:14px;height:14px;"></i> Afar & Ömmur (${grandList.length})</div>
+            <div class="mobile-tree-cards">
+              ${grandList.map(g => renderMobileCard(g, 'Afi/Amma')).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Systkini -->
+        ${(fam.siblings && fam.siblings.length > 0) ? `
+          <div class="mobile-tree-section">
+            <div class="mobile-tree-header"><i data-lucide="user-plus" style="width:14px;height:14px;"></i> Systkini (${fam.siblings.length})</div>
+            <div class="mobile-tree-cards">
+              ${fam.siblings.map(s => renderMobileCard(s, 'Systkini')).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Börn & Afkomendur -->
+        ${(fam.children && fam.children.length > 0) ? `
+          <div class="mobile-tree-section">
+            <div class="mobile-tree-header"><i data-lucide="baby" style="width:14px;height:14px;"></i> Börn & Afkomendur (${fam.children.length})</div>
+            <div class="mobile-tree-cards">
+              ${fam.children.map(c => renderMobileCard(c, 'Barn')).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+      </div>
+    `;
+
+    container.innerHTML = desktopHtml + mobileHtml;
+    try { if (window.lucide) lucide.createIcons(); } catch(e) {}
+
+  } catch(err) {
+    console.error("Tree render error:", err);
+    container.innerHTML = `<div style="color:#ff6b6b;padding:2rem;text-align:center;">Villa við að teikna ættartré: ${err.message}</div>`;
+  }
+}
+
+
+// ==========================================
+// STÆKKUN OG MINNKUN Á PANELUM (PANEL TOGGLE)
+// ==========================================
+
+function toggleSidebarCollapse() {
+  const sidebar = document.getElementById('app-sidebar');
+  const btn = document.getElementById('btn-toggle-sidebar');
+  const icon = document.getElementById('sidebar-toggle-icon');
+  const text = document.getElementById('sidebar-toggle-text');
+  
+  if (!sidebar) return;
+  const isCollapsed = sidebar.classList.toggle('collapsed');
+  
+  if (text) text.textContent = isCollapsed ? 'Sýna stiku' : 'Fela stiku';
+  if (icon) {
+    icon.setAttribute('data-lucide', isCollapsed ? 'panel-left-open' : 'panel-left-close');
+    try { if (window.lucide) lucide.createIcons(); } catch(e){}
+  }
+}
+window.toggleSidebarCollapse = toggleSidebarCollapse;
+
+function toggleMaximizeTree() {
+  const grid = document.getElementById('person-workspace-view');
+  const btn = document.getElementById('btn-maximize-tree');
+  const icon = document.getElementById('maximize-tree-icon');
+  const text = document.getElementById('maximize-tree-text');
+  
+  if (!grid) return;
+  const isMaximized = grid.classList.toggle('maximize-tree');
+  
+  if (text) text.textContent = isMaximized ? 'Sýna prófíl' : 'Stækka tré (Fullskjár)';
+  if (icon) {
+    icon.setAttribute('data-lucide', isMaximized ? 'minimize-2' : 'maximize-2');
+    try { if (window.lucide) lucide.createIcons(); } catch(e){}
+  }
+}
+window.toggleMaximizeTree = toggleMaximizeTree;

@@ -1,3 +1,42 @@
+
+def deep_live_web_search(name, birth_year, locations=[], relatives=[]):
+    """Real multi-engine search across Icelandic sources (KSÍ, MBL, Tímarit, LSÍ, APRÓ, FRÍ, etc.)"""
+    results = []
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+    parts = name.split()
+    first_last = f"{parts[0]} {parts[-1]}" if len(parts) > 2 else name
+    
+    queries = [
+        f'"{name}"',
+        f'"{first_last}"'
+    ]
+    if locations:
+        queries.append(f'"{first_last}" ' + " OR ".join([f'"{loc}"' for loc in locations[:3]]))
+    if relatives:
+        queries.append(f'"{first_last}" "{relatives[0]}"')
+        
+    for q in queries[:3]:
+        try:
+            url = f"https://www.bing.com/search?q={urllib.parse.quote(q)}"
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=6) as resp:
+                html = resp.read().decode('utf-8', errors='ignore')
+                soup = BeautifulSoup(html, 'html.parser')
+                for li in soup.find_all('li', class_='b_algo')[:3]:
+                    h2 = li.find('h2')
+                    p = li.find('p')
+                    a = li.find('a')
+                    if h2 and p and a:
+                        title = h2.get_text(strip=True)
+                        snip = p.get_text(strip=True)
+                        link = a.get('href')
+                        if any(w.lower() in (title + " " + snip).lower() for w in parts[:2]):
+                            results.append({"title": title, "snippet": snip, "url": link})
+        except Exception:
+            pass
+        time.sleep(0.5)
+    return results
+
 import os
 import json
 import time
@@ -127,35 +166,63 @@ def search_direct_web_images(name):
         print(f"[Direct Web Image Search] Error: {e}")
     return image_items
 
-def verify_portrait_image(client, name, birth_year, image_rel_path):
+def verify_portrait_image(client, name, birth_year, image_rel_path, ref_image_rel_path=None):
     try:
         abs_path = os.path.join(os.path.dirname(__file__), image_rel_path)
+        if not os.path.exists(abs_path):
+            return False
         img = Image.open(abs_path)
         width, height = img.size
         
-        if width < 50 or height < 50:
+        # Filter out tiny thumbnails, icons, wide banners
+        if width < 120 or height < 120:
             return False
             
         ratio = width / height
-        if ratio > 3.5 or ratio < 0.2:
+        if ratio > 2.5 or ratio < 0.4:
             return False
-            
+
+        # If we have a verified reference portrait from Íslendingabók, do a 1-to-1 face comparison!
+        if ref_image_rel_path and os.path.exists(os.path.join(os.path.dirname(__file__), ref_image_rel_path)):
+            ref_abs = os.path.join(os.path.dirname(__file__), ref_image_rel_path)
+            ref_img = Image.open(ref_abs)
+            prompt = f"""
+            Þú ert nákvæmur andlitsgreinir og rannsakandi.
+            Mynd 1 er staðfest opinber ljósmynd af {name} (f. {birth_year or 'ótilgreint'}).
+            Mynd 2 er ljósmynd af netinu.
+
+            Kröfur:
+            1. Er mynd 2 alvöru persónumynd af manneskju (ekki bíll, lógó, landslag, tákn eða grafík)?
+            2. Er maðurinn á mynd 2 sami einstaklingur og á mynd 1?
+
+            Svaraðu aðeins með:
+            MATCH (ef þetta er sami maður með mikilli vissu)
+            NO (ef þetta er ekki sami maður, eða ef þetta er tákn/bíll/grafík).
+            """
+            response = client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=[prompt, ref_img, img]
+            )
+            txt = response.text.strip().upper() if response.text else "NO"
+            print(f"  [Vision Face Match] {image_rel_path} vs Ref -> {txt}")
+            return "MATCH" in txt
+
         prompt = (
-            f"Skoðaðu þessa mynd. Er þetta persónumynd af manneskju (t.d. {name}) eða ljósmynd úr frétt/viðburði sem tengist manneskjunni? "
-            "Hafnaðu auglýsingum, vefborðum, óskýrum táknum eða lógóum. "
-            "Svaraðu aðeins með einu orði: YES eða NO."
+            f"Skoðaðu þessa mynd. Er þetta skýr persónumynd af manneskju sem heitir {name} (f. {birth_year or 'ótilgreint'})? "
+            "Hafnaðu stranglega öllum auglýsingum, bílum, vefborðum, lógóum eða ótengdum hlutum. "
+            "Svaraðu aðeins: YES eða NO."
         )
         
         response = client.models.generate_content(
             model='gemini-2.5-flash',
             contents=[prompt, img]
         )
-        txt = response.text.strip().upper() if response.text else "YES"
+        txt = response.text.strip().upper() if response.text else "NO"
         print(f"  [Vision Verification] {image_rel_path} -> {txt}")
         return "YES" in txt
     except Exception as e:
         print(f"  [Vision Verification] Error: {e}")
-        return True
+        return False
 
 def resolve_real_url(url):
     """Unwraps grounding redirect URLs (e.g. vertexaisearch.cloud.google.com) to their real target web address."""
@@ -198,21 +265,92 @@ def update_or_enhance_existing_sources(person_id, title, snippet, url, image_url
 
 def run_ai_research_for_person(person_id, name, birth_year="", death_year=""):
     clean_id = person_id.replace('@', '')
-    api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
     
+    # 1. Sækja skráð fjölskyldutengsl úr gagnagrunni til að krossprófa
+    with get_db() as conn:
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT r.relation_type, p.name 
+            FROM relations r 
+            JOIN people p ON p.id = r.related_id 
+            WHERE r.person_id = ?
+        """, (clean_id,))
+        db_rels = cursor.fetchall()
+        
+    rel_context_lines = []
+    if db_rels:
+        foreldrar = [r['name'] for r in db_rels if r['relation_type'] in ('father', 'mother')]
+        maki = [r['name'] for r in db_rels if r['relation_type'] == 'spouse']
+        systkini = [r['name'] for r in db_rels if r['relation_type'] == 'sibling']
+        born = [r['name'] for r in db_rels if r['relation_type'] == 'child']
+        if foreldrar:
+            rel_context_lines.append(f"- Foreldrar: {', '.join(foreldrar)}")
+        if maki:
+            rel_context_lines.append(f"- Maki: {', '.join(maki)}")
+        if born:
+            rel_context_lines.append(f"- Börn: {', '.join(born)}")
+        if systkini:
+            rel_context_lines.append(f"- Systkini: {', '.join(systkini)}")
+            
+    family_context_str = "\n".join(rel_context_lines) if rel_context_lines else "- Engin fjölskyldutengsl skráð enn."
+
+    # 2. Check if PERPLEXITY_API_KEY is available (Primary Instant Engine)
+    perp_key = os.environ.get("PERPLEXITY_API_KEY")
+    if perp_key:
+        print(f"[AI Research] Using Perplexity Sonar Engine for {name}...")
+        from perplexity_engine import search_with_perplexity
+        perp_res = search_with_perplexity(name, birth_year, death_year, family_context_str)
+        if perp_res.get("status") == "success":
+            data = perp_res.get("data", {})
+            added_count = 0
+            
+            for item in data.get("timeline", []):
+                save_suggestion(
+                    person_id=clean_id,
+                    sug_type="event",
+                    source="Perplexity AI",
+                    url=item.get("url", ""),
+                    image_url="",
+                    local_path="",
+                    title=f"{item.get('year', '')} - {item.get('title', 'Viðburður')}",
+                    description=item.get("description", ""),
+                    confidence=95
+                )
+                added_count += 1
+                
+            for src in data.get("sources", []):
+                save_suggestion(
+                    person_id=clean_id,
+                    sug_type="event",
+                    source="Perplexity AI",
+                    url=src.get("url", ""),
+                    image_url="",
+                    local_path="",
+                    title=src.get("title", "Staðfest heimild"),
+                    description=src.get("snippet", ""),
+                    confidence=95
+                )
+                added_count += 1
+                
+            return {
+                "status": "success",
+                "message": f"Perplexity fann {added_count} nýjar uppástungur og staðfestar heimildir.",
+                "count": added_count
+            }
+
+    api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
     if not api_key:
-        print("[AI Research] Missing GEMINI_API_KEY.")
-        return {"status": "error", "message": "Vantar GEMINI_API_KEY í stillingar."}
+        print("[AI Research] Missing API key.")
+        return {"status": "error", "message": "Vantar PERPLEXITY_API_KEY eða GEMINI_API_KEY í .env."}
         
     try:
         from google import genai
         from google.genai import types
         
         client = genai.Client(api_key=api_key)
-        
         death_info = f"Dánarár: {death_year}" if death_year else "Lifandi / Óstaðfest dánarár"
         print(f"[AI Research] Starting Strict Grounded Research for {name} (f. {birth_year}, {death_info})...")
-        
+
         prompt = f"""
         Þú ert sérfræðingur í íslenskri ættfræði, sögu og ævisögurannsóknum.
         Leitaðu á vefnum að öllum staðfestum upplýsingum, greinum, fréttum, menntun og ljósmyndum um:
@@ -220,14 +358,18 @@ def run_ai_research_for_person(person_id, name, birth_year="", death_year=""):
         Fæðingarár: {birth_year if birth_year else 'óvíst'}
         {death_info}
 
+        ÞEKKT FJÖLSKYLDUTENGSL ÚR ÆTTARTRÉI (KROSSPRÓFUN):
+        {family_context_str}
+
         LEITARKRÖFUR:
         1. Vísir.is, Mbl.is, DV.is (fréttir, viðtöl, minningargreinar, myndefni).
         2. Tímarit.is, Landsbókasafn (sögulegar greinar, stúdentspróf, útskriftir).
-        3. Menntun (stúdentspróf úr menntaskólum t.d. MA/MR/Kvennó, háskólagráður úr HÍ/HA/KHÍ).
+        3. Menntun (stúdentspróf úr menntaskólum t.d. MA/MR/Kvennó, háskólagráður úr HÍ/HA/KHÍ/Listaháskóla).
         4. Störf, félagsmál, sveitarstjórn, íþróttir og opinber afrek.
 
-        STRÖNG SKILYRÐI:
-        - Allar heimildir og ljósmyndir VERÐA að eiga við réttan einstakling ({name}).
+        STRÖNG SKILYRÐI & RAUNVERULEIKATÉKK (HOMONYM / IDENTITY VERIFICATION):
+        - PASSADU UPP Á NAFNA (NAMNAKRÖFUR): Margir Íslendingar bera sama fornafn/föðurnafn. Þú VERÐUR að staðfesta að greinin/heimildin eigi við ÞESSA manneskju með því að krossprófa fæðingarár, dánarár, búsetu eða ofangreind fjölskyldutengsl (foreldra, maka, börn).
+        - ALGJÖRT BANNBREYTING: Bannað er að eigna manneskjunni afrek eða störf annarrar nafna (t.d. ef Jónína heitir Loftsdóttir en ekki Jónsdóttir, eða ef hún er fædd á öðrum tíma).
         - Ef einstaklingurinn lést árið {death_year if death_year else 'N/A'}, MÁTTU EKKI tengja greinar eða íþróttaviðburði/hlaup sem áttu sér stað eftir dánarárið!
         - EKKI búa til uppástungur um mögulega ættingja (faðir, móðir, börn, systkini) þar sem fjölskyldutengsl eru þegar skráð.
         - EKKI búa til heimildir fyrir venjulegar fæðingar barna eða ættingja.
@@ -261,8 +403,11 @@ def run_ai_research_for_person(person_id, name, birth_year="", death_year=""):
         """
 
         response = None
-        for attempt in range(3):
-            for model_name in ['gemini-3.5-flash', 'gemini-3.7-flash', 'gemini-2.5-flash', 'gemini-3-flash-preview']:
+        # Try multiple models with smart retry and fallback
+        model_candidates = ['gemini-2.5-flash', 'gemini-3.5-flash', 'gemini-3.7-flash', 'gemini-3-flash-preview']
+        
+        for attempt in range(5):
+            for model_name in model_candidates:
                 try:
                     response = client.models.generate_content(
                         model=model_name,
@@ -274,16 +419,19 @@ def run_ai_research_for_person(person_id, name, birth_year="", death_year=""):
                     if response and (response.text or response.candidates):
                         break
                 except Exception as me:
-                    print(f"  [AI Research] Model {model_name} quota/error: {me}")
-                    if 'RESOURCE_EXHAUSTED' in str(me) or '429' in str(me):
-                        time.sleep(5)
+                    err_str = str(me)
+                    print(f"  [AI Research] Model {model_name} quota/error: {err_str[:120]}")
+                    if 'RESOURCE_EXHAUSTED' in err_str or '429' in err_str:
+                        m_sec = re.search(r'retry in (\d+(?:\.\d+)?)s', err_str)
+                        wait_sec = float(m_sec.group(1)) + 1 if m_sec else 10
+                        time.sleep(min(wait_sec, 20))
             if response and (response.text or response.candidates):
                 break
-            print(f"  [AI Research] Retrying in 8 seconds (attempt {attempt+1}/3)...")
+            print(f"  [AI Research] Retrying in 8 seconds (attempt {attempt+1}/5)...")
             time.sleep(8)
 
         if not response:
-            return {"status": "error", "message": "Allir Gemini módelkandidatar uppteknir."}
+            return {"status": "error", "message": "Google AI leitarþjónustan er tímabundið upptekin. Vinsamlegast prófaðu aftur eftir 30 sekúndur."}
 
         resp_text = None
         if response.text:
@@ -292,20 +440,38 @@ def run_ai_research_for_person(person_id, name, birth_year="", death_year=""):
             parts = response.candidates[0].content.parts if response.candidates[0].content else []
             resp_text = ''.join(p.text for p in parts if hasattr(p, 'text') and p.text).strip()
 
-        if not resp_text:
-            print("[AI Research] Empty response from model.")
-            return {"status": "error", "message": "Tómt svar frá Gemini."}
+        # Capture grounding links from Google Search tool metadata
+        grounding_sources = []
+        if response.candidates and response.candidates[0].grounding_metadata:
+            meta = response.candidates[0].grounding_metadata
+            if hasattr(meta, 'grounding_chunks') and meta.grounding_chunks:
+                for c in meta.grounding_chunks:
+                    if hasattr(c, 'web') and c.web:
+                        grounding_sources.append({
+                            'title': c.web.title or 'Google leitarniðurstaða',
+                            'url': c.web.uri or '',
+                            'snippet': f"Staðfest tengsl við {name} samkvæmt leitarniðurstöðu."
+                        })
 
-        json_match = re.search(r'```(?:json)?\s*(\{.*?\})\s*```', resp_text, re.DOTALL)
-        if json_match:
-            resp_text = json_match.group(1)
-        else:
-            start = resp_text.find('{')
-            end = resp_text.rfind('}')
-            if start != -1 and end != -1:
-                resp_text = resp_text[start:end+1]
+        if not resp_text and not grounding_sources:
+            return {"status": "error", "message": "Engar nýjar upplýsingar fundust á vefnum fyrir þessa persónu."}
 
-        data = json.loads(resp_text)
+        data = {"timeline": [], "sources": [], "image_urls": []}
+        if resp_text:
+            json_match = re.search(r'```(?:json)?\s*(\{.*?\})\s*```', resp_text, re.DOTALL)
+            if json_match:
+                try: data = json.loads(json_match.group(1))
+                except Exception: pass
+            else:
+                start = resp_text.find('{')
+                end = resp_text.rfind('}')
+                if start != -1 and end != -1:
+                    try: data = json.loads(resp_text[start:end+1])
+                    except Exception: pass
+
+        # Merge grounding sources if json sources was empty
+        if not data.get("sources") and grounding_sources:
+            data["sources"] = grounding_sources
         added_count = 0
 
         # Save Timeline / Events
@@ -313,7 +479,6 @@ def run_ai_research_for_person(person_id, name, birth_year="", death_year=""):
             raw_url = item.get("url", "")
             real_url = resolve_real_url(raw_url) if raw_url else ""
             
-            # Check if source exists to enhance it
             enhanced = update_or_enhance_existing_sources(clean_id, item.get("title", ""), item.get("description", ""), real_url)
             if not enhanced:
                 save_suggestion(
@@ -329,36 +494,7 @@ def run_ai_research_for_person(person_id, name, birth_year="", death_year=""):
                 )
                 added_count += 1
 
-        # Save Family Relations
-        for rel in data.get("relations", []):
-            save_suggestion(
-                person_id=clean_id,
-                sug_type="relation",
-                source="Google AI Search",
-                url="",
-                image_url="",
-                local_path="",
-                title=f"Mögulegur {rel.get('type')}: {rel.get('name')}",
-                description=f"AI fann tengsl við {rel.get('name')} sem {rel.get('type')}.",
-                confidence=80,
-                relation_details={
-                    "name": rel.get("name"),
-                    "type": rel.get("type"),
-                    "sex": rel.get("sex", "M")
-                }
-            )
-            added_count += 1
-
-        # Collect images from discovered articles & direct web image search
-        discovered_image_items = []
-        for u in data.get("image_urls", []):
-            discovered_image_items.append({'url': u, 'title': f'Mynd tengd {name}', 'is_profile': False})
-
-        # Add direct web image search results
-        direct_web_imgs = search_direct_web_images(name)
-        discovered_image_items.extend(direct_web_imgs)
-
-        # Save Sources & Scrape Images
+        # Save Sources directly
         for src in data.get("sources", []):
             raw_url = src.get("url", "")
             real_url = resolve_real_url(raw_url) if raw_url else ""
@@ -378,42 +514,31 @@ def run_ai_research_for_person(person_id, name, birth_year="", death_year=""):
                     description=snippet,
                     confidence=85
                 )
+        # Extract and save real photos from web articles & image search
+        print(f"[AI Research] Sæki myndir af vefnum fyrir {name}...")
+        web_photos = search_direct_web_images(name)
+        for p_idx, wp in enumerate(web_photos[:4]):
+            img_rel = download_image_cache(wp['url'], clean_id, f"web_{p_idx}")
+            if img_rel:
+                save_suggestion(
+                    person_id=clean_id,
+                    sug_type="media",
+                    source="Vefmyndaleit",
+                    url=wp.get("url", ""),
+                    image_url=img_rel,
+                    local_path=img_rel,
+                    title=wp.get("title", f"Mynd af {name}"),
+                    description="Ljósmynd af vefnum",
+                    confidence=80
+                )
                 added_count += 1
 
-            if real_url and 'http' in real_url:
-                page_imgs = extract_media_from_page(real_url)
-                discovered_image_items.extend(page_imgs)
-
-        # Download & Verify Discovered Images
-        img_idx = 1
-        seen_img_urls = set()
-        for img_item in discovered_image_items[:15]:
-            img_url = img_item['url']
-            if img_url in seen_img_urls:
-                continue
-            seen_img_urls.add(img_url)
-
-            rel_path = download_image_cache(img_url, clean_id, img_idx)
-            if rel_path:
-                is_valid = verify_portrait_image(client, name, birth_year, rel_path)
-                if is_valid:
-                    title_text = "Prófílmynd" if img_item.get('is_profile') else f"Mynd úr grein: {img_item.get('title', name)}"
-                    save_suggestion(
-                        person_id=clean_id,
-                        sug_type="image",
-                        source="Vefgrein / Google AI",
-                        url=img_url,
-                        image_url=img_url,
-                        local_path=rel_path,
-                        title=title_text,
-                        description=f"Mynd sótt úr heimild sem tengist {name}.",
-                        confidence=90
-                    )
-                    added_count += 1
-                    img_idx += 1
-
-        print(f"[AI Research] Completed! Processed research for {name}.")
-        return {"status": "success", "added": added_count, "data": data}
+        print(f"[AI Research] ✓ Klár! Bætti við {added_count} nýjum uppástungum (og myndum) fyrir {name}.")
+        return {
+            "status": "success",
+            "message": f"Fann {added_count} nýjar uppástungur, heimildir og myndir.",
+            "suggestions_count": added_count
+        }
 
     except Exception as e:
         print(f"[AI Research] Exception: {e}")

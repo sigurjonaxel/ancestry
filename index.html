@@ -18,7 +18,11 @@
   <div class="app-container">
     <!-- Header -->
     <header class="app-header">
-      <div class="brand">
+            <div class="brand">
+        <button class="panel-toggle-btn" id="btn-toggle-sidebar" title="Fela / Sýna vinstri hliðarstiku (Einstaklingalista)" onclick="toggleSidebarCollapse()">
+          <i data-lucide="panel-left-close" id="sidebar-toggle-icon" style="width: 16px; height: 16px;"></i>
+          <span id="sidebar-toggle-text">Fela stiku</span>
+        </button>
         <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Opna valmynd" style="display: none;">
           <i data-lucide="menu"></i>
         </button>
@@ -100,15 +104,29 @@
           <!-- Column 1: Person Details -->
           <div class="card" id="person-details-card" style="overflow-y: auto; max-height: calc(100vh - 140px);">
             <div class="profile-header">
-              <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-                <div class="profile-avatar" id="p-avatar" style="width: 64px; height: 64px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(184,134,11,0.3); background: rgba(13,15,18,0.6); cursor: pointer;" onclick="triggerAvatarUpload()" title="Smelltu til að breyta/hlaða inn prófílmynd">
-                  <i data-lucide="user" id="p-avatar-icon" style="width: 32px; height: 32px;"></i>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 0.4rem;">
+                <div class="profile-avatar" id="p-avatar" style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 2px solid var(--accent-gold); background: rgba(13,15,18,0.6); cursor: pointer; position: relative;" onclick="triggerAvatarUpload()" title="Smelltu til að hlaða upp eigin prófílmynd">
+                  <i data-lucide="user" id="p-avatar-icon" style="width: 40px; height: 40px;"></i>
                   <img id="p-avatar-img" src="" alt="" style="width: 100%; height: 100%; object-fit: cover; display: none;">
                 </div>
                 <input type="file" id="avatar-file-input" accept="image/*" style="display: none;" onchange="handleAvatarUpload()">
+                <div style="display: flex; gap: 0.4rem; align-items: center;">
+                  <button class="btn btn-secondary" onclick="triggerAvatarUpload()" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; display: inline-flex; align-items: center; gap: 4px;">
+                    <i data-lucide="camera" style="width: 12px; height: 12px;"></i> Breyta mynd
+                  </button>
+                  <button class="btn btn-secondary" id="btn-remove-avatar" onclick="removeProfileAvatar()" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #ff6b6b; border-color: rgba(255,107,107,0.25); display: none;">
+                    <i data-lucide="trash-2" style="width: 12px; height: 12px;"></i> Fjarlægja
+                  </button>
+                </div>
               </div>
               <h2 class="profile-name" id="p-full-name">-</h2>
               <div class="profile-dates" id="p-life-dates"></div>
+              <div id="p-confidence-badge-container" style="margin-top: 0.4rem; display: flex; justify-content: center;">
+                <span id="p-confidence-badge" class="badge badge-success" style="font-size: 0.72rem; padding: 0.2rem 0.6rem; display: inline-flex; align-items: center; gap: 4px;">
+                  <i data-lucide="shield-check" style="width: 12px; height: 12px;"></i>
+                  <span>100% Staðfestar upplýsingar</span>
+                </span>
+              </div>
             </div>
 
             <div class="profile-relations">
@@ -214,7 +232,11 @@
           <!-- Column 2: Working Workspace (OCR, Bio, Notes) -->
           <div class="card" style="padding: 1.5rem; height: 100%; display: flex; flex-direction: column; overflow-y: auto; max-height: calc(100vh - 140px);">
             <div class="tab-bar">
-              <div class="tab active" data-tab="tab-ocr">
+              <div class="tab active" data-tab="tab-pedigree">
+                <i data-lucide="network" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 0.25rem; color: var(--accent-gold);"></i>
+                🌳 Gagnvirkt Ættartré
+              </div>
+              <div class="tab" data-tab="tab-ocr">
                 <i data-lucide="scan-text" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 0.25rem;"></i>
                 1. Minningargrein (OCR)
               </div>
@@ -232,8 +254,43 @@
               </div>
             </div>
 
+            
+            <!-- Tab: Interactive Family Tree Navigator -->
+            <div class="tab-content" id="tab-pedigree" style="display: block;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; background: rgba(184,134,11,0.08); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(184,134,11,0.2);">
+                <div>
+                  <h3 style="font-size: 1.05rem; color: var(--accent-gold); margin: 0; display: flex; align-items: center; gap: 0.4rem;">
+                    <i data-lucide="git-fork" style="width: 16px; height: 16px;"></i>
+                    <span id="tree-nav-title">Gagnvirkt Ættartré & Afkomendur</span>
+                  </h3>
+                  <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0.2rem 0 0 0;">
+                    Smelltu á hvaða spjald sem er til að flakka um tréð, skoða forfeður, afkomendur og maka.
+                  </p>
+                </div>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                  <div style="display: flex; gap: 0.5rem; align-items: center;">
+                  <button class="panel-toggle-btn" id="btn-maximize-tree" onclick="toggleMaximizeTree()" title="Stækka ættartré yfir allan skjáinn">
+                    <i data-lucide="maximize-2" id="maximize-tree-icon" style="width: 13px; height: 13px;"></i>
+                    <span id="maximize-tree-text">Stækka tré (Fullskjár)</span>
+                  </button>
+                  <button class="btn btn-secondary" onclick="renderInteractiveTree()" style="font-size: 0.75rem; padding: 0.35rem 0.7rem; display: inline-flex; align-items: center; gap: 4px;">
+                    <i data-lucide="rotate-ccw" style="width: 12px; height: 12px;"></i> Miðja
+                  </button>
+                </div>
+                </div>
+              </div>
+
+              <!-- Interactive Visual Tree Container -->
+              <div id="interactive-tree-canvas" style="background: radial-gradient(circle at 50% 50%, rgba(30,35,45,0.6) 0%, rgba(13,15,18,0.95) 100%); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.5rem; min-height: 520px; overflow-x: auto; overflow-y: auto;">
+                <div style="text-align: center; color: var(--text-muted); padding: 4rem 0;">
+                  <i data-lucide="loader-2" class="spin" style="width: 32px; height: 32px; color: var(--accent-gold);"></i>
+                  <div style="margin-top: 0.5rem;">Hleð inn ættartré...</div>
+                </div>
+              </div>
+            </div>
+
             <!-- Tab 1: OCR -->
-            <div class="tab-content" id="tab-ocr">
+            <div class="tab-content" id="tab-ocr" style="display: none;">
               <div class="editor-grid">
                 <!-- Image upload and preview -->
                 <div style="display: flex; flex-direction: column; gap: 1rem;">
@@ -467,6 +524,6 @@
   </div>
 
   <!-- App Logic script -->
-  <script src="app.js?v=99999999"></script>
+  <script src="app.js?v=1787852875"></script>
 </body>
 </html>

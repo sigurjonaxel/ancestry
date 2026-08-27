@@ -215,7 +215,7 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
             self.send_error_response(400, "Missing person_id or image_path")
             return
         with get_db() as conn:
-            conn.execute("UPDATE people SET avatar_url = ? WHERE id = ?", (image_path, person_id))
+            conn.execute("UPDATE people SET avatar_url = ?, avatar_verified = 1 WHERE id = ?", (image_path, person_id))
             conn.commit()
         details = get_person_details(person_id)
         self.send_json({"status": "ok", "details": details})
@@ -294,10 +294,9 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
             # Update suggestion status to confirmed
             cursor.execute("UPDATE ai_suggestions SET status = 'confirmed' WHERE id = ?", (sug_id,))
             
-            # If image, optionally set as avatar or add to sources
+            # If image, save it into Sögubók (sources gallery) WITHOUT overwriting the profile avatar!
             if sug_dict['type'] == 'image':
                 img_path = sug_dict['local_path'] or sug_dict['image_url']
-                cursor.execute("UPDATE people SET avatar_url = ? WHERE id = ? OR id = ?", (img_path, clean_id, f"@{clean_id}@"))
                 cursor.execute("""
                     INSERT INTO sources (person_id, title, snippet, link, image_url)
                     VALUES (?, ?, ?, ?, ?)
@@ -492,7 +491,7 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
 
         with get_db() as conn:
             cursor = conn.cursor()
-            cursor.execute("UPDATE people SET avatar_url = ? WHERE id = ? OR id = ?", (rel_path, person_id, f"@{person_id}@"))
+            cursor.execute("UPDATE people SET avatar_url = ?, avatar_verified = 1 WHERE id = ? OR id = ?", (rel_path, person_id, f"@{person_id}@"))
             conn.commit()
 
         details = get_person_details(person_id)
