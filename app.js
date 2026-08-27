@@ -1279,7 +1279,7 @@ window.openTreeStatsModal = async function() {
         </div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+      <div class="stats-grid-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
         <!-- Langlífasta fólkið -->
         <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
           <h4 style="color: var(--accent-gold); font-size: 0.95rem; margin-top: 0; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
