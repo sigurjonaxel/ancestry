@@ -1,4 +1,22 @@
 
+def is_valid_icelandic_source(title, snippet, url):
+    """Strict gatekeeper preventing any foreign clothes, wiki articles, TV shows, or junk links."""
+    if not url or 'bing.com' in url or 'yahoo.com' in url:
+        return False
+        
+    banned_keywords = [
+        'axelarhús', 'modetøj', 'aarhus', 'exclusive', 'clothing', 'fashion', 
+        'sjónvarpsþættir', 'tv series', 'wikipedia, frjálsa', 'turdus iliacus', 
+        'skógarþröstur', 'svartþröstur', 'fuglavefur', 'afterglow', 'singer-songwriter'
+    ]
+    
+    text = (title + " " + (snippet or "") + " " + url).lower()
+    for b in banned_keywords:
+        if b in text:
+            return False
+    return True
+
+
 def deep_live_web_search(name, birth_year, locations=[], relatives=[]):
     """Real multi-engine search across Icelandic sources (KSÍ, MBL, Tímarit, LSÍ, APRÓ, FRÍ, etc.)"""
     results = []
