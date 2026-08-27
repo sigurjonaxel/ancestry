@@ -1816,3 +1816,213 @@ textarea:focus {
     font-size: 0.68rem !important;
   }
 }
+
+
+/* ========================================================
+   🎯 PERFECT SAMSUNG GALAXY S24 ULTRA LAYOUT FIX
+   - Fela risastóra textakassann 'Gagnvirkt Ættartré' í síma
+   - Fela grænu debug-stikuna neðst í síma
+   - Tré fær max 28vh efst (og fyllir nákvæmlega 100% breidd án þess að standa út)
+   - Upplýsingar um valda persónu fá 68vh neðst (aðalplássið)
+   ======================================================== */
+
+@media (max-width: 900px) {
+  /* Fela óþarfa borða sem stálu öllu plássinu á skjánum */
+  #debug-bar, 
+  #tab-pedigree > div:first-child,
+  .panel-toggle-btn {
+    display: none !important;
+  }
+
+  html, body {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .app-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0.35rem 0.6rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .workspace-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: calc(100vh - 46px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  .main-workspace {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0.25rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  .workspace-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    gap: 0.3rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 🌳 1. EFRI HLUTI: Vinnusvæðið með trénu (28vh) */
+  .workspace-grid > .card:last-child {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 28vh !important;
+    max-height: 28vh !important;
+    min-height: 120px !important;
+    flex-shrink: 0 !important;
+    padding: 0.25rem 0.35rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background: rgba(18, 22, 28, 0.95) !important;
+    border: 1px solid var(--accent-gold) !important;
+    border-radius: 6px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .tab-bar {
+    display: flex !important;
+    overflow-x: auto !important;
+    gap: 0.2rem !important;
+    margin-bottom: 0.2rem !important;
+    padding-bottom: 0.15rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .tab-bar .tab {
+    padding: 0.2rem 0.4rem !important;
+    font-size: 0.68rem !important;
+    white-space: nowrap !important;
+  }
+
+  #tab-pedigree {
+    flex: 1 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #interactive-tree-canvas {
+    flex: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 0.15rem 0 !important;
+    box-sizing: border-box !important;
+    border: none !important;
+    background: transparent !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tree-container-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .mobile-tree-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.2rem 0.3rem !important;
+    margin-bottom: 0.15rem !important;
+    border-radius: 5px !important;
+  }
+
+  .mobile-tree-header {
+    font-size: 0.65rem !important;
+    margin-bottom: 0.2rem !important;
+    padding-bottom: 0.1rem !important;
+  }
+
+  .mobile-tree-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.25rem 0.35rem !important;
+    gap: 0.35rem !important;
+    border-radius: 4px !important;
+  }
+
+  .mobile-tree-card .person-name,
+  .mobile-tree-card span {
+    font-size: 0.75rem !important;
+  }
+
+  .mobile-tree-card .person-meta,
+  .mobile-tree-card div {
+    font-size: 0.65rem !important;
+  }
+
+  /* 📖 2. NEÐRI HLUTI: UPPLÝSINGAR UM VALDA PERSÓNU (68vh - AÐALPLÁSSIÐ) */
+  #person-details-card {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 68vh !important;
+    max-height: 69vh !important;
+    flex: 1 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 0.5rem 0.6rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background: rgba(14, 17, 22, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 8px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .profile-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding-bottom: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .profile-header #p-avatar {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .profile-name {
+    font-size: 1rem !important;
+    margin-top: 0.1rem !important;
+  }
+
+  .profile-dates {
+    font-size: 0.7rem !important;
+  }
+}
