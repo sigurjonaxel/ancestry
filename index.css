@@ -2206,3 +2206,78 @@ textarea:focus {
     font-size: 0.75rem !important;
   }
 }
+
+
+/* ========================================================
+   🖥️ PC / DESKTOP OPTIMIZATION:
+   - Panel 1 (Sidebar): 280px
+   - Panel 2 (Profile Details): 400px (minnkað letur, mjög nett og snyrtilegt)
+   - Panel 3 (Tree & Workspaces): Fær allt afgangsplássið (1fr - yfir 60-70% af skjánum!)
+   ======================================================== */
+
+@media (min-width: 901px) {
+  .sidebar {
+    width: 280px !important;
+    min-width: 280px !important;
+  }
+
+  .main-workspace {
+    padding: 1rem 1.25rem !important;
+  }
+
+  /* Tré fær 1.7fr en Profile Details fær 1fr */
+  .workspace-grid {
+    display: grid !important;
+    grid-template-columns: 380px 1fr !important;
+    gap: 1.25rem !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  /* Profile Details Card - Minnkað letur og mjög þétt/snyrtilegt */
+  #person-details-card {
+    padding: 1.1rem !important;
+    max-height: calc(100vh - 100px) !important;
+  }
+
+  .profile-avatar {
+    width: 64px !important;
+    height: 64px !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .profile-name {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.25rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .profile-dates {
+    font-size: 0.78rem !important;
+  }
+
+  .relation-label {
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+  }
+
+  .relation-value {
+    font-size: 0.82rem !important;
+  }
+
+  .profile-relations {
+    margin-top: 1rem !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Tree Canvas & Workspace Card - Fær risastórt pláss */
+  .workspace-grid > .card:last-child {
+    padding: 1.1rem !important;
+    max-height: calc(100vh - 100px) !important;
+  }
+
+  #interactive-tree-canvas {
+    min-height: 620px !important;
+    padding: 1.25rem !important;
+  }
+}

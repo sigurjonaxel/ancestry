@@ -919,14 +919,39 @@ async function renderInteractiveTree() {
       } catch(e){}
     }
 
-    function renderNode(person, role, isFocus = false) {
+        function renderNode(person, role, isFocus = false) {
       if (!person) {
         return `
-          <div style="width:170px;padding:0.75rem;border-radius:8px;border:1px dashed rgba(255,255,255,0.15);background:rgba(0,0,0,0.2);text-align:center;color:var(--text-muted);font-size:0.75rem;">
+          <div style="width:138px;padding:0.45rem 0.5rem;border-radius:6px;border:1px dashed rgba(255,255,255,0.15);background:rgba(0,0,0,0.25);text-align:center;color:var(--text-muted);font-size:0.68rem;">
             <em>Óþekkt(ur) ${role}</em>
           </div>
         `;
       }
+      const pName = person.name || 'Óþekkt nafn';
+      const bYear = person.birth_year ? `f. ${person.birth_year}` : '';
+      const dYear = person.death_year ? `d. ${person.death_year}` : '';
+      const dates = [bYear, dYear].filter(Boolean).join(' – ');
+      const avatarUrl = person.avatar_url ? (person.avatar_url.startsWith('images/') ? `/api/proxy_image?url=${encodeURIComponent(person.avatar_url)}` : person.avatar_url) : '';
+      
+      const borderColor = isFocus ? 'var(--accent-gold)' : 'rgba(255,255,255,0.15)';
+      const bg = isFocus ? 'linear-gradient(135deg, rgba(184,134,11,0.25) 0%, rgba(20,24,30,0.95) 100%)' : 'rgba(20,24,30,0.85)';
+      const boxShadow = isFocus ? '0 0 12px rgba(184,134,11,0.4), 0 3px 8px rgba(0,0,0,0.6)' : '0 2px 6px rgba(0,0,0,0.4)';
+
+      return `
+        <div onclick="selectPerson('${person.id}')" style="width:145px;padding:0.45rem 0.55rem;border-radius:8px;border:1.5px solid ${borderColor};background:${bg};box-shadow:${boxShadow};cursor:pointer;transition:all 0.15s ease;position:relative;" onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='var(--accent-gold)'" onmouseout="this.style.transform='none';this.style.borderColor='${borderColor}'">
+          ${isFocus ? '<span style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:var(--accent-gold);color:#000;font-size:0.58rem;font-weight:bold;padding:1px 6px;border-radius:8px;text-transform:uppercase;letter-spacing:0.3px;">Valin</span>' : ''}
+          <div style="display:flex;align-items:center;gap:0.4rem;text-align:left;">
+            <div style="width:30px;height:30px;min-width:30px;border-radius:50%;overflow:hidden;border:1px solid ${isFocus ? 'var(--accent-gold)' : 'rgba(255,255,255,0.2)'};background:rgba(0,0,0,0.4);flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+              ${avatarUrl ? `<img src="${avatarUrl}" style="width:100%;height:100%;object-fit:cover;">` : '<i data-lucide="user" style="width:14px;height:14px;color:var(--text-muted);"></i>'}
+            </div>
+            <div style="overflow:hidden;flex-grow:1;min-width:0;">
+              <div style="font-weight:600;font-size:0.75rem;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${pName}">${pName}</div>
+              <div style="font-size:0.65rem;color:var(--text-secondary);margin-top:1px;">${dates || role}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
       const pName = person.name || 'Óþekkt nafn';
       const bYear = person.birth_year ? `f. ${person.birth_year}` : '';
       const dYear = person.death_year ? `d. ${person.death_year}` : '';
