@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Saga — Ættfræðiaðstoð</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="index.css?v=1787857865">
   <!-- Tesseract.js for OCR -->
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
   <!-- Lucide Icons -->
@@ -47,37 +47,35 @@
 
       <!-- Sidebar -->
       <aside class="sidebar" id="app-sidebar">
-        <!-- Tree Upload / Selector -->
-        <div class="sidebar-section">
-          <div class="sidebar-title">
-            <span>Ættartré</span>
-            <span id="tree-stats" style="font-size: 0.75rem; font-weight: normal; color: var(--text-secondary);">0 færslur</span>
+        <!-- Tree Upload / Selector (Compact & Clean) -->
+        <div class="sidebar-section-compact">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <span style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px;">Valið ættartré</span>
+            <span id="tree-stats" style="font-size: 0.72rem; color: var(--text-secondary);">0 færslur</span>
           </div>
           
-          <label class="file-upload-zone" id="upload-zone">
-            <i data-lucide="upload-cloud"></i>
-            <p style="margin-top: 0.5rem; font-weight: 500;">Hlaða inn .ged skrá</p>
-            <p style="font-size: 0.7rem; margin-top: 0.25rem;">Halaðu niður úr Ancestry og dragðu hingað</p>
-            <input type="file" id="gedcom-file-input" accept=".ged">
-          </label>
-
-          <select class="btn btn-secondary" id="tree-select" style="width: 100%; margin-top: 1rem; text-align: left; display: block; font-weight: bold; background: rgba(184,134,11,0.15); color: var(--accent-gold); padding: 0.6rem; border: 1px solid var(--accent-gold); cursor: pointer;">
-            <option value="sigurjon" selected>🌳 Sigurjón ættartré (Sigurjón Axel)</option>
-            <option value="loa">🌳 Lóa ættartré (1.120 færslur)</option>
-          </select>
+          <div style="display: flex; gap: 0.4rem; align-items: center;">
+            <select class="tree-select-compact" id="tree-select">
+              <option value="sigurjon" selected>🌳 Sigurjón ættartré</option>
+              <option value="loa">🌳 Lóa ættartré</option>
+            </select>
+            <label class="btn-upload-compact" title="Hlaða inn nýrri .ged skrá">
+              <i data-lucide="upload" style="width: 14px; height: 14px;"></i>
+              <input type="file" id="gedcom-file-input" accept=".ged" style="display: none;">
+            </label>
+          </div>
         </div>
 
-        <!-- Search & Filter -->
-        <div class="sidebar-section" style="flex: 1; display: flex; flex-direction: column; overflow: hidden;">
-          <div class="sidebar-title">Leita í tré</div>
-          <div class="search-box">
-            <i data-lucide="search"></i>
-            <input type="text" id="search-input" autocomplete="off" placeholder="Leita að nafni eða ártali...">
+        <!-- Search & People List (Takes full height & maximum screen real estate) -->
+        <div class="sidebar-section-list">
+          <div class="search-box-compact">
+            <i data-lucide="search" style="width: 14px; height: 14px;"></i>
+            <input type="text" id="search-input" autocomplete="off" placeholder="Leita að nafni, ári eða stað...">
           </div>
           
-          <!-- People List -->
+          <!-- People List (Expanded, dense, clear compact cards) -->
           <div class="people-list" id="people-list-container">
-            <div style="text-align: center; padding: 2rem 0; color: var(--accent-gold); font-size: 0.9rem;">
+            <div style="text-align: center; padding: 2rem 0; color: var(--accent-gold); font-size: 0.85rem;">
               <i data-lucide="loader-2" class="spin"></i> Hleð inn ættartré...
             </div>
           </div>
@@ -524,6 +522,6 @@
   </div>
 
   <!-- App Logic script -->
-  <script src="app.js?v=1787852875"></script>
+  <script src="app.js?v=1787857865"></script>
 </body>
 </html>

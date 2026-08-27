@@ -1007,3 +1007,180 @@ textarea:focus {
     display: flex !important;
   }
 }
+
+
+/* ========================================================
+   COMPACT & DENSE SIDEBAR (85%+ OF SPACE FOR PEOPLE LIST)
+   ======================================================== */
+
+.sidebar {
+  width: 330px !important;
+  min-width: 330px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: calc(100vh - 65px) !important;
+  overflow: hidden !important;
+}
+
+.sidebar-section-compact {
+  padding: 0.75rem 0.85rem !important;
+  background: rgba(13, 15, 18, 0.7);
+  border-bottom: 1px solid rgba(184, 134, 11, 0.2);
+  flex-shrink: 0;
+}
+
+.tree-select-compact {
+  flex-grow: 1;
+  background: rgba(184, 134, 11, 0.12);
+  color: var(--accent-gold);
+  border: 1px solid rgba(184, 134, 11, 0.4);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
+
+.tree-select-compact:hover {
+  border-color: var(--accent-gold);
+}
+
+.btn-upload-compact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-upload-compact:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  background: rgba(184, 134, 11, 0.1);
+}
+
+.sidebar-section-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0.85rem;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.search-box-compact {
+  position: relative;
+  margin-bottom: 0.5rem;
+  flex-shrink: 0;
+}
+
+.search-box-compact input {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.2rem;
+  background: rgba(13, 15, 18, 0.75);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  transition: var(--transition-fast);
+}
+
+.search-box-compact input:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 8px rgba(184, 134, 11, 0.3);
+}
+
+.search-box-compact svg {
+  position: absolute;
+  left: 0.65rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.people-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.35rem !important;
+  max-height: 100% !important;
+  flex-grow: 1 !important;
+  overflow-y: auto !important;
+  padding-right: 0.25rem !important;
+}
+
+/* Snyrtilegt, þétt og plásshagkvæmt spjald fyrir hvern einstakling */
+.person-item {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  padding: 0.45rem 0.65rem !important;
+  background: rgba(20, 24, 30, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.person-item:hover {
+  background: rgba(184, 134, 11, 0.12) !important;
+  border-color: rgba(184, 134, 11, 0.4) !important;
+  transform: translateX(2px) !important;
+}
+
+.person-item.active {
+  background: linear-gradient(135deg, rgba(184,134,11,0.25) 0%, rgba(20,24,30,0.95) 100%) !important;
+  border-color: var(--accent-gold) !important;
+  box-shadow: 0 0 10px rgba(184,134,11,0.2) !important;
+}
+
+.person-avatar-small {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: rgba(0, 0, 0, 0.4) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.person-avatar-small svg {
+  width: 16px !important;
+  height: 16px !important;
+  color: var(--text-muted) !important;
+}
+
+.person-info {
+  flex-grow: 1 !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.person-name {
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  font-family: inherit !important;
+}
+
+.person-meta {
+  font-size: 0.7rem !important;
+  color: var(--text-secondary) !important;
+  margin-top: 1px !important;
+}
