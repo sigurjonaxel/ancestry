@@ -107,6 +107,8 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
             self.handle_set_profile_image(query)
         elif path == '/api/generate_bio':
             self.handle_generate_bio(query)
+        elif path == '/api/upload_screenshot':
+            self.handle_upload_screenshot(query)
         else:
             self.send_error_response(404, "Endpoint not found.")
 
@@ -459,6 +461,40 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
 
         self.send_json({"status": "success", "message": f"Flutt inn {people_count} færslur í {tree_name}!", "tree_id": tree_id})
 
+
+    def handle_upload_screenshot(self, query_str):
+        try:
+            form = cgi.FieldStorage(
+                fp=self.rfile,
+                headers=self.headers,
+                environ={'REQUEST_METHOD': 'POST', 'CONTENT_TYPE': self.headers['Content-Type']}
+            )
+            
+            if 'screenshot' not in form:
+                self.send_error_response(400, "No screenshot file provided.")
+                return
+
+            fileitem = form['screenshot']
+            if not fileitem.filename:
+                self.send_error_response(400, "No filename in upload.")
+                return
+
+            shots_dir = os.path.join(os.path.dirname(__file__), "images", "screenshots")
+            os.makedirs(shots_dir, exist_ok=True)
+            
+            ext = fileitem.filename.rsplit('.', 1)[-1].lower() if '.' in fileitem.filename else 'png'
+            filename = f"mobile_screenshot_latest.{ext}"
+            filepath = os.path.join(shots_dir, filename)
+            
+            with open(filepath, 'wb') as f:
+                f.write(fileitem.file.read())
+
+            print(f"📸 [SCREENSHOT] Móttekin ný mynd úr síma: {filepath}")
+            self.send_json({"status": "success", "message": "Skjáskot móttekið og vistað!", "path": filepath})
+        except Exception as e:
+            print(f"❌ Screenshot upload error: {e}")
+            self.send_error_response(500, f"Error saving screenshot: {str(e)}")
+
     def handle_upload_avatar(self, query_str):
         params = urllib.parse.parse_qs(query_str)
         person_id = params.get('id', [''])[0].replace('@', '')
@@ -594,31 +630,6 @@ def run_server():
         httpd.server_close()
 
 
-@app.route('/api/upload_screenshot', methods=['POST'])
-def api_upload_screenshot():
-    """Upload screenshot directly from phone or browser for instant agent inspection."""
-    if 'screenshot' not in request.files:
-        return jsonify({'error': 'Engin mynd send'}), 400
-    file = request.files['screenshot']
-    if file.filename == '':
-        return jsonify({'error': 'Tóm skrá'}), 400
-        
-    os.makedirs("images/screenshots", exist_ok=True)
-    ext = os.path.splitext(file.filename)[1] or '.png'
-    save_name = f"mobile_screenshot_latest{ext}"
-    save_path = os.path.join("images/screenshots", save_name)
-    file.save(save_path)
-    
-    # Also save with timestamp
-    ts_name = f"screenshot_{int(time.time())}{ext}"
-    file.save(os.path.join("images/screenshots", ts_name))
-    
-    return jsonify({
-        'status': 'success',
-        'message': 'Skjáskot móttekið og vistað!',
-        'path': save_path,
-        'url': f'/images/screenshots/{save_name}'
-    })
 
 if __name__ == '__main__':
     run_server()
