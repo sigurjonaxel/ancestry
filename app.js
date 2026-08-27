@@ -978,49 +978,49 @@ async function renderInteractiveTree() {
       `;
     }
 
-    // 1. DESKTOP 2D GRAPH
+    // 1. DESKTOP 2D GRAPH (Compact & Perfectly Fitting Vertical Flow)
     let desktopHtml = `
-      <div class="tree-container-desktop" style="flex-direction:column;align-items:center;gap:2rem;min-width:760px;padding:1rem 0;">
+      <div class="tree-container-desktop" style="flex-direction:column;align-items:center;gap:0.8rem;width:100%;padding:0.5rem 0;">
         
         <!-- Afar og Ömmur -->
-        <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;width:100%;">
-          <div style="font-size:0.75rem;font-weight:bold;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;">👵👴 Afar & Ömmur</div>
-          <div style="display:flex;justify-content:space-around;width:100%;gap:1rem;">
-            <div style="display:flex;gap:0.6rem;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.25rem;width:100%;">
+          <div style="font-size:0.68rem;font-weight:bold;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;">👵👴 Afar & Ömmur</div>
+          <div style="display:flex;justify-content:space-around;width:100%;gap:0.6rem;">
+            <div style="display:flex;gap:0.4rem;">
               ${renderNode(pGrandParents.ff, 'Föðurafi')}
               ${renderNode(pGrandParents.fm, 'Föðuramma')}
             </div>
-            <div style="display:flex;gap:0.6rem;">
+            <div style="display:flex;gap:0.4rem;">
               ${renderNode(pGrandParents.mf, 'Móðurafi')}
               ${renderNode(pGrandParents.mm, 'Móðuramma')}
             </div>
           </div>
         </div>
 
-        <div style="width:60%;height:2px;background:rgba(184,134,11,0.25);position:relative;">
-          <div style="position:absolute;left:25%;top:-10px;bottom:-10px;width:2px;background:rgba(184,134,11,0.25);"></div>
-          <div style="position:absolute;right:25%;top:-10px;bottom:-10px;width:2px;background:rgba(184,134,11,0.25);"></div>
+        <div style="width:50%;height:1.5px;background:rgba(184,134,11,0.25);position:relative;">
+          <div style="position:absolute;left:25%;top:-6px;bottom:-6px;width:1.5px;background:rgba(184,134,11,0.25);"></div>
+          <div style="position:absolute;right:25%;top:-6px;bottom:-6px;width:1.5px;background:rgba(184,134,11,0.25);"></div>
         </div>
 
         <!-- Foreldrar -->
-        <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;width:100%;">
-          <div style="font-size:0.75rem;font-weight:bold;color:var(--accent-gold);text-transform:uppercase;letter-spacing:1px;">👨‍👩‍👦 Foreldrar</div>
-          <div style="display:flex;justify-content:center;gap:3rem;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.25rem;width:100%;">
+          <div style="font-size:0.68rem;font-weight:bold;color:var(--accent-gold);text-transform:uppercase;letter-spacing:0.5px;">👨‍👩‍👦 Foreldrar</div>
+          <div style="display:flex;justify-content:center;gap:1.5rem;">
             ${renderNode(fam.father, 'Faðir')}
             ${renderNode(fam.mother, 'Móðir')}
           </div>
         </div>
 
-        <div style="width:2px;height:24px;background:var(--accent-gold);"></div>
+        <div style="width:1.5px;height:14px;background:var(--accent-gold);"></div>
 
         <!-- Valin persóna & Maki -->
-        <div style="display:flex;flex-direction:column;align-items:center;gap:0.6rem;">
-          <div style="display:flex;align-items:center;gap:1.2rem;background:rgba(184,134,11,0.06);padding:1rem 1.5rem;border-radius:14px;border:1px solid rgba(184,134,11,0.25);">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.3rem;">
+          <div style="display:flex;align-items:center;gap:0.8rem;background:rgba(184,134,11,0.08);padding:0.5rem 0.8rem;border-radius:10px;border:1px solid rgba(184,134,11,0.25);">
             ${renderNode(p, 'Valin persóna', true)}
             ${(fam.spouse && fam.spouse.length > 0) ? `
-              <div style="display:flex;align-items:center;gap:0.5rem;">
-                <span style="font-size:1.2rem;" title="Maki">💍</span>
-                <div style="display:flex;gap:0.6rem;">
+              <div style="display:flex;align-items:center;gap:0.35rem;">
+                <span style="font-size:1rem;" title="Maki">💍</span>
+                <div style="display:flex;gap:0.4rem;">
                   ${fam.spouse.map(s => renderNode(s, 'Maki')).join('')}
                 </div>
               </div>
@@ -1030,9 +1030,9 @@ async function renderInteractiveTree() {
 
         <!-- Systkini -->
         ${(fam.siblings && fam.siblings.length > 0) ? `
-          <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;width:100%;margin-top:-0.5rem;">
-            <div style="font-size:0.75rem;font-weight:bold;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;">👫 Systkini (${fam.siblings.length})</div>
-            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;max-width:850px;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0.25rem;width:100%;margin-top:-0.2rem;">
+            <div style="font-size:0.68rem;font-weight:bold;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;">👫 Systkini (${fam.siblings.length})</div>
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.4rem;max-width:850px;">
               ${fam.siblings.map(s => renderNode(s, 'Systkini')).join('')}
             </div>
           </div>
@@ -1040,14 +1040,14 @@ async function renderInteractiveTree() {
 
         <!-- Börn -->
         ${(fam.children && fam.children.length > 0) ? `
-          <div style="width:2px;height:24px;background:var(--accent-gold);"></div>
-          <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;width:100%;">
-            <div style="font-size:0.75rem;font-weight:bold;color:var(--accent-gold);text-transform:uppercase;letter-spacing:1px;">👶 Börn & Afkomendur (${fam.children.length})</div>
-            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.8rem;max-width:850px;">
+          <div style="width:1.5px;height:14px;background:var(--accent-gold);"></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0.25rem;width:100%;">
+            <div style="font-size:0.68rem;font-weight:bold;color:var(--accent-gold);text-transform:uppercase;letter-spacing:0.5px;">👶 Börn & Afkomendur (${fam.children.length})</div>
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;max-width:850px;">
               ${fam.children.map(c => renderNode(c, 'Barn')).join('')}
             </div>
           </div>
-        ` : ''}
+        ` : '<div style="color:var(--text-muted);font-size:0.7rem;margin-top:0.25rem;">Engin börn skráð í þessari grein.</div>'}
       </div>
     `;
 
