@@ -635,6 +635,11 @@ function renderAISuggestions(suggestions, personId) {
   const countBadge = document.getElementById('suggestions-count');
   if (!container || !gallery || !countBadge) return;
   
+    const activeSugs = suggestions.filter(s => s.status === 'pending');
+  if (activeSugs.length === 0) {
+    container.style.display = 'none';
+    return;
+  }
   container.style.display = 'block';
 
   const activeSugs = suggestions.filter(s => s.status === 'pending');
