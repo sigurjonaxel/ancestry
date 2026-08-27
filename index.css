@@ -1184,3 +1184,128 @@ textarea:focus {
   color: var(--text-secondary) !important;
   margin-top: 1px !important;
 }
+
+
+/* ========================================================
+   📱 PERFEKT SÍMASKJÁA-SKIPULAG (MOBILE SPLIT-VIEW ENGINE)
+   Efst: Lítil nett stika til að velja tré og leita
+   Efri helmingur (45-50vh): Gagnvirka ættartréð til að flakka
+   Neðri helmingur (50vh): Upplýsingar og sögur um valda persónu
+   ======================================================== */
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0.4rem 0.75rem !important;
+    min-height: 48px !important;
+  }
+
+  .brand-logo {
+    font-size: 1.15rem !important;
+  }
+
+  .header-actions {
+    gap: 0.3rem !important;
+  }
+
+  .header-actions .btn {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.72rem !important;
+  }
+
+  .workspace-container {
+    height: calc(100vh - 48px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .main-workspace {
+    padding: 0.4rem !important;
+    overflow-y: hidden !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .workspace-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    gap: 0.5rem !important;
+  }
+
+  /* EFRI HLUTI SÍMA: Ættartréð (ca 45vh með innbyggðu skrolli) */
+  #interactive-tree-card {
+    order: 1;
+    height: 42vh !important;
+    min-height: 220px !important;
+    max-height: 45vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0.5rem 0.6rem !important;
+    background: rgba(18, 22, 28, 0.95) !important;
+    border: 1px solid var(--accent-gold) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important;
+    overflow: hidden !important;
+  }
+
+  #interactive-tree-card .tree-header {
+    padding-bottom: 0.35rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  #interactive-tree-card .tree-title {
+    font-size: 0.82rem !important;
+  }
+
+  #interactive-tree-canvas {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    padding: 0.25rem 0 !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* NEÐRI HLUTI SÍMA: Prófíll, Lífshlaup og Heimildir (ca 48vh) */
+  #person-details-card {
+    order: 2;
+    flex: 1 !important;
+    height: 48vh !important;
+    max-height: 52vh !important;
+    overflow-y: auto !important;
+    padding: 0.6rem 0.75rem !important;
+    background: rgba(15, 18, 23, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 10px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Þéttari prófílhaus í síma */
+  .profile-header {
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .profile-header #p-avatar {
+    width: 54px !important;
+    height: 54px !important;
+  }
+
+  .profile-name {
+    font-size: 1.15rem !important;
+    margin-top: 0.25rem !important;
+  }
+
+  .profile-dates {
+    font-size: 0.75rem !important;
+  }
+
+  .workspace-tabs {
+    gap: 0.3rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .workspace-tabs .tab {
+    padding: 0.35rem 0.6rem !important;
+    font-size: 0.75rem !important;
+  }
+}
