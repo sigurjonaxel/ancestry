@@ -593,5 +593,32 @@ def run_server():
         print("\nServer shutting down gracefully.")
         httpd.server_close()
 
+
+@app.route('/api/upload_screenshot', methods=['POST'])
+def api_upload_screenshot():
+    """Upload screenshot directly from phone or browser for instant agent inspection."""
+    if 'screenshot' not in request.files:
+        return jsonify({'error': 'Engin mynd send'}), 400
+    file = request.files['screenshot']
+    if file.filename == '':
+        return jsonify({'error': 'Tóm skrá'}), 400
+        
+    os.makedirs("images/screenshots", exist_ok=True)
+    ext = os.path.splitext(file.filename)[1] or '.png'
+    save_name = f"mobile_screenshot_latest{ext}"
+    save_path = os.path.join("images/screenshots", save_name)
+    file.save(save_path)
+    
+    # Also save with timestamp
+    ts_name = f"screenshot_{int(time.time())}{ext}"
+    file.save(os.path.join("images/screenshots", ts_name))
+    
+    return jsonify({
+        'status': 'success',
+        'message': 'Skjáskot móttekið og vistað!',
+        'path': save_path,
+        'url': f'/images/screenshots/{save_name}'
+    })
+
 if __name__ == '__main__':
     run_server()

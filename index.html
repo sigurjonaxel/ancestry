@@ -30,6 +30,11 @@
         <span class="brand-tagline">Ættfræðiaðstoð</span>
       </div>
       <div class="header-actions">
+          <button class="btn btn-secondary" id="btn-upload-screenshot" title="Senda skjáskot af símanum til aðstoðarmannsins" onclick="document.getElementById('screenshot-file-input').click()" style="background: rgba(184,134,11,0.15); border-color: var(--accent-gold); color: var(--accent-gold); font-size: 0.72rem; padding: 0.25rem 0.6rem; display: inline-flex; align-items: center; gap: 4px;">
+            <i data-lucide="camera" style="width: 14px; height: 14px;"></i>
+            <span>Senda skjáskot</span>
+          </button>
+          <input type="file" id="screenshot-file-input" accept="image/*" style="display: none;" onchange="uploadPhoneScreenshot(this)">
         <button class="btn btn-secondary" id="btn-show-settings" style="display: flex; align-items: center; gap: 0.25rem;">
           <i data-lucide="settings" style="width: 14px; height: 14px;"></i>
           <span class="btn-text">Stillingar</span>

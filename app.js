@@ -1166,3 +1166,26 @@ function toggleMaximizeTree() {
   }
 }
 window.toggleMaximizeTree = toggleMaximizeTree;
+
+
+async function uploadPhoneScreenshot(input) {
+  if (!input || !input.files || input.files.length === 0) return;
+  const file = input.files[0];
+  showToast('Sendi skjáskot...');
+
+  const formData = new FormData();
+  formData.append('screenshot', file);
+
+  try {
+    const res = await fetch('/api/upload_screenshot', {
+      method: 'POST',
+      body: formData
+    });
+    if (!res.ok) throw new Error('Gat ekki sent skjáskot');
+    const data = await res.json();
+    showToast('📸 Skjáskot sent til Antigravity!');
+  } catch (err) {
+    showToast('Villa við að senda: ' + err.message);
+  }
+}
+window.uploadPhoneScreenshot = uploadPhoneScreenshot;
