@@ -77,7 +77,7 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
             self.handle_get_person(query)
         elif path == '/api/run_scraper':
             self.handle_run_scraper(query)
-                elif path == '/api/notable_articles':
+        elif path == '/api/notable_articles':
             self.handle_get_notable_articles(query)
         elif path == '/api/proxy_image':
             self.handle_proxy_image(query)
@@ -223,6 +223,25 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
             conn.commit()
         details = get_person_details(person_id)
         self.send_json({"status": "ok", "details": details})
+
+
+    def handle_get_notable_articles(self, query_str):
+        params = urllib.parse.parse_qs(query_str)
+        tree_id = params.get('tree_id', ['sigurjon'])[0]
+        
+        with get_db() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT s.id, s.person_id, p.name, p.birth_year, p.death_year, s.title, s.snippet, s.link, s.image_url
+                FROM sources s
+                JOIN people p ON p.id = s.person_id
+                WHERE (p.tree_id = ? OR ? = '')
+                  AND (s.title LIKE '%Tímarit%' OR s.title LIKE '%Mbl%' OR s.title LIKE '%DV%' OR s.title LIKE '%Samvinnan%' OR s.title LIKE '%Réttur%' OR s.title LIKE '%Sjómannadagsblaðið%')
+                ORDER BY p.birth_year ASC, s.id ASC
+            """, (tree_id, tree_id))
+            rows = [dict(r) for r in cursor.fetchall()]
+            
+        self.send_json({"status": "ok", "articles": rows})
 
     def handle_get_trees(self):
         with get_db() as conn:
@@ -636,21 +655,3 @@ def run_server():
 if __name__ == '__main__':
     run_server()
 
-
-    def handle_get_notable_articles(self, query_str):
-        params = urllib.parse.parse_qs(query_str)
-        tree_id = params.get('tree_id', ['sigurjon'])[0]
-        
-        with get_db() as conn:
-            cursor = conn.cursor()
-            cursor.execute("""
-                SELECT s.id, s.person_id, p.name, p.birth_year, p.death_year, s.title, s.snippet, s.link, s.image_url, s.local_path
-                FROM sources s
-                JOIN people p ON p.id = s.person_id
-                WHERE (p.tree_id = ? OR ? = '')
-                  AND (s.title LIKE '%Tímarit%' OR s.title LIKE '%Mbl%' OR s.title LIKE '%DV%' OR s.title LIKE '%Samvinnan%' OR s.title LIKE '%Réttur%' OR s.title LIKE '%Sjómannadagsblaðið%')
-                ORDER BY p.birth_year ASC, s.id ASC
-            """, (tree_id, tree_id))
-            rows = [dict(r) for r in cursor.fetchall()]
-            
-        self.send_json({"status": "ok", "articles": rows})
