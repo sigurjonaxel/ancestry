@@ -1,4 +1,43 @@
 
+def search_timarit_live(name, keywords=None):
+    """Direct headless browser scraper for Timarit.is (Mbl, DV, Fréttablaðið, Tíminn, o.fl.)."""
+    results = []
+    try:
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page()
+            q = f'"{name}"'
+            if keywords:
+                q += f' {keywords}'
+            url = f"https://timarit.is/?q={urllib.parse.quote(q)}"
+            page.goto(url, timeout=20000)
+            page.wait_for_timeout(3500)
+            
+            body = page.locator("body").inner_text()
+            lines = [l.strip() for l in body.splitlines() if l.strip()]
+            
+            for idx, line in enumerate(lines):
+                if any(paper in line for paper in ["Morgunblaðið", "Fréttablaðið", "Dagblaðið Vísir", "DV", "Tíminn", "Alþýðumaðurinn", "Vísir", "Þjóðviljinn", "Heimilisblaðið"]):
+                    paper_title = line
+                    date_info = lines[idx+1] if idx+1 < len(lines) else ""
+                    snippet = lines[idx+2] if idx+2 < len(lines) else ""
+                    
+                    if name.lower() in snippet.lower() or name.lower() in date_info.lower() or any(part.lower() in snippet.lower() for part in name.split()[:2]):
+                        results.append({
+                            "title": f"Tímarit.is: {paper_title} ({date_info})",
+                            "snippet": snippet,
+                            "url": url,
+                            "type": "text"
+                        })
+                        if len(results) >= 4:
+                            break
+            browser.close()
+    except Exception as e:
+        print(f"[Timarit Live Scraper Error] {e}")
+    return results
+
+
 def run_real_google_ai_search(name, birth_year=None, spouse_or_parents=""):
     """Official Google Search Grounding Engine - Finds deep Icelandic obituaries & bios."""
     api_key = os.environ.get("GEMINI_API_KEY")
