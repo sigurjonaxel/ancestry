@@ -1194,3 +1194,55 @@ async function uploadPhoneScreenshot(input) {
   }
 }
 window.uploadPhoneScreenshot = uploadPhoneScreenshot;
+
+
+window.openNotableArticlesModal = async function() {
+  const modal = document.getElementById('modal-notable-articles');
+  const listEl = document.getElementById('notable-articles-list');
+  if (!modal || !listEl) return;
+  
+  modal.style.display = 'flex';
+  listEl.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 2rem;">Sæki greinar úr gagnagrunni...</div>';
+  
+  try {
+    const res = await fetch(`/api/notable_articles?tree_id=${state.currentTree || 'sigurjon'}`);
+    const data = await res.json();
+    const articles = data.articles || [];
+    
+    if (articles.length === 0) {
+      listEl.innerHTML = '<div style="text-align:center; padding: 2rem; color: var(--text-muted);">Engar sögulegar greinar skráðar ennþá.</div>';
+      return;
+    }
+    
+    listEl.innerHTML = articles.map(a => {
+      const datesStr = `(f. ${a.birth_year || '?'}${a.death_year ? ` - d. ${a.death_year}` : ''})`;
+      return `
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent-gold)'" onmouseout="this.style.borderColor='var(--border-color)'">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+            <div>
+              <span style="font-weight: 700; font-size: 1rem; color: #fff; cursor: pointer;" onclick="closeNotableArticlesModal(); selectPerson('${a.person_id}')" title="Opna spjald einstaklings">
+                👤 ${a.name} <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: normal;">${datesStr}</span>
+              </span>
+              <div style="font-weight: 600; font-size: 0.88rem; color: var(--accent-gold); margin-top: 0.2rem;">
+                📖 ${a.title}
+              </div>
+            </div>
+            ${a.link ? `<a href="${a.link}" target="_blank" class="btn btn-secondary" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; display: inline-flex; align-items: center; gap: 4px;">Opna á Tímarit.is <i data-lucide="external-link" style="width: 12px; height: 12px;"></i></a>` : ''}
+          </div>
+          <div style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.5; margin-top: 0.4rem; background: rgba(0,0,0,0.2); padding: 0.6rem; border-radius: 6px;">
+            „${a.snippet}“
+          </div>
+        </div>
+      `;
+    }).join('');
+    
+    try { if (window.lucide) lucide.createIcons(); } catch(e) {}
+  } catch(err) {
+    listEl.innerHTML = `<div style="color:#e53e3e; padding:1rem; text-align:center;">Villa við að sækja greinar: ${err.message}</div>`;
+  }
+};
+
+window.closeNotableArticlesModal = function() {
+  const modal = document.getElementById('modal-notable-articles');
+  if (modal) modal.style.display = 'none';
+};
