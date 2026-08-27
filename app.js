@@ -635,15 +635,15 @@ function renderAISuggestions(suggestions, personId) {
   const countBadge = document.getElementById('suggestions-count');
   if (!container || !gallery || !countBadge) return;
   
-    const activeSugs = suggestions.filter(s => s.status === 'pending');
-  if (activeSugs.length === 0) {
+  const allSugs = suggestions || [];
+  const activeSugs = allSugs.filter(s => s.status === 'pending');
+  const rejectedSugs = allSugs.filter(s => s.status === 'rejected');
+  
+  if (activeSugs.length === 0 && rejectedSugs.length === 0) {
     container.style.display = 'none';
     return;
   }
   container.style.display = 'block';
-
-  const activeSugs = suggestions.filter(s => s.status === 'pending');
-  const rejectedSugs = suggestions.filter(s => s.status === 'rejected');
   
   countBadge.textContent = activeSugs.length;
 
