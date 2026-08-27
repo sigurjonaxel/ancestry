@@ -1471,3 +1471,207 @@ textarea:focus {
     font-size: 0.72rem !important;
   }
 }
+
+
+/* ========================================================
+   📱 ANDROID S24 ULTRA & MOBILE FULL RESET
+   - Tryggja 0px yfirflæði til hægri (Enginn kassi fer út fyrir skjá)
+   - Ættartré: Lækkað í 38vh (nógu lítið og þétt til að gefa pláss)
+   - Upplýsingar um valda persónu: Aukið í 52vh (aðalrýmið)
+   ======================================================== */
+
+@media (max-width: 900px) {
+  * {
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .app-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .app-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0.35rem 0.6rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .workspace-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: calc(100vh - 46px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .main-workspace {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0.3rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  .workspace-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    gap: 0.35rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 🌳 1. EFRI HLUTI: ÆTTARTRÉÐ (LÆKKAÐ Í 36-38vh TIL AÐ GEFA NEÐRI HLUTA MEIRA PLÁSS) */
+  #interactive-tree-card {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 36vh !important;
+    max-height: 38vh !important;
+    min-height: 160px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0.35rem 0.45rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background: rgba(18, 22, 28, 0.95) !important;
+    border: 1px solid var(--accent-gold) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+  }
+
+  #interactive-tree-canvas {
+    flex: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 0.15rem 0 !important;
+    box-sizing: border-box !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tree-container-desktop {
+    display: none !important;
+  }
+
+  .tree-container-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.35rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .mobile-tree-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.3rem 0.4rem !important;
+    margin: 0 !important;
+  }
+
+  .mobile-tree-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.35rem 0.45rem !important;
+  }
+
+  /* 📖 2. NEÐRI HLUTI: UPPLÝSINGAR UM VALDA PERSÓNU (AUKIÐ Í 54vh - AÐALRÝMIÐ) */
+  #person-details-card {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 54vh !important;
+    max-height: 55vh !important;
+    flex: 1 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 0.5rem 0.6rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background: rgba(14, 17, 22, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 8px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .profile-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding-bottom: 0.3rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .profile-header #p-avatar {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .profile-name {
+    font-size: 1.05rem !important;
+    margin-top: 0.1rem !important;
+  }
+
+  .profile-dates {
+    font-size: 0.72rem !important;
+  }
+
+  .workspace-tabs {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    overflow-x: auto !important;
+    gap: 0.2rem !important;
+    margin-bottom: 0.35rem !important;
+    padding-bottom: 0.2rem !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .workspace-tabs .tab {
+    padding: 0.25rem 0.45rem !important;
+    font-size: 0.72rem !important;
+    white-space: nowrap !important;
+  }
+
+  .tab-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
