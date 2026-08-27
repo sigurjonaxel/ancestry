@@ -2343,3 +2343,54 @@ textarea:focus {
     box-sizing: border-box !important;
   }
 }
+
+
+/* ========================================================
+   📏 ULTRA SLIM TOP HEADER & COMPACT BANNERS
+   - Efsti aðalborði (Header): Lækkaður úr 65px í 42px
+   - Flipaborði (Tab Bar): Lækkaður og gerður mjög nett
+   - Tréð fær hámarks lóðrétt pláss
+   ======================================================== */
+
+.app-header {
+  padding: 0.35rem 1.25rem !important;
+  min-height: 42px !important;
+  height: 42px !important;
+}
+
+.brand-logo {
+  font-size: 1.25rem !important;
+}
+
+.brand-tagline {
+  font-size: 0.72rem !important;
+  margin-left: 0.35rem !important;
+}
+
+.workspace-container {
+  height: calc(100vh - 42px) !important;
+}
+
+/* Compact Tab Bar */
+.tab-bar {
+  display: flex !important;
+  gap: 0.25rem !important;
+  margin-bottom: 0.35rem !important;
+  padding-bottom: 0.25rem !important;
+  border-bottom: 1px solid rgba(184, 134, 11, 0.15) !important;
+  flex-shrink: 0 !important;
+}
+
+.tab-bar .tab {
+  padding: 0.25rem 0.6rem !important;
+  font-size: 0.75rem !important;
+  border-radius: 6px !important;
+}
+
+@media (min-width: 901px) {
+  #person-details-card,
+  .workspace-grid > .card:last-child {
+    height: calc(100vh - 62px) !important;
+    max-height: calc(100vh - 62px) !important;
+  }
+}

@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Saga — Ættfræðiaðstoð</title>
-  <link rel="stylesheet" href="index.css?v=1787860707">
+  <link rel="stylesheet" href="index.css?v=1787860865">
   <!-- Tesseract.js for OCR -->
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
   <!-- Lucide Icons -->
@@ -260,26 +260,21 @@
             
             <!-- Tab: Interactive Family Tree Navigator -->
             <div class="tab-content" id="tab-pedigree" style="display: block;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; background: rgba(184,134,11,0.08); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(184,134,11,0.2);">
-                <div>
-                  <h3 style="font-size: 1.05rem; color: var(--accent-gold); margin: 0; display: flex; align-items: center; gap: 0.4rem;">
-                    <i data-lucide="git-fork" style="width: 16px; height: 16px;"></i>
-                    <span id="tree-nav-title">Gagnvirkt Ættartré & Afkomendur</span>
-                  </h3>
-                  <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0.2rem 0 0 0;">
-                    Smelltu á hvaða spjald sem er til að flakka um tréð, skoða forfeður, afkomendur og maka.
-                  </p>
+              <!-- Compact Single-Line Sub-Header (Only 30px tall) -->
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; padding: 0.25rem 0.5rem; background: rgba(184,134,11,0.06); border-radius: 6px; border: 1px solid rgba(184,134,11,0.15);">
+                <div style="display: flex; align-items: center; gap: 0.4rem;">
+                  <i data-lucide="git-fork" style="width: 13px; height: 13px; color: var(--accent-gold);"></i>
+                  <span id="tree-nav-title" style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold);">Ættartré & Afkomendur</span>
+                  <span style="font-size: 0.68rem; color: var(--text-muted); margin-left: 0.25rem;">(Smelltu á spjald til að flakka)</span>
                 </div>
-                <div style="display: flex; gap: 0.5rem; align-items: center;">
-                                  <div style="display: flex; gap: 0.5rem; align-items: center;">
-                  <button class="panel-toggle-btn" id="btn-maximize-tree" onclick="toggleMaximizeTree()" title="Stækka ættartré yfir allan skjáinn">
-                    <i data-lucide="maximize-2" id="maximize-tree-icon" style="width: 13px; height: 13px;"></i>
-                    <span id="maximize-tree-text">Stækka tré (Fullskjár)</span>
+                <div style="display: flex; gap: 0.35rem; align-items: center;">
+                  <button class="panel-toggle-btn" id="btn-maximize-tree" onclick="toggleMaximizeTree()" title="Stækka ættartré yfir allan skjáinn" style="padding: 0.2rem 0.5rem; font-size: 0.68rem;">
+                    <i data-lucide="maximize-2" id="maximize-tree-icon" style="width: 11px; height: 11px;"></i>
+                    <span id="maximize-tree-text">Fullskjár</span>
                   </button>
-                  <button class="btn btn-secondary" onclick="renderInteractiveTree()" style="font-size: 0.75rem; padding: 0.35rem 0.7rem; display: inline-flex; align-items: center; gap: 4px;">
-                    <i data-lucide="rotate-ccw" style="width: 12px; height: 12px;"></i> Miðja
+                  <button class="btn btn-secondary" onclick="renderInteractiveTree()" style="font-size: 0.68rem; padding: 0.2rem 0.5rem; display: inline-flex; align-items: center; gap: 3px;">
+                    <i data-lucide="rotate-ccw" style="width: 11px; height: 11px;"></i> Miðja
                   </button>
-                </div>
                 </div>
               </div>
 
@@ -527,6 +522,6 @@
   </div>
 
   <!-- App Logic script -->
-  <script src="app.js?v=1787860707"></script>
+  <script src="app.js?v=1787860865"></script>
 </body>
 </html>
