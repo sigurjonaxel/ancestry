@@ -2026,3 +2026,183 @@ textarea:focus {
     font-size: 0.7rem !important;
   }
 }
+
+
+/* ========================================================
+   ⚖️ FULLKOMIN JAFNVÆGISSTILLING FYRIR SÍMA (S24 ULTRA)
+   - Ættartré: Stillt á 38vh (nógu stórt til að sjá 2-3 ættliði í einu, skýrt letur)
+   - Upplýsingar um valda persónu: Stillt á 56vh (rúmgott og þægilegt skroll)
+   - Leturstærð í spjöldum aukin í 0.84rem / 0.72rem svo það sé auðlesið og fallegt
+   ======================================================== */
+
+@media (max-width: 900px) {
+  /* 🌳 1. EFRI HLUTI: ÆTTARTRÉÐ (38vh - Skýrt, þægilegt og sýnilegt) */
+  .workspace-grid > .card:last-child {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 38vh !important;
+    max-height: 40vh !important;
+    min-height: 180px !important;
+    flex-shrink: 0 !important;
+    padding: 0.35rem 0.5rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background: rgba(18, 22, 28, 0.95) !important;
+    border: 1px solid var(--accent-gold) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .tab-bar {
+    display: flex !important;
+    overflow-x: auto !important;
+    gap: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+    padding-bottom: 0.2rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .tab-bar .tab {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.72rem !important;
+    white-space: nowrap !important;
+  }
+
+  #tab-pedigree {
+    flex: 1 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #interactive-tree-canvas {
+    flex: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 0.25rem 0 !important;
+    box-sizing: border-box !important;
+    border: none !important;
+    background: transparent !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tree-container-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.35rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .mobile-tree-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.35rem 0.5rem !important;
+    margin-bottom: 0.25rem !important;
+    border-radius: 6px !important;
+    background: rgba(20, 24, 30, 0.75) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .mobile-tree-header {
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    color: var(--accent-gold) !important;
+    margin-bottom: 0.25rem !important;
+    padding-bottom: 0.2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    border-bottom: 1px solid rgba(184, 134, 11, 0.15) !important;
+  }
+
+  .mobile-tree-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.3rem !important;
+  }
+
+  .mobile-tree-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.35rem 0.5rem !important;
+    gap: 0.5rem !important;
+    border-radius: 6px !important;
+    background: rgba(13, 15, 18, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .mobile-tree-card.focus {
+    background: linear-gradient(135deg, rgba(184,134,11,0.2) 0%, rgba(20,24,30,0.95) 100%) !important;
+    border-color: var(--accent-gold) !important;
+  }
+
+  .mobile-tree-card .person-name,
+  .mobile-tree-card span {
+    font-size: 0.84rem !important;
+    font-weight: 600 !important;
+    color: #fff !important;
+  }
+
+  .mobile-tree-card .person-meta,
+  .mobile-tree-card div {
+    font-size: 0.72rem !important;
+    color: var(--text-secondary) !important;
+  }
+
+  /* 📖 2. NEÐRI HLUTI: UPPLÝSINGAR UM VALDA PERSÓNU (56vh) */
+  #person-details-card {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 56vh !important;
+    max-height: 58vh !important;
+    flex: 1 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 0.6rem 0.75rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background: rgba(14, 17, 22, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 8px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .profile-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding-bottom: 0.35rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .profile-header #p-avatar {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .profile-name {
+    font-size: 1.1rem !important;
+    margin-top: 0.15rem !important;
+  }
+
+  .profile-dates {
+    font-size: 0.75rem !important;
+  }
+}
