@@ -77,6 +77,8 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
             self.handle_get_person(query)
         elif path == '/api/run_scraper':
             self.handle_run_scraper(query)
+        elif path == '/api/tree_stats':
+            self.handle_get_tree_stats(query)
         elif path == '/api/notable_articles':
             self.handle_get_notable_articles(query)
         elif path == '/api/proxy_image':
@@ -242,6 +244,74 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
             rows = [dict(r) for r in cursor.fetchall()]
             
         self.send_json({"status": "ok", "articles": rows})
+
+
+    def handle_get_tree_stats(self, query_str):
+        params = urllib.parse.parse_qs(query_str)
+        tree_id = params.get('tree_id', ['sigurjon'])[0]
+        
+        with get_db() as conn:
+            conn.row_factory = sqlite3.Row
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM people WHERE tree_id = ?", (tree_id,))
+            people = [dict(r) for r in cursor.fetchall()]
+            
+            # Relations for families
+            cursor.execute("""
+                SELECT p.name, COUNT(r.related_id) as child_count
+                FROM people p
+                JOIN relations r ON r.person_id = p.id AND r.tree_id = p.tree_id
+                WHERE r.relation_type = 'child' AND p.tree_id = ?
+                GROUP BY p.id
+                ORDER BY child_count DESC
+                LIMIT 5
+            """, (tree_id,))
+            large_families = [dict(r) for r in cursor.fetchall()]
+
+        total_people = len(people)
+        males = sum(1 for p in people if p['sex'] == 'M')
+        females = sum(1 for p in people if p['sex'] == 'F')
+
+        birth_years = [int(p['birth_year']) for p in people if p.get('birth_year') and str(p['birth_year']).isdigit()]
+        earliest_birth = min(birth_years) if birth_years else 0
+        latest_birth = max(birth_years) if birth_years else 0
+
+        # Lifespans
+        lifespans = []
+        for p in people:
+            by, dy = p.get('birth_year'), p.get('death_year')
+            if by and dy and str(by).isdigit() and str(dy).isdigit():
+                age = int(dy) - int(by)
+                if 0 <= age <= 115:
+                    lifespans.append({"name": p['name'], "birth": int(by), "death": int(dy), "age": age})
+
+        lifespans.sort(key=lambda x: x['age'], reverse=True)
+        avg_lifespan = round(sum(x['age'] for x in lifespans) / len(lifespans), 1) if lifespans else 0
+
+        from collections import Counter
+        first_names_m = Counter()
+        first_names_f = Counter()
+        for p in people:
+            parts = (p.get('name') or '').strip().split()
+            if parts:
+                fn = parts[0]
+                if p.get('sex') == 'M': first_names_m[fn] += 1
+                elif p.get('sex') == 'F': first_names_f[fn] += 1
+
+        self.send_json({
+            "status": "ok",
+            "total_people": total_people,
+            "males": males,
+            "females": females,
+            "earliest_birth": earliest_birth,
+            "latest_birth": latest_birth,
+            "span_years": latest_birth - earliest_birth,
+            "avg_lifespan": avg_lifespan,
+            "oldest_people": lifespans[:5],
+            "top_male_names": first_names_m.most_common(5),
+            "top_female_names": first_names_f.most_common(5),
+            "large_families": large_families
+        })
 
     def handle_get_trees(self):
         with get_db() as conn:

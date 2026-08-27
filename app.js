@@ -1246,3 +1246,109 @@ window.closeNotableArticlesModal = function() {
   const modal = document.getElementById('modal-notable-articles');
   if (modal) modal.style.display = 'none';
 };
+
+
+window.openTreeStatsModal = async function() {
+  const modal = document.getElementById('modal-tree-stats');
+  const bodyEl = document.getElementById('tree-stats-body');
+  if (!modal || !bodyEl) return;
+  
+  modal.style.display = 'flex';
+  bodyEl.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 2rem;">Reikna tölfræði úr ættartrénu...</div>';
+  
+  try {
+    const res = await fetch(`/api/tree_stats?tree_id=${state.currentTree || 'sigurjon'}`);
+    const d = await res.json();
+    
+    bodyEl.innerHTML = `
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; text-align: center;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Heildarfjöldi</div>
+          <div style="font-size: 1.6rem; font-weight: 700; color: var(--accent-gold); margin-top: 0.2rem;">${d.total_people}</div>
+          <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.2rem;">👨 ${d.males} karlar | 👩 ${d.females} konur</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; text-align: center;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Tímaspann ættar</div>
+          <div style="font-size: 1.6rem; font-weight: 700; color: #fff; margin-top: 0.2rem;">${d.span_years} ár</div>
+          <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.2rem;">Árin ${d.earliest_birth} – ${d.latest_birth}</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; text-align: center;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Meðalaldur (látinna)</div>
+          <div style="font-size: 1.6rem; font-weight: 700; color: #2ecc71; margin-top: 0.2rem;">${d.avg_lifespan} ár</div>
+          <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.2rem;">Yfir allar aldir</div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+        <!-- Langlífasta fólkið -->
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
+          <h4 style="color: var(--accent-gold); font-size: 0.95rem; margin-top: 0; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+            🏆 Langlífustu forfeðurnir
+          </h4>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            ${d.oldest_people.map((p, idx) => `
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.84rem; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 0.3rem;">
+                <span>${idx+1}. <strong>${p.name}</strong> <span style="font-size:0.75rem; color:var(--text-muted);">(${p.birth}-${p.death})</span></span>
+                <span class="badge badge-success" style="font-size:0.75rem;">${p.age} ára</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Fjölbörnustu foreldrarnir -->
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
+          <h4 style="color: var(--accent-gold); font-size: 0.95rem; margin-top: 0; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+            👶 Fjölbörnustu foreldrarnir
+          </h4>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            ${d.large_families.map((f, idx) => `
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.84rem; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 0.3rem;">
+                <span>${idx+1}. <strong>${f.name}</strong></span>
+                <span class="badge badge-warning" style="font-size:0.75rem;">${f.child_count} börn</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Vinsælustu karlmannanöfnin -->
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
+          <h4 style="color: var(--accent-gold); font-size: 0.95rem; margin-top: 0; margin-bottom: 0.8rem;">
+            👨 Vinsælustu karlmannanöfnin
+          </h4>
+          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+            ${d.top_male_names.map(([name, count]) => `
+              <div style="display: flex; justify-content: space-between; font-size: 0.84rem;">
+                <span>${name}</span>
+                <span style="color: var(--accent-gold); font-weight: 600;">${count} sinnum</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Vinsælustu kvennanöfnin -->
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
+          <h4 style="color: var(--accent-gold); font-size: 0.95rem; margin-top: 0; margin-bottom: 0.8rem;">
+            👩 Vinsælustu kvennanöfnin
+          </h4>
+          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+            ${d.top_female_names.map(([name, count]) => `
+              <div style="display: flex; justify-content: space-between; font-size: 0.84rem;">
+                <span>${name}</span>
+                <span style="color: var(--accent-gold); font-weight: 600;">${count} sinnum</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+    
+    try { if (window.lucide) lucide.createIcons(); } catch(e) {}
+  } catch(err) {
+    bodyEl.innerHTML = `<div style="color:#e53e3e; padding:1rem; text-align:center;">Villa við að reikna tölfræði: ${err.message}</div>`;
+  }
+};
+
+window.closeTreeStatsModal = function() {
+  const modal = document.getElementById('modal-tree-stats');
+  if (modal) modal.style.display = 'none';
+};
