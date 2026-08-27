@@ -1,4 +1,34 @@
 
+def run_real_google_ai_search(name, birth_year=None, spouse_or_parents=""):
+    """Official Google Search Grounding Engine - Finds deep Icelandic obituaries & bios."""
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        return ""
+        
+    try:
+        from google import genai
+        from google.genai import types
+        client = genai.Client(api_key=api_key)
+        
+        prompt = f"""
+        Finndu allar staðfestar upplýsingar, ævisögu, minningargreinar á Mbl/Tímarit, foreldra, maka, börn og störf á íslensku um:
+        {name} (f. {birth_year or 'óþekkt'}, tengsl: {spouse_or_parents}).
+        Skilaðu hnitmiðuðum staðreyndum og slóðum.
+        """
+        
+        resp = client.models.generate_content(
+            model='gemini-2.5-flash',
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                tools=[types.Tool(google_search=types.GoogleSearch())]
+            )
+        )
+        return resp.text.strip() if resp and resp.text else ""
+    except Exception as e:
+        print(f"[Google AI Grounding Error] {e}")
+        return ""
+
+
 def is_valid_icelandic_source(title, snippet, url):
     """Strict gatekeeper preventing any foreign clothes, wiki articles, TV shows, or junk links."""
     if not url or 'bing.com' in url or 'yahoo.com' in url:
