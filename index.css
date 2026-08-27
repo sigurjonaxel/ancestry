@@ -1309,3 +1309,165 @@ textarea:focus {
     font-size: 0.75rem !important;
   }
 }
+
+
+/* ========================================================
+   📱 NÁKVÆMAR HLUTFALLS- OG BREIDDARREGLUR FYRIR SÍMASKJÁ
+   - 100% skjábreidd (ekkert lárétt yfirflæði eða of breiðir panelar)
+   - Ættartré: Nákvæmlega max 48-50% af skjáhæð
+   - Upplýsingar um valda persónu: Nákvæmlega 40-42% af skjáhæð
+   - Fullkomin passað inn í skjáinn (box-sizing: border-box)
+   ======================================================== */
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+
+  .app-container {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  .workspace-container {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: calc(100vh - 46px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .main-workspace {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 0.35rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  .workspace-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    gap: 0.4rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 🌳 1. EFRI HLUTI: ÆTTARTRÉÐ (MAX 48% AF SKJÁ) */
+  #interactive-tree-card {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 48vh !important;
+    max-height: 48vh !important;
+    min-height: 180px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0.4rem 0.5rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background: rgba(18, 22, 28, 0.95) !important;
+    border: 1px solid var(--accent-gold) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+  }
+
+  #interactive-tree-card .tree-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding-bottom: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+    border-bottom: 1px solid rgba(184, 134, 11, 0.2) !important;
+  }
+
+  #interactive-tree-card .tree-title {
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+  }
+
+  #interactive-tree-canvas {
+    flex: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 0.2rem 0 !important;
+    box-sizing: border-box !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-tree-section {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.4rem 0.5rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .mobile-tree-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.4rem 0.5rem !important;
+  }
+
+  /* 📖 2. NEÐRI HLUTI: UPPLÝSINGAR UM VALDA PERSÓNU (40% AF SKJÁ) */
+  #person-details-card {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 40vh !important;
+    max-height: 40vh !important;
+    min-height: 150px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 0.5rem 0.6rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    background: rgba(14, 17, 22, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 8px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .profile-header {
+    padding-bottom: 0.35rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .profile-header #p-avatar {
+    width: 46px !important;
+    height: 46px !important;
+  }
+
+  .profile-name {
+    font-size: 1.05rem !important;
+    margin-top: 0.15rem !important;
+  }
+
+  .profile-dates {
+    font-size: 0.72rem !important;
+  }
+
+  .workspace-tabs {
+    gap: 0.25rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .workspace-tabs .tab {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.72rem !important;
+  }
+}
