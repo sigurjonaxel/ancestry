@@ -52,15 +52,14 @@ Skjal þetta skilgreinir opinberu verklagsreglurnar (**Protocols**) fyrir Saga �
 
 ---
 
-## 🔍 HVAÐ ER DJÚPLEIT Í SAGA (Deep Search Definition)?
+---
 
-Djúpleit er kerfisbundið, sjálfvirkt rannsóknarferli sem fer fram í 4 beittum lögum:
+## 📚 SKILGREINING Á DJÚPLEIT Í SAGA KERFINU
 
-1. **🏛️ LÖG 1: Íslendingabók.is (Sannprófaður Grunnur):**
-   * Nákvæmar dagsetningar, fæðingarstaðir, foreldrar, makar, börn, manntalsfærslur (1801–1930) og búseta.
-2. **🎓 LÖG 2: Menntun, Próf & Útskriftir (Tímarit.is & Skólablöð):**
-   * Leit að stúdentsprófi, háskólaprófum, brautskráningum, iðnprófum og námsferli.
-3. **📰 LÖG 3: Minningargreinar, Fréttir & Afmælisgreinar (Mbl, DV, Dagblöð):**
-   * Heildarsaga, lífshlaup, störf, félagsmál og búseta dregin saman úr sögulegum greinum.
-4. **🧠 LÖG 4: Google AI Search Grounding (Gemini API):**
-   * Tengir saman staðreyndir úr öllum áttum í fágaða, staðfesta málsgrein í kafla 2.
+### 1. 🔍 DJÚPLEIT (Lög 1, 2 og 3 - Sjálfvirkt & Ókeypis með Playwright vafra):
+* **Lög 1 (Íslendingabók.is):** Innskráður vafri sækir nákvæmar dagsetningar, fæðingarstaði, foreldra, maka, börn, manntalsfærslur (1801–1930) og búsetu.
+* **Lög 2 (Menntun & Útskriftir):** Leit á Tímarit.is og skólablöðum að stúdentsprófi, háskólaprófi, sveinsprófi og brautskráningum.
+* **Lög 3 (Minningargreinar & Tímarit):** Leit að minningargreinum á Mbl/DV, afmælisviðtölum og sögulegum greinum með beinum tenglum.
+
+### 2. 🧠 DJÚPLEIT MEÐ AI GROUNDING (Lög 1, 2, 3 + 4 - Gemini API):
+* Bætir við Google AI Grounding til að semja samfellda ævisögu þegar API lykill með Pay-As-You-Go er til staðar.
