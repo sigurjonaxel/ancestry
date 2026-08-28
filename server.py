@@ -85,6 +85,10 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
             self.handle_get_notable_articles(query)
         elif path == '/api/proxy_image':
             self.handle_proxy_image(query)
+        elif path == '/api/person_history':
+            self.handle_get_person_history(query)
+        elif path == '/api/tree_snapshots':
+            self.handle_get_tree_snapshots(query)
         else:
             super().do_GET()
 
@@ -115,6 +119,10 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
             self.handle_generate_bio(query)
         elif path == '/api/upload_screenshot':
             self.handle_upload_screenshot(query)
+        elif path == '/api/create_snapshot':
+            self.handle_create_tree_snapshot(query)
+        elif path == '/api/rollback_person':
+            self.handle_rollback_person(query)
         else:
             self.send_error_response(404, "Endpoint not found.")
 
@@ -754,6 +762,104 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
         except Exception as e:
             self.send_error_response(502, f"Could not fetch image: {str(e)}")
 
+    def handle_get_person_history(self, query_str):
+        params = urllib.parse.parse_qs(query_str)
+        person_id = params.get('person_id', [''])[0].replace('@', '')
+        tree_id = params.get('tree_id', [''])[0]
+        if not person_id:
+            self.send_error_response(400, "Missing person_id")
+            return
+            
+        with get_db() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT id, person_id, tree_id, version_num, changed_at, change_type, change_summary, snapshot_data
+                FROM person_history
+                WHERE person_id = ? OR person_id = ?
+                ORDER BY version_num DESC
+            """, (person_id, f"@{person_id}@"))
+            rows = [dict(r) for r in cursor.fetchall()]
+            
+        self.send_json({"status": "ok", "history": rows})
+
+    def handle_get_tree_snapshots(self, query_str):
+        params = urllib.parse.parse_qs(query_str)
+        tree_id = params.get('tree_id', ['loa'])[0]
+        with get_db() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT id, tree_id, tag, created_at, description, total_people, total_sources
+                FROM tree_snapshots
+                WHERE tree_id = ?
+                ORDER BY id DESC
+            """, (tree_id,))
+            rows = [dict(r) for r in cursor.fetchall()]
+        self.send_json({"status": "ok", "snapshots": rows})
+
+    def handle_create_tree_snapshot(self, query_str):
+        params = urllib.parse.parse_qs(query_str)
+        tree_id = params.get('tree_id', ['loa'])[0]
+        tag = params.get('tag', ['v-snapshot'])[0]
+        desc = params.get('description', ['Sjálfvirkt snapshot'])[0]
+        
+        with get_db() as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT COUNT(*) as c FROM people WHERE tree_id = ?", (tree_id,))
+            p_count = cursor.fetchone()['c']
+            cursor.execute("SELECT COUNT(*) as sc FROM sources s JOIN people p ON p.id = s.person_id WHERE p.tree_id = ?", (tree_id,))
+            s_count = cursor.fetchone()['sc']
+            
+            cursor.execute("SELECT * FROM people WHERE tree_id = ?", (tree_id,))
+            p_data = [dict(r) for r in cursor.fetchall()]
+            cursor.execute("SELECT * FROM relations WHERE tree_id = ?", (tree_id,))
+            r_data = [dict(r) for r in cursor.fetchall()]
+            
+            payload = json.dumps({"people": p_data, "relations": r_data})
+            cursor.execute("""
+                INSERT INTO tree_snapshots (tree_id, tag, description, total_people, total_sources, tree_payload_json)
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, (tree_id, tag, desc, p_count, s_count, payload))
+            conn.commit()
+            
+        self.send_json({"status": "ok", "message": f"Snapshot {tag} vistað!"})
+
+    def handle_rollback_person(self, query_str):
+        params = urllib.parse.parse_qs(query_str)
+        history_id = params.get('history_id', [''])[0]
+        if not history_id:
+            self.send_error_response(400, "Missing history_id")
+            return
+            
+        with get_db() as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM person_history WHERE id = ?", (history_id,))
+            row = cursor.fetchone()
+            if not row:
+                self.send_error_response(404, "History version not found")
+                return
+            h_data = dict(row)
+            snap = json.loads(h_data['snapshot_data'])
+            
+            # Rollback person data
+            cursor.execute("""
+                UPDATE people 
+                SET name = ?, birth_date = ?, birth_year = ?, death_date = ?, death_year = ?, birth_place = ?, notes = ?
+                WHERE id = ?
+            """, (snap.get('name'), snap.get('birth_date'), snap.get('birth_year'), snap.get('death_date'), snap.get('death_year'), snap.get('birth_place'), snap.get('notes'), h_data['person_id']))
+            
+            # Record rollback in history
+            cursor.execute("SELECT MAX(version_num) as v FROM person_history WHERE person_id = ?", (h_data['person_id'],))
+            next_v = (cursor.fetchone()['v'] or 1) + 1
+            cursor.execute("""
+                INSERT INTO person_history (person_id, tree_id, version_num, change_type, change_summary, snapshot_data)
+                VALUES (?, ?, ?, 'ROLLBACK', ?, ?)
+            """, (h_data['person_id'], h_data['tree_id'], next_v, f"Endurheimt útgáfa {h_data['version_num']} ({h_data['change_summary']})", h_data['snapshot_data']))
+            
+            conn.commit()
+            
+        details = get_person_details(h_data['person_id'])
+        self.send_json({"status": "ok", "message": "Útgáfa endurheimt!", "details": details})
+
 class ReusableTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     allow_reuse_address = True
     daemon_threads = True  # Kill threads when server exits
@@ -800,4 +906,5 @@ def run_server():
 
 if __name__ == '__main__':
     run_server()
+
 

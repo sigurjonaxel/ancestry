@@ -1446,3 +1446,172 @@ window.submitFeedbackForm = async function() {
     if (submitBtn) submitBtn.disabled = false;
   }
 };
+
+
+// ========================================================
+// ÚTGÁFUSTJÓRNUN (VERSIONING & ROLLBACK / SNAPSHOTS)
+// ========================================================
+
+window.openPersonHistoryModal = async function() {
+  const modal = document.getElementById('modal-person-history');
+  const listEl = document.getElementById('person-history-list');
+  const titleEl = document.getElementById('history-modal-title');
+  if (!modal || !listEl) return;
+
+  const currentPerson = state.selectedPerson;
+  if (!currentPerson) {
+    showToast('Veldu fyrst einstakling.');
+    return;
+  }
+
+  modal.style.display = 'flex';
+  if (titleEl) titleEl.textContent = `Breytingasaga: ${currentPerson.name}`;
+  listEl.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 1.5rem;">Sæki breytingasögu...</div>';
+
+  try {
+    const res = await fetch(`/api/person_history?person_id=${encodeURIComponent(currentPerson.id)}&tree_id=${encodeURIComponent(getActiveTreeId())}`);
+    const data = await res.json();
+    const history = data.history || [];
+
+    if (history.length === 0) {
+      listEl.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 1.5rem;">Engin breytingasaga skráð enn fyrir þennan einstakling.</div>';
+      return;
+    }
+
+    listEl.innerHTML = history.map((h, idx) => {
+      const snap = JSON.parse(h.snapshot_data || '{}');
+      const isLatest = (idx === 0);
+      return `
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid ${isLatest ? 'var(--accent-gold)' : 'var(--border-color)'}; border-radius: 8px; padding: 0.9rem 1.1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-weight: 700; font-size: 0.95rem; color: ${isLatest ? 'var(--accent-gold)' : '#fff'};">
+              Útgáfa ${h.version_num} ${isLatest ? '<span class="badge badge-success" style="font-size:0.68rem; margin-left:6px;">Núverandi</span>' : ''}
+            </span>
+            <span style="font-size: 0.76rem; color: var(--text-muted);">${h.changed_at}</span>
+          </div>
+          <div style="font-size: 0.84rem; color: #ddd;">
+            <strong>Aðgerð:</strong> ${h.change_summary || h.change_type}
+          </div>
+          <div style="font-size: 0.78rem; color: var(--text-secondary); background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; margin-top: 0.2rem;">
+            <div><strong>Nafn:</strong> ${snap.name || '-'} (${snap.birth_year || '?'}-${snap.death_year || '?'})</div>
+            ${snap.birth_place ? `<div><strong>Fæðingarstaður:</strong> ${snap.birth_place}</div>` : ''}
+          </div>
+          ${!isLatest ? `
+            <div style="display: flex; justify-content: flex-end; margin-top: 0.3rem;">
+              <button class="btn btn-secondary" onclick="rollbackPersonVersion(${h.id})" style="font-size: 0.74rem; padding: 0.2rem 0.6rem; color: var(--accent-gold); border-color: rgba(184,134,11,0.3);">
+                ↩️ Endurheimta þessa útgáfu
+              </button>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }).join('');
+
+    try { if (window.lucide) lucide.createIcons(); } catch(e) {}
+  } catch(err) {
+    listEl.innerHTML = `<div style="color: #e53e3e; padding: 1rem; text-align: center;">Villa við að sækja sögu: ${err.message}</div>`;
+  }
+};
+
+window.closePersonHistoryModal = function() {
+  const modal = document.getElementById('modal-person-history');
+  if (modal) modal.style.display = 'none';
+};
+
+window.rollbackPersonVersion = async function(historyId) {
+  if (!confirm('Ertu viss um að vilja endurheimta þessa eldri útgáfu?')) return;
+  showToast('Endurheimti útgáfu...');
+  try {
+    const res = await fetch(`/api/rollback_person?history_id=${historyId}`, { method: 'POST' });
+    const d = await res.json();
+    if (d.status === 'ok') {
+      showToast('✓ Útgáfa endurheimt!');
+      closePersonHistoryModal();
+      if (d.details) {
+        state.selectedPerson = d.details.person;
+        renderPersonDetails(d.details);
+      }
+    } else {
+      showToast('Villa: ' + (d.message || 'Gat ekki endurheimt'));
+    }
+  } catch(err) {
+    showToast('Villa: ' + err.message);
+  }
+};
+
+window.openTreeSnapshotsModal = async function() {
+  const modal = document.getElementById('modal-tree-snapshots');
+  const listEl = document.getElementById('tree-snapshots-list');
+  if (!modal || !listEl) return;
+
+  const currentTree = getActiveTreeId();
+  modal.style.display = 'flex';
+  listEl.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 1.5rem;">Sæki útgáfur trés...</div>';
+
+  try {
+    const res = await fetch(`/api/tree_snapshots?tree_id=${encodeURIComponent(currentTree)}`);
+    const data = await res.json();
+    const snaps = data.snapshots || [];
+
+    if (snaps.length === 0) {
+      listEl.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 1.5rem;">Engar útgáfur (snapshots) vistaðar enn.</div>';
+      return;
+    }
+
+    listEl.innerHTML = snaps.map((s, idx) => `
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.9rem 1.1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-weight: 700; font-size: 1rem; color: var(--accent-gold); display: flex; align-items: center; gap: 6px;">
+            🏷️ ${s.tag}
+          </span>
+          <span style="font-size: 0.76rem; color: var(--text-muted);">${s.created_at}</span>
+        </div>
+        <div style="font-size: 0.85rem; color: #eee; margin-top: 0.2rem;">
+          ${s.description || 'Engin lýsing'}
+        </div>
+        <div style="font-size: 0.76rem; color: var(--text-secondary); display: flex; gap: 1rem; margin-top: 0.2rem;">
+          <span>👥 ${s.total_people} einstaklingar</span>
+          <span>📜 ${s.total_sources} staðfestar heimildir</span>
+        </div>
+      </div>
+    `).join('');
+
+    try { if (window.lucide) lucide.createIcons(); } catch(e) {}
+  } catch(err) {
+    listEl.innerHTML = `<div style="color: #e53e3e; padding: 1rem; text-align: center;">Villa við að sækja útgáfur: ${err.message}</div>`;
+  }
+};
+
+window.closeTreeSnapshotsModal = function() {
+  const modal = document.getElementById('modal-tree-snapshots');
+  if (modal) modal.style.display = 'none';
+};
+
+window.createNewTreeSnapshot = async function() {
+  const tagInput = document.getElementById('new-snapshot-tag');
+  const descInput = document.getElementById('new-snapshot-desc');
+  const tag = tagInput ? tagInput.value.trim() : '';
+  const desc = descInput ? descInput.value.trim() : '';
+  const currentTree = getActiveTreeId();
+
+  if (!tag) {
+    showToast('Sláðu inn heiti útgáfu (t.d. v2.1-loka)');
+    return;
+  }
+
+  showToast('Vista heildarútgáfu af trénu...');
+  try {
+    const res = await fetch(`/api/create_snapshot?tree_id=${encodeURIComponent(currentTree)}&tag=${encodeURIComponent(tag)}&description=${encodeURIComponent(desc)}`, { method: 'POST' });
+    const data = await res.json();
+    if (data.status === 'ok') {
+      showToast(`✓ Útgáfa ${tag} vistuð!`);
+      if (tagInput) tagInput.value = '';
+      if (descInput) descInput.value = '';
+      openTreeSnapshotsModal();
+    } else {
+      showToast('Villa: ' + data.message);
+    }
+  } catch(err) {
+    showToast('Villa: ' + err.message);
+  }
+};

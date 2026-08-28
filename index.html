@@ -42,6 +42,10 @@
           <i data-lucide="newspaper" style="width: 14px; height: 14px;"></i>
           <span>📜 Sögulegar greinar</span>
         </button>
+        <button class="btn btn-secondary" id="btn-tree-snapshots" title="Skoða og taka öryggisafrit/útgáfur af trénu" onclick="openTreeSnapshotsModal()" style="background: rgba(184,134,11,0.18); border-color: var(--accent-gold); color: var(--accent-gold); font-weight: 600; font-size: 0.76rem; padding: 0.25rem 0.65rem; display: inline-flex; align-items: center; gap: 5px;">
+          <i data-lucide="git-branch" style="width: 14px; height: 14px;"></i>
+          <span>🏷️ Útgáfur trés</span>
+        </button>
         
         <button class="btn btn-primary" id="btn-show-help">
           <span class="btn-text">Hjálp</span>
@@ -172,9 +176,14 @@
                   <i data-lucide="book-open" style="width: 15px; height: 15px;"></i>
                   Lífshlaup & Samantekt
                 </span>
-                <button class="btn btn-secondary" id="btn-regen-bio" onclick="regenerateBio()" style="padding: 0.25rem 0.6rem; font-size: 0.72rem; display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(184,134,11,0.1); border-color: rgba(184,134,11,0.3); color: var(--accent-gold);">
-                  <i data-lucide="refresh-cw" style="width: 12px; height: 12px;"></i> Endurgera samantekt
-                </button>
+                <div style="display: flex; gap: 0.35rem;">
+                  <button class="btn btn-secondary" id="btn-person-history" onclick="openPersonHistoryModal()" title="Skoða breytingasögu og endurheimta eldri útgáfur" style="padding: 0.25rem 0.55rem; font-size: 0.72rem; display: inline-flex; align-items: center; gap: 0.3rem; background: rgba(255,255,255,0.05);">
+                    <i data-lucide="history" style="width: 12px; height: 12px;"></i> Saga
+                  </button>
+                  <button class="btn btn-secondary" id="btn-regen-bio" onclick="regenerateBio()" style="padding: 0.25rem 0.6rem; font-size: 0.72rem; display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(184,134,11,0.1); border-color: rgba(184,134,11,0.3); color: var(--accent-gold);">
+                    <i data-lucide="refresh-cw" style="width: 12px; height: 12px;"></i> Endurgera
+                  </button>
+                </div>
               </div>
               <div id="p-research-notes" style="margin-top: 0.75rem; font-size: 0.84rem; background: rgba(13,15,18,0.5); padding: 1.1rem; border-radius: 8px; border: 1px solid var(--border-color); line-height: 1.6; max-height: 380px; overflow-y: auto; color: var(--text-secondary);">
                 Engin samantekt skráð. Smelltu á „Endurgera samantekt“ til að búa til ævisögu úr öllum staðfestum gögnum.
@@ -569,6 +578,46 @@
         </div>
       </div>
     </div>
+
+
+  <!-- Modal: Person History (Breytingasaga Einstaklings) -->
+  <div class="modal" id="modal-person-history" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+    <div class="modal-content" style="background: var(--bg-card, #161a20); border: 1px solid var(--border-color); border-radius: 12px; max-width: 650px; width: 92%; max-height: 85vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+      <div style="padding: 1.1rem 1.4rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0; color: var(--accent-gold); font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+          <i data-lucide="history" style="width: 18px; height: 18px;"></i>
+          <span id="history-modal-title">Breytingasaga einstaklings</span>
+        </h3>
+        <button class="btn btn-secondary" onclick="closePersonHistoryModal()" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">✕ Loka</button>
+      </div>
+      <div id="person-history-list" style="padding: 1.2rem; overflow-y: auto; display: flex; flex-direction: column; gap: 0.8rem;">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Tree Snapshots (Útgáfustjórnun Trés) -->
+  <div class="modal" id="modal-tree-snapshots" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+    <div class="modal-content" style="background: var(--bg-card, #161a20); border: 1px solid var(--border-color); border-radius: 12px; max-width: 720px; width: 92%; max-height: 85vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+      <div style="padding: 1.1rem 1.4rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0; color: var(--accent-gold); font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+          <i data-lucide="git-branch" style="width: 18px; height: 18px;"></i>
+          <span>Útgáfustjórnun og afrit trés (Snapshots)</span>
+        </h3>
+        <button class="btn btn-secondary" onclick="closeTreeSnapshotsModal()" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">✕ Loka</button>
+      </div>
+      <div style="padding: 1rem 1.4rem; background: rgba(0,0,0,0.2); border-bottom: 1px solid var(--border-color); display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
+        <input type="text" id="new-snapshot-tag" placeholder="Útgáfuheiti (t.d. v2.1-breyting)" style="flex: 1; min-width: 160px; padding: 0.4rem 0.7rem; border-radius: 6px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: #fff; font-size: 0.85rem;">
+        <input type="text" id="new-snapshot-desc" placeholder="Lýsing á breytingu..." style="flex: 2; min-width: 200px; padding: 0.4rem 0.7rem; border-radius: 6px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: #fff; font-size: 0.85rem;">
+        <button class="btn btn-primary" onclick="createNewTreeSnapshot()" style="background: var(--accent-gold); color: black; font-weight: 600; font-size: 0.82rem; padding: 0.4rem 0.8rem; border-color: var(--accent-gold);">
+          + Taka nýja útgáfu
+        </button>
+      </div>
+      <div id="tree-snapshots-list" style="padding: 1.2rem; overflow-y: auto; display: flex; flex-direction: column; gap: 0.8rem;">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
