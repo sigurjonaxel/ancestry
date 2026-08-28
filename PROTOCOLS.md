@@ -14,11 +14,16 @@ Skjal þetta skilgreinir opinberu verklagsreglurnar (**Protocols**) fyrir Saga �
 * Sækja staðfestar opinberar prófílmyndir úr Íslendingabók.
 * **Varðveisla frumheimilda:** Vista nákvæman lista Íslendingabókar í `ib_sources` dálkinn í gagnagrunninum.
 
-### 1.2 Sjálfvirk Nafna- og Alnafnavörn (Namesake Disambiguation & Kinship Repair):
-* **Alnafnavörn milli kynslóða (Namesake Isolation Guard):** Þegar afi/langafi og barnabarn eru alnafnar (t.d. *Runólfur Sigtryggsson f. 1894* vs. *Runólfur Sigtryggsson f. 1955*):
+### 1.2 Sjálfvirk Nafna- og Alnafnavörn (Namesake Disambiguation & Single-Name Resolution):
+* **Stök nöfn og vanskráðir forfeður (Single-Name Ancestor Resolution):**
+  * Ef einstaklingur kemur inn aðeins með fornafn eða stakt orð án ártala (t.d. „Sigurpáll“ eða „Rósa“), flettir kerfið sjálfkrafa upp barni þeirra (t.d. Guðbjörgu Sigurpálsdóttur) á Íslendingabók.
+  * Þaðan sækir kerfið fullt nafn (*Sigurpáll Þorsteinsson*, *Rósa Jónsdóttir*), nákvæmar dagsetningar, fæðingarstaði og manntalsstörf.
+* **Föðurnafnaleiðrétting (Patronymic Repair):**
+  * Ef einstaklingur er aðeins með eiginnafn í innfluttri skrá (t.d. „Jónína“ í stað „Jónína Loftsdóttir“), sækir kerfið fullt nafn sjálfkrafa úr fjölskyldufærslu foreldris á Íslendingabók.
+* **Alnafnavörn milli kynslóða (Namesake Isolation Guard):**
+  * Þegar afi/langafi og barnabarn eru alnafnar (t.d. *Runólfur Sigtryggsson f. 1894* vs. *Runólfur Sigtryggsson f. 1955*):
   * Bannað er að yfirskrifa gögn eða ævisögu milli þeirra.
-  * Hver einstaklingur er eingöngu uppfærður með sínum eigin staðfestu ártölum, foreldrum og fæðingarstað úr Íslendingabók.
-* **Föðurnafnaleiðrétting (Patronymic Repair):** Ef einstaklingur er aðeins með eiginnafn í innfluttri skrá (t.d. „Jónína“ í stað „Jónína Loftsdóttir“), sækir kerfið fullt nafn sjálfkrafa úr fjölskyldufærslu foreldris á Íslendingabók.
+  * Hver einstaklingur er eingöngu uppfærður eftir sínu eigin `id` og staðfestum ártölum.
 * **Hálfsystkini & Stjúpfjölskyldur:** Aðgreina rétt líffræðilega foreldra og stjúpforeldra út frá giftingardagsetningum og skráðum foreldrum á Íslendingabók (t.d. Sveinn Unnsteinn vs. Loftur Jóhannsson).
 * **Fjölskyldustækkun:** Bæta við líffræðilegum foreldrum eða börnum sem vantaði í upprunalega innflutninginn.
 
