@@ -251,7 +251,7 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
         tree_id = params.get('tree_id', ['sigurjon'])[0]
         
         with get_db() as conn:
-            conn.row_factory = sqlite3.Row
+            # row factory already set in db.py
             cursor = conn.cursor()
             cursor.execute("SELECT * FROM people WHERE tree_id = ?", (tree_id,))
             people = [dict(r) for r in cursor.fetchall()]
@@ -298,6 +298,57 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
                 if p.get('sex') == 'M': first_names_m[fn] += 1
                 elif p.get('sex') == 'F': first_names_f[fn] += 1
 
+        MONTH_NAMES_IS = {
+            'janúar': 'Janúar', 'febrúar': 'Febrúar', 'mars': 'Mars', 'apríl': 'Apríl',
+            'maí': 'Maí', 'júní': 'Júní', 'júlí': 'Júlí', 'ágúst': 'Ágúst',
+            'september': 'September', 'október': 'Október', 'nóvember': 'Nóvember', 'desember': 'Desember',
+            'january': 'Janúar', 'february': 'Febrúar', 'march': 'Mars', 'april': 'Apríl',
+            'may': 'Maí', 'june': 'Júní', 'july': 'Júlí', 'august': 'Ágúst',
+            'october': 'Október', 'november': 'Nóvember', 'december': 'Desember',
+            'jan': 'Janúar', 'feb': 'Febrúar', 'mar': 'Mars', 'apr': 'Apríl',
+            'jun': 'Júní', 'jul': 'Júlí', 'aug': 'Ágúst', 'sep': 'September',
+            'oct': 'Október', 'nov': 'Nóvember', 'dec': 'Desember'
+        }
+
+        birth_months = Counter()
+        death_months = Counter()
+        birth_days = Counter()
+        death_days = Counter()
+
+        for p in people:
+            bd = (p.get('birth_date') or '').strip().lower()
+            dd = (p.get('death_date') or '').strip().lower()
+            if bd:
+                m = re.search(r'(\d{1,2})\.?\s+([a-záðéíóúýþæö]+)', bd)
+                if m:
+                    day = int(m.group(1))
+                    m_str = m.group(2)
+                    for k, std_m in MONTH_NAMES_IS.items():
+                        if m_str.startswith(k):
+                            birth_months[std_m] += 1
+                            birth_days[f"{day}. {std_m}"] += 1
+                            break
+                else:
+                    for k, std_m in MONTH_NAMES_IS.items():
+                        if k in bd:
+                            birth_months[std_m] += 1
+                            break
+            if dd:
+                m = re.search(r'(\d{1,2})\.?\s+([a-záðéíóúýþæö]+)', dd)
+                if m:
+                    day = int(m.group(1))
+                    m_str = m.group(2)
+                    for k, std_m in MONTH_NAMES_IS.items():
+                        if m_str.startswith(k):
+                            death_months[std_m] += 1
+                            death_days[f"{day}. {std_m}"] += 1
+                            break
+                else:
+                    for k, std_m in MONTH_NAMES_IS.items():
+                        if k in dd:
+                            death_months[std_m] += 1
+                            break
+
         self.send_json({
             "status": "ok",
             "total_people": total_people,
@@ -310,7 +361,11 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
             "oldest_people": lifespans[:5],
             "top_male_names": first_names_m.most_common(5),
             "top_female_names": first_names_f.most_common(5),
-            "large_families": large_families
+            "large_families": large_families,
+            "top_birth_months": birth_months.most_common(4),
+            "top_death_months": death_months.most_common(4),
+            "top_birth_days": birth_days.most_common(4),
+            "top_death_days": death_days.most_common(4)
         })
 
     def handle_get_trees(self):

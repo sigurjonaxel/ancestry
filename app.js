@@ -1339,6 +1339,46 @@ window.openTreeStatsModal = async function() {
             `).join('')}
           </div>
         </div>
+
+        <!-- Vinsælustu afmælisdagar & fæðingarmánuðir -->
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
+          <h4 style="color: var(--accent-gold); font-size: 0.95rem; margin-top: 0; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+            🎂 Afmælisdagar & Fæðingarmánuðir
+          </h4>
+          <div style="font-size: 0.74rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Vinsælustu fæðingardagar:</div>
+          <div style="display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 0.6rem;">
+            ${(d.top_birth_days || []).map(([day, count]) => `
+              <div style="display: flex; justify-content: space-between; font-size: 0.82rem;">
+                <span>🎉 <strong>${day}</strong></span>
+                <span class="badge badge-success" style="font-size:0.72rem;">${count} fæðingar</span>
+              </div>
+            `).join('')}
+          </div>
+          <div style="font-size: 0.74rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Vinsælustu mánuðir:</div>
+          <div style="font-size: 0.82rem; color: var(--accent-gold); font-weight: 600;">
+            ${(d.top_birth_months || []).map(([m, c]) => `<span>${m} (${c})</span>`).join(' • ')}
+          </div>
+        </div>
+
+        <!-- Vinsælustu dánardagar & dánarmánuðir -->
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
+          <h4 style="color: var(--accent-gold); font-size: 0.95rem; margin-top: 0; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
+            🕊️ Dánardagar & Dánarmánuðir
+          </h4>
+          <div style="font-size: 0.74rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Vinsælustu dánardagar:</div>
+          <div style="display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 0.6rem;">
+            ${(d.top_death_days || []).map(([day, count]) => `
+              <div style="display: flex; justify-content: space-between; font-size: 0.82rem;">
+                <span>🕯️ <strong>${day}</strong></span>
+                <span class="badge badge-secondary" style="font-size:0.72rem;">${count} andlát</span>
+              </div>
+            `).join('')}
+          </div>
+          <div style="font-size: 0.74rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Vinsælustu mánuðir:</div>
+          <div style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 600;">
+            ${(d.top_death_months || []).map(([m, c]) => `<span>${m} (${c})</span>`).join(' • ')}
+          </div>
+        </div>
       </div>
     `;
     
