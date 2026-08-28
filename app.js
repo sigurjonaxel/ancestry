@@ -370,6 +370,8 @@ async function selectPerson(personId) {
     if (!res.ok) throw new Error("Gat ekki sótt persónu.");
     const details = await res.json();
     state.personDetails = details;
+    state.selectedPerson = details.person || null;
+    state.selectedPersonId = personId;
     renderPersonProfile(details);
   } catch (err) {
     console.error("Error fetching person profile:", err);
@@ -1458,7 +1460,7 @@ window.openPersonHistoryModal = async function() {
   const titleEl = document.getElementById('history-modal-title');
   if (!modal || !listEl) return;
 
-  const currentPerson = state.selectedPerson;
+  const currentPerson = state.selectedPerson || state.personDetails?.person || (state.people && state.selectedPersonId ? state.people.find(p => p.id === state.selectedPersonId) : null);
   if (!currentPerson) {
     showToast('Veldu fyrst einstakling.');
     return;
