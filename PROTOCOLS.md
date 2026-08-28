@@ -31,10 +31,12 @@ Skjal þetta skilgreinir opinberu verklagsreglurnar (**Protocols**) fyrir Saga �
 * **Fjölskyldustækkun:** Bæta við líffræðilegum foreldrum eða börnum sem vantaði í upprunalega innflutninginn.
 
 ### 1.4 Snjöll Mennta- & Tímaritasannprófun (Lög 2 & 3):
-* Leita að staðfestum útskriftum (stúdentspróf, HÍ, KHÍ, BA/BSc, meistarapróf).
-* Leita að minningargreinum á Tímarit.is og Mbl með fullu samhengi (Nafn + Ártöl + Maki/Foreldrar).
+* **Lifandi einstaklingar (Living Person Obituary Guard):**
+  * **STRÖNG REGLA:** Aldrei má tengja „Minningargrein“ við einstakling sem er á lífi (`death_year` er tómt).
+  * Fyrir lifandi fólk er eingöngu leitað að staðfestum brautskráningum/útskriftum (stúdentspróf, HÍ, KHÍ, meistarapróf).
+* Leita að minningargreinum á Tímarit.is og Mbl **eingöngu fyrir látna einstaklinga** með fullu samhengi (Nafn + Ártöl + Maki/Foreldrar).
 * **Deduplication Guard:** Koma í veg fyrir að sama heimild bætist við oftar en einu sinni.
-* Útiloka sjálfkrafa nafnarugling og óviðkomandi fréttir (t.d. brotamál nafna).
+* Útiloka sjálfkrafa nafnarugling og óviðkomandi fréttir (t.d. brotamál eða handahófskennd brot nafna).
 
 ### 1.5 Master Sniðmát (Standard Markdown):
 Fyrir hvern einasta einstakling er byggt staðlað spjald:
