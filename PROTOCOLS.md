@@ -12,15 +12,20 @@ Skjal þetta skilgreinir opinberu verklagsreglurnar (**Protocols**) fyrir Saga �
 * Sækja nákvæman fæðingardag, dánardag, fæðingarstað og dánarstað.
 * Sækja staðfestar sögulegar nótur (störf, búseta úr manntölum 1801–1930).
 * Sækja staðfestar opinberar prófílmyndir úr Íslendingabók.
+* **Varðveisla frumheimilda:** Vista nákvæman lista Íslendingabókar í `ib_sources` dálkinn í gagnagrunninum.
 
-### 1.2 Sjálfvirk Nafna- og Ættartengslaleiðrétting (Automatic Patronymic & Kinship Repair):
-* **Föðurnafnaleiðrétting:** Ef einstaklingur er aðeins með eiginnafn í innfluttri skrá (t.d. „Jónína“ í stað „Jónína Loftsdóttir“), sækir kerfið fullt nafn sjálfkrafa úr fjölskyldufærslu foreldris á Íslendingabók.
+### 1.2 Sjálfvirk Nafna- og Alnafnavörn (Namesake Disambiguation & Kinship Repair):
+* **Alnafnavörn milli kynslóða (Namesake Isolation Guard):** Þegar afi/langafi og barnabarn eru alnafnar (t.d. *Runólfur Sigtryggsson f. 1894* vs. *Runólfur Sigtryggsson f. 1955*):
+  * Bannað er að yfirskrifa gögn eða ævisögu milli þeirra.
+  * Hver einstaklingur er eingöngu uppfærður með sínum eigin staðfestu ártölum, foreldrum og fæðingarstað úr Íslendingabók.
+* **Föðurnafnaleiðrétting (Patronymic Repair):** Ef einstaklingur er aðeins með eiginnafn í innfluttri skrá (t.d. „Jónína“ í stað „Jónína Loftsdóttir“), sækir kerfið fullt nafn sjálfkrafa úr fjölskyldufærslu foreldris á Íslendingabók.
 * **Hálfsystkini & Stjúpfjölskyldur:** Aðgreina rétt líffræðilega foreldra og stjúpforeldra út frá giftingardagsetningum og skráðum foreldrum á Íslendingabók (t.d. Sveinn Unnsteinn vs. Loftur Jóhannsson).
 * **Fjölskyldustækkun:** Bæta við líffræðilegum foreldrum eða börnum sem vantaði í upprunalega innflutninginn.
 
 ### 1.3 Snjöll Mennta- & Tímaritasannprófun (Lög 2 & 3):
 * Leita að staðfestum útskriftum (stúdentspróf, HÍ, KHÍ, BA/BSc, meistarapróf).
 * Leita að minningargreinum á Tímarit.is og Mbl með fullu samhengi (Nafn + Ártöl + Maki/Foreldrar).
+* **Deduplication Guard:** Koma í veg fyrir að sama heimild bætist við oftar en einu sinni.
 * Útiloka sjálfkrafa nafnarugling og óviðkomandi fréttir (t.d. brotamál nafna).
 
 ### 1.4 Master Sniðmát (Standard Markdown):
@@ -48,15 +53,3 @@ Fyrir hvern einasta einstakling er byggt staðlað spjald:
 1. **Forfeðraleit (Ancestry Expansion):** Rekja foreldra og forfeður kerfisbundið aftur í aldir í gegnum Íslendingabók.
 2. **Afkomendaleit (Descendant Expansion):** Fletta upp öllum börnum og mökum.
 3. **Sjálfvirk samrunavörn (Deduplication Gatekeeper):** Koma í veg fyrir að nafnamargbreytileiki valdi árekstri í gagnagrunni.
-
----
-
-## 📚 SKILGREINING Á DJÚPLEIT Í SAGA KERFINU
-
-### 1. 🔍 DJÚPLEIT (Lög 1, 2 og 3 - Sjálfvirkt & Ókeypis):
-* **Lög 1 (Íslendingabók.is):** Innskráður vafri sækir nákvæmar dagsetningar, fæðingarstaði, foreldra, maka, börn, manntöl (1801–1930) og búsetu. Laga nöfn og hálfsystkini sjálfkrafa.
-* **Lög 2 (Menntun & Útskriftir á Tímarit.is):** Sannprófa stúdentspróf, háskólapróf og sérfræðiréttindi.
-* **Lög 3 (Sögulegar greinar & Minningargreinar á Tímarit.is):** Sækja minningargreinar og viðtöl, útbúa beina tengla á tímaritasíður.
-
-### 2. 🤖 DJÚPLEIT MEÐ AI GROUNDING (Lög 1, 2, 3 og 4 - Krefst Gemini API Quota):
-* **Lög 4 (Google AI Grounding):** Dregur saman heildstæða ævisögu úr öllum heimildum samtímis með Gemini 2.5 Flash.
