@@ -415,6 +415,18 @@ function renderPersonProfile(details) {
     }
   }
   
+  // Descendant Count (Íslendingabók)
+  const descRow = document.getElementById('p-descendant-count-row');
+  const descVal = document.getElementById('p-descendant-count-val');
+  if (descRow && descVal) {
+    if (p.descendant_count) {
+      descVal.innerHTML = `🌟 <strong>${p.descendant_count}</strong>`;
+      descRow.style.display = 'flex';
+    } else {
+      descRow.style.display = 'none';
+    }
+  }
+
   // Basic Details
   const birthInfo = document.getElementById('p-birth-info');
   if (birthInfo) birthInfo.textContent = p.birth_date || p.birth_year || 'Óþekkt';
