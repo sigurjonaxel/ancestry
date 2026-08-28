@@ -1499,6 +1499,24 @@ window.openPersonHistoryModal = async function() {
         }
       }
 
+      // Full line-by-line diff of notes if they changed
+      let notesDiffHtml = '';
+      if (prev && snap.notes !== prev.notes) {
+        const linesPrev = (prev.notes || '').split('\n');
+        const linesCurr = (snap.notes || '').split('\n');
+        const addedLines = linesCurr.filter(l => l.trim() && !linesPrev.includes(l));
+        const removedLines = linesPrev.filter(l => l.trim() && !linesCurr.includes(l));
+
+        notesDiffHtml = `
+          <div style="margin-top: 0.4rem; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 0.6rem; font-family: monospace; font-size: 0.75rem; max-height: 180px; overflow-y: auto;">
+            <div style="font-weight: 700; color: var(--text-muted); margin-bottom: 0.3rem; font-family: sans-serif;">🔍 Textabreytingar (Diff):</div>
+            ${removedLines.slice(0, 5).map(l => `<div style="color: #ff8888; background: rgba(255,0,0,0.1); padding: 1px 4px; margin-bottom: 2px;">- ${l}</div>`).join('')}
+            ${addedLines.slice(0, 8).map(l => `<div style="color: #a8ffb2; background: rgba(0,255,0,0.1); padding: 1px 4px; margin-bottom: 2px;">+ ${l}</div>`).join('')}
+            ${(addedLines.length > 8 || removedLines.length > 5) ? `<div style="color: var(--text-muted); padding: 2px;">... og fleiri línur</div>` : ''}
+          </div>
+        `;
+      }
+
       return `
         <div style="background: rgba(255,255,255,0.03); border: 1px solid ${isLatest ? 'var(--accent-gold)' : 'var(--border-color)'}; border-radius: 8px; padding: 1rem 1.2rem; display: flex; flex-direction: column; gap: 0.5rem;">
           <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -1513,11 +1531,12 @@ window.openPersonHistoryModal = async function() {
           </div>
 
           ${diffItems.length > 0 ? `
-            <div style="font-size: 0.8rem; color: var(--accent-gold); background: rgba(184,134,11,0.08); border-left: 3px solid var(--accent-gold); padding: 0.5rem 0.8rem; border-radius: 0 6px 6px 0; display: flex; flex-direction: column; gap: 0.25rem;">
-              <div style="font-weight: 700; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.5px;">✨ Hvað er nýtt í þessari útgáfu:</div>
+            <div style="font-size: 0.82rem; color: var(--accent-gold); background: rgba(184,134,11,0.08); border-left: 3px solid var(--accent-gold); padding: 0.6rem 0.8rem; border-radius: 0 6px 6px 0; display: flex; flex-direction: column; gap: 0.35rem;">
+              <div style="font-weight: 700; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.5px;">✨ Hvað breyttist frá Útgáfu ${h.version_num - 1}:</div>
               ${diffItems.map(d => `<div>${d}</div>`).join('')}
             </div>
-          ` : (prev ? `<div style="font-size: 0.76rem; color: var(--text-muted); font-style: italic;">Engin breyting á texta (Staðfesting á núverandi stöðu).</div>` : '')}
+            ${notesDiffHtml}
+          ` : (prev ? `<div style="font-size: 0.78rem; color: var(--text-muted); font-style: italic; background: rgba(255,255,255,0.02); padding: 0.4rem 0.6rem; border-radius: 4px;">Engin gögn breyttust frá v1 (Staðfesting & jöfnun á spjaldi).</div>` : '')}
 
           <div style="font-size: 0.78rem; color: var(--text-secondary); background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 6px; margin-top: 0.2rem;">
             <div><strong>Nafn:</strong> ${snap.name || '-'} (${snap.birth_year || '?'}-${snap.death_year || '?'})</div>
@@ -1528,7 +1547,7 @@ window.openPersonHistoryModal = async function() {
           ${!isLatest ? `
             <div style="display: flex; justify-content: flex-end; margin-top: 0.4rem;">
               <button class="btn btn-secondary" onclick="rollbackPersonVersion(${h.id})" style="font-size: 0.76rem; padding: 0.25rem 0.7rem; color: var(--accent-gold); border-color: rgba(184,134,11,0.3); display: flex; align-items: center; gap: 5px;">
-                ↩️ Endurheimta þessa útgáfu
+                ↩️ Endurheimta þessa útgáfu (${h.version_num})
               </button>
             </div>
           ` : ''}
