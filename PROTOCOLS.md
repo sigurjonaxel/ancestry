@@ -48,3 +48,19 @@ Skjal þetta skilgreinir opinberu verklagsreglurnar (**Protocols**) fyrir Saga �
    * Fletta upp öllum börnum og mökum.
 3. **Sjálfvirk samrunavörn (Deduplication Gatekeeper):**
    * Koma í veg fyrir að nafnamargbreytileiki (t.d. Sigurjón afi vs. Sigurjón sonarsonur) valdi árekstri í gagnagrunni.
+
+
+---
+
+## 🔍 HVAÐ ER DJÚPLEIT Í SAGA (Deep Search Definition)?
+
+Djúpleit er kerfisbundið, sjálfvirkt rannsóknarferli sem fer fram í 4 beittum lögum:
+
+1. **🏛️ LÖG 1: Íslendingabók.is (Sannprófaður Grunnur):**
+   * Nákvæmar dagsetningar, fæðingarstaðir, foreldrar, makar, börn, manntalsfærslur (1801–1930) og búseta.
+2. **🎓 LÖG 2: Menntun, Próf & Útskriftir (Tímarit.is & Skólablöð):**
+   * Leit að stúdentsprófi, háskólaprófum, brautskráningum, iðnprófum og námsferli.
+3. **📰 LÖG 3: Minningargreinar, Fréttir & Afmælisgreinar (Mbl, DV, Dagblöð):**
+   * Heildarsaga, lífshlaup, störf, félagsmál og búseta dregin saman úr sögulegum greinum.
+4. **🧠 LÖG 4: Google AI Search Grounding (Gemini API):**
+   * Tengir saman staðreyndir úr öllum áttum í fágaða, staðfesta málsgrein í kafla 2.
