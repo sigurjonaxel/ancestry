@@ -2509,3 +2509,23 @@ textarea:focus {
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* Responsive Wide Profile Panel for Large Displays (Laptops, Desktops, Monitors) */
+@media (min-width: 1200px) {
+  .workspace-grid {
+    grid-template-columns: 420px 1fr !important;
+  }
+}
+
+@media (min-width: 1500px) {
+  .workspace-grid {
+    grid-template-columns: 480px 1fr !important;
+  }
+}
+
+@media (min-width: 1800px) {
+  .workspace-grid {
+    grid-template-columns: 540px 1fr !important;
+  }
+}
