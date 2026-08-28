@@ -841,7 +841,7 @@ window.handleAvatarUpload = async function() {
 
 function openSettingsModal() {
   const modal = document.getElementById('settings-modal');
-  if (modal) modal.style.display = 'flex';
+  if (modal) modal.style.display = 'flex'; const activeTreeName = (state.currentTree === 'loa' ? 'Lóutrésins' : 'Sigurjónstrésins');
 }
 
 function closeSettingsModal() {
@@ -1175,23 +1175,30 @@ window.toggleMaximizeTree = toggleMaximizeTree;
 
 async function uploadPhoneScreenshot(input) {
   if (!input || !input.files || input.files.length === 0) return;
-  const file = input.files[0];
-  showToast('Sendi skjáskot...');
+  const files = Array.from(input.files);
+  const currentTree = state.currentTree || 'sigurjon';
+  const treeLabel = currentTree === 'loa' ? 'Lóutré' : 'Sigurjónstré';
+  
+  showToast(`Sendi ${files.length} ábendingu/skjáskot fyrir ${treeLabel}...`);
 
-  const formData = new FormData();
-  formData.append('screenshot', file);
+  for (let i = 0; i < files.length; i++) {
+    const formData = new FormData();
+    formData.append('screenshot', files[i]);
+    formData.append('tree_id', currentTree);
 
-  try {
-    const res = await fetch('/api/upload_screenshot', {
-      method: 'POST',
-      body: formData
-    });
-    if (!res.ok) throw new Error('Gat ekki sent skjáskot');
-    const data = await res.json();
-    showToast('📸 Skjáskot sent til Antigravity!');
-  } catch (err) {
-    showToast('Villa við að senda: ' + err.message);
+    try {
+      const res = await fetch('/api/upload_screenshot', {
+        method: 'POST',
+        body: formData
+      });
+      if (!res.ok) throw new Error('Gat ekki sent skjáskot');
+    } catch (err) {
+      showToast('Villa við að senda: ' + err.message);
+      return;
+    }
   }
+  showToast(`💡 ${files.length} ábending(ar)/skjáskot send(ar) fyrir ${treeLabel}!`);
+  input.value = '';
 }
 window.uploadPhoneScreenshot = uploadPhoneScreenshot;
 
@@ -1201,7 +1208,7 @@ window.openNotableArticlesModal = async function() {
   const listEl = document.getElementById('notable-articles-list');
   if (!modal || !listEl) return;
   
-  modal.style.display = 'flex';
+  modal.style.display = 'flex'; const activeTreeName = (state.currentTree === 'loa' ? 'Lóutrésins' : 'Sigurjónstrésins');
   listEl.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 2rem;">Sæki greinar úr gagnagrunni...</div>';
   
   try {
@@ -1253,8 +1260,8 @@ window.openTreeStatsModal = async function() {
   const bodyEl = document.getElementById('tree-stats-body');
   if (!modal || !bodyEl) return;
   
-  modal.style.display = 'flex';
-  bodyEl.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 2rem;">Reikna tölfræði úr ættartrénu...</div>';
+  modal.style.display = 'flex'; const activeTreeName = (state.currentTree === 'loa' ? 'Lóutrésins' : 'Sigurjónstrésins');
+  bodyEl.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 2rem;">Reikna tölfræði fyrir ${activeTreeName}...</div>';
   
   try {
     const res = await fetch(`/api/tree_stats?tree_id=${state.currentTree || 'sigurjon'}`);

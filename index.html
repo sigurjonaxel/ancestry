@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Saga — Ættfræðiaðstoð</title>
-  <link rel="stylesheet" href="index.css?v=1787908893">
+  <link rel="stylesheet" href="index.css?v=1787911683">
   <!-- Tesseract.js for OCR -->
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
   <!-- Lucide Icons -->
@@ -30,11 +30,11 @@
         <span class="brand-tagline">Ættfræðiaðstoð</span>
       </div>
       <div class="header-actions">
-          <button class="btn btn-secondary" id="btn-upload-screenshot" title="Senda skjáskot af símanum til aðstoðarmannsins" onclick="document.getElementById('screenshot-file-input').click()" style="background: rgba(184,134,11,0.15); border-color: var(--accent-gold); color: var(--accent-gold); font-size: 0.72rem; padding: 0.25rem 0.6rem; display: inline-flex; align-items: center; gap: 4px;">
-            <i data-lucide="camera" style="width: 14px; height: 14px;"></i>
-            <span>Senda skjáskot</span>
+          <button class="btn btn-secondary" id="btn-upload-screenshot" title="Senda ábendingu / skjáskot af símanum til aðstoðarmannsins" onclick="document.getElementById('screenshot-file-input').click()" style="background: rgba(184,134,11,0.15); border-color: var(--accent-gold); color: var(--accent-gold); font-size: 0.76rem; font-weight: 600; padding: 0.25rem 0.65rem; display: inline-flex; align-items: center; gap: 5px;">
+            <i data-lucide="send" style="width: 14px; height: 14px;"></i>
+            <span>💡 Senda ábendingu</span>
           </button>
-          <input type="file" id="screenshot-file-input" accept="image/*" style="display: none;" onchange="uploadPhoneScreenshot(this)">
+          <input type="file" id="screenshot-file-input" accept="image/*" multiple style="display: none;" onchange="uploadPhoneScreenshot(this)">
                         <button class="btn btn-secondary" id="btn-tree-stats" title="Skoða skemmtilega ættartölfræði og met" onclick="openTreeStatsModal()" style="background: rgba(184,134,11,0.18); border-color: var(--accent-gold); color: var(--accent-gold); font-weight: 600; font-size: 0.76rem; padding: 0.25rem 0.65rem; display: inline-flex; align-items: center; gap: 5px;">
           <i data-lucide="bar-chart-2" style="width: 14px; height: 14px;"></i>
           <span>📊 Tölfræði & Met</span>
@@ -530,7 +530,7 @@
   </div>
 
   <!-- App Logic script -->
-  <script src="app.js?v=1787865453"></script>
+  <script src="app.js?v=1787911683"></script>
 
   <!-- Sögulegar Greinar Modal -->
   <div class="modal-backdrop" id="modal-notable-articles" style="display: none;" onclick="if(event.target === this) closeNotableArticlesModal()">
