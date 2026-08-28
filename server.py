@@ -3,10 +3,12 @@ import socketserver
 import json
 import os
 import sys
+import re
 import urllib.parse
 import urllib.request
 import cgi
 import time
+from collections import Counter
 from dotenv import load_dotenv
 
 # Load environment variables from .env
