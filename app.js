@@ -1482,25 +1482,52 @@ window.openPersonHistoryModal = async function() {
 
     listEl.innerHTML = history.map((h, idx) => {
       const snap = JSON.parse(h.snapshot_data || '{}');
+      const prev = (idx + 1 < history.length) ? JSON.parse(history[idx + 1].snapshot_data || '{}') : null;
       const isLatest = (idx === 0);
+
+      // Reikna hvað er nýtt eða breytt miðað við fyrri útgáfu (Diff)
+      let diffItems = [];
+      if (prev) {
+        if (snap.name !== prev.name) diffItems.push(`📝 <strong>Nafn leiðrétt:</strong> <span style="text-decoration:line-through;color:#ff8888;">${prev.name || 'tómt'}</span> ➔ <span style="color:#a8ffb2;">${snap.name}</span>`);
+        if (snap.birth_date !== prev.birth_date) diffItems.push(`🎂 <strong>Fæðing:</strong> ${snap.birth_date || 'óþekkt'}`);
+        if (snap.birth_place !== prev.birth_place && snap.birth_place) diffItems.push(`📍 <strong>Fæðingarstaður:</strong> ${snap.birth_place}`);
+        if (snap.death_date !== prev.death_date && snap.death_date) diffItems.push(`🕊️ <strong>Andlát:</strong> ${snap.death_date}`);
+        if (snap.ib_sources !== prev.ib_sources && snap.ib_sources) diffItems.push(`🏛️ <strong>Íslendingabókarheimildir:</strong> ${snap.ib_sources}`);
+        if (snap.notes !== prev.notes) {
+          const notesLenDiff = (snap.notes || '').length - (prev.notes || '').length;
+          diffItems.push(`📖 <strong>Lífshlaup & Samantekt uppfærð</strong> (${notesLenDiff >= 0 ? '+' : ''}${notesLenDiff} stafir)`);
+        }
+      }
+
       return `
-        <div style="background: rgba(255,255,255,0.03); border: 1px solid ${isLatest ? 'var(--accent-gold)' : 'var(--border-color)'}; border-radius: 8px; padding: 0.9rem 1.1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid ${isLatest ? 'var(--accent-gold)' : 'var(--border-color)'}; border-radius: 8px; padding: 1rem 1.2rem; display: flex; flex-direction: column; gap: 0.5rem;">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-weight: 700; font-size: 0.95rem; color: ${isLatest ? 'var(--accent-gold)' : '#fff'};">
-              Útgáfa ${h.version_num} ${isLatest ? '<span class="badge badge-success" style="font-size:0.68rem; margin-left:6px;">Núverandi</span>' : ''}
+            <span style="font-weight: 700; font-size: 1rem; color: ${isLatest ? 'var(--accent-gold)' : '#fff'}; display: flex; align-items: center; gap: 6px;">
+              🏷️ Útgáfa ${h.version_num} ${isLatest ? '<span class="badge badge-success" style="font-size:0.68rem;">Núverandi</span>' : ''}
             </span>
             <span style="font-size: 0.76rem; color: var(--text-muted);">${h.changed_at}</span>
           </div>
-          <div style="font-size: 0.84rem; color: #ddd;">
+          
+          <div style="font-size: 0.86rem; color: #eee;">
             <strong>Aðgerð:</strong> ${h.change_summary || h.change_type}
           </div>
-          <div style="font-size: 0.78rem; color: var(--text-secondary); background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; margin-top: 0.2rem;">
+
+          ${diffItems.length > 0 ? `
+            <div style="font-size: 0.8rem; color: var(--accent-gold); background: rgba(184,134,11,0.08); border-left: 3px solid var(--accent-gold); padding: 0.5rem 0.8rem; border-radius: 0 6px 6px 0; display: flex; flex-direction: column; gap: 0.25rem;">
+              <div style="font-weight: 700; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.5px;">✨ Hvað er nýtt í þessari útgáfu:</div>
+              ${diffItems.map(d => `<div>${d}</div>`).join('')}
+            </div>
+          ` : (prev ? `<div style="font-size: 0.76rem; color: var(--text-muted); font-style: italic;">Engin breyting á texta (Staðfesting á núverandi stöðu).</div>` : '')}
+
+          <div style="font-size: 0.78rem; color: var(--text-secondary); background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 6px; margin-top: 0.2rem;">
             <div><strong>Nafn:</strong> ${snap.name || '-'} (${snap.birth_year || '?'}-${snap.death_year || '?'})</div>
             ${snap.birth_place ? `<div><strong>Fæðingarstaður:</strong> ${snap.birth_place}</div>` : ''}
+            ${snap.ib_sources ? `<div><strong>Heimildir:</strong> ${snap.ib_sources}</div>` : ''}
           </div>
+
           ${!isLatest ? `
-            <div style="display: flex; justify-content: flex-end; margin-top: 0.3rem;">
-              <button class="btn btn-secondary" onclick="rollbackPersonVersion(${h.id})" style="font-size: 0.74rem; padding: 0.2rem 0.6rem; color: var(--accent-gold); border-color: rgba(184,134,11,0.3);">
+            <div style="display: flex; justify-content: flex-end; margin-top: 0.4rem;">
+              <button class="btn btn-secondary" onclick="rollbackPersonVersion(${h.id})" style="font-size: 0.76rem; padding: 0.25rem 0.7rem; color: var(--accent-gold); border-color: rgba(184,134,11,0.3); display: flex; align-items: center; gap: 5px;">
                 ↩️ Endurheimta þessa útgáfu
               </button>
             </div>
