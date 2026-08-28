@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Saga — Ættfræðiaðstoð</title>
-  <link rel="stylesheet" href="index.css?v=1787911683">
+  <link rel="stylesheet" href="index.css?v=1787912082">
   <!-- Tesseract.js for OCR -->
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
   <!-- Lucide Icons -->
@@ -30,11 +30,10 @@
         <span class="brand-tagline">Ættfræðiaðstoð</span>
       </div>
       <div class="header-actions">
-          <button class="btn btn-secondary" id="btn-upload-screenshot" title="Senda ábendingu / skjáskot af símanum til aðstoðarmannsins" onclick="document.getElementById('screenshot-file-input').click()" style="background: rgba(184,134,11,0.15); border-color: var(--accent-gold); color: var(--accent-gold); font-size: 0.76rem; font-weight: 600; padding: 0.25rem 0.65rem; display: inline-flex; align-items: center; gap: 5px;">
-            <i data-lucide="send" style="width: 14px; height: 14px;"></i>
+          <button class="btn btn-secondary" id="btn-open-feedback" title="Senda ábendingu eða skjáskot af símanum" onclick="openFeedbackModal()" style="background: rgba(184,134,11,0.15); border-color: var(--accent-gold); color: var(--accent-gold); font-size: 0.76rem; font-weight: 600; padding: 0.25rem 0.65rem; display: inline-flex; align-items: center; gap: 5px;">
+            <i data-lucide="message-square-plus" style="width: 14px; height: 14px;"></i>
             <span>💡 Senda ábendingu</span>
           </button>
-          <input type="file" id="screenshot-file-input" accept="image/*" multiple style="display: none;" onchange="uploadPhoneScreenshot(this)">
                         <button class="btn btn-secondary" id="btn-tree-stats" title="Skoða skemmtilega ættartölfræði og met" onclick="openTreeStatsModal()" style="background: rgba(184,134,11,0.18); border-color: var(--accent-gold); color: var(--accent-gold); font-weight: 600; font-size: 0.76rem; padding: 0.25rem 0.65rem; display: inline-flex; align-items: center; gap: 5px;">
           <i data-lucide="bar-chart-2" style="width: 14px; height: 14px;"></i>
           <span>📊 Tölfræði & Met</span>
@@ -530,7 +529,7 @@
   </div>
 
   <!-- App Logic script -->
-  <script src="app.js?v=1787911683"></script>
+  <script src="app.js?v=1787912082"></script>
 
   <!-- Sögulegar Greinar Modal -->
   <div class="modal-backdrop" id="modal-notable-articles" style="display: none;" onclick="if(event.target === this) closeNotableArticlesModal()">
@@ -569,6 +568,58 @@
       </div>
     </div>
   </div>
+
+
+    <!-- Modal: Senda ábendingu & Skjáskot -->
+    <div class="modal-backdrop" id="modal-feedback" style="display: none;" onclick="if(event.target === this) closeFeedbackModal()">
+      <div class="modal" style="max-width: 540px; width: 92%;">
+        <div class="modal-header">
+          <h3 id="feedback-modal-title" style="margin: 0; color: var(--accent-gold); display: flex; align-items: center; gap: 8px; font-size: 1.15rem;">
+            💡 Senda ábendingu / Skjáskot
+          </h3>
+          <button class="btn btn-secondary" onclick="closeFeedbackModal()" style="padding: 0.2rem 0.6rem;">✕</button>
+        </div>
+        <div class="modal-body" style="padding: 1.2rem; display: flex; flex-direction: column; gap: 1rem;">
+          <div style="font-size: 0.84rem; color: var(--text-secondary); background: rgba(184,134,11,0.08); border-left: 3px solid var(--accent-gold); padding: 0.6rem 0.8rem; border-radius: 4px;">
+            Hér geturðu skrifað athugasemdir eða leiðréttingar og hengt við <strong>eitt eða fleiri skjáskot</strong> úr símanum/tölvunni.
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--text-primary);">
+              Tengt ættartré:
+            </label>
+            <div id="feedback-active-tree-label" style="font-size: 0.9rem; font-weight: 700; color: var(--accent-gold);">
+              🌳 Valið tré
+            </div>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--text-primary);">
+              Skilaboð / Athugasemd:
+            </label>
+            <textarea id="feedback-text" rows="4" placeholder="Skrifaðu ábendingu, leiðréttingu á nafni/ártali eða hvað sem er..." style="width: 100%; box-sizing: border-box; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); color: #fff; border-radius: 6px; padding: 0.6rem; font-size: 0.88rem; font-family: inherit; resize: vertical;"></textarea>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--text-primary);">
+              Hengja við skjáskot (má velja mörg samtímis):
+            </label>
+            <input type="file" id="feedback-files" accept="image/*" multiple style="display: block; width: 100%; font-size: 0.82rem; color: var(--text-secondary);">
+            <div id="feedback-file-count" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">
+              Engin skrá valin
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 0.6rem; margin-top: 0.5rem;">
+            <button class="btn btn-secondary" onclick="closeFeedbackModal()">Hætta við</button>
+            <button class="btn btn-primary" id="btn-submit-feedback" onclick="submitFeedbackForm()" style="background: var(--accent-gold); color: #000; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+              <i data-lucide="send" style="width: 14px; height: 14px;"></i>
+              <span>Senda ábendingu</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </body>
 </html>

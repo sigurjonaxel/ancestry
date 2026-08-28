@@ -618,30 +618,39 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
                 environ={'REQUEST_METHOD': 'POST', 'CONTENT_TYPE': self.headers['Content-Type']}
             )
             
-            if 'screenshot' not in form:
-                self.send_error_response(400, "No screenshot file provided.")
-                return
-
-            fileitem = form['screenshot']
-            if not fileitem.filename:
-                self.send_error_response(400, "No filename in upload.")
-                return
-
+            tree_id = form.getvalue('tree_id', 'sigurjon')
+            user_note = form.getvalue('user_note', '')
+            
             shots_dir = os.path.join(os.path.dirname(__file__), "images", "screenshots")
             os.makedirs(shots_dir, exist_ok=True)
             
-            ext = fileitem.filename.rsplit('.', 1)[-1].lower() if '.' in fileitem.filename else 'png'
-            filename = f"mobile_screenshot_latest.{ext}"
-            filepath = os.path.join(shots_dir, filename)
-            
-            with open(filepath, 'wb') as f:
-                f.write(fileitem.file.read())
+            saved_paths = []
+            if 'screenshot' in form:
+                fileitem = form['screenshot']
+                if getattr(fileitem, 'filename', None):
+                    import time
+                    ts = int(time.time() * 1000)
+                    ext = fileitem.filename.rsplit('.', 1)[-1].lower() if '.' in fileitem.filename else 'png'
+                    filename = f"feedback_{tree_id}_{ts}.{ext}"
+                    filepath = os.path.join(shots_dir, filename)
+                    with open(filepath, 'wb') as f:
+                        f.write(fileitem.file.read())
+                    saved_paths.append(filepath)
+                    # Also keep latest for quick access
+                    with open(os.path.join(shots_dir, f"mobile_screenshot_latest.{ext}"), 'wb') as f:
+                        f.write(open(filepath, 'rb').read())
 
-            print(f"📸 [SCREENSHOT] Móttekin ný mynd úr síma: {filepath}")
-            self.send_json({"status": "success", "message": "Skjáskot móttekið og vistað!", "path": filepath})
+            if user_note:
+                note_file = os.path.join(shots_dir, "latest_user_note.txt")
+                with open(note_file, "w", encoding="utf-8") as f:
+                    f.write(f"Tree: {tree_id}\nNote: {user_note}\n")
+                print(f"💡 [ÁBENDING] Skráð ábending fyrir {tree_id}: {user_note}")
+
+            print(f"📸 [ÁBENDING] Móttekin ábending/skjáskot fyrir tré '{tree_id}': {saved_paths or 'Aðeins texti'}")
+            self.send_json({"status": "success", "message": "Ábending og skjáskot móttekin!", "paths": saved_paths, "tree_id": tree_id})
         except Exception as e:
-            print(f"❌ Screenshot upload error: {e}")
-            self.send_error_response(500, f"Error saving screenshot: {str(e)}")
+            print(f"❌ Feedback upload error: {e}")
+            self.send_error_response(500, f"Error saving feedback: {str(e)}")
 
     def handle_upload_avatar(self, query_str):
         params = urllib.parse.parse_qs(query_str)

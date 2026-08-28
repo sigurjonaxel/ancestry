@@ -1208,16 +1208,18 @@ window.openNotableArticlesModal = async function() {
   const listEl = document.getElementById('notable-articles-list');
   if (!modal || !listEl) return;
   
-  modal.style.display = 'flex'; const activeTreeName = (state.currentTree === 'loa' ? 'Lóutrésins' : 'Sigurjónstrésins');
-  listEl.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 2rem;">Sæki greinar úr gagnagrunni...</div>';
+  const currentTree = getActiveTreeId();
+  const activeTreeName = (currentTree === 'loa' ? 'Lóutré' : 'Sigurjónstré');
+  modal.style.display = 'flex';
+  listEl.innerHTML = `<div style="text-align: center; color: var(--text-muted); padding: 2rem;">Sæki greinar fyrir ${activeTreeName}...</div>`;
   
   try {
-    const res = await fetch(`/api/notable_articles?tree_id=${state.currentTree || 'sigurjon'}`);
+    const res = await fetch(`/api/notable_articles?tree_id=${currentTree}`);
     const data = await res.json();
     const articles = data.articles || [];
     
     if (articles.length === 0) {
-      listEl.innerHTML = '<div style="text-align:center; padding: 2rem; color: var(--text-muted);">Engar sögulegar greinar skráðar ennþá.</div>';
+      listEl.innerHTML = `<div style="text-align:center; padding: 2rem; color: var(--text-muted);">Engar sögulegar greinar skráðar í ${activeTreeName} ennþá.</div>`;
       return;
     }
     
@@ -1260,17 +1262,19 @@ window.openTreeStatsModal = async function() {
   const bodyEl = document.getElementById('tree-stats-body');
   if (!modal || !bodyEl) return;
   
-  modal.style.display = 'flex'; const activeTreeName = (state.currentTree === 'loa' ? 'Lóutrésins' : 'Sigurjónstrésins');
-  bodyEl.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 2rem;">Reikna tölfræði fyrir ${activeTreeName}...</div>';
+  const currentTree = getActiveTreeId();
+  const activeTreeName = (currentTree === 'loa' ? 'Lóutrésins (Ólafía)' : 'Sigurjónstrésins (Sigurjón)');
+  modal.style.display = 'flex';
+  bodyEl.innerHTML = `<div style="text-align: center; color: var(--text-muted); padding: 2rem;">Reikna tölfræði fyrir ${activeTreeName}...</div>`;
   
   try {
-    const res = await fetch(`/api/tree_stats?tree_id=${state.currentTree || 'sigurjon'}`);
+    const res = await fetch(`/api/tree_stats?tree_id=${currentTree}`);
     const d = await res.json();
     
     bodyEl.innerHTML = `
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
         <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; text-align: center;">
-          <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Heildarfjöldi</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Heildarfjöldi (${currentTree === 'loa' ? 'Lóutré' : 'Sigurjónstré'})</div>
           <div style="font-size: 1.6rem; font-weight: 700; color: var(--accent-gold); margin-top: 0.2rem;">${d.total_people}</div>
           <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 0.2rem;">👨 ${d.males} karlar | 👩 ${d.females} konur</div>
         </div>
@@ -1293,7 +1297,7 @@ window.openTreeStatsModal = async function() {
             🏆 Langlífustu forfeðurnir
           </h4>
           <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            ${d.oldest_people.map((p, idx) => `
+            ${(d.oldest_people || []).map((p, idx) => `
               <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.84rem; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 0.3rem;">
                 <span>${idx+1}. <strong>${p.name}</strong> <span style="font-size:0.75rem; color:var(--text-muted);">(${p.birth}-${p.death})</span></span>
                 <span class="badge badge-success" style="font-size:0.75rem;">${p.age} ára</span>
@@ -1302,100 +1306,143 @@ window.openTreeStatsModal = async function() {
           </div>
         </div>
 
-        <!-- Fjölbörnustu foreldrarnir -->
+        <!-- Stærstu barnafjölskyldurnar -->
         <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
           <h4 style="color: var(--accent-gold); font-size: 0.95rem; margin-top: 0; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
-            👶 Fjölbörnustu foreldrarnir
+            👶 Stærstu fjölskyldurnar (Flest börn)
           </h4>
           <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            ${d.large_families.map((f, idx) => `
+            ${(d.biggest_families || []).map((f, idx) => `
               <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.84rem; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 0.3rem;">
-                <span>${idx+1}. <strong>${f.name}</strong></span>
-                <span class="badge badge-warning" style="font-size:0.75rem;">${f.child_count} börn</span>
+                <span>${idx+1}. <strong>${f.parent_name}</strong> <span style="font-size:0.75rem; color:var(--text-muted);">${f.spouse_name ? `& ${f.spouse_name}` : ''}</span></span>
+                <span class="badge badge-primary" style="font-size:0.75rem;">${f.child_count} börn</span>
               </div>
             `).join('')}
           </div>
         </div>
+      </div>
 
-        <!-- Vinsælustu karlmannanöfnin -->
-        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
-          <h4 style="color: var(--accent-gold); font-size: 0.95rem; margin-top: 0; margin-bottom: 0.8rem;">
-            👨 Vinsælustu karlmannanöfnin
-          </h4>
-          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-            ${d.top_male_names.map(([name, count]) => `
-              <div style="display: flex; justify-content: space-between; font-size: 0.84rem;">
-                <span>${name}</span>
-                <span style="color: var(--accent-gold); font-weight: 600;">${count} sinnum</span>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-
-        <!-- Vinsælustu kvennanöfnin -->
-        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
-          <h4 style="color: var(--accent-gold); font-size: 0.95rem; margin-top: 0; margin-bottom: 0.8rem;">
-            👩 Vinsælustu kvennanöfnin
-          </h4>
-          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-            ${d.top_female_names.map(([name, count]) => `
-              <div style="display: flex; justify-content: space-between; font-size: 0.84rem;">
-                <span>${name}</span>
-                <span style="color: var(--accent-gold); font-weight: 600;">${count} sinnum</span>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-
-        <!-- Vinsælustu afmælisdagar & fæðingarmánuðir -->
+      <!-- Afmælisdagar og dánardagar -->
+      <div class="stats-grid-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+        <!-- Afmælisdagar -->
         <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
           <h4 style="color: var(--accent-gold); font-size: 0.95rem; margin-top: 0; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
-            🎂 Afmælisdagar & Fæðingarmánuðir
+            🎂 Vinsælustu afmælisdagar
           </h4>
-          <div style="font-size: 0.74rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Vinsælustu fæðingardagar:</div>
-          <div style="display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 0.6rem;">
-            ${(d.top_birth_days || []).map(([day, count]) => `
-              <div style="display: flex; justify-content: space-between; font-size: 0.82rem;">
-                <span>🎉 <strong>${day}</strong></span>
-                <span class="badge badge-success" style="font-size:0.72rem;">${count} fæðingar</span>
+          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+            ${(d.top_birth_days || []).map((b, idx) => `
+              <div style="display: flex; justify-content: space-between; font-size: 0.84rem; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 0.2rem;">
+                <span>${idx+1}. <strong>${b.date}</strong></span>
+                <span style="color: var(--accent-gold);">${b.count} fæðingar</span>
               </div>
             `).join('')}
           </div>
-          <div style="font-size: 0.74rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Vinsælustu mánuðir:</div>
-          <div style="font-size: 0.82rem; color: var(--accent-gold); font-weight: 600;">
-            ${(d.top_birth_months || []).map(([m, c]) => `<span>${m} (${c})</span>`).join(' • ')}
+          <div style="margin-top: 0.8rem; padding-top: 0.6rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.78rem; color: var(--text-secondary);">
+            <strong>☀️ Vinsælustu mánuðir:</strong> ${(d.top_birth_months || []).slice(0, 3).map(m => `${m.month} (${m.count})`).join(' • ')}
           </div>
         </div>
 
-        <!-- Vinsælustu dánardagar & dánarmánuðir -->
+        <!-- Dánardagar -->
         <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
           <h4 style="color: var(--accent-gold); font-size: 0.95rem; margin-top: 0; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;">
-            🕊️ Dánardagar & Dánarmánuðir
+            🕊️ Vinsælustu dánardagar
           </h4>
-          <div style="font-size: 0.74rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Vinsælustu dánardagar:</div>
-          <div style="display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 0.6rem;">
-            ${(d.top_death_days || []).map(([day, count]) => `
-              <div style="display: flex; justify-content: space-between; font-size: 0.82rem;">
-                <span>🕯️ <strong>${day}</strong></span>
-                <span class="badge badge-secondary" style="font-size:0.72rem;">${count} andlát</span>
+          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+            ${(d.top_death_days || []).map((b, idx) => `
+              <div style="display: flex; justify-content: space-between; font-size: 0.84rem; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 0.2rem;">
+                <span>${idx+1}. <strong>${b.date}</strong></span>
+                <span style="color: var(--accent-gold);">${b.count} andlát</span>
               </div>
             `).join('')}
           </div>
-          <div style="font-size: 0.74rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem;">Vinsælustu mánuðir:</div>
-          <div style="font-size: 0.82rem; color: var(--text-secondary); font-weight: 600;">
-            ${(d.top_death_months || []).map(([m, c]) => `<span>${m} (${c})</span>`).join(' • ')}
+          <div style="margin-top: 0.8rem; padding-top: 0.6rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.78rem; color: var(--text-secondary);">
+            <strong>🍂 Vinsælustu mánuðir:</strong> ${(d.top_death_months || []).slice(0, 3).map(m => `${m.month} (${m.count})`).join(' • ')}
           </div>
         </div>
       </div>
     `;
-    
-    try { if (window.lucide) lucide.createIcons(); } catch(e) {}
-  } catch(err) {
-    bodyEl.innerHTML = `<div style="color:#e53e3e; padding:1rem; text-align:center;">Villa við að reikna tölfræði: ${err.message}</div>`;
+  } catch (err) {
+    bodyEl.innerHTML = `<div style="color: #e53e3e; padding: 1rem; text-align: center;">Villa við að reikna tölfræði: ${err.message}</div>`;
   }
 };
 
 window.closeTreeStatsModal = function() {
   const modal = document.getElementById('modal-tree-stats');
   if (modal) modal.style.display = 'none';
+};
+
+
+function getActiveTreeId() {
+  const sel = document.getElementById('tree-select');
+  if (sel && sel.value) return sel.value;
+  return state.selectedTreeId || 'sigurjon';
+}
+window.getActiveTreeId = getActiveTreeId;
+
+window.openFeedbackModal = function() {
+  const modal = document.getElementById('modal-feedback');
+  const treeLabel = document.getElementById('feedback-active-tree-label');
+  const filesInput = document.getElementById('feedback-files');
+  const countEl = document.getElementById('feedback-file-count');
+  const textInput = document.getElementById('feedback-text');
+  
+  if (!modal) return;
+  const currentTree = getActiveTreeId();
+  if (treeLabel) treeLabel.textContent = currentTree === 'loa' ? '🌳 Lóa ættartré (Ólafía Rósbjörg)' : '🌳 Sigurjón ættartré (Sigurjón Axel)';
+  if (textInput) textInput.value = '';
+  if (filesInput) {
+    filesInput.value = '';
+    filesInput.onchange = function() {
+      if (countEl) countEl.textContent = `${this.files.length} skjáskot valin`;
+    };
+  }
+  if (countEl) countEl.textContent = 'Engin skrá valin';
+  modal.style.display = 'flex';
+};
+
+window.closeFeedbackModal = function() {
+  const modal = document.getElementById('modal-feedback');
+  if (modal) modal.style.display = 'none';
+};
+
+window.submitFeedbackForm = async function() {
+  const textInput = document.getElementById('feedback-text');
+  const filesInput = document.getElementById('feedback-files');
+  const note = textInput ? textInput.value.trim() : '';
+  const files = filesInput && filesInput.files ? Array.from(filesInput.files) : [];
+  const currentTree = getActiveTreeId();
+  const treeLabel = currentTree === 'loa' ? 'Lóutré' : 'Sigurjónstré';
+
+  if (!note && files.length === 0) {
+    showToast('Vinsamlegast skrifaðu texta eða veldu skjáskot.');
+    return;
+  }
+
+  showToast(`Sendi ábendingu fyrir ${treeLabel}...`);
+  const submitBtn = document.getElementById('btn-submit-feedback');
+  if (submitBtn) submitBtn.disabled = true;
+
+  try {
+    if (files.length > 0) {
+      for (let i = 0; i < files.length; i++) {
+        const formData = new FormData();
+        formData.append('screenshot', files[i]);
+        formData.append('tree_id', currentTree);
+        if (i === 0 && note) formData.append('user_note', note);
+        await fetch('/api/upload_screenshot', { method: 'POST', body: formData });
+      }
+    } else if (note) {
+      const formData = new FormData();
+      formData.append('user_note', note);
+      formData.append('tree_id', currentTree);
+      await fetch('/api/upload_screenshot', { method: 'POST', body: formData });
+    }
+
+    showToast(`💡 Ábending send fyrir ${treeLabel}!`);
+    closeFeedbackModal();
+  } catch (err) {
+    showToast('Villa við að senda: ' + err.message);
+  } finally {
+    if (submitBtn) submitBtn.disabled = false;
+  }
 };
