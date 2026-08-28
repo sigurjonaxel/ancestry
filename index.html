@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Saga — Ættfræðiaðstoð</title>
-  <link rel="stylesheet" href="index.css?v=1787912082">
+  <link rel="stylesheet" href="index.css?v=1787912110">
   <!-- Tesseract.js for OCR -->
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
   <!-- Lucide Icons -->
@@ -42,10 +42,7 @@
           <i data-lucide="newspaper" style="width: 14px; height: 14px;"></i>
           <span>📜 Sögulegar greinar</span>
         </button>
-        <button class="btn btn-secondary" id="btn-show-settings" style="display: flex; align-items: center; gap: 0.25rem;">
-          <i data-lucide="settings" style="width: 14px; height: 14px;"></i>
-          <span class="btn-text">Stillingar</span>
-        </button>
+        
         <button class="btn btn-primary" id="btn-show-help">
           <span class="btn-text">Hjálp</span>
         </button>
@@ -444,54 +441,6 @@
     <span id="toast-message">Texti afritaður!</span>
   </div>
 
-  <!-- Settings Modal -->
-  <div id="settings-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.8); z-index: 2000; align-items: center; justify-content: center;">
-    <div class="card" style="max-width: 500px; width: 90%; margin: auto;">
-      <h2 class="card-title" style="display: flex; align-items: center; gap: 0.5rem;">
-        <i data-lucide="settings" style="color: var(--accent-gold);"></i>
-        Saga Stillingar
-      </h2>
-      <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
-        <p style="font-size: 0.9rem; color: var(--text-secondary);">
-          Sláðu inn Google AI Studio API lykilinn þinn til að virkja Gemini 1.5 líkanið. Það gerir kerfinu kleift að greina minningargreinar og vefsíður í rauntíma.
-        </p>
-        <div>
-          <label style="display: block; font-size: 0.8rem; color: var(--accent-gold); margin-bottom: 0.25rem; font-weight: 600;">GEMINI API LYKILL (fyrir texta- og myndagreiningu)</label>
-          <input type="text" autocomplete="off" id="input-gemini-key" placeholder="AIzaSy..." style="width: 100%; padding: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; color: #fff; font-family: monospace;">
-        </div>
-        <div>
-          <label style="display: block; font-size: 0.8rem; color: var(--accent-gold); margin-bottom: 0.25rem; font-weight: 600;">GOOGLE SEARCH API LYKILL (fyrir Google myndaleit)</label>
-          <input type="text" autocomplete="off" id="input-google-key" placeholder="AIzaSy..." style="width: 100%; padding: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; color: #fff; font-family: monospace;">
-        </div>
-        <div>
-          <label style="display: block; font-size: 0.8rem; color: var(--accent-gold); margin-bottom: 0.25rem; font-weight: 600;">GOOGLE CUSTOM SEARCH ENGINE ID (CX - valfrjálst)</label>
-          <input type="text" id="input-google-cx" placeholder="t.d. 1234567890abcdef1" style="width: 100%; padding: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; color: #fff; font-family: monospace;">
-        </div>
-        <div>
-          <label style="display: block; font-size: 0.8rem; color: var(--accent-gold); margin-bottom: 0.25rem; font-weight: 600;">LÁGMARKS ÁREIÐANLEIKI (CONFIDENCE THRESHOLD)</label>
-          <div style="display: flex; align-items: center; gap: 1rem;">
-            <input type="range" id="input-confidence-threshold" min="0" max="100" value="60" style="flex-grow: 1; accent-color: var(--accent-gold);">
-            <span id="label-confidence-value" style="font-weight: bold; width: 3rem; text-align: right; color: var(--accent-gold);">60%</span>
-          </div>
-          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
-            Aðeins uppástungur með hærri áreiðanleika en þetta gildi verða sýndar (sjálfgefið 60%).
-          </p>
-        </div>
-      </div>
-      <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end; gap: 0.75rem;">
-        <button class="btn btn-secondary" id="btn-close-settings">Hætta við</button>
-        <button class="btn btn-primary" id="btn-save-settings" style="background: var(--accent-gold); color: black;">Vista stillingar</button>
-      </div>
-      <div style="margin-top: 2rem; border-top: 1px solid rgba(255,82,82,0.2); padding-top: 1.5rem;">
-        <p style="font-size: 0.8rem; color: #ff5252; font-weight: 600; margin-bottom: 0.5rem;">⚠️ Hættusvæði</p>
-        <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem;">Ef Sögubókin sýnir rangar eða gamlar myndir, geturðu hreinsað öll vistuð gögn og byrjað upp á nýtt. Þetta eyðir <strong>aðeins</strong> Sögubókargögnum úr vafranum — ekki myndum eða GEDCOM skrám.</p>
-        <button onclick="if(confirm('Ertu viss? Þetta hreinsar öll Sögubókargögn úr vafranum.')){localStorage.removeItem('saga_person_sources_v2');localStorage.removeItem('saga_person_sources');document.getElementById('settings-modal').style.display='none';location.reload();}" style="background: rgba(255,82,82,0.1); border: 1px solid rgba(255,82,82,0.4); color: #ff5252; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem; width: 100%;">
-          🗑️ Hreinsa Sögubókargögn og endurhlaða
-        </button>
-      </div>
-    </div>
-  </div>
-
   <!-- Help Modal -->
   <div id="help-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.8); z-index: 2000; align-items: center; justify-content: center;">
     <div class="card" style="max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; margin: auto;">
@@ -529,7 +478,7 @@
   </div>
 
   <!-- App Logic script -->
-  <script src="app.js?v=1787912082"></script>
+  <script src="app.js?v=1787912110"></script>
 
   <!-- Sögulegar Greinar Modal -->
   <div class="modal-backdrop" id="modal-notable-articles" style="display: none;" onclick="if(event.target === this) closeNotableArticlesModal()">
