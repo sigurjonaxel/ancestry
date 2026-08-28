@@ -1312,9 +1312,9 @@ window.openTreeStatsModal = async function() {
             👶 Stærstu fjölskyldurnar (Flest börn)
           </h4>
           <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            ${(d.biggest_families || []).map((f, idx) => `
+            ${(d.biggest_families || d.large_families || []).map((f, idx) => `
               <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.84rem; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 0.3rem;">
-                <span>${idx+1}. <strong>${f.parent_name}</strong> <span style="font-size:0.75rem; color:var(--text-muted);">${f.spouse_name ? `& ${f.spouse_name}` : ''}</span></span>
+                <span>${idx+1}. <strong>${(f.parent_name || f.name)}</strong> <span style="font-size:0.75rem; color:var(--text-muted);">${f.spouse_name ? `& ${f.spouse_name}` : ''}</span></span>
                 <span class="badge badge-primary" style="font-size:0.75rem;">${f.child_count} börn</span>
               </div>
             `).join('')}
@@ -1332,13 +1332,13 @@ window.openTreeStatsModal = async function() {
           <div style="display: flex; flex-direction: column; gap: 0.4rem;">
             ${(d.top_birth_days || []).map((b, idx) => `
               <div style="display: flex; justify-content: space-between; font-size: 0.84rem; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 0.2rem;">
-                <span>${idx+1}. <strong>${b.date}</strong></span>
-                <span style="color: var(--accent-gold);">${b.count} fæðingar</span>
+                <span>${idx+1}. <strong>${(b.date || (Array.isArray(b) ? b[0] : ''))}</strong></span>
+                <span style="color: var(--accent-gold);">${(b.count || (Array.isArray(b) ? b[1] : ''))} fæðingar</span>
               </div>
             `).join('')}
           </div>
           <div style="margin-top: 0.8rem; padding-top: 0.6rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.78rem; color: var(--text-secondary);">
-            <strong>☀️ Vinsælustu mánuðir:</strong> ${(d.top_birth_months || []).slice(0, 3).map(m => `${m.month} (${m.count})`).join(' • ')}
+            <strong>☀️ Vinsælustu mánuðir:</strong> ${(d.top_birth_months || []).slice(0, 3).map(m => `${(m.month || (Array.isArray(m) ? m[0] : ''))} (${(m.count || (Array.isArray(m) ? m[1] : ''))})`).join(' • ')}
           </div>
         </div>
 
@@ -1350,13 +1350,13 @@ window.openTreeStatsModal = async function() {
           <div style="display: flex; flex-direction: column; gap: 0.4rem;">
             ${(d.top_death_days || []).map((b, idx) => `
               <div style="display: flex; justify-content: space-between; font-size: 0.84rem; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 0.2rem;">
-                <span>${idx+1}. <strong>${b.date}</strong></span>
-                <span style="color: var(--accent-gold);">${b.count} andlát</span>
+                <span>${idx+1}. <strong>${(b.date || (Array.isArray(b) ? b[0] : ''))}</strong></span>
+                <span style="color: var(--accent-gold);">${(b.count || (Array.isArray(b) ? b[1] : ''))} andlát</span>
               </div>
             `).join('')}
           </div>
           <div style="margin-top: 0.8rem; padding-top: 0.6rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.78rem; color: var(--text-secondary);">
-            <strong>🍂 Vinsælustu mánuðir:</strong> ${(d.top_death_months || []).slice(0, 3).map(m => `${m.month} (${m.count})`).join(' • ')}
+            <strong>🍂 Vinsælustu mánuðir:</strong> ${(d.top_death_months || []).slice(0, 3).map(m => `${(m.month || (Array.isArray(m) ? m[0] : ''))} (${(m.count || (Array.isArray(m) ? m[1] : ''))})`).join(' • ')}
           </div>
         </div>
       </div>

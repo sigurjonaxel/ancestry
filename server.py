@@ -351,6 +351,16 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
                             death_months[std_m] += 1
                             break
 
+        # Format biggest families for frontend
+        formatted_families = [
+            {"parent_name": f.get('name') or f.get('parent_name'), "child_count": f.get('child_count', 0)}
+            for f in large_families
+        ]
+        formatted_birth_days = [{"date": k, "count": v} for k, v in birth_days.most_common(5)]
+        formatted_death_days = [{"date": k, "count": v} for k, v in death_days.most_common(5)]
+        formatted_birth_months = [{"month": k, "count": v} for k, v in birth_months.most_common(4)]
+        formatted_death_months = [{"month": k, "count": v} for k, v in death_months.most_common(4)]
+
         self.send_json({
             "status": "ok",
             "total_people": total_people,
@@ -363,11 +373,11 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
             "oldest_people": lifespans[:5],
             "top_male_names": first_names_m.most_common(5),
             "top_female_names": first_names_f.most_common(5),
-            "large_families": large_families,
-            "top_birth_months": birth_months.most_common(4),
-            "top_death_months": death_months.most_common(4),
-            "top_birth_days": birth_days.most_common(4),
-            "top_death_days": death_days.most_common(4)
+            "biggest_families": formatted_families,
+            "top_birth_months": formatted_birth_months,
+            "top_death_months": formatted_death_months,
+            "top_birth_days": formatted_birth_days,
+            "top_death_days": formatted_death_days
         })
 
     def handle_get_trees(self):
