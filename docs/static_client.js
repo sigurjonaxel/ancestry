@@ -6,7 +6,7 @@ let staticDataPromise = null;
 
 function getStaticData() {
   if (!staticDataPromise) {
-    staticDataPromise = fetch('static_data.json')
+    staticDataPromise = fetch('static_data.json?v=' + Date.now())
       .then(res => res.json())
       .then(data => {
         STATIC_DATA = data;
