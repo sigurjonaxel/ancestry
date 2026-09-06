@@ -1,28 +1,183 @@
-// Standalone GitHub Pages Client Adapter
-// Intercepts /api/ calls and serves directly from static_data.json in memory!
+// Standalone GitHub Pages Client Adapter with AES-256-GCM End-to-End Encryption
+// Intercepts /api/ calls and serves securely from decrypted in-memory database!
 
 let STATIC_DATA = null;
-let staticDataPromise = null;
+let encryptedBufferPromise = null;
+let resolveStaticData = null;
+let staticDataPromise = new Promise((resolve) => {
+  resolveStaticData = resolve;
+});
 
-function getStaticData() {
-  if (!staticDataPromise) {
-    staticDataPromise = fetch('static_data.json?v=' + Date.now(), { cache: 'no-store' })
-      .then(res => res.json())
-      .then(data => {
-        STATIC_DATA = data;
-        console.log('📦 Static Database Loaded:', STATIC_DATA.people.length, 'people');
-        return data;
+function getEncryptedBuffer() {
+  if (!encryptedBufferPromise) {
+    encryptedBufferPromise = fetch('static_data.enc?v=' + Date.now(), { cache: 'no-store' })
+      .then(res => {
+        if (!res.ok) throw new Error('Could not load encrypted bundle');
+        return res.arrayBuffer();
       })
-      .catch(e => {
-        console.warn('Could not load static_data.json:', e);
+      .catch(err => {
+        console.error('Failed to load static_data.enc:', err);
         return null;
       });
   }
-  return staticDataPromise;
+  return encryptedBufferPromise;
 }
 
-// Preload immediately
-getStaticData();
+// Decrypt buffer using Web Crypto API
+async function decryptBuffer(arrayBuf, password) {
+  const buf = new Uint8Array(arrayBuf);
+  const salt = buf.subarray(0, 16);
+  const iv = buf.subarray(16, 28);
+  const data = buf.subarray(28);
+
+  const enc = new TextEncoder();
+  const keyMaterial = await window.crypto.subtle.importKey(
+    'raw', enc.encode(password), { name: 'PBKDF2' }, false, ['deriveKey']
+  );
+  const key = await window.crypto.subtle.deriveKey(
+    { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
+    keyMaterial,
+    { name: 'AES-GCM', length: 256 },
+    false,
+    ['decrypt']
+  );
+
+  const decrypted = await window.crypto.subtle.decrypt(
+    { name: 'AES-GCM', iv },
+    key,
+    data
+  );
+  const dec = new TextDecoder('utf-8');
+  return JSON.parse(dec.decode(decrypted));
+}
+
+// Attempt Authentication
+window.attemptSagaAuth = async function(password, rememberMe = true) {
+  const btn = document.getElementById('saga-auth-btn');
+  const btnText = document.getElementById('saga-auth-btn-text');
+  const errEl = document.getElementById('saga-auth-error');
+  
+  if (btnText) btnText.textContent = 'Afkóða ættartré... ⏳';
+  if (btn) btn.disabled = true;
+  if (errEl) errEl.style.display = 'none';
+
+  try {
+    const encBuf = await getEncryptedBuffer();
+    if (!encBuf) throw new Error('Ekki tókst að sækja dulkóðuð gögn.');
+
+    const data = await decryptBuffer(encBuf, password);
+    STATIC_DATA = data;
+    console.log('🔓 Dulkóðun tókst! Ættartré opnað:', data.people.length, 'einstaklingar.');
+
+    if (rememberMe) {
+      localStorage.setItem('saga_auth_pass', password);
+    } else {
+      sessionStorage.setItem('saga_auth_pass', password);
+      localStorage.removeItem('saga_auth_pass');
+    }
+
+    // Hide Auth Overlay
+    const overlay = document.getElementById('saga-auth-overlay');
+    if (overlay) overlay.style.display = 'none';
+
+    // Resolve deferred promise so waiting API calls succeed
+    if (resolveStaticData) {
+      resolveStaticData(data);
+    }
+
+    // If app.js is already running or ready, trigger reload
+    if (window.loadTreesList && window.loadTree && window.state) {
+      try {
+        await window.loadTreesList();
+        await window.loadTree(window.state.selectedTreeId || 'loa');
+      } catch (e) {
+        console.warn('UI update after auth:', e);
+      }
+    }
+
+    return true;
+  } catch (err) {
+    console.warn('Authentication failed:', err);
+    if (errEl) {
+      errEl.textContent = 'Rangt aðgangsorð. Vinsamlegast reyndu aftur.';
+      errEl.style.display = 'block';
+    }
+    localStorage.removeItem('saga_auth_pass');
+    sessionStorage.removeItem('saga_auth_pass');
+    return false;
+  } finally {
+    if (btnText) btnText.textContent = 'Opna ættartré 🔓';
+    if (btn) btn.disabled = false;
+  }
+};
+
+window.handleSagaAuthSubmit = function(e) {
+  if (e) e.preventDefault();
+  const input = document.getElementById('saga-auth-input');
+  const remember = document.getElementById('saga-auth-remember');
+  if (!input || !input.value.trim()) return;
+  window.attemptSagaAuth(input.value.trim(), remember ? remember.checked : true);
+};
+
+window.toggleAuthPasswordVisibility = function() {
+  const input = document.getElementById('saga-auth-input');
+  const icon = document.getElementById('auth-eye-icon');
+  if (!input) return;
+  if (input.type === 'password') {
+    input.type = 'text';
+    if (icon) icon.setAttribute('data-lucide', 'eye-off');
+  } else {
+    input.type = 'password';
+    if (icon) icon.setAttribute('data-lucide', 'eye');
+  }
+  try { if (window.lucide) lucide.createIcons(); } catch(e) {}
+};
+
+window.lockSaga = function() {
+  localStorage.removeItem('saga_auth_pass');
+  sessionStorage.removeItem('saga_auth_pass');
+  STATIC_DATA = null;
+  staticDataPromise = new Promise((resolve) => {
+    resolveStaticData = resolve;
+  });
+  const overlay = document.getElementById('saga-auth-overlay');
+  const input = document.getElementById('saga-auth-input');
+  const errEl = document.getElementById('saga-auth-error');
+  if (errEl) errEl.style.display = 'none';
+  if (input) {
+    input.value = '';
+    input.type = 'password';
+  }
+  if (overlay) overlay.style.display = 'flex';
+};
+
+// Check for saved password immediately
+async function checkSavedAuth() {
+  const saved = localStorage.getItem('saga_auth_pass') || sessionStorage.getItem('saga_auth_pass');
+  if (saved) {
+    const success = await window.attemptSagaAuth(saved, true);
+    if (!success) {
+      const overlay = document.getElementById('saga-auth-overlay');
+      if (overlay) overlay.style.display = 'flex';
+    }
+  } else {
+    const overlay = document.getElementById('saga-auth-overlay');
+    if (overlay) overlay.style.display = 'flex';
+  }
+}
+
+// Start preloading encrypted bundle and checking auth
+getEncryptedBuffer();
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', checkSavedAuth);
+} else {
+  checkSavedAuth();
+}
+
+function getStaticData() {
+  if (STATIC_DATA) return Promise.resolve(STATIC_DATA);
+  return staticDataPromise;
+}
 
 // Monkey-patch window.fetch to provide offline/GitHub Pages backend simulation
 const origFetch = window.fetch;

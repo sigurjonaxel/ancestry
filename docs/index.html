@@ -7,13 +7,63 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Saga — Ættfræðiaðstoð</title>
-  <link rel="stylesheet" href="index.css?v=1788691888">
+  <link rel="stylesheet" href="index.css?v=1788692500">
   <!-- Tesseract.js for OCR -->
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+
+  <!-- Auth / Lock Screen Overlay (AES-256) -->
+  <div id="saga-auth-overlay" style="display: none; position: fixed; inset: 0; z-index: 100000; background: #090c10; align-items: center; justify-content: center; padding: 1.5rem; backdrop-filter: blur(12px);">
+    <div style="background: var(--bg-card, #161a20); border: 1px solid var(--accent-gold); border-radius: 16px; max-width: 440px; width: 100%; padding: 2.2rem 2rem; box-shadow: 0 20px 60px rgba(0,0,0,0.85), 0 0 30px rgba(184,134,11,0.2); text-align: center; display: flex; flex-direction: column; gap: 1.2rem;">
+      <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(184,134,11,0.15); border: 1px solid var(--accent-gold); display: flex; align-items: center; justify-content: center; margin: 0 auto; color: var(--accent-gold); font-size: 1.9rem; box-shadow: 0 0 20px rgba(184,134,11,0.25);">
+        🛡️
+      </div>
+      
+      <div>
+        <h2 style="margin: 0; color: #fff; font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px;">Saga — Ættfræði</h2>
+        <div style="color: var(--accent-gold); font-size: 0.8rem; font-weight: 600; margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 1px;">
+          Læst ættartré (AES-256)
+        </div>
+        <p style="color: var(--text-secondary, #a0aec0); font-size: 0.86rem; line-height: 1.45; margin: 0.8rem 0 0 0;">
+          Gögn ættartrésins eru dulkóðuð með bankaöryggi. Sláðu inn lykilorð fjölskyldunnar til að opna aðgang.
+        </p>
+      </div>
+
+      <form id="saga-auth-form" onsubmit="handleSagaAuthSubmit(event)" style="display: flex; flex-direction: column; gap: 0.9rem; text-align: left;">
+        <div>
+          <label for="saga-auth-input" style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 0.4rem;">Aðgangsorð:</label>
+          <div style="position: relative;">
+            <input type="password" id="saga-auth-input" placeholder="Sláðu inn aðgangsorð..." autocomplete="current-password" required
+              style="width: 100%; box-sizing: border-box; padding: 0.75rem 2.6rem 0.75rem 0.9rem; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: #fff; font-size: 0.95rem; outline: none; transition: border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--border-color)'">
+            <button type="button" onclick="toggleAuthPasswordVisibility()" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px;" title="Sýna/fela aðgangsorð">
+              <i data-lucide="eye" id="auth-eye-icon" style="width: 18px; height: 18px;"></i>
+            </button>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--text-secondary);">
+          <input type="checkbox" id="saga-auth-remember" checked style="accent-color: var(--accent-gold); cursor: pointer; width: 15px; height: 15px;">
+          <label for="saga-auth-remember" style="cursor: pointer; user-select: none;">Muna innskráningu í þessum vafra</label>
+        </div>
+
+        <div id="saga-auth-error" style="display: none; background: rgba(229, 62, 62, 0.15); border: 1px solid #e53e3e; color: #ff8888; padding: 0.6rem 0.8rem; border-radius: 6px; font-size: 0.82rem; text-align: center;">
+          Rangt aðgangsorð. Vinsamlegast reyndu aftur.
+        </div>
+
+        <button type="submit" id="saga-auth-btn" style="background: var(--accent-gold); color: #000; font-weight: 700; font-size: 0.95rem; padding: 0.75rem; border-radius: 8px; border: none; cursor: pointer; transition: transform 0.1s, background-color 0.2s; margin-top: 0.4rem; display: flex; align-items: center; justify-content: center; gap: 6px;">
+          <span id="saga-auth-btn-text">Opna ættartré 🔓</span>
+        </button>
+      </form>
+      
+      <div style="font-size: 0.72rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.8rem;">
+        🔐 AES-256-GCM dulkóðun með PBKDF2 (SHA-256)
+      </div>
+    </div>
+  </div>
 
   <div class="app-container">
     <!-- Header -->
@@ -45,6 +95,11 @@
         <button class="btn btn-secondary" id="btn-tree-snapshots" title="Skoða og taka öryggisafrit/útgáfur af trénu" onclick="openTreeSnapshotsModal()" style="background: rgba(184,134,11,0.18); border-color: var(--accent-gold); color: var(--accent-gold); font-weight: 600; font-size: 0.76rem; padding: 0.25rem 0.65rem; display: inline-flex; align-items: center; gap: 5px;">
           <i data-lucide="git-branch" style="width: 14px; height: 14px;"></i>
           <span>🏷️ Útgáfur trés</span>
+        </button>
+
+        <button class="btn btn-secondary" id="btn-lock-app" title="Læsa ættartrénu (Útskrá)" onclick="lockSaga()" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.2); color: var(--text-secondary); font-size: 0.76rem; font-weight: 600; padding: 0.25rem 0.65rem; display: inline-flex; align-items: center; gap: 5px;">
+          <i data-lucide="lock" style="width: 14px; height: 14px; color: var(--accent-gold);"></i>
+          <span>🔒 Læsa</span>
         </button>
         
         <button class="btn btn-primary" id="btn-show-help">
@@ -491,8 +546,8 @@
   </div>
 
   <!-- App Logic script -->
-  <script src="static_client.js?v=1788691888"></script>
-  <script src="app.js?v=1788691888"></script>
+  <script src="static_client.js?v=1788692500"></script>
+  <script src="app.js?v=1788692500"></script>
 
   <!-- Sögulegar Greinar Modal -->
   <div class="modal-backdrop" id="modal-notable-articles" style="display: none;" onclick="if(event.target === this) closeNotableArticlesModal()">
