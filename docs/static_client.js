@@ -74,6 +74,19 @@ window.fetch = async function(resource, init) {
         }), { status: 200, headers: { 'Content-Type': 'application/json' } });
       }
 
+      if (path.endsWith('/api/person_history')) {
+        const personId = (u.searchParams.get('person_id') || '').replace(/@/g, '');
+        const history = (data.person_history || []).filter(h => h.person_id === personId || h.person_id === `@${personId}@`);
+        history.sort((a, b) => (b.version_num || 0) - (a.version_num || 0));
+        return new Response(JSON.stringify({ status: 'ok', history }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+
+      if (path.endsWith('/api/tree_snapshots')) {
+        const treeId = u.searchParams.get('tree_id') || 'loa';
+        const snapshots = (data.tree_snapshots || []).filter(sn => sn.tree_id === treeId);
+        return new Response(JSON.stringify({ status: 'ok', snapshots }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+
       if (path.endsWith('/api/proxy_image')) {
         const imgUrl = u.searchParams.get('url') || '';
         return new Response(null, { status: 302, headers: { 'Location': imgUrl } });
