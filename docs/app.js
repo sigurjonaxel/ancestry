@@ -274,7 +274,7 @@ function renderPeopleList(people) {
     return `
       <div class="person-item ${isSelected ? 'active' : ''}" onclick="selectPerson('${p.id}')">
         <div class="person-avatar-small">
-          ${p.avatar_url ? `<img src="${p.avatar_url.startsWith('images/') ? './' + encodeURIComponent(p.avatar_url) : p.avatar_url}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">` : '<i data-lucide="user"></i>'}
+          ${p.avatar_url ? `<img src="${p.avatar_url.startsWith('images/') ? './' + p.avatar_url : p.avatar_url}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">` : '<i data-lucide="user"></i>'}
         </div>
         <div class="person-info">
           <div class="person-name">${displayName}</div>
@@ -508,7 +508,7 @@ function renderPersonProfile(details) {
   if (avatarImg && avatarIcon) {
     const btnRemove = document.getElementById('btn-remove-avatar');
     if (p.avatar_url) {
-      avatarImg.src = p.avatar_url.startsWith('images/') ? `./${encodeURIComponent(p.avatar_url)}` : p.avatar_url;
+      avatarImg.src = p.avatar_url.startsWith('images/') ? `./${p.avatar_url}` : p.avatar_url;
       avatarImg.style.display = 'block';
       avatarIcon.style.display = 'none';
       if (p.avatar_verified) {
@@ -950,7 +950,7 @@ async function renderInteractiveTree() {
       const bYear = person.birth_year ? `f. ${person.birth_year}` : '';
       const dYear = person.death_year ? `d. ${person.death_year}` : '';
       const dates = [bYear, dYear].filter(Boolean).join(' – ');
-      const avatarUrl = person.avatar_url ? (person.avatar_url.startsWith('images/') ? `./${encodeURIComponent(person.avatar_url)}` : person.avatar_url) : '';
+      const avatarUrl = person.avatar_url ? (person.avatar_url.startsWith('images/') ? `./${person.avatar_url}` : person.avatar_url) : '';
       
       const borderColor = isFocus ? 'var(--accent-gold)' : 'rgba(255,255,255,0.15)';
       const bg = isFocus ? 'linear-gradient(135deg, rgba(184,134,11,0.25) 0%, rgba(20,24,30,0.95) 100%)' : 'rgba(20,24,30,0.85)';
@@ -978,7 +978,7 @@ async function renderInteractiveTree() {
       const bYear = person.birth_year ? `f. ${person.birth_year}` : '';
       const dYear = person.death_year ? `d. ${person.death_year}` : '';
       const dates = [bYear, dYear].filter(Boolean).join(' – ');
-      const avatarUrl = person.avatar_url ? (person.avatar_url.startsWith('images/') ? `./${encodeURIComponent(person.avatar_url)}` : person.avatar_url) : '';
+      const avatarUrl = person.avatar_url ? (person.avatar_url.startsWith('images/') ? `./${person.avatar_url}` : person.avatar_url) : '';
 
       return `
         <div class="mobile-tree-card ${isFocus ? 'focus' : ''}" onclick="selectPerson('${person.id}')">
