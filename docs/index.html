@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Saga — Ættfræðiaðstoð</title>
+  <link rel="stylesheet" href="index.css?v=1787912110">
+  <!-- Tesseract.js for OCR -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+            <div class="brand">
+        <button class="panel-toggle-btn" id="btn-toggle-sidebar" title="Fela / Sýna vinstri hliðarstiku (Einstaklingalista)" onclick="toggleSidebarCollapse()">
+          <i data-lucide="panel-left-close" id="sidebar-toggle-icon" style="width: 16px; height: 16px;"></i>
+          <span id="sidebar-toggle-text">Fela stiku</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Opna valmynd" style="display: none;">
+          <i data-lucide="menu"></i>
+        </button>
+        <span class="brand-logo">Saga</span>
+        <span class="brand-tagline">Ættfræðiaðstoð</span>
+      </div>
+      <div class="header-actions">
+          <button class="btn btn-secondary" id="btn-open-feedback" title="Senda ábendingu eða skjáskot af símanum" onclick="openFeedbackModal()" style="background: rgba(184,134,11,0.15); border-color: var(--accent-gold); color: var(--accent-gold); font-size: 0.76rem; font-weight: 600; padding: 0.25rem 0.65rem; display: inline-flex; align-items: center; gap: 5px;">
+            <i data-lucide="message-square-plus" style="width: 14px; height: 14px;"></i>
+            <span>💡 Senda ábendingu</span>
+          </button>
+                        <button class="btn btn-secondary" id="btn-tree-stats" title="Skoða skemmtilega ættartölfræði og met" onclick="openTreeStatsModal()" style="background: rgba(184,134,11,0.18); border-color: var(--accent-gold); color: var(--accent-gold); font-weight: 600; font-size: 0.76rem; padding: 0.25rem 0.65rem; display: inline-flex; align-items: center; gap: 5px;">
+          <i data-lucide="bar-chart-2" style="width: 14px; height: 14px;"></i>
+          <span>📊 Tölfræði & Met</span>
+        </button>
+        <button class="btn btn-secondary" id="btn-notable-articles" title="Skoða allar sögulegar greinar úr blöðum og tímaritum" onclick="openNotableArticlesModal()" style="background: rgba(184,134,11,0.18); border-color: var(--accent-gold); color: var(--accent-gold); font-weight: 600; font-size: 0.76rem; padding: 0.25rem 0.65rem; display: inline-flex; align-items: center; gap: 5px;">
+          <i data-lucide="newspaper" style="width: 14px; height: 14px;"></i>
+          <span>📜 Sögulegar greinar</span>
+        </button>
+        <button class="btn btn-secondary" id="btn-tree-snapshots" title="Skoða og taka öryggisafrit/útgáfur af trénu" onclick="openTreeSnapshotsModal()" style="background: rgba(184,134,11,0.18); border-color: var(--accent-gold); color: var(--accent-gold); font-weight: 600; font-size: 0.76rem; padding: 0.25rem 0.65rem; display: inline-flex; align-items: center; gap: 5px;">
+          <i data-lucide="git-branch" style="width: 14px; height: 14px;"></i>
+          <span>🏷️ Útgáfur trés</span>
+        </button>
+        
+        <button class="btn btn-primary" id="btn-show-help">
+          <span class="btn-text">Hjálp</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Workspace -->
+    <div class="workspace-container">
+      <!-- Mobile Backdrop -->
+      <div class="sidebar-backdrop" id="sidebar-backdrop" onclick="toggleMobileSidebar(false)"></div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar" id="app-sidebar">
+        <!-- Tree Upload / Selector (Compact & Clean) -->
+        <div class="sidebar-section-compact">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <span style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.5px;">Valið ættartré</span>
+            <span id="tree-stats" style="font-size: 0.72rem; color: var(--text-secondary);">0 færslur</span>
+          </div>
+          
+          <div style="display: flex; gap: 0.4rem; align-items: center;">
+            <select class="tree-select-compact" id="tree-select">
+              <option value="sigurjon" selected>🌳 Sigurjón ættartré</option>
+              <option value="loa">🌳 Lóa ættartré</option>
+            </select>
+            <label class="btn-upload-compact" title="Hlaða inn nýrri .ged skrá">
+              <i data-lucide="upload" style="width: 14px; height: 14px;"></i>
+              <input type="file" id="gedcom-file-input" accept=".ged" style="display: none;">
+            </label>
+          </div>
+        </div>
+
+        <!-- Search & People List (Takes full height & maximum screen real estate) -->
+        <div class="sidebar-section-list">
+          <div class="search-box-compact">
+            <i data-lucide="search" style="width: 14px; height: 14px;"></i>
+            <input type="text" id="search-input" autocomplete="off" placeholder="Leita að nafni, ári eða stað...">
+          </div>
+          
+          <!-- People List (Expanded, dense, clear compact cards) -->
+          <div class="people-list" id="people-list-container">
+            <div style="text-align: center; padding: 2rem 0; color: var(--accent-gold); font-size: 0.85rem;">
+              <i data-lucide="loader-2" class="spin"></i> Hleð inn ættartré...
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Panel -->
+      <main class="main-workspace" id="main-workspace-area">
+        <!-- Empty State (Shown when no person is selected) -->
+        <div class="empty-state" id="empty-state-view">
+          <i data-lucide="users"></i>
+          <h2 style="margin-top: 1rem;">Veldu persónu til að hefjast handa</h2>
+          <p style="max-width: 500px; margin-top: 0.5rem; color: var(--text-secondary);">
+            Sæktu .ged skrárnar úr Ancestry og vistaðu þær í verkefnamöppunni sem <strong>loa.ged</strong> og <strong>sigurjon.ged</strong>, smelltu svo á gullna hnappinn. Einnig er hægt að draga inn aðrar GEDCOM skrár eða nota dæmatrén.
+          </p>
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+            <button class="btn btn-primary" id="btn-load-local-2" style="background: var(--accent-gold); color: black; border-color: var(--accent-gold);">Hlaða inn þínum ættartrjám</button>
+            <button class="btn btn-secondary" id="btn-load-mock-2">Prófa dæmatré</button>
+          </div>
+        </div>
+
+        <!-- Selected Person Workspace (Hidden by default) -->
+        <div class="workspace-grid" id="person-workspace-view" style="display: none;">
+          <!-- Column 1: Person Details -->
+          <div class="card" id="person-details-card" style="overflow-y: auto; max-height: calc(100vh - 140px);">
+            <div class="profile-header">
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 0.4rem;">
+                <div class="profile-avatar" id="p-avatar" style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 2px solid var(--accent-gold); background: rgba(13,15,18,0.6); cursor: pointer; position: relative;" onclick="triggerAvatarUpload()" title="Smelltu til að hlaða upp eigin prófílmynd">
+                  <i data-lucide="user" id="p-avatar-icon" style="width: 40px; height: 40px;"></i>
+                  <img id="p-avatar-img" src="" alt="" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                </div>
+                <input type="file" id="avatar-file-input" accept="image/*" style="display: none;" onchange="handleAvatarUpload()">
+                <div style="display: flex; gap: 0.4rem; align-items: center;">
+                  <button class="btn btn-secondary" onclick="triggerAvatarUpload()" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; display: inline-flex; align-items: center; gap: 4px;">
+                    <i data-lucide="camera" style="width: 12px; height: 12px;"></i> Breyta mynd
+                  </button>
+                  <button class="btn btn-secondary" id="btn-remove-avatar" onclick="removeProfileAvatar()" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #ff6b6b; border-color: rgba(255,107,107,0.25); display: none;">
+                    <i data-lucide="trash-2" style="width: 12px; height: 12px;"></i> Fjarlægja
+                  </button>
+                </div>
+              </div>
+              <h2 class="profile-name" id="p-full-name">-</h2>
+              <div class="profile-dates" id="p-life-dates"></div>
+              <div id="p-confidence-badge-container" style="margin-top: 0.4rem; display: flex; justify-content: center;">
+                <span id="p-confidence-badge" class="badge badge-success" style="font-size: 0.72rem; padding: 0.2rem 0.6rem; display: inline-flex; align-items: center; gap: 4px;">
+                  <i data-lucide="shield-check" style="width: 12px; height: 12px;"></i>
+                  <span>100% Staðfestar upplýsingar</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="profile-relations">
+              <div class="relation-group">
+                <span class="relation-label">Fæðing</span>
+                <span class="relation-value" id="p-birth-info">-</span>
+              </div>
+              <div class="relation-group">
+                <span class="relation-label">Andlát</span>
+                <span class="relation-value" id="p-death-info">-</span>
+              </div>
+              <div class="relation-group">
+                <span class="relation-label">Faðir</span>
+                <span class="relation-value clickable" id="p-father-info" data-id="">-</span>
+              </div>
+              <div class="relation-group">
+                <span class="relation-label">Móðir</span>
+                <span class="relation-value clickable" id="p-mother-info" data-id="">-</span>
+              </div>
+              <div class="relation-group">
+                <span class="relation-label">Maki</span>
+                <span class="relation-value" id="p-spouse-info">-</span>
+              </div>
+              <div class="relation-group">
+                <span class="relation-label">Börn</span>
+                <div id="p-children-list" style="display: flex; flex-direction: column; gap: 0.25rem;">
+                  <!-- Populate dynamically -->
+                </div>
+              </div>
+              <div class="relation-group" id="p-descendant-count-row" style="display: none;">
+                <span class="relation-label">Afkomendur</span>
+                <span class="relation-value" id="p-descendant-count-val" style="color: var(--accent-gold); font-weight: 700;">-</span>
+              </div>
+            </div>
+
+            <!-- Research Log & Biography Section -->
+            <div style="margin-top: 1.5rem;" id="research-log-section">
+              <div style="border-bottom: 1px solid rgba(184,134,11,0.15); padding-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-size: 0.95rem; color: var(--accent-gold); display: flex; align-items: center; gap: 0.35rem; font-weight: 600;">
+                  <i data-lucide="book-open" style="width: 15px; height: 15px;"></i>
+                  Lífshlaup & Samantekt
+                </span>
+                <div style="display: flex; gap: 0.35rem;">
+                  <button class="btn btn-secondary" id="btn-person-history" onclick="openPersonHistoryModal()" title="Skoða breytingasögu og endurheimta eldri útgáfur" style="padding: 0.25rem 0.55rem; font-size: 0.72rem; display: inline-flex; align-items: center; gap: 0.3rem; background: rgba(255,255,255,0.05);">
+                    <i data-lucide="history" style="width: 12px; height: 12px;"></i> Saga
+                  </button>
+                  <button class="btn btn-secondary" id="btn-regen-bio" onclick="regenerateBio()" style="padding: 0.25rem 0.6rem; font-size: 0.72rem; display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(184,134,11,0.1); border-color: rgba(184,134,11,0.3); color: var(--accent-gold);">
+                    <i data-lucide="refresh-cw" style="width: 12px; height: 12px;"></i> Endurgera
+                  </button>
+                </div>
+              </div>
+              <div id="p-research-notes" style="margin-top: 0.75rem; font-size: 0.84rem; background: rgba(13,15,18,0.5); padding: 1.1rem; border-radius: 8px; border: 1px solid var(--border-color); line-height: 1.6; max-height: 380px; overflow-y: auto; color: var(--text-secondary);">
+                Engin samantekt skráð. Smelltu á „Endurgera samantekt“ til að búa til ævisögu úr öllum staðfestum gögnum.
+              </div>
+            </div>
+
+            <!-- Sources & Images Section -->
+            <div style="margin-top: 1.5rem;" id="person-sources-section">
+              <h3 style="font-size: 0.95rem; border-bottom: 1px solid rgba(184,134,11,0.1); padding-bottom: 0.5rem; color: var(--accent-gold); display: flex; align-items: center; gap: 0.25rem;">
+                <i data-lucide="image" style="width: 14px; height: 14px;"></i>
+                Sögubók & Ljósmyndir
+              </h3>
+              <div id="p-sources-gallery" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <div style="font-size: 0.8rem; color: var(--text-muted); font-style: italic;">Engar heimildir tengdar.</div>
+              </div>
+            </div>
+
+            <!-- Quick Search section -->
+            <div style="margin-top: 2rem;">
+              <h3 style="font-size: 1rem; border-bottom: 1px solid rgba(184,134,11,0.1); padding-bottom: 0.5rem; color: var(--accent-gold);">
+                <i data-lucide="search" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 0.25rem;"></i>
+                Leita á netinu
+              </h3>
+              <div class="search-links-grid">
+                <a href="#" target="_blank" class="search-button" id="link-timarit">
+                  <span>Tímarit.is (Greinar & dánartilkynningar)</span>
+                  <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+                </a>
+                <a href="#" target="_blank" class="search-button" id="link-mbl">
+                  <span>Mbl.is Minningar (Morgunblaðið)</span>
+                  <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+                </a>
+                <a href="#" target="_blank" class="search-button" id="link-legstadir">
+                  <span>Legstaðaleit (Legsteinar)</span>
+                  <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+                </a>
+                <a href="#" target="_blank" class="search-button" id="link-islendingabok">
+                  <span>Íslendingabók</span>
+                  <i data-lucide="external-link" style="width: 14px; height: 14px;"></i>
+                </a>
+              </div>
+              <button class="btn btn-primary" id="btn-run-ai-research" onclick="runAIResearch()" style="width: 100%; margin-top: 1rem; background: var(--accent-gold); color: black; border-color: var(--accent-gold); display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 600; padding: 0.6rem;">
+                <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+                Sækja AI uppástungur í rauntíma
+              </button>
+            </div>
+
+            <!-- Suggested Media from Web -->
+            <div style="margin-top: 1.5rem; display: none;" id="web-suggestions-section">
+              <h3 style="font-size: 0.95rem; border-bottom: 1px solid rgba(184,134,11,0.1); padding-bottom: 0.5rem; color: var(--accent-gold); display: flex; align-items: center; justify-content: space-between;">
+                <span style="display: flex; align-items: center; gap: 0.25rem;">
+                  <i data-lucide="globe" style="width: 14px; height: 14px;"></i>
+                  Uppástungur af vefnum
+                </span>
+                <span class="badge badge-primary" style="background-color: var(--accent-gold); color: black;" id="suggestions-count">0</span>
+              </h3>
+              <div id="p-suggestions-gallery" style="display: flex; flex-direction: column; gap: 0.75rem;">
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Working Workspace (OCR, Bio, Notes) -->
+          <div class="card" style="padding: 1.5rem; height: 100%; display: flex; flex-direction: column; overflow-y: auto; max-height: calc(100vh - 140px);">
+            <div class="tab-bar">
+              <div class="tab active" data-tab="tab-pedigree">
+                <i data-lucide="network" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 0.25rem; color: var(--accent-gold);"></i>
+                🌳 Gagnvirkt Ættartré
+              </div>
+              <div class="tab" data-tab="tab-ocr">
+                <i data-lucide="scan-text" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 0.25rem;"></i>
+                1. Minningargrein (OCR)
+              </div>
+              <div class="tab" data-tab="tab-bio">
+                <i data-lucide="file-text" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 0.25rem;"></i>
+                2. Ævisaga & Sniðmát
+              </div>
+              <div class="tab" data-tab="tab-saved">
+                <i data-lucide="archive" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 0.25rem;"></i>
+                3. Vistuð gögn (<span id="saved-notes-count">0</span>)
+              </div>
+              <div class="tab" data-tab="tab-sources">
+                <i data-lucide="book-open" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 0.25rem;"></i>
+                4. Sögubók & Ljósmyndir
+              </div>
+            </div>
+
+            
+            <!-- Tab: Interactive Family Tree Navigator -->
+            <div class="tab-content" id="tab-pedigree" style="display: block;">
+              <!-- Compact Single-Line Sub-Header (Only 30px tall) -->
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; padding: 0.25rem 0.5rem; background: rgba(184,134,11,0.06); border-radius: 6px; border: 1px solid rgba(184,134,11,0.15);">
+                <div style="display: flex; align-items: center; gap: 0.4rem;">
+                  <i data-lucide="git-fork" style="width: 13px; height: 13px; color: var(--accent-gold);"></i>
+                  <span id="tree-nav-title" style="font-size: 0.78rem; font-weight: 700; color: var(--accent-gold);">Ættartré & Afkomendur</span>
+                  <span style="font-size: 0.68rem; color: var(--text-muted); margin-left: 0.25rem;">(Smelltu á spjald til að flakka)</span>
+                </div>
+                <div style="display: flex; gap: 0.35rem; align-items: center;">
+                  <button class="panel-toggle-btn" id="btn-maximize-tree" onclick="toggleMaximizeTree()" title="Stækka ættartré yfir allan skjáinn" style="padding: 0.2rem 0.5rem; font-size: 0.68rem;">
+                    <i data-lucide="maximize-2" id="maximize-tree-icon" style="width: 11px; height: 11px;"></i>
+                    <span id="maximize-tree-text">Fullskjár</span>
+                  </button>
+                  <button class="btn btn-secondary" onclick="renderInteractiveTree()" style="font-size: 0.68rem; padding: 0.2rem 0.5rem; display: inline-flex; align-items: center; gap: 3px;">
+                    <i data-lucide="rotate-ccw" style="width: 11px; height: 11px;"></i> Miðja
+                  </button>
+                </div>
+              </div>
+
+              <!-- Interactive Visual Tree Container -->
+              <div id="interactive-tree-canvas" style="background: radial-gradient(circle at 50% 50%, rgba(30,35,45,0.6) 0%, rgba(13,15,18,0.95) 100%); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.5rem; min-height: 520px; overflow-x: auto; overflow-y: auto;">
+                <div style="text-align: center; color: var(--text-muted); padding: 4rem 0;">
+                  <i data-lucide="loader-2" class="spin" style="width: 32px; height: 32px; color: var(--accent-gold);"></i>
+                  <div style="margin-top: 0.5rem;">Hleð inn ættartré...</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab 1: OCR -->
+            <div class="tab-content" id="tab-ocr" style="display: none;">
+              <div class="editor-grid">
+                <!-- Image upload and preview -->
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                  <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                    Taktu skjáskot af minningargrein (t.d. af Tímarit.is eða Mbl.is), dragðu hana hingað eða límdu (Ctrl+V) til að lesa textann með íslenskum stafariti.
+                  </div>
+                  
+                  <label class="ocr-dropzone" id="ocr-dropzone">
+                    <i data-lucide="image"></i>
+                    <p style="font-weight: 600;">Dragðu mynd hingað eða smelltu</p>
+                    <p style="font-size: 0.75rem; color: var(--text-muted);">Einnig hægt að líma mynd með Ctrl+V</p>
+                    <input type="file" id="ocr-file-input" accept="image/*">
+                  </label>
+
+                  <div class="ocr-preview-container" id="ocr-preview-container" style="display: none;">
+                    <span class="relation-label">Mynd í vinnslu</span>
+                    <img src="" alt="Obituary Scan" class="ocr-image-preview" id="ocr-image-preview">
+                    <button class="btn btn-secondary" id="btn-clear-image" style="align-self: flex-start;">
+                      <i data-lucide="trash-2" style="width: 14px; height: 14px;"></i> Fjarlægja mynd
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Extracted Text Area -->
+                <div class="textarea-container">
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <label for="ocr-raw-text">Texti úr mynd (Hrálesið)</label>
+                    <div id="ocr-status" style="font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                      <!-- Status or Progress -->
+                    </div>
+                  </div>
+                  <textarea id="ocr-raw-text" placeholder="Hér birtist textinn úr myndinni eftir lestur... eða þú getur límt inn texta beint af Tímarit.is."></textarea>
+                  <div class="btn-group">
+                    <button class="btn btn-primary" id="btn-run-ocr" disabled>
+                      <i data-lucide="play" style="width: 14px; height: 14px;"></i> Keyra textalestur (OCR)
+                    </button>
+                    <button class="btn btn-secondary" id="btn-format-to-bio">
+                      Senda í sniðmát <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab 2: Biography & Format -->
+            <div class="tab-content" id="tab-bio" style="display: none;">
+              <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                Hér geturðu skipulagt textann fyrir Ancestry. Veldu sniðmát til að búa til fallega uppsetta ævisögu og tímatal.
+              </div>
+              
+              <div style="display: flex; gap: 1rem; margin-bottom: 1rem; align-items: center; flex-wrap: wrap;">
+                <span class="relation-label">Sniðmát:</span>
+                <button class="btn btn-secondary" id="template-bio-btn" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">
+                  Ævisaga + Tímatal
+                </button>
+                <button class="btn btn-secondary" id="template-timeline-btn" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">
+                  Aðeins Tímatal
+                </button>
+                <button class="btn btn-secondary" id="template-simple-btn" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">
+                  Einföld minning
+                </button>
+              </div>
+
+              <div class="editor-grid" style="flex: 1;">
+                <!-- Final Markdown/Text Area -->
+                <div class="textarea-container">
+                  <label for="formatted-bio-text">Lokaútgáfa (fyrir Ancestry)</label>
+                  <textarea id="formatted-bio-text" placeholder="Veldu sniðmát eða skrifaðu textann hér. Hann er tilbúinn til að vera afritaður yfir á Ancestry."></textarea>
+                  <div class="btn-group">
+                    <button class="btn btn-primary" id="btn-copy-bio">
+                      <i data-lucide="copy" style="width: 14px; height: 14px;"></i> Afrita texta
+                    </button>
+                    <button class="btn btn-secondary" id="btn-save-note">
+                      <i data-lucide="save" style="width: 14px; height: 14px;"></i> Vista staðbundið í Saga
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Structured Preview (Timeline and parsed data) -->
+                <div style="display: flex; flex-direction: column; gap: 1rem; background: rgba(13,15,18,0.4); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-color); overflow-y: auto; max-height: 400px;">
+                  <span class="relation-label" style="border-bottom: 1px solid rgba(184,134,11,0.1); padding-bottom: 0.25rem;">
+                    Upplýsingar úr texta (Greint af kerfi)
+                  </span>
+                  
+                  <div id="parsed-fields-container" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+                      <span style="color: var(--text-muted);">Tímatal viðburða:</span>
+                      <button id="btn-extract-events" class="btn btn-secondary" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">
+                        Greina atburði úr texta
+                      </button>
+                    </div>
+                    
+                    <!-- Dynamic Timeline generated from text -->
+                    <div class="timeline-list" id="dynamic-timeline">
+                      <!-- Render events here -->
+                      <div style="font-size: 0.8rem; color: var(--text-muted); font-style: italic;">
+                        Smelltu á „Greina atburði úr texta“ til að finna sjálfkrafa ártöl og viðburði í textanum.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab 3: Saved Notes -->
+            <div class="tab-content" id="tab-saved" style="display: none;">
+              <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                Hér eru vistuð gögn og minningargreinar sem þú hefur unnið í Saga fyrir þessa persónu. Þau eru geymd í vafra tölvunnar þinnar.
+              </div>
+              <div id="saved-notes-list" style="display: flex; flex-direction: column; gap: 1rem;">
+                <!-- Render saved items -->
+                <div style="text-align: center; padding: 3rem; color: var(--text-muted);">
+                  Engin gögn vistuð fyrir þessa persónu ennþá.
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab 4: Sources & Images -->
+            <div class="tab-content" id="tab-sources" style="display: none;">
+              <div class="tab-section-title" style="color: var(--accent-gold); font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; border-bottom: 1px solid rgba(184,134,11,0.2); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i data-lucide="book-open" style="width: 18px; height: 18px;"></i>
+                Staðfestar heimildir og ljósmyndir fyrir persónu
+              </div>
+              
+              <div id="person-tab-sources-gallery" style="margin-bottom: 2rem;">
+                <!-- Person sources rendered here -->
+              </div>
+
+              <div class="tab-section-title" style="color: var(--accent-gold); font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; border-bottom: 1px solid rgba(184,134,11,0.2); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i data-lucide="file-text" style="width: 18px; height: 18px;"></i>
+                Almennt yfirlit rannsóknarinnar
+              </div>
+              <div id="sources-markdown-view" style="background: rgba(13,15,18,0.4); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); max-height: 400px; overflow-y: auto; line-height: 1.6;">
+                Hleð inn heimildum...
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i data-lucide="check-circle" style="color: var(--accent-gold);"></i>
+    <span id="toast-message">Texti afritaður!</span>
+  </div>
+
+  <!-- Help Modal -->
+  <div id="help-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.8); z-index: 2000; align-items: center; justify-content: center;">
+    <div class="card" style="max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; margin: auto;">
+      <h2 class="card-title">Hjálp og leiðbeiningar</h2>
+      <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.95rem;">
+        <p><strong>Saga</strong> er tól til að aðstoða við gagnaöflun og textagerð fyrir ættartré á Ancestry.com.</p>
+        
+        <h3>1. Flytja inn ættartré (GEDCOM)</h3>
+        <p>Til að leita auðveldlega að fólki geturðu hlaðið inn <code>.ged</code> skrá sem þú flytur út úr Ancestry:</p>
+        <ol style="margin-left: 1.5rem;">
+          <li>Opnaðu ættartréð þitt á Ancestry.com.</li>
+          <li>Farðu í <strong>Tree Settings</strong>.</li>
+          <li>Smelltu á <strong>Export Tree</strong> og sæktu <code>.ged</code> skrána.</li>
+          <li>Dragðu skrána inn á vinstri hliðina í Saga.</li>
+        </ol>
+
+        <h3>2. Finna minningargreinar og myndir</h3>
+        <p>Þegar þú velur persónu birtast sjálfvirkar leitarhnappar hægra megin á spjaldinu. Þeir opna leit á <strong>Tímarit.is</strong> eða <strong>Mbl.is</strong> með réttu nafni og fæðingar-/dánarárum.</p>
+
+        <h3>3. Textalestur (OCR) úr skjáskotum</h3>
+        <p>Þegar þú finnur grein á netinu geturðu:</p>
+        <ul style="margin-left: 1.5rem;">
+          <li>Tekið skjáskot (screenshot) af henni.</li>
+          <li>Límt myndina beint inn í Saga (Ctrl+V) í flipa 1.</li>
+          <li>Kerfið keyrir OCR á íslensku og breytir myndinni í texta.</li>
+        </ul>
+
+        <h3>4. Samsetning og afritun</h3>
+        <p>Í flipa 2 geturðu valið sniðmát. Kerfið finnur sjálfkrafa ártöl í textanum til að búa til tímatal viðburða. Smelltu á <strong>Afrita texta</strong> til að afrita þetta yfir á Ancestry.com undir <strong>Gallery -> Add Story</strong> eða <strong>Notes</strong>.</p>
+      </div>
+      <div style="margin-top: 1.5rem; text-align: right;">
+        <button class="btn btn-primary" id="btn-close-help">Loka</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Logic script -->
+  <script src="static_client.js"></script>
+  <script src="app.js?v=1787912110"></script>
+
+  <!-- Sögulegar Greinar Modal -->
+  <div class="modal-backdrop" id="modal-notable-articles" style="display: none;" onclick="if(event.target === this) closeNotableArticlesModal()">
+    <div class="modal" style="max-width: 800px; width: 95%; max-height: 85vh; display: flex; flex-direction: column;">
+      <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <i data-lucide="newspaper" style="color: var(--accent-gold); width: 22px; height: 22px;"></i>
+          <h3 style="margin: 0; font-size: 1.2rem; color: var(--accent-gold);">Merkilegar greinar & Tímarit</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeNotableArticlesModal()">&times;</button>
+      </div>
+      <div class="modal-body" style="overflow-y: auto; padding: 1rem 0; flex-grow: 1;">
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+          Hér er safn allra staðfestra blaða- og tímaritsgreina úr Tímarit.is, Morgunblaðinu, DV, Rétti og fleiri sögulegum heimildum tengdum ættinni.
+        </p>
+        <div id="notable-articles-list" style="display: flex; flex-direction: column; gap: 0.85rem;">
+          <div style="text-align: center; color: var(--text-muted); padding: 2rem;">Hleð inn greinum...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Ættartölfræði Modal -->
+  <div class="modal-backdrop" id="modal-tree-stats" style="display: none;" onclick="if(event.target === this) closeTreeStatsModal()">
+    <div class="modal" style="max-width: 850px; width: 95%; max-height: 88vh; display: flex; flex-direction: column;">
+      <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <i data-lucide="bar-chart-2" style="color: var(--accent-gold); width: 22px; height: 22px;"></i>
+          <h3 style="margin: 0; font-size: 1.2rem; color: var(--accent-gold);">Ættartölfræði & Skemmtileg Met</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeTreeStatsModal()">&times;</button>
+      </div>
+      <div class="modal-body" style="overflow-y: auto; padding: 1.2rem 0; flex-grow: 1;" id="tree-stats-body">
+        <div style="text-align: center; color: var(--text-muted); padding: 2rem;">Reikna tölfræði...</div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Modal: Senda ábendingu & Skjáskot -->
+    <div class="modal-backdrop" id="modal-feedback" style="display: none;" onclick="if(event.target === this) closeFeedbackModal()">
+      <div class="modal" style="max-width: 540px; width: 92%;">
+        <div class="modal-header">
+          <h3 id="feedback-modal-title" style="margin: 0; color: var(--accent-gold); display: flex; align-items: center; gap: 8px; font-size: 1.15rem;">
+            💡 Senda ábendingu / Skjáskot
+          </h3>
+          <button class="btn btn-secondary" onclick="closeFeedbackModal()" style="padding: 0.2rem 0.6rem;">✕</button>
+        </div>
+        <div class="modal-body" style="padding: 1.2rem; display: flex; flex-direction: column; gap: 1rem;">
+          <div style="font-size: 0.84rem; color: var(--text-secondary); background: rgba(184,134,11,0.08); border-left: 3px solid var(--accent-gold); padding: 0.6rem 0.8rem; border-radius: 4px;">
+            Hér geturðu skrifað athugasemdir eða leiðréttingar og hengt við <strong>eitt eða fleiri skjáskot</strong> úr símanum/tölvunni.
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--text-primary);">
+              Tengt ættartré:
+            </label>
+            <div id="feedback-active-tree-label" style="font-size: 0.9rem; font-weight: 700; color: var(--accent-gold);">
+              🌳 Valið tré
+            </div>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--text-primary);">
+              Skilaboð / Athugasemd:
+            </label>
+            <textarea id="feedback-text" rows="4" placeholder="Skrifaðu ábendingu, leiðréttingu á nafni/ártali eða hvað sem er..." style="width: 100%; box-sizing: border-box; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); color: #fff; border-radius: 6px; padding: 0.6rem; font-size: 0.88rem; font-family: inherit; resize: vertical;"></textarea>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--text-primary);">
+              Hengja við skjáskot (má velja mörg samtímis):
+            </label>
+            <input type="file" id="feedback-files" accept="image/*" multiple style="display: block; width: 100%; font-size: 0.82rem; color: var(--text-secondary);">
+            <div id="feedback-file-count" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">
+              Engin skrá valin
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 0.6rem; margin-top: 0.5rem;">
+            <button class="btn btn-secondary" onclick="closeFeedbackModal()">Hætta við</button>
+            <button class="btn btn-primary" id="btn-submit-feedback" onclick="submitFeedbackForm()" style="background: var(--accent-gold); color: #000; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+              <i data-lucide="send" style="width: 14px; height: 14px;"></i>
+              <span>Senda ábendingu</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- Modal: Person History (Breytingasaga Einstaklings) -->
+  <div class="modal" id="modal-person-history" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+    <div class="modal-content" style="background: var(--bg-card, #161a20); border: 1px solid var(--border-color); border-radius: 12px; max-width: 650px; width: 92%; max-height: 85vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+      <div style="padding: 1.1rem 1.4rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0; color: var(--accent-gold); font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+          <i data-lucide="history" style="width: 18px; height: 18px;"></i>
+          <span id="history-modal-title">Breytingasaga einstaklings</span>
+        </h3>
+        <button class="btn btn-secondary" onclick="closePersonHistoryModal()" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">✕ Loka</button>
+      </div>
+      <div id="person-history-list" style="padding: 1.2rem; overflow-y: auto; display: flex; flex-direction: column; gap: 0.8rem;">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Tree Snapshots (Útgáfustjórnun Trés) -->
+  <div class="modal" id="modal-tree-snapshots" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+    <div class="modal-content" style="background: var(--bg-card, #161a20); border: 1px solid var(--border-color); border-radius: 12px; max-width: 720px; width: 92%; max-height: 85vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+      <div style="padding: 1.1rem 1.4rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0; color: var(--accent-gold); font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+          <i data-lucide="git-branch" style="width: 18px; height: 18px;"></i>
+          <span>Útgáfustjórnun og afrit trés (Snapshots)</span>
+        </h3>
+        <button class="btn btn-secondary" onclick="closeTreeSnapshotsModal()" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">✕ Loka</button>
+      </div>
+      <div style="padding: 1rem 1.4rem; background: rgba(0,0,0,0.2); border-bottom: 1px solid var(--border-color); display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
+        <input type="text" id="new-snapshot-tag" placeholder="Útgáfuheiti (t.d. v2.1-breyting)" style="flex: 1; min-width: 160px; padding: 0.4rem 0.7rem; border-radius: 6px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: #fff; font-size: 0.85rem;">
+        <input type="text" id="new-snapshot-desc" placeholder="Lýsing á breytingu..." style="flex: 2; min-width: 200px; padding: 0.4rem 0.7rem; border-radius: 6px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: #fff; font-size: 0.85rem;">
+        <button class="btn btn-primary" onclick="createNewTreeSnapshot()" style="background: var(--accent-gold); color: black; font-weight: 600; font-size: 0.82rem; padding: 0.4rem 0.8rem; border-color: var(--accent-gold);">
+          + Taka nýja útgáfu
+        </button>
+      </div>
+      <div id="tree-snapshots-list" style="padding: 1.2rem; overflow-y: auto; display: flex; flex-direction: column; gap: 0.8rem;">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
