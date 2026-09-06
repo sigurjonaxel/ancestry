@@ -511,6 +511,7 @@ function renderPersonProfile(details) {
       avatarImg.src = p.avatar_url.startsWith('images/') ? `./${p.avatar_url}` : p.avatar_url;
       avatarImg.style.display = 'block';
       avatarIcon.style.display = 'none';
+      avatarImg.onerror = () => { avatarImg.style.display='none'; avatarIcon.style.display='block'; };
       if (p.avatar_verified) {
         avatarImg.title = "✓ Staðfest prófílmynd (Læst)";
       }
