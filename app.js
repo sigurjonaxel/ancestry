@@ -665,6 +665,16 @@ window.setProfileImage = async function(personId, imagePath, imgEl) {
     const data = await res.json();
     state.personDetails = data.details;
     renderPersonProfile(data.details);
+
+    const cleanId = (personId || '').replace(/@/g, '');
+    const pInList = (state.people || []).find(p => p.id === cleanId || p.id === `@${cleanId}@`);
+    if (pInList) {
+      pInList.avatar_url = imagePath;
+      pInList.avatar_verified = 1;
+    }
+    renderPeopleList(state.people);
+    if (typeof renderTree === 'function') renderTree();
+
     showToast('✓ Prófílmynd uppfærð!');
   } catch(e) {
     console.error('setProfileImage error:', e);
@@ -681,9 +691,19 @@ window.removeProfileAvatar = async function() {
     const data = await res.json();
     state.personDetails = data.details;
     renderPersonProfile(data.details);
-    showToast('Prófílmynd fjarlægð!');
-  } catch(e) {
-    showToast('Villa: ' + e.message);
+
+    const cleanId = (state.selectedPersonId || '').replace(/@/g, '');
+    const pInList = (state.people || []).find(p => p.id === cleanId || p.id === `@${cleanId}@`);
+    if (pInList) {
+      pInList.avatar_url = null;
+      pInList.avatar_verified = 0;
+    }
+    renderPeopleList(state.people);
+    if (typeof renderTree === 'function') renderTree();
+
+    showToast('Prófílmynd fjarlægð');
+  } catch (e) {
+    showToast('Ekki tókst að fjarlægja prófílmynd');
   }
 };
 

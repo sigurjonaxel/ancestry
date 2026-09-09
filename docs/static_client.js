@@ -51,6 +51,27 @@ async function decryptBuffer(arrayBuf, password) {
   return JSON.parse(dec.decode(decrypted));
 }
 
+// Apply persistent local overrides from localStorage
+function applyLocalOverrides(data) {
+  if (!data || !data.people) return;
+  try {
+    const raw = localStorage.getItem('saga_person_avatar_overrides');
+    if (raw) {
+      const overrides = JSON.parse(raw);
+      for (const [pid, avatarUrl] of Object.entries(overrides)) {
+        const cleanId = (pid || '').replace(/@/g, '');
+        const person = data.people.find(p => p.id === cleanId || p.id === `@${cleanId}@`);
+        if (person) {
+          person.avatar_url = avatarUrl;
+          person.avatar_verified = 1;
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('Error applying local overrides:', e);
+  }
+}
+
 // Attempt Authentication
 window.attemptSagaAuth = async function(password, rememberMe = true) {
   const btn = document.getElementById('saga-auth-btn');
@@ -66,6 +87,7 @@ window.attemptSagaAuth = async function(password, rememberMe = true) {
     if (!encBuf) throw new Error('Ekki tókst að sækja dulkóðuð gögn.');
 
     const data = await decryptBuffer(encBuf, password);
+    applyLocalOverrides(data);
     STATIC_DATA = data;
     console.log('🔓 Dulkóðun tókst! Ættartré opnað:', data.people.length, 'einstaklingar.');
 
@@ -89,7 +111,7 @@ window.attemptSagaAuth = async function(password, rememberMe = true) {
     if (window.loadTreesList && window.loadTree && window.state) {
       try {
         await window.loadTreesList();
-        await window.loadTree(window.state.selectedTreeId || 'loa');
+        await window.loadTree(window.state.selectedTreeId || 'sigurjon');
       } catch (e) {
         console.warn('UI update after auth:', e);
       }
@@ -293,7 +315,19 @@ window.fetch = async function(resource, init) {
         const person = data.people.find(p => p.id === personId || p.id === `@${personId}@`);
         if (person) {
           person.avatar_url = imagePath;
-          person.avatar_verified = 1;
+          person.avatar_verified = imagePath ? 1 : 0;
+        }
+        try {
+          const raw = localStorage.getItem('saga_person_avatar_overrides');
+          const overrides = raw ? JSON.parse(raw) : {};
+          if (imagePath) {
+            overrides[personId] = imagePath;
+          } else {
+            delete overrides[personId];
+          }
+          localStorage.setItem('saga_person_avatar_overrides', JSON.stringify(overrides));
+        } catch (e) {
+          console.warn('Could not save avatar override to localStorage:', e);
         }
         const details = getDetailsForPerson(personId);
         return new Response(JSON.stringify({ status: 'ok', details }), { status: 200, headers: { 'Content-Type': 'application/json' } });
