@@ -227,6 +227,74 @@ window.fetch = async function(resource, init) {
           sources,
           suggestions
         }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      function getDetailsForPerson(pid) {
+        const cleanId = (pid || '').replace(/@/g, '');
+        const person = data.people.find(p => p.id === cleanId || p.id === `@${cleanId}@`);
+        if (!person) return null;
+        const personRels = (data.relations || []).filter(r => r.person_id === cleanId || r.person_id === `@${cleanId}@`);
+        const fatherRel = personRels.find(r => r.relation_type === 'father');
+        const motherRel = personRels.find(r => r.relation_type === 'mother');
+        const spouseRels = personRels.filter(r => r.relation_type === 'spouse');
+        const childRels = personRels.filter(r => r.relation_type === 'child');
+        const father = fatherRel ? data.people.find(p => p.id === fatherRel.related_id) : null;
+        const mother = motherRel ? data.people.find(p => p.id === motherRel.related_id) : null;
+        const spouse = spouseRels.map(r => data.people.find(p => p.id === r.related_id)).filter(Boolean);
+        const children = childRels.map(r => data.people.find(p => p.id === r.related_id)).filter(Boolean);
+        const sources = (data.sources || []).filter(s => s.person_id === cleanId || s.person_id === `@${cleanId}@`);
+        const suggestions = (data.suggestions || []).filter(s => s.person_id === cleanId || s.person_id === `@${cleanId}@`);
+        return { person, family: { father, mother, spouse, children }, sources, suggestions };
+      }
+
+      if (path.endsWith('/api/confirm_suggestion')) {
+        const sugId = parseInt(u.searchParams.get('sug_id'));
+        const personId = (u.searchParams.get('id') || '').replace(/@/g, '');
+        const sug = (data.suggestions || []).find(s => s.id === sugId);
+        if (sug) {
+          sug.status = 'confirmed';
+          if (!data.sources.some(src => (src.title === sug.title || (sug.url && src.link === sug.url)) && (src.person_id === personId || src.person_id === `@${personId}@`))) {
+            data.sources.push({
+              id: Date.now(),
+              person_id: personId,
+              title: sug.title,
+              snippet: sug.description,
+              link: sug.url,
+              image_url: sug.local_path || sug.image_url
+            });
+          }
+        }
+        const details = getDetailsForPerson(personId);
+        return new Response(JSON.stringify({ status: 'ok', details }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+
+      if (path.endsWith('/api/reject_suggestion')) {
+        const sugId = parseInt(u.searchParams.get('sug_id'));
+        const personId = (u.searchParams.get('id') || '').replace(/@/g, '');
+        const sug = (data.suggestions || []).find(s => s.id === sugId);
+        if (sug) {
+          sug.status = 'rejected';
+        }
+        const details = getDetailsForPerson(personId);
+        return new Response(JSON.stringify({ status: 'ok', details }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+
+      if (path.endsWith('/api/delete_source')) {
+        const sourceId = parseInt(u.searchParams.get('source_id'));
+        const personId = (u.searchParams.get('person_id') || '').replace(/@/g, '');
+        data.sources = (data.sources || []).filter(s => s.id !== sourceId);
+        const details = getDetailsForPerson(personId);
+        return new Response(JSON.stringify({ status: 'ok', details }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+
+      if (path.endsWith('/api/set_profile_image')) {
+        const personId = (u.searchParams.get('person_id') || '').replace(/@/g, '');
+        const imagePath = u.searchParams.get('image_path') || null;
+        const person = data.people.find(p => p.id === personId || p.id === `@${personId}@`);
+        if (person) {
+          person.avatar_url = imagePath;
+          person.avatar_verified = 1;
+        }
+        const details = getDetailsForPerson(personId);
+        return new Response(JSON.stringify({ status: 'ok', details }), { status: 200, headers: { 'Content-Type': 'application/json' } });
       }
 
       if (path.endsWith('/api/person_history')) {
