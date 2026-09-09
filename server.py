@@ -230,10 +230,11 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
         if not person_id or not image_path:
             self.send_error_response(400, "Missing person_id or image_path")
             return
+        clean_id = person_id.replace('@', '')
         with get_db() as conn:
-            conn.execute("UPDATE people SET avatar_url = ?, avatar_verified = 1 WHERE id = ?", (image_path, person_id))
+            conn.execute("UPDATE people SET avatar_url = ?, avatar_verified = 1 WHERE id = ? OR id = ?", (image_path, clean_id, f"@{clean_id}@"))
             conn.commit()
-        details = get_person_details(person_id)
+        details = get_person_details(clean_id)
         self.send_json({"status": "ok", "details": details})
 
 

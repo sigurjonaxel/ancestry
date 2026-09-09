@@ -573,9 +573,9 @@ function renderConfirmedSources(sources) {
         ${imgSrc ? `
           <div style="position:relative;flex-shrink:0;">
             <img src="${imgSrc}" style="width:64px;height:64px;object-fit:cover;border-radius:6px;border:1px solid var(--border-color);cursor:pointer;" 
-                 onclick="setProfileImage('${state.selectedPersonId}', '${s.local_path || s.image_url || ''}', this)"
-                 title="Smella til að setja sem prófílmynd">
-            <div style="position:absolute;bottom:2px;right:2px;background:rgba(0,0,0,0.7);border-radius:3px;padding:1px 3px;font-size:9px;color:#fff;">📷</div>
+                 onclick="openImageViewer('${imgSrc}', '${(s.title || '').replace(/'/g, "\\'")}', '${s.local_path || s.image_url || ''}')"
+                 title="Smella til að skoða mynd í fullri stærð">
+            <div style="position:absolute;bottom:2px;right:2px;background:rgba(0,0,0,0.7);border-radius:3px;padding:1px 3px;font-size:9px;color:#fff;" title="Skoða mynd">🔍</div>
           </div>
         ` : `<i data-lucide="book-open" style="width:24px;height:24px;color:var(--accent-gold);flex-shrink:0;margin-top:2px;"></i>`}
         <div style="flex-grow:1;min-width:0;">
@@ -601,11 +601,51 @@ function renderConfirmedSources(sources) {
   try { if (window.lucide) lucide.createIcons(); } catch(e) {}
 }
 
+let currentViewerImagePath = null;
+window.openImageViewer = function(imgSrc, title, rawPath) {
+  const modal = document.getElementById('modal-image-viewer');
+  const img = document.getElementById('image-viewer-img');
+  const titleEl = document.getElementById('image-viewer-title');
+  const btnSet = document.getElementById('btn-set-avatar-from-viewer');
+  if (!modal || !img) return;
+
+  img.src = imgSrc;
+  if (titleEl) titleEl.textContent = title || 'Ljósmynd';
+  currentViewerImagePath = rawPath || null;
+  if (btnSet) {
+    btnSet.style.display = currentViewerImagePath ? 'inline-flex' : 'none';
+  }
+  modal.style.display = 'flex';
+};
+
+window.closeImageViewer = function() {
+  const modal = document.getElementById('modal-image-viewer');
+  if (modal) modal.style.display = 'none';
+  currentViewerImagePath = null;
+};
+
+window.setAvatarFromViewer = async function() {
+  if (!currentViewerImagePath || !state.selectedPersonId) return;
+  await setProfileImage(state.selectedPersonId, currentViewerImagePath);
+  closeImageViewer();
+};
+
+window.handleAvatarClick = function() {
+  const p = state.selectedPerson || (state.personDetails && state.personDetails.person);
+  if (p && p.avatar_url) {
+    const isDoc = window.location.pathname.includes('/ancestry') || window.location.hostname.includes('github.io');
+    const fullSrc = p.avatar_url.startsWith('images/') ? (isDoc ? `./${p.avatar_url}` : `/api/proxy_image?url=${encodeURIComponent(p.avatar_url)}`) : p.avatar_url;
+    openImageViewer(fullSrc, p.name || 'Prófílmynd', p.avatar_url);
+  } else {
+    triggerAvatarUpload();
+  }
+};
+
 window.deleteSource = async function(sourceId, personId) {
   if (!confirm('Eyða þessari heimild?')) return;
   try {
     const res = await fetch(`/api/delete_source?source_id=${sourceId}&person_id=${personId}`, { method: 'POST' });
-    if (!res.ok) throw new Error('Villa');
+    if (!res.ok) throw new Error('Gat ekki eytt heimild');
     const data = await res.json();
     state.personDetails = data.details;
     renderPersonProfile(data.details);
@@ -618,14 +658,18 @@ window.deleteSource = async function(sourceId, personId) {
 window.setProfileImage = async function(personId, imagePath, imgEl) {
   if (!imagePath) return;
   try {
-    const res = await fetch(`/api/set_profile_image?person_id=${personId}&image_path=${encodeURIComponent(imagePath)}`, { method: 'POST' });
-    if (!res.ok) throw new Error('Villa');
+    const res = await fetch(`/api/set_profile_image?person_id=${encodeURIComponent(personId)}&image_path=${encodeURIComponent(imagePath)}`, { method: 'POST' });
+    if (!res.ok) {
+      const txt = await res.text().catch(() => '');
+      throw new Error(txt || 'Gat ekki vistað mynd');
+    }
     const data = await res.json();
     state.personDetails = data.details;
     renderPersonProfile(data.details);
-    showToast('Prófílmynd uppfærð!');
+    showToast('✓ Prófílmynd uppfærð!');
   } catch(e) {
-    showToast('Villa: ' + e.message);
+    console.error('setProfileImage error:', e);
+    showToast('Villa: ' + (e.message || 'Gat ekki vistað mynd'));
   }
 };
 
