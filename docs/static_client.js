@@ -227,6 +227,8 @@ window.fetch = async function(resource, init) {
           sources,
           suggestions
         }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+
       function getDetailsForPerson(pid) {
         const cleanId = (pid || '').replace(/@/g, '');
         const person = data.people.find(p => p.id === cleanId || p.id === `@${cleanId}@`);
