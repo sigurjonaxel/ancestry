@@ -658,6 +658,37 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
                     with open(os.path.join(shots_dir, f"mobile_screenshot_latest.{ext}"), 'wb') as f:
                         f.write(open(filepath, 'rb').read())
 
+            person_id = form.getvalue('person_id', '')
+            
+            # Save into database and issues.md
+            try:
+                import datetime
+                dt_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+                with get_db() as conn:
+                    conn.execute("""
+                        INSERT INTO feedback_issues (tree_id, person_id, user_note, screenshot_paths, status)
+                        VALUES (?, ?, ?, ?, 'open')
+                    """, (tree_id, person_id, user_note, json.dumps(saved_paths)))
+                    conn.commit()
+
+                # Also append to issues.md so it is tracked as a project issue
+                issues_file = os.path.join(os.path.dirname(__file__), "issues.md")
+                issue_entry = f"\n### 💡 Ábending: {user_note[:40] if user_note else 'Skjáskot'} ({tree_id}) — {dt_str}\n"
+                issue_entry += f"* **Tré:** {tree_id}\n"
+                if person_id:
+                    issue_entry += f"* **Einstaklingur:** `{person_id}`\n"
+                if user_note:
+                    issue_entry += f"* **Lýsing:** {user_note}\n"
+                if saved_paths:
+                    issue_entry += f"* **Skjáskot:** {', '.join([os.path.basename(p) for p in saved_paths])}\n"
+                issue_entry += f"* **Staða:** Opin / Í bið\n"
+                
+                with open(issues_file, "a", encoding="utf-8") as f:
+                    f.write(issue_entry)
+                print(f"📝 [ISSUES.MD] Bætt við nýju verkefni í issues.md")
+            except Exception as ex:
+                print(f"⚠️ Villa við að skrá issue í db/markdown: {ex}")
+
             if user_note:
                 note_file = os.path.join(shots_dir, "latest_user_note.txt")
                 with open(note_file, "w", encoding="utf-8") as f:

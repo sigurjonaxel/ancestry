@@ -89,6 +89,19 @@ def init_db():
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         """)
+
+        # Feedback & Issues Table
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS feedback_issues (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                tree_id TEXT NOT NULL,
+                person_id TEXT,
+                user_note TEXT,
+                screenshot_paths TEXT,
+                status TEXT DEFAULT 'open',
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
         
         conn.commit()
 

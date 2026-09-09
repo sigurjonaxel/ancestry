@@ -6,3 +6,8 @@
 * **Aðgerð:**
   * Búið er að bæta við sérstökum dálki `ib_sources TEXT` í `people` töfluna í `ancestry.db`.
   * Í öllum framtíðar keyrslum og Init Protocol er strengurinn `Heimildir: ...` vistaður óbreyttur í gagnagrunninum svo hægt sé að nýta hann í síðari vinnslu (t.d. til að sækja beint sérstakar bækur, prestsþjónustubækur eða minningargreinar sem nefndar eru).
+
+---
+
+## 📬 Mótteknar ábendingar & verkefni (Inbox)
+*Hér birtast ábendingar og verkefni sem berast frá notendum vefsins til frekari úrvinnslu.*

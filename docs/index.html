@@ -547,7 +547,7 @@
 
   <!-- App Logic script -->
   <script src="static_client.js?v=1788692500"></script>
-  <script src="app.js?v=1788692500"></script>
+  <script src="app.js?v=1788698000"></script>
 
   <!-- Sögulegar Greinar Modal -->
   <div class="modal-backdrop" id="modal-notable-articles" style="display: none;" onclick="if(event.target === this) closeNotableArticlesModal()">
@@ -599,15 +599,18 @@
         </div>
         <div class="modal-body" style="padding: 1.2rem; display: flex; flex-direction: column; gap: 1rem;">
           <div style="font-size: 0.84rem; color: var(--text-secondary); background: rgba(184,134,11,0.08); border-left: 3px solid var(--accent-gold); padding: 0.6rem 0.8rem; border-radius: 4px;">
-            Hér geturðu skrifað athugasemdir eða leiðréttingar og hengt við <strong>eitt eða fleiri skjáskot</strong> úr símanum/tölvunni.
+            Hér geturðu skrifað ábendingu eða leiðréttingu. Hún er vistuð sem <strong>verkefni (Issue)</strong> svo hægt sé að vinna úr henni í næstu útgáfum.
           </div>
 
           <div>
             <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--text-primary);">
-              Tengt ættartré:
+              Tengt ættartré og einstaklingur:
             </label>
             <div id="feedback-active-tree-label" style="font-size: 0.9rem; font-weight: 700; color: var(--accent-gold);">
               🌳 Valið tré
+            </div>
+            <div id="feedback-active-person-label" style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
+              Almenn ábending / Enginn sérstakur valinn
             </div>
           </div>
 
@@ -620,7 +623,7 @@
 
           <div>
             <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--text-primary);">
-              Hengja við skjáskot (má velja mörg samtímis):
+              Hengja við skjáskot (fyrir staðbundna skráningu):
             </label>
             <input type="file" id="feedback-files" accept="image/*" multiple style="display: block; width: 100%; font-size: 0.82rem; color: var(--text-secondary);">
             <div id="feedback-file-count" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">
@@ -628,12 +631,18 @@
             </div>
           </div>
 
-          <div style="display: flex; justify-content: flex-end; gap: 0.6rem; margin-top: 0.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; margin-top: 0.5rem; flex-wrap: wrap;">
             <button class="btn btn-secondary" onclick="closeFeedbackModal()">Hætta við</button>
-            <button class="btn btn-primary" id="btn-submit-feedback" onclick="submitFeedbackForm()" style="background: var(--accent-gold); color: #000; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
-              <i data-lucide="send" style="width: 14px; height: 14px;"></i>
-              <span>Senda ábendingu</span>
-            </button>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="btn btn-secondary" id="btn-github-issue" onclick="createGitHubIssue()" title="Stofna beint sem verkefni (Issue) á GitHub" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.25); color: #fff; display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem;">
+                <i data-lucide="git-pull-request" style="width: 14px; height: 14px;"></i>
+                <span>📋 Stofna GitHub Issue</span>
+              </button>
+              <button class="btn btn-primary" id="btn-submit-feedback" onclick="submitFeedbackForm()" style="background: var(--accent-gold); color: #000; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem;">
+                <i data-lucide="send" style="width: 14px; height: 14px;"></i>
+                <span>Senda ábendingu</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -1397,6 +1397,7 @@ window.getActiveTreeId = getActiveTreeId;
 window.openFeedbackModal = function() {
   const modal = document.getElementById('modal-feedback');
   const treeLabel = document.getElementById('feedback-active-tree-label');
+  const personLabel = document.getElementById('feedback-active-person-label');
   const filesInput = document.getElementById('feedback-files');
   const countEl = document.getElementById('feedback-file-count');
   const textInput = document.getElementById('feedback-text');
@@ -1404,6 +1405,16 @@ window.openFeedbackModal = function() {
   if (!modal) return;
   const currentTree = getActiveTreeId();
   if (treeLabel) treeLabel.textContent = currentTree === 'loa' ? '🌳 Lóa ættartré (Ólafía Rósbjörg)' : '🌳 Sigurjón ættartré (Sigurjón Axel)';
+  
+  const p = state.selectedPerson || (state.people && state.selectedPersonId ? state.people.find(x => x.id === state.selectedPersonId) : null);
+  if (personLabel) {
+    if (p) {
+      personLabel.innerHTML = `👤 Tengt: <strong>${p.name || ''}</strong> (${p.birth_year || '?'}-${p.death_year || ''})`;
+    } else {
+      personLabel.textContent = 'Almenn ábending / Enginn sérstakur valinn';
+    }
+  }
+
   if (textInput) textInput.value = '';
   if (filesInput) {
     filesInput.value = '';
@@ -1413,11 +1424,43 @@ window.openFeedbackModal = function() {
   }
   if (countEl) countEl.textContent = 'Engin skrá valin';
   modal.style.display = 'flex';
+  if (window.lucide && window.lucide.createIcons) {
+    window.lucide.createIcons();
+  }
 };
 
 window.closeFeedbackModal = function() {
   const modal = document.getElementById('modal-feedback');
   if (modal) modal.style.display = 'none';
+};
+
+window.createGitHubIssue = function() {
+  const textInput = document.getElementById('feedback-text');
+  const note = textInput ? textInput.value.trim() : '';
+  const currentTree = getActiveTreeId();
+  const treeLabel = currentTree === 'loa' ? 'Lóutré' : 'Sigurjónstré';
+  const p = state.selectedPerson || (state.people && state.selectedPersonId ? state.people.find(x => x.id === state.selectedPersonId) : null);
+  const personText = p ? `${p.name} (${p.id})` : 'Almennt';
+
+  const title = encodeURIComponent(`[Ábending - ${treeLabel}] ${p ? p.name : 'Almenn ábending'}`);
+  const body = encodeURIComponent(
+`### 💡 Ábending frá vefnotanda
+
+* **Ættartré:** ${treeLabel}
+* **Einstaklingur:** ${personText}
+* **Tímasetning:** ${new Date().toISOString().replace('T', ' ').substring(0, 16)}
+
+### Athugasemd / Lýsing á verkefni:
+${note || '(Skrifaðu athugasemd eða nánari upplýsingar hér)'}
+
+---
+*(Ábending send úr vefviðmóti Saga Ættfræði til skráningar sem verkefni/Issue. Þú getur líka hengt við myndir/skjáskot hér fyrir ofan).*`
+  );
+
+  const issueUrl = `https://github.com/sigurjonaxel/ancestry/issues/new?title=${title}&body=${body}&labels=%C3%A1bending`;
+  window.open(issueUrl, '_blank');
+  closeFeedbackModal();
+  showToast('📋 Opnaði nýtt GitHub Issue í nýjum flipa!');
 };
 
 window.submitFeedbackForm = async function() {
@@ -1427,6 +1470,8 @@ window.submitFeedbackForm = async function() {
   const files = filesInput && filesInput.files ? Array.from(filesInput.files) : [];
   const currentTree = getActiveTreeId();
   const treeLabel = currentTree === 'loa' ? 'Lóutré' : 'Sigurjónstré';
+  const p = state.selectedPerson || (state.people && state.selectedPersonId ? state.people.find(x => x.id === state.selectedPersonId) : null);
+  const personId = p ? p.id : '';
 
   if (!note && files.length === 0) {
     showToast('Vinsamlegast skrifaðu texta eða veldu skjáskot.');
@@ -1438,25 +1483,29 @@ window.submitFeedbackForm = async function() {
   if (submitBtn) submitBtn.disabled = true;
 
   try {
+    // Attempt local/tunnel upload
+    const formData = new FormData();
     if (files.length > 0) {
       for (let i = 0; i < files.length; i++) {
-        const formData = new FormData();
         formData.append('screenshot', files[i]);
-        formData.append('tree_id', currentTree);
-        if (i === 0 && note) formData.append('user_note', note);
-        await fetch('/api/upload_screenshot', { method: 'POST', body: formData });
       }
-    } else if (note) {
-      const formData = new FormData();
-      formData.append('user_note', note);
-      formData.append('tree_id', currentTree);
-      await fetch('/api/upload_screenshot', { method: 'POST', body: formData });
     }
+    if (note) formData.append('user_note', note);
+    formData.append('tree_id', currentTree);
+    if (personId) formData.append('person_id', personId);
 
-    showToast(`💡 Ábending send fyrir ${treeLabel}!`);
-    closeFeedbackModal();
+    const res = await fetch('/api/upload_screenshot', { method: 'POST', body: formData });
+    if (res && res.ok) {
+      showToast(`💡 Ábending skráð í issues.md og gagnagrunn!`);
+      closeFeedbackModal();
+      return;
+    } else {
+      throw new Error(`Server returned ${res ? res.status : 'offline'}`);
+    }
   } catch (err) {
-    showToast('Villa við að senda: ' + err.message);
+    console.warn('API submission not available (likely static GitHub Pages). Diverting to GitHub Issue:', err);
+    showToast('Opna GitHub Issue til að vista verkefnið varanlega...');
+    createGitHubIssue();
   } finally {
     if (submitBtn) submitBtn.disabled = false;
   }
