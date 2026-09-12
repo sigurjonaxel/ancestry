@@ -558,13 +558,13 @@
       <div class="modal" style="max-width: 540px; width: 92%;">
         <div class="modal-header">
           <h3 id="feedback-modal-title" style="margin: 0; color: var(--accent-gold); display: flex; align-items: center; gap: 8px; font-size: 1.15rem;">
-            💡 Senda ábendingu / Skjáskot
+            💡 Senda ábendingu / athugasemd
           </h3>
           <button class="btn btn-secondary" onclick="closeFeedbackModal()" style="padding: 0.2rem 0.6rem;">✕</button>
         </div>
         <div class="modal-body" style="padding: 1.2rem; display: flex; flex-direction: column; gap: 1rem;">
           <div style="font-size: 0.84rem; color: var(--text-secondary); background: rgba(184,134,11,0.08); border-left: 3px solid var(--accent-gold); padding: 0.6rem 0.8rem; border-radius: 4px;">
-            Hér geturðu skrifað ábendingu eða leiðréttingu. Hún er vistuð sem <strong>verkefni (Issue)</strong> svo hægt sé að vinna úr henni í næstu útgáfum.
+            Hér geturðu skrifað ábendingu, leiðréttingu á nafni/ártali eða viðbót við ættartréð sem sendist beint til Sigurjóns.
           </div>
 
           <div>
@@ -583,17 +583,7 @@
             <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--text-primary);">
               Skilaboð / Athugasemd:
             </label>
-            <textarea id="feedback-text" rows="4" placeholder="Skrifaðu ábendingu, leiðréttingu á nafni/ártali eða hvað sem er..." style="width: 100%; box-sizing: border-box; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); color: #fff; border-radius: 6px; padding: 0.6rem; font-size: 0.88rem; font-family: inherit; resize: vertical;" oninput="saveFeedbackDraft(this.value)"></textarea>
-          </div>
-
-          <div>
-            <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--text-primary);">
-              Hengja við skjáskot (fyrir staðbundna skráningu):
-            </label>
-            <input type="file" id="feedback-files" accept="image/*" multiple style="display: block; width: 100%; font-size: 0.82rem; color: var(--text-secondary);">
-            <div id="feedback-file-count" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem;">
-              Engin skrá valin
-            </div>
+            <textarea id="feedback-text" rows="5" placeholder="Skrifaðu ábendingu, leiðréttingu á nafni/ártali eða hvað sem er..." style="width: 100%; box-sizing: border-box; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); color: #fff; border-radius: 6px; padding: 0.6rem; font-size: 0.88rem; font-family: inherit; resize: vertical;" oninput="saveFeedbackDraft(this.value)"></textarea>
           </div>
 
           <div id="feedback-status-msg" style="display: none;"></div>
@@ -601,13 +591,13 @@
           <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; margin-top: 0.5rem; flex-wrap: wrap;">
             <button class="btn btn-secondary" onclick="closeFeedbackModal()">Hætta við</button>
             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-              <button class="btn btn-secondary" id="btn-copy-feedback" onclick="copyFeedbackText()" title="Afrita texta til að senda í skilaboðum/SMS" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.25); color: #fff; display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem;">
+              <button class="btn btn-secondary" id="btn-copy-feedback" onclick="copyFeedbackText()" title="Afrita texta til að líma í Messenger eða SMS" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.25); color: #fff; display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; padding: 0.45rem 0.75rem;">
                 <i data-lucide="copy" style="width: 14px; height: 14px;"></i>
-                <span>📋 Afrita texta</span>
+                <span>📋 Afrita texta (Messenger / SMS)</span>
               </button>
-              <button class="btn btn-primary" id="btn-submit-feedback" onclick="submitFeedbackForm()" style="background: var(--accent-gold); color: #000; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem;">
-                <i data-lucide="send" style="width: 14px; height: 14px;"></i>
-                <span id="btn-submit-feedback-text">Senda ábendingu (GitHub Issue)</span>
+              <button class="btn btn-primary" id="btn-send-email" onclick="sendFeedbackEmail()" style="background: var(--accent-gold); color: #000; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; padding: 0.45rem 0.85rem;">
+                <i data-lucide="mail" style="width: 14px; height: 14px;"></i>
+                <span>📧 Senda með tölvupósti</span>
               </button>
             </div>
           </div>
