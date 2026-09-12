@@ -97,6 +97,12 @@
           <span>🏷️ Útgáfur trés</span>
         </button>
 
+        <button class="btn btn-secondary" id="btn-master-portal" onclick="handleMasterButtonClick()" title="Master umsjón (PIN: 6243)" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.2); color: var(--text-secondary); font-size: 0.76rem; font-weight: 600; padding: 0.25rem 0.65rem; display: inline-flex; align-items: center; gap: 5px;">
+          <i data-lucide="key" id="master-btn-icon" style="width: 14px; height: 14px;"></i>
+          <span id="master-btn-text">🔑 Master</span>
+          <span id="master-badge-count" style="display: none; background: #e53e3e; color: #fff; border-radius: 10px; padding: 1px 6px; font-size: 0.68rem; font-weight: 700; margin-left: 3px;">0</span>
+        </button>
+
         <button class="btn btn-secondary" id="btn-lock-app" title="Læsa ættartrénu (Útskrá)" onclick="lockSaga()" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.2); color: var(--text-secondary); font-size: 0.76rem; font-weight: 600; padding: 0.25rem 0.65rem; display: inline-flex; align-items: center; gap: 5px;">
           <i data-lucide="lock" style="width: 14px; height: 14px; color: var(--accent-gold);"></i>
           <span>🔒 Læsa</span>
@@ -649,14 +655,93 @@
             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
               <button class="btn btn-secondary" id="btn-copy-feedback" onclick="copyFeedbackText()" title="Afrita texta til að líma í Messenger eða SMS" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.25); color: #fff; display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; padding: 0.45rem 0.75rem;">
                 <i data-lucide="copy" style="width: 14px; height: 14px;"></i>
-                <span>📋 Afrita texta (Messenger / SMS)</span>
+                <span>📋 Afrita texta</span>
               </button>
-              <button class="btn btn-primary" id="btn-send-email" onclick="sendFeedbackEmail()" style="background: var(--accent-gold); color: #000; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; padding: 0.45rem 0.85rem;">
-                <i data-lucide="mail" style="width: 14px; height: 14px;"></i>
-                <span>📧 Senda með tölvupósti</span>
+              <button class="btn btn-primary" id="btn-submit-feedback" onclick="submitFeedbackToCloud()" style="background: var(--accent-gold); color: #000; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; padding: 0.45rem 0.85rem;">
+                <i data-lucide="send" style="width: 14px; height: 14px;"></i>
+                <span id="btn-submit-feedback-text">Senda ábendingu</span>
               </button>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Master Login -->
+    <div class="modal-backdrop" id="modal-master-login" style="display: none;" onclick="if(event.target === this) closeMasterLoginModal()">
+      <div class="modal" style="max-width: 400px; width: 92%;">
+        <div class="modal-header">
+          <h3 style="margin: 0; color: var(--accent-gold); display: flex; align-items: center; gap: 8px; font-size: 1.15rem;">
+            <i data-lucide="key" style="width: 18px; height: 18px;"></i>
+            <span>Master innskráning</span>
+          </h3>
+          <button class="btn btn-secondary" onclick="closeMasterLoginModal()" style="padding: 0.2rem 0.6rem;">✕</button>
+        </div>
+        <div class="modal-body" style="padding: 1.4rem; display: flex; flex-direction: column; gap: 1rem; text-align: center;">
+          <p style="margin: 0; font-size: 0.88rem; color: var(--text-secondary);">
+            Sláðu inn 4 stafa Master PIN til að opna stjórnborð og mótteknar ábendingar:
+          </p>
+          <div style="display: flex; justify-content: center; margin: 0.4rem 0;">
+            <input type="password" id="master-pin-input" maxlength="6" placeholder="••••" autocomplete="off" onkeydown="if(event.key === 'Enter') verifyMasterPin()"
+              style="font-size: 1.6rem; letter-spacing: 0.35rem; text-align: center; width: 170px; padding: 0.5rem; border-radius: 8px; background: rgba(0,0,0,0.4); border: 2px solid var(--border-color); color: #fff; outline: none;"
+              onfocus="this.style.borderColor='var(--accent-gold)'" onblur="this.style.borderColor='var(--border-color)'">
+          </div>
+          <div id="master-pin-error" style="display: none; color: #ff6b6b; font-size: 0.82rem; font-weight: 600;">
+            Rangt PIN. Reyndu aftur.
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 0.6rem; margin-top: 0.5rem;">
+            <button class="btn btn-secondary" onclick="closeMasterLoginModal()">Hætta við</button>
+            <button class="btn btn-primary" onclick="verifyMasterPin()" style="background: var(--accent-gold); color: #000; font-weight: 700; padding: 0.45rem 1.1rem;">
+              Skrá inn 🔓
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Master Feedback Inbox -->
+    <div class="modal" id="modal-master-inbox" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+      <div class="modal-content" style="background: var(--bg-card, #161a20); border: 1px solid var(--border-color); border-radius: 12px; max-width: 680px; width: 94%; max-height: 88vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.85);">
+        <div style="padding: 1.1rem 1.4rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h3 style="margin: 0; color: var(--accent-gold); font-size: 1.15rem; display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="crown" style="width: 18px; height: 18px;"></i>
+              <span>Mótteknar ábendingar (Master Inbox)</span>
+            </h3>
+            <div id="master-inbox-subtitle" style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">
+              Sæki gögn úr skýjagrunni...
+            </div>
+          </div>
+          <button class="btn btn-secondary" onclick="closeMasterInboxModal()" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">✕ Loka</button>
+        </div>
+        
+        <!-- Filter Tabs -->
+        <div style="padding: 0.6rem 1.4rem; background: rgba(0,0,0,0.25); border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+          <div style="display: flex; gap: 0.4rem;" id="master-filter-btns">
+            <button class="btn btn-secondary btn-sm master-tab active" id="tab-fb-all" onclick="filterMasterFeedbacks('all')" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Allar</button>
+            <button class="btn btn-secondary btn-sm master-tab" id="tab-fb-open" onclick="filterMasterFeedbacks('open')" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Óafgreiddar</button>
+            <button class="btn btn-secondary btn-sm master-tab" id="tab-fb-resolved" onclick="filterMasterFeedbacks('resolved')" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Afgreiddar</button>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="loadMasterFeedbacks()" title="Endurhlaða úr skýi" style="font-size: 0.75rem; padding: 0.2rem 0.6rem; display: inline-flex; align-items: center; gap: 4px;">
+            <i data-lucide="refresh-cw" style="width: 12px; height: 12px;"></i>
+            <span>Endurhlaða</span>
+          </button>
+        </div>
+
+        <!-- Feedback List -->
+        <div id="master-inbox-list" style="padding: 1.2rem; overflow-y: auto; display: flex; flex-direction: column; gap: 0.9rem; max-height: 58vh;">
+          <!-- Injected dynamically -->
+        </div>
+
+        <!-- Footer -->
+        <div style="padding: 0.8rem 1.4rem; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2);">
+          <button class="btn btn-secondary btn-sm" onclick="logoutMaster()" style="color: #ff8888; border-color: rgba(255,100,100,0.3); font-size: 0.76rem; display: inline-flex; align-items: center; gap: 4px;">
+            <i data-lucide="log-out" style="width: 12px; height: 12px;"></i>
+            <span>Læsa / Útskrá Master</span>
+          </button>
+          <button class="btn btn-secondary btn-sm" onclick="closeMasterInboxModal()" style="font-size: 0.76rem;">
+            Loka
+          </button>
         </div>
       </div>
     </div>

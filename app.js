@@ -36,6 +36,7 @@ async function fetchWithTimeout(url, timeoutMs = 10000) {
 async function initApp() {
   updateDebugBar('⏳ Hleð inn gögnum...');
   initEventListeners();
+  if (typeof updateMasterUI === 'function') updateMasterUI();
   try {
     await loadTreesList();
   } catch(e) {
@@ -1473,7 +1474,12 @@ function getActiveTreeId() {
 }
 window.getActiveTreeId = getActiveTreeId;
 
-const FEEDBACK_EMAIL = 'sigurjonaxel@gmail.com';
+// ========================================================
+// ÁBENDINGAR OG MASTER STJÓRNBYRÐI (CLOUD & PIN: 6243)
+// ========================================================
+
+const MASTER_PIN = '6243';
+const SAGA_CLOUD_FEEDBACK_URL = 'https://api.restful-api.dev/objects/ff808181a067127101a095508cee0132';
 
 window.saveFeedbackDraft = function(val) {
   try {
@@ -1510,45 +1516,14 @@ window.copyFeedbackText = function() {
   }
 };
 
-window.sendFeedbackEmail = function() {
-  const { note, treeLabel, p, personText } = getFeedbackData();
-  if (!note) {
-    showToast('Skrifaðu fyrst texta í athugasemdareitinn.');
-    return;
-  }
-
-  const subject = `[Ábending - Saga Ættfræði] ${treeLabel} - ${p ? p.name : 'Almennt'}`;
-  const body = `Hæ Sigurjón,
-
-Hér er ábending varðandi Saga Ættfræði:
-
-* Ættartré: ${treeLabel}
-* Einstaklingur: ${personText}
-* Tímasetning: ${new Date().toISOString().replace('T', ' ').substring(0, 16)}
-
-Lýsing / Athugasemd:
-${note}
-`;
-
-  const mailtoUrl = `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  
-  try {
-    localStorage.removeItem('saga_feedback_draft');
-  } catch(e) {}
-
-  window.location.href = mailtoUrl;
-  showToast('📧 Opnaði tölvupóstforritið þitt til að senda ábendinguna!');
-  setTimeout(() => {
-    closeFeedbackModal();
-  }, 1200);
-};
-
 window.openFeedbackModal = function() {
   const modal = document.getElementById('modal-feedback');
   const treeLabel = document.getElementById('feedback-active-tree-label');
   const personLabel = document.getElementById('feedback-active-person-label');
   const textInput = document.getElementById('feedback-text');
   const statusEl = document.getElementById('feedback-status-msg');
+  const submitBtn = document.getElementById('btn-submit-feedback');
+  const submitBtnText = document.getElementById('btn-submit-feedback-text');
   
   if (!modal) return;
   const currentTree = getActiveTreeId();
@@ -1567,6 +1542,9 @@ window.openFeedbackModal = function() {
     statusEl.style.display = 'none';
     statusEl.innerHTML = '';
   }
+
+  if (submitBtn) submitBtn.disabled = false;
+  if (submitBtnText) submitBtnText.textContent = 'Senda ábendingu';
 
   // Restore draft if user was previously typing
   if (textInput) {
@@ -1587,8 +1565,394 @@ window.closeFeedbackModal = function() {
   if (modal) modal.style.display = 'none';
 };
 
+// --- SUBMIT TO CLOUD 24/7 ---
+window.submitFeedbackToCloud = async function() {
+  const { note, currentTree, treeLabel, p, personText } = getFeedbackData();
+
+  if (!note) {
+    showToast('Vinsamlegast skrifaðu texta í athugasemdareitinn.');
+    return;
+  }
+
+  const submitBtn = document.getElementById('btn-submit-feedback');
+  const submitBtnText = document.getElementById('btn-submit-feedback-text');
+  if (submitBtn) submitBtn.disabled = true;
+  if (submitBtnText) submitBtnText.textContent = 'Sendi í skýið...';
+
+  const newFeedback = {
+    id: 'fb_' + Date.now(),
+    tree_id: currentTree,
+    tree_label: treeLabel,
+    person_id: p ? p.id : '',
+    person_name: p ? p.name : '',
+    person_dates: p ? `${p.birth_year || '?'}-${p.death_year || ''}` : '',
+    user_note: note,
+    status: 'open',
+    created_at: new Date().toISOString()
+  };
+
+  try {
+    // 1. Fetch current feedbacks from cloud
+    let feedbacks = [];
+    try {
+      const res = await fetch(SAGA_CLOUD_FEEDBACK_URL);
+      if (res.ok) {
+        const json = await res.json();
+        if (json && json.data && Array.isArray(json.data.feedbacks)) {
+          feedbacks = json.data.feedbacks;
+        }
+      }
+    } catch(err) {
+      console.warn('Could not fetch existing cloud feedbacks, creating new batch:', err);
+    }
+
+    // Add new feedback to top
+    feedbacks.unshift(newFeedback);
+
+    // 2. Put back to cloud
+    const putRes = await fetch(SAGA_CLOUD_FEEDBACK_URL, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: 'Saga Ættfræði Feedback Storage',
+        data: { feedbacks: feedbacks }
+      })
+    });
+
+    if (!putRes.ok) {
+      throw new Error(`Cloud DB HTTP ${putRes.status}`);
+    }
+
+    // Clear draft
+    try { localStorage.removeItem('saga_feedback_draft'); } catch(e){}
+
+    showToast('✅ Takk fyrir! Ábendingin hefur verið send til Sigurjóns.');
+    closeFeedbackModal();
+
+    // If master is currently active, update badge
+    if (isMaster()) {
+      checkMasterBadgeCount();
+    }
+  } catch (err) {
+    console.error('Villa við sendingu í skýjagrunn:', err);
+    showToast('Villa við að senda í skýið. Notaðu Afrita texta eða reyndu aftur.');
+    if (submitBtn) submitBtn.disabled = false;
+    if (submitBtnText) submitBtnText.textContent = 'Senda ábendingu';
+  }
+};
+
 window.submitFeedbackForm = function() {
-  sendFeedbackEmail();
+  submitFeedbackToCloud();
+};
+
+// --- MASTER PORTAL & PIN AUTH ---
+
+window.isMaster = function() {
+  return localStorage.getItem('saga_master_pin') === MASTER_PIN;
+};
+
+window.updateMasterUI = function() {
+  const btn = document.getElementById('btn-master-portal');
+  const icon = document.getElementById('master-btn-icon');
+  const text = document.getElementById('master-btn-text');
+  const badge = document.getElementById('master-badge-count');
+
+  if (!btn) return;
+
+  if (isMaster()) {
+    btn.style.background = 'rgba(184,134,11,0.25)';
+    btn.style.borderColor = 'var(--accent-gold)';
+    btn.style.color = '#fff';
+    btn.title = 'Master stjórnborð: Mótteknar ábendingar';
+    if (icon) {
+      icon.setAttribute('data-lucide', 'crown');
+      icon.style.color = 'var(--accent-gold)';
+    }
+    if (text) text.textContent = '👑 Ábendingar';
+    checkMasterBadgeCount();
+  } else {
+    btn.style.background = 'rgba(255,255,255,0.06)';
+    btn.style.borderColor = 'rgba(255,255,255,0.2)';
+    btn.style.color = 'var(--text-secondary)';
+    btn.title = 'Master umsjón (PIN: 6243)';
+    if (icon) {
+      icon.setAttribute('data-lucide', 'key');
+      icon.style.color = 'inherit';
+    }
+    if (text) text.textContent = '🔑 Master';
+    if (badge) badge.style.display = 'none';
+  }
+
+  if (window.lucide && window.lucide.createIcons) {
+    window.lucide.createIcons();
+  }
+};
+
+window.handleMasterButtonClick = function() {
+  if (isMaster()) {
+    openMasterInboxModal();
+  } else {
+    openMasterLoginModal();
+  }
+};
+
+window.openMasterLoginModal = function() {
+  const modal = document.getElementById('modal-master-login');
+  const input = document.getElementById('master-pin-input');
+  const err = document.getElementById('master-pin-error');
+  if (!modal) return;
+  if (input) input.value = '';
+  if (err) err.style.display = 'none';
+  modal.style.display = 'flex';
+  setTimeout(() => { if (input) input.focus(); }, 100);
+  if (window.lucide && window.lucide.createIcons) window.lucide.createIcons();
+};
+
+window.closeMasterLoginModal = function() {
+  const modal = document.getElementById('modal-master-login');
+  if (modal) modal.style.display = 'none';
+};
+
+window.verifyMasterPin = function() {
+  const input = document.getElementById('master-pin-input');
+  const err = document.getElementById('master-pin-error');
+  const val = input ? input.value.trim() : '';
+
+  if (val === MASTER_PIN) {
+    localStorage.setItem('saga_master_pin', MASTER_PIN);
+    closeMasterLoginModal();
+    updateMasterUI();
+    showToast('👑 Velkominn Sigurjón! Master aðgangur virkur.');
+    openMasterInboxModal();
+  } else {
+    if (err) err.style.display = 'block';
+    if (input) {
+      input.value = '';
+      input.focus();
+    }
+    showToast('Rangt Master PIN.');
+  }
+};
+
+window.logoutMaster = function() {
+  localStorage.removeItem('saga_master_pin');
+  closeMasterInboxModal();
+  updateMasterUI();
+  showToast('🔒 Master aðgangi lokað.');
+};
+
+// --- MASTER INBOX MODAL & MANAGEMENT ---
+
+let cachedMasterFeedbacks = [];
+let currentMasterFilter = 'all';
+
+window.openMasterInboxModal = function() {
+  const modal = document.getElementById('modal-master-inbox');
+  if (!modal) return;
+  modal.style.display = 'flex';
+  loadMasterFeedbacks();
+  if (window.lucide && window.lucide.createIcons) window.lucide.createIcons();
+};
+
+window.closeMasterInboxModal = function() {
+  const modal = document.getElementById('modal-master-inbox');
+  if (modal) modal.style.display = 'none';
+};
+
+window.checkMasterBadgeCount = async function() {
+  const badge = document.getElementById('master-badge-count');
+  if (!isMaster() || !badge) return;
+
+  try {
+    const res = await fetch(SAGA_CLOUD_FEEDBACK_URL);
+    if (res.ok) {
+      const json = await res.json();
+      const list = (json && json.data && Array.isArray(json.data.feedbacks)) ? json.data.feedbacks : [];
+      const openCount = list.filter(x => x.status !== 'resolved').length;
+      if (openCount > 0) {
+        badge.style.display = 'inline-block';
+        badge.textContent = openCount;
+      } else {
+        badge.style.display = 'none';
+      }
+    }
+  } catch(e) {}
+};
+
+window.loadMasterFeedbacks = async function() {
+  const listEl = document.getElementById('master-inbox-list');
+  const subtitleEl = document.getElementById('master-inbox-subtitle');
+  if (!listEl) return;
+
+  listEl.innerHTML = '<div style="text-align: center; padding: 2.5rem; color: var(--accent-gold); font-size: 0.9rem;"><i data-lucide="loader-2" class="spin"></i> Sæki ábendingar úr skýjagrunni...</div>';
+  if (window.lucide && window.lucide.createIcons) window.lucide.createIcons();
+
+  try {
+    const res = await fetch(SAGA_CLOUD_FEEDBACK_URL);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+    cachedMasterFeedbacks = (json && json.data && Array.isArray(json.data.feedbacks)) ? json.data.feedbacks : [];
+
+    renderMasterFeedbacksList();
+    checkMasterBadgeCount();
+  } catch(err) {
+    console.error('Villa við að sækja Master feedbacks:', err);
+    listEl.innerHTML = `
+      <div style="text-align: center; padding: 2rem; color: #ff8888;">
+        Gat ekki sótt ábendingar úr skýjagrunni: ${err.message}<br>
+        <button class="btn btn-secondary btn-sm" onclick="loadMasterFeedbacks()" style="margin-top: 0.8rem;">Reyna aftur</button>
+      </div>
+    `;
+  }
+};
+
+window.filterMasterFeedbacks = function(filter) {
+  currentMasterFilter = filter;
+  document.querySelectorAll('.master-tab').forEach(el => el.classList.remove('active'));
+  const activeTab = document.getElementById(`tab-fb-${filter}`);
+  if (activeTab) activeTab.classList.add('active');
+  renderMasterFeedbacksList();
+};
+
+function renderMasterFeedbacksList() {
+  const listEl = document.getElementById('master-inbox-list');
+  const subtitleEl = document.getElementById('master-inbox-subtitle');
+  if (!listEl) return;
+
+  let items = [...cachedMasterFeedbacks];
+  if (currentMasterFilter === 'open') {
+    items = items.filter(x => x.status !== 'resolved');
+  } else if (currentMasterFilter === 'resolved') {
+    items = items.filter(x => x.status === 'resolved');
+  }
+
+  const openCount = cachedMasterFeedbacks.filter(x => x.status !== 'resolved').length;
+  if (subtitleEl) {
+    subtitleEl.textContent = `${cachedMasterFeedbacks.length} ábendingar alls (${openCount} óafgreiddar)`;
+  }
+
+  if (items.length === 0) {
+    listEl.innerHTML = `
+      <div style="text-align: center; padding: 2.5rem 1rem; color: var(--text-muted); font-size: 0.9rem;">
+        <i data-lucide="inbox" style="width: 32px; height: 32px; margin-bottom: 0.5rem; opacity: 0.5;"></i><br>
+        Engar ábendingar fundust í þessum flokki.
+      </div>
+    `;
+    if (window.lucide && window.lucide.createIcons) window.lucide.createIcons();
+    return;
+  }
+
+  listEl.innerHTML = items.map(fb => {
+    const isResolved = fb.status === 'resolved';
+    const dateStr = fb.created_at ? fb.created_at.substring(0, 16).replace('T', ' ') : 'Nýlegt';
+    const escapedNote = (fb.user_note || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const borderColor = isResolved ? 'rgba(72,187,120,0.4)' : 'rgba(184,134,11,0.35)';
+
+    return `
+      <div style="background: rgba(255,255,255,0.04); border: 1px solid ${borderColor}; border-radius: 8px; padding: 0.9rem 1.1rem; display: flex; flex-direction: column; gap: 0.6rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; flex-wrap: wrap;">
+          <div>
+            <span style="font-size: 0.74rem; font-weight: 700; color: var(--accent-gold); background: rgba(184,134,11,0.15); padding: 2px 7px; border-radius: 4px;">
+              ${fb.tree_label || (fb.tree_id === 'loa' ? 'Lóutré' : 'Sigurjónstré')}
+            </span>
+            ${fb.person_name ? `
+              <span style="font-size: 0.84rem; font-weight: 600; color: #fff; margin-left: 6px;">
+                👤 ${fb.person_name} ${fb.person_dates ? `<span style="color:var(--text-muted); font-weight:normal;">(${fb.person_dates})</span>` : ''}
+              </span>
+            ` : `<span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 6px;">Almenn ábending</span>`}
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="font-size: 0.72rem; color: var(--text-muted);">${dateStr}</span>
+            <span style="font-size: 0.7rem; font-weight: 700; padding: 2px 6px; border-radius: 4px; ${isResolved ? 'background: rgba(72,187,120,0.2); color: #48bb78;' : 'background: rgba(236,201,75,0.2); color: #ecc94b;'}">
+              ${isResolved ? '✅ Afgreitt' : '⏳ Óafgreitt'}
+            </span>
+          </div>
+        </div>
+
+        <div style="font-size: 0.88rem; line-height: 1.45; color: #edf2f7; background: rgba(0,0,0,0.35); padding: 0.75rem; border-radius: 6px; border-left: 3px solid ${isResolved ? '#48bb78' : 'var(--accent-gold)'}; white-space: pre-wrap;">${escapedNote}</div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-top: 0.2rem; flex-wrap: wrap;">
+          <div>
+            ${fb.person_id ? `
+              <button class="btn btn-secondary btn-sm" onclick="viewPersonFromFeedback('${fb.tree_id}', '${fb.person_id}')" style="font-size: 0.75rem; padding: 0.25rem 0.6rem; display: inline-flex; align-items: center; gap: 4px; background: rgba(184,134,11,0.15); border-color: var(--accent-gold); color: var(--accent-gold);">
+                <i data-lucide="eye" style="width: 12px; height: 12px;"></i>
+                <span>Skoða í trénu</span>
+              </button>
+            ` : ''}
+          </div>
+          <div style="display: flex; gap: 0.4rem;">
+            <button class="btn btn-secondary btn-sm" onclick="toggleFeedbackStatus('${fb.id}')" style="font-size: 0.74rem; padding: 0.25rem 0.6rem;">
+              ${isResolved ? 'Opna aftur' : '✅ Merkja sem afgreitt'}
+            </button>
+            <button class="btn btn-secondary btn-sm" onclick="deleteFeedback('${fb.id}')" style="color: #ff8888; font-size: 0.74rem; padding: 0.25rem 0.5rem;" title="Eyða ábendingu úr skýi">
+              <i data-lucide="trash-2" style="width: 13px; height: 13px;"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  if (window.lucide && window.lucide.createIcons) window.lucide.createIcons();
+}
+
+window.viewPersonFromFeedback = function(treeId, personId) {
+  closeMasterInboxModal();
+  if (treeId && treeId !== getActiveTreeId()) {
+    const treeSelect = document.getElementById('tree-select');
+    if (treeSelect) {
+      treeSelect.value = treeId;
+      treeSelect.dispatchEvent(new Event('change'));
+    }
+  }
+  setTimeout(() => {
+    if (typeof selectPerson === 'function' && personId) {
+      selectPerson(personId);
+    }
+  }, 350);
+};
+
+window.toggleFeedbackStatus = async function(id) {
+  const item = cachedMasterFeedbacks.find(x => x.id === id);
+  if (!item) return;
+  item.status = (item.status === 'resolved') ? 'open' : 'resolved';
+  renderMasterFeedbacksList();
+
+  try {
+    await fetch(SAGA_CLOUD_FEEDBACK_URL, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: 'Saga Ættfræði Feedback Storage',
+        data: { feedbacks: cachedMasterFeedbacks }
+      })
+    });
+    checkMasterBadgeCount();
+    showToast(item.status === 'resolved' ? '✅ Merkt sem afgreitt.' : 'Opnað aftur.');
+  } catch(e) {
+    showToast('Villa við að uppfæra stöðu í skýi.');
+  }
+};
+
+window.deleteFeedback = async function(id) {
+  if (!confirm('Ertu viss um að vilja eyða þessari ábendingu úr skýjagrunninum?')) return;
+  cachedMasterFeedbacks = cachedMasterFeedbacks.filter(x => x.id !== id);
+  renderMasterFeedbacksList();
+
+  try {
+    await fetch(SAGA_CLOUD_FEEDBACK_URL, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: 'Saga Ættfræði Feedback Storage',
+        data: { feedbacks: cachedMasterFeedbacks }
+      })
+    });
+    checkMasterBadgeCount();
+    showToast('🗑️ Ábendingu eytt.');
+  } catch(e) {
+    showToast('Villa við að eyða úr skýi.');
+  }
 };
 
 
