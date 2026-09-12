@@ -333,6 +333,78 @@ window.fetch = async function(resource, init) {
         return new Response(JSON.stringify({ status: 'ok', details }), { status: 200, headers: { 'Content-Type': 'application/json' } });
       }
 
+      if (path.endsWith('/api/upload_avatar')) {
+        const personId = (u.searchParams.get('id') || u.searchParams.get('person_id') || '').replace(/@/g, '');
+        let file = null;
+        if (init && init.body && typeof init.body.get === 'function') {
+          file = init.body.get('avatar');
+        }
+        if (!file) {
+          const fileInput = document.getElementById('avatar-file-input');
+          if (fileInput && fileInput.files && fileInput.files[0]) {
+            file = fileInput.files[0];
+          }
+        }
+
+        let dataUrl = '';
+        if (file) {
+          dataUrl = await new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+          });
+
+          // Optimize image via Canvas to max 700x700 JPEG
+          try {
+            dataUrl = await new Promise((resolve) => {
+              const img = new Image();
+              img.onload = () => {
+                const maxDim = 700;
+                let w = img.width, h = img.height;
+                if (w > maxDim || h > maxDim) {
+                  if (w > h) { h = Math.round(h * maxDim / w); w = maxDim; }
+                  else { w = Math.round(w * maxDim / h); h = maxDim; }
+                }
+                const canvas = document.createElement('canvas');
+                canvas.width = w;
+                canvas.height = h;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, w, h);
+                resolve(canvas.toDataURL('image/jpeg', 0.88));
+              };
+              img.onerror = () => resolve(dataUrl);
+              img.src = dataUrl;
+            });
+          } catch (e) {
+            console.warn('Canvas optimization fallback:', e);
+          }
+        }
+
+        const person = data.people.find(p => p.id === personId || p.id === `@${personId}@`);
+        if (person && dataUrl) {
+          person.avatar_url = dataUrl;
+          person.avatar_verified = 1;
+        }
+
+        try {
+          const raw = localStorage.getItem('saga_person_avatar_overrides');
+          const overrides = raw ? JSON.parse(raw) : {};
+          if (dataUrl) {
+            overrides[personId] = dataUrl;
+          }
+          localStorage.setItem('saga_person_avatar_overrides', JSON.stringify(overrides));
+        } catch (e) {
+          console.warn('Could not save uploaded avatar to localStorage:', e);
+        }
+
+        const details = getDetailsForPerson(personId);
+        return new Response(JSON.stringify({ status: 'success', message: 'Prófílmynd uppfærð!', details }), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' }
+        });
+      }
+
       if (path.endsWith('/api/person_history')) {
         const personId = (u.searchParams.get('person_id') || '').replace(/@/g, '');
         const history = (data.person_history || []).filter(h => h.person_id === personId || h.person_id === `@${personId}@`);

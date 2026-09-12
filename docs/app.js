@@ -898,6 +898,7 @@ window.triggerAvatarUpload = function() {
 window.handleAvatarUpload = async function() {
   const input = document.getElementById('avatar-file-input');
   if (!input || !input.files || input.files.length === 0) return;
+  if (!state.selectedPersonId) return;
 
   const formData = new FormData();
   formData.append('avatar', input.files[0]);
@@ -907,14 +908,29 @@ window.handleAvatarUpload = async function() {
       method: 'POST',
       body: formData
     });
-    if (!res.ok) throw new Error("Gat ekki hlaðið inn mynd.");
+    if (!res.ok) {
+      const txt = await res.text().catch(() => '');
+      throw new Error(txt || "Gat ekki hlaðið inn mynd.");
+    }
     const data = await res.json();
     state.personDetails = data.details;
     renderPersonProfile(data.details);
-    showToast("Prófílmynd uppfærð!");
+
+    const cleanId = (state.selectedPersonId || '').replace(/@/g, '');
+    const pInList = (state.people || []).find(p => p.id === cleanId || p.id === `@${cleanId}@`);
+    if (pInList && data.details && data.details.person) {
+      pInList.avatar_url = data.details.person.avatar_url;
+      pInList.avatar_verified = 1;
+    }
+    renderPeopleList(state.people);
+    if (typeof renderTree === 'function') renderTree();
+
+    showToast("✓ Prófílmynd uppfærð!");
   } catch (err) {
     console.error(err);
-    showToast("Villa við innkall prófílmyndar.");
+    showToast("Villa við að hlaða inn mynd: " + (err.message || 'Óþekkt villa'));
+  } finally {
+    input.value = '';
   }
 };
 

@@ -732,6 +732,14 @@ class AncestryHandler(http.server.SimpleHTTPRequestHandler):
         with open(filepath, 'wb') as f:
             f.write(fileitem.file.read())
 
+        docs_cache_dir = os.path.join(os.path.dirname(__file__), "docs", "images", "cache")
+        os.makedirs(docs_cache_dir, exist_ok=True)
+        try:
+            import shutil
+            shutil.copyfile(filepath, os.path.join(docs_cache_dir, filename))
+        except Exception as e:
+            print("Could not copy to docs cache:", e)
+
         with get_db() as conn:
             cursor = conn.cursor()
             cursor.execute("UPDATE people SET avatar_url = ?, avatar_verified = 1 WHERE id = ? OR id = ?", (rel_path, person_id, f"@{person_id}@"))
