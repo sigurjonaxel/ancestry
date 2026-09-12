@@ -1474,6 +1474,46 @@ function getActiveTreeId() {
 }
 window.getActiveTreeId = getActiveTreeId;
 
+window.saveFeedbackDraft = function(val) {
+  try {
+    localStorage.setItem('saga_feedback_draft', val);
+  } catch(e) {}
+};
+
+function isStaticSiteMode() {
+  return window.location.hostname.includes('github.io') || 
+         window.location.protocol === 'file:' || 
+         (!window.location.port && !window.location.hostname.includes('trycloudflare.com') && !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1'));
+}
+
+function getFeedbackData() {
+  const textInput = document.getElementById('feedback-text');
+  const note = textInput ? textInput.value.trim() : '';
+  const currentTree = getActiveTreeId();
+  const treeLabel = currentTree === 'loa' ? 'Lóutré' : 'Sigurjónstré';
+  const p = state.selectedPerson || (state.people && state.selectedPersonId ? state.people.find(x => x.id === state.selectedPersonId) : null);
+  const personText = p ? `${p.name} (${p.id})` : 'Almennt / Enginn valinn';
+  return { note, currentTree, treeLabel, p, personText };
+}
+
+window.copyFeedbackText = function() {
+  const { note, treeLabel, personText } = getFeedbackData();
+  if (!note) {
+    showToast('Skrifaðu fyrst texta í athugasemdareitinn.');
+    return;
+  }
+  const fullText = `Ábending fyrir Saga Ættfræði (${treeLabel})\nTengt: ${personText}\n\n${note}`;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(fullText).then(() => {
+      showToast('📋 Texti afritaður! Þú getur límt hann í Messenger, WhatsApp eða SMS.');
+    }).catch(() => {
+      prompt('Afritaðu textann hér:', fullText);
+    });
+  } else {
+    prompt('Afritaðu textann hér:', fullText);
+  }
+};
+
 window.openFeedbackModal = function() {
   const modal = document.getElementById('modal-feedback');
   const treeLabel = document.getElementById('feedback-active-tree-label');
@@ -1481,6 +1521,7 @@ window.openFeedbackModal = function() {
   const filesInput = document.getElementById('feedback-files');
   const countEl = document.getElementById('feedback-file-count');
   const textInput = document.getElementById('feedback-text');
+  const statusEl = document.getElementById('feedback-status-msg');
   
   if (!modal) return;
   const currentTree = getActiveTreeId();
@@ -1495,7 +1536,19 @@ window.openFeedbackModal = function() {
     }
   }
 
-  if (textInput) textInput.value = '';
+  if (statusEl) {
+    statusEl.style.display = 'none';
+    statusEl.innerHTML = '';
+  }
+
+  // Restore draft if user was previously typing
+  if (textInput) {
+    try {
+      const draft = localStorage.getItem('saga_feedback_draft');
+      if (draft) textInput.value = draft;
+    } catch(e) {}
+  }
+
   if (filesInput) {
     filesInput.value = '';
     filesInput.onchange = function() {
@@ -1515,12 +1568,12 @@ window.closeFeedbackModal = function() {
 };
 
 window.createGitHubIssue = function() {
-  const textInput = document.getElementById('feedback-text');
-  const note = textInput ? textInput.value.trim() : '';
-  const currentTree = getActiveTreeId();
-  const treeLabel = currentTree === 'loa' ? 'Lóutré' : 'Sigurjónstré';
-  const p = state.selectedPerson || (state.people && state.selectedPersonId ? state.people.find(x => x.id === state.selectedPersonId) : null);
-  const personText = p ? `${p.name} (${p.id})` : 'Almennt';
+  const { note, treeLabel, p, personText } = getFeedbackData();
+
+  if (!note) {
+    showToast('Vinsamlegast skrifaðu texta í athugasemdareitinn.');
+    return;
+  }
 
   const title = encodeURIComponent(`[Ábending - ${treeLabel}] ${p ? p.name : 'Almenn ábending'}`);
   const body = encodeURIComponent(
@@ -1531,16 +1584,43 @@ window.createGitHubIssue = function() {
 * **Tímasetning:** ${new Date().toISOString().replace('T', ' ').substring(0, 16)}
 
 ### Athugasemd / Lýsing á verkefni:
-${note || '(Skrifaðu athugasemd eða nánari upplýsingar hér)'}
+${note}
 
 ---
-*(Ábending send úr vefviðmóti Saga Ættfræði til skráningar sem verkefni/Issue. Þú getur líka hengt við myndir/skjáskot hér fyrir ofan).*`
+*(Ábending send úr vefviðmóti Saga Ættfræði til skráningar sem verkefni/Issue. Hægt er að henda inn skjáskoti/mynd hér fyrir ofan).*`
   );
 
   const issueUrl = `https://github.com/sigurjonaxel/ancestry/issues/new?title=${title}&body=${body}&labels=%C3%A1bending`;
-  window.open(issueUrl, '_blank');
-  closeFeedbackModal();
-  showToast('📋 Opnaði nýtt GitHub Issue í nýjum flipa!');
+  
+  // Clear draft upon successful creation attempt
+  try {
+    localStorage.removeItem('saga_feedback_draft');
+  } catch(e) {}
+
+  // Open synchronously so popup blocker does NOT block it
+  const win = window.open(issueUrl, '_blank');
+  
+  const statusEl = document.getElementById('feedback-status-msg');
+  if (!win || win.closed || typeof win.closed === 'undefined') {
+    // Popup was blocked by browser
+    if (statusEl) {
+      statusEl.style.display = 'block';
+      statusEl.innerHTML = `
+        <div style="background: rgba(184,134,11,0.18); border: 1px solid var(--accent-gold); padding: 12px; border-radius: 8px; text-align: center; margin-top: 10px;">
+          <p style="margin: 0 0 10px 0; font-size: 0.88rem; color: #fff; font-weight: 500;">
+            Vafrinn lokaði á nýjan glugga (Pop-up Blocker). Smelltu hér til að opna verkefnið á GitHub:
+          </p>
+          <a href="${issueUrl}" target="_blank" class="btn btn-primary" style="background: var(--accent-gold); color: #000; font-weight: 700; text-decoration: none; padding: 0.5rem 1.1rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px;">
+            <span>👉 Opna GitHub Issue núna</span>
+          </a>
+        </div>
+      `;
+    }
+    showToast('Smelltu á hlekkinn í glugganum til að opna GitHub Issue');
+  } else {
+    showToast('📋 Opnaði nýtt GitHub Issue í nýjum flipa!');
+    closeFeedbackModal();
+  }
 };
 
 window.submitFeedbackForm = async function() {
@@ -1555,6 +1635,13 @@ window.submitFeedbackForm = async function() {
 
   if (!note && files.length === 0) {
     showToast('Vinsamlegast skrifaðu texta eða veldu skjáskot.');
+    return;
+  }
+
+  // If running on static GitHub Pages, divert IMMEDIATELY and SYNCHRONOUSLY
+  // to prevent browser popup blockers from blocking window.open!
+  if (isStaticSiteMode()) {
+    createGitHubIssue();
     return;
   }
 
@@ -1576,6 +1663,7 @@ window.submitFeedbackForm = async function() {
 
     const res = await fetch('/api/upload_screenshot', { method: 'POST', body: formData });
     if (res && res.ok) {
+      try { localStorage.removeItem('saga_feedback_draft'); } catch(e){}
       showToast(`💡 Ábending skráð í issues.md og gagnagrunn!`);
       closeFeedbackModal();
       return;
@@ -1583,8 +1671,7 @@ window.submitFeedbackForm = async function() {
       throw new Error(`Server returned ${res ? res.status : 'offline'}`);
     }
   } catch (err) {
-    console.warn('API submission not available (likely static GitHub Pages). Diverting to GitHub Issue:', err);
-    showToast('Opna GitHub Issue til að vista verkefnið varanlega...');
+    console.warn('Local API upload not available, falling back to GitHub Issue:', err);
     createGitHubIssue();
   } finally {
     if (submitBtn) submitBtn.disabled = false;
